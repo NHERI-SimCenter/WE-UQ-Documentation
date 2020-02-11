@@ -1,0 +1,288 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Stochastic Ground Motions &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+
+          
+            <a href="../../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/WE-UQ-Logo-grey2.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aboutWE.html">2. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">3. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">4. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">6. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">8. Copyright and License</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_build/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/architecture/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/how_to_extend/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/verification/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../developer_manual/coding_style/coding_style.html">5. Coding Style</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Wind Engineering with Uncertainty Quantification</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Stochastic Ground Motions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/common/user_manual/usage/stochasticGroundMotion.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="stochastic-ground-motions">
+<h1>Stochastic Ground Motions<a class="headerlink" href="#stochastic-ground-motions" title="Permalink to this headline">¶</a></h1>
+<p>This panel allows users to generate synthetic ground motions for a
+target seismic event. In order to do so, the stochastic ground motion
+model is selected from the <code class="docutils literal notranslate"><span class="pre">drop-down</span> <span class="pre">menu</span></code>, which is as shown
+in :numref:fig-stochasticVlachos-event’. Two stochastic motion models are currently available:
+Vlachoes et al. (2018) <a class="bibtex reference internal" href="#vlachos2018predictive" id="id1">[VPD18]</a> and  Dabaghi &amp; Der Kiureghian (2014, 2017, 2018)
+<a class="bibtex reference internal" href="#dabaghi2014stochastic" id="id2">[DK14]</a><a class="bibtex reference internal" href="#dabaghi2017stochastic" id="id3">[DDK17]</a><a class="bibtex reference internal" href="#dabaghi2018simulation" id="id4">[DDK18]</a>. Depending on the
+model selected, the user will be asked to enter values for a number of parameters that are
+used to generate a seismic event. For the Vlachos er al. model users is required to input the <code class="docutils literal notranslate"><span class="pre">moment</span> <span class="pre">magnitude',</span> <span class="pre">``site</span> <span class="pre">to</span> <span class="pre">rupture</span> <span class="pre">distance</span></code> and the <code class="docutils literal notranslate"><span class="pre">average</span> <span class="pre">shear</span> <span class="pre">wave</span> <span class="pre">velocity</span></code>.</p>
+<div class="align-center figure" id="id6">
+<span id="fig-stochasticvlachos-event"></span><img alt="../../../_images/stochasticVlachos.png" src="../../../_images/stochasticVlachos.png" />
+<p class="caption"><span class="caption-text">Vlachos er al. (2018) model inputs</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p id="fig-stochasticdabaghi-event">For the Dabaghi &amp; Der Kiureghian model geometric directivity parameters, as shown in Cref{fig:dabaghi}, required by the Dabaghi &amp; Der Kiureghian model are described completely in Somerville et al. (1997)
+<a class="bibtex reference internal" href="#somerville1997modification" id="id5">[SSGA97]</a>.</p>
+<div class="align-center figure" id="id7">
+<img alt="../../../_images/stochasticDabaghi.png" src="../../../_images/stochasticDabaghi.png" />
+<p class="caption"><span class="caption-text">Dabaghi &amp; Der Kiureghian (2018) model inputs</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>Additionally, users can provide a seed for either model if they desire the same
+suite of synthetic motions to be generated on multiple occasions.  If
+the seed is not specified, a different realization of the time history
+will be generated for each run. The backend application that generates
+the stochastic ground motions relies on <strong>smelt</strong>, a modular and
+extensible C++ library for generating stochastic time histories. Users
+interested in learning more about the implementation and design of
+<strong>smelt</strong> are referred to its .. _ GitHub Repository: <a class="reference external" href="https://github.com/NHERI-SimCenter/smelt">https://github.com/NHERI-SimCenter/smelt</a> .</p>
+<p>All input parameters can be specified as random variables by entering
+a string in the parameter field. Please note that information for the
+inputs that are identified as random variables needs to be provided in
+the <code class="docutils literal notranslate"><span class="pre">UQ</span></code> tab.</p>
+<p id="bibtex-bibliography-common/user_manual/usage/stochasticGroundMotion-0"><dl class="citation">
+<dt class="bibtex label" id="applied-technology-council-atc-fema-2012"><span class="brackets">ATC12</span></dt>
+<dd><p>Applied Technology Council ATC, editor. <em>FEMA P58: Seismic Performance Assessment of Buildings - Methodology</em>. Volume 1. Federal Emergency Management Agency, 1 edition, 2012.</p>
+</dd>
+<dt class="bibtex label" id="dabaghi2017stochastic"><span class="brackets"><a class="fn-backref" href="#id3">DDK17</a></span></dt>
+<dd><p>Mayssa Dabaghi and Armen Der Kiureghian. Stochastic model for simulation of near-fault ground motions. <em>Earthquake Engineering &amp; Structural Dynamics</em>, 46(6):963–984, 2017. URL: <a class="reference external" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.2839">https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.2839</a>, <a class="reference external" href="https://arxiv.org/abs/https://onlinelibrary.wiley.com/doi/pdf/10.1002/eqe.2839">arXiv:https://onlinelibrary.wiley.com/doi/pdf/10.1002/eqe.2839</a>, <a class="reference external" href="https://doi.org/10.1002/eqe.2839">doi:10.1002/eqe.2839</a>.</p>
+</dd>
+<dt class="bibtex label" id="dabaghi2018simulation"><span class="brackets"><a class="fn-backref" href="#id4">DDK18</a></span></dt>
+<dd><p>Mayssa Dabaghi and Armen Der Kiureghian. Simulation of orthogonal horizontal components of near-fault ground motion for specified earthquake source and site characteristics. <em>Earthquake Engineering &amp; Structural Dynamics</em>, 47(6):1369–1393, 2018. URL: <a class="reference external" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.3021">https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.3021</a>, <a class="reference external" href="https://arxiv.org/abs/https://onlinelibrary.wiley.com/doi/pdf/10.1002/eqe.3021">arXiv:https://onlinelibrary.wiley.com/doi/pdf/10.1002/eqe.3021</a>, <a class="reference external" href="https://doi.org/10.1002/eqe.3021">doi:10.1002/eqe.3021</a>.</p>
+</dd>
+<dt class="bibtex label" id="dabaghi2014stochastic"><span class="brackets"><a class="fn-backref" href="#id2">DK14</a></span></dt>
+<dd><p>Mayssa Dabaghi and Armen Der Kiureghian. Stochastic Modeling and Simulation of Near-Fault Ground Motions for Performance-Based Earthquake Engineering. Technical Report, Pacific Earthquake Engineering Research Center, 2014.</p>
+</dd>
+<dt class="bibtex label" id="federal-emergency-management-agency-fema-hazus-2018-2"><span class="brackets">FEM18</span></dt>
+<dd><p>Federal Emergency Management Agency FEMA, editor. <em>Hazus - MH 2.1 Earthquake Model Technical Manual</em>. Federal Emergency Management Agency, 2018.</p>
+</dd>
+<dt class="bibtex label" id="somerville1997modification"><span class="brackets"><a class="fn-backref" href="#id5">SSGA97</a></span></dt>
+<dd><p>Paul G. Somerville, Nancy F. Smith, Robert W. Graves, and Norman A. Abrahamson. Modification of Empirical Strong Ground Motion Attenuation Relations to Include the Amplitude and Duration Effects of Rupture Directivity. <em>Seismological Research Letters</em>, 68(1):199–222, 01 1997. URL: <a class="reference external" href="https://doi.org/10.1785/gssrl.68.1.199">https://doi.org/10.1785/gssrl.68.1.199</a>, <a class="reference external" href="https://arxiv.org/abs/https://pubs.geoscienceworld.org/srl/article-pdf/68/1/199/2753665/srl068001\_0199.pdf">arXiv:https://pubs.geoscienceworld.org/srl/article-pdf/68/1/199/2753665/srl068001\_0199.pdf</a>, <a class="reference external" href="https://doi.org/10.1785/gssrl.68.1.199">doi:10.1785/gssrl.68.1.199</a>.</p>
+</dd>
+<dt class="bibtex label" id="vlachos2018predictive"><span class="brackets"><a class="fn-backref" href="#id1">VPD18</a></span></dt>
+<dd><p>Christos Vlachos, Konstantinos G. Papakonstantinou, and George Deodatis. Predictive model for site specific simulation of ground motions based on earthquake scenarios. <em>Earthquake Engineering &amp; Structural Dynamics</em>, 47(1):195–218, 2018. URL: <a class="reference external" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.2948">https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.2948</a>, <a class="reference external" href="https://doi.org/10.1002/eqe.2948">doi:10.1002/eqe.2948</a>.</p>
+</dd>
+</dl>
+</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, The Regents of the University of California
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-2', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>
