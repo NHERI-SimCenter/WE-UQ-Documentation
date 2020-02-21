@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Requirements &mdash; Performance Based Engineering Application  documentation</title>
+  <title>7. Requirements &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -36,7 +36,9 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" /> 
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="8. Bugs &amp; Feauture Requests" href="../bugs.html" />
+    <link rel="prev" title="6. Examples" href="../user_manual/examples/examples.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -55,7 +57,7 @@
 
           
             
-            <img src="../../_static/PBE-Logo-grey2.png" class="logo" alt="Logo"/>
+            <img src="../../_static/WE-UQ-Logo-grey2.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -84,17 +86,23 @@
             
             
               <p class="caption"><span class="caption-text">User Manual</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../user_manual/ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../aboutPBE.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../aboutQUOFEM.html">3. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_manual/installation/installation.html">4. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_manual/usage/usage.html">5. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_manual/troubleshooting/troubleshooting.html">6. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_manual/examples/examples.html">7. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PBE.html">8. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../bugs.html">9. Bugs &amp; Feauture Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../license.html">10. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aboutWE.html">2. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/installation/installation.html">3. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/usage/usage.html">4. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/troubleshooting/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/examples/examples.html">6. Examples</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">7. Requirements</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-requirements">7.1. General Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#loading-requirements">7.2. Loading Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uq-requirements">7.3. UQ Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modeling-requirements">7.4. Modeling Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#analysis-requirements">7.5. Analysis Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../bugs.html">8. Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">9. Copyright and License</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -121,7 +129,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Performance Based Engineering Application</a>
+          <a href="../../index.html">Wind Engineering with Uncertainty Quantification</a>
         
       </nav>
 
@@ -152,7 +160,7 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li>Requirements</li>
+      <li><span class="section-number">7. </span>Requirements</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -172,13 +180,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="requirements">
-<span id="lblrequirements"></span><h1>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h1>
-<p>The following contains the functional reqirements for the PBE app. These requirements are broken down into a number of groups, <strong>general</strong>, <strong>earthquake loading</strong>, <strong>building description</strong>, <strong>analysis</strong>, and <strong>UQ</strong>.</p>
-<p>The purpose of presenting these requirements is to inform the community on the present capabilities of the PBE app and features that could be added. The original set of requirements have come from a set of grand challenge reports, <strong>GC</strong>. These original requirements have been broken into a smaller set of deliverable features by the senior faculty associated with the project, <strong>SP</strong>. Additional requirements have come from users, <strong>U</strong> See section <span class="xref std std-ref">features</span> if you have additional features you would like to see.</p>
+<span id="lblrequirements"></span><h1><span class="section-number">7. </span>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h1>
+<p>The following contains the functional reqirements for the WE-UQ app. These requirements are broken down into a number of groups, <strong>general</strong>, <strong>earthquake loading</strong>, <strong>building description</strong>, <strong>analysis</strong>, and <strong>UQ</strong>.</p>
+<p>The purpose of presenting these requirements is to inform the community on the present capabilities of the WE-UQ app and features that could be added. The original set of requirements have come from a set of grand challenge reports, <strong>GC</strong>. These original requirements have been broken into a smaller set of deliverable features by the senior faculty associated with the project, <strong>SP</strong>. Additional requirements have come from users, <strong>U</strong> See section <span class="xref std std-ref">features</span> if you have additional features you would like to see.</p>
 <div class="section" id="general-requirements">
-<h2>General Requirements<a class="headerlink" href="#general-requirements" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.1. </span>General Requirements<a class="headerlink" href="#general-requirements" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-given docutils align-default" id="id1">
-<caption><span class="caption-text">Requirements - General</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 7.1.1 </span><span class="caption-text">Requirements - General</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 1%" />
 <col style="width: 96%" />
@@ -295,9 +303,9 @@
 </table>
 </div>
 <div class="section" id="loading-requirements">
-<h2>Loading Requirements<a class="headerlink" href="#loading-requirements" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.2. </span>Loading Requirements<a class="headerlink" href="#loading-requirements" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-given docutils align-default" id="id2">
-<caption><span class="caption-text">Requirements - Wind Loading</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 7.2.1 </span><span class="caption-text">Requirements - Wind Loading</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 1%" />
 <col style="width: 96%" />
@@ -426,9 +434,9 @@
 </table>
 </div>
 <div class="section" id="uq-requirements">
-<h2>UQ Requirements<a class="headerlink" href="#uq-requirements" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.3. </span>UQ Requirements<a class="headerlink" href="#uq-requirements" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-given docutils align-default" id="id3">
-<caption><span class="caption-text">Requirements - Uncertainty Quantification Methods and Variables</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 7.3.1 </span><span class="caption-text">Requirements - Uncertainty Quantification Methods and Variables</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 1%" />
 <col style="width: 96%" />
@@ -593,9 +601,9 @@
 </table>
 </div>
 <div class="section" id="modeling-requirements">
-<h2>Modeling Requirements<a class="headerlink" href="#modeling-requirements" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.4. </span>Modeling Requirements<a class="headerlink" href="#modeling-requirements" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-given docutils align-default" id="id4">
-<caption><span class="caption-text">Requirements - Modeling</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 7.4.1 </span><span class="caption-text">Requirements - Modeling</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 1%" />
 <col style="width: 96%" />
@@ -694,9 +702,9 @@
 </table>
 </div>
 <div class="section" id="analysis-requirements">
-<h2>Analysis Requirements<a class="headerlink" href="#analysis-requirements" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.5. </span>Analysis Requirements<a class="headerlink" href="#analysis-requirements" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-given docutils align-default" id="id5">
-<caption><span class="caption-text">Requirements - Analysis</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 7.5.1 </span><span class="caption-text">Requirements - Analysis</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 1%" />
 <col style="width: 96%" />
@@ -792,7 +800,7 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-158130480-3', 'auto');
+    ga('create', 'UA-158130480-2', 'auto');
     ga('send', 'pageview');
     </script>
 

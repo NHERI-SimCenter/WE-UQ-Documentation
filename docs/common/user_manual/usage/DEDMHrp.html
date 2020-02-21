@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Database-Enabled Design Module &mdash; Performance Based Engineering Application  documentation</title>
+  <title>4.4.4. Database-Enabled Design Module &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -36,7 +36,9 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" /> 
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="4.4.5. Data from Tokyo Polytechnic University" href="lowRiseTPU.html" />
+    <link rel="prev" title="4.4.3. CFD Expert Template" href="CFDExpert.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -55,7 +57,7 @@
 
           
             
-            <img src="../../../_static/PBE-Logo-grey2.png" class="logo" alt="Logo"/>
+            <img src="../../../_static/WE-UQ-Logo-grey2.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -84,17 +86,35 @@
             
             
               <p class="caption"><span class="caption-text">User Manual</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../aboutPBE.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../aboutQUOFEM.html">3. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">4. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">5. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/troubleshooting.html">6. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">7. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../requirements/PBE.html">8. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">9. Bugs &amp; Feauture Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../license.html">10. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aboutWE.html">2. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">3. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="usage.html">4. User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="UQ.html">4.1. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GI.html">4.2. GI: General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SIM.html">4.3. SIM: Structural Model</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="WindEvents.html">4.4. EVT: Wind Events</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="stochasticWind.html">4.4.1. Stochastic Wind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CFDBasic.html">4.4.2. CFD Basic Template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CFDExpert.html">4.4.3. CFD Expert Template</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.4.4. Database-Enabled Design Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lowRiseTPU.html">4.4.5. Data from Tokyo Polytechnic University</a></li>
+<li class="toctree-l3"><a class="reference internal" href="windTunnelExp.html">4.4.6. Wind Tunnel Experiment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WeUQExisting.html">4.4.7. Multiple Existing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="FEM.html">4.5. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EDP.html">4.6. EDP: Demand Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RV.html">4.7. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resEE.html">4.8. RES: Results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">6. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../requirements/WEUQ.html">7. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">8. Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">9. Copyright and License</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -121,7 +141,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">Performance Based Engineering Application</a>
+          <a href="../../../index.html">Wind Engineering with Uncertainty Quantification</a>
         
       </nav>
 
@@ -152,7 +172,11 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
-      <li>Database-Enabled Design Module</li>
+          <li><a href="usage.html"><span class="section-number">4. </span>User Guide</a> &raquo;</li>
+        
+          <li><a href="WindEvents.html"><span class="section-number">4.4. </span>EVT: Wind Events</a> &raquo;</li>
+        
+      <li><span class="section-number">4.4.4. </span>Database-Enabled Design Module</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -172,14 +196,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="database-enabled-design-module">
-<h1>Database-Enabled Design Module<a class="headerlink" href="#database-enabled-design-module" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.4.4. </span>Database-Enabled Design Module<a class="headerlink" href="#database-enabled-design-module" title="Permalink to this headline">¶</a></h1>
 <p>For this event type, full-scale floor loads are generated by a web service, <a class="reference external" href="http://evovw.ce.nd.edu/DEDM_HRP/DEDMP_INT_v3_4evo.html">DEDM HRP</a> a Database-Enabled Design module for High-Rise buildings using Pressure data. The loads  are downloaded and then applied to the building when either of the run buttons are pressed.</p>
 <p>To understand the inputs, it is necessary to understand that the DEDM-HRP website itself utilizes the aerodynamic database compiled at the Tokyo Polytechnic University, Japan (referred to simply as TPU database). THE TPU database contains data for a variety of building configurations of different building width (B), depth (D), and height (H) ratios (B:D:H ratios), tested for various incident wind direction and exposure conditions. The TPU database comprises a total of 394 test cases, derived for 3 square/rectangular cross-sectional shapes, 4 to 5 model heights, 1 to 2 exposure categories and 11 to 21 incident wind directions of 5 degree increments.</p>
 <div class="align-center figure" id="id1">
 <span id="fig-dedm-hrp"></span><img alt="../../../_images/dedmHRP.png" src="../../../_images/dedmHRP.png" />
-<p class="caption"><span class="caption-text">DEDM HRP Wind Loading Event</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.4.5 </span><span class="caption-text">DEDM HRP Wind Loading Event</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>In the inputs for the event, as shown in figure <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-dedm-hrp</span></code> require the user to specify which of these tests to use:</p>
+<p>In the inputs for the event, as shown in figure <a class="reference internal" href="#fig-dedm-hrp"><span class="std std-numref">Fig. 4.4.5</span></a> require the user to specify which of these tests to use:</p>
 <ol class="arabic simple">
 <li><p>The user to select from one of the three cross sectional shapes.</p></li>
 <li><p>The user specifies one of five building heights.</p></li>
@@ -237,7 +261,7 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-158130480-3', 'auto');
+    ga('create', 'UA-158130480-2', 'auto');
     ga('send', 'pageview');
     </script>
 

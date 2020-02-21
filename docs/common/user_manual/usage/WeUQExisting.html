@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Multiple Existing &mdash; Performance Based Engineering Application  documentation</title>
+  <title>4.4.7. Multiple Existing &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -36,7 +36,9 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" /> 
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="4.5. FEM: Finite Element Method" href="FEM.html" />
+    <link rel="prev" title="4.4.6. Wind Tunnel Experiment" href="windTunnelExp.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -55,7 +57,7 @@
 
           
             
-            <img src="../../../_static/PBE-Logo-grey2.png" class="logo" alt="Logo"/>
+            <img src="../../../_static/WE-UQ-Logo-grey2.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -84,17 +86,35 @@
             
             
               <p class="caption"><span class="caption-text">User Manual</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../aboutPBE.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../aboutQUOFEM.html">3. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">4. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">5. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/troubleshooting.html">6. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">7. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../requirements/PBE.html">8. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">9. Bugs &amp; Feauture Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../license.html">10. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aboutWE.html">2. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">3. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="usage.html">4. User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="UQ.html">4.1. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GI.html">4.2. GI: General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SIM.html">4.3. SIM: Structural Model</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="WindEvents.html">4.4. EVT: Wind Events</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="stochasticWind.html">4.4.1. Stochastic Wind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CFDBasic.html">4.4.2. CFD Basic Template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CFDExpert.html">4.4.3. CFD Expert Template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DEDMHrp.html">4.4.4. Database-Enabled Design Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lowRiseTPU.html">4.4.5. Data from Tokyo Polytechnic University</a></li>
+<li class="toctree-l3"><a class="reference internal" href="windTunnelExp.html">4.4.6. Wind Tunnel Experiment</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.4.7. Multiple Existing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="FEM.html">4.5. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EDP.html">4.6. EDP: Demand Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RV.html">4.7. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resEE.html">4.8. RES: Results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">6. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../requirements/WEUQ.html">7. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">8. Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">9. Copyright and License</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -121,7 +141,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">Performance Based Engineering Application</a>
+          <a href="../../../index.html">Wind Engineering with Uncertainty Quantification</a>
         
       </nav>
 
@@ -152,7 +172,11 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
-      <li>Multiple Existing</li>
+          <li><a href="usage.html"><span class="section-number">4. </span>User Guide</a> &raquo;</li>
+        
+          <li><a href="WindEvents.html"><span class="section-number">4.4. </span>EVT: Wind Events</a> &raquo;</li>
+        
+      <li><span class="section-number">4.4.7. </span>Multiple Existing</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -172,15 +196,15 @@
            <div itemprop="articleBody">
             
   <div class="section" id="multiple-existing">
-<h1>Multiple Existing<a class="headerlink" href="#multiple-existing" title="Permalink to this headline">¶</a></h1>
-<p>This panel is provided for the user to specify multiple existing SimCenter event files.  If more than one event is specified it is done to provide the UQ engine with a discrete set of events to choose from - it is not done with the intention of specifying that one event follows another.  The panel presented to the user is shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-SCEventPanel</span></code>.</p>
+<h1><span class="section-number">4.4.7. </span>Multiple Existing<a class="headerlink" href="#multiple-existing" title="Permalink to this headline">¶</a></h1>
+<p>This panel is provided for the user to specify multiple existing SimCenter event files.  If more than one event is specified it is done to provide the UQ engine with a discrete set of events to choose from - it is not done with the intention of specifying that one event follows another.  The panel presented to the user is shown in <a class="reference internal" href="#fig-sceventpanel"><span class="std std-numref">Fig. 4.4.8</span></a>.</p>
 <div class="align-center figure" id="id1">
 <span id="fig-sceventpanel"></span><img alt="../../../_images/weuqExisting.png" src="../../../_images/weuqExisting.png" />
-<p class="caption"><span class="caption-text">Existing (SimCenter) Events</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.4.8 </span><span class="caption-text">Existing (SimCenter) Events</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>Use the <code class="docutils literal notranslate"><span class="pre">Add</span></code> button to add a new event. This adds an empty event to the panel. Pressing the button multiple times will keep adding events to the panel. <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-SCEventPanel</span></code> shows the state after the button has been pressed twice, and data entered to load the <code class="docutils literal notranslate"><span class="pre">Scenario1</span></code> and <code class="docutils literal notranslate"><span class="pre">Scenario2</span></code> Events.</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">Add</span></code> button to add a new event. This adds an empty event to the panel. Pressing the button multiple times will keep adding events to the panel. <a class="reference internal" href="#fig-sceventpanel"><span class="std std-numref">Fig. 4.4.8</span></a> shows the state after the button has been pressed twice, and data entered to load the <code class="docutils literal notranslate"><span class="pre">Scenario1</span></code> and <code class="docutils literal notranslate"><span class="pre">Scenario2</span></code> Events.</p>
 <p>The path to the event file can be entered manually, or using the <code class="docutils literal notranslate"><span class="pre">Choose</span></code> button for convenience. Pushing the button brings up a typical file search screen. By default, a scale factor of 1.0 is assigned to the event.  The user can change this to another floating point value (DO NOT USE INTEGER), and they can define the scale factor as a random variable by entering a variable name, such as <code class="docutils literal notranslate"><span class="pre">factorScenario1</span></code> for the second event
-in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-SCEventPanel</span></code>.</p>
+in <a class="reference internal" href="#fig-sceventpanel"><span class="std std-numref">Fig. 4.4.8</span></a>.</p>
 <p>Note: the name of the random variable must not start with a number, or contain any spaces or special characters, such as -, +, %, etc.</p>
 <p>The  <code class="docutils literal notranslate"><span class="pre">Remove</span></code> button is used to remove events. To remove an event, the user must first select events they wish to remove, which is done by clicking in the small circle at the left side of the event frame. All of the selected events are removed when the <code class="docutils literal notranslate"><span class="pre">Remove</span></code> button is pressed.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">Directory</span></code> button provides a convenient method to load multiple events. All event files shall first be placed into the same folder. We recommend to put the files in a folder of their own, with no other files besides the wind loading events in it. After pressing the <code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">Directory</span></code> button, the user will be able to choose the directory that contains the files, and the application will load all event files (i.e., every file with a <code class="docutils literal notranslate"><span class="pre">.json</span></code> extension) into the widget automatically.</p>
@@ -237,7 +261,7 @@ a <code class="docutils literal notranslate"><span class="pre">Records.txt</span
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-158130480-3', 'auto');
+    ga('create', 'UA-158130480-2', 'auto');
     ga('send', 'pageview');
     </script>
 

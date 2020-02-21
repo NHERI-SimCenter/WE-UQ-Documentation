@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>CFD Expert Template &mdash; Performance Based Engineering Application  documentation</title>
+  <title>4.4.3. CFD Expert Template &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -36,7 +36,9 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" /> 
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="4.4.4. Database-Enabled Design Module" href="DEDMHrp.html" />
+    <link rel="prev" title="4.4.2. CFD Basic Template" href="CFDBasic.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -55,7 +57,7 @@
 
           
             
-            <img src="../../../_static/PBE-Logo-grey2.png" class="logo" alt="Logo"/>
+            <img src="../../../_static/WE-UQ-Logo-grey2.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -84,17 +86,35 @@
             
             
               <p class="caption"><span class="caption-text">User Manual</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../aboutPBE.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../aboutQUOFEM.html">3. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">4. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">5. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/troubleshooting.html">6. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">7. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../requirements/PBE.html">8. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">9. Bugs &amp; Feauture Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../license.html">10. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aboutWE.html">2. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">3. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="usage.html">4. User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="UQ.html">4.1. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GI.html">4.2. GI: General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SIM.html">4.3. SIM: Structural Model</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="WindEvents.html">4.4. EVT: Wind Events</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="stochasticWind.html">4.4.1. Stochastic Wind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CFDBasic.html">4.4.2. CFD Basic Template</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.4.3. CFD Expert Template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DEDMHrp.html">4.4.4. Database-Enabled Design Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lowRiseTPU.html">4.4.5. Data from Tokyo Polytechnic University</a></li>
+<li class="toctree-l3"><a class="reference internal" href="windTunnelExp.html">4.4.6. Wind Tunnel Experiment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WeUQExisting.html">4.4.7. Multiple Existing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="FEM.html">4.5. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EDP.html">4.6. EDP: Demand Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RV.html">4.7. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resEE.html">4.8. RES: Results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">6. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../requirements/WEUQ.html">7. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">8. Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">9. Copyright and License</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -121,7 +141,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">Performance Based Engineering Application</a>
+          <a href="../../../index.html">Wind Engineering with Uncertainty Quantification</a>
         
       </nav>
 
@@ -152,7 +172,11 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
-      <li>CFD Expert Template</li>
+          <li><a href="usage.html"><span class="section-number">4. </span>User Guide</a> &raquo;</li>
+        
+          <li><a href="WindEvents.html"><span class="section-number">4.4. </span>EVT: Wind Events</a> &raquo;</li>
+        
+      <li><span class="section-number">4.4.3. </span>CFD Expert Template</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -172,7 +196,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="cfd-expert-template">
-<h1>CFD Expert Template<a class="headerlink" href="#cfd-expert-template" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.4.3. </span>CFD Expert Template<a class="headerlink" href="#cfd-expert-template" title="Permalink to this headline">¶</a></h1>
 <p>This option allows users to obtain wind forces utilizing an existing OpenFoam model that was uploaded to Design-Safe data depot. This is done by coupling the OpenFOAM model and the building model in a weak form, where the CFD analysis is executed first, then building forces are extracted and applied to the building model. This initial version is limited in scope due to the following assumptions:</p>
 <ol class="arabic simple">
 <li><p>The OpenFOAM model has a patch with the name textit{building} that represents the building envelope.</p></li>
@@ -182,10 +206,10 @@
 <li><p>Meshing is performed using the textit{blockMesh} tool.</p></li>
 <li><p>No uncertainty is considered in the CFD analysis.</p></li>
 </ol>
-<p>It is important to note that this type of event is only supported when running the simulation at DesignSafe and does not run on the local computer. The backend applications used in WE-UQ create a copy of the OpenFOAM case directory provided by the user, then modify the post-processing stage in the case to output the forces acting on the building, for each floor level. <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-cfd-expert</span></code> shows input parameters required for using the CFD expert event. It is important to note that this event requires the user to have an OpenFOAM case uploaded to DesignSafe data depot. For that reason, the widget is disabled when the user is not logged into DesignSafe. Once the user signs in, the widget is enabled and the input parameters can be changed.</p>
+<p>It is important to note that this type of event is only supported when running the simulation at DesignSafe and does not run on the local computer. The backend applications used in WE-UQ create a copy of the OpenFOAM case directory provided by the user, then modify the post-processing stage in the case to output the forces acting on the building, for each floor level. <a class="reference internal" href="#fig-cfd-expert"><span class="std std-numref">Fig. 4.4.3</span></a> shows input parameters required for using the CFD expert event. It is important to note that this event requires the user to have an OpenFOAM case uploaded to DesignSafe data depot. For that reason, the widget is disabled when the user is not logged into DesignSafe. Once the user signs in, the widget is enabled and the input parameters can be changed.</p>
 <div class="align-center figure" id="id1">
 <span id="fig-cfd-expert"></span><img alt="../../../_images/cfd_expert.png" src="../../../_images/cfd_expert.png" />
-<p class="caption"><span class="caption-text">CFD Expert Event</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.4.3 </span><span class="caption-text">CFD Expert Event</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>There are at least 6 input parameters that needs to be provided by the user and can be summarized as follows:</p>
 <ol class="arabic simple">
@@ -196,10 +220,10 @@
 <li><p><strong>Start time:</strong> The time in the CFD simulation to start extracting the forces on the buildings. Force values before that time are not used.</p></li>
 <li><p><strong>Inflow Conditions:</strong> Whether or not the inflow conditions will be specified for the CFD simulation.</p></li>
 </ol>
-<p>If the user selects to specify the inflow conditions, the parameters for the inflow condition shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-cfd-expert-inflow</span></code> will need to be specified. This requires the application to download some of the case files and modify them before the simulation is started, which is done automatically by the tool.</p>
+<p>If the user selects to specify the inflow conditions, the parameters for the inflow condition shown in <a class="reference internal" href="#fig-cfd-expert-inflow"><span class="std std-numref">Fig. 4.4.4</span></a> will need to be specified. This requires the application to download some of the case files and modify them before the simulation is started, which is done automatically by the tool.</p>
 <div class="align-center figure" id="id2">
 <span id="fig-cfd-expert-inflow"></span><img alt="../../../_images/cfd_expert_inflow.png" src="../../../_images/cfd_expert_inflow.png" />
-<p class="caption"><span class="caption-text">Inflow Condition Parameters</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.4.4 </span><span class="caption-text">Inflow Condition Parameters</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 
@@ -247,7 +271,7 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-158130480-3', 'auto');
+    ga('create', 'UA-158130480-2', 'auto');
     ga('send', 'pageview');
     </script>
 

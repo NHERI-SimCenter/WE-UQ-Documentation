@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Earthquake Response of Portal Frame &mdash; Performance Based Engineering Application  documentation</title>
+  <title>Earthquake Response of Portal Frame &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -55,7 +55,7 @@
 
           
             
-            <img src="../../../_static/PBE-Logo-grey2.png" class="logo" alt="Logo"/>
+            <img src="../../../_static/WE-UQ-Logo-grey2.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -86,15 +86,14 @@
               <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../aboutPBE.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../aboutQUOFEM.html">3. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/installation/installation.html">4. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/usage.html">5. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/troubleshooting/troubleshooting.html">6. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/examples/examples.html">7. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../requirements/PBE.html">8. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">9. Bugs &amp; Feauture Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../license.html">10. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aboutWE.html">2. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/installation/installation.html">3. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/usage.html">4. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/troubleshooting/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/examples/examples.html">6. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../requirements/WEUQ.html">7. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">8. Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">9. Copyright and License</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -121,7 +120,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">Performance Based Engineering Application</a>
+          <a href="../../../index.html">Wind Engineering with Uncertainty Quantification</a>
         
       </nav>
 
@@ -174,7 +173,7 @@
   <div class="section" id="earthquake-response-of-portal-frame">
 <span id="lblportalframeearthquake"></span><h1>Earthquake Response of Portal Frame<a class="headerlink" href="#earthquake-response-of-portal-frame" title="Permalink to this headline">¶</a></h1>
 <p>In this example, a simple 2D portal frame model is used to verify the
-results of PBE app. The model is a linear elastic single-bay,
+results of WE-UQ app. The model is a linear elastic single-bay,
 single-story model of a reinforced concrete portal frame, as shown in
 <code class="xref std std-numref docutils literal notranslate"><span class="pre">figPortalVerification</span></code>. The analysis of this model considers both
 gravity loading and lateral earthquake loading due to the El Centro
@@ -195,7 +194,7 @@ Examples folder in a subfolder called <strong>PortalFrame2D</strong>.</p>
 are assumed to be normally distributed random variables with means and
 standard deviation values shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">lblRV</span></code>; In this
 example, the model will be sampled with the Latin Hypercube sampling
-method using both PBE app and a Python script
+method using both WE-UQ app and a Python script
 (<strong>PortalFrameSampling.py</strong>) and response statistics from both
 analyses are compared.</p>
 <table class="colwidths-given docutils align-default">
@@ -226,9 +225,9 @@ analyses are compared.</p>
 </tbody>
 </table>
 <p># caption{Uncertain parameters defined in the portal frame model}</p>
-<p>Modeling uncertainty using PBE app can be done using the
+<p>Modeling uncertainty using WE-UQ app can be done using the
 following steps:
-#. Start PBE app, click on the simulation tab (SIM) in the left bar to open a building simulation model. Click on choose button in the input script row:</p>
+#. Start WE-UQ app, click on the simulation tab (SIM) in the left bar to open a building simulation model. Click on choose button in the input script row:</p>
 <div class="align-center figure" id="id2">
 <img alt="../../../_images/portalFrameTcl.png" src="../../../_images/portalFrameTcl.png" />
 <p class="caption"><span class="caption-text">Choose building model</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
@@ -241,7 +240,7 @@ following steps:
 <p class="caption"><span class="caption-text">Choose tcl file</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple">
-<li><p>In the list of Clines Nodes edit box, enter “1, 3”. This indicates to PBE app that nodes 1 and 3 are the nodes used to obtain EDP at different floor levels (i.e. base and first floor).</p></li>
+<li><p>In the list of Clines Nodes edit box, enter “1, 3”. This indicates to WE-UQ app that nodes 1 and 3 are the nodes used to obtain EDP at different floor levels (i.e. base and first floor).</p></li>
 </ol>
 <div class="align-center figure" id="id4">
 <img alt="../../../_images/cLineNodes.png" src="../../../_images/cLineNodes.png" />
@@ -260,7 +259,7 @@ Then click on the choose button to select the event file.</p>
 <p class="caption"><span class="caption-text">Choose event file</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>#. Now select the random variables tab (RVs) from the left bar, change the random variables types to normal and set the mean and standard deviation values of the floor mass and
-Young’s modulus.  Notice that PBE app has automatically
+Young’s modulus.  Notice that WE-UQ app has automatically
 detected parameters defined in the texttt{OpenSees} tcl file using the pset
 command and defined them as random variables.</p>
 <div class="align-center figure" id="id6">
@@ -347,7 +346,7 @@ deviation values of the peak floor acceleration and peak drift.</p>
 <div class="section" id="verification-of-results">
 <h2>Verification of Results<a class="headerlink" href="#verification-of-results" title="Permalink to this headline">¶</a></h2>
 <p>This section verifies the results produced for the portal frame
-by PBE app against the results of running the same
+by WE-UQ app against the results of running the same
 problem using the Python script.  Running the uncertainty
 quantification problem locally using EE-UQ and using the Python script
 produces the results shown in figures below. The results (mean and standard deviation
@@ -481,7 +480,7 @@ agreement.</p>
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-158130480-3', 'auto');
+    ga('create', 'UA-158130480-2', 'auto');
     ga('send', 'pageview');
     </script>
 

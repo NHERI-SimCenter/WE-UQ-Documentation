@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5.1. UQ: Uncertainty Quantification &mdash; Performance Based Engineering Application  documentation</title>
+  <title>4.1. UQ: Uncertainty Quantification &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="5.1.1.1. Forward Propogation Methods" href="DakotaSampling.html" />
-    <link rel="prev" title="5. User Guide" href="usage.html" /> 
+    <link rel="next" title="4.1.1.1. Forward Propogation Methods" href="DakotaSampling.html" />
+    <link rel="prev" title="4. User Guide" href="usage.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -57,7 +57,7 @@
 
           
             
-            <img src="../../../_static/PBE-Logo-grey2.png" class="logo" alt="Logo"/>
+            <img src="../../../_static/WE-UQ-Logo-grey2.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -88,15 +88,14 @@
               <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../aboutPBE.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../aboutQUOFEM.html">3. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">4. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">5. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/troubleshooting.html">6. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">7. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../requirements/PBE.html">8. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">9. Bugs &amp; Feauture Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../license.html">10. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aboutWE.html">2. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">3. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">4. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">6. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../requirements/WEUQ.html">7. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">8. Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">9. Copyright and License</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -123,7 +122,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">Performance Based Engineering Application</a>
+          <a href="../../../index.html">Wind Engineering with Uncertainty Quantification</a>
         
       </nav>
 
@@ -154,9 +153,9 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="usage.html"><span class="section-number">5. </span>User Guide</a> &raquo;</li>
+          <li><a href="usage.html"><span class="section-number">4. </span>User Guide</a> &raquo;</li>
         
-      <li><span class="section-number">5.1. </span>UQ: Uncertainty Quantification</li>
+      <li><span class="section-number">4.1. </span>UQ: Uncertainty Quantification</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -176,14 +175,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="uq-uncertainty-quantification">
-<h1><span class="section-number">5.1. </span>UQ: Uncertainty Quantification<a class="headerlink" href="#uq-uncertainty-quantification" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.1. </span>UQ: Uncertainty Quantification<a class="headerlink" href="#uq-uncertainty-quantification" title="Permalink to this headline">¶</a></h1>
 <p>The first selection panel the user must select from and enter data into is the <strong>UQ</strong> panel. It is this panel where the user selects from the UQ_Engine to use to perform the uncertainty quantification calculuations. Presently the UQ_engine option is limited to The <strong>Dakota Engine</strong> or a user provided <strong>Other</strong>.</p>
 <div class="section" id="dakota-uq-engine">
-<h2><span class="section-number">5.1.1. </span>Dakota UQ Engine<a class="headerlink" href="#dakota-uq-engine" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1.1. </span>Dakota UQ Engine<a class="headerlink" href="#dakota-uq-engine" title="Permalink to this headline">¶</a></h2>
 <p>This engine utilizes the <a class="reference external" href="https://dakota.sandia.gov/">Dakota Software</a>, a state-of-the-art research and robust, usable software application for optimization and UQ. <strong>Dakota</strong> provides a number of methods which we divide into the following categories though th pull-down menu:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="DakotaSampling.html">5.1.1.1. Forward Propogation Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DakotaSampling.html">4.1.1.1. Forward Propogation Methods</a></li>
 </ul>
 </div>
 </div>
@@ -233,7 +232,7 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-158130480-3', 'auto');
+    ga('create', 'UA-158130480-2', 'auto');
     ga('send', 'pageview');
     </script>
 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>About &mdash; Performance Based Engineering Application  documentation</title>
+  <title>2. About &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -36,7 +36,9 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Installation" href="user_manual/installation/installation.html" />
+    <link rel="prev" title="1. Acknowledgments" href="user_manual/ack.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -55,7 +57,7 @@
 
           
             
-            <img src="../_static/PBE-Logo-grey2.png" class="logo" alt="Logo"/>
+            <img src="../_static/WE-UQ-Logo-grey2.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -84,17 +86,16 @@
             
             
               <p class="caption"><span class="caption-text">User Manual</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="user_manual/ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aboutPBE.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aboutQUOFEM.html">3. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="user_manual/installation/installation.html">4. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="user_manual/usage/usage.html">5. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="user_manual/troubleshooting/troubleshooting.html">6. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="user_manual/examples/examples.html">7. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="requirements/PBE.html">8. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bugs.html">9. Bugs &amp; Feauture Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="license.html">10. Copyright and License</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_manual/installation/installation.html">3. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_manual/usage/usage.html">4. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_manual/troubleshooting/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_manual/examples/examples.html">6. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="requirements/WEUQ.html">7. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bugs.html">8. Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">9. Copyright and License</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -121,7 +122,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Performance Based Engineering Application</a>
+          <a href="../index.html">Wind Engineering with Uncertainty Quantification</a>
         
       </nav>
 
@@ -152,7 +153,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>About</li>
+      <li><span class="section-number">2. </span>About</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -172,8 +173,8 @@
            <div itemprop="articleBody">
             
   <div class="section" id="about">
-<span id="lblaboutwe"></span><h1>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h1>
-<p>This is an open-source research application, which is available at <a class="reference external" href="https://github.com/NHERI-SimCenter/PBE">PBE Github page</a>, is released under a <strong>BSD Clause 2</strong> license. The PBE app can be used to predict the
+<span id="lblaboutwe"></span><h1><span class="section-number">2. </span>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h1>
+<p>This is an open-source research application, which is available at <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ">WE-UQ Github page</a>, is released under a <strong>BSD Clause 2</strong> license. The WE-UQ app can be used to predict the
 response of a building subjected to wind loading. The application
 is focused on quantifying the uncertainties in the predicted response,
 given the that the properties of the buildings and the earthquake
@@ -194,16 +195,16 @@ facility.</p>
 <p>Whether running locally or remotely, the computations are performed,
 as will be discussed in <a class="reference internal" href="../index.html#lbl-technical-manual"><span class="std std-ref">Technical Manual</span></a>, in a workflow
 application. That is, the numerical simulations are actually performed
-by a number of different applications. The PBE app backend software runs
+by a number of different applications. The WE-UQ app backend software runs
 these different applications for the user, taking the outputs from
 some programs and providing them as inputs to others. The design of
-the PBE app application is such that researchers are able to modify the
+the WE-UQ app application is such that researchers are able to modify the
 backend application to utilize their own application in the workflow
 computations. This will ensure researchers are not limited to using
 the default applications we provide and will be enthused to provide
 their own applications for others to use.</p>
 <p>This document covers Version 2.0  of the tool. Users are encouraged to comment on what additional features and capabilities
-they would like to see in this application. These requests and feedback can be submitted through the <a class="reference external" href="https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=7.0">Message Board</a> we greatly appreciate any input you have. If there are features you want, chances are many of your colleagues also would benefit from them. Users are encouraged to review <strong>REQUIREMENTS</strong> to see what features are planned for this application.</p>
+they would like to see in this application. These requests and feedback can be submitted through the <a class="reference external" href="https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0">Message Board</a> we greatly appreciate any input you have. If there are features you want, chances are many of your colleagues also would benefit from them. Users are encouraged to review <strong>REQUIREMENTS</strong> to see what features are planned for this application.</p>
 </div>
 
 
@@ -250,7 +251,7 @@ they would like to see in this application. These requests and feedback can be s
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-158130480-3', 'auto');
+    ga('create', 'UA-158130480-2', 'auto');
     ga('send', 'pageview');
     </script>
 

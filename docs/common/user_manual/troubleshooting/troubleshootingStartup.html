@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6.1. Startup Issues &mdash; Performance Based Engineering Application  documentation</title>
+  <title>5.1. Startup Issues &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="6.2. Issues While Running" href="troubleshootingRunning.html" />
-    <link rel="prev" title="6. Troubleshooting" href="troubleshooting.html" /> 
+    <link rel="next" title="5.2. Issues While Running" href="troubleshootingRunning.html" />
+    <link rel="prev" title="5. Troubleshooting" href="troubleshooting.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -57,7 +57,7 @@
 
           
             
-            <img src="../../../_static/PBE-Logo-grey2.png" class="logo" alt="Logo"/>
+            <img src="../../../_static/WE-UQ-Logo-grey2.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -88,19 +88,18 @@
               <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../aboutPBE.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../aboutQUOFEM.html">3. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">4. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../usage/usage.html">5. User Guide</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="troubleshooting.html">6. Troubleshooting</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6.1. Startup Issues</a></li>
-<li class="toctree-l2"><a class="reference internal" href="troubleshootingRunning.html">6.2. Issues While Running</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aboutWE.html">2. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">3. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/usage.html">4. User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="troubleshooting.html">5. Troubleshooting</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.1. Startup Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshootingRunning.html">5.2. Issues While Running</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">7. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../requirements/PBE.html">8. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">9. Bugs &amp; Feauture Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../license.html">10. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">6. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../requirements/WEUQ.html">7. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">8. Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">9. Copyright and License</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -127,7 +126,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">Performance Based Engineering Application</a>
+          <a href="../../../index.html">Wind Engineering with Uncertainty Quantification</a>
         
       </nav>
 
@@ -158,9 +157,9 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="troubleshooting.html"><span class="section-number">6. </span>Troubleshooting</a> &raquo;</li>
+          <li><a href="troubleshooting.html"><span class="section-number">5. </span>Troubleshooting</a> &raquo;</li>
         
-      <li><span class="section-number">6.1. </span>Startup Issues</li>
+      <li><span class="section-number">5.1. </span>Startup Issues</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -180,11 +179,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="startup-issues">
-<span id="lbltroubleshootingstartup"></span><h1><span class="section-number">6.1. </span>Startup Issues<a class="headerlink" href="#startup-issues" title="Permalink to this headline">¶</a></h1>
-<p>On Windows operating systems, if you receive an error when starting the application with the message that MSVCP140.dll is missing as shown in <a class="reference internal" href="#figmissingcrt-pbe"><span class="std std-numref">Fig. 6.1.1</span></a>, it is caused by a missing Visual C/C++ runtime library. You can fix this error by running the installer for the Visual C/C++ redistributable package <strong>vc_redist.x64.exe</strong> which is included with the application.</p>
-<div class="align-center figure" id="id1">
-<span id="figmissingcrt-pbe"></span><img alt="../../../_images/PBE-MissingCRT.png" src="../../../_images/PBE-MissingCRT.png" />
-<p class="caption"><span class="caption-number">Fig. 6.1.1 </span><span class="caption-text">Error message for missing Visual C/C++ runtime library</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<span id="lbltroubleshootingstartup"></span><h1><span class="section-number">5.1. </span>Startup Issues<a class="headerlink" href="#startup-issues" title="Permalink to this headline">¶</a></h1>
+<p>On Windows operating systems, if you receive an error when starting the application with the message that MSVCP140.dll is missing as shown in <a class="reference internal" href="#figmissingcrt-we"><span class="std std-numref">Fig. 5.1.3</span></a>, it is caused by a missing Visual C/C++ runtime library. You can fix this error by running the installer for the Visual C/C++ redistributable package <strong>vc_redist.x64.exe</strong> which is included with the application.</p>
+<div class="align-center figure" id="id3">
+<span id="figmissingcrt-we"></span><img alt="../../../_images/WE-UQ-MissingCRT.png" src="../../../_images/WE-UQ-MissingCRT.png" />
+<p class="caption"><span class="caption-number">Fig. 5.1.3 </span><span class="caption-text">Error message for missing Visual C/C++ runtime library</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 
@@ -232,7 +231,7 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-158130480-3', 'auto');
+    ga('create', 'UA-158130480-2', 'auto');
     ga('send', 'pageview');
     </script>
 

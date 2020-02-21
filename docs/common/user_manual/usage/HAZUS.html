@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5.7.2. HAZUS MH &mdash; Performance Based Engineering Application  documentation</title>
+  <title>HAZUS MH &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -36,9 +36,7 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="5.8. RES: Results" href="resPBE.html" />
-    <link rel="prev" title="5.7.1. FEMA" href="FEMA.html" /> 
+    <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -57,7 +55,7 @@
 
           
             
-            <img src="../../../_static/PBE-Logo-grey2.png" class="logo" alt="Logo"/>
+            <img src="../../../_static/WE-UQ-Logo-grey2.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -88,15 +86,14 @@
               <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../aboutPBE.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../aboutQUOFEM.html">3. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">4. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">5. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/troubleshooting.html">6. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">7. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../requirements/PBE.html">8. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">9. Bugs &amp; Feauture Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../license.html">10. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aboutWE.html">2. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">3. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">4. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">6. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../requirements/WEUQ.html">7. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">8. Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">9. Copyright and License</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -123,7 +120,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">Performance Based Engineering Application</a>
+          <a href="../../../index.html">Wind Engineering with Uncertainty Quantification</a>
         
       </nav>
 
@@ -154,11 +151,7 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="usage.html"><span class="section-number">5. </span>User Guide</a> &raquo;</li>
-        
-          <li><a href="DL.html"><span class="section-number">5.7. </span>DL: Damage and Loss Model</a> &raquo;</li>
-        
-      <li><span class="section-number">5.7.2. </span>HAZUS MH</li>
+      <li>HAZUS MH</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -178,21 +171,21 @@
            <div itemprop="articleBody">
             
   <div class="section" id="hazus-mh">
-<span id="lblhazus"></span><h1><span class="section-number">5.7.2. </span>HAZUS MH<a class="headerlink" href="#hazus-mh" title="Permalink to this headline">¶</a></h1>
+<span id="lblhazus"></span><h1>HAZUS MH<a class="headerlink" href="#hazus-mh" title="Permalink to this headline">¶</a></h1>
 <p>This option implements the loss assessment methodology described in the <a class="reference external" href="https://www.fema.gov/media-library-data/20130726-1820-25045-6286/hzmh2_1_eq_tm.pdf">HAZUS MH Technical Manual</a> document.</p>
 <div class="section" id="general-settings">
-<h2><span class="section-number">5.7.2.1. </span>General Settings<a class="headerlink" href="#general-settings" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="#fig-dl-hazus-general"><span class="std std-numref">Fig. 5.7.9</span></a> shows the input panel that allows the user to set the response, damage, and loss models for the assessment.</p>
+<h2>General Settings<a class="headerlink" href="#general-settings" title="Permalink to this headline">¶</a></h2>
+<p><code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-dl-hazus-general</span></code> shows the input panel that allows the user to set the response, damage, and loss models for the assessment.</p>
 <div class="align-center figure" id="id1">
 <span id="fig-dl-hazus-general"></span><img alt="../../../_images/dl_hazus_general.png" src="../../../_images/dl_hazus_general.png" />
-<p class="caption"><span class="caption-number">Fig. 5.7.9 </span><span class="caption-text">The General Damage and Loss Settings panel. (The settings shown in the Figure serve demonstration purposes and are not the suggested inputs.)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">The General Damage and Loss Settings panel. (The settings shown in the Figure serve demonstration purposes and are not the suggested inputs.)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="response-model">
-<h2><span class="section-number">5.7.2.2. </span>Response Model<a class="headerlink" href="#response-model" title="Permalink to this headline">¶</a></h2>
+<h2>Response Model<a class="headerlink" href="#response-model" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-right" id="id2" style="width: 300px">
 <img alt="../../../_images/dl_hazus_general_response.png" src="../../../_images/dl_hazus_general_response.png" />
-<p class="caption"><span class="caption-number">Fig. 5.7.10 </span><span class="caption-text">Response model settings</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Response model settings</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>Some text about the model</p>
 <p><strong>Response Description</strong></p>
@@ -217,10 +210,10 @@
 </div></blockquote>
 </div>
 <div class="section" id="damage-model">
-<h2><span class="section-number">5.7.2.3. </span>Damage Model<a class="headerlink" href="#damage-model" title="Permalink to this headline">¶</a></h2>
+<h2>Damage Model<a class="headerlink" href="#damage-model" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-right" id="id3" style="width: 300px">
 <img alt="../../../_images/dl_hazus_general_damage.png" src="../../../_images/dl_hazus_general_damage.png" />
-<p class="caption"><span class="caption-number">Fig. 5.7.11 </span><span class="caption-text">Damage model settings</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Damage model settings</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Structure Type and Design Level</strong></p>
 <blockquote>
@@ -229,10 +222,10 @@
 </div></blockquote>
 </div>
 <div class="section" id="loss-model">
-<h2><span class="section-number">5.7.2.4. </span>Loss Model<a class="headerlink" href="#loss-model" title="Permalink to this headline">¶</a></h2>
+<h2>Loss Model<a class="headerlink" href="#loss-model" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-right" id="id4" style="width: 300px">
 <img alt="../../../_images/dl_hazus_general_loss.png" src="../../../_images/dl_hazus_general_loss.png" />
-<p class="caption"><span class="caption-number">Fig. 5.7.12 </span><span class="caption-text">Loss model settings</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Loss model settings</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Replacement Cost and Time</strong></p>
 <blockquote>
@@ -381,7 +374,7 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-158130480-3', 'auto');
+    ga('create', 'UA-158130480-2', 'auto');
     ga('send', 'pageview');
     </script>
 

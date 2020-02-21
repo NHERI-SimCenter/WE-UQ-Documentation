@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5.7.1. FEMA &mdash; Performance Based Engineering Application  documentation</title>
+  <title>FEMA &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -36,9 +36,7 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="5.7.2. HAZUS MH" href="HAZUS.html" />
-    <link rel="prev" title="5.7. DL: Damage and Loss Model" href="DL.html" /> 
+    <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -57,7 +55,7 @@
 
           
             
-            <img src="../../../_static/PBE-Logo-grey2.png" class="logo" alt="Logo"/>
+            <img src="../../../_static/WE-UQ-Logo-grey2.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -88,15 +86,14 @@
               <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../aboutPBE.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../aboutQUOFEM.html">3. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">4. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">5. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/troubleshooting.html">6. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">7. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../requirements/PBE.html">8. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">9. Bugs &amp; Feauture Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../license.html">10. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aboutWE.html">2. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">3. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">4. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">6. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../requirements/WEUQ.html">7. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">8. Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">9. Copyright and License</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -123,7 +120,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">Performance Based Engineering Application</a>
+          <a href="../../../index.html">Wind Engineering with Uncertainty Quantification</a>
         
       </nav>
 
@@ -154,11 +151,7 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="usage.html"><span class="section-number">5. </span>User Guide</a> &raquo;</li>
-        
-          <li><a href="DL.html"><span class="section-number">5.7. </span>DL: Damage and Loss Model</a> &raquo;</li>
-        
-      <li><span class="section-number">5.7.1. </span>FEMA</li>
+      <li>FEMA</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -178,21 +171,21 @@
            <div itemprop="articleBody">
             
   <div class="section" id="fema">
-<span id="lblfema"></span><h1><span class="section-number">5.7.1. </span>FEMA<a class="headerlink" href="#fema" title="Permalink to this headline">¶</a></h1>
+<span id="lblfema"></span><h1>FEMA<a class="headerlink" href="#fema" title="Permalink to this headline">¶</a></h1>
 <p>This option implements the loss assessment methodology described in the <a href="#id9"><span class="problematic" id="id10">`FEMA P58`_</span></a> documents. The main panel is divided into four parts that can be accessed by clicking at the tabs at the top of the input panel.</p>
 <div class="section" id="general-settings">
-<h2><span class="section-number">5.7.1.1. </span>General Settings<a class="headerlink" href="#general-settings" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="#fig-dl-p58-general"><span class="std std-numref">Fig. 5.7.1</span></a> shows the first panel, which corresponds to general damage and loss settings. The panel allows the user to set the response, damage, and loss models for the assessment.</p>
+<h2>General Settings<a class="headerlink" href="#general-settings" title="Permalink to this headline">¶</a></h2>
+<p><code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-dl-p58-general</span></code> shows the first panel, which corresponds to general damage and loss settings. The panel allows the user to set the response, damage, and loss models for the assessment.</p>
 <div class="align-center figure" id="id1">
 <span id="fig-dl-p58-general"></span><img alt="../../../_images/dl_p58_general.png" src="../../../_images/dl_p58_general.png" />
-<p class="caption"><span class="caption-number">Fig. 5.7.1 </span><span class="caption-text">The General Damage and Loss Settings panel.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">The General Damage and Loss Settings panel.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>The General Damage and Loss Settings panel is divided into a number of areas:</p>
 <div class="section" id="response-model">
 <h3>Response Model<a class="headerlink" href="#response-model" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-right" id="id2" style="width: 300px">
 <img alt="../../../_images/dl_p58_general_response.png" src="../../../_images/dl_p58_general_response.png" />
-<p class="caption"><span class="caption-number">Fig. 5.7.2 </span><span class="caption-text">Response model settings</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Response model settings</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>Some text about the model</p>
 <p><strong>Response Description</strong></p>
@@ -220,7 +213,7 @@
 <h3>Damage Model<a class="headerlink" href="#damage-model" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-right" id="id3" style="width: 300px">
 <img alt="../../../_images/dl_p58_general_damage.png" src="../../../_images/dl_p58_general_damage.png" />
-<p class="caption"><span class="caption-number">Fig. 5.7.3 </span><span class="caption-text">Damage model settings</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Damage model settings</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Irrepairable Residual Drift</strong></p>
 <blockquote>
@@ -250,7 +243,7 @@
 <h3>Loss Model<a class="headerlink" href="#loss-model" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-right" id="id4" style="width: 300px">
 <img alt="../../../_images/dl_p58_general_loss.png" src="../../../_images/dl_p58_general_loss.png" />
-<p class="caption"><span class="caption-number">Fig. 5.7.4 </span><span class="caption-text">Loss model settings</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Loss model settings</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Replacement Cost and Time</strong></p>
 <blockquote>
@@ -279,11 +272,11 @@
 </div>
 </div>
 <div class="section" id="building-components">
-<h2><span class="section-number">5.7.1.2. </span>Building Components<a class="headerlink" href="#building-components" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="#fig-dl-p58-comp"><span class="std std-numref">Fig. 5.7.5</span></a> shows the input panel where you can define the components of the building.</p>
+<h2>Building Components<a class="headerlink" href="#building-components" title="Permalink to this headline">¶</a></h2>
+<p><code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-dl-p58-comp</span></code> shows the input panel where you can define the components of the building.</p>
 <div class="align-center figure" id="id5">
 <span id="fig-dl-p58-comp"></span><img alt="../../../_images/dl_p58_comp.png" src="../../../_images/dl_p58_comp.png" />
-<p class="caption"><span class="caption-number">Fig. 5.7.5 </span><span class="caption-text">The Component Settings panel. (The settings shown in the Figure serve demonstration purposes and are not the suggested inputs.)</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">The Component Settings panel. (The settings shown in the Figure serve demonstration purposes and are not the suggested inputs.)</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="component-ensemble">
 <h3>Component Ensemble<a class="headerlink" href="#component-ensemble" title="Permalink to this headline">¶</a></h3>
@@ -313,7 +306,7 @@
 <p>This panel provides more information about the active component in the drop-down menu under Selected components and allows you to specify where and what quantities of those components are in the building.</p>
 <div class="figure align-center" id="id6">
 <span id="fig-dl-p58-comp-details"></span><img alt="../../../_images/dl_p58_comp_details.png" src="../../../_images/dl_p58_comp_details.png" />
-<p class="caption"><span class="caption-number">Fig. 5.7.6 </span><span class="caption-text">Component details</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Component details</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Component Groups</strong></p>
 <blockquote>
@@ -342,15 +335,15 @@
 </dl>
 </div></blockquote>
 <p>As long as you want to assign the same amount of components to every floor and every direction, one component group row is sufficient. Oftentimes, you will want to have more control over component quantities because the amount of components is not identical in all floors and directions.</p>
-<p>The example in <a class="reference internal" href="#fig-dl-p58-comp-details"><span class="std std-numref">Fig. 5.7.6</span></a> shows the assignment of Buckling Restrained Braces in a building. The first row assigns four BRBs in direction 1 to the first and second stories. The four braces are grouped in pairs (hence the <code class="docutils literal notranslate"><span class="pre">2,</span> <span class="pre">2</span></code> entry under <code class="docutils literal notranslate"><span class="pre">median</span> <span class="pre">quantity</span></code>). Damage to those two <em>Component Groups</em> can be evaluated independently. The second row assigns six braces to every floor in directon 2. These are also grouped in pairs, forming three <em>Component Groups</em>. Since the number of braces is known exactly, the <code class="docutils literal notranslate"><span class="pre">distribution</span></code> is set to <code class="docutils literal notranslate"><span class="pre">N/A</span></code> and there is no need to specifiy a <code class="docutils literal notranslate"><span class="pre">cov</span></code> value.</p>
+<p>The example in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-dl-p58-comp-details</span></code> shows the assignment of Buckling Restrained Braces in a building. The first row assigns four BRBs in direction 1 to the first and second stories. The four braces are grouped in pairs (hence the <code class="docutils literal notranslate"><span class="pre">2,</span> <span class="pre">2</span></code> entry under <code class="docutils literal notranslate"><span class="pre">median</span> <span class="pre">quantity</span></code>). Damage to those two <em>Component Groups</em> can be evaluated independently. The second row assigns six braces to every floor in directon 2. These are also grouped in pairs, forming three <em>Component Groups</em>. Since the number of braces is known exactly, the <code class="docutils literal notranslate"><span class="pre">distribution</span></code> is set to <code class="docutils literal notranslate"><span class="pre">N/A</span></code> and there is no need to specifiy a <code class="docutils literal notranslate"><span class="pre">cov</span></code> value.</p>
 </div>
 </div>
 <div class="section" id="collapse-modes">
-<h2><span class="section-number">5.7.1.3. </span>Collapse Modes<a class="headerlink" href="#collapse-modes" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="#fig-dl-p58-collmod"><span class="std std-numref">Fig. 5.7.7</span></a> shows the input panel where you can specify the collapse modes of the building.</p>
+<h2>Collapse Modes<a class="headerlink" href="#collapse-modes" title="Permalink to this headline">¶</a></h2>
+<p><code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-dl-p58-collmod</span></code> shows the input panel where you can specify the collapse modes of the building.</p>
 <div class="align-center figure" id="id7">
 <span id="fig-dl-p58-collmod"></span><img alt="../../../_images/dl_p58_collmod.png" src="../../../_images/dl_p58_collmod.png" />
-<p class="caption"><span class="caption-number">Fig. 5.7.7 </span><span class="caption-text">The Collapse Modes panel.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">The Collapse Modes panel.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -375,20 +368,20 @@
 </div></blockquote>
 </div>
 <div class="section" id="dependencies">
-<h2><span class="section-number">5.7.1.4. </span>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-right" id="id8" style="width: 400px">
 <span id="fig-dl-p58-deps"></span><img alt="../../../_images/dl_p58_deps.png" src="../../../_images/dl_p58_deps.png" />
-<p class="caption"><span class="caption-number">Fig. 5.7.8 </span><span class="caption-text">The Collapse Modes panel.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">The Collapse Modes panel.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The settings shown in the Figure serve demonstration purposes and are not the suggested inputs.</p>
 </div>
-<p><a class="reference internal" href="#fig-dl-p58-deps"><span class="std std-numref">Fig. 5.7.8</span></a> shows the fourth panel, which allows you to control the dependencies between various parts of the models.</p>
+<p><code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-dl-p58-deps</span></code> shows the fourth panel, which allows you to control the dependencies between various parts of the models.</p>
 <p>Every type of prescribed dependency assumes perfect correlation between a certain subset of the model variables and no correlation between the others. Future versions will expand on this approach by introducing more complex correlation structures.</p>
 </div>
 <div class="section" id="logical-components">
-<h2><span class="section-number">5.7.1.5. </span>Logical components<a class="headerlink" href="#logical-components" title="Permalink to this headline">¶</a></h2>
+<h2>Logical components<a class="headerlink" href="#logical-components" title="Permalink to this headline">¶</a></h2>
 <p>You can assign perfect correlation between the following logical components of the model:</p>
 <p><strong>Fragility Groups</strong></p>
 <blockquote>
@@ -412,7 +405,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="model-parameters">
-<h2><span class="section-number">5.7.1.6. </span>Model parameters<a class="headerlink" href="#model-parameters" title="Permalink to this headline">¶</a></h2>
+<h2>Model parameters<a class="headerlink" href="#model-parameters" title="Permalink to this headline">¶</a></h2>
 <p>The following model parameters can handle the assigned dependencies:</p>
 <p><strong>Component Quantities</strong></p>
 <blockquote>
@@ -484,7 +477,7 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-158130480-3', 'auto');
+    ga('create', 'UA-158130480-2', 'auto');
     ga('send', 'pageview');
     </script>
 
