@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Stochastic Ground Motions &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>5.4.1. Stochastic Ground Motions &mdash; Performance Based Engineering Application  documentation</title>
   
 
   
@@ -36,7 +36,9 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" /> 
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="5.4.2. PEER NGA" href="peerNGA.html" />
+    <link rel="prev" title="5.4. EVT: Earthquake Events" href="earthquakeEvents.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -55,7 +57,7 @@
 
           
             
-            <img src="../../../_static/WE-UQ-Logo-grey2.png" class="logo" alt="Logo"/>
+            <img src="../../../_static/PBE-Logo-grey2.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -86,13 +88,15 @@
               <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../aboutWE.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">4. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">6. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feauture Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../license.html">8. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aboutPBE.html">2. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aboutQUOFEM.html">3. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">4. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">5. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/troubleshooting.html">6. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">7. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../requirements/PBE.html">8. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">9. Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">10. Copyright and License</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -119,7 +123,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">Wind Engineering with Uncertainty Quantification</a>
+          <a href="../../../index.html">Performance Based Engineering Application</a>
         
       </nav>
 
@@ -150,7 +154,11 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
-      <li>Stochastic Ground Motions</li>
+          <li><a href="usage.html"><span class="section-number">5. </span>User Guide</a> &raquo;</li>
+        
+          <li><a href="earthquakeEvents.html"><span class="section-number">5.4. </span>EVT: Earthquake Events</a> &raquo;</li>
+        
+      <li><span class="section-number">5.4.1. </span>Stochastic Ground Motions</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -170,7 +178,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="stochastic-ground-motions">
-<h1>Stochastic Ground Motions<a class="headerlink" href="#stochastic-ground-motions" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.4.1. </span>Stochastic Ground Motions<a class="headerlink" href="#stochastic-ground-motions" title="Permalink to this headline">¶</a></h1>
 <p>This panel allows users to generate synthetic ground motions for a
 target seismic event. In order to do so, the stochastic ground motion
 model is selected from the <code class="docutils literal notranslate"><span class="pre">drop-down</span> <span class="pre">menu</span></code>, which is as shown
@@ -181,13 +189,13 @@ model selected, the user will be asked to enter values for a number of parameter
 used to generate a seismic event. For the Vlachos er al. model users is required to input the <code class="docutils literal notranslate"><span class="pre">moment</span> <span class="pre">magnitude',</span> <span class="pre">``site</span> <span class="pre">to</span> <span class="pre">rupture</span> <span class="pre">distance</span></code> and the <code class="docutils literal notranslate"><span class="pre">average</span> <span class="pre">shear</span> <span class="pre">wave</span> <span class="pre">velocity</span></code>.</p>
 <div class="align-center figure" id="id6">
 <span id="fig-stochasticvlachos-event"></span><img alt="../../../_images/stochasticVlachos.png" src="../../../_images/stochasticVlachos.png" />
-<p class="caption"><span class="caption-text">Vlachos er al. (2018) model inputs</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5.4.1 </span><span class="caption-text">Vlachos er al. (2018) model inputs</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p id="fig-stochasticdabaghi-event">For the Dabaghi &amp; Der Kiureghian model geometric directivity parameters, as shown in Cref{fig:dabaghi}, required by the Dabaghi &amp; Der Kiureghian model are described completely in Somerville et al. (1997)
 <a class="bibtex reference internal" href="#somerville1997modification" id="id5">[SSGA97]</a>.</p>
 <div class="align-center figure" id="id7">
 <img alt="../../../_images/stochasticDabaghi.png" src="../../../_images/stochasticDabaghi.png" />
-<p class="caption"><span class="caption-text">Dabaghi &amp; Der Kiureghian (2018) model inputs</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5.4.2 </span><span class="caption-text">Dabaghi &amp; Der Kiureghian (2018) model inputs</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>Additionally, users can provide a seed for either model if they desire the same
 suite of synthetic motions to be generated on multiple occasions.  If
@@ -202,8 +210,14 @@ a string in the parameter field. Please note that information for the
 inputs that are identified as random variables needs to be provided in
 the <code class="docutils literal notranslate"><span class="pre">UQ</span></code> tab.</p>
 <p id="bibtex-bibliography-common/user_manual/usage/stochasticGroundMotion-0"><dl class="citation">
+<dt class="bibtex label" id="aboshosha2015"><span class="brackets">AEBED15</span></dt>
+<dd><p>Haitham Aboshosha, Ahmed Elshaer, Girma T Bitsuamlak, and Ashraf El Damatty. Consistent inflow turbulence generator for les evaluation of wind-induced responses for tall buildings. <em>Journal of Wind Engineering and Industrial Aerodynamics</em>, 142:198–216, 2015.</p>
+</dd>
 <dt class="bibtex label" id="applied-technology-council-atc-fema-2012"><span class="brackets">ATC12</span></dt>
 <dd><p>Applied Technology Council ATC, editor. <em>FEMA P58: Seismic Performance Assessment of Buildings - Methodology</em>. Volume 1. Federal Emergency Management Agency, 1 edition, 2012.</p>
+</dd>
+<dt class="bibtex label" id="castro2017"><span class="brackets">CPMS17</span></dt>
+<dd><p>Hugo G Castro, Rodrigo R Paz, Javier L Mroginski, and Mario A Storti. Evaluation of the proper coherence representation in random flow generation based methods. <em>Journal of Wind Engineering and Industrial Aerodynamics</em>, 168:211–227, 2017.</p>
 </dd>
 <dt class="bibtex label" id="dabaghi2017stochastic"><span class="brackets"><a class="fn-backref" href="#id3">DDK17</a></span></dt>
 <dd><p>Mayssa Dabaghi and Armen Der Kiureghian. Stochastic model for simulation of near-fault ground motions. <em>Earthquake Engineering &amp; Structural Dynamics</em>, 46(6):963–984, 2017. URL: <a class="reference external" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.2839">https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.2839</a>, <a class="reference external" href="https://arxiv.org/abs/https://onlinelibrary.wiley.com/doi/pdf/10.1002/eqe.2839">arXiv:https://onlinelibrary.wiley.com/doi/pdf/10.1002/eqe.2839</a>, <a class="reference external" href="https://doi.org/10.1002/eqe.2839">doi:10.1002/eqe.2839</a>.</p>
@@ -217,11 +231,50 @@ the <code class="docutils literal notranslate"><span class="pre">UQ</span></code
 <dt class="bibtex label" id="federal-emergency-management-agency-fema-hazus-2018-2"><span class="brackets">FEM18</span></dt>
 <dd><p>Federal Emergency Management Agency FEMA, editor. <em>Hazus - MH 2.1 Earthquake Model Technical Manual</em>. Federal Emergency Management Agency, 2018.</p>
 </dd>
+<dt class="bibtex label" id="hoshiya1972"><span class="brackets">Hos72</span></dt>
+<dd><p>Masaru Hoshiya. Simulation of multi-correlated random processes and application to structural vibration problems. In <em>Proceedings of the Japan Society of Civil Engineers</em>, number 204, 121–128. Japan Society of Civil Engineers, 1972.</p>
+</dd>
+<dt class="bibtex label" id="huang2010"><span class="brackets">HLW10</span></dt>
+<dd><p>SH Huang, QS Li, and JR Wu. A general inflow turbulence generator for large eddy simulation. <em>Journal of Wind Engineering and Industrial Aerodynamics</em>, 98(10-11):600–617, 2010.</p>
+</dd>
+<dt class="bibtex label" id="jarrin2006"><span class="brackets">JBLP06</span></dt>
+<dd><p>Nicolas Jarrin, Sofiane Benhamadouche, Dominique Laurence, and Robert Prosser. A synthetic-eddy-method for generating inflow conditions for large-eddy simulations. <em>International Journal of Heat and Fluid Flow</em>, 27(4):585–593, 2006.</p>
+</dd>
+<dt class="bibtex label" id="kim2013"><span class="brackets">KCX13</span></dt>
+<dd><p>Yusik Kim, Ian P Castro, and Zheng-Tong Xie. Divergence-free turbulence inflow conditions for large-eddy simulations with incompressible flow solvers. <em>Computers &amp; Fluids</em>, 84:56–68, 2013.</p>
+</dd>
+<dt class="bibtex label" id="klein2003"><span class="brackets">KSJ03</span></dt>
+<dd><p>M. Klein, A. Sadiki, and J. Janicka. A digital filter based generation of inflow data for spatially developing direct numerical or large eddy simulations. <em>Journal of Computational Physics</em>, 186(2):652–665, 2003.</p>
+</dd>
+<dt class="bibtex label" id="kraichnan1970"><span class="brackets">Kra70</span></dt>
+<dd><p>Robert H Kraichnan. Diffusion by a random velocity field. <em>The physics of fluids</em>, 13(1):22–31, 1970.</p>
+</dd>
+<dt class="bibtex label" id="lund1998"><span class="brackets">LWS98</span></dt>
+<dd><p>Thomas S Lund, Xiaohua Wu, and Kyle D Squires. Generation of turbulent inflow data for spatially-developing boundary layer simulations. <em>Journal of computational physics</em>, 140(2):233–258, 1998.</p>
+</dd>
+<dt class="bibtex label" id="poletto2013"><span class="brackets">PCR13</span></dt>
+<dd><p>R Poletto, T Craft, and A Revell. A new divergence free synthetic eddy method for the reproduction of inlet flow conditions for les. <em>Flow, turbulence and combustion</em>, 91(3):519–539, 2013.</p>
+</dd>
+<dt class="bibtex label" id="shinozuka1972"><span class="brackets">SJ72</span></dt>
+<dd><p>Masanobu Shinozuka and C-M Jan. Digital simulation of random processes and its applications. <em>Journal of sound and vibration</em>, 25(1):111–128, 1972.</p>
+</dd>
+<dt class="bibtex label" id="smirnov2001"><span class="brackets">SSC01</span></dt>
+<dd><p>A Smirnov, S Shi, and I Celik. Random flow generation technique for large eddy simulations and particle-dynamics modeling. <em>Journal of fluids engineering</em>, 123(2):359–371, 2001.</p>
+</dd>
 <dt class="bibtex label" id="somerville1997modification"><span class="brackets"><a class="fn-backref" href="#id5">SSGA97</a></span></dt>
 <dd><p>Paul G. Somerville, Nancy F. Smith, Robert W. Graves, and Norman A. Abrahamson. Modification of Empirical Strong Ground Motion Attenuation Relations to Include the Amplitude and Duration Effects of Rupture Directivity. <em>Seismological Research Letters</em>, 68(1):199–222, 01 1997. URL: <a class="reference external" href="https://doi.org/10.1785/gssrl.68.1.199">https://doi.org/10.1785/gssrl.68.1.199</a>, <a class="reference external" href="https://arxiv.org/abs/https://pubs.geoscienceworld.org/srl/article-pdf/68/1/199/2753665/srl068001\_0199.pdf">arXiv:https://pubs.geoscienceworld.org/srl/article-pdf/68/1/199/2753665/srl068001\_0199.pdf</a>, <a class="reference external" href="https://doi.org/10.1785/gssrl.68.1.199">doi:10.1785/gssrl.68.1.199</a>.</p>
 </dd>
 <dt class="bibtex label" id="vlachos2018predictive"><span class="brackets"><a class="fn-backref" href="#id1">VPD18</a></span></dt>
 <dd><p>Christos Vlachos, Konstantinos G. Papakonstantinou, and George Deodatis. Predictive model for site specific simulation of ground motions based on earthquake scenarios. <em>Earthquake Engineering &amp; Structural Dynamics</em>, 47(1):195–218, 2018. URL: <a class="reference external" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.2948">https://onlinelibrary.wiley.com/doi/abs/10.1002/eqe.2948</a>, <a class="reference external" href="https://doi.org/10.1002/eqe.2948">doi:10.1002/eqe.2948</a>.</p>
+</dd>
+<dt class="bibtex label" id="wu2017"><span class="brackets">Wu17</span></dt>
+<dd><p>Xiaohua Wu. Inflow turbulence generation methods. <em>Annual Review of Fluid Mechanics</em>, 49:23–49, 2017.</p>
+</dd>
+<dt class="bibtex label" id="xie2008"><span class="brackets">XC08</span></dt>
+<dd><p>Zheng-Tong Xie and Ian P Castro. Efficient generation of inflow conditions for large eddy simulation of street-scale flows. <em>Flow, turbulence and combustion</em>, 81(3):449–470, 2008.</p>
+</dd>
+<dt class="bibtex label" id="yu2014"><span class="brackets">YB14</span></dt>
+<dd><p>Rixin Yu and Xue-Song Bai. A fully divergence-free method for generation of inhomogeneous and anisotropic turbulence with large spatial variation. <em>Journal of Computational Physics</em>, 256:234–253, 2014.</p>
 </dd>
 </dl>
 </p>
@@ -271,7 +324,7 @@ the <code class="docutils literal notranslate"><span class="pre">UQ</span></code
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-158130480-2', 'auto');
+    ga('create', 'UA-158130480-3', 'auto');
     ga('send', 'pageview');
     </script>
 

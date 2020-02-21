@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>RES: Results &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>5.8. RES: Results &mdash; Performance Based Engineering Application  documentation</title>
   
 
   
@@ -36,7 +36,9 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" /> 
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="6. Troubleshooting" href="../troubleshooting/troubleshooting.html" />
+    <link rel="prev" title="5.7.2. HAZUS MH" href="HAZUS.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -55,7 +57,7 @@
 
           
             
-            <img src="../../../_static/WE-UQ-Logo-grey2.png" class="logo" alt="Logo"/>
+            <img src="../../../_static/PBE-Logo-grey2.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -84,15 +86,27 @@
             
             
               <p class="caption"><span class="caption-text">User Manual</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../aboutWE.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">4. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">6. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feauture Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../license.html">8. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aboutPBE.html">2. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aboutQUOFEM.html">3. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">4. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="usage.html">5. User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="UQ.html">5.1. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GI.html">5.2. GI: General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SIM.html">5.3. SIM: Structural Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="earthquakeEvents.html">5.4. EVT: Earthquake Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FEM.html">5.5. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RV.html">5.6. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DL.html">5.7. DL: Damage and Loss Model</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.8. RES: Results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/troubleshooting.html">6. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">7. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../requirements/PBE.html">8. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">9. Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">10. Copyright and License</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -119,7 +133,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">Wind Engineering with Uncertainty Quantification</a>
+          <a href="../../../index.html">Performance Based Engineering Application</a>
         
       </nav>
 
@@ -150,7 +164,9 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
-      <li>RES: Results</li>
+          <li><a href="usage.html"><span class="section-number">5. </span>User Guide</a> &raquo;</li>
+        
+      <li><span class="section-number">5.8. </span>RES: Results</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -170,14 +186,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="res-results">
-<span id="respbe"></span><h1>RES: Results<a class="headerlink" href="#res-results" title="Permalink to this headline">¶</a></h1>
-<p>After the user hits the <code class="docutils literal notranslate"><span class="pre">Run</span></code> button, the simulation of building response and the loss assessment is performed automatically in the background. Assuming that the calculations were successful, the WE-UQ app application switches to the RES panel to present the results. A successful run or download of a job that ran successfully will result in two tabbed widgets being displayed in this panel.</p>
+<span id="respbe"></span><h1><span class="section-number">5.8. </span>RES: Results<a class="headerlink" href="#res-results" title="Permalink to this headline">¶</a></h1>
+<p>After the user hits the <code class="docutils literal notranslate"><span class="pre">Run</span></code> button, the simulation of building response and the loss assessment is performed automatically in the background. Assuming that the calculations were successful, the PBE app application switches to the RES panel to present the results. A successful run or download of a job that ran successfully will result in two tabbed widgets being displayed in this panel.</p>
 <p>The first panel <code class="xref std std-numref docutils literal notranslate"><span class="pre">figResultsSumaryPBE</span></code> shows summary statistics: mean, standard deviation, and several important percentiles of the Decision Variables.</p>
 <div class="align-center figure" id="id1">
 <span id="figresultssummarypbe"></span><img alt="../../../_images/resultsSummary_PBE.png" src="../../../_images/resultsSummary_PBE.png" />
-<p class="caption"><span class="caption-text">Results Summary</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5.8.1 </span><span class="caption-text">Results Summary</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>The second panel presents results for each realization in a plot and in tabular format. By selecting various columns with the left and right mouse buttons in the table below the graphic, the information in the plot is updated <code class="xref std std-numref docutils literal notranslate"><span class="pre">resultsData_PBE</span></code>. The plot is controlled as follows:</p>
+<p>The second panel presents results for each realization in a plot and in tabular format. By selecting various columns with the left and right mouse buttons in the table below the graphic, the information in the plot is updated <a class="reference internal" href="#resultsdata-pbe"><span class="std std-numref">Fig. 5.8.2</span></a>. The plot is controlled as follows:</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p>Selection with the left mouse button identifies the variable on the Y axis.</p></li>
@@ -187,7 +203,7 @@
 </div></blockquote>
 <div class="align-center figure" id="id2">
 <span id="resultsdata-pbe"></span><img alt="../../../_images/resultsData_PBE.png" src="../../../_images/resultsData_PBE.png" />
-<p class="caption"><span class="caption-text">Results presented graphically and in tabular form</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5.8.2 </span><span class="caption-text">Results presented graphically and in tabular form</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>The columns in the table typically identify the Decision Variable category (e.g. reconstruction, injuries, etc.) and a variable within that category preceded by a forward slash (e.g., injuries/fatalities). Boolean variables (e.g,. collapsed?, red_tagged?) are used to describe the occurrence of events. The reconstruction/time_impractical? and cost_impractical? variables identify realizations where reconstruction time or cost would exceed the replacement time or cost, respectively. In such cases, replacement is assumed instead of reconstruction. The minimum (i.e., based on parallel work) reconstruction time is used when making this decision.</p>
 <p>Besides the results displayed in the application, advanced users can find detailed information about EDPs, damage, and decision variables in <strong>csv</strong> files in the Working directory in the <strong>tmp.SimCenter/templatedir</strong> folder.</p>
@@ -237,7 +253,7 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-158130480-2', 'auto');
+    ga('create', 'UA-158130480-3', 'auto');
     ga('send', 'pageview');
     </script>
 

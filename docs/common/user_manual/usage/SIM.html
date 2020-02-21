@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.3. SIM: Structural Model &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>5.3. SIM: Structural Model &mdash; Performance Based Engineering Application  documentation</title>
   
 
   
@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="4.4. EVT: Wind Events" href="WindEvents.html" />
-    <link rel="prev" title="4.2. GI: General Information" href="GI.html" /> 
+    <link rel="next" title="5.4. EVT: Earthquake Events" href="earthquakeEvents.html" />
+    <link rel="prev" title="5.2. GI: General Information" href="GI.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -57,7 +57,7 @@
 
           
             
-            <img src="../../../_static/WE-UQ-Logo-grey2.png" class="logo" alt="Logo"/>
+            <img src="../../../_static/PBE-Logo-grey2.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -86,29 +86,17 @@
             
             
               <p class="caption"><span class="caption-text">User Manual</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../aboutWE.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">3. Installation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="usage.html">4. User Guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="UQ.html">4.1. UQ: Uncertainty Quantification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GI.html">4.2. GI: General Information</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.3. SIM: Structural Model</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#multiple-degrees-of-freedom-mdof">4.3.1. Multiple Degrees of Freedom (MDOF)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">4.3.2. OpenSees</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="WindEvents.html">4.4. EVT: Wind Events</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FEM.html">4.5. FEM: Finite Element Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EDP.html">4.6. EDP: Demand Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RV.html">4.7. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resEE.html">4.8. RES: Results</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">6. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feauture Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../license.html">8. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aboutPBE.html">2. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aboutQUOFEM.html">3. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">4. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">5. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/troubleshooting.html">6. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">7. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../requirements/PBE.html">8. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">9. Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">10. Copyright and License</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -135,7 +123,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">Wind Engineering with Uncertainty Quantification</a>
+          <a href="../../../index.html">Performance Based Engineering Application</a>
         
       </nav>
 
@@ -166,9 +154,9 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="usage.html"><span class="section-number">4. </span>User Guide</a> &raquo;</li>
+          <li><a href="usage.html"><span class="section-number">5. </span>User Guide</a> &raquo;</li>
         
-      <li><span class="section-number">4.3. </span>SIM: Structural Model</li>
+      <li><span class="section-number">5.3. </span>SIM: Structural Model</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -188,7 +176,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="sim-structural-model">
-<h1><span class="section-number">4.3. </span>SIM: Structural Model<a class="headerlink" href="#sim-structural-model" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5.3. </span>SIM: Structural Model<a class="headerlink" href="#sim-structural-model" title="Permalink to this headline">¶</a></h1>
 <p>The user here defines the structural system of the building. The  structural system is the part of the building provided to resist the gravity loads and those loads arising from the natural hazard. There are a number of backend applications provided for this part of the workflow, each responsible for defining the structural analysis model. The user can select the application to use from the drop-down menu at the top of this panel. As the user switches between applications, the input panel changes to reflect the inputs each particular application requires. At present, there are two backend applications available.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -197,8 +185,8 @@
 </ul>
 </div>
 <div class="section" id="multiple-degrees-of-freedom-mdof">
-<h2><a class="toc-backref" href="#id3"><span class="section-number">4.3.1. </span>Multiple Degrees of Freedom (MDOF)</a><a class="headerlink" href="#multiple-degrees-of-freedom-mdof" title="Permalink to this headline">¶</a></h2>
-<p>This panel is provided for users to quickly create simple shear models of a building. The panel, as shown in <a class="reference internal" href="#fig-mdof"><span class="std std-numref">Fig. 4.3.1</span></a> is divided into 3 frames:</p>
+<h2><a class="toc-backref" href="#id3"><span class="section-number">5.3.1. </span>Multiple Degrees of Freedom (MDOF)</a><a class="headerlink" href="#multiple-degrees-of-freedom-mdof" title="Permalink to this headline">¶</a></h2>
+<p>This panel is provided for users to quickly create simple shear models of a building. The panel, as shown in <a class="reference internal" href="#fig-mdof"><span class="std std-numref">Fig. 5.3.1</span></a> is divided into 3 frames:</p>
 <ol class="arabic simple">
 <li><p>The top left frame allows the user to specify the number of stories and properties that are constant for every floor and story in the building. The following properties are available: floor weight, story height, torsional stiffness, initial stiffness, yield strength, and hardening ratio for each direction in each story. The user has the option of specifying values for eccentricty of mass in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> directions, and eccentricities for the location of the response quantaties. Here, the one and two directions are orthogonal <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> axes in plan view.</p></li>
 <li><p>The lower left frame allows the user to override the structural parameters above for individual floors and stories.</p></li>
@@ -206,7 +194,7 @@
 </ol>
 <div class="align-center figure" id="id2">
 <span id="fig-mdof"></span><img alt="../../../_images/mdof_general.png" src="../../../_images/mdof_general.png" />
-<p class="caption"><span class="caption-number">Fig. 4.3.1 </span><span class="caption-text">Multiple Degrees of Freedom (MDOF)</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5.3.1 </span><span class="caption-text">Multiple Degrees of Freedom (MDOF)</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>Random Variables: Random Variables can be created by the user if they enter a valid string instead of a number in the entry fields for any entry except for the <em>Number of floors</em>. The variable name entered will appear as a Random Variable in the UQ panel; it is ther the user must specify the distribution associated with the Random Variable.</p>
 <blockquote>
@@ -218,8 +206,8 @@
 </div>
 </div>
 <div class="section" id="id1">
-<h2><a class="toc-backref" href="#id4"><span class="section-number">4.3.2. </span>OpenSees</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>This panel is for users who have an existing <code class="docutils literal notranslate"><span class="pre">OpenSees</span></code> model of a building that performs a gravity analysis and now they wish to subject that building model to one of the <code class="docutils literal notranslate"><span class="pre">EVT</span></code> options provided. The input panel for this option is shown in <a class="reference internal" href="#fig-figure3"><span class="std std-numref">Fig. 4.3.2</span></a>. Users need to provide three pieces of information:</p>
+<h2><a class="toc-backref" href="#id4"><span class="section-number">5.3.2. </span>OpenSees</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>This panel is for users who have an existing <code class="docutils literal notranslate"><span class="pre">OpenSees</span></code> model of a building that performs a gravity analysis and now they wish to subject that building model to one of the <code class="docutils literal notranslate"><span class="pre">EVT</span></code> options provided. The input panel for this option is shown in <a class="reference internal" href="#fig-figure3"><span class="std std-numref">Fig. 5.3.2</span></a>. Users need to provide three pieces of information:</p>
 <ol class="arabic simple">
 <li><p>Main OpenSees Script: The main script that contains the building model. This script should build a model and perform any gravity analysis of the building that is required before the event is applied.</p></li>
 <li><p>Response Nodes: A list of node numbers that define a column line of interest for which the responses will be determined. The column nodes should be in order from ground floor to roof. The EDP workflow application <code class="docutils literal notranslate"><span class="pre">\softwareSwitch{PBE}{}{,</span> <span class="pre">described</span> <span class="pre">in</span> <span class="pre">`EDP:</span> <span class="pre">To</span> <span class="pre">be</span> <span class="pre">added`_,}</span></code> uses this information to determine nodes at which displacement, acceleration, and story drifts are calculated.</p></li>
@@ -229,7 +217,7 @@
 <div class="align-center figure" id="fig-figure3">
 <img alt="../../../_images/openSees_gen.png" src="../../../_images/openSees_gen.png" />
 </div>
-<p>Random Variables: In <code class="docutils literal notranslate"><span class="pre">OpenSees</span></code> there is an option to set variables to have certain values using the <code class="docutils literal notranslate"><span class="pre">pset</span></code> command, e.g <code class="docutils literal notranslate"><span class="pre">pset</span> <span class="pre">a</span> <span class="pre">5.0</span></code> will set the variable a to have a value 5 in the <code class="docutils literal notranslate"><span class="pre">OpenSees</span></code> script. In Wind Engineering Application with Uncertainty Quantification, any variable found in the main script to be set using the <code class="docutils literal notranslate"><span class="pre">pset</span></code> command will be assumed to be a Random Variable. As such, when a new main script is loaded all variables set with <code class="docutils literal notranslate"><span class="pre">pset</span></code> will appear as Random Variables in the UQ panel.</p>
+<p>Random Variables: In <code class="docutils literal notranslate"><span class="pre">OpenSees</span></code> there is an option to set variables to have certain values using the <code class="docutils literal notranslate"><span class="pre">pset</span></code> command, e.g <code class="docutils literal notranslate"><span class="pre">pset</span> <span class="pre">a</span> <span class="pre">5.0</span></code> will set the variable a to have a value 5 in the <code class="docutils literal notranslate"><span class="pre">OpenSees</span></code> script. In Performance Based Engineering Application, any variable found in the main script to be set using the <code class="docutils literal notranslate"><span class="pre">pset</span></code> command will be assumed to be a Random Variable. As such, when a new main script is loaded all variables set with <code class="docutils literal notranslate"><span class="pre">pset</span></code> will appear as Random Variables in the UQ panel.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><code class="docutils literal notranslate"><span class="pre">`Random</span> <span class="pre">Variables`</span></code>: In <code class="docutils literal notranslate"><span class="pre">OpenSees</span></code> there is an option to set variables to have certain values using the <code class="docutils literal notranslate"><span class="pre">pset</span></code> command, e.g <code class="docutils literal notranslate"><span class="pre">pset</span> <span class="pre">a</span> <span class="pre">5.0</span></code> will set the variable a to have a value 5 in the <code class="docutils literal notranslate"><span class="pre">OpenSees</span></code> script. In <code class="docutils literal notranslate"><span class="pre">\getsoftwarename{}</span></code>, any variable found in the main script to be set using the <code class="docutils literal notranslate"><span class="pre">pset</span></code> command will be assumed to be a Random Variable. As such, when a new main script is loaded all variables set with <code class="docutils literal notranslate"><span class="pre">pset</span></code> will appear as Random Variables in the UQ panel.</p>
@@ -281,7 +269,7 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-158130480-2', 'auto');
+    ga('create', 'UA-158130480-3', 'auto');
     ga('send', 'pageview');
     </script>
 

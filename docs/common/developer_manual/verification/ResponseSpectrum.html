@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Response to Stochastic Ground Motion &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>Response to Stochastic Ground Motion &mdash; Performance Based Engineering Application  documentation</title>
   
 
   
@@ -55,7 +55,7 @@
 
           
             
-            <img src="../../../_static/WE-UQ-Logo-grey2.png" class="logo" alt="Logo"/>
+            <img src="../../../_static/PBE-Logo-grey2.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -86,13 +86,15 @@
               <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../aboutWE.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/installation/installation.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/usage.html">4. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/troubleshooting/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/examples/examples.html">6. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feauture Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../license.html">8. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aboutPBE.html">2. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aboutQUOFEM.html">3. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/installation/installation.html">4. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/usage.html">5. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/troubleshooting/troubleshooting.html">6. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/examples/examples.html">7. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../requirements/PBE.html">8. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">9. Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">10. Copyright and License</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -119,7 +121,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">Wind Engineering with Uncertainty Quantification</a>
+          <a href="../../../index.html">Performance Based Engineering Application</a>
         
       </nav>
 
@@ -171,12 +173,12 @@
             
   <div class="section" id="response-to-stochastic-ground-motion">
 <span id="lblresponsespectrum"></span><h1>Response to Stochastic Ground Motion<a class="headerlink" href="#response-to-stochastic-ground-motion" title="Permalink to this headline">¶</a></h1>
-<p>The purpose of this analysis is to verify that WE-UQ app is able
+<p>The purpose of this analysis is to verify that PBE app is able
 to reproduce the correct pseudo-acceleration response spectrum when
 using synthetic acceleration time histories generated using the
 stochastic ground motion model option as the seismic event. The maximum
 pseudo-acceleration for a single-degree-of-freedom system with varying
-natural frequencies calculated by WE-UQ app is compared to the
+natural frequencies calculated by PBE app is compared to the
 values predicted by <a class="reference external" href="https://github.com/NHERI-SimCenter/smelt">smelt</a> as well as the geometric mean
 of the four NGA-West2 ground motion prediction equations (GPMEs)
 that account for soil sites. The scenario considered in this verification
@@ -184,17 +186,17 @@ example is an event with a Moment Magnitude (<span class="math notranslate nohig
 rupture distance (<span class="math notranslate nohighlight">\(R_{rupt}\)</span>) of 20 km, and average shear-wave velocity in the top
 30 m of soil (<span class="math notranslate nohighlight">\(V_{s30}\)</span>) equal to 400 m/s.</p>
 <p>The single-degree-of-freedom system was input using the MDOF option as
-the Building Model Input in WE-UQ app. Here, the mass was set to
+the Building Model Input in PBE app. Here, the mass was set to
 unity and the damping ratio to 5%. The story stiffness was modified
 to set the natural frequency of the system in order to calculate the
 response spectrum. The structural response was calculated for 10
 sample synthetic acceleration time histories for each structural
 period and compared to those from <a class="reference external" href="https://github.com/NHERI-SimCenter/smelt">smelt</a> and the GMPEs, as
 shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figStochasticValidation</span></code>. As can be seen in this
-figure, the spectral response calculated by WE-UQ app falls
+figure, the spectral response calculated by PBE app falls
 within the mean plus/minus one sigma bounds of the GMPEs and
 <a class="reference external" href="https://github.com/NHERI-SimCenter/smelt">smelt</a> while tending toward the mean. This produces the
-expected result as WE-UQ app is calling <a class="reference external" href="https://github.com/NHERI-SimCenter/smelt">smelt</a> in the
+expected result as PBE app is calling <a class="reference external" href="https://github.com/NHERI-SimCenter/smelt">smelt</a> in the
 backend to generate the synthetic motions. The full validation of
 <a class="reference external" href="https://github.com/NHERI-SimCenter/smelt">smelt</a> in implementing the predictive stochastic model
 proposed by Vlachos et al. (2018) cite{vlachos2018predictive} can be
@@ -205,7 +207,7 @@ found in the <a class="reference external" href="https://github.com/NHERI-SimCen
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <a class="reference external" href="https://github.com/NHERI-SimCenter/smelt">smelt</a> and GMPE spectra show the mean and mean plus/minus one logarithmic standard deviation. The GMPE spectra are based on the geometric mean of the four NGA-West2 models that account for site soil conditions. The <a class="reference external" href="https://github.com/NHERI-SimCenter/smelt">smelt</a> spectra are based on an ensemble of 1000 synthetic ground motions. WE-UQ app response values are based on the mean pseudo-acceleration for 10 synthetic ground motion samples per period, <span class="math notranslate nohighlight">\(T_n\)</span>.</p>
+<p>The <a class="reference external" href="https://github.com/NHERI-SimCenter/smelt">smelt</a> and GMPE spectra show the mean and mean plus/minus one logarithmic standard deviation. The GMPE spectra are based on the geometric mean of the four NGA-West2 models that account for site soil conditions. The <a class="reference external" href="https://github.com/NHERI-SimCenter/smelt">smelt</a> spectra are based on an ensemble of 1000 synthetic ground motions. PBE app response values are based on the mean pseudo-acceleration for 10 synthetic ground motion samples per period, <span class="math notranslate nohighlight">\(T_n\)</span>.</p>
 </div>
 </div>
 
@@ -253,7 +255,7 @@ found in the <a class="reference external" href="https://github.com/NHERI-SimCen
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-158130480-2', 'auto');
+    ga('create', 'UA-158130480-3', 'auto');
     ga('send', 'pageview');
     </script>
 
