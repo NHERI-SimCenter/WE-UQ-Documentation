@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="8. Bugs &amp; Feauture Requests" href="../bugs.html" />
-    <link rel="prev" title="6. Examples" href="../user_manual/examples/examples.html" /> 
+    <link rel="next" title="8. Bugs &amp; Feature Requests" href="../user_manual/bugs.html" />
+    <link rel="prev" title="6. Examples" href="../user_manual/examples/desktop/examples.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,11 +88,11 @@
               <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../user_manual/ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../aboutWE.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_manual/installation/installation.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_manual/usage/usage.html">4. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_manual/troubleshooting/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../user_manual/examples/examples.html">6. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/about/WEUQ/about.html">2. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/installation/desktop/installation.html">3. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/usage/desktop/usage.html">4. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/examples/desktop/examples.html">6. Examples</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">7. Requirements</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#general-requirements">7.1. General Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#loading-requirements">7.2. Loading Requirements</a></li>
@@ -101,20 +101,20 @@
 <li class="toctree-l2"><a class="reference internal" href="#analysis-requirements">7.5. Analysis Requirements</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../bugs.html">8. Bugs &amp; Feauture Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../license.html">9. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/bugs.html">8. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/license.html">9. Copyright and License</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../technical_manual/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../developer_manual/how_to_build/how_to_build.html">1. How to Build</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developer_manual/architecture/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developer_manual/how_to_extend/how_to_extend.html">3. How to Extend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developer_manual/verification/verification.html">4. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../developer_manual/coding_style/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
 </ul>
 
             
@@ -401,30 +401,36 @@
 <td><p>1.1</p></td>
 </tr>
 <tr class="row-odd"><td><p>WL2.3</p></td>
-<td><p>Coupled OpenFOAM CFD model with nonlinear FEM code for building response</p></td>
+<td><p>Coupled OpenFOAM CFD model with linear FEM code for building response</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>WL3</p></td>
+<tr class="row-even"><td><p>WL2.4</p></td>
+<td><p>Inflow Conditions for non-synoptic winds</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>WL3</p></td>
 <td><p>Quantification of Effects of Wind Borne Debris</p></td>
 <td><p>GC</p></td>
 <td><p>D</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>WL4</p></td>
+<tr class="row-even"><td><p>WL4</p></td>
 <td><p>Application to utilize GIS and online to account for wind speed given local terrain, topography and nearby buildings</p></td>
 <td><p>GC</p></td>
 <td><p>D</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>WL5</p></td>
+<tr class="row-odd"><td><p>WL5</p></td>
 <td><p>Ability to utilize synthetic wind loading algorithms</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td><p>1.0</p></td>
 </tr>
-<tr class="row-odd"><td><p>WL5.1</p></td>
+<tr class="row-even"><td><p>WL5.1</p></td>
 <td><p>per Wittig and Sinha</p></td>
 <td><p>SP</p></td>
 <td><p>D</p></td>
@@ -785,6 +791,12 @@
 <td><p>Ability to run for more than 60hours at DesignSafe</p></td>
 <td><p>UF</p></td>
 <td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>BA11</p></td>
+<td><p>Ability to specify number of iterations in convergence test</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
 <td></td>
 </tr>
 </tbody>
