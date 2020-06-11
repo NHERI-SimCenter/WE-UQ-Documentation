@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1.1. Damping Options &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>1.2. Damping Options &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="1.2. Scaling Wind Tunnel Data" href="WEUQ/scalingWindTunnelData.html" />
-    <link rel="prev" title="1. Technical Manual" href="technical_manual.html" /> 
+    <link rel="next" title="1.3. Scaling Wind Tunnel Data" href="WEUQ/scalingWindTunnelData.html" />
+    <link rel="prev" title="1.1. Dakota Methods" href="uqTechnical.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -100,9 +100,10 @@
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="technical_manual.html">1. Technical Manual</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">1.1. Damping Options</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WEUQ/scalingWindTunnelData.html">1.2. Scaling Wind Tunnel Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WEUQ/TinF.html">1.3. Turbulence Inflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uqTechnical.html">1.1. Dakota Methods</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.2. Damping Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEUQ/scalingWindTunnelData.html">1.3. Scaling Wind Tunnel Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WEUQ/TinF.html">1.4. Turbulence Inflow</a></li>
 </ul>
 </li>
 </ul>
@@ -160,7 +161,7 @@
         
           <li><a href="technical_manual.html"><span class="section-number">1. </span>Technical Manual</a> &raquo;</li>
         
-      <li><span class="section-number">1.1. </span>Damping Options</li>
+      <li><span class="section-number">1.2. </span>Damping Options</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -180,37 +181,37 @@
            <div itemprop="articleBody">
             
   <div class="section" id="damping-options">
-<h1><span class="section-number">1.1. </span>Damping Options<a class="headerlink" href="#damping-options" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1.2. </span>Damping Options<a class="headerlink" href="#damping-options" title="Permalink to this headline">¶</a></h1>
 <p>The standard equations that are solved in the nonlinear analysis of structures subjected to dynamic forces are:</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-damping-0">
-<span class="eqno">(1.1.1)<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-0" title="Permalink to this equation">¶</a></span>\[M \ddot{U}(t) + C \dot{U}(t)  + Fs(U(t)) = P(t)\]</div>
-<p>where <span class="math notranslate nohighlight">\(U(t), \dot{U}(t), \ddot{U}(t)\)</span> are the vectors of displacements, velocities, and accelerations for the degrees of freedom, <span class="math notranslate nohighlight">\(M\)</span> and <span class="math notranslate nohighlight">\(C\)</span> are the mass and damping matrices, respectively, and the vector <span class="math notranslate nohighlight">\(Fs(U)\)</span> represents the nonlinear relation between resisting forces and deformations, which includes both material and geometric nonlinearities, and <span class="math notranslate nohighlight">\(P(t)\)</span> the time-varing applied load due to the event of interest.</p>
-<p>Energy is dissipated by the structure as it deforms, which is why it to come to rest when the force is removed. The <span class="math notranslate nohighlight">\(Fs(U(t))\)</span> term captures the <strong>hysteretic</strong> energy dissipated through the nonlinear behaviour of the structural members. The <span class="math notranslate nohighlight">\(C \dot{U}(t)\)</span> term, the <strong>viscous</strong> damping term, attempts to capture energy dissipated through other  mechanisms present in the structure, e.g. thermal effects from repeated elastic straining of structural materials, repeated straining of nonstructural elements—partition walls, mechanical equipment, fire proofing, and so on—friction at steel connections, opening and closing of microcracks in concrete, friction between the structure itself and nonstructural elements, and other mechanisms, some of which are even difficult to identify. Damping for such is often quantified in terms of <strong>modal</strong> damping ratios, and are typically of the order of 1% (steel buildings) to 5% (concrete buildings). These the values have been obtained from field testing and system identification, albeit they have mostly been obtained from buildings undergoing low levels of vibration.</p>
-<p>It is the formulation of the <span class="math notranslate nohighlight">\(C\)</span> matrix that is of interest here. There are two damping options presented to the user when during intputs to the <span class="xref std std-ref">FEM</span>: 1) Rayleigh Damping Options and 2) Modal Damping options. This is a brief overview of the theory behind both.</p>
+<span class="eqno">(1.2.1)<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-0" title="Permalink to this equation">¶</a></span>\[M \ddot{U}(t) + C \dot{U}(t)  + Fs(U(t)) = P(t)\]</div>
+<p>where <span class="math notranslate nohighlight">\(U(t), \dot{U}(t), \ddot{U}(t)\)</span> are the vectors of displacements, velocities, and accelerations for the degrees of freedom, <span class="math notranslate nohighlight">\(M\)</span> and <span class="math notranslate nohighlight">\(C\)</span> are the mass and damping matrices, respectively, and the vector <span class="math notranslate nohighlight">\(Fs(U)\)</span> represents the nonlinear relation between resisting forces and deformations, which includes both material and geometric nonlinearities, and <span class="math notranslate nohighlight">\(P(t)\)</span> the time-varying applied load due to the event of interest.</p>
+<p>Energy is dissipated by the structure as it deforms, which is why it to come to rest when the force is removed. The <span class="math notranslate nohighlight">\(Fs(U(t))\)</span> term captures the <strong>hysteretic</strong> energy dissipated through the nonlinear behavior of the structural members. The <span class="math notranslate nohighlight">\(C \dot{U}(t)\)</span> term, the <strong>viscous</strong> damping term, attempts to capture energy dissipated through other  mechanisms present in the structure, e.g. thermal effects from repeated elastic straining of structural materials, repeated straining of nonstructural elements—partition walls, mechanical equipment, fire proofing, and so on—friction at steel connections, opening and closing of microcracks in concrete, friction between the structure itself and nonstructural elements, and other mechanisms, some of which are even difficult to identify. Damping for such is often quantified in terms of <strong>modal</strong> damping ratios, and are typically of the order of 1% (steel buildings) to 5% (concrete buildings). These the values have been obtained from field testing and system identification, albeit they have mostly been obtained from buildings undergoing low levels of vibration.</p>
+<p>It is the formulation of the <span class="math notranslate nohighlight">\(C\)</span> matrix that is of interest here. There are two damping options presented to the user when during inputs to the <span class="xref std std-ref">FEM</span>: 1) Rayleigh Damping Options and 2) Modal Damping options. This is a brief overview of the theory behind both.</p>
 <ol class="arabic simple">
 <li><p>Rayleigh Damping</p></li>
 </ol>
 <p>A classical damping matrix can be assembled as a linear combination of the mass and stiffness matrices:</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-damping-1">
-<span class="eqno">(1.1.2)<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-1" title="Permalink to this equation">¶</a></span>\[C = a_0 M + a_1 K\]</div>
+<span class="eqno">(1.2.2)<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-1" title="Permalink to this equation">¶</a></span>\[C = a_0 M + a_1 K\]</div>
 <p>is known as <strong>Rayleigh damping</strong> , is the most common—almost pervasive—model in nonlinear analysis of structures. The damping ratio for the nth mode of such a system is</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-damping-2">
-<span class="eqno">(1.1.3)<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-2" title="Permalink to this equation">¶</a></span>\[\zeta_n = \frac{a_0}{2}\frac{1}{\omega_n} + \frac{a_1}{2}\omega_n\]</div>
-<p>The coeeficients <span class="math notranslate nohighlight">\(a_0\)</span> and <span class="math notranslate nohighlight">\(a_1\)</span> are typically determined by specifynomg the damping ratios at one or two modes <span class="math notranslate nohighlight">\(\zeta_1\)</span> and <span class="math notranslate nohighlight">\(\zeta_2\)</span>. There are a number of options:</p>
+<span class="eqno">(1.2.3)<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-2" title="Permalink to this equation">¶</a></span>\[\zeta_n = \frac{a_0}{2}\frac{1}{\omega_n} + \frac{a_1}{2}\omega_n\]</div>
+<p>The coefficients <span class="math notranslate nohighlight">\(a_0\)</span> and <span class="math notranslate nohighlight">\(a_1\)</span> are typically determined by specifying the damping ratios at one or two modes <span class="math notranslate nohighlight">\(\zeta_1\)</span> and <span class="math notranslate nohighlight">\(\zeta_2\)</span>. There are a number of options:</p>
 <p><strong>Mass Proportional Damping</strong> <span class="math notranslate nohighlight">\(C = a_0 M\)</span></p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-damping-3">
-<span class="eqno">(1.1.4)<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-3" title="Permalink to this equation">¶</a></span>\[ \begin{align}\begin{aligned}\zeta_n = \frac{a_0}{2}\frac{1}{\omega_n}\\a_0 = 2 \zeta_n \omega_n`\end{aligned}\end{align} \]</div>
-<p>In mass proportional damping, the damping matrix is inversely proportional to the natural frequency. The coefficient is chosen to represent the period at a single mode, modes with a higher frequencey will have less damping, and modes with a smaller frequency will have more damping.</p>
+<span class="eqno">(1.2.4)<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-3" title="Permalink to this equation">¶</a></span>\[ \begin{align}\begin{aligned}\zeta_n = \frac{a_0}{2}\frac{1}{\omega_n}\\a_0 = 2 \zeta_n \omega_n`\end{aligned}\end{align} \]</div>
+<p>In mass proportional damping, the damping matrix is inversely proportional to the natural frequency. The coefficient is chosen to represent the period at a single mode, modes with a higher frequency will have less damping, and modes with a smaller frequency will have more damping.</p>
 <p><strong>Stiffness Proportional Damping</strong> <span class="math notranslate nohighlight">\(C = a_1 K\)</span></p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-damping-4">
-<span class="eqno">(1.1.5)<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-4" title="Permalink to this equation">¶</a></span>\[ \begin{align}\begin{aligned}\zeta_n = \frac{a_1}{2}\omega_n\\a_1 = \frac{2 * \zeta_n}{\omega_n}\end{aligned}\end{align} \]</div>
-<p>In stiffness proportional damping, the damping is proportional to the natural frequency, increasinging linearly as the natural frequency increases. The coefficient is again chosen to represent the period at a single mode, modes with a higher frequencey will have more damping, and modes with a smaller frequency will have less dampng.</p>
+<span class="eqno">(1.2.5)<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-4" title="Permalink to this equation">¶</a></span>\[ \begin{align}\begin{aligned}\zeta_n = \frac{a_1}{2}\omega_n\\a_1 = \frac{2 * \zeta_n}{\omega_n}\end{aligned}\end{align} \]</div>
+<p>In stiffness proportional damping, the damping is proportional to the natural frequency, increasing linearly as the natural frequency increases. The coefficient is again chosen to represent the period at a single mode, modes with a higher frequency will have more damping, and modes with a smaller frequency will have less damping.</p>
 <p><strong>Traditional Rayleigh Damping</strong> <span class="math notranslate nohighlight">\(C = a_0 M + a_1 K\)</span></p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-damping-5">
-<span class="eqno">(1.1.6)<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-5" title="Permalink to this equation">¶</a></span>\[\zeta_n = \frac{a_0}{2}\frac{1}{\omega_n} + \frac{a_1}{2}\omega_n\]</div>
-<p>Two coefficients are determined by the user specyfing the damping at two different modes given by <span class="math notranslate nohighlight">\(\omega_i\)</span> and <span class="math notranslate nohighlight">\(omega_j\)</span></p>
+<span class="eqno">(1.2.6)<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-5" title="Permalink to this equation">¶</a></span>\[\zeta_n = \frac{a_0}{2}\frac{1}{\omega_n} + \frac{a_1}{2}\omega_n\]</div>
+<p>Two coefficients are determined by the user specifying the damping at two different modes given by <span class="math notranslate nohighlight">\(\omega_i\)</span> and <span class="math notranslate nohighlight">\(omega_j\)</span></p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-damping-6">
-<span class="eqno">(1.1.7)<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-6" title="Permalink to this equation">¶</a></span>\[\begin{split}\frac{1}{2} \begin{bmatrix}
+<span class="eqno">(1.2.7)<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-6" title="Permalink to this equation">¶</a></span>\[\begin{split}\frac{1}{2} \begin{bmatrix}
             1/\omega_i &amp; \omega_i \\
             1/\omega_j &amp; \omega_j \\
             \end{bmatrix}
@@ -225,11 +226,11 @@
             \end{bmatrix}\end{split}\]</div>
 <p>as the damping at these two modes is usually specified to be the same, i.e. <span class="math notranslate nohighlight">\(\zeta_i = \zeta_j = \zeta\)</span>, this matrix equation can  be solved for <span class="math notranslate nohighlight">\(a_0\)</span> and <span class="math notranslate nohighlight">\(a_1\)</span></p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-damping-7">
-<span class="eqno">(1.1.8)<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-7" title="Permalink to this equation">¶</a></span>\[a_0 = \zeta \frac{2 \omega_i \omega_j}{w_i + w_j} ; a_1 = \zeta \frac{2}{w_i + w_j}\]</div>
+<span class="eqno">(1.2.8)<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-7" title="Permalink to this equation">¶</a></span>\[a_0 = \zeta \frac{2 \omega_i \omega_j}{w_i + w_j} ; a_1 = \zeta \frac{2}{w_i + w_j}\]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In the tool the user has the option of specyfying which of the stiffness matrices (the current linearized stiffness matrix or the initial tangent stiffness matrix). Opinion in the literature is divided, the default is set to the initial stiffness as the possible inclusion of negative damping (should the descending branch of yield curve be reached), the possibility of including zero damping (should elastic perfectly plastic materials yield), and the very fact that the damping is tied to the hysteritic behavior given why it is included in the first place, makes little physical sense.</p>
-<p>Different approaches are of course possible, e.g. where user explicitly models damping. These must be specified by the user in the optional analaysis script they provide.</p>
+<p>In the tool the user has the option of specifying which of the stiffness matrices (the current linearized stiffness matrix or the initial tangent stiffness matrix). Opinion in the literature is divided, the default is set to the initial stiffness as the possible inclusion of negative damping (should the descending branch of yield curve be reached), the possibility of including zero damping (should elastic perfectly plastic materials yield), and the very fact that the damping is tied to the hysteretic behavior given why it is included in the first place, makes little physical sense.</p>
+<p>Different approaches are of course possible, e.g. where user explicitly models damping. These must be specified by the user in the optional analysis script they provide.</p>
 </div>
 <dl class="citation">
 <dt class="label" id="citation"><span class="brackets">CITATION</span></dt>
@@ -239,17 +240,17 @@
 <ol class="arabic simple">
 <li><p>Modal Damping</p></li>
 </ol>
-<p>In modal damping the eigen vectors <span class="math notranslate nohighlight">\(\Phi\)</span> of the <span class="math notranslate nohighlight">\(N\)</span> degree-of-freedom system are used to create the <span class="math notranslate nohighlight">\(C\)</span> matrix.</p>
+<p>In modal damping the eigenvectors <span class="math notranslate nohighlight">\(\Phi\)</span> of the <span class="math notranslate nohighlight">\(N\)</span> degree-of-freedom system are used to create the <span class="math notranslate nohighlight">\(C\)</span> matrix.</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-damping-8">
-<span class="eqno">(1.1.9)<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-8" title="Permalink to this equation">¶</a></span>\[C = M \left ( \sum_{m=1}^{N} \frac{2 \zeta_m \omega_m}{M_m} \phi_m \phi_m^TC \dot{U} \right ) M\]</div>
-<p>where the <span class="math notranslate nohighlight">\(m\)</span>’th term is the contribution of the m’th mode. The resulting damping matrix has not been popular in practical analyses because it is a fully populated matrix and its construction requires all frequencies and modes. However in practicaility many FEM applications allow it by limiting number of modes to first <span class="math notranslate nohighlight">\(n\)</span> modes, not including those components outside the sparsity pattern of the <span class="math notranslate nohighlight">\(K\)</span> matrix, <strong>AND</strong> including all terms in the calculation of the resisting forces to ensure that convergence to correct numerical solution occurs, albeit at a slower rate of convergence.</p>
+<span class="eqno">(1.2.9)<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-8" title="Permalink to this equation">¶</a></span>\[C = M \left ( \sum_{m=1}^{N} \frac{2 \zeta_m \omega_m}{M_m} \phi_m \phi_m^TC \dot{U} \right ) M\]</div>
+<p>where the <span class="math notranslate nohighlight">\(m\)</span>’th term is the contribution of the <span class="math notranslate nohighlight">\(m\)</span>’th mode. The resulting damping matrix has not been popular in practical analyses because it is a fully populated matrix and its construction requires all frequencies and modes. However many FEM applications approximate this by limiting number of modes to first <span class="math notranslate nohighlight">\(n\)</span> modes, not including those components outside the sparsity pattern of the <span class="math notranslate nohighlight">\(K\)</span> matrix, <strong>AND</strong> including all terms in the calculation of the resisting forces to ensure that convergence to correct numerical solution occurs, albeit at a slower rate of convergence.</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-damping-9">
-<span class="eqno">(1.1.10)<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-9" title="Permalink to this equation">¶</a></span>\[C = M \left ( \sum_{m=1}^{n} \frac{2 \zeta_m \omega_m}{M_m} \phi_m \phi_m^TC \dot{U} \right ) M\]</div>
+<span class="eqno">(1.2.10)<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-9" title="Permalink to this equation">¶</a></span>\[C = M \left ( \sum_{m=1}^{n} \frac{2 \zeta_m \omega_m}{M_m} \phi_m \phi_m^TC \dot{U} \right ) M\]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A drawback of this practical implementation is that higher modes are undamped. To overcome this, FEM applications that permit modal damping also permit it to be combined with <strong>stiffness proportional damping</strong>, where at the last mode of interest, <span class="math notranslate nohighlight">\(n\)</span>, a damping ratio is specified for the calculation of tangent stiffness rayleigh damping. That is the purpose of the additional damping ratio to be provided by the user for the last mode specified, <span class="math notranslate nohighlight">\(\zeta_{nT}\)</span>, which by default in the tool is set to 0.0. If specified to be non-zero, the damping matrix provided is:</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-damping-10">
-<span class="eqno">(1.1.11)<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-10" title="Permalink to this equation">¶</a></span>\[C = M \left ( \sum_{m=1}^{n} \frac{2 \zeta_m \omega_m}{M_m} \phi_m \phi_m^TC \dot{U} \right ) M + a_1 K_0\]</div>
+<span class="eqno">(1.2.11)<a class="headerlink" href="#equation-common-technical-manual-desktop-damping-10" title="Permalink to this equation">¶</a></span>\[C = M \left ( \sum_{m=1}^{n} \frac{2 \zeta_m \omega_m}{M_m} \phi_m \phi_m^TC \dot{U} \right ) M + a_1 K_0\]</div>
 <p>where <span class="math notranslate nohighlight">\(a_1 = \frac{2 * \zeta_{nT}}{\omega_{n}}\)</span></p>
 </div>
 </div>

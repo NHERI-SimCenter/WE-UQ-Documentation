@@ -172,20 +172,28 @@
             
   <div class="section" id="parameter-estimation">
 <span id="lbldakotaparameterestimation"></span><h1>Parameter Estimation<a class="headerlink" href="#parameter-estimation" title="Permalink to this headline">¶</a></h1>
-<p>Parameter Estimation methods (also known as non-linear least squares methods) are  used to fit a set of m observations (in this tool defined in the QoI panel) with a model that is non-linear with n unknown parameters (in thus tool the unknown parameters are defined in the RV panel) <span class="math notranslate nohighlight">\((m \ge n)\)</span>.  The method are obtaining the parameters that best fits the experimental results, that is that <strong>minimizes</strong> the QoI, given no prior estimation as to the distribution associaciated with the random variables. As such the processing scripts should leave in the <strong>results.out</strong> file differences between observed response and simulated response. The algorithms employed will find a set of parameters that minimizes these differences. The algorithms themselves are general functional minimization algorithms seeking to minimize:</p>
+<p>Parameter Estimation methods (also known as non-linear least squares methods) are  used to fit a set of m observations (in this tool defined in the QoI panel) with a model that is non-linear with n unknown parameters (in thus tool the unknown parameters are defined in the RV panel) <span class="math notranslate nohighlight">\((m \ge n)\)</span>.  The method are obtaining the parameters that best fits the experimental results, that is that <strong>minimizes</strong> the QoI, given no prior estimation as to the distribution associated with the random variables. As such the processing scripts should leave in the <strong>results.out</strong> file differences between observed response and simulated response. The algorithms employed will find a set of parameters that minimizes these differences. The algorithms themselves are general functional minimization algorithms seeking to minimize:</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-dakotaparameterestimation-0">
 <span class="eqno">()<a class="headerlink" href="#equation-common-user-manual-usage-desktop-dakotaparameterestimation-0" title="Permalink to this equation">¶</a></span>\[f(x) = \sum_{i=1}^{m} w_i R_i^2 = \sum_{i=1}{m} w_i \left ( y(x)_i^{model} - y_i^{experiment} \right)^2\]</div>
 <p>where <span class="math notranslate nohighlight">\(R_i\)</span> might be the difference between experimental data <span class="math notranslate nohighlight">\(y_i^{experiment}\)</span> and model predictions <span class="math notranslate nohighlight">\(y(x)_i^{model}\)</span> for a response quantity at a particular location and/or time step, <span class="math notranslate nohighlight">\(w_i\)</span> optional weights, and <span class="math notranslate nohighlight">\(x \in R^n\)</span> the <span class="math notranslate nohighlight">\(n\)</span> model parameters which are not precisely known and are being calibrated to match available data.</p>
+<p>The panel that is presented to the user when this Dakota Category is chosen, is as shown below.</p>
+<div class="align-center figure" id="id1">
+<span id="figparameterestimation"></span><img alt="../../../../_images/ParameterEstimation.png" src="../../../../_images/ParameterEstimation.png" />
+<p class="caption"><span class="caption-text">Dakota parameter estimation input panel.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The unknown parameters (the random variables options in the RV panel) are limited to Continuous Design. The user provides min, max and starting point values for each random variable.</p>
 </div>
-<p>For parameter estimation two different optimization algorithms are currently provided, namely OPT++GaussNewton and NL2SOL:</p>
-<div class="section" id="opt">
-<h2>OPT++<a class="headerlink" href="#opt" title="Permalink to this headline">¶</a></h2>
+<p>For parameter estimation two different optimization algorithms are currently provided under the Method drop down menu, namely OPT++GaussNewton and NL2SOL. For both methods three input parameters need to be specified as shown in the figure:
+1. the convergence tolerance
+2. the maximum number of iterations for the optimization subroutine.
+3. the weights, <span class="math notranslate nohighlight">\(w_i\)</span>, for each of the QoI. If no weights are specified, then <span class="math notranslate nohighlight">\(w_i = 1.0\)</span>.</p>
+<div class="section" id="opt-gaussnewton">
+<h2>OPT++GaussNewton<a class="headerlink" href="#opt-gaussnewton" title="Permalink to this headline">¶</a></h2>
 <p>OPT++ Provides a Gauss-Newton least squares capability which, on zero-residual test problems, can exhibit quadratic convergence rates near the solution. As a consequence, a good starting point values for the parameters should be provided. The Hessian is constructed with a Gauss-Newton approximation and the OPT++ Optimization routines are used.</p>
 <dl class="citation">
-<dt class="label" id="id1"><span class="brackets">OPT</span></dt>
+<dt class="label" id="opt"><span class="brackets">OPT</span></dt>
 <dd><ol class="upperalpha simple" start="10">
 <li><ol class="upperalpha simple" start="3">
 <li><p>Meza, R. A. Oliva, P. D. Hough, and P. J. Williams, “OPT++: An Object Oriented Toolkit for Nonlinear Optimization”, ACM Transactions on Mathematical Software, Volume 33, Number 2, June 2007.</p></li>
@@ -197,7 +205,7 @@
 </div>
 <div class="section" id="nl2sol">
 <h2>NL2SOL<a class="headerlink" href="#nl2sol" title="Permalink to this headline">¶</a></h2>
-<p>The NL2SOL method is based on an adaptive nonlinear least-squares algorithm, devised by Dennis and colleagues[Dennis81]. NL2SOL uses a trust region method and adaptivily switches between two Hessian approximations, the Gauss-Newton approximation alone and the Gauss-Newton approximation plus a quasi-Newton approximation to the rest of the Hessian. This later approximation being useful when the starting guess is far from solution. For problems with large number of residuals, this algorithm is known to be more reliable than Gauss-Newton.</p>
+<p>The NL2SOL method is based on an adaptive nonlinear least-squares algorithm, devised by Dennis and colleagues[Dennis81]. NL2SOL uses a trust region method and adaptively switches between two Hessian approximations, the Gauss-Newton approximation alone and the Gauss-Newton approximation plus a quasi-Newton approximation to the rest of the Hessian. This later approximation being useful when the starting guess is far from solution. For problems with large number of residuals, this algorithm is known to be more reliable than Gauss-Newton.</p>
 <dl class="citation">
 <dt class="label" id="dennis81a"><span class="brackets">Dennis81a</span></dt>
 <dd><ol class="upperalpha simple" start="10">
@@ -216,11 +224,6 @@
 </ol>
 </dd>
 </dl>
-<p>For both OPT++ and NL2SOL, two input parameters need to be specified: the convergence tolerance and the maximum number of iterations for the optimization subroutine.</p>
-<div class="align-center figure" id="id2">
-<span id="figparameterestimation"></span><img alt="../../../../_images/ParameterEstimation.png" src="../../../../_images/ParameterEstimation.png" />
-<p class="caption"><span class="caption-text">Dakota Parameter Estimation Input Panel</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
 </div>
 </div>
 

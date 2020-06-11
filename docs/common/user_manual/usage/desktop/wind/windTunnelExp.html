@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Wind Tunnel Experiment &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>4.4.6. Wind Tunnel Experiment &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -36,7 +36,9 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../../../search.html" /> 
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="4.4.7. Multiple Existing" href="WeUQExisting.html" />
+    <link rel="prev" title="4.4.5. Data from Tokyo Polytechnic University" href="lowRiseTPU.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -84,11 +86,30 @@
             
             
               <p class="caption"><span class="caption-text">User Manual</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../ack.html">1. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../about/WEUQ/about.html">2. About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../usage.html">4. User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">4. User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../UQ.html">4.1. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GI.html">4.2. GI: General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIM.html">4.3. SIM: Structural Model</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="WindEvents.html">4.4. EVT: Wind Events</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="stochasticWind.html">4.4.1. Stochastic Wind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CFDBasic.html">4.4.2. CFD Basic Template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CFDExpert.html">4.4.3. CFD Expert Template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DEDMHrp.html">4.4.4. Database-Enabled Design Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lowRiseTPU.html">4.4.5. Data from Tokyo Polytechnic University</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.4.6. Wind Tunnel Experiment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WeUQExisting.html">4.4.7. Multiple Existing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../FEM.html">4.5. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../response/EDP.html">4.6. EDP: Demand Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">4.7. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../response/resEE.html">4.8. RES: Results</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">6. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../requirements/WEUQ.html">7. Requirements</a></li>
@@ -151,7 +172,11 @@
     
       <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
         
-      <li>Wind Tunnel Experiment</li>
+          <li><a href="../usage.html"><span class="section-number">4. </span>User Guide</a> &raquo;</li>
+        
+          <li><a href="WindEvents.html"><span class="section-number">4.4. </span>EVT: Wind Events</a> &raquo;</li>
+        
+      <li><span class="section-number">4.4.6. </span>Wind Tunnel Experiment</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -171,16 +196,16 @@
            <div itemprop="articleBody">
             
   <div class="section" id="wind-tunnel-experiment">
-<h1>Wind Tunnel Experiment<a class="headerlink" href="#wind-tunnel-experiment" title="Permalink to this headline">¶</a></h1>
-<p>This application will take the wind tunnel data provided and scale it based on wind speed provided in this interface, and the building dimensions provided in the General Information. The theory on scaling wind tunnel data is provided in the theory. The data for the winnd tunnel is provided in a JSON file format. That file contains information on model dimensions, model wind speed, and model frequency, tap locations and time varying pressure tap coefficients.</p>
+<h1><span class="section-number">4.4.6. </span>Wind Tunnel Experiment<a class="headerlink" href="#wind-tunnel-experiment" title="Permalink to this headline">¶</a></h1>
+<p>This application will take the wind tunnel data provided and scale it based on wind speed provided in this interface, and the building dimensions provided in the General Information. The theory on scaling wind tunnel data is provided in the theory. The data for the wind tunnel is provided in a JSON file format. That file contains information on model dimensions, model wind speed, and model frequency, tap locations and time varying pressure tap coefficients.</p>
 <div class="align-center figure" id="id1">
 <span id="fig-windtunnelexp"></span><img alt="../../../../../_images/windTunnelExperiment.png" src="../../../../../_images/windTunnelExperiment.png" />
-<p class="caption"><span class="caption-text">Wind Tunnel Experiment Wind Loading Event</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.4.7 </span><span class="caption-text">Wind tunnel experiment wind loading event.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple">
-<li><p>The user to select the shape of the building, currently onlu Cuboid shapes are permitted.</p></li>
+<li><p>The user to select the shape of the building, currently only Cuboid shapes are permitted.</p></li>
 <li><p>The Wind speed.</p></li>
-<li><p>The file containing the experimental data. The file contains information about the dimensions of the building model in the wind tunnel, the wind speed (the meaning of wind speed dis totally dependent on what wind speed measurement was used in the test), time varying data for the pressure coeffiecients, information on frequency of these data points, and information on th elocations of pressure taps for which pressure coefficients are provided. An abbreviated example is as shown below.</p></li>
+<li><p>The file containing the experimental data. The file contains information about the dimensions of the building model in the wind tunnel, the wind speed (the meaning of wind speed dis totally dependent on what wind speed measurement was used in the test), time varying data for the pressure coefficients, information on frequency of these data points, and information on the locations of pressure taps for which pressure coefficients are provided. An abbreviated example is as shown below.</p></li>
 </ol>
 <p>Random Variables: For this event, the wind speed can be a random variable.</p>
 <p>The format for the wind tunnel data file is presently a JSON file. Future versions will allow the input of Matlab .mat files. A valid file is as follows:</p>
@@ -209,8 +234,8 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>It should be noted that at present the only valid shape is a Cuboid. Other shapes for example representing low-rise buildings with different roof shapes will be available in future versons.</p>
-<p>For a cuboid the input file contains information about the wind tunnel models width, depth, height and wind speed. In addition for each of the 5 faces the user provides information on tap location for which pressure coefficents are given. The coordinate system for each face is x and ym and assumes the origin is at bottom left of an elevation of the building assuming user is looking at that face of the building, as shown in figure.</p>
+<p>It should be noted that at present the only valid shape is a Cuboid. Other shapes for example representing low-rise buildings with different roof shapes will be available in future versions.</p>
+<p>For a cuboid the input file contains information about the wind tunnel models width, depth, height and wind speed. In addition for each of the 5 faces the user provides information on tap location for which pressure coefficients are given. The coordinate system for each face is x and ym and assumes the origin is at bottom left of an elevation of the building assuming user is looking at that face of the building, as shown in figure.</p>
 </div>
 
 

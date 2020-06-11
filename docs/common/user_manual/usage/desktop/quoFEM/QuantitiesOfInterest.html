@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Forward Propagation in Two-Dimensional Truss &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>QoI: Quantities of Interest &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -88,9 +88,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../ack.html">1. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../about/WEUQ/about.html">2. About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">4. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">4. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples.html">6. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">6. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../requirements/WEUQ.html">7. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../license.html">9. Copyright and License</a></li>
@@ -151,13 +151,13 @@
     
       <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
         
-      <li>Forward Propagation in Two-Dimensional Truss</li>
+      <li>QoI: Quantities of Interest</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../../../../_sources/common/user_manual/examples/desktop/quoFEM/openSeesTruss.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../../../_sources/common/user_manual/usage/desktop/quoFEM/QuantitiesOfInterest.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -170,43 +170,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="forward-propagation-in-two-dimensional-truss">
-<h1>Forward Propagation in Two-Dimensional Truss<a class="headerlink" href="#forward-propagation-in-two-dimensional-truss" title="Permalink to this headline">¶</a></h1>
-<p>Consider the problem of uncertainty quantification in a two-dimensional truss structure, as shown in figure Figure 4.1. The structure has uncertain properties that all follow normal distribution such that:</p>
-<ol class="arabic simple">
-<li><p>Elastic modulus(E): mean <span class="math notranslate nohighlight">\(\mu_E=205 kN/{mm^2}\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sigma_E =15 kN/{mm^2}\)</span></p></li>
-<li><p>Load (P): mean <span class="math notranslate nohighlight">\(\mu_P =25 kN\)</span> and a standard deviation of <span class="math notranslate nohighlight">\(\sigma_P = 3 kN\)</span></p></li>
-<li><p>Cross sectional area for the upper three bars (Au): mean <span class="math notranslate nohighlight">\(\mu_{Au} = 500 mm^2\)</span>, and a standard deviation of <span class="math notranslate nohighlight">\(\sigma_{Au} = 25mm^2\)</span></p></li>
-<li><p>Cross sectional area for the other six bars (Ao): mean <span class="math notranslate nohighlight">\(\mu_{Ao} = 250mm^2\)</span>, and <span class="math notranslate nohighlight">\(\sigma_{Ao} = 10mm^2\)</span></p></li>
-</ol>
-<p>The goal of the exericise is to estimate the mean and standard deviation of the vertical displacement at node 3. The exercise requires two files: <a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/blob/master/examples/exampleOpenSeesForward/TrussTemplate.tcl">TrussTemplate.tcl</a> and <a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/blob/master/examples/exampleOpenSeesForward/postprocess.tcl">postprocess.tcl</a>. These file need to be saved and places in a NEW folder on your computer.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ol class="arabic simple">
-<li><p>The first lines containing pset will be read by the application when the file is selected and the application will autopopulate the Random Variables input panel with these same variable names.</p></li>
-<li><p>The postprocess script is passed the QoI provided by the user and will provide results for any of the 6 nodes in any of their 2 dof directions.</p></li>
-</ol>
+  <div class="section" id="qoi-quantities-of-interest">
+<h1>QoI: Quantities of Interest<a class="headerlink" href="#qoi-quantities-of-interest" title="Permalink to this headline">¶</a></h1>
+<p>The QoI panel is where the user specifies the variable names associated with the FEM results. For each result quantity that the users application generates and places in the results.out file, the user must provide a variable name. A new response quantity is added by the user selecting the ‘’Add’’ button. Quantities can be removed by selecting it, this is done by clicking in the circle before the variable name, and then selecting the ‘’remove’’ button.</p>
+<div class="align-center figure" id="id1">
+<span id="figqoi"></span><img alt="../../../../../_images/QoI.png" src="../../../../../_images/QoI.png" />
+<p class="caption"><span class="caption-text">Input for the QoI panel.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
+<p>In figure shown the user has added two response quantities, <strong>Node_2_Disp_2</strong> and <strong>Node_4_Disp_1</strong>. The postprocessing script, if one has been provided, will be passed these 2 values as arguments.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Do not place the files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containig these files multiple times. If you are like me, your root, Downloads or Documents folders contains and awful lot of files.</p>
-</div>
-<p>The steps involved:</p>
 <ol class="arabic simple">
-<li><p>Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota, and the UQ Method as Forward Propogation, and the Forward Propagarion method as LHS (Latin Hypercude). Change the #samples to 1000 and the seed to 500 as shown in the figure.</p></li>
-<li><p>Next select the FEM tab from the input panel. This will default in the OpenSees FEM engine. For the main script copy the path name to TrussSelection.tcl or select choose and navigate to the file. For the postprocess script, repeat the same procedure for the postpropcess.py script.</p></li>
-<li><p>Next select the RV tab from the input panel. This should be prepopulated with four random variables with same names as those having pset in the tcl script. For each variable, from the drop down menu change them from having a constant disatribution to a lognormal one and then provide the means and standard deviations specified for the problem.</p></li>
-<li><p>Next select the QoI panel. Here enter ‘Node_3_Disp_2’ for the one variable.</p></li>
+<li><p>There can be no spaces in variable names, underscores are permitted.</p></li>
+<li><p>Names cannot begin with a numeral, i.e. 0,1,2,3,4,5,6,7,8,9.</p></li>
+<li><p>Names cannot be duplicated.</p></li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The user can add additional QoI by selecting add and then providing additional names. As seen from the postprocess script any of the 6 nodes may be specified and for any node either the 1 or 2 dof direction.</p>
 </div>
-<ol class="arabic simple" start="5">
-<li><p>Next click on the ‘Run’ button. This will cause the backend application to launch dakota. When done the RES panel tab will be selected and the results will be displayed. The results show the values dor the mean and standard deviation.</p></li>
-</ol>
-<p>With the ‘RES’ panel selected the user can also select the Data tab. With the data tab slected the use can visually look at the results of each of all the deterministic simulations.</p>
-<p>In this example, we will use the Latin Hypercube Sampling available in the Dakota UQ Engine’s Forward Sampling mewthods in conjunction with OpenSees.</p>
 </div>
 
 
