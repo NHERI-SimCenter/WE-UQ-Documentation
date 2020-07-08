@@ -232,41 +232,41 @@ Compared with precursor simulation and recycling methods, the synthetic methods 
 a more practical and relatively efficient approach to generate inflow turbulence, and is
 therefore chosen as the subject of this section. Research activities on synthetic turbulence
 generation have been vigorous over the past decades and have branched out into several
-categories of techniques <a class="bibtex reference internal" href="#wu2017" id="id1">[1]</a>, including the synthetic random Fourier method
-<a class="bibtex reference internal" href="#kraichnan1970" id="id2">[2]</a><a class="bibtex reference internal" href="#hoshiya1972" id="id3">[3]</a>, the synthetic digital filtering method <a class="bibtex reference internal" href="#klein2003" id="id4">[4]</a>
-and the synthetic eddy methods <a class="bibtex reference internal" href="#jarrin2006" id="id5">[5]</a>.
+categories of techniques <a class="bibtex reference internal" href="../../../../index.html#wu2017" id="id1">[1]</a>, including the synthetic random Fourier method
+<a class="bibtex reference internal" href="../../../../index.html#kraichnan1970" id="id2">[2]</a><a class="bibtex reference internal" href="../../../../index.html#hoshiya1972" id="id3">[3]</a>, the synthetic digital filtering method <a class="bibtex reference internal" href="../../../../index.html#klein2003" id="id4">[4]</a>
+and the synthetic eddy methods <a class="bibtex reference internal" href="../../../../index.html#jarrin2006" id="id5">[5]</a>.
 A brief introduction regarding to these techniques is given below and emphasis is placed on their abilities to capture the statistical characteristics as well as the spatial and temporal coherence of turbulence. Also note that since real turbulence is very complex, in most cases, not all of the above listed features can be fulfilled. There is always some adaptation time required for the artificial turbulence to evolve into real turbulence. Fulfilling the properties above with the synthetic turbulence is important to minimize the adaptation time or length.</p>
 </div>
 <div class="section" id="synthetic-random-fourier-method">
 <h2>Synthetic Random Fourier Method<a class="headerlink" href="#synthetic-random-fourier-method" title="Permalink to this headline">¶</a></h2>
 <p>The so-called synthetic random Fourier method (SRFM) attempts to model turbulent flow field indirectly by imposing constraints on uncorrelated random fields through an energy spectrum to account for the spatial and temporal correlations, which can be further classified into two groups.
-The first group of the SRFM was based on the pioneering work in <a class="bibtex reference internal" href="#hoshiya1972" id="id6">[3]</a> and <a class="bibtex reference internal" href="#shinozuka1972" id="id7">[6]</a> on the simulation of multi-correlated random processes using a weighted amplitude wave superposition (WAWS) method. This approach has an advantage that both the targeted power- and cross-spectra can be imposed in the generation process so that the prescribed target characteristics can be maintained. A major drawback of this method is that the generated turbulence does not satisfy the continuity equation of the flow, or in other words, the divergence-free condition is not guaranteed. As a consequence it would take enormous effort for the solver to enforce the continuity by correcting the turbulence inflow inserted into the computational domain, and the statistical characteristics of the corrected flow field differs from the target values.</p>
-<p>The second group of the SRFM was initiated by the work in <a class="bibtex reference internal" href="#kraichnan1970" id="id8">[2]</a> on
+The first group of the SRFM was based on the pioneering work in <a class="bibtex reference internal" href="../../../../index.html#hoshiya1972" id="id6">[3]</a> and <a class="bibtex reference internal" href="../../../../index.html#shinozuka1972" id="id7">[6]</a> on the simulation of multi-correlated random processes using a weighted amplitude wave superposition (WAWS) method. This approach has an advantage that both the targeted power- and cross-spectra can be imposed in the generation process so that the prescribed target characteristics can be maintained. A major drawback of this method is that the generated turbulence does not satisfy the continuity equation of the flow, or in other words, the divergence-free condition is not guaranteed. As a consequence it would take enormous effort for the solver to enforce the continuity by correcting the turbulence inflow inserted into the computational domain, and the statistical characteristics of the corrected flow field differs from the target values.</p>
+<p>The second group of the SRFM was initiated by the work in <a class="bibtex reference internal" href="../../../../index.html#kraichnan1970" id="id8">[2]</a> on
 divergence-free homogeneous isotropic turbulence synthesis through the superposition of random
-harmonic functions. <a class="bibtex reference internal" href="#smirnov2001" id="id9">[7]</a> took a step forward by combing Kraichnan’s technique
+harmonic functions. <a class="bibtex reference internal" href="../../../../index.html#smirnov2001" id="id9">[7]</a> took a step forward by combing Kraichnan’s technique
 with scaling and orthogonal transformation operations in a procedure known as the random flow
 generation (RFG) which allows to generate inhomogeneous and anisotropic turbulence. However the
 scaling operation introduced in the RFG technique can result in a velocity field that is not
 divergence-free for inhomogeneous turbulence. Modifications to enforce the divergence-free
-constraint for inhomogeneous turbulence was discussed in <a class="bibtex reference internal" href="#yu2014" id="id10">[8]</a>. A major drawback of RFG
+constraint for inhomogeneous turbulence was discussed in <a class="bibtex reference internal" href="../../../../index.html#yu2014" id="id10">[8]</a>. A major drawback of RFG
 technique is that the power-spectra of the generated turbulence only follows Gaussian’s spectra
 model, so it is not suitable for simulating flows in atmospheric boundary layer.
-<a class="bibtex reference internal" href="#huang2010" id="id11">[9]</a> revisited Kraichnan’s method and proposed a technique called DSRFG (for
+<a class="bibtex reference internal" href="../../../../index.html#huang2010" id="id11">[9]</a> revisited Kraichnan’s method and proposed a technique called DSRFG (for
 discretizing and synthesizing random flow generation) which allows to generate turbulent inflow
 from any prescribed spectrum. Instead of using the scaling and orthogonal transformation, the
 anisotropy of turbulence is realized by modifying the distribution strategy of the wave vector
 in Kraichnan’s original method. A drawback of the DSRFG technique is that it produces
 fluctuating velocities with high correlation due to the fact that in this method the spatial
 correlation is modelled by a parameter which is not a function of frequency but a constant
-value. Inspired by the DSRFG method, <a class="bibtex reference internal" href="#castro2017" id="id12">[10]</a> proposed some modifications to this
+value. Inspired by the DSRFG method, <a class="bibtex reference internal" href="../../../../index.html#castro2017" id="id12">[10]</a> proposed some modifications to this
 technique to obtain the velocity field that had a better match with the target turbulent
 statistics. This method, known as modified discretizing and synthesizing random flow generation
 (MDSRFG), is capable of removing the dependence of statistic quantities of synthetic turbulence
-on spectra discretization resolution. <a class="bibtex reference internal" href="#aboshosha2015" id="id13">[11]</a> also proposed a technique called consistent discrete RFG (CDRFG) to accurately model the target spectra and the coherence function. In both two methods mentioned above, the parameter that characterizes the spatial correlation is expressed as a function of frequency to account for the damping of coherence with the increase of frequency. An attractive feature of second group of SRFM is that the generation procedures are usually independent at each point and each time-instant so that it can be easily accelerated by conducting parallel computation, although the generated random flow may not satisfy the continuity equation.</p>
+on spectra discretization resolution. <a class="bibtex reference internal" href="../../../../index.html#aboshosha2015" id="id13">[11]</a> also proposed a technique called consistent discrete RFG (CDRFG) to accurately model the target spectra and the coherence function. In both two methods mentioned above, the parameter that characterizes the spatial correlation is expressed as a function of frequency to account for the damping of coherence with the increase of frequency. An attractive feature of second group of SRFM is that the generation procedures are usually independent at each point and each time-instant so that it can be easily accelerated by conducting parallel computation, although the generated random flow may not satisfy the continuity equation.</p>
 </div>
 <div class="section" id="synthetic-eddy-method">
 <h2>Synthetic Eddy Method<a class="headerlink" href="#synthetic-eddy-method" title="Permalink to this headline">¶</a></h2>
-<p>The synthetic eddy method (SEM) initiated by <a class="bibtex reference internal" href="#jarrin2006" id="id14">[5]</a> is based on the classical view
+<p>The synthetic eddy method (SEM) initiated by <a class="bibtex reference internal" href="../../../../index.html#jarrin2006" id="id14">[5]</a> is based on the classical view
 of turbulence as a superposition of the representative coherent eddies. In the SEM, the flow is
 assumed to consist of randomly distributed turbulent spots, and each turbulent spot is modelled
 by a three-dimensional shape function with compact support and satisfies a proper normalization
@@ -276,8 +276,8 @@ reconstructed using the method proposed by to recover the desired statistical ch
 and to account for the conditions of inhomogeneity and anisotropy. The choice of the shape
 function plays an important role in the SEM since it is directly related to the two-point
 autocorrelation function, and consequently the power spectrum of the synthetic turbulence.
-Enforcement of the continuity condition in the SEM was discussed in <a class="bibtex reference internal" href="#poletto2013" id="id15">[12]</a>.</p>
-<p>A brief introduction on the SEM presented by <a class="bibtex reference internal" href="#jarrin2006" id="id16">[5]</a> is given as follows. To start
+Enforcement of the continuity condition in the SEM was discussed in <a class="bibtex reference internal" href="../../../../index.html#poletto2013" id="id15">[12]</a>.</p>
+<p>A brief introduction on the SEM presented by <a class="bibtex reference internal" href="../../../../index.html#jarrin2006" id="id16">[5]</a> is given as follows. To start
 with, the turbulent spot mentioned above can be represented as eddies defined by shape function
 <span class="math notranslate nohighlight">\(f\)</span> which has a compact support on <span class="math notranslate nohighlight">\([-1,1]\)</span> and has the normalization</p>
 <div class="math notranslate nohighlight" id="equation-normalization">
@@ -526,13 +526,13 @@ e^{-9r^2/2} &amp; \leq |r| &lt; 2 \\
 </div>
 <div class="section" id="digital-filtering-method">
 <h2>Digital filtering method<a class="headerlink" href="#digital-filtering-method" title="Permalink to this headline">¶</a></h2>
-<p>The synthetic digital filtering method (SDFM) initiated by <a class="bibtex reference internal" href="#klein2003" id="id17">[4]</a> attempts to model
+<p>The synthetic digital filtering method (SDFM) initiated by <a class="bibtex reference internal" href="../../../../index.html#klein2003" id="id17">[4]</a> attempts to model
 the spatial and temporal coherence of turbulent inflow through the digital filtering
 uncorrelated random data, and account for inhomogeneity and anisotropy using the method proposed
-by <a class="bibtex reference internal" href="#lund1998" id="id18">[13]</a>. It is relatively easy to implement and is able to reproduce the first and
+by <a class="bibtex reference internal" href="../../../../index.html#lund1998" id="id18">[13]</a>. It is relatively easy to implement and is able to reproduce the first and
 second order one-point statistics as well as autocorrelation function. However, the synthetic
-turbulence generated by SDFM does not satisfy the continuity equation. <a class="bibtex reference internal" href="#kim2013" id="id19">[14]</a> offered a promising approach to enforce the divergence-free constraint in the SDFM by inserting the synthetic turbulence on a transverse plane near the inlet and relying on pressure-velocity coupling to do the correction. From a computational wind engineering point of view, the ability of SDFM to impose a two-point spatial correlation directly is very attractive.</p>
-<p>We now briefly introduce the filtering method by <a class="bibtex reference internal" href="#klein2003" id="id20">[4]</a>. In order to create two-point
+turbulence generated by SDFM does not satisfy the continuity equation. <a class="bibtex reference internal" href="../../../../index.html#kim2013" id="id19">[14]</a> offered a promising approach to enforce the divergence-free constraint in the SDFM by inserting the synthetic turbulence on a transverse plane near the inlet and relying on pressure-velocity coupling to do the correction. From a computational wind engineering point of view, the ability of SDFM to impose a two-point spatial correlation directly is very attractive.</p>
+<p>We now briefly introduce the filtering method by <a class="bibtex reference internal" href="../../../../index.html#klein2003" id="id20">[4]</a>. In order to create two-point
 correlations, let <span class="math notranslate nohighlight">\(r_m\)</span> be a series of random data with zero mean and unity variance, then</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-weuq-tinf-26">
 <span class="eqno">(1.4.46)<a class="headerlink" href="#equation-common-technical-manual-desktop-weuq-tinf-26" title="Permalink to this equation">¶</a></span>\[u_m = \sum_{n=-N}^N b_n r_{m+n}\]</div>
@@ -565,7 +565,7 @@ approximately reproduce <a class="reference internal" href="#equation-gaussian">
 <p>The width <span class="math notranslate nohighlight">\(N\)</span> of the filter should be chosen such that <span class="math notranslate nohighlight">\(N\geq 2n\)</span> (where <span class="math notranslate nohighlight">\(n=L\varDelta x\)</span>) to ensure the accuracy of the approximation. On the other hand, for an exponential correlation function</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-weuq-tinf-29">
 <span class="eqno">(1.4.51)<a class="headerlink" href="#equation-common-technical-manual-desktop-weuq-tinf-29" title="Permalink to this equation">¶</a></span>\[R(r) = \mathrm{exp}\left(-\frac{\pi |r|}{2L}\right)\]</div>
-<p>It is suggested <a class="bibtex reference internal" href="#xie2008" id="id21">[15]</a> to evaluate the filter coefficients using</p>
+<p>It is suggested <a class="bibtex reference internal" href="../../../../index.html#xie2008" id="id21">[15]</a> to evaluate the filter coefficients using</p>
 <div class="math notranslate nohighlight" id="equation-exponential">
 <span class="eqno">(1.4.52)<a class="headerlink" href="#equation-exponential" title="Permalink to this equation">¶</a></span>\[b_k = \tilde{b}_k / \left( \sum_{j=-N}^N \tilde{b}_j^2 \right)^{1/2}\]</div>
 <p>where</p>
@@ -605,8 +605,8 @@ multidimensional Newton method such that the resulting correlation function <a c
 <li><p>Repeat the steps (d) <span class="math notranslate nohighlight">\(\sim\)</span> (g) for each time step.</p></li>
 </ol>
 <p>If the target correlation function is an exponential function, an alternative approach by
-<a class="bibtex reference internal" href="#xie2008" id="id22">[15]</a> can be adopted for generating inflow turbulence which turns out to be much more
-efficient than the method of <a class="bibtex reference internal" href="#klein2003" id="id23">[4]</a>. Instead of using the filtering operation discussed above, Xie and Castro’s method obtain the temporal correlation with the expression</p>
+<a class="bibtex reference internal" href="../../../../index.html#xie2008" id="id22">[15]</a> can be adopted for generating inflow turbulence which turns out to be much more
+efficient than the method of <a class="bibtex reference internal" href="../../../../index.html#klein2003" id="id23">[4]</a>. Instead of using the filtering operation discussed above, Xie and Castro’s method obtain the temporal correlation with the expression</p>
 <div class="math notranslate nohighlight" id="equation-temporalcorrelation">
 <span class="eqno">(1.4.57)<a class="headerlink" href="#equation-temporalcorrelation" title="Permalink to this equation">¶</a></span>\[\Psi_{\alpha}(t+\varDelta t,j,k) = \Psi_{\alpha}(t,j,k)\mathrm{exp}\left(-\frac{\pi \varDelta t}{2T} \right)+\varPsi_{\alpha}(t,j,k)\left[1-\mathrm{exp}\left(-\frac{\pi \varDelta t}{2T} \right)\right]^{0.5}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Psi_{\alpha}(t,j,k)\)</span> and <span class="math notranslate nohighlight">\(\varPsi_{\alpha}(t,j,k)\)</span> are two set of
@@ -622,7 +622,7 @@ simplicity, we write <span class="math notranslate nohighlight">\(\Psi_{\alpha,0
 &amp; = \mathrm{exp}\left(-\frac{k\pi \varDelta t}{2T}\right)
 \end{split}\end{split}\]</div>
 <p>which reproduces an exponential function. An overall algorithm for generating the inflow
-velocity supported by the method of <a class="bibtex reference internal" href="#xie2008" id="id24">[15]</a> can be stated as follows</p>
+velocity supported by the method of <a class="bibtex reference internal" href="../../../../index.html#xie2008" id="id24">[15]</a> can be stated as follows</p>
 <ol class="loweralpha">
 <li><p>Choose for each coordinate direction corresponding to the inflow plane a length scale
 <span class="math notranslate nohighlight">\(L_y = n_y\varDelta y\)</span>, <span class="math notranslate nohighlight">\(L_z = n_z\varDelta z\)</span>, a time scale <span class="math notranslate nohighlight">\(T\)</span> and determine
