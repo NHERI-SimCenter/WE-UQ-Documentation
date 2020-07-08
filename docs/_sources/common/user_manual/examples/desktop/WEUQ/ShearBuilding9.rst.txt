@@ -1,8 +1,9 @@
+.. lblWE-Example9:
 
-9 Story Building: Sampling Analysis
-===================================
+9 Story Building: Sampling and Reliability Analysis
+===================================================
 
-Consider the problem of uncertainty quantification in a nine story steel building. The building being modelled is the 9 story LA building presented in the FEMA-355C. From the description in Appendix B of the FEMA document the building is a **150** ft square building with a height above ground of **120** ft with a weight of approx. **19,800** kips. Eigenvalues are shown in Table 5.1. of the document to be between **2.34** sec and **2.21** sec depending on connection detals. For this example (and for demonstrative purposes only), this building will be modelled as a shear building with **10** nodes and **9** elements, as shown in following figure. For loading, the Stochastic Wind Generation tool will be used with the gust wind speed being treated as a random variable with a normal distribtion described by a mean :math:`\mu_{gustWS}=20 \mathrm{mph}` and standard deviation :math:`\sigma_{gustWS} =3 \mathrm{mph}` (COV = 15%). 
+Consider the problem of uncertainty quantification in a nine story steel building. The building being modelled is the 9 story LA building presented in the FEMA-355C report. From the description in Appendix B of the FEMA document the building is a **150** ft square building with a height above ground of **120** ft with a weight of approx. **19,800** kips. Eigenvalues are shown in Table 5.1. of the FEMA document to be between **2.3** sec and **2.2** sec depending on connection detals. For this example (and for demonstrative purposes only), this building will be modelled as a shear building with **10** nodes and **9** elements, as shown in following figure. For loading, the Stochastic Wind Generation tool will be used with the gust wind speed being treated as a random variable with a normal distribtion described by a mean :math:`\mu_{gustWS}=20 \mathrm{mph}` and standard deviation :math:`\sigma_{gustWS} =3 \mathrm{mph}` (COV = 15%). 
 
 .. figure:: figures/9story.png
    :align: center
@@ -21,14 +22,12 @@ The structure has uncertain properties that all follow normal distribution:
    #. For the mean values provided the natural period of the structure is **2.27** sec.
    #. The choice of COV percentages is for demonstrative purposes only.
 
-The exercise will use both the MDOF, :numref:`lblMDOF`,  and OpenSees, :numref:`lblOpenSeesSIM`, structural generators. For the OpenSees generator the following model script, `ShearBuilding3.tcl <https://github.com/NHERI-SimCenter/EE-UQ/blob/master/Examples/ShearBuilding3/ShearBuilding3.tcl>`_ :
+   #. The exercise will use both the MDOF, :numref:`lblMDOF`,  and OpenSees, :numref:`lblOpenSeesSIM`, structural generators. For the OpenSees generator the following model script, `9story.tcl <https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/9Story/9Story.tcl>`_
 
-.. literalinclude:: 9Story.tcl
-   :language: tcl
+   .. literalinclude:: 9Story.tcl
+      :language: tcl
 
-.. note::
-   
-   1. The first lines containing ``pset`` will be read by the application when the file is selected and the application will autopopulate the Random Variables ``w`` and ``k`` in the **RV** tab with this same variable name. It is of course possible to explicitly use Random Variables without the ``pset`` command by "RV.**variable name" in the input file. However, no random variables will be autopopulated if user chooses this route.
+   #. The first lines containing ``pset`` will be read by the application when the file is selected and the application will autopopulate the Random Variables ``w`` and ``k`` in the **RV** tab with this same variable name. It is of course possible to explicitly use Random Variables without the ``pset`` command by "RV.**variable name" in the input file. However, no random variables will be autopopulated if user chooses this route.
 
 .. warning::
 
@@ -37,11 +36,7 @@ The exercise will use both the MDOF, :numref:`lblMDOF`,  and OpenSees, :numref:`
 Sampling Analysis
 ^^^^^^^^^^^^^^^^^
 
-We shall first demonstrate the steps to perform a sampling analysis to study the effects of the roof response of models of the building subjected to the wind loads using the Stochastic Wind generation tool.
-
 To perform a Sampling or Forward propagation uncertainty analysis the user would perform the following steps:
-
-The steps involved:
 
 1. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota, and the UQ Method Category as Forward Propagation, and the Forward Propagation method as LHS (Latin Hypercube). Change the #samples to 500 and the seed to 20 as shown in the figure.
 
@@ -64,7 +59,7 @@ The steps involved:
 
 .. note::
 
-   To specify instead to use the OpenSees script instead, from thee Model Generator pull down menu select **OpenSees. For the fields in the panel presented enter the path to the ``9story.tcl`` script. For both the Centroid  Nodes (those nodes were the floor loads will be applied) the Response Nodes (those nodes from which the reponse quantaties will be evaluated) as **1 2 3 4 5 6 7 8 9 10** in the panel. The Response nodes will tell model generator which nodes correspond to nodes at the 4 floor levels for which responses are to be obtained when using the standard earthquake EDP's.
+   To specify instead to use the OpenSees script instead, from thee Model Generator pull down menu select ``OpenSees``. For the fields in the panel presented enter the path to the `9story.tcl <https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/9Story/9Story.tcl>`_ script. For both the Centroid  Nodes (those nodes were the floor loads will be applied) the Response Nodes (those nodes from which the reponse quantaties will be evaluated) as **1 2 3 4 5 6 7 8 9 10** in the panel. The Response nodes will tell model generator which nodes correspond to nodes at the 4 floor levels for which responses are to be obtained when using the standard earthquake EDP's.
 
    .. figure:: figures/9story-SIM2.png
       :align: center
@@ -117,7 +112,7 @@ User Defined Output
 
 In this section we will demonstrate the use of the user defined output option for the EDP panel. In the previous example we got the standard output, which can be both a lot and also limited (in sense you may not get the information you want). In this example we will present how to obtain results just for the roof displacement, the displacement of node **10** in both the **MDOF** and **OpenSees** model generator examples and shear force at the base of the structure. For the OpenSees model, it is also possible to obtain the overturning moment (something not possible in MDOF model due to fact it is modelled using spring elements). The examples could be extended to output for example the element end rotations, plastic rotations, ...
 
-For this example you will need two additional file `recorder.tcl <https://github.com/NHERI-SimCenter/WE-UQ/blob/master/Examples/9story/recorder.tcl>`_ and `postprocess.tcl <https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/9story/postprocess.tcl>`_. 
+For this example you will need two additional file `recorder.tcl <https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/9Story/recorder.tcl>`_ and `postprocess.tcl <https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/9Story/postprocess.tcl>`_. 
 
 The recorder script as shown will record the envelope displacements and RMS acceleratiuons in the first two degrees-of-freedom for the nodes in the modes. The script will also record the element forces. The file is as shown below:
 

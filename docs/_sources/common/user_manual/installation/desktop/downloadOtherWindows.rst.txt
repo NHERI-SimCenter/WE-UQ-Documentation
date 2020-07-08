@@ -74,7 +74,7 @@ You now need to make some changes to your environment variables as neither OpenS
 3. Now we are going to edit the  **PATH** variable. Select the Path variable row to highlight it and then press the **Edit** button.
 4. to the variables value you want to **APPEND** the following:
 
-.. :code-block:: none
+.. code-block:: none
    
    C:\\SimCenter\\OpenSees\\OpenSees-3.2.2\\bin;C:\\SimCenter\\dakota\\dakota-6.10.0\\bin
 
@@ -83,7 +83,8 @@ You now need to make some changes to your environment variables as neither OpenS
 7. For the variable name enter: **PYTHONPATH**.
 8. For the variable path enter
 
-.. :code-block:: none
+.. code-block:: none
+
    C:\\SimCenter\\dakota\\share\\dakota\\Python
 
 9. Press the **OK** button.
@@ -98,7 +99,7 @@ Steps to Test:
    2. Type `python3` in the application that starts (this should bring up python interpreter)
    3. Enter the following to test the install of the modules and quit the application:
    
-   .. :code-block:: python
+   .. code-block:: python
 
       import numpy
       import scipy
@@ -109,7 +110,7 @@ Steps to Test:
 
    5. Enter the following to exit this program:
    
-   .. :code-block:: tcl
+   .. code-block:: tcl
 
       exit
 

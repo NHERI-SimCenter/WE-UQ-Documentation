@@ -253,12 +253,18 @@
 <li><p>Now we are going to edit the  <strong>PATH</strong> variable. Select the Path variable row to highlight it and then press the <strong>Edit</strong> button.</p></li>
 <li><p>to the variables value you want to <strong>APPEND</strong> the following:</p></li>
 </ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>C:\\SimCenter\\OpenSees\\OpenSees-3.2.2\\bin;C:\\SimCenter\\dakota\\dakota-6.10.0\\bin
+</pre></div>
+</div>
 <ol class="arabic simple" start="5">
 <li><p>Press the <strong>OK</strong> button.</p></li>
 <li><p>Now we are going to create a new variable, <strong>PYTHONPATH</strong> variable. Press the <strong>NEW</strong> button.</p></li>
 <li><p>For the variable name enter: <strong>PYTHONPATH</strong>.</p></li>
 <li><p>For the variable path enter</p></li>
 </ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>C:\\SimCenter\\dakota\\share\\dakota\\Python
+</pre></div>
+</div>
 <ol class="arabic simple" start="9">
 <li><p>Press the <strong>OK</strong> button.</p></li>
 <li><p>Press now the <strong>Apply</strong> button and exit the SystemProperties application</p></li>
@@ -272,10 +278,19 @@
 <li><p>Type <cite>python3</cite> in the application that starts (this should bring up python interpreter)</p></li>
 <li><p>Enter the following to test the install of the modules and quit the application:</p></li>
 </ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">import</span> <span class="nn">scipy</span>
+<span class="kn">import</span> <span class="nn">pandas</span>
+<span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
 <ol class="arabic simple" start="4">
 <li><p>Type <cite>OpenSees</cite> in the command window (this should bring up the OpenSees interpreter)</p></li>
 <li><p>Enter the following to exit this program:</p></li>
 </ol>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nb">exit</span>
+</pre></div>
+</div>
 <ol class="arabic simple" start="6">
 <li><p>Type <cite>dakota</cite> in the command window (this should start the dakota application which should give some error messages)</p></li>
 </ol>

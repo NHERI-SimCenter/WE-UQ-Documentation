@@ -172,24 +172,24 @@
             
   <div class="section" id="story-building-sensitivity-analysis">
 <h1>3 Story Building: Sensitivity Analysis<a class="headerlink" href="#story-building-sensitivity-analysis" title="Permalink to this headline">¶</a></h1>
-<p>Consider the problem of performing a sensitivity study of a three story steel building for determining the modeling parameters that effect the response. The building being modelled is the 3 story Boston building presented in the FEMA-355C report. From the description in Appendix B of the FEMA document the building is a rectangular building <strong>120</strong> ft by <strong>180</strong> ft with a height above ground of <strong>39</strong> ft with a weight of approx. <strong>6,485</strong> kips. Eigenvalues are shown in Table 5.1. of the document to be between <strong>1.89</strong> sec and <strong>1.62</strong> sec depending on connection detals. For this example (and for demonstrative purposes only), this building will be modelled as a shear building with <strong>4</strong> nodes and <strong>3</strong> elements, as shown in following figure. For loading, the Lowrise TPU Wind Generation tool will be used with the mean wind speed at 10m being treated as a random variable with a normal distribtion described by a mean <span class="math notranslate nohighlight">\(\mu_{meanWS}=20 \mathrm{mph}\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sigma_{gustWS} =3 \mathrm{mph}\)</span> (COV = 15%).</p>
-<div class="align-center figure" id="id3">
+<p>Consider the problem of uncertainty quantification in a three story steel building. The building being modelled is the 3 story Boston building presented in the FEMA-355C report. From the description in Appendix B of the FEMA document the building is a rectangular building <strong>120</strong> ft by <strong>180</strong> ft with a height above ground of <strong>39</strong> ft. The building weight is approx. <strong>6,500</strong> kips. Eigenvalues are shown in Table 5.1. of the FEMA document to be between <strong>1.6</strong> sec and <strong>1.9</strong> sec depending on connection detals. For this example (and for demonstrative purposes only), this building will be modelled as a shear building with <strong>10</strong> nodes and <strong>9</strong> elements, as shown in following figure. For loading, the TPU Low Rise Wind Generation tool will be used with the mean wind speed being treated as a random variable with a normal distribtion described by a mean <span class="math notranslate nohighlight">\(\mu_{gustWS}=20 \mathrm{mph}\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sigma_{gustWS} =3 \mathrm{mph}\)</span> (COV = 15%).</p>
+<div class="align-center figure" id="id5">
 <a class="reference internal image-reference" href="common/user_manual/examples/desktop/WEUQ/figures/3story.png"><img alt="common/user_manual/examples/desktop/WEUQ/figures/3story.png" src="common/user_manual/examples/desktop/WEUQ/figures/3story.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-text">Three Story Downtown Boston Building from FEMA-355C</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Three Story Downtown Boston Building from FEMA-355C</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>The structure has uncertain properties that all follow normal distribution:</p>
 <ol class="arabic simple">
-<li><p>Weight of building(bldgW): mean <span class="math notranslate nohighlight">\(\mu_{bldgW}=6485 \mathrm{kip}\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sigma_{bldgW} = 65 \mathrm{kip}\)</span> (COV = 10%)</p></li>
-<li><p>Story Stiffness(storyK): mean <span class="math notranslate nohighlight">\(\mu_{storyK}=400 \mathrm{kip/in}\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sigma_{storyK} =40 \mathrm{kip/in}\)</span> (COV = 10%)</p></li>
+<li><p>Weight of Building(bldgW): mean <span class="math notranslate nohighlight">\(\mu_{bldgW}=6500 \mathrm{kip}\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sigma_{bldgW} =400 \mathrm{kip}\)</span> (COV = 6%)</p></li>
+<li><p>Story Stiffness(storyK): mean <span class="math notranslate nohighlight">\(\mu_{storyK}=1600 \mathrm{kip/in}\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sigma_{storyK} =160 \mathrm{kip/in}\)</span> (COV = 10%)</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol class="arabic simple">
-<li><p>For the mean values provided the natural period of the structure is <strong>1.67</strong> sec.</p></li>
+<li><p>For the mean values provided the natural period of the structure is <strong>1.7</strong> sec.</p></li>
 <li><p>The choice of COV percentages is for demonstrative purposes only.</p></li>
 </ol>
 </div>
-<p>The exercise will use the OpenSees, <code class="xref std std-numref docutils literal notranslate"><span class="pre">lblOpenSeesSIM</span></code>, SIM and UserDefined EDP. For the OpenSees generator the following model script, <a class="reference external" href="https://github.com/NHERI-SimCenter/EE-UQ/blob/master/examples/3Story/3tory.tcl">3story.tcl</a> :</p>
+<p>The exercise will use the OpenSees, <code class="xref std std-numref docutils literal notranslate"><span class="pre">lblOpenSeesSIM</span></code>, structural generators. For the OpenSees generator the following model script, <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/3Story/3story.tcl">3story.tcl</a> :</p>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c">#units kip, in</span>
 
 <span class="nv">pset</span> storyK  <span class="mf">400.0</span>
@@ -234,45 +234,39 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol class="arabic simple">
-<li><p>The first lines containing <code class="docutils literal notranslate"><span class="pre">pset</span></code> will be read by the application when the file is selected and the application will autopopulate the Random Variables <code class="docutils literal notranslate"><span class="pre">bldgW</span></code> and <code class="docutils literal notranslate"><span class="pre">storyK</span></code> in the <strong>RV</strong> tab with this same variable name. It is of course possible to explicitly use Random Variables without the <code class="docutils literal notranslate"><span class="pre">pset</span></code> command by “RV.**variable name” in the input file. However, no random variables will be autopopulated if user chooses this route.</p></li>
+<li><p>The first lines containing <code class="docutils literal notranslate"><span class="pre">pset</span></code> will be read by the application when the file is selected and the application will autopopulate the Random Variables <code class="docutils literal notranslate"><span class="pre">w</span></code> and <code class="docutils literal notranslate"><span class="pre">k</span></code> in the <strong>RV</strong> tab with this same variable name. It is of course possible to explicitly use Random Variables without the <code class="docutils literal notranslate"><span class="pre">pset</span></code> command by “RV.**variable name” in the input file. However, no random variables will be autopopulated if user chooses this route.</p></li>
 </ol>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Do not place the file in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing this file multiple times (a copy will be made for each sample specified). If you are like us, your root, Downloads or Documents folders contains and awful lot of files and when the backend workflow runs you will slowly find you will run out of disk space!</p>
 </div>
-<div class="section" id="sampling-analysis">
-<h2>Sampling Analysis<a class="headerlink" href="#sampling-analysis" title="Permalink to this headline">¶</a></h2>
-<p>We shall first demonstrate the steps to perform a sampling analysis to study the effects of the roof response of models of the building subjected to the wind loads using the Stochastic Wind generation tool.</p>
-<p>To perform a Sampling or Forward propagation uncertainty analysis the user would perform the following steps:</p>
+<div class="section" id="global-sensitivity-analysis">
+<h2>Global Sensitivity Analysis<a class="headerlink" href="#global-sensitivity-analysis" title="Permalink to this headline">¶</a></h2>
+<p>In a global sensitivity analysis the user is wishing to understand what is the influence of the individual random variables on the quantities of interest. This is typically done before the user launches large scale forward uncertainty problems in order to limit the number of random variables used so as to limit the number of simulations performed.</p>
+<p>For this problem we will limit the response qunataties of interest to the following six quantaties. Peak Roof displacement in 1 and 2 directions, root mean square (RMS) accelerations in 1 and 2 directions, Peak BAse shear and moments in 1 and 2 directions. In order to do this we will introduce User defined EPD quantaties, which necessitates the followng two files: <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/3Story/recorder.tcl">recorder.tcl</a> and <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/3Story/postprocess.tcl">postprocess.tcl</a>.  These files are the same as those presented in <span class="xref std std-ref">lblWE-Example9</span></p>
+<p>To perform a Global Sensitivity  analysis the user would perform the following steps:</p>
 <p>The steps involved:</p>
 <ol class="arabic simple">
-<li><p>Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota, and the UQ Method Category as Forward Propagation, and the Forward Propagation method as LHS (Latin Hypercube). Change the #samples to 500 and the seed to 20 as shown in the figure.</p></li>
+<li><p>Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota. From the UQ Method Category drop down menu select Sensitivity Analysis, Keeping the method as LHS (Latin Hypercube). Change the #samples to 500 and the seed to 20 as shown in the figure.</p></li>
 </ol>
 <div class="align-center figure">
-<img alt="../../../../../_images/9story-UQ.png" src="../../../../../_images/9story-UQ.png" />
+<img alt="common/user_manual/examples/desktop/WEUQ/figures/3story-UQ.png" src="common/user_manual/examples/desktop/WEUQ/figures/3story-UQ.png" />
 </div>
 <ol class="arabic simple" start="2">
-<li><p>Next select the <strong>GI</strong> panel. In this panel the building properties and units are set. For this example enter <strong>9</strong> for the number of stories, <strong>1400</strong> for building height, and <strong>1600</strong> for building breadth and depth</p></li>
+<li><p>Next select the <strong>GI</strong> panel. In this panel the building properties and units are set. For this example enter <strong>3</strong> for the number of stories, <strong>468</strong> for building height, <strong>1440</strong> fow building width, and <strong>2160</strong> for building depth.</p></li>
 </ol>
 <div class="align-center figure">
-<img alt="../../../../../_images/9story-GI.png" src="../../../../../_images/9story-GI.png" />
+<img alt="common/user_manual/examples/desktop/WEUQ/figures/3story-GI.png" src="common/user_manual/examples/desktop/WEUQ/figures/3story-GI.png" />
 </div>
 <ol class="arabic simple" start="3">
-<li><p>Next select the <strong>SIM</strong> tab from the input panel. This will default in the MDOF model generator. We will use this generator (the NOTE below contains instruction on how to use the OpenSees scipt instead). In the building information panel, the number of stories should show <strong>9</strong> and the story heights <strong>160</strong>. In the building Information box specify <strong>w</strong> for the floor weights and <strong>k</strong> for story stiffness (in both x and y directions).</p></li>
+<li><p>Next select the <strong>SIM</strong> tab from the input panel. This will default in the MDOF model generator. Using the drop down menu change the generator to the OpenSees option. Specify the path the the story.tcl file, and for the two line edits for centroid nodes and response node enter <strong>1 2 3 4</strong> (which identifies the 4 column nodes as having an id of <strong>1</strong>, <strong>2</strong>, <strong>3</strong>, and <strong>4</strong>. For the spatial dimension enter <strong>3</strong> (3d model) and for number of dof enter <strong>6</strong> as shown in figure:</p></li>
 </ol>
 <div class="align-center figure">
-<img alt="../../../../../_images/9story-SIM1.png" src="../../../../../_images/9story-SIM1.png" />
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To specify instead to use the OpenSees script instead, from thee Model Generator pull down menu select <strong>OpenSees. For the fields in the panel presented enter the path to the ``9story.tcl`` script. For both the Centroid  Nodes (those nodes were the floor loads will be applied) the Response Nodes (those nodes from which the reponse quantaties will be evaluated) as **1 2 3 4 5 6 7 8 9 10</strong> in the panel. The Response nodes will tell model generator which nodes correspond to nodes at the 4 floor levels for which responses are to be obtained when using the standard earthquake EDP’s.</p>
-<div class="align-center figure">
-<img alt="../../../../../_images/9story-SIM2.png" src="../../../../../_images/9story-SIM2.png" />
-</div>
+<img alt="common/user_manual/examples/desktop/WEUQ/figures/3story-SIM.png" src="common/user_manual/examples/desktop/WEUQ/figures/3story-SIM.png" />
 </div>
 <ol class="arabic simple" start="3">
-<li><p>Next select the <strong>EVT</strong> panel. From the Load Generator pull down menu select the <strong>Stochastic Wind</strong> option. Leave the exposure condition as <strong>B</strong>. Set the drag coefficient as <strong>1.3</strong> and enter <code class="docutils literal notranslate"><span class="pre">gustWS</span></code> for the 3 sec gust wind speed at the 33 ft height.</p></li>
+<li><p>Next select the <strong>EVT</strong> panel. From the Load Generator pull down menu select the <strong>Low Rise TPU</strong> option. Leave the exposure condition as <strong>B</strong>. Set the drag coefficient as <strong>1.3</strong> and enter <code class="docutils literal notranslate"><span class="pre">gustWS</span></code> for the 3 sec gust wind speed at the 33 ft height.</p></li>
 </ol>
 <div class="align-center figure">
 <img alt="../../../../../_images/9story-EVENT.png" src="../../../../../_images/9story-EVENT.png" />
@@ -306,11 +300,11 @@
 </div>
 <p>Various views of the graphical display can be obtained by left and right clicking in the columns of the tabular data. If a singular column of the tabular data is pressed with both right and left buttons a frequency and CDF will be displayed, as shown in figure below.</p>
 <div class="align-center figure">
-<img alt="common/user_manual/examples/desktop/WEUQ/figures/shearRES6.png" src="common/user_manual/examples/desktop/WEUQ/figures/shearRES6.png" />
+<img alt="../../../../../_images/9story-RES6.png" src="../../../../../_images/9story-RES6.png" />
 </div>
 </div>
-<div class="section" id="user-defeined-output">
-<h2>User Defeined Output<a class="headerlink" href="#user-defeined-output" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="user-defined-output">
+<h2>User Defined Output<a class="headerlink" href="#user-defined-output" title="Permalink to this headline">¶</a></h2>
 <p>In this section we will demonstrate the use of the user defined output option for the EDP panel. In the previous example we got the standard output, which can be both a lot and also limited (in sense you may not get the information you want). In this example we will present how to obtain results just for the roof displacement, the displacement of node <strong>10</strong> in both the <strong>MDOF</strong> and <strong>OpenSees</strong> model generator examples and shear force at the base of the structure. For the OpenSees model, it is also possible to obtain the overturning moment (something not possible in MDOF model due to fact it is modelled using spring elements). The examples could be extended to output for example the element end rotations, plastic rotations, …</p>
 <p>For this example you will need two additional file <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/blob/master/Examples/9story/recorder.tcl">recorder.tcl</a> and <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/9story/postprocess.tcl">postprocess.tcl</a>.</p>
 <p>The recorder script as shown will record the envelope displacements and RMS acceleratiuons in the first two degrees-of-freedom for the nodes in the modes. The script will also record the element forces. The file is as shown below:</p>
@@ -322,7 +316,7 @@
 <span class="nv">recorder</span> EnvelopeElement <span class="o">-</span>file forces.out <span class="o">-</span>eleRange <span class="mi">1</span> <span class="nv">$numEle</span> forces
 </pre></div>
 </div>
-<p>The postprocess.tcl script shown below will accept as input any of the 10 nodes <a href="#id1"><span class="problematic" id="id2">*</span></a>in the domain and for each of the two dof directions and element forces.</p>
+<p>The postprocess.tcl script shown below will accept as input any of the 10 nodes <a href="#id3"><span class="problematic" id="id4">*</span></a>in the domain and for each of the two dof directions and element forces.</p>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> dispIn <span class="k">[</span><span class="nb">open</span> disp.out r<span class="k">]</span>
 <span class="k">while</span> <span class="k">{</span> <span class="k">[</span><span class="nb">gets</span> <span class="nv">$dispIn</span> data<span class="k">]</span> <span class="o">&gt;=</span> <span class="nv">0</span> <span class="k">}</span> <span class="k">{</span>
      <span class="k">set</span> maxDisp <span class="nv">$data</span>
@@ -388,6 +382,24 @@
 </ol>
 <div class="align-center figure">
 <img alt="../../../../../_images/9story-RES-USER.png" src="../../../../../_images/9story-RES-USER.png" />
+</div>
+</div>
+<div class="section" id="reliability-analysis">
+<h2>Reliability Analysis<a class="headerlink" href="#reliability-analysis" title="Permalink to this headline">¶</a></h2>
+<p>If the user is interested in the probability that certain response measure will be exceeded an alternative strategy is to perform a reliability analysis. To perform a reliability analysis the steps above would be repeated with the exception that the user would select a reliability analysis method instead of a Forward Propagation method. To obtain reliability results using the Global Reliability methose presented in Dakota choose the <strong>Global Reliability</strong> methods from the methods drop down menu. In the response levels enter a values of <strong>0.5</strong> and <strong>0.8</strong>, specifying that we are interested in the value of the CDF for a displacement of the roof of 0.5in and 0.8in, i.e. what is probability that displacement will be less than 0.8in.</p>
+<div class="align-center figure">
+<img alt="../../../../../_images/9story-UQ-Reliability.png" src="../../../../../_images/9story-UQ-Reliability.png" />
+</div>
+<p>After the user fills in the rest of the tabs as per the previous section, the user would then press the <strong>RUN</strong> button. The application (after spinning for a while with the wheel of death) will present the user with the results, which as shown below, indicate that the probabilities as <strong>52%</strong> and <strong>92%</strong>.</p>
+<div class="align-center figure">
+<img alt="../../../../../_images/9story-RES-Reliability.png" src="../../../../../_images/9story-RES-Reliability.png" />
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Reliability analysis can only be performed when their is only one EDP.</p>
+<div class="align-center figure">
+<img alt="../../../../../_images/9story-EDP-Reliability.png" src="../../../../../_images/9story-EDP-Reliability.png" />
+</div>
 </div>
 </div>
 </div>
