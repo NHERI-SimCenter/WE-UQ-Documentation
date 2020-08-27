@@ -23,7 +23,7 @@ The format for the wind tunnel data file is presently a JSON file. Future versio
 ::
 
 	{
- 	 "meanWindSpeed":22.000000,
+ 	 "windSpeed":22.000000,
  	 "modelShape":"Cuboid",
  	 "depth":24.000000,
  	 "height":12.000000,
