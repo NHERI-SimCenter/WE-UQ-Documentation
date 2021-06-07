@@ -1,40 +1,47 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>1.4. Turbulence Inflow &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="1. How to Build" href="../../../developer_manual/how_to_build/desktop/how_to_build.html" />
@@ -43,6 +50,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
 <style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../_static/css/bootstrap.css" rel="stylesheet">
 
 </head>
 
@@ -55,23 +63,26 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F2F2F2" >
           
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
 
-          
-            <a href="../../../../index.html">
-          
+  <a href="../../../../index.html">
 
-          
-            
-            <img src="../../../../_static/WE-UQ-Logo-grey2.png" class="logo" alt="Logo"/>
-          
-          </a>
 
-          
-            
-            
-          
 
-          
+  
+  <img src="../../../../_static/WE-UQ-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -80,9 +91,10 @@
   </form>
 </div>
 
-          
+
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -90,17 +102,22 @@
               
             
             
-              <p class="caption"><span class="caption-text">User Manual</span></p>
+              <p class="caption"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/about/WEUQ/about.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/installation/desktop/installation.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/usage.html">4. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/examples/desktop/examples.html">6. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../requirements/WEUQ.html">7. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">8. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/license.html">9. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/about/WEUQ/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/usage.html">2. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../requirements/WEUQ.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul class="current">
@@ -137,6 +154,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -171,11 +189,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../technical_manual.html"><span class="section-number">1. </span>Technical Manual</a> &raquo;</li>
         
@@ -184,7 +204,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../../../../_sources/common/technical_manual/desktop/WEUQ/TinF.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -237,41 +257,41 @@ Compared with precursor simulation and recycling methods, the synthetic methods 
 a more practical and relatively efficient approach to generate inflow turbulence, and is
 therefore chosen as the subject of this section. Research activities on synthetic turbulence
 generation have been vigorous over the past decades and have branched out into several
-categories of techniques <a class="bibtex reference internal" href="../../../../index.html#wu2017" id="id1">[1]</a>, including the synthetic random Fourier method
-<a class="bibtex reference internal" href="../../../../index.html#kraichnan1970" id="id2">[2]</a><a class="bibtex reference internal" href="../../../../index.html#hoshiya1972" id="id3">[3]</a>, the synthetic digital filtering method <a class="bibtex reference internal" href="../../../../index.html#klein2003" id="id4">[4]</a>
-and the synthetic eddy methods <a class="bibtex reference internal" href="../../../../index.html#jarrin2006" id="id5">[5]</a>.
+categories of techniques <a class="bibtex reference internal" href="../../../../index.html#wu2017" id="id1">[5]</a>, including the synthetic random Fourier method
+<a class="bibtex reference internal" href="../../../../index.html#kraichnan1970" id="id2">[6]</a><a class="bibtex reference internal" href="../../../../index.html#hoshiya1972" id="id3">[7]</a>, the synthetic digital filtering method <a class="bibtex reference internal" href="../../../../index.html#klein2003" id="id4">[8]</a>
+and the synthetic eddy methods <a class="bibtex reference internal" href="../../../../index.html#jarrin2006" id="id5">[9]</a>.
 A brief introduction regarding to these techniques is given below and emphasis is placed on their abilities to capture the statistical characteristics as well as the spatial and temporal coherence of turbulence. Also note that since real turbulence is very complex, in most cases, not all of the above listed features can be fulfilled. There is always some adaptation time required for the artificial turbulence to evolve into real turbulence. Fulfilling the properties above with the synthetic turbulence is important to minimize the adaptation time or length.</p>
 </div>
 <div class="section" id="synthetic-random-fourier-method">
 <h2>Synthetic Random Fourier Method<a class="headerlink" href="#synthetic-random-fourier-method" title="Permalink to this headline">¶</a></h2>
 <p>The so-called synthetic random Fourier method (SRFM) attempts to model turbulent flow field indirectly by imposing constraints on uncorrelated random fields through an energy spectrum to account for the spatial and temporal correlations, which can be further classified into two groups.
-The first group of the SRFM was based on the pioneering work in <a class="bibtex reference internal" href="../../../../index.html#hoshiya1972" id="id6">[3]</a> and <a class="bibtex reference internal" href="../../../../index.html#shinozuka1972" id="id7">[6]</a> on the simulation of multi-correlated random processes using a weighted amplitude wave superposition (WAWS) method. This approach has an advantage that both the targeted power- and cross-spectra can be imposed in the generation process so that the prescribed target characteristics can be maintained. A major drawback of this method is that the generated turbulence does not satisfy the continuity equation of the flow, or in other words, the divergence-free condition is not guaranteed. As a consequence it would take enormous effort for the solver to enforce the continuity by correcting the turbulence inflow inserted into the computational domain, and the statistical characteristics of the corrected flow field differs from the target values.</p>
-<p>The second group of the SRFM was initiated by the work in <a class="bibtex reference internal" href="../../../../index.html#kraichnan1970" id="id8">[2]</a> on
+The first group of the SRFM was based on the pioneering work in <a class="bibtex reference internal" href="../../../../index.html#hoshiya1972" id="id6">[7]</a> and <a class="bibtex reference internal" href="../../../../index.html#shinozuka1972" id="id7">[10]</a> on the simulation of multi-correlated random processes using a weighted amplitude wave superposition (WAWS) method. This approach has an advantage that both the targeted power- and cross-spectra can be imposed in the generation process so that the prescribed target characteristics can be maintained. A major drawback of this method is that the generated turbulence does not satisfy the continuity equation of the flow, or in other words, the divergence-free condition is not guaranteed. As a consequence it would take enormous effort for the solver to enforce the continuity by correcting the turbulence inflow inserted into the computational domain, and the statistical characteristics of the corrected flow field differs from the target values.</p>
+<p>The second group of the SRFM was initiated by the work in <a class="bibtex reference internal" href="../../../../index.html#kraichnan1970" id="id8">[6]</a> on
 divergence-free homogeneous isotropic turbulence synthesis through the superposition of random
-harmonic functions. <a class="bibtex reference internal" href="../../../../index.html#smirnov2001" id="id9">[7]</a> took a step forward by combing Kraichnan’s technique
+harmonic functions. <a class="bibtex reference internal" href="../../../../index.html#smirnov2001" id="id9">[11]</a> took a step forward by combing Kraichnan’s technique
 with scaling and orthogonal transformation operations in a procedure known as the random flow
 generation (RFG) which allows to generate inhomogeneous and anisotropic turbulence. However the
 scaling operation introduced in the RFG technique can result in a velocity field that is not
 divergence-free for inhomogeneous turbulence. Modifications to enforce the divergence-free
-constraint for inhomogeneous turbulence was discussed in <a class="bibtex reference internal" href="../../../../index.html#yu2014" id="id10">[8]</a>. A major drawback of RFG
+constraint for inhomogeneous turbulence was discussed in <a class="bibtex reference internal" href="../../../../index.html#yu2014" id="id10">[12]</a>. A major drawback of RFG
 technique is that the power-spectra of the generated turbulence only follows Gaussian’s spectra
 model, so it is not suitable for simulating flows in atmospheric boundary layer.
-<a class="bibtex reference internal" href="../../../../index.html#huang2010" id="id11">[9]</a> revisited Kraichnan’s method and proposed a technique called DSRFG (for
+<a class="bibtex reference internal" href="../../../../index.html#huang2010" id="id11">[13]</a> revisited Kraichnan’s method and proposed a technique called DSRFG (for
 discretizing and synthesizing random flow generation) which allows to generate turbulent inflow
 from any prescribed spectrum. Instead of using the scaling and orthogonal transformation, the
 anisotropy of turbulence is realized by modifying the distribution strategy of the wave vector
 in Kraichnan’s original method. A drawback of the DSRFG technique is that it produces
 fluctuating velocities with high correlation due to the fact that in this method the spatial
 correlation is modelled by a parameter which is not a function of frequency but a constant
-value. Inspired by the DSRFG method, <a class="bibtex reference internal" href="../../../../index.html#castro2017" id="id12">[10]</a> proposed some modifications to this
+value. Inspired by the DSRFG method, <a class="bibtex reference internal" href="../../../../index.html#castro2017" id="id12">[14]</a> proposed some modifications to this
 technique to obtain the velocity field that had a better match with the target turbulent
 statistics. This method, known as modified discretizing and synthesizing random flow generation
 (MDSRFG), is capable of removing the dependence of statistic quantities of synthetic turbulence
-on spectra discretization resolution. <a class="bibtex reference internal" href="../../../../index.html#aboshosha2015" id="id13">[11]</a> also proposed a technique called consistent discrete RFG (CDRFG) to accurately model the target spectra and the coherence function. In both two methods mentioned above, the parameter that characterizes the spatial correlation is expressed as a function of frequency to account for the damping of coherence with the increase of frequency. An attractive feature of second group of SRFM is that the generation procedures are usually independent at each point and each time-instant so that it can be easily accelerated by conducting parallel computation, although the generated random flow may not satisfy the continuity equation.</p>
+on spectra discretization resolution. <a class="bibtex reference internal" href="../../../../index.html#aboshosha2015" id="id13">[15]</a> also proposed a technique called consistent discrete RFG (CDRFG) to accurately model the target spectra and the coherence function. In both two methods mentioned above, the parameter that characterizes the spatial correlation is expressed as a function of frequency to account for the damping of coherence with the increase of frequency. An attractive feature of second group of SRFM is that the generation procedures are usually independent at each point and each time-instant so that it can be easily accelerated by conducting parallel computation, although the generated random flow may not satisfy the continuity equation.</p>
 </div>
 <div class="section" id="synthetic-eddy-method">
 <h2>Synthetic Eddy Method<a class="headerlink" href="#synthetic-eddy-method" title="Permalink to this headline">¶</a></h2>
-<p>The synthetic eddy method (SEM) initiated by <a class="bibtex reference internal" href="../../../../index.html#jarrin2006" id="id14">[5]</a> is based on the classical view
+<p>The synthetic eddy method (SEM) initiated by <a class="bibtex reference internal" href="../../../../index.html#jarrin2006" id="id14">[9]</a> is based on the classical view
 of turbulence as a superposition of the representative coherent eddies. In the SEM, the flow is
 assumed to consist of randomly distributed turbulent spots, and each turbulent spot is modelled
 by a three-dimensional shape function with compact support and satisfies a proper normalization
@@ -281,8 +301,8 @@ reconstructed using the method proposed by to recover the desired statistical ch
 and to account for the conditions of inhomogeneity and anisotropy. The choice of the shape
 function plays an important role in the SEM since it is directly related to the two-point
 autocorrelation function, and consequently the power spectrum of the synthetic turbulence.
-Enforcement of the continuity condition in the SEM was discussed in <a class="bibtex reference internal" href="../../../../index.html#poletto2013" id="id15">[12]</a>.</p>
-<p>A brief introduction on the SEM presented by <a class="bibtex reference internal" href="../../../../index.html#jarrin2006" id="id16">[5]</a> is given as follows. To start
+Enforcement of the continuity condition in the SEM was discussed in <a class="bibtex reference internal" href="../../../../index.html#poletto2013" id="id15">[16]</a>.</p>
+<p>A brief introduction on the SEM presented by <a class="bibtex reference internal" href="../../../../index.html#jarrin2006" id="id16">[9]</a> is given as follows. To start
 with, the turbulent spot mentioned above can be represented as eddies defined by shape function
 <span class="math notranslate nohighlight">\(f\)</span> which has a compact support on <span class="math notranslate nohighlight">\([-1,1]\)</span> and has the normalization</p>
 <div class="math notranslate nohighlight" id="equation-normalization">
@@ -531,13 +551,13 @@ e^{-9r^2/2} &amp; \leq |r| &lt; 2 \\
 </div>
 <div class="section" id="digital-filtering-method">
 <h2>Digital filtering method<a class="headerlink" href="#digital-filtering-method" title="Permalink to this headline">¶</a></h2>
-<p>The synthetic digital filtering method (SDFM) initiated by <a class="bibtex reference internal" href="../../../../index.html#klein2003" id="id17">[4]</a> attempts to model
+<p>The synthetic digital filtering method (SDFM) initiated by <a class="bibtex reference internal" href="../../../../index.html#klein2003" id="id17">[8]</a> attempts to model
 the spatial and temporal coherence of turbulent inflow through the digital filtering
 uncorrelated random data, and account for inhomogeneity and anisotropy using the method proposed
-by <a class="bibtex reference internal" href="../../../../index.html#lund1998" id="id18">[13]</a>. It is relatively easy to implement and is able to reproduce the first and
+by <a class="bibtex reference internal" href="../../../../index.html#lund1998" id="id18">[17]</a>. It is relatively easy to implement and is able to reproduce the first and
 second order one-point statistics as well as autocorrelation function. However, the synthetic
-turbulence generated by SDFM does not satisfy the continuity equation. <a class="bibtex reference internal" href="../../../../index.html#kim2013" id="id19">[14]</a> offered a promising approach to enforce the divergence-free constraint in the SDFM by inserting the synthetic turbulence on a transverse plane near the inlet and relying on pressure-velocity coupling to do the correction. From a computational wind engineering point of view, the ability of SDFM to impose a two-point spatial correlation directly is very attractive.</p>
-<p>We now briefly introduce the filtering method by <a class="bibtex reference internal" href="../../../../index.html#klein2003" id="id20">[4]</a>. In order to create two-point
+turbulence generated by SDFM does not satisfy the continuity equation. <a class="bibtex reference internal" href="../../../../index.html#kim2013" id="id19">[18]</a> offered a promising approach to enforce the divergence-free constraint in the SDFM by inserting the synthetic turbulence on a transverse plane near the inlet and relying on pressure-velocity coupling to do the correction. From a computational wind engineering point of view, the ability of SDFM to impose a two-point spatial correlation directly is very attractive.</p>
+<p>We now briefly introduce the filtering method by <a class="bibtex reference internal" href="../../../../index.html#klein2003" id="id20">[8]</a>. In order to create two-point
 correlations, let <span class="math notranslate nohighlight">\(r_m\)</span> be a series of random data with zero mean and unity variance, then</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-weuq-tinf-26">
 <span class="eqno">(1.4.46)<a class="headerlink" href="#equation-common-technical-manual-desktop-weuq-tinf-26" title="Permalink to this equation">¶</a></span>\[u_m = \sum_{n=-N}^N b_n r_{m+n}\]</div>
@@ -570,7 +590,7 @@ approximately reproduce <a class="reference internal" href="#equation-gaussian">
 <p>The width <span class="math notranslate nohighlight">\(N\)</span> of the filter should be chosen such that <span class="math notranslate nohighlight">\(N\geq 2n\)</span> (where <span class="math notranslate nohighlight">\(n=L\varDelta x\)</span>) to ensure the accuracy of the approximation. On the other hand, for an exponential correlation function</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-weuq-tinf-29">
 <span class="eqno">(1.4.51)<a class="headerlink" href="#equation-common-technical-manual-desktop-weuq-tinf-29" title="Permalink to this equation">¶</a></span>\[R(r) = \mathrm{exp}\left(-\frac{\pi |r|}{2L}\right)\]</div>
-<p>It is suggested <a class="bibtex reference internal" href="../../../../index.html#xie2008" id="id21">[15]</a> to evaluate the filter coefficients using</p>
+<p>It is suggested <a class="bibtex reference internal" href="../../../../index.html#xie2008" id="id21">[19]</a> to evaluate the filter coefficients using</p>
 <div class="math notranslate nohighlight" id="equation-exponential">
 <span class="eqno">(1.4.52)<a class="headerlink" href="#equation-exponential" title="Permalink to this equation">¶</a></span>\[b_k = \tilde{b}_k / \left( \sum_{j=-N}^N \tilde{b}_j^2 \right)^{1/2}\]</div>
 <p>where</p>
@@ -610,8 +630,8 @@ multidimensional Newton method such that the resulting correlation function <a c
 <li><p>Repeat the steps (d) <span class="math notranslate nohighlight">\(\sim\)</span> (g) for each time step.</p></li>
 </ol>
 <p>If the target correlation function is an exponential function, an alternative approach by
-<a class="bibtex reference internal" href="../../../../index.html#xie2008" id="id22">[15]</a> can be adopted for generating inflow turbulence which turns out to be much more
-efficient than the method of <a class="bibtex reference internal" href="../../../../index.html#klein2003" id="id23">[4]</a>. Instead of using the filtering operation discussed above, Xie and Castro’s method obtain the temporal correlation with the expression</p>
+<a class="bibtex reference internal" href="../../../../index.html#xie2008" id="id22">[19]</a> can be adopted for generating inflow turbulence which turns out to be much more
+efficient than the method of <a class="bibtex reference internal" href="../../../../index.html#klein2003" id="id23">[8]</a>. Instead of using the filtering operation discussed above, Xie and Castro’s method obtain the temporal correlation with the expression</p>
 <div class="math notranslate nohighlight" id="equation-temporalcorrelation">
 <span class="eqno">(1.4.57)<a class="headerlink" href="#equation-temporalcorrelation" title="Permalink to this equation">¶</a></span>\[\Psi_{\alpha}(t+\varDelta t,j,k) = \Psi_{\alpha}(t,j,k)\mathrm{exp}\left(-\frac{\pi \varDelta t}{2T} \right)+\varPsi_{\alpha}(t,j,k)\left[1-\mathrm{exp}\left(-\frac{\pi \varDelta t}{2T} \right)\right]^{0.5}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Psi_{\alpha}(t,j,k)\)</span> and <span class="math notranslate nohighlight">\(\varPsi_{\alpha}(t,j,k)\)</span> are two set of
@@ -627,7 +647,7 @@ simplicity, we write <span class="math notranslate nohighlight">\(\Psi_{\alpha,0
 &amp; = \mathrm{exp}\left(-\frac{k\pi \varDelta t}{2T}\right)
 \end{split}\end{split}\]</div>
 <p>which reproduces an exponential function. An overall algorithm for generating the inflow
-velocity supported by the method of <a class="bibtex reference internal" href="../../../../index.html#xie2008" id="id24">[15]</a> can be stated as follows</p>
+velocity supported by the method of <a class="bibtex reference internal" href="../../../../index.html#xie2008" id="id24">[19]</a> can be stated as follows</p>
 <ol class="loweralpha">
 <li><p>Choose for each coordinate direction corresponding to the inflow plane a length scale
 <span class="math notranslate nohighlight">\(L_y = n_y\varDelta y\)</span>, <span class="math notranslate nohighlight">\(L_z = n_z\varDelta z\)</span>, a time scale <span class="math notranslate nohighlight">\(T\)</span> and determine
@@ -652,50 +672,68 @@ of dimensions <span class="math notranslate nohighlight">\([-N_y+1:M_y+N_y,-N_z+
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p id="bibtex-bibliography-common/technical_manual/desktop/WEUQ/TinF-0"><dl class="citation">
-<dt class="bibtex label" id="wu2017"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dt class="bibtex label" id="wittig1975simulation"><span class="brackets">1</span></dt>
+<dd><p>L. E. Wittig and A. K. Sinha. Simulation of multicorrelated random processes using the FFT algorithm. <em>The Journal of the Acoustical Society of America</em>, 58(3):630–634, 1975. URL: <a class="reference external" href="https://doi.org/10.1121/1.380702">https://doi.org/10.1121/1.380702</a>, <a class="reference external" href="https://doi.org/10.1121/1.380702">doi:10.1121/1.380702</a>.</p>
+</dd>
+<dt class="bibtex label" id="kaimal1972spectral"><span class="brackets">2</span></dt>
+<dd><p>J. C. Kaimal, J. C. Wyngaard, Y. Izumi, and O. R. Coté. Spectral characteristics of surface-layer turbulence. <em>Quarterly Journal of the Royal Meteorological Society</em>, 98(417):563–589, 1972. URL: <a class="reference external" href="https://rmets.onlinelibrary.wiley.com/doi/abs/10.1002/qj.49709841707">https://rmets.onlinelibrary.wiley.com/doi/abs/10.1002/qj.49709841707</a>, <a class="reference external" href="https://doi.org/10.1002/qj.49709841707">doi:10.1002/qj.49709841707</a>.</p>
+</dd>
+<dt class="bibtex label" id="simiu1996wind"><span class="brackets">3</span></dt>
+<dd><p>Emil Simiu and Robert H Scanlan. Wind effects on structures: fundamentals and application to design. <em>Book published by John Willey &amp; Sons Inc</em>, 1996.</p>
+</dd>
+<dt class="bibtex label" id="davenport1967dependence"><span class="brackets">4</span></dt>
+<dd><p>AG Davenport. The dependence of wind loading on meteorological parameters. In <em>Proc. of Int. Res. Seminar, Wind Effects On Buildings &amp; Structures, NRC, Ottawa</em>. 1967.</p>
+</dd>
+<dt class="bibtex label" id="wu2017"><span class="brackets"><a class="fn-backref" href="#id1">5</a></span></dt>
 <dd><p>Xiaohua Wu. Inflow turbulence generation methods. <em>Annual Review of Fluid Mechanics</em>, 49:23–49, 2017.</p>
 </dd>
-<dt class="bibtex label" id="kraichnan1970"><span class="brackets">2</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id8">2</a>)</span></dt>
+<dt class="bibtex label" id="kraichnan1970"><span class="brackets">6</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id8">2</a>)</span></dt>
 <dd><p>Robert H Kraichnan. Diffusion by a random velocity field. <em>The physics of fluids</em>, 13(1):22–31, 1970.</p>
 </dd>
-<dt class="bibtex label" id="hoshiya1972"><span class="brackets">3</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id6">2</a>)</span></dt>
+<dt class="bibtex label" id="hoshiya1972"><span class="brackets">7</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id6">2</a>)</span></dt>
 <dd><p>Masaru Hoshiya. Simulation of multi-correlated random processes and application to structural vibration problems. In <em>Proceedings of the Japan Society of Civil Engineers</em>, number 204, 121–128. Japan Society of Civil Engineers, 1972.</p>
 </dd>
-<dt class="bibtex label" id="klein2003"><span class="brackets">4</span><span class="fn-backref">(<a href="#id4">1</a>,<a href="#id17">2</a>,<a href="#id20">3</a>,<a href="#id23">4</a>)</span></dt>
+<dt class="bibtex label" id="klein2003"><span class="brackets">8</span><span class="fn-backref">(<a href="#id4">1</a>,<a href="#id17">2</a>,<a href="#id20">3</a>,<a href="#id23">4</a>)</span></dt>
 <dd><p>M. Klein, A. Sadiki, and J. Janicka. A digital filter based generation of inflow data for spatially developing direct numerical or large eddy simulations. <em>Journal of Computational Physics</em>, 186(2):652–665, 2003.</p>
 </dd>
-<dt class="bibtex label" id="jarrin2006"><span class="brackets">5</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id14">2</a>,<a href="#id16">3</a>)</span></dt>
+<dt class="bibtex label" id="jarrin2006"><span class="brackets">9</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id14">2</a>,<a href="#id16">3</a>)</span></dt>
 <dd><p>Nicolas Jarrin, Sofiane Benhamadouche, Dominique Laurence, and Robert Prosser. A synthetic-eddy-method for generating inflow conditions for large-eddy simulations. <em>International Journal of Heat and Fluid Flow</em>, 27(4):585–593, 2006.</p>
 </dd>
-<dt class="bibtex label" id="shinozuka1972"><span class="brackets"><a class="fn-backref" href="#id7">6</a></span></dt>
+<dt class="bibtex label" id="shinozuka1972"><span class="brackets"><a class="fn-backref" href="#id7">10</a></span></dt>
 <dd><p>Masanobu Shinozuka and C-M Jan. Digital simulation of random processes and its applications. <em>Journal of sound and vibration</em>, 25(1):111–128, 1972.</p>
 </dd>
-<dt class="bibtex label" id="smirnov2001"><span class="brackets"><a class="fn-backref" href="#id9">7</a></span></dt>
+<dt class="bibtex label" id="smirnov2001"><span class="brackets"><a class="fn-backref" href="#id9">11</a></span></dt>
 <dd><p>A Smirnov, S Shi, and I Celik. Random flow generation technique for large eddy simulations and particle-dynamics modeling. <em>Journal of fluids engineering</em>, 123(2):359–371, 2001.</p>
 </dd>
-<dt class="bibtex label" id="yu2014"><span class="brackets"><a class="fn-backref" href="#id10">8</a></span></dt>
+<dt class="bibtex label" id="yu2014"><span class="brackets"><a class="fn-backref" href="#id10">12</a></span></dt>
 <dd><p>Rixin Yu and Xue-Song Bai. A fully divergence-free method for generation of inhomogeneous and anisotropic turbulence with large spatial variation. <em>Journal of Computational Physics</em>, 256:234–253, 2014.</p>
 </dd>
-<dt class="bibtex label" id="huang2010"><span class="brackets"><a class="fn-backref" href="#id11">9</a></span></dt>
+<dt class="bibtex label" id="huang2010"><span class="brackets"><a class="fn-backref" href="#id11">13</a></span></dt>
 <dd><p>SH Huang, QS Li, and JR Wu. A general inflow turbulence generator for large eddy simulation. <em>Journal of Wind Engineering and Industrial Aerodynamics</em>, 98(10-11):600–617, 2010.</p>
 </dd>
-<dt class="bibtex label" id="castro2017"><span class="brackets"><a class="fn-backref" href="#id12">10</a></span></dt>
+<dt class="bibtex label" id="castro2017"><span class="brackets"><a class="fn-backref" href="#id12">14</a></span></dt>
 <dd><p>Hugo G Castro, Rodrigo R Paz, Javier L Mroginski, and Mario A Storti. Evaluation of the proper coherence representation in random flow generation based methods. <em>Journal of Wind Engineering and Industrial Aerodynamics</em>, 168:211–227, 2017.</p>
 </dd>
-<dt class="bibtex label" id="aboshosha2015"><span class="brackets"><a class="fn-backref" href="#id13">11</a></span></dt>
+<dt class="bibtex label" id="aboshosha2015"><span class="brackets"><a class="fn-backref" href="#id13">15</a></span></dt>
 <dd><p>Haitham Aboshosha, Ahmed Elshaer, Girma T Bitsuamlak, and Ashraf El Damatty. Consistent inflow turbulence generator for les evaluation of wind-induced responses for tall buildings. <em>Journal of Wind Engineering and Industrial Aerodynamics</em>, 142:198–216, 2015.</p>
 </dd>
-<dt class="bibtex label" id="poletto2013"><span class="brackets"><a class="fn-backref" href="#id15">12</a></span></dt>
+<dt class="bibtex label" id="poletto2013"><span class="brackets"><a class="fn-backref" href="#id15">16</a></span></dt>
 <dd><p>R Poletto, T Craft, and A Revell. A new divergence free synthetic eddy method for the reproduction of inlet flow conditions for les. <em>Flow, turbulence and combustion</em>, 91(3):519–539, 2013.</p>
 </dd>
-<dt class="bibtex label" id="lund1998"><span class="brackets"><a class="fn-backref" href="#id18">13</a></span></dt>
+<dt class="bibtex label" id="lund1998"><span class="brackets"><a class="fn-backref" href="#id18">17</a></span></dt>
 <dd><p>Thomas S Lund, Xiaohua Wu, and Kyle D Squires. Generation of turbulent inflow data for spatially-developing boundary layer simulations. <em>Journal of computational physics</em>, 140(2):233–258, 1998.</p>
 </dd>
-<dt class="bibtex label" id="kim2013"><span class="brackets"><a class="fn-backref" href="#id19">14</a></span></dt>
+<dt class="bibtex label" id="kim2013"><span class="brackets"><a class="fn-backref" href="#id19">18</a></span></dt>
 <dd><p>Yusik Kim, Ian P Castro, and Zheng-Tong Xie. Divergence-free turbulence inflow conditions for large-eddy simulations with incompressible flow solvers. <em>Computers &amp; Fluids</em>, 84:56–68, 2013.</p>
 </dd>
-<dt class="bibtex label" id="xie2008"><span class="brackets">15</span><span class="fn-backref">(<a href="#id21">1</a>,<a href="#id22">2</a>,<a href="#id24">3</a>)</span></dt>
+<dt class="bibtex label" id="xie2008"><span class="brackets">19</span><span class="fn-backref">(<a href="#id21">1</a>,<a href="#id22">2</a>,<a href="#id24">3</a>)</span></dt>
 <dd><p>Zheng-Tong Xie and Ian P Castro. Efficient generation of inflow conditions for large eddy simulation of street-scale flows. <em>Flow, turbulence and combustion</em>, 81(3):449–470, 2008.</p>
+</dd>
+<dt class="bibtex label" id="parkdatabaseassisteddesignequivalent2018"><span class="brackets">20</span></dt>
+<dd><p>Sejun Park and DongHun Yeo. Database-assisted design and equivalent static wind loads for mid- and high-rise structures: concepts, software, and user’s manual. Technical Report NIST TN 2000, National Institute of Standards and Technology, Gaithersburg, MD, June 2018. <a class="reference external" href="https://doi.org/10.6028/NIST.TN.2000">doi:10.6028/NIST.TN.2000</a>.</p>
+</dd>
+<dt class="bibtex label" id="guan2020python"><span class="brackets">21</span></dt>
+<dd><p>Xingquan Guan, Henry Burton, and Thomas Sabol. Python-based computational platform to automate seismic design, nonlinear structural model construction and analysis of steel moment resisting frames. <em>Engineering Structures</em>, 224:111199, 2020.</p>
 </dd>
 </dl>
 </p>
@@ -707,20 +745,25 @@ of dimensions <span class="math notranslate nohighlight">\([-N_y+1:M_y+N_y,-N_z+
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, The Regents of the University of California
+        &#169; Copyright 2021, The Regents of the University of California.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -728,7 +771,6 @@ of dimensions <span class="math notranslate nohighlight">\([-N_y+1:M_y+N_y,-N_z+
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
@@ -747,6 +789,7 @@ of dimensions <span class="math notranslate nohighlight">\([-N_y+1:M_y+N_y,-N_z+
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-158130480-2', 'auto');
+    
     ga('send', 'pageview');
     </script>
 
@@ -757,6 +800,44 @@ of dimensions <span class="math notranslate nohighlight">\([-N_y+1:M_y+N_y,-N_z+
          .wy-nav-content { max-width: none; }
   </style>
 
+<script>
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+</script>
 
 
 </body>
