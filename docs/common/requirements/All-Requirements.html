@@ -1,0 +1,3513 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>R2D &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../index.html">
+
+
+
+  
+  <img src="../../_static/WE-UQ-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/about/WEUQ/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bootcamp/syllabus.html">2. Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../front-matter/ack.html">3. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../front-matter/license.html">4. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../front-matter/glossary.html">5. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../front-matter/abbreviations.html">6. Abbreviations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/usage/desktop/usage.html">2. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WEUQ.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Testbeds</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testbeds/atlantic_city/index.html">2. Atlantic City, NJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testbeds/memphis/index.html">3. Memphis, TN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testbeds/lake_charles/index.html">4. Lake Charles, LA</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Wind Engineering with Uncertainty Quantification</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>R2D</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/common/requirements/All-Requirements.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="r2d">
+<h1>R2D<a class="headerlink" href="#r2d" title="Permalink to this headline">¶</a></h1>
+<table class="colwidths-given docutils align-default" id="id1">
+<caption><span class="caption-text">Requirements - R2D</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Source</p></th>
+<th class="head"><p>Priority</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>R2D</p></td>
+<td><p><em>Ability to perform regional simulation allowing communities to evaluate resilience and perform what-if types of analysis for natural hazard events</em></p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-odd"><td><p>R2D1</p></td>
+<td><p><strong>Include Various Hazards</strong></p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>R2D1.1</p></td>
+<td><p>Perform such simulations for ground shaking due to Earthquake using methods defined in EL1</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>R2D1.2</p></td>
+<td><p>Ability to perform such simulations for wave action due to Earthquake induced Tsunami</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>R2D1.3</p></td>
+<td><p>Ability to perform such simulations for wind action due to Hurricane</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-odd"><td><p>R2D1.4</p></td>
+<td><p>Ability to perform such simulations for wave action due to Hurricane Storm Surge</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>R2D1.5</p></td>
+<td><p>Ability to perform such for multi-hazard simulations: wind + storm surge, rain, wind and water borne debris</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>R2D1.6</p></td>
+<td><p>Ability to utilize ensemble techniques in hazard simulation</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>R2D1.7</p></td>
+<td><p>Ability to incorporate surrogate models in hazard simulation</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>R2D1.8</p></td>
+<td><p>Incorporate Multi Scale Models in hazard Simulation</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>R2D2</p></td>
+<td><p><strong>Include Different Asset Types</strong></p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-odd"><td><p>R2D2.1</p></td>
+<td><p>Ability to incorporate building assets</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>R2D2.1.1</p></td>
+<td><p>Ability to incorporate multi-fidelity building model asset descriptions</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>R2D2.2</p></td>
+<td><p>Ability to incorporate transportation network</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>R2D2.3</p></td>
+<td><p>Ability to incorporate utility networks</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>R2D3</p></td>
+<td><p><strong>Include Different Analysis options</strong></p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>R2D3.1</p></td>
+<td><p>Ability to include multi-scale nonlinear models</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>R2D4</p></td>
+<td><p><strong>Include Different Damage &amp; Loss options</strong></p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>R2D4.1</p></td>
+<td><p>Ability to include multi-scale nonlinear models</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>R2D5</p></td>
+<td><p>Include Different Response/Recovery options</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>R2D5.1</p></td>
+<td><p>Response/Recovery options for households</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>R2D5.2</p></td>
+<td><p>Response/Recovery options for infrastructure</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>R2D5.3</p></td>
+<td><p>Response/Recovery options for business operations</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>R2D5.4</p></td>
+<td><p>Response/Recovery and Effect on Environment</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>R2D5.4.1</p></td>
+<td><p>CO2 emmissions from demolition and repair</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>R2D6</p></td>
+<td><p>Pressent results using GIS so communities can visualize hazard impacts</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>R2D6.1</p></td>
+<td><p>Ability to use popular ArcGIS for visualization</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>R2D6.2</p></td>
+<td><p>Ability to include open-source ArcGIS alternatives</p></td>
+<td><p>SP</p></td>
+<td><p>P</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>R2D6.3</p></td>
+<td><p>Ability to capture uncertainty of results in visualization</p></td>
+<td><p>SP</p></td>
+<td><p>P</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>R2D6.4</p></td>
+<td><p>Features to visualize environmental impact</p></td>
+<td><p>SP</p></td>
+<td><p>P</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>R2D7</p></td>
+<td><p><strong>Software Features</strong></p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-odd"><td><p>R2D7.1</p></td>
+<td><p>Ability to include a formal treatment of uncertainty and randomness</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>R2D7.2</p></td>
+<td><p>Ability to utilize HPC resources in regional simulations that enables repeated simulation for stochastic modeling</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>R2D7.3</p></td>
+<td><p>Ability to use a tool created by linking heterogeneous array of simulation tools to provide a toolset for regional simulation</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>R2D7.4</p></td>
+<td><p>Provide open-source software for developers to test new data and algorithms</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>R2D7.5</p></td>
+<td><p>Ability of stakeholders to perform simulations of different scenarios that aid in planning and response after damaging events</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>RDT7.7</p></td>
+<td><p>Ability to explore different strategies in community development, pre-event, early response, and post event, through long term recovery</p></td>
+<td><p>GC</p></td>
+<td><p>P</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>RDT7.8</p></td>
+<td><p>Ability to use system that creates and monitors real-time data, updats models, incorporates crowdsourcing technologies, and informs decision makers</p></td>
+<td><p>GC</p></td>
+<td><p>P</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>RDT7.9</p></td>
+<td><p>Ability to use sensor data to update models for simulation and incorporate sensor data into simulation</p></td>
+<td><p>GC</p></td>
+<td><p>P</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>R2D7.10</p></td>
+<td><p>Ability to include latest information and algorithms (i.e. new attenuation models, building fragility curves, demographics, lifeline performance models, network interdependencies, indirect economic loss)</p></td>
+<td><p>GC</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">key:</div>
+<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line">Status: Implements, InProgress and Blank (i.e. not started)</div>
+</div>
+</div>
+<div class="section" id="pbe">
+<h1>PBE<a class="headerlink" href="#pbe" title="Permalink to this headline">¶</a></h1>
+<table class="colwidths-given docutils align-default" id="id2">
+<caption><span class="caption-text">Requirements - PBE</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Source</p></th>
+<th class="head"><p>Priority</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PBE</p></td>
+<td><p><em>Ability to determine damage and loss calculations for a building subjected to a natural hazard including formal treatment of randomness and uncertainty uncertainty</em></p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-odd"><td><p>PBE1</p></td>
+<td><p><strong>Ability to determine  damage and loss for multiple different hazards</strong></p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>PBE1.1</p></td>
+<td><p>Damage and Loss for ground shaking due to Earthquake</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>PBE1.2</p></td>
+<td><p>Damage and Loss due to Wind Loading</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>PBE1.3</p></td>
+<td><p>Damage and Loss due to water damage due to Tsunami or Coastal Inundation</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>PBE2</p></td>
+<td><p><strong>Ability to Select from Different Hazard Options</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>PBE2.1</p></td>
+<td><p>Ability to select from all EE-UQ Event Options listed in EE-UQ</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>PBE2.2</p></td>
+<td><p>Ability to select from all WE-UQ Event Options listed in WE-UQ</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>PBE2.3</p></td>
+<td><p>Ability to select from all HydroUQ Event Options</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>PBE3</p></td>
+<td><p><strong>Ability to use different Model Generation Tools</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>PBE3.1</p></td>
+<td><p>Ability to Select All Building Model Generators in EE-UQ</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>PBE3.2</p></td>
+<td><p>Ability to Select All Building Model Generators in WE-UQ</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>PBE3.3</p></td>
+<td><p>Ability to Select All Building Model Generators in HydroUQ</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>PBE4</p></td>
+<td><p><strong>Ability to use Various UQ Methods and Variable Options</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>PBE4.1</p></td>
+<td><p>Ability to use all forward propagation methods available in EE-UQ, WE-UQ and HydroUQ</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>PBE4.2</p></td>
+<td><p>Ability to use all random variable distributions in EE-UQ, WE-UQ and HydroUQ</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>PBE5</p></td>
+<td><p><strong>Misc User Requests</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>PBE5.1</p></td>
+<td><p>Ability to Process own Output Parameters</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>PBE5.2</p></td>
+<td><p>Add to Standard Earthquake a variable indicating analysis failure</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>PBE5.3</p></td>
+<td><p>Allow users to provide their own set of EDPs for the analysis.</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>PBE6</p></td>
+<td><p><strong>General Software Requirements</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>PBE6.1</p></td>
+<td><p>Ability of Practicing Engineers to use multiple coupled resources (applications, databases, viz tools) in engineering practice</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>PBE6.2</p></td>
+<td><p>Ability to utilize resources beyond the desktop including HPC</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>PBE6.3</p></td>
+<td><p>Tool should incorporate data from WWW</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>PBE6.4</p></td>
+<td><p>Tool available for download from web</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>PBE6.5</p></td>
+<td><p>Ability to use new viz tools for viewing large datasets generated by PBE</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>PBE6.6</p></td>
+<td><p>Tool to allow user to load and save user inputs</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>PBE6.7</p></td>
+<td><p>Simplify run local and run remote by removing workdir locations. Move to preferences</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>PBE6.8</p></td>
+<td><p>Add to EDP a variable indicating analysis failure</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>PBE6.9</p></td>
+<td><p>Installer which installs application and all needed software</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>PBE6.10</p></td>
+<td><p>Ability to gain educational materials that will help and encourage PBE</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>PBE6.11</p></td>
+<td><p>Documentation exists on tool usage</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>PBE6.12</p></td>
+<td><p>Video Exists demonstrating usage</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>PBE6.13</p></td>
+<td><p>Verification Examples Exist</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>PBE6.14</p></td>
+<td><p>Validation Examples Exist, validated against tests or other software</p></td>
+<td><p>GC</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">key:</div>
+<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line">Status: Implements, InProgress and Blank (i.e. not started)</div>
+</div>
+</div>
+<div class="section" id="we-uq-requirements">
+<h1>WE-UQ Requirements<a class="headerlink" href="#we-uq-requirements" title="Permalink to this headline">¶</a></h1>
+<table class="colwidths-given docutils align-default" id="id3">
+<caption><span class="caption-text">Requirements - WE</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Source</p></th>
+<th class="head"><p>Priority</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>WE</p></td>
+<td><p><em>Ability to determine response of Building Subject to Wind Loading including formal treatment of randomness and uncertainty uncertainty</em></p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>WE1</p></td>
+<td><p>Adaptation of non-linear analysis methods used in seismic design</p></td>
+<td><p>GC</p></td>
+<td><p>Implemented</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>WE2</p></td>
+<td><p>Ability of Practicing Engineers to use multiple coupled resources (applications, databases, viz tools) in engineering practice</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>WE3</p></td>
+<td><p>Ability to utilize resources beyond the desktop including HPC</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>WE4</p></td>
+<td><p>Tool available for download from web</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>WE5</p></td>
+<td><p>Ability to obtain training and education with respect to interaction of structure and wind to ensure research is appropriately applied</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>WE6</p></td>
+<td><p>Ability to obtain Application Outputs</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>WE8</p></td>
+<td><p>Ability to see pressure distribution on building</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>WE7</p></td>
+<td><p>Ability to obtain basic building responses</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>WE8</p></td>
+<td><p>Ability to Process own Output Parameters</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>WE11</p></td>
+<td><p>Ability to obtain training to ensure the research is appropriately applied</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>WE12</p></td>
+<td><p>Documentation exists on tool usage</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>WE13</p></td>
+<td><p>Video Exists demonstrating usage</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>WE14</p></td>
+<td><p>Verification Examples Exist</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>WE15</p></td>
+<td><p>Validation Examples Exist, validated against tests or other software</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>WE16</p></td>
+<td><p>Tool to allow user to load and save user inputs</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>WE17</p></td>
+<td><p>Installer which installs application and all needed software</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">key:</div>
+<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line">Status: Implements, InProgress and Blank (i.e. not started)</div>
+</div>
+</div>
+<div class="section" id="hydro-uq-requirements">
+<h1>Hydro-UQ Requirements<a class="headerlink" href="#hydro-uq-requirements" title="Permalink to this headline">¶</a></h1>
+<table class="colwidths-given docutils align-default" id="id4">
+<caption><span class="caption-text">Requirements - H</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Source</p></th>
+<th class="head"><p>Priority</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>H1</p></td>
+<td><p>Ability to simulate overland flow of water by coupling shallow-water and CFD solvers</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>H2</p></td>
+<td><p>Ability to simulate overland flow of water considering flood velocity, inundation heights and channeling effects between buildings</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-even"><td><p>H3</p></td>
+<td><p>Ability to digitally replicate the NHERI experimental facility, i.e. wave flume</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>H4</p></td>
+<td><p>Ability to utilize HPC resources</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-even"><td><p>H5</p></td>
+<td><p>Use CFD to model interface and impact between water loads and buildings</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>1.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>H6</p></td>
+<td><p>Ability to formally treat randomness and uncertainty quantification</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>1.2</p></td>
+</tr>
+<tr class="row-even"><td><p>H7</p></td>
+<td><p>Develop a CFD example library for users to get started</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>2.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>H8</p></td>
+<td><p>Ability to quantify the effect of unconstrained and non-colliding floating</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>2.0</p></td>
+</tr>
+<tr class="row-even"><td><p>H9</p></td>
+<td><p>Ability to quantify the effect of colliding flood-borne debris</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>3.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>H10</p></td>
+<td><p>Ability of Practicing Engineers to use multiple coupled resources (applications, databases, viz tools) in engineering practice</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>4.0</p></td>
+</tr>
+<tr class="row-even"><td><p>H11</p></td>
+<td><p>Simulation of overland flow including waves, debris, flood velocity, erosion at building, and channeling effects</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>5.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>H12</p></td>
+<td><p>Ability to simulate with surrogate models as alternative to full 3D CFD</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>6.0</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>H13</p></td>
+<td><p>Standardize output formats for shallow-water solvers</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-even"><td><p>H15</p></td>
+<td><p>Interface GeoClaw with SimCenter standard format</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>H17</p></td>
+<td><p>Ability to convert the bathymetric data into a STP file for usage in CFD solvers</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-even"><td><p>H19</p></td>
+<td><p>Test the workflow with test excitation function like harmonic long waves, solitary waves etc.</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>H20</p></td>
+<td><p>Add error handling with error messages for possible errors that could occur</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-even"><td><p>H14</p></td>
+<td><p>Standardize input format for initial conditions to be given to CFD solvers</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>2.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>H16</p></td>
+<td><p>Interface AdCirc with SimCenter standard format</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>2.0</p></td>
+</tr>
+<tr class="row-even"><td><p>H18</p></td>
+<td><p>Ability to convert OpenFOAM i/p files from standard SimCenter format</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>2.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>H22</p></td>
+<td><p>Develop scripts for creating visualization from the simulations</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>2.0</p></td>
+</tr>
+<tr class="row-even"><td><p>H23</p></td>
+<td><p>Develop a simulation library of GeoClaw simulations</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>2.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>H23</p></td>
+<td><p>Develop a simulation library of AdCirc simulations</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>2.0</p></td>
+</tr>
+<tr class="row-even"><td><p>H24</p></td>
+<td><p>Create documentation videos on how to add items to library</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>2.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>H25</p></td>
+<td><p>Develop end-to-end examples that users can use as template and modify</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>2.0</p></td>
+</tr>
+<tr class="row-even"><td><p>H26</p></td>
+<td><p>Explore multiple methods like Material Point Method (MPM), Immersed Boundary Method (IBM), DEM-CFD, particle tracking</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>3.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>H27</p></td>
+<td><p>Integrate one of the methods for integrating particles with Hydro workflow</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>3.0</p></td>
+</tr>
+<tr class="row-even"><td><p>H28</p></td>
+<td><p>Develop thermodynamically consistent methods for clustering of debris</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>3.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>H29</p></td>
+<td><p>Consider motion of water-borne debris</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>3.0</p></td>
+</tr>
+<tr class="row-even"><td><p>H30</p></td>
+<td><p>Development of scripts to calculate the dispersion radii of industrial debris (like barrels)</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>3.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>H31</p></td>
+<td><p>Development of scripts to calculate the dispersion radii of industrial debris (like oil in water)</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>3.0</p></td>
+</tr>
+<tr class="row-even"><td><p>H32</p></td>
+<td><p>Develop abili ty to get fragility curves from CFD simulations</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>5.0</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">key:</div>
+<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line">Status: Implements, InProgress and Blank (i.e. not started)</div>
+</div>
+</div>
+<div class="section" id="ee-uq-requirements">
+<h1>EE-UQ Requirements<a class="headerlink" href="#ee-uq-requirements" title="Permalink to this headline">¶</a></h1>
+<table class="colwidths-given docutils align-default" id="id5">
+<caption><span class="caption-text">Requirements - EE</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Source</p></th>
+<th class="head"><p>Priority</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>EE</p></td>
+<td><p><em>Application to determine response of Building Subject to Earthquake hazard including formal treatment of randomness and uncertainty</em></p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>EE1</p></td>
+<td><p><strong>Ability to select from all Earthquake Loading Options listed in EL</strong></p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>EE4</p></td>
+<td><p><strong>Ability to use Various UQ Methods and Variable Options</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>EE4.1</p></td>
+<td><p>Ability to use all Forward Propagtion methods defined in UF</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>EE4.2</p></td>
+<td><p>Ability to use all Reliability Methods defined in UR</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>EE4.3</p></td>
+<td><p>Ability to use all Global Sensitivity Methods defined in UG section</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>EE4.4</p></td>
+<td><p>Ability to both use and create surrogates per US section</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>EE4.5</p></td>
+<td><p>Ability to use High Dimensional UQ defined in UH section</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>EE2</p></td>
+<td><p>Ability to select from all Earthquake Loading Options listed in EL</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>EE5</p></td>
+<td><p><strong>Misc User Requests</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>EE5.1</p></td>
+<td><p>Add to Standard Earthquake a variable indicating analysis failure</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>EE6</p></td>
+<td><p><strong>General Software Requirements</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>EE6.1</p></td>
+<td><p>Ability of Practicing Engineers to use multiple coupled resources (applications, databases, viz tools) in engineering practice</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>EE6.2</p></td>
+<td><p>Ability to utilize resources beyond the desktop including HPC</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>EE6.3</p></td>
+<td><p>Tool should incorporate data from www</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>EE6.4</p></td>
+<td><p>Tool available for download from web</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>EE6.5</p></td>
+<td><p>Ability to benefit from programs that move research results into practice and obtain training</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>EE6.6</p></td>
+<td><p>Ability to use educational provisions to gain interdisclipinary education so as to gain expertise in earth sciences and physics, engineering mechanics, geotechnical engineering, and structural engineering in order to be qualified to perform these simulations</p></td>
+<td><p>GC</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>EE6.7</p></td>
+<td><p>Documentation exists on tool usage</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>EE6.8</p></td>
+<td><p>Video Exists demonstrating usage</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>EE6.9</p></td>
+<td><p>Verification Examples Exist</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>EE6.10</p></td>
+<td><p>Validation Examples Exist, validated against tests or other software</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>EE6.11</p></td>
+<td><p>Tool to allow user to load and save user inputs</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>EE6.12</p></td>
+<td><p>Installer which installs application and all needed software</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">key:</div>
+<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line">Status: Implements, InProgress and Blank (i.e. not started)</div>
+</div>
+</div>
+<div class="section" id="earthquake-loading-requirements">
+<h1>Earthquake Loading Requirements<a class="headerlink" href="#earthquake-loading-requirements" title="Permalink to this headline">¶</a></h1>
+<table class="colwidths-given docutils align-default" id="id6">
+<caption><span class="caption-text">Requirements - EL</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Source</p></th>
+<th class="head"><p>Priority</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>EL</p></td>
+<td><p><em>Loading from Earthquake Hazard on Local and Regional Assets</em></p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-odd"><td><p>EL1</p></td>
+<td><p><strong>Regional Scale Earthquake Hazard Simulation Options</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>EL1.1</p></td>
+<td><p>Coupling of multi-scale nonlinear models from the point of rupture through rock and soil into structure</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>EL1.1.1</p></td>
+<td><p>Replacement of empirical linear models with multi-scale nonlinear models as will represent a paradigm shift in engineering science</p></td>
+<td><p>GC</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>EL1.1.1.1</p></td>
+<td><p>Interface to regional simulations using DRM method</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>EL1.1.2</p></td>
+<td><p>Include both multi-scale and multi-phase (account for liquefaction)</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>EL1.2</p></td>
+<td><p>Jack Baker Method Description</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>EL1.3</p></td>
+<td><p>Use GIS-Specified Matrix of Recorded Motions</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>EL2</p></td>
+<td><p><strong>Select from Multiple Local Scale Earthquake Hazard Options</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>EL2.1</p></td>
+<td><p>Coupling of multi-scale nonlinear models from the point of rupture through rock and soil into structure</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>EL2.1</p></td>
+<td><p>Ability to select utilizing PEER NGA_West web service</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>EL2.1.1</p></td>
+<td><p>Select using default selection options</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>EL2.1.1</p></td>
+<td><p>Select using all options available at PEER site</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>EL2.1.2</p></td>
+<td><p>Select using user supplied spectrum</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>EL2.2</p></td>
+<td><p>Ability to select from list of user supplied PEER motions</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>EL2.3</p></td>
+<td><p>Ability to select from list of SimCenter motions</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>EL2.4</p></td>
+<td><p>Ability to use OpenSHA and selection methods to generate motions</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>EL2.5</p></td>
+<td><p>Ability to Utilize Own Application in Workflow</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>EL2.6</p></td>
+<td><p>Ability to use Broadband</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>EL2.7</p></td>
+<td><p>Ability to include Soil Structure Interaction Effects</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>EL2.7.1</p></td>
+<td><p>1D nonlinear site response with effective stress analysis</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>EL2.7.2</p></td>
+<td><p>Nonlinear site response with bidirectional loading</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>EL2.7.3</p></td>
+<td><p>Nonlinear site response with full stochastic characterization of soil layers</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>EL2.7.4</p></td>
+<td><p>Nonlinear site response, bidirectional different input motions</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>EL2.8</p></td>
+<td><p>Ability to select from synthetic ground motions</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>EL2.8.1</p></td>
+<td><p>per Vlachos, Papakonstantinou, Deodatis (2017)</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>EL2.8.2</p></td>
+<td><p>per Dabaghi, Der Kiureghian (2017)</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">key:</div>
+<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line">Status: Implements, InProgress and Blank (i.e. not started)</div>
+</div>
+</div>
+<div class="section" id="wind-loading-requirements">
+<h1>Wind Loading Requirements<a class="headerlink" href="#wind-loading-requirements" title="Permalink to this headline">¶</a></h1>
+<table class="colwidths-given docutils align-default" id="id7">
+<caption><span class="caption-text">Requirements - WL</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Source</p></th>
+<th class="head"><p>Priority</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>WL</p></td>
+<td><p><em>Loading from Wind Hazards (Hurricane, Downbursts, Tornados) on Local and Regional Assets</em></p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-odd"><td><p>WL1</p></td>
+<td><p><strong>Regional Loading due to Wind Hazards</strong></p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>WL1.1</p></td>
+<td><p>Regional Hurricane Wind Options</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-odd"><td><p>WL1.1.1</p></td>
+<td><p>Utilize GIS and online to account for wind speed given local terrain, topography and nearby buildings</p></td>
+<td><p>GC</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>WL1.1.2</p></td>
+<td><p>MultiScale Wind Models,</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>WL1.2</p></td>
+<td><p>Modeling and simulation for determination of wind loads due to non-synoptic winds, including tornadoes</p></td>
+<td><p>GC</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>WL2</p></td>
+<td><p><strong>Local Scale Wind Hazard Options</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>WL2.1</p></td>
+<td><p>Utilize Extensive wind tunnel datasets in industry and academia for wide range of building shapes</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>WL2.1.1</p></td>
+<td><p>Accommodate Range of Low Rise building shapes</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>WL2.1.1.1</p></td>
+<td><p>Flat Shaped Roof - TPU dataset</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>WL2.1.1.2</p></td>
+<td><p>Gable Shaped Roof - TPU dataset</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>WL2.1.1.3</p></td>
+<td><p>Hipped Shaped Roof - TPU dataset</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>WL2.1.2</p></td>
+<td><p>Accommodate Range of High Rise building</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>WL2.2</p></td>
+<td><p>Interface with data driven</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>WL2.2.1</p></td>
+<td><p>Interface with Vortex Winds DEDM-HRP Web service</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>WL2.3</p></td>
+<td><p>Accommodate Data from Wind Tunnel Experiment</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>WL2.4</p></td>
+<td><p>Simple CFD model generation and turbulence modeling</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>WL2.5</p></td>
+<td><p>Computational Fluid Dynamics tool for utilizing open source CFD software for practitioners</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>WL2.5.1</p></td>
+<td><p>Uncoupled OpenFOAM CFD model with nonlinear FEM code for building response</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>WL2.5.1</p></td>
+<td><p>Coupled OpenFOAM CFD model with linear FEM code for building response</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>WL2.5.2</p></td>
+<td><p>Inflow Conditions for non-synoptic winds</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>WL2.6</p></td>
+<td><p>Quantification of Effects of Wind Borne Debris</p></td>
+<td><p>GC</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>WL2.7</p></td>
+<td><p>Ability to utilize synthetic wind loading algorithms</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>WL2.7.1</p></td>
+<td><p>per Wittig and Sinha</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>WL2.8</p></td>
+<td><p>Hazard modification by terrain, topography, and nearby buildings</p></td>
+<td><p>GC</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>WL2.9</p></td>
+<td><p>Probabilistic methods are needed to enable site-specific and storm-type specific characterization of likely debris types, weights, and speeds</p></td>
+<td><p>GC</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Wl2.10</p></td>
+<td><p>Joint description for hurricane wind, storm surge, and wave hazards</p></td>
+<td><p>GC</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>WL2.11</p></td>
+<td><p>Libraries of high resolution hurricane wind/surge/wave simulations</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">key:</div>
+<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line">Status: Implements, InProgress and Blank (i.e. not started)</div>
+</div>
+</div>
+<div class="section" id="surge-tsunami-loading-requirements">
+<h1>Surge/Tsunami Loading Requirements<a class="headerlink" href="#surge-tsunami-loading-requirements" title="Permalink to this headline">¶</a></h1>
+<table class="colwidths-given docutils align-default" id="id8">
+<caption><span class="caption-text">Requirements - HL</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Source</p></th>
+<th class="head"><p>Priority</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HL1</p></td>
+<td><p>CFD to model fluid flow around a single rigid structure</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>HL3</p></td>
+<td><p>Mesh refinement around structures</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>HL2</p></td>
+<td><p>CFD to model fluid flow around a single deformable structure</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>HL4</p></td>
+<td><p>CFD to model fluid flow considering inflow and accumulation of fluid inside a rigid structure</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>HL5</p></td>
+<td><p>CFD to model fluid flow considering inflow and accumulation of fluid inside deformable structures</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>HL6</p></td>
+<td><p>Mesh refinement around structure and around the walls</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>HL7</p></td>
+<td><p>CFD to model fluid flow considering inflow, accumulation, and possible outflow of fluid across a rigid structure</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>HL8</p></td>
+<td><p>CFD to model fluid flow considering inflow, accumulation, and possible outflow of fluid across a deformable structure</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>HL9</p></td>
+<td><p>CFD to model shock-type of events, e.g. like creating an outflow due to window breakage</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>HL10</p></td>
+<td><p>Ability to calculate loads from the OpenFOAM simulations</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">key:</div>
+<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line">Status: Implements, InProgress and Blank (i.e. not started)</div>
+</div>
+</div>
+<div class="section" id="uq-requirements">
+<h1>UQ Requirements<a class="headerlink" href="#uq-requirements" title="Permalink to this headline">¶</a></h1>
+<table class="colwidths-given docutils align-default" id="id9">
+<caption><span class="caption-text">Requirements - Uncertainty Quantification Methods and Variables</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Source</p></th>
+<th class="head"><p>Priority</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>UF</strong></p></td>
+<td><p><strong>Forward Propagation Methods</strong></p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-odd"><td><p>UF1</p></td>
+<td><p>Ability to use basic Monte Carlo and LHS methods</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>UF2</p></td>
+<td><p>Ability to use Multi-Scale Monte Carlo</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>UF3</p></td>
+<td><p>Ability to use Multi-Fidelity Models</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>UR</strong></p></td>
+<td><p><strong>Reliability Methods</strong></p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>UR1</p></td>
+<td><p>Ability to use First Order Reliability method</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>UR2</p></td>
+<td><p>Ability to use Second Order Reliability method</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>UR3</p></td>
+<td><p>Ability to use Surrogate Based Reliability</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>UR4</p></td>
+<td><p>Ability to use Importance Sampling</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>UG</strong></p></td>
+<td><p><strong>Global Sensitivity Methods</strong></p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>UG1</p></td>
+<td><p>Ability to obtain Global Sensitivity Sobol indices</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>UG2</p></td>
+<td><p>Ability to use probability model-based global sensitivity analysis (PM-GSA)</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>US</strong></p></td>
+<td><p><strong>Surrogate Models</strong></p></td>
+<td><p>	UF</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-odd"><td><p>US1</p></td>
+<td><p>Ability to Construct Gaussian Process (GP) Regression Model from a Simulation Model</p></td>
+<td><p>	SP</p></td>
+<td><p>	M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>US2</p></td>
+<td><p>Ability to Construct GP Regression Model from Input-output Dataset</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-odd"><td><p>US3</p></td>
+<td><p>Ability to use Surrogate Model for UQ Analysis</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>US4</p></td>
+<td><p>Ability to Save the Surrogate Model</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-odd"><td><p>US5</p></td>
+<td><p>Ability to Use Adaptive Design of Experiments</p></td>
+<td><p>	SP</p></td>
+<td><p>	M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>US6</p></td>
+<td><p>Ability to Asses Reliability of Surrogate Model</p></td>
+<td><p>	SP</p></td>
+<td><p>	M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-odd"><td><p>US7</p></td>
+<td><p>Ability to Build Surrogate Under Stochastic Excitation</p></td>
+<td><p>	SP</p></td>
+<td><p>	M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>US8</p></td>
+<td><p>Ability to Use Physics-Informed Machine Learning</p></td>
+<td><p>	SP</p></td>
+<td><p>	M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>UN</strong></p></td>
+<td><p><strong>Non-linear Least Squares Optimization</strong></p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>UN1</p></td>
+<td><p>Ability to use Gauss-Newton solvers for parameter estimation</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>UN2</p></td>
+<td><p>Ability to read calibration data from file</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>UN3</p></td>
+<td><p>Ability to handle non-scalar response quantities</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>UB</strong></p></td>
+<td><p><strong>Bayesian Calibration</strong></p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>UB1</p></td>
+<td><p>Ability to use DREAM algorithm for Bayesian inference</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-odd"><td><p>UB2</p></td>
+<td><p>Ability to use TMCMC algorithm for Bayesian inference</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>UB3</p></td>
+<td><p>Ability to read calibration data from file</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-odd"><td><p>UB4</p></td>
+<td><p>Ability to handle non-scalar response quantities</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>UB5</p></td>
+<td><p>Ability to calibrate multipliers on error covariance</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>UB6</p></td>
+<td><p>Ability to use a default log-likelihood function</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>UH</strong></p></td>
+<td><p><strong>High Dimensional UQ</strong></p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>UH1</p></td>
+<td><p>Ability to sample from manifold</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>UH2</p></td>
+<td><p>Ability to build Reduced Order Model</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>UO</strong></p></td>
+<td><p><strong>Other/General Features</strong></p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>UO1</p></td>
+<td><p>Ability to use Own External UQ Engine</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>UO2</p></td>
+<td><p>Ability to use Own External FEM Application</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">key:</div>
+<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line">Status: Implements, InProgress and Blank (i.e. not started)</div>
+</div>
+</div>
+<div class="section" id="rv-requirements">
+<h1>RV Requirements<a class="headerlink" href="#rv-requirements" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">key:</div>
+<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line">Status: Implements, InProgress and Blank (i.e. not started)</div>
+</div>
+</div>
+<div class="section" id="modeling-requirements">
+<h1>Modeling Requirements<a class="headerlink" href="#modeling-requirements" title="Permalink to this headline">¶</a></h1>
+<table class="colwidths-given docutils align-default" id="id10">
+<caption><span class="caption-text">Requirements - MOD</span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Source</p></th>
+<th class="head"><p>Priority</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>BM</p></td>
+<td><p><em>Asset Model Generators for Analysis</em></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>BM1</p></td>
+<td><p>Ability to quickly create a simple nonlinear building model for simple methods of seismic evaluation</p></td>
+<td><p>GC</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>BM2</p></td>
+<td><p>Ability to use existing OpenSees model scripts</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>BM3</p></td>
+<td><p>Ability to define building and use Expert System to generate FE mesh</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>BM4</p></td>
+<td><p>Ability to define building and use Machine Learning applications to generate FE</p></td>
+<td><p>GC</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>BM5</p></td>
+<td><p>Ability to specify connection details for member ends</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>BM6</p></td>
+<td><p>Ability to define a user-defined moment-rotation response representing the connection details</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>BM7</p></td>
+<td><p>Ability to incoporate AutoSDA Steel Design Application in Local Applications</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>BM8</p></td>
+<td><p>Ability to use user supplied python script to generate mesh</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">key:</div>
+<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line">Status: Implements, InProgress and Blank (i.e. not started)</div>
+</div>
+</div>
+<div class="section" id="analysis-requirements">
+<h1>Analysis Requirements<a class="headerlink" href="#analysis-requirements" title="Permalink to this headline">¶</a></h1>
+<table class="colwidths-given docutils align-default" id="id11">
+<caption><span class="caption-text">Requirements - ANA</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Source</p></th>
+<th class="head"><p>Priority</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ANA1</p></td>
+<td><p>Ability to select from different Nonlinear Analysis options</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>ANA2</p></td>
+<td><p>Ability to specify OpenSees as FEM engine and to specify different analysis options</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>ANA3</p></td>
+<td><p>Ability to provide own OpenSees Analysis script to OpenSees engine.</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>ANA4</p></td>
+<td><p>Ability to provide own Python script and use OpenSeesPy engine.</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ANA5</p></td>
+<td><p>Ability to use alternative FEM engines.</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>ANA6</p></td>
+<td><p>Ability to know if an analysis run fails.</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ANA7</p></td>
+<td><p>Ability to specify Modal Damping.</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>ANA8</p></td>
+<td><p>Ability to specify damping ratio as a random variable</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>ANA9</p></td>
+<td><p>When using Rayleigh Damping, ability to specify the two modes used to calculate damping parameters</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>ANA10</p></td>
+<td><p>Ability to run for more than 60hours at DesignSafe</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ANA11</p></td>
+<td><p>Ability to specify number of iterations in convergence test</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">key:</div>
+<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line">Status: Implements, InProgress and Blank (i.e. not started)</div>
+</div>
+</div>
+<div class="section" id="damage-loss-requirements">
+<h1>Damage &amp; Loss Requirements<a class="headerlink" href="#damage-loss-requirements" title="Permalink to this headline">¶</a></h1>
+<table class="colwidths-given docutils align-default" id="id12">
+<caption><span class="caption-text">Requirements - DL</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Source</p></th>
+<th class="head"><p>Priority</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DL1</p></td>
+<td><p><strong>Different Assessment Methods</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DL1.1</p></td>
+<td><p>Ability to perform component-based (FEMA P58) loss assessment for an earthquake hazard.</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-even"><td><p>DL1.2</p></td>
+<td><p>Ability to perform component-assembly-based (HAZUS MH) loss assessment for an earthquake hazard.</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>1.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>DL1.3</p></td>
+<td><p>Ability to perform downtime estimation using the REDi methodology.</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DL1.4</p></td>
+<td><p>Ability to describe building performance with additional decision variables from HAZUS (e.g.business interruption and debris</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DL1.5</p></td>
+<td><p>Ability to perform time-based assessment</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DL1.6</p></td>
+<td><p>Ability to perform damage and loss assessment for hurricane wind</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DL1.7</p></td>
+<td><p>Ability to perform damage and loss assessment for storm surge</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DL1.8</p></td>
+<td><p>Ability to perform response estimation without simulation using HAZUS capacity curves</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DL2</p></td>
+<td><p><strong>Control</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DL2.1</p></td>
+<td><p>Allow users to set the number of realizations</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>DL2.2</p></td>
+<td><p>Allow users to specify the added uncertainty to EDPs</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-even"><td><p>DL2.3</p></td>
+<td><p>Allow users to decide which decision variables to calculate</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>DL2.4</p></td>
+<td><p>Allow users to set the number of inhabitants on each floor and customize their temporal distribution.</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-even"><td><p>DL2.5</p></td>
+<td><p>Allow users to specify the boundary conditions of repairability.</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>DL2.6</p></td>
+<td><p>Allow users to control collapse through EDP limits.</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-even"><td><p>DL2.7</p></td>
+<td><p>Allow users to specify the replacement cost and time for the building.</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>DL2.8</p></td>
+<td><p>Allow users to specify EDP boundaries that correspond to reliable simulation results.</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-even"><td><p>DL2.9</p></td>
+<td><p>Allow users to specify collapse modes and characterize the corresponding likelihood of injuries.</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>DL2.10</p></td>
+<td><p>Allow users to specify the collapse probability of the structure.</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>1.2</p></td>
+</tr>
+<tr class="row-even"><td><p>DL2.11</p></td>
+<td><p>Allow users to use empirical EDP data to estimate the collapse probability of the structure.</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>1.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>DL2.12</p></td>
+<td><p>Allow users to choose the type of distribution they want to estimate the EDPs with.</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td><p>1.2</p></td>
+</tr>
+<tr class="row-even"><td><p>DL2.13</p></td>
+<td><p>Allow users to perform the EDP fitting only for non-collapsed cases.</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>1.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>DL2.14</p></td>
+<td><p>Allow users to couple response estimation with loss assessment.</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DL3</p></td>
+<td><p><strong>Component damage and loss information</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DL3.1</p></td>
+<td><p>Make the component damage and loss data from FEMA P58 available.</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-even"><td><p>DL3.2</p></td>
+<td><p>Ability to use custom components for loss assessment.</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>DL3.3</p></td>
+<td><p>Allow users to set different component quantities for each floor in each direction.</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-even"><td><p>DL3.4</p></td>
+<td><p>Allow users to set the number of identical component groups and their quantities within each performance group.</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>DL3.5</p></td>
+<td><p>Use a generic JSON data format for building components that can be shared by component-based and component-assembly-based assessments.</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>1.1</p></td>
+</tr>
+<tr class="row-even"><td><p>DL3.6</p></td>
+<td><p>Convert FEMA P58 and HAZUS component damage and loss data to the new JSON format and make it available with the tool.</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>1.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>DL3.7</p></td>
+<td><p>Make component definition easier by providing a list of available components in the given framework (e.g. FEMA P58 or HAZUS) and not requesting inputs that are already available in the data files.</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td><p>1.2</p></td>
+</tr>
+<tr class="row-even"><td><p>DL3.8</p></td>
+<td><p>Make the component damage and loss data from FEMA P58 2nd edition available.</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>2.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>DL3.9</p></td>
+<td><p>Improve component definition by providing complete control over every characteristic on every floor and in every direction</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td><p>2.0</p></td>
+</tr>
+<tr class="row-even"><td><p>DL3.10</p></td>
+<td><p>Allow users to view fragility and consequence functions in the application</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DL3.11</p></td>
+<td><p>Allow users to edit fragility and consequence functions in the application</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DL3.12</p></td>
+<td><p>Replace JSON files with a more efficient method to store the damage and loss data for the large number of available Fragility Groups</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DL3.13</p></td>
+<td><p>Allow users to export and load component information using CSV files</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td><p>2.0</p></td>
+</tr>
+<tr class="row-even"><td><p>DL3.14</p></td>
+<td><p>Provide a method to users that automatically populates the performance model for commonly used structures.</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DL4</p></td>
+<td><p><strong>Stochastic loss model</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DL4.1</p></td>
+<td><p>Allow the user to specify basic dependencies (i.e. independence or perfect correlation) between logically similar parts of the stochastic model (i.e. within component quantities or one type of decision variable, but not between quantities and fragilities)</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>DL4.2</p></td>
+<td><p>Allow the user to specify basic dependencies between reconstruction cost and reconstruction time.</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-even"><td><p>DL4.3</p></td>
+<td><p>Allow the user to specify basic dependencies between different levels of injuries.</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>DL4.4</p></td>
+<td><p>Allow the user to specify intermediate levels of correlation (i.e. not limited to 0 or 1) and provide a convenient interface that makes sure the specified correlation structure is valid.</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DL4.5</p></td>
+<td><p>Allow the user to specify the correlation for EDPs.</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">key:</div>
+<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line">Status: Implements, InProgress and Blank (i.e. not started)</div>
+</div>
+</div>
+<div class="section" id="brails">
+<h1>BRAILS<a class="headerlink" href="#brails" title="Permalink to this headline">¶</a></h1>
+<table class="colwidths-given docutils align-default" id="id13">
+<caption><span class="caption-text">Requirements - BR</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Source</p></th>
+<th class="head"><p>Priority</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>BR1.0</p></td>
+<td><p>Need for scalable tools that autonomously create an accurate database of all infrastructure components, including points of inter- dependency with other infrastructure components</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-odd"><td><p>BR2.0</p></td>
+<td><p>Promote living community risk models utilizing local inventory data from various sources</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>BR3.0</p></td>
+<td><p>Developing and sharing standardized definitions, measurement protocols and strategies for data collection</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>BR4.0</p></td>
+<td><p><strong>Developing tools that utilize GIS information and online images, e.g. google maps, for data collection for gathering Building Information</strong></p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>BR4.1</p></td>
+<td><blockquote>
+<div><p>Develop Framework for creating asset inventories</p>
+</div></blockquote>
+</td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>BR4.2</p></td>
+<td><p>Create workflow application for building inventory from framework modules</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>BR4.2</p></td>
+<td><p>Create workflow application for transportation network from framework modules</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>BR5</p></td>
+<td><p><strong>Developing Modules for Asset Inventory Workflows identified in BR4</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>BR5.1</p></td>
+<td><p>Predicting if building is a soft-story building for earthquake simulations</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>BR5.2</p></td>
+<td><p>Predicting First Floor Height</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>BR5.3</p></td>
+<td><p>Predicting Roof Height</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-odd"><td><p>BR5.4</p></td>
+<td><p>Predicting Eave Height</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>BR5.5</p></td>
+<td><p>Predicting Eave Length</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>BR5.6</p></td>
+<td><p>Predicting Roof Shape</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>BR5.7</p></td>
+<td><p>Predicting Roof Pitch</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-odd"><td><p>BR5.8</p></td>
+<td><p>Predicting Roof Material</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>BR5.9</p></td>
+<td><p>Predicting Window Area</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-odd"><td><p>BR5.10</p></td>
+<td><p>Predicting Building Material</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>BR5.11</p></td>
+<td><p>Classifying Elevated Building</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>BR5.12</p></td>
+<td><p>Predicting Structural Type</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>BR5.13</p></td>
+<td><p>Predicting Occupancy Type</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>BR5.14</p></td>
+<td><p>Predicting Year Built</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>BR5.15</p></td>
+<td><p>Predicting Attached Garage</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>BR5.16</p></td>
+<td><p>Predicting Presence of Masonry Chimney</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>BR6</p></td>
+<td><p><strong>DesignSafe integration to provide access to GPU</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>BR6.1</p></td>
+<td><p>Create JupyterHub notebook at DesignSafe for building asset inventory workflow usage</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>BR6.2</p></td>
+<td><p>For classification done at DesignSafe, store images and meta data for BE Database</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>BR6.3</p></td>
+<td><p>Create JupyterHub notebook at DesignSafe for individual modules to demonstrate immediate results</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>BR7</p></td>
+<td><p><strong>Work to improve existing performance models through Continous Learning</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>BR7.1</p></td>
+<td><p>Continous Learning for Year Built</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>BR7.2</p></td>
+<td><p>Continous Learning for Roof Material</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>BR8</p></td>
+<td><p>Work to gather data for Module Validation/Verification/Training</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">key:</div>
+<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line">Status: Implements, InProgress and Blank (i.e. not started)</div>
+</div>
+</div>
+<div class="section" id="pelicun">
+<h1>PELICUN<a class="headerlink" href="#pelicun" title="Permalink to this headline">¶</a></h1>
+<table class="colwidths-given docutils align-default" id="id14">
+<caption><span class="caption-text">Requirements - P</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Source</p></th>
+<th class="head"><p>Priority</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>P1</p></td>
+<td><p><strong>Existing Assessment Methods</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>P1.1</p></td>
+<td><p><em>Implement the high-resolution loss assessment methodologies</em></p></td>
+<td><p>GC</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>P1.1.1</p></td>
+<td><p>Implement the scenario-based assessment from FEMA-P58</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>P1.1.2</p></td>
+<td><p>Implement the time-based assessment from FEMA-P58</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>P1.1.3</p></td>
+<td><p>Implement high-resolution assessment of buildings under wind hazards</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>P1.1.4</p></td>
+<td><p>Implement high-resolution assessment of buildings under water hazards</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>P1.1.5</p></td>
+<td><p>Implement high-resolution assessment of transportation networks</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>P1.1.6</p></td>
+<td><p>Implement high-resolution assessment of buried pipelines</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>P1.2</p></td>
+<td><p><em>Implement the efficient loss assessment methodologies from HAZUS</em></p></td>
+<td><p>GC</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>P1.2.1</p></td>
+<td><p>Implement the assessment of buildings under earthquake hazard from HAZUS</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>P1.2.2</p></td>
+<td><p>Implement the assessment of buildings under hurricane wind hazard from HAZUS</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>2.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>P1.2.3</p></td>
+<td><p>Implement the assessment of buildings under storm surge hazard from HAZUS</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>P1.2.4</p></td>
+<td><p>Implement the assessment of buried pipelines under earthquake hazard from HAZUS</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>P1.2.5</p></td>
+<td><p>Implement the assessment of transportation networks under earthquake hazard from HAZUS</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>P1.2.6</p></td>
+<td><p>Implement the assessment of power networks under earthquake hazard from HAZUS</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>P1.3</p></td>
+<td><p><em>Implement advanced methods for building recovery time recovery time estimation</em></p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>P2</p></td>
+<td><p><strong>Control</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>P2.1</p></td>
+<td><p><em>Analysis &amp; Data</em></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>P2.1.1</p></td>
+<td><p>Allow users to set the number of realizations</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>P2.1.2</p></td>
+<td><p>Allow users to customize fragility and consequence function parameters</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>P2.1.3</p></td>
+<td><p>Allow users to specify dependencies between logically similar parts of the stochastic models</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>P2.2</p></td>
+<td><p><em>Response Model</em></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>P2.2.1</p></td>
+<td><p>Allow users to specify the added uncertainty to EDPs (increase in log-standard dev.)</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>P2.2.2</p></td>
+<td><p>Allow users to specify the EDP ranges that correspond to reliable simulation results</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>P2.2.3</p></td>
+<td><p>Allow users to specify the type of distribution they want to fit to the empirical EDP data</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td><p>1.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>P2.2.4</p></td>
+<td><p>Allow users to choose if they want to fit a distribution only to the non-collapsed EDPs</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>1.2</p></td>
+</tr>
+<tr class="row-even"><td><p>P2.3</p></td>
+<td><p><em>Performance Model</em></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>P2.3.1</p></td>
+<td><p>Allow users to prescribe a different number of inhabitants on each floor</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>P2.3.2</p></td>
+<td><p>Allow users to customize the temporal distribution of inhabitants</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>P2.3.3</p></td>
+<td><p>Allow users to prescribe different component quantities for each floor in each direction</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>P2.3.4</p></td>
+<td><p>Allow users to specify the number of component groups and their quantities in each performance group</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>P2.4</p></td>
+<td><p><em>Damage Model</em></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>P2.4.1</p></td>
+<td><p>Allow users to specify the residual drift limits that determine irrepairability</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>P2.4.2</p></td>
+<td><p>Allow users to specify the yield drift value that is used to estimate residual drifts from peak drifts</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>P2.4.3</p></td>
+<td><p>Allow users to specify the EDP limits that are used to determine collapse probability</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>P2.4.4</p></td>
+<td><p>Allow users to specify arbitrary collapse modes and their likelihood</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>P2.4.5</p></td>
+<td><p>Allow users to prescribe the collapse probability of the structure</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>1.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>P2.5</p></td>
+<td><p><em>Loss Model</em></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>P2.5.1</p></td>
+<td><p>Allow users to decide which DVs to calculate</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>P2.5.2</p></td>
+<td><p>Allow users to specify the likelihood of various injuries in each collapse mode</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">key:</div>
+<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line">Status: Implements, InProgress and Blank (i.e. not started)</div>
+</div>
+</div>
+<div class="section" id="be-database">
+<h1>BE Database<a class="headerlink" href="#be-database" title="Permalink to this headline">¶</a></h1>
+<table class="colwidths-given docutils align-default" id="id15">
+<caption><span class="caption-text">Requirements - BE</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Source</p></th>
+<th class="head"><p>Priority</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>BE</p></td>
+<td><p><strong>Establish a National Infrastructure Data Base for characterizing the physical and natural infrastructure</strong></p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>BE1</p></td>
+<td><p>Ability to use cumulative knowledge bases rather than the piecemeal individual approaches</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>BE1.1</p></td>
+<td><p>Utilize Federated Databases to maintain individual databases &amp; data sources yet provide central database resource</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>BE2</p></td>
+<td><p>Include National building model inventories</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>BE2.1</p></td>
+<td><p>Incorporate Building data from existing datasets published by states, counties and cities</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-odd"><td><p>BE2.2</p></td>
+<td><p>Ingest building data from web-scraping techniques, e.g. from zillow, county websites</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>BE2.3</p></td>
+<td><p>Ingest building data using AI/ML techniques and satellite and streetview images</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-odd"><td><p>BE3</p></td>
+<td><p>Incorporate transportation newtwork data from existing datasets made avail through www</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>BE3.1</p></td>
+<td><p>Ingest additionally needed transportation newtwork data utilizing AI/ML and satellite and streetview images</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>BE4</p></td>
+<td><p>Include National Models of Utility Networks</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>BE4.1</p></td>
+<td><p>Incorporate utility network data from existing datasets made avail through www</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">key:</div>
+<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line">Status: Implements, InProgress and Blank (i.e. not started)</div>
+</div>
+</div>
+<div class="section" id="dl-database">
+<h1>DL Database<a class="headerlink" href="#dl-database" title="Permalink to this headline">¶</a></h1>
+<table class="colwidths-given docutils align-default" id="id16">
+<caption><span class="caption-text">Requirements - DLD</span><a class="headerlink" href="#id16" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Source</p></th>
+<th class="head"><p>Priority</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DLD</p></td>
+<td><p><em>Database for Damage and Loss Fragilities and Consequence Functions</em></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DLD1</p></td>
+<td><p><strong>Data Sources</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DLD1.1</p></td>
+<td><p><em>Make the component fragility and consequence functions from FEMA P58 available</em></p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DLD1.1.1</p></td>
+<td><p>FEMA P58 First Edition</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>DLD1.1.2</p></td>
+<td><p>FEMA P58 Second Edition</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>DLD1.1.3</p></td>
+<td><p>Extend FEMA P58 Second Edition consequence functions with environmental impact parameters</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DLD1.2</p></td>
+<td><p><em>Make the building fragility and consequence functions from HAZUS available</em></p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DLD1.2.1</p></td>
+<td><p>HAZUS earthquake damage and reconstruction cost and time</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>DLD1.2.2</p></td>
+<td><p>HAZUS hurricane wind damage and reconstruction cost and time</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>DLD1.2.3</p></td>
+<td><p>HAZUS storm surge damage and reconstruction cost and time</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DLD1.3</p></td>
+<td><p><em>Make the lifeline fragility and consequence functions from HAZUS available</em></p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DLD1.3.1</p></td>
+<td><p>HAZUS bridge damage and reconstruction cost and time</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DLD1.3.2</p></td>
+<td><p>HAZUS buried pipeline damage and reconstruction cost and time</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DLD1.3.3</p></td>
+<td><p>HAZUS power network damage and reconstruction cost and time</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DLD1.4</p></td>
+<td><p><em>Extend available high-resolution building damage and loss model parameters</em></p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DLD1.4.1</p></td>
+<td><p>Building damage and loss model parameters under wind hazards</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DLD1.4.2</p></td>
+<td><p>Building damage and loss model parameters under water hazards</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DLD1.5</p></td>
+<td><p><em>Make high-resolution damage and loss model parameters available for lifelines</em></p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DLD1.5.1</p></td>
+<td><p>Transportation network damage and loss model parameters</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DLD1.5.2</p></td>
+<td><p>Buried pipeline network damage and loss model parameters</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DLD2</p></td>
+<td><p><strong>Data Storage</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DLD2.1</p></td>
+<td><p><em>Generic JSON format</em></p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DLD2.1.1</p></td>
+<td><p>Develop a generic JSON data format for component fragility and consequence functions</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>DLD2.1.2</p></td>
+<td><p>Store FEMA P58 and HAZUS component data in the new JSON format and make them available</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>DLD2.2</p></td>
+<td><p><em>HDF5 Data Storage</em></p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DLD2.2.1</p></td>
+<td><p>Store the JSON files in an HDF5 data structure for each data source</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>DLD2.3</p></td>
+<td><p><em>Online Database</em></p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DLD2.3.1</p></td>
+<td><p>Create an online database for storing parameters of damage and loss models for buildings</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DLD2.3.2</p></td>
+<td><p>Extend online database to store parameters of damage and loss models for transportation networks</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DLD2.3.3</p></td>
+<td><p>Extend online database to store parameters of damage and loss models for buried pipeline networks</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>DLD2.3.4</p></td>
+<td><p>Populate building database with high-resolution model parameters from researchers</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>DLD2.3.5</p></td>
+<td><p>Populate lifeline database with high-resolution model parameters from researchers</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">key:</div>
+<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line">Status: Implements, InProgress and Blank (i.e. not started)</div>
+</div>
+</div>
+<div class="section" id="regional-testbeds">
+<h1>Regional Testbeds<a class="headerlink" href="#regional-testbeds" title="Permalink to this headline">¶</a></h1>
+<table class="colwidths-given docutils align-default" id="id17">
+<caption><span class="caption-text">Requirements - DLD</span><a class="headerlink" href="#id17" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Source</p></th>
+<th class="head"><p>Priority</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>TB</p></td>
+<td><p><em>Identify knowledge gaps and promote NSF generated knowledge through regional demonstration projects that help generate linkages to operational entities and decision makers</em></p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TB1</p></td>
+<td><p>Provide Earthquake Testbeds</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>TB1.0</p></td>
+</tr>
+<tr class="row-even"><td><p>TB1.1</p></td>
+<td><p>Provide Bay Area Earthquake Testbed</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>TB1.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>TB1.2</p></td>
+<td><p>Provide Anchorage Earthquake Testbed</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>TB1.1</p></td>
+</tr>
+<tr class="row-even"><td><p>TB2</p></td>
+<td><p>Provide Tsunami Testbed</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TB3</p></td>
+<td><p>Provide Hurricane Testbed</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TB3.1</p></td>
+<td><p>Provide Atlantic City Hurricane Wind Testbed</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>TB2.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>TB3.2</p></td>
+<td><p>Provide Atlantic City Hurricane Wind and Storm Surge Testbed</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>TB3.3</p></td>
+<td><p>Provide Hurricane Laura Testbed looking at Lake Charles</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TB4</p></td>
+<td><p>Provide Earthquake and Lifelines Testbed</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">key:</div>
+<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line">Status: Implements, InProgress and Blank (i.e. not started)</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-2', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+</script>
+
+
+</body>
+</html>

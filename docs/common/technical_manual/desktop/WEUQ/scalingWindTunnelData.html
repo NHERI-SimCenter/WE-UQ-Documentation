@@ -1,40 +1,47 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>1.3. Scaling Wind Tunnel Data &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="1.4. Turbulence Inflow" href="TinF.html" />
@@ -43,6 +50,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
 <style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../_static/css/bootstrap.css" rel="stylesheet">
 
 </head>
 
@@ -55,23 +63,26 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F2F2F2" >
           
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
 
-          
-            <a href="../../../../index.html">
-          
+  <a href="../../../../index.html">
 
-          
-            
-            <img src="../../../../_static/WE-UQ-Logo-grey2.png" class="logo" alt="Logo"/>
-          
-          </a>
 
-          
-            
-            
-          
 
-          
+  
+  <img src="../../../../_static/WE-UQ-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -80,9 +91,10 @@
   </form>
 </div>
 
-          
+
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -90,17 +102,30 @@
               
             
             
-              <p class="caption"><span class="caption-text">User Manual</span></p>
+              <p class="caption"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/about/WEUQ/about.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/installation/desktop/installation.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/usage.html">4. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/examples/desktop/examples.html">6. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../requirements/WEUQ.html">7. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">8. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/license.html">9. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/about/WEUQ/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../bootcamp/syllabus.html">2. Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">3. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">4. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">5. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">6. Abbreviations</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/usage/desktop/usage.html">2. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../requirements/WEUQ.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Testbeds</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/sf_bay_area/index.html">1. San Francisco, CA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/atlantic_city/index.html">2. Atlantic City, NJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/memphis/index.html">3. Memphis, TN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../testbeds/lake_charles/index.html">4. Lake Charles, LA</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul class="current">
@@ -124,11 +149,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/examples/desktop/examples.html">6. Examples</a></li>
 </ul>
 
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -163,11 +190,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../technical_manual.html"><span class="section-number">1. </span>Technical Manual</a> &raquo;</li>
         
@@ -176,7 +205,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../../../../_sources/common/technical_manual/desktop/WEUQ/scalingWindTunnelData.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -192,33 +221,33 @@
             
   <div class="section" id="scaling-wind-tunnel-data">
 <h1><span class="section-number">1.3. </span>Scaling Wind Tunnel Data<a class="headerlink" href="#scaling-wind-tunnel-data" title="Permalink to this headline">¶</a></h1>
-<p>Due to size limitations, the physical size of the structure in the wind tunnel will be different from the real world structure. As a consequence of this scaling laws due to <cite>Similitude &lt;https://en.wikipedia.org/wiki/Similitude_(model)&gt;</cite> are used to convert the data coming from a wind tunnel experiment to forces acting on the real structure.</p>
+<p>In general, the physical size of the model used in a wind tunnel test will be different from the real world structure. As a consequence of this scaling, laws of <a class="reference external" href="https://en.wikipedia.org/wiki/Similitude_(model)">similitude</a> are used to convert the data coming from a wind tunnel experiment to forces acting on the real structure.</p>
 <div class="section" id="wind-tunnel-data">
 <h2>Wind Tunnel Data<a class="headerlink" href="#wind-tunnel-data" title="Permalink to this headline">¶</a></h2>
-<p>The data obtained from the wind tunnel contains the following:</p>
+<p>The data obtained from a wind tunnel typically contains the following:</p>
 <ol class="arabic simple">
-<li><p>Building Dimensions. For example for a cuboid shaped building this would contain: height, breadth(width) and depth.</p></li>
-<li><p>Time. The time step, <span class="math notranslate nohighlight">\(\Delta t\)</span>, or frequency, <span class="math notranslate nohighlight">\(f\)</span>, of the data.</p></li>
-<li><p>Time history of pressure tap data. This data is provided as the Pressure Coefficient, Cp and is a dimensionless parameter.</p></li>
+<li><p>Building dimensions. For example, for a cuboid shaped building this would contain: height, breadth(width) and depth.</p></li>
+<li><p>Time interval. The time step, <span class="math notranslate nohighlight">\(\Delta t\)</span>, or frequency, <span class="math notranslate nohighlight">\(f\)</span>, of the data.</p></li>
+<li><p>Time history of pressure tap data. This data is provided as the pressure coefficient, <span class="math notranslate nohighlight">\(C_p\)</span> and is a dimensionless parameter.</p></li>
 <li><p>Location of pressure taps.</p></li>
 </ol>
 </div>
 <div class="section" id="time-step-for-real-structure-transient-analysis">
 <h2>Time Step for Real Structure Transient Analysis<a class="headerlink" href="#time-step-for-real-structure-transient-analysis" title="Permalink to this headline">¶</a></h2>
-<p>Due to similitude is is necessary to convert the time step <span class="math notranslate nohighlight">\(\Delta t_M\)</span> or frequency <span class="math notranslate nohighlight">\(f_M\)</span> obtained from wind tunnel data to one that is used in the transient analysis of the real structure, <span class="math notranslate nohighlight">\(\Delta t_R\)</span> or <span class="math notranslate nohighlight">\(f_R\)</span>. (note: the subscript <span class="math notranslate nohighlight">\(M\)</span> is used for model parameter and subscript <span class="math notranslate nohighlight">\(R\)</span> for real world structure). This is done by determining some scale factors which relate ratios of quantity in model scale to quantity in real world scale.</p>
+<p>Due to similitude, is is necessary to convert the time step <span class="math notranslate nohighlight">\(\Delta t_M\)</span> or frequency <span class="math notranslate nohighlight">\(f_M\)</span> obtained from wind tunnel data to one that is used in the transient analysis of the full-scale structure, <span class="math notranslate nohighlight">\(\Delta t_R\)</span> or <span class="math notranslate nohighlight">\(f_R\)</span>. (note: the subscript <span class="math notranslate nohighlight">\(M\)</span> is used for model parameter and subscript <span class="math notranslate nohighlight">\(R\)</span> for real world structure). This is done by determining some scale factors which relate ratios of quantity in model scale to quantity in real world scale.</p>
 <ol class="arabic simple">
-<li><p>length factor, <span class="math notranslate nohighlight">\(\lambda_L = \frac{D_M}{D_R}\)</span></p></li>
-<li><p>time factor: <span class="math notranslate nohighlight">\(\lambda_T= \frac{\Delta t_M}{\Delta t_R}\)</span></p></li>
-<li><p>velocity factor: <span class="math notranslate nohighlight">\(\lambda_V= \frac{V_M}{V_R}\)</span></p></li>
+<li><p>Length factor, <span class="math notranslate nohighlight">\(\lambda_L = \frac{D_M}{D_R}\)</span></p></li>
+<li><p>Time factor: <span class="math notranslate nohighlight">\(\lambda_T= \frac{\Delta t_M}{\Delta t_R}\)</span></p></li>
+<li><p>Velocity factor: <span class="math notranslate nohighlight">\(\lambda_V= \frac{V_M}{V_R}\)</span></p></li>
 </ol>
 <p>where <span class="math notranslate nohighlight">\(D\)</span> represents the length dimension, <span class="math notranslate nohighlight">\(\Delta t\)</span> the time step, and <span class="math notranslate nohighlight">\(V\)</span> the velocity.</p>
-<p>There is a relationship between these scaling factors obtained from the definition of Velocity (<span class="math notranslate nohighlight">\(V = \frac{D}{\Delta t}\)</span>) which is</p>
+<p>There is a relationship between these scaling factors obtained from the definition of velocity (<span class="math notranslate nohighlight">\(V = \frac{D}{\Delta t}\)</span>) which is</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-0">
 <span class="eqno">(1.3.1)<a class="headerlink" href="#equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-0" title="Permalink to this equation">¶</a></span>\[\lambda_V =\frac{\lambda_ L}{\lambda_t}\]</div>
 <p>It is this relationship which can then be used to determine <span class="math notranslate nohighlight">\(\Delta t_R\)</span></p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-1">
 <span class="eqno">(1.3.2)<a class="headerlink" href="#equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-1" title="Permalink to this equation">¶</a></span>\[\Delta t_R = \Delta t_M *  \lambda T = \Delta t_M * \frac{\lambda_V}{\lambda_L}\]</div>
-<p>It should be noted that the model and the real structure should have geometric similarity. This means that the model should scale similariliy in all directions to the real world structure. In calculations used in SimCenter the length factor hL is calculated using the height of the real structure and the height of the model.</p>
+<p>It should be noted that the model and the real structure should have geometric similarity. This means that the model should scale similarly in all directions to the real world structure. In calculations used in SimCenter the length factor hL is calculated using the height of the real structure and the height of the model.</p>
 </div>
 <div class="section" id="force-calculation-on-real-structure-floors">
 <h2>Force Calculation on Real Structure Floors<a class="headerlink" href="#force-calculation-on-real-structure-floors" title="Permalink to this headline">¶</a></h2>
@@ -227,16 +256,16 @@ the following equation:</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-2">
 <span class="eqno">(1.3.3)<a class="headerlink" href="#equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-2" title="Permalink to this equation">¶</a></span>\[P_R = C_p * 0.5*\rho * {V_R}^2\]</div>
 <p>where <span class="math notranslate nohighlight">\(V_R\)</span> is the wind speed and <span class="math notranslate nohighlight">\(\rho\)</span> the full scale air density, typically <span class="math notranslate nohighlight">\(1.225kg/m^3\)</span>. It should be noted that the pressures in
-the wind tunnel are not needed, this is because <span class="math notranslate nohighlight">\(C_p\)</span> is a dimensionless parameter. It should also be noted that it is essential that the wind speed Vr have same basis as the model wind speed <span class="math notranslate nohighlight">\(V_M\)</span>, i.e. averaging period, elevation, and vertical profile.</p>
-<p>The forces on the structure can be calculated integrating the pressures over the external surface area of the building.</p>
+the wind tunnel are not needed, this is because <span class="math notranslate nohighlight">\(C_p\)</span> is a dimensionless parameter <a class="bibtex reference internal" href="../../../../index.html#parkdatabaseassisteddesignequivalent2018" id="id1">[PY18]</a>. It should also be noted that it is essential that the wind speed <span class="math notranslate nohighlight">\(V_R\)</span> have same basis as the model wind speed <span class="math notranslate nohighlight">\(V_M\)</span>, i.e. averaging period, elevation, and vertical profile.</p>
+<p>The forces on the structure can be calculated by integrating the pressures over the external surface area of the building.</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-3">
 <span class="eqno">(1.3.4)<a class="headerlink" href="#equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-3" title="Permalink to this equation">¶</a></span>\[F = \int\limits_A P_R\]</div>
-<p>As the pressure are not of course known for all points on the building, the approximation used is to break the building into a number of sections and assuming the pressure is constant over that section determine the force on the section and from that the force on the building. In the SimCenter application, the current approach is for each story divide the surface of the building story into a number of sections. For each section we determine the closest tap location to obtain a Cp for that section. The force and moment contributed to the floor above and below the section are done assuming simply supported beam theory.</p>
+<p>As the pressures are not known for all points on the building, the approximation used is to break the building into a number of sections and assuming the pressure is constant over that section determine the force on the section and from that the force on the building. In the SimCenter application, the current approach is for each story to divide the surface of the building story into a number of sections. For each section we determine the closest tap location to obtain a <span class="math notranslate nohighlight">\(C_p\)</span> for that section. The force and moment contributed to the floor above and below the section are done assuming simply supported beam theory.</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-4">
-<span class="eqno">(1.3.5)<a class="headerlink" href="#equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-4" title="Permalink to this equation">¶</a></span>\[F_A = \sum\limits_{sections} F_{A section} = \sum\limits_{sections} * F_{section} * \frac{b}{(a+b)} = \sum\limits_{sections} A_{section} * Cp_{section} * 0.5 * \rho *  V_R^2 * \frac{b}{(a+b)}\]</div>
+<span class="eqno">(1.3.5)<a class="headerlink" href="#equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-4" title="Permalink to this equation">¶</a></span>\[F_A = \sum\limits_{sections} F_{A^{section}} = \sum\limits_{sections} * F^{section} * \frac{b}{(a+b)} = \sum\limits_{sections} A^{section} * C_p^{section} * 0.5 * \rho *  V_R^2 * \frac{b}{(a+b)}\]</div>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-5">
-<span class="eqno">(1.3.6)<a class="headerlink" href="#equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-5" title="Permalink to this equation">¶</a></span>\[M_A =  \sum\limits_{sections} A_{section} * F_a *  c\]</div>
-<p>where <span class="math notranslate nohighlight">\(F_A\)</span> represents force on floor A due to section between floors A and B and  <span class="math notranslate nohighlight">\(M_A\)</span> the moment contribution due to these sections. These are calculated from <span class="math notranslate nohighlight">\(F_{A section}\)</span> the force contribution to floor A due to a particular section, <span class="math notranslate nohighlight">\(a\)</span> distance of centroid of section to floor <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> distance from centroid of section to floor b, and <span class="math notranslate nohighlight">\(c\)</span> distance to centroid of section to centroid of building face.</p>
+<span class="eqno">(1.3.6)<a class="headerlink" href="#equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-5" title="Permalink to this equation">¶</a></span>\[M_A =  \sum\limits_{sections} A^{section} * F_a *  c\]</div>
+<p>where <span class="math notranslate nohighlight">\(F_A\)</span> represents force on floor <em>A</em> due to section between floors <em>A</em> and <em>B</em> and  <span class="math notranslate nohighlight">\(M_A\)</span> the moment contribution due to these sections. These are calculated from <span class="math notranslate nohighlight">\(F_{A section}\)</span> the force contribution to floor <em>A</em> due to a particular section, <span class="math notranslate nohighlight">\(a\)</span> distance from centroid of section to floor <em>A</em>, <span class="math notranslate nohighlight">\(b\)</span> distance from centroid of section to floor <em>B</em>, and <span class="math notranslate nohighlight">\(c\)</span> distance from centroid of section to centroid of building face.</p>
 </div>
 </div>
 
@@ -245,20 +274,25 @@ the wind tunnel are not needed, this is because <span class="math notranslate no
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, The Regents of the University of California
+        &#169; Copyright 2021, The Regents of the University of California.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -266,7 +300,6 @@ the wind tunnel are not needed, this is because <span class="math notranslate no
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
@@ -285,6 +318,7 @@ the wind tunnel are not needed, this is because <span class="math notranslate no
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-158130480-2', 'auto');
+    
     ga('send', 'pageview');
     </script>
 
@@ -295,6 +329,44 @@ the wind tunnel are not needed, this is because <span class="math notranslate no
          .wy-nav-content { max-width: none; }
   </style>
 
+<script>
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+</script>
 
 
 </body>
