@@ -55,7 +55,7 @@
    :quoFEM:common/user_manual/about/quoFEM/aboutQUOFEM
    :pelicun:common/user_manual/about/pelicun/about
 
-   :Bootcamp:bootcamp/syllabus
+   :bootcamp:bootcamp/syllabus
    
 
    common/front-matter/ack
