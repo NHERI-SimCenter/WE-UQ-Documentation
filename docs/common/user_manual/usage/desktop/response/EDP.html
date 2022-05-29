@@ -1,48 +1,60 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>4.6. EDP: Demand Parameters &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>2.7. EDP: Demand Parameters &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../../../../../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
-
-    
 
   
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="4.7. RV: Random Variables" href="../RV.html" />
-    <link rel="prev" title="4.5. FEM: Finite Element Method" href="../FEM.html" />
+    <link rel="next" title="2.8. RES: Results" href="resEE.html" />
+    <link rel="prev" title="2.6. RV: Random Variables" href="../RV.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
 <style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
 
 </head>
 
@@ -55,23 +67,26 @@
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F2F2F2" >
           
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
 
-          
-            <a href="../../../../../index.html">
-          
+  <a href="../../../../../index.html">
 
-          
-            
-            <img src="../../../../../_static/WE-UQ-Logo-grey2.png" class="logo" alt="Logo"/>
-          
-          </a>
 
-          
-            
-            
-          
 
-          
+  
+  <img src="../../../../../_static/WE-UQ-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -80,9 +95,10 @@
   </form>
 </div>
 
-          
+
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -90,33 +106,43 @@
               
             
             
-              <p class="caption"><span class="caption-text">User Manual</span></p>
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/WEUQ/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">5. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">6. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../ack.html">1. Acknowledgments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../about/WEUQ/about.html">2. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">3. Installation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">4. User Guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../UQ.html">4.1. UQ: Uncertainty Quantification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../GI.html">4.2. GI: General Information</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../SIM.html">4.3. SIM: Structural Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../wind/WindEvents.html">4.4. EVT: Wind Events</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../FEM.html">4.5. FEM: Finite Element Method</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.6. EDP: Demand Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../RV.html">4.7. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="resEE.html">4.8. RES: Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GI.html">2.2. GI: General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.3. SIM: Structural Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wind/WindEvents.html">2.4. EVT: Wind Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.6. RV: Random Variables</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.7. EDP: Demand Parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#standard">2.7.1. Standard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#user-defined">2.7.2. User Defined</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">6. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../requirements/WEUQ.html">7. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../license.html">9. Copyright and License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resEE.html">2.8. RES: Results</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Technical Manual</span></p>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/WEUQ.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
@@ -128,6 +154,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -162,20 +189,22 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../usage.html"><span class="section-number">4. </span>User Guide</a> &raquo;</li>
+          <li><a href="../usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
         
-      <li><span class="section-number">4.6. </span>EDP: Demand Parameters</li>
+      <li><span class="section-number">2.7. </span>EDP: Demand Parameters</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../../../../../_sources/common/user_manual/usage/desktop/response/EDP.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -190,7 +219,179 @@
            <div itemprop="articleBody">
             
   <div class="section" id="edp-demand-parameters">
-<h1><span class="section-number">4.6. </span>EDP: Demand Parameters<a class="headerlink" href="#edp-demand-parameters" title="Permalink to this headline">¶</a></h1>
+<span id="lbledp"></span><h1><span class="section-number">2.7. </span>EDP: Demand Parameters<a class="headerlink" href="#edp-demand-parameters" title="Permalink to this headline">¶</a></h1>
+<p>This panel is where the user selects which outputs will be displayed when
+the simulation runs. There are a number of options available in the pull-down</p>
+<ol class="arabic simple">
+<li><p>Standard</p></li>
+<li><p>User Defined</p></li>
+</ol>
+<div class="section" id="standard">
+<h2><span class="section-number">2.7.1. </span>Standard<a class="headerlink" href="#standard" title="Permalink to this headline">¶</a></h2>
+<p>When the user selects there are no additional
+inputs required. The standard EDP generator will ensure the
+the max absolute value of the following are obtained:</p>
+<ol class="arabic simple">
+<li><p>Relative Floor displacements:</p></li>
+<li><p>Absolute Floor Accelerations</p></li>
+<li><p>Interstory Drifts</p></li>
+</ol>
+<p>The results will contain results for these in abbreviated form:</p>
+<ol class="arabic simple">
+<li><p>PFD peak relative floor displacement Event#-PFD-FLOOR-CLINE</p></li>
+<li><p>PFA peak floor acceleration Event#-PFA-FLOOR-CLINE</p></li>
+<li><p>PID peak inter-story drift: Event#-PID-STORY-CLINE</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Floors are numbered starting at floor 0, and stories are numbered starting at story 1.</p>
+</div>
+</div>
+<div class="section" id="user-defined">
+<h2><span class="section-number">2.7.2. </span>User Defined<a class="headerlink" href="#user-defined" title="Permalink to this headline">¶</a></h2>
+<p>As shown in fig userEDP, this panel allows the user to determine their own output and process it. When using this option the user provides additional data:</p>
+<div class="align-center figure" id="id1">
+<img alt="../../../../../_images/userDefinedEDP.png" src="../../../../../_images/userDefinedEDP.png" />
+<p class="caption"><span class="caption-number">Fig. 2.7.2.1 </span><span class="caption-text">User Defined EDP panel.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic simple">
+<li><p>Additional Input: These are additional commands that are invoked by the analysis application
+before the transient analysis is performed. For example, for OpenSees this would be a script
+containing a series of recorder commands.</p></li>
+</ol>
+<blockquote>
+<div><p>A recorder file passed to OpenSees might look like the following:</p>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">recorder</span> EnvelopeNode <span class="o">-</span>file node.out <span class="o">-</span>node <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="o">-</span>dof <span class="mi">1</span> disp
+<span class="nv">recorder</span> EnvelopeElement <span class="o">-</span>file ele.out <span class="o">-</span>ele <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> forces
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Postprocess Script: This is a python or tcl script that will be invoked</p></li>
+</ol>
+<blockquote>
+<div><p>after the finite element application has run. It must be provided by
+the user. It’s purpose is to process the output files and create a
+single file, results.out. This file must contain a single line with
+as many entries as EDP’s specified.</p>
+<p>For example, a python postprocessing file that would take the outputs from the recorder commands of the pervious code block to create the results file needed vy the applications might look like the following:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+
+<span class="c1"># written: fmk, adamzs 01/18</span>
+
+<span class="c1"># import functions for Python 2.X support</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">):</span> 
+    <span class="nb">range</span><span class="o">=</span><span class="n">xrange</span>
+    <span class="n">string_types</span> <span class="o">=</span> <span class="n">basestring</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">string_types</span> <span class="o">=</span> <span class="nb">str</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">def</span> <span class="nf">process_results</span><span class="p">(</span><span class="n">inputArgs</span><span class="p">):</span>
+
+    <span class="c1">#</span>
+    <span class="c1"># process output file &quot;node.out&quot; for nodal displacements</span>
+    <span class="c1">#</span>
+
+    <span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s1">&#39;node.out&#39;</span><span class="p">,</span> <span class="s1">&#39;rt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">inFile</span><span class="p">:</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">inFile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">inFile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">inFile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+        <span class="n">displ</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">numNode</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">displ</span><span class="p">)</span>
+
+    <span class="n">inFile</span><span class="o">.</span><span class="n">close</span>
+
+    <span class="c1"># now process the input args and write the results file</span>
+
+    <span class="n">outFile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;results.out&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+
+    <span class="c1"># note for now assuming no ERROR in user data</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">inputArgs</span><span class="p">:</span>
+
+        <span class="n">theList</span><span class="o">=</span><span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">theList</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">):</span>
+            <span class="n">dof</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">theList</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dof</span> <span class="o">=</span> <span class="mi">1</span>
+                      
+        <span class="k">if</span> <span class="p">(</span><span class="n">theList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Node&quot;</span><span class="p">):</span>
+            <span class="n">nodeTag</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">theList</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">nodeTag</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">nodeTag</span> <span class="o">&lt;=</span> <span class="n">numNode</span><span class="p">):</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">theList</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Disp&quot;</span><span class="p">):</span>
+                    <span class="n">nodeDisp</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">displ</span><span class="p">[((</span><span class="n">nodeTag</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">dof</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+                    <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">nodeDisp</span><span class="p">))</span>
+                    <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;0. &#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;0. &#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;0. &#39;</span><span class="p">)</span>
+
+    <span class="n">outFile</span><span class="o">.</span><span class="n">close</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+    <span class="n">responses</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">responses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="n">process_results</span><span class="p">(</span><span class="n">responses</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p>A Tcl file might look like the following:</p>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> nodeIn <span class="k">[</span><span class="nb">open</span> node.out r<span class="k">]</span>
+<span class="k">while</span> <span class="k">{</span> <span class="k">[</span><span class="nb">gets</span> <span class="nv">$nodeIn</span> data<span class="k">]</span> <span class="o">&gt;=</span> <span class="nv">0</span> <span class="k">}</span> <span class="k">{</span>
+   <span class="k">set</span> maxDisplacement <span class="nv">$data</span>
+<span class="k">}</span>
+<span class="nb">puts</span> <span class="nv">$maxDisplacement</span>
+
+<span class="c"># create file handler to write results to output &amp; list into which we will put results</span>
+<span class="k">set</span> resultFile <span class="k">[</span><span class="nb">open</span> results.out w<span class="k">]</span>
+<span class="k">set</span> results <span class="k">[]</span>
+
+<span class="c"># for each quanity in list of QoI passed</span>
+<span class="c">#  - get nodeTag</span>
+<span class="c">#  - get nodal displacement if valid node, output 0.0 if not</span>
+<span class="c">#  - for valid node output displacement, note if dof not provided output 1&#39;st dof</span>
+
+<span class="k">foreach</span> edp <span class="nv">$listQoI</span> <span class="k">{</span>
+   <span class="k">set</span> splitEDP <span class="k">[</span><span class="nb">split</span> <span class="nv">$edp</span> <span class="s2">&quot;_&quot;</span><span class="k">]</span>
+   <span class="k">set</span> nodeTag <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$splitEDP</span> <span class="mi">1</span><span class="k">]</span>
+   <span class="k">if</span> <span class="k">{[</span><span class="nb">llength</span> <span class="nv">$splitEDP</span><span class="k">]</span> <span class="o">==</span> <span class="nv">3</span><span class="k">}</span> <span class="k">{</span>
+      <span class="k">set</span> dof <span class="mi">1</span>
+   <span class="k">}</span> <span class="k">else</span> <span class="k">{</span>
+      <span class="k">set</span> dof <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$splitEDP</span> <span class="mi">3</span><span class="k">]</span>
+   <span class="k">}</span>
+   <span class="k">set</span> nodeDisp <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$maxDisplacement</span> <span class="k">[expr</span> <span class="k">((</span><span class="nv">$nodeTag-1</span><span class="k">)</span><span class="o">*</span><span class="nv">2</span><span class="k">)</span><span class="o">+</span><span class="nv">$dof-1</span><span class="k">]]</span>
+   <span class="nb">lappend</span> results <span class="nv">$nodeDisp</span>
+<span class="k">}</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The name of the output file must be <strong>results.out</strong>.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Response Parameters. This is an area in which the user</p></li>
+</ol>
+<blockquote>
+<div><p>associates a variable name with the column of the results output
+file. If the process script has an array of strings named named
+EDP’s the script, the Response Parameters will be initially set with
+these values from the script.</p>
+</div></blockquote>
+</div>
 </div>
 
 
@@ -198,20 +399,25 @@
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, The Regents of the University of California
+        &#169; Copyright 2022, The Regents of the University of California.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -219,7 +425,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
@@ -238,6 +443,7 @@
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-158130480-2', 'auto');
+    
     ga('send', 'pageview');
     </script>
 
@@ -248,6 +454,46 @@
          .wy-nav-content { max-width: none; }
   </style>
 
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
 
 
 </body>
