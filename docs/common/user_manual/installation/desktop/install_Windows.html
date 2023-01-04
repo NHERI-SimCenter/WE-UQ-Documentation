@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
@@ -109,7 +110,7 @@
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../about/WEUQ/about.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">4. How To Cite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">5. Glossary</a></li>
@@ -217,23 +218,24 @@
 <div class="section" id="download-the-application">
 <h2><span class="section-number">1.1.2. </span>Download the Application<a class="headerlink" href="#download-the-application" title="Permalink to this headline">¶</a></h2>
 <p>To download the WE-UQ app, navigate to the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ">WE-UQ Download</a> page which should resemble <a class="reference internal" href="install_macOS.html#figdownload-we"><span class="std std-numref">Fig. 1.2.3.4</span></a>. The download page contains a list of downloadable files and directories.</p>
-<div class="align-center figure" id="id4">
+<div class="align-center figure" id="id6">
 <span id="figdownloadwin-we"></span><img alt="../../../../_images/weDownload.png" src="../../../../_images/weDownload.png" />
-<p class="caption"><span class="caption-number">Fig. 1.1.2.4 </span><span class="caption-text">WE-UQ download page.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.1.2.4 </span><span class="caption-text">WE-UQ download page.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
-<p>Click on the file with a name ending with <strong>Windows_Download.zip</strong> to download the WE-UQ app. In the pop-up window, click on the <strong>Download</strong> button in the bottom right corner. After the download completed, extract the zip archive to a location in your filesystem.</p>
-<p>We suggest placing the directory in the <strong>C:\SimCenter</strong> folder. Once here, you can create a shortcut to the application and move this shortcut to your Desktop.</p>
+<p>Click on the file with a name ending with <strong>Windows_Download.zip</strong> to download the WE-UQ app. In the pop-up window, click on the <strong>Download</strong> button in the bottom right corner.</p>
+<p>After the download completed, extract the zip archive to a location in your filesystem. We suggest extracting to the <a href="#id1"><span class="problematic" id="id2">**</span></a>C:\SimCenter** folder. You can create a shortcut that points to the WE-UQ.exe executable of the application and move this shortcut to your Desktop for easy access.</p>
 </div>
 <div class="section" id="test-the-installation">
 <h2><span class="section-number">1.1.3. </span>Test the Installation<a class="headerlink" href="#test-the-installation" title="Permalink to this headline">¶</a></h2>
-<p>Once the installation procedure has been completed, it is a good practice to run some basic checks. Navigate to the location where you placed the application and open it by running the WE-UQ.exe executable. You should see the user interface shown in <a class="reference internal" href="#figwinui-we"><span class="std std-numref">Fig. 1.1.3.4</span></a>. The installation can be tested by running the example problem <a class="reference internal" href="../../examples/desktop/weuq-0001/README.html#weuq-0001"><span class="std std-ref">9 Story Building: Sampling Analysis</span></a>.</p>
+<p>Once the installation procedure has been completed, it is a good practice to run some basic checks. Navigate to the location where you placed the application and open it by running the WE-UQ.exe executable.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Since the SimCenter is not recognized as a Windows vendor, our applications are not recognized by the operating system as being signed. Consequently, you may receive a warning message when you start the WE-UQ app application for the first time.</p>
+<p>Since the SimCenter is not registered as a Windows vendor, our apps are not recognized by the operating system as signed applications. You may receive a warning message that lets you know about risks involved in running unsigned applications from unkown sources when you start the WE-UQ app application for the first time. It is safe to bypass that warning when running SimCenter applications.</p>
 </div>
-<div class="align-center figure" id="id10">
+<p>Once the application started, you should see the user interface shown in <a class="reference internal" href="#figwinui-we"><span class="std std-numref">Fig. 1.1.3.4</span></a>. We recommend running the example problem <a class="reference internal" href="../../examples/desktop/weuq-0001/README.html#weuq-0001"><span class="std std-ref">9 Story Building: Sampling Analysis</span></a> to test the application.</p>
+<div class="align-center figure" id="id12">
 <span id="figwinui-we"></span><img alt="../../../../_images/WE-UQ.png" src="../../../../_images/WE-UQ.png" />
-<p class="caption"><span class="caption-number">Fig. 1.1.3.4 </span><span class="caption-text">WE-UQ application on startup.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.1.3.4 </span><span class="caption-text">WE-UQ application on startup.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -248,7 +250,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2022, The Regents of the University of California.
+        &#169; Copyright 2023, The Regents of the University of California.
 
     </p>
   </div>

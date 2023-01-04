@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
@@ -110,7 +111,7 @@
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../about/WEUQ/about.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">4. How To Cite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">5. Glossary</a></li>
@@ -127,6 +128,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#lblopenseessim">2.3.2. OpenSees</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#steel-building-model-autosda">2.3.3. Steel Building Model (AutoSDA)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#concrete-building-model-rc-fiap">2.3.4. Concrete Building Model (RC-FIAP)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mdof-lu-building-model">2.3.5. MDOF-LU Building Model</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="wind/WindEvents.html">2.4. EVT: Wind Events</a></li>
@@ -226,14 +228,15 @@
 <p>The user here defines the structural system of the building. The  structural system is the part of the building provided to resist the gravity loads and those loads arising from the natural hazard. There are a number of backend applications provided for this part of the workflow, each responsible for defining the structural analysis model. The user can select the application to use from the drop-down menu at the top of this panel. As the user switches between applications, the input panel changes to reflect the inputs each particular application requires. At present, there are two backend applications available.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#multiple-degrees-of-freedom-mdof" id="id7">Multiple Degrees of Freedom (MDOF)</a></p></li>
-<li><p><a class="reference internal" href="#lblopenseessim" id="id8">OpenSees</a></p></li>
-<li><p><a class="reference internal" href="#steel-building-model-autosda" id="id9">Steel Building Model (AutoSDA)</a></p></li>
-<li><p><a class="reference internal" href="#concrete-building-model-rc-fiap" id="id10">Concrete Building Model (RC-FIAP)</a></p></li>
+<li><p><a class="reference internal" href="#multiple-degrees-of-freedom-mdof" id="id8">Multiple Degrees of Freedom (MDOF)</a></p></li>
+<li><p><a class="reference internal" href="#lblopenseessim" id="id9">OpenSees</a></p></li>
+<li><p><a class="reference internal" href="#steel-building-model-autosda" id="id10">Steel Building Model (AutoSDA)</a></p></li>
+<li><p><a class="reference internal" href="#concrete-building-model-rc-fiap" id="id11">Concrete Building Model (RC-FIAP)</a></p></li>
+<li><p><a class="reference internal" href="#mdof-lu-building-model" id="id12">MDOF-LU Building Model</a></p></li>
 </ul>
 </div>
 <div class="section" id="multiple-degrees-of-freedom-mdof">
-<span id="lblmdofsim"></span><h2><a class="toc-backref" href="#id7"><span class="section-number">2.3.1. </span>Multiple Degrees of Freedom (MDOF)</a><a class="headerlink" href="#multiple-degrees-of-freedom-mdof" title="Permalink to this headline">¶</a></h2>
+<span id="lblmdofsim"></span><h2><a class="toc-backref" href="#id8"><span class="section-number">2.3.1. </span>Multiple Degrees of Freedom (MDOF)</a><a class="headerlink" href="#multiple-degrees-of-freedom-mdof" title="Permalink to this headline">¶</a></h2>
 <p>This panel is provided for users to quickly create simple shear models of a building. The panel, as shown in <a class="reference internal" href="#fig-mdof"><span class="std std-numref">Fig. 2.3.1.1</span></a> is divided into 3 frames:</p>
 <ol class="arabic simple">
 <li><p>The top left frame allows the user to specify the number of stories and properties that are constant for every floor and story in the building. The following properties are available: floor weight, story height, torsional stiffness, initial stiffness, yield strength, and hardening ratio for each direction in each story. The user has the option of specifying values for eccentricity of mass in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> directions, and eccentricities for the location of the response quantities. Here, the one and two directions are orthogonal <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> axes in plan view.</p></li>
@@ -251,7 +254,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="lblopenseessim">
-<span id="id1"></span><h2><a class="toc-backref" href="#id8"><span class="section-number">2.3.2. </span>OpenSees</a><a class="headerlink" href="#lblopenseessim" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2><a class="toc-backref" href="#id9"><span class="section-number">2.3.2. </span>OpenSees</a><a class="headerlink" href="#lblopenseessim" title="Permalink to this headline">¶</a></h2>
 <p>This panel is for users who have an existing OpenSees model of a building that performs a gravity analysis and now they wish to subject that building model to one of the <strong>EVT</strong> options provided. The input panel for this option is shown in <a class="reference internal" href="#fig-figure3"><span class="std std-numref">Fig. 2.3.2.1</span></a>. Users need to provide three pieces of information:</p>
 <ol class="arabic simple">
 <li><p>Main OpenSees Script: The main script that contains the building model. This script should build a model and perform any gravity analysis of the building that is required before the event is applied.</p></li>
@@ -266,7 +269,7 @@
 <p>In OpenSees there is an option to set variables to have certain values using the <code class="docutils literal notranslate"><span class="pre">pset</span></code> command, e.g <code class="docutils literal notranslate"><span class="pre">pset</span> <span class="pre">a</span> <span class="pre">5.0</span></code> will set the variable a to have a value 5 in the OpenSees script. In WE-UQ, any variable found in the main script to be set using the <code class="docutils literal notranslate"><span class="pre">pset</span></code> command will be assumed to be a random variable. As such, when a new main script is loaded all variables set with <code class="docutils literal notranslate"><span class="pre">pset</span></code> will appear as random variables in the <strong>UQ</strong> panel.</p>
 </div>
 <div class="section" id="steel-building-model-autosda">
-<h2><a class="toc-backref" href="#id9"><span class="section-number">2.3.3. </span>Steel Building Model (AutoSDA)</a><a class="headerlink" href="#steel-building-model-autosda" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id10"><span class="section-number">2.3.3. </span>Steel Building Model (AutoSDA)</a><a class="headerlink" href="#steel-building-model-autosda" title="Permalink to this headline">¶</a></h2>
 <p>This module provides a way for a user to create a nonlinear structural model of a moment-resisting steel-framed building. The <code class="docutils literal notranslate"><span class="pre">AutoSDA</span></code> computer program <span id="id2">[<a class="reference internal" href="../../../../index.html#id52" title="Xingquan Guan, Henry Burton, and Thomas Sabol. Python-based computational platform to automate seismic design, nonlinear structural model construction and analysis of steel moment resisting frames. Engineering Structures, 224:111199, 2020.">GBS20</a>]</span> is used for the seismic design and to generate the resulting two-dimensional structural model in <code class="docutils literal notranslate"><span class="pre">OpenSees</span></code>. <code class="docutils literal notranslate"><span class="pre">AutoSDA</span></code> automates the seismic design process and nonlinear structural model construction, generating code-conforming section sizes and detailing for beams, columns, and beam-column connections based on the user-specified input design parameters. The resulting nonlinear model is then subjected to the hazard option that is selected by the user in the <strong>EVT</strong> panel. The TCL files of the <code class="docutils literal notranslate"><span class="pre">OpenSees</span></code> model generated by <code class="docutils literal notranslate"><span class="pre">AutoSDA</span></code> are located in the individual work directories in the <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> folder that <strong>EE-UQ</strong> creates on the user’s computer.</p>
 <p>The input panel for this module is shown in <a class="reference internal" href="#fig-sda"><span class="std std-numref">Fig. 2.3.3.1</span></a>. Users need to provide the following information:</p>
 <ol class="arabic simple">
@@ -290,7 +293,7 @@
 </div>
 </div>
 <div class="section" id="concrete-building-model-rc-fiap">
-<h2><a class="toc-backref" href="#id10"><span class="section-number">2.3.4. </span>Concrete Building Model (RC-FIAP)</a><a class="headerlink" href="#concrete-building-model-rc-fiap" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id11"><span class="section-number">2.3.4. </span>Concrete Building Model (RC-FIAP)</a><a class="headerlink" href="#concrete-building-model-rc-fiap" title="Permalink to this headline">¶</a></h2>
 <p>This module provides a way for a user to create a nonlinear structural model of a reinforced concrete building. The <code class="docutils literal notranslate"><span class="pre">RC-FIAP</span> <span class="pre">(Reinforced</span> <span class="pre">Concrete</span> <span class="pre">Frame</span> <span class="pre">Inelastic</span> <span class="pre">Analysis</span> <span class="pre">Platform)</span></code> computer program generates a two-dimensional structural model that is employed in <code class="docutils literal notranslate"><span class="pre">OpenSees</span></code>. <code class="docutils literal notranslate"><span class="pre">RC-FIAP</span></code> automates the seismic design process and inelastic structural model construction based on user-provided input design parameters. The resulting nonlinear model is then subjected to the hazard option that is selected by the user in the <strong>EVT</strong> panel. The TCL files of the <code class="docutils literal notranslate"><span class="pre">OpenSees</span></code> model generated by <code class="docutils literal notranslate"><span class="pre">RC-FIAP</span></code> are located in the individual work directories in the <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code> folder that <strong>EE-UQ</strong> creates on the user’s computer.</p>
 <p>The input panel for this module is shown in <a class="reference internal" href="#fig-eeuqrcfiapsim"><span class="std std-numref">Fig. 2.3.4.1</span></a>. Users need to provide the following information:</p>
 <ol class="arabic simple">
@@ -309,6 +312,20 @@
 <p class="caption"><span class="caption-number">Fig. 2.3.4.1 </span><span class="caption-text">Concrete Building Model.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div>
+<div class="section" id="mdof-lu-building-model">
+<h2><a class="toc-backref" href="#id12"><span class="section-number">2.3.5. </span>MDOF-LU Building Model</a><a class="headerlink" href="#mdof-lu-building-model" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>MDOF-LU</strong> building modeling application creates a hysteretic, multi-degree of freedom (MDOF) model based on the Lu method. As seen in <a class="reference internal" href="#fig-mdoflumodelingpanel"><span class="std std-numref">Fig. 2.3.5.1</span></a>, the following inputs are required:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><strong>stdStiffness:</strong> The lateral stiffness of the building model.</p></li>
+<li><p><strong>stdDamping:</strong> The damping of the building model.</p></li>
+</ol>
+</div></blockquote>
+<div class="align-center figure" id="id7">
+<span id="fig-mdoflumodelingpanel"></span><img alt="../../../../_images/MDOFLUBuildingModel.png" src="../../../../_images/MDOFLUBuildingModel.png" />
+<p class="caption"><span class="caption-number">Fig. 2.3.5.1 </span><span class="caption-text">MDOF-LU Building model input panel.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div>
 </div>
 
 
@@ -321,7 +338,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2022, The Regents of the University of California.
+        &#169; Copyright 2023, The Regents of the University of California.
 
     </p>
   </div>

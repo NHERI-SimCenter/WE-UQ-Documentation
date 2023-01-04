@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
@@ -48,7 +49,7 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="2.1.1.1. Forward Propagation Methods" href="DakotaSampling.html" />
+    <link rel="next" title="2.1.2.1. Forward Propagation" href="DakotaSampling.html" />
     <link rel="prev" title="2. User Guide" href="usage.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -109,7 +110,7 @@
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../about/WEUQ/about.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">4. How To Cite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">5. Glossary</a></li>
@@ -120,8 +121,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="usage.html">2. User Guide</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.1. UQ: Uncertainty Quantification</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#dakota-uq-engine">2.1.1. Dakota UQ Engine</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="DakotaSampling.html">2.1.1.1. Forward Propagation Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dakota-uq-engine">2.1.2. Dakota UQ Engine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="DakotaSampling.html">2.1.2.1. Forward Propagation</a></li>
 </ul>
 </li>
 </ul>
@@ -221,20 +222,24 @@
            <div itemprop="articleBody">
             
   <div class="section" id="uq-uncertainty-quantification">
-<h1><span class="section-number">2.1. </span>UQ: Uncertainty Quantification<a class="headerlink" href="#uq-uncertainty-quantification" title="Permalink to this headline">¶</a></h1>
+<span id="lbluq"></span><h1><span class="section-number">2.1. </span>UQ: Uncertainty Quantification<a class="headerlink" href="#uq-uncertainty-quantification" title="Permalink to this headline">¶</a></h1>
 <p>The first selection panel the user must select from and enter data into is the <strong>UQ</strong> tab. It is in this panel that the user selects the <strong>UQ Engine</strong> to use for performing the uncertainty quantification calculations. The <strong>UQ Engine</strong> provides algorithms for solving various types of uncertainty analysis and optimization problems.</p>
-<p>Presently the only <strong>UQ Engine</strong> option is Dakota.</p>
+<p>The <strong>UQ Engine</strong> options currently available are Dakota and SimCenterUQ</p>
 <div class="section" id="dakota-uq-engine">
-<h2><span class="section-number">2.1.1. </span>Dakota UQ Engine<a class="headerlink" href="#dakota-uq-engine" title="Permalink to this headline">¶</a></h2>
-<p>This UQ engine utilizes the <a class="reference external" href="https://dakota.sandia.gov/">Dakota Software</a>, a state-of-the-art research application that is robust and provides many methods for optimization and UQ, a selection of which we utilize in this application. <strong>Dakota</strong> provides the user with a large number of methods for different kinds of analyses. For this reason we have divided the methods into categories though a pull-down menu, as shown in <a class="reference internal" href="#figdakota"><span class="std std-numref">Fig. 2.1.1.1</span></a>. Once the category has been selected, a number of different methods are made available to the user.</p>
+<h2><span class="section-number">2.1.2. </span>Dakota UQ Engine<a class="headerlink" href="#dakota-uq-engine" title="Permalink to this headline">¶</a></h2>
+<p>This UQ engine utilizes the <a class="reference external" href="https://dakota.sandia.gov/">Dakota Software</a>, a state-of-the-art research application that is robust and provides many methods for optimization and UQ, a selection of which we utilize in this application. <strong>Dakota</strong> provides the user with a large number of methods for different kinds of analyses. For this reason we have divided the methods into categories though a pull-down menu, as shown below. Once the category has been selected, a number of different methods are made available to the user.</p>
+<ul class="simple">
+<li><p>By checking the <code class="docutils literal notranslate"><span class="pre">Parallel</span> <span class="pre">Execution</span></code>, the UQ analysis will be performed in parallel. It will try to use all the processors available in the machine.</p></li>
+<li><p>By checking the <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">Woring</span> <span class="pre">dirs</span></code>, individual working directories will be saved at Local Jobs Directory. Local Jobs Directory is defined at <code class="docutils literal notranslate"><span class="pre">File</span></code>-<code class="docutils literal notranslate"><span class="pre">Preference</span></code> in the menubar. Otherwise, individual simulation files will be deleted after each simulation run. Users might uncheck this box when a large number of simulations is requested, to manage driver space.</p></li>
+</ul>
 <div class="align-center figure" id="id3">
-<span id="figdakota"></span><img alt="../../../../_images/dakotaUQ.png" src="../../../../_images/dakotaUQ.png" />
-<p class="caption"><span class="caption-number">Fig. 2.1.1.1 </span><span class="caption-text">Dakota engine and category selection.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<span id="figdakota"></span><a class="reference internal image-reference" href="../../../../_images/dakotaUQ.png"><img alt="../../../../_images/dakotaUQ.png" src="../../../../_images/dakotaUQ.png" style="width: 1200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.1.2.1 </span><span class="caption-text">Dakota engine and category selection.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>The following categories are available:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="DakotaSampling.html">2.1.1.1. Forward Propagation Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DakotaSampling.html">2.1.2.1. Forward Propagation</a></li>
 </ul>
 </div>
 </div>
@@ -250,7 +255,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2022, The Regents of the University of California.
+        &#169; Copyright 2023, The Regents of the University of California.
 
     </p>
   </div>

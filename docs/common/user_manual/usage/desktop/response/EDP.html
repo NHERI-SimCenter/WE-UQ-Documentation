@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
@@ -109,7 +110,7 @@
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../about/WEUQ/about.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">5. Glossary</a></li>
@@ -261,12 +262,14 @@ containing a series of recorder commands.</p></li>
 </ol>
 <blockquote>
 <div><p>A recorder file passed to OpenSees might look like the following:</p>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">recorder</span> EnvelopeNode <span class="o">-</span>file node.out <span class="o">-</span>node <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="o">-</span>dof <span class="mi">1</span> disp
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># recorder EnvelopeNode -file $filename -node $nodeTag1 ... $nodeTagN -dof $DOF1 $DOF2 disp</span>
+<span class="nv">recorder</span> EnvelopeNode <span class="o">-</span>file node.out <span class="o">-</span>node <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="o">-</span>dof <span class="mi">1</span> disp
+<span class="c"># recorder EnvelopeElement -file $filename -ele $eleTag1 ... $eleTagN forces</span>
 <span class="nv">recorder</span> EnvelopeElement <span class="o">-</span>file ele.out <span class="o">-</span>ele <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> forces
 </pre></div>
 </div>
 </div></blockquote>
-<ol class="arabic simple">
+<ol class="arabic simple" start="2">
 <li><p>Postprocess Script: This is a python or tcl script that will be invoked</p></li>
 </ol>
 <blockquote>
@@ -274,85 +277,73 @@ containing a series of recorder commands.</p></li>
 the user. It’s purpose is to process the output files and create a
 single file, results.out. This file must contain a single line with
 as many entries as EDP’s specified.</p>
-<p>For example, a python postprocessing file that would take the outputs from the recorder commands of the pervious code block to create the results file needed vy the applications might look like the following:</p>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
-
+<p>For example, a python postprocessing file that would take the outputs from the recorder commands of
+the pervious code block to create the results file needed by the applications is illustrated as the example
+python file below along with the tcl script for creating recorders in OpenSees.</p>
+</div></blockquote>
+<details class="summary-example-post-processing-python-file">
+<summary>Example post-processing python file</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
 <span class="c1"># written: fmk, adamzs 01/18</span>
-
 <span class="c1"># import functions for Python 2.X support</span>
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
 <span class="kn">import</span> <span class="nn">sys</span>
-<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">):</span> 
-    <span class="nb">range</span><span class="o">=</span><span class="n">xrange</span>
-    <span class="n">string_types</span> <span class="o">=</span> <span class="n">basestring</span>
+<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">):</span>
+        <span class="nb">range</span><span class="o">=</span><span class="n">xrange</span>
+        <span class="n">string_types</span> <span class="o">=</span> <span class="n">basestring</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">string_types</span> <span class="o">=</span> <span class="nb">str</span>
-
+        <span class="n">string_types</span> <span class="o">=</span> <span class="nb">str</span>
 <span class="kn">import</span> <span class="nn">sys</span>
-
 <span class="k">def</span> <span class="nf">process_results</span><span class="p">(</span><span class="n">inputArgs</span><span class="p">):</span>
+        <span class="c1">#</span>
+        <span class="c1"># process output file &quot;node.out&quot; for nodal displacements</span>
+        <span class="c1">#</span>
+        <span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s1">&#39;node.out&#39;</span><span class="p">,</span> <span class="s1">&#39;rt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">inFile</span><span class="p">:</span>
+                <span class="n">line</span> <span class="o">=</span> <span class="n">inFile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+                <span class="n">line</span> <span class="o">=</span> <span class="n">inFile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+                <span class="n">line</span> <span class="o">=</span> <span class="n">inFile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+                <span class="n">displ</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+                <span class="n">numNode</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">displ</span><span class="p">)</span>
+        <span class="n">inFile</span><span class="o">.</span><span class="n">close</span>
 
-    <span class="c1">#</span>
-    <span class="c1"># process output file &quot;node.out&quot; for nodal displacements</span>
-    <span class="c1">#</span>
+        <span class="c1"># now process the input args and write the results file</span>
+        <span class="n">outFile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;results.out&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
 
-    <span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s1">&#39;node.out&#39;</span><span class="p">,</span> <span class="s1">&#39;rt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">inFile</span><span class="p">:</span>
-        <span class="n">line</span> <span class="o">=</span> <span class="n">inFile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-        <span class="n">line</span> <span class="o">=</span> <span class="n">inFile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-        <span class="n">line</span> <span class="o">=</span> <span class="n">inFile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-        <span class="n">displ</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-        <span class="n">numNode</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">displ</span><span class="p">)</span>
-
-    <span class="n">inFile</span><span class="o">.</span><span class="n">close</span>
-
-    <span class="c1"># now process the input args and write the results file</span>
-
-    <span class="n">outFile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;results.out&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
-
-    <span class="c1"># note for now assuming no ERROR in user data</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">inputArgs</span><span class="p">:</span>
-
-        <span class="n">theList</span><span class="o">=</span><span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">theList</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">):</span>
-            <span class="n">dof</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">theList</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">dof</span> <span class="o">=</span> <span class="mi">1</span>
-                      
-        <span class="k">if</span> <span class="p">(</span><span class="n">theList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Node&quot;</span><span class="p">):</span>
-            <span class="n">nodeTag</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">theList</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-
-            <span class="k">if</span> <span class="p">(</span><span class="n">nodeTag</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">nodeTag</span> <span class="o">&lt;=</span> <span class="n">numNode</span><span class="p">):</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">theList</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Disp&quot;</span><span class="p">):</span>
-                    <span class="n">nodeDisp</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">displ</span><span class="p">[((</span><span class="n">nodeTag</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">dof</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
-                    <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">nodeDisp</span><span class="p">))</span>
-                    <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="c1"># note for now assuming no ERROR in user data</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">inputArgs</span><span class="p">:</span>
+                <span class="n">theList</span><span class="o">=</span><span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">theList</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">):</span>
+                        <span class="n">dof</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">theList</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;0. &#39;</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;0. &#39;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;0. &#39;</span><span class="p">)</span>
+                        <span class="n">dof</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">theList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Node&quot;</span><span class="p">):</span>
+                        <span class="n">nodeTag</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">theList</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">nodeTag</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">nodeTag</span> <span class="o">&lt;=</span> <span class="n">numNode</span><span class="p">):</span>
+                                <span class="k">if</span> <span class="p">(</span><span class="n">theList</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Disp&quot;</span><span class="p">):</span>
+                                        <span class="n">nodeDisp</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">displ</span><span class="p">[((</span><span class="n">nodeTag</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">dof</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+                                        <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">nodeDisp</span><span class="p">))</span>
+                                        <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+                                <span class="k">else</span><span class="p">:</span>
+                                        <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;0. &#39;</span><span class="p">)</span>
+                        <span class="k">else</span><span class="p">:</span>
+                                <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;0. &#39;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                        <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;0. &#39;</span><span class="p">)</span>
 
-    <span class="n">outFile</span><span class="o">.</span><span class="n">close</span>
-
+        <span class="n">outFile</span><span class="o">.</span><span class="n">close</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
-    <span class="n">responses</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">responses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+        <span class="n">responses</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+                <span class="n">responses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 
-    <span class="n">process_results</span><span class="p">(</span><span class="n">responses</span><span class="p">)</span>
+        <span class="n">process_results</span><span class="p">(</span><span class="n">responses</span><span class="p">)</span>
 </pre></div>
 </div>
-</div></blockquote>
-</div></blockquote>
-<p>A Tcl file might look like the following:</p>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> nodeIn <span class="k">[</span><span class="nb">open</span> node.out r<span class="k">]</span>
+</details><details class="summary-example-post-processing-tcl-file">
+<summary>Example post-processing tcl file</summary><div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> nodeIn <span class="k">[</span><span class="nb">open</span> node.out r<span class="k">]</span>
 <span class="k">while</span> <span class="k">{</span> <span class="k">[</span><span class="nb">gets</span> <span class="nv">$nodeIn</span> data<span class="k">]</span> <span class="o">&gt;=</span> <span class="nv">0</span> <span class="k">}</span> <span class="k">{</span>
-   <span class="k">set</span> maxDisplacement <span class="nv">$data</span>
+        <span class="k">set</span> maxDisplacement <span class="nv">$data</span>
 <span class="k">}</span>
 <span class="nb">puts</span> <span class="nv">$maxDisplacement</span>
 
@@ -366,23 +357,26 @@ as many entries as EDP’s specified.</p>
 <span class="c">#  - for valid node output displacement, note if dof not provided output 1&#39;st dof</span>
 
 <span class="k">foreach</span> edp <span class="nv">$listQoI</span> <span class="k">{</span>
-   <span class="k">set</span> splitEDP <span class="k">[</span><span class="nb">split</span> <span class="nv">$edp</span> <span class="s2">&quot;_&quot;</span><span class="k">]</span>
-   <span class="k">set</span> nodeTag <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$splitEDP</span> <span class="mi">1</span><span class="k">]</span>
-   <span class="k">if</span> <span class="k">{[</span><span class="nb">llength</span> <span class="nv">$splitEDP</span><span class="k">]</span> <span class="o">==</span> <span class="nv">3</span><span class="k">}</span> <span class="k">{</span>
-      <span class="k">set</span> dof <span class="mi">1</span>
-   <span class="k">}</span> <span class="k">else</span> <span class="k">{</span>
-      <span class="k">set</span> dof <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$splitEDP</span> <span class="mi">3</span><span class="k">]</span>
-   <span class="k">}</span>
-   <span class="k">set</span> nodeDisp <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$maxDisplacement</span> <span class="k">[expr</span> <span class="k">((</span><span class="nv">$nodeTag-1</span><span class="k">)</span><span class="o">*</span><span class="nv">2</span><span class="k">)</span><span class="o">+</span><span class="nv">$dof-1</span><span class="k">]]</span>
-   <span class="nb">lappend</span> results <span class="nv">$nodeDisp</span>
+        <span class="k">set</span> splitEDP <span class="k">[</span><span class="nb">split</span> <span class="nv">$edp</span> <span class="s2">&quot;_&quot;</span><span class="k">]</span>
+        <span class="k">set</span> nodeTag <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$splitEDP</span> <span class="mi">1</span><span class="k">]</span>
+                <span class="k">if</span> <span class="k">{[</span><span class="nb">llength</span> <span class="nv">$splitEDP</span><span class="k">]</span> <span class="o">==</span> <span class="nv">3</span><span class="k">}</span> <span class="k">{</span>
+                        <span class="k">set</span> dof <span class="mi">1</span>
+        <span class="k">}</span> <span class="k">else</span> <span class="k">{</span>
+                        <span class="k">set</span> dof <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$splitEDP</span> <span class="mi">3</span><span class="k">]</span>
+        <span class="k">}</span>
+        <span class="k">set</span> nodeDisp <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$maxDisplacement</span> <span class="k">[expr</span> <span class="k">((</span><span class="nv">$nodeTag-1</span><span class="k">)</span><span class="o">*</span><span class="nv">2</span><span class="k">)</span><span class="o">+</span><span class="nv">$dof-1</span><span class="k">]]</span>
+        <span class="nb">lappend</span> results <span class="nv">$nodeDisp</span>
 <span class="k">}</span>
 </pre></div>
 </div>
+</details><div class="line-block">
+<div class="line"><br /></div>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The name of the output file must be <strong>results.out</strong>.</p>
+<p>The name of the output file used in the post-processing script must be <strong>results.out</strong>.</p>
 </div>
-<ol class="arabic simple">
+<ol class="arabic simple" start="3">
 <li><p>Response Parameters. This is an area in which the user</p></li>
 </ol>
 <blockquote>
@@ -404,7 +398,7 @@ these values from the script.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2022, The Regents of the University of California.
+        &#169; Copyright 2023, The Regents of the University of California.
 
     </p>
   </div>
