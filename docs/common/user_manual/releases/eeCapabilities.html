@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Release Notes &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>Cababilities &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -111,8 +111,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">5. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">6. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wePlans.html">5. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">6. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">7. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul>
@@ -182,13 +183,13 @@
     
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Release Notes</li>
+      <li>Cababilities</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../../_sources/common/user_manual/futurePlans/pbeReleaseNotes.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../_sources/common/user_manual/releases/eeCapabilities.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -201,97 +202,107 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="release-notes">
-<span id="lbl-release-pbe"></span><h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="version-3-0">
-<h2>Version 3.0<a class="headerlink" href="#version-3-0" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This is a major release and it breaks compatibility. Input files used for PBE 2.x will need to be converted to work with the new version.</p>
+  <div class="section" id="cababilities">
+<span id="lbl-capabilities-eeuq"></span><h1>Cababilities<a class="headerlink" href="#cababilities" title="Permalink to this headline">¶</a></h1>
+<p><strong>Version 3.2</strong> of WE-UQ app was released <strong>Sept 22</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
+<div class="section" id="structural-information-model">
+<h2>Structural Information Model<a class="headerlink" href="#structural-information-model" title="Permalink to this headline">¶</a></h2>
+<p>Applications used to specify/select the structural model to be used in analysis.</p>
+<ol class="arabic simple">
+<li><p>MDOF: creating idealized multi-degree-of-freedom models</p></li>
+<li><p>OpenSees: user-defined OpenSees models</p></li>
+<li><p>Steel Building Model: automating steel frame design and modeling</p></li>
+<li><p><span class="blue">Concrete Building Model: automating concrete moment frame design and modeling</span></p></li>
+<li><p><span class="blue">MDOF-LU: MDOF shear building model</span></p></li>
+</ol>
 </div>
-<details class="sphinx-bs dropdown card mb-3" open="open">
-<summary class="summary-title card-header">
-Version 3.0.0 (<span class="blue">Current</span>)<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text"><strong>Release date:</strong> September 2022</p>
-<p class="card-text"><strong>Major updates:</strong></p>
-<ul>
-<li><p class="card-text">Built on v4.0 of SimCenter’s backend application framework. Major updates in the backend:</p>
+<div class="section" id="earthquake-motion-event">
+<h2>Earthquake Motion Event<a class="headerlink" href="#earthquake-motion-event" title="Permalink to this headline">¶</a></h2>
+<p>Applications used to specify/select ground motions for the structure.</p>
+<ol class="arabic simple">
+<li><p>Stochastic Ground Motion: simulating stochastic ground motion recordings</p></li>
+<li><p>PEER NGA Records: selecting and scaling PEER NGA West2 ground motions</p></li>
+<li><p>Site Response: propagating rock motions to the surface</p></li>
+<li><p>Multiple PEER: using multiple PEER recordings</p></li>
+<li><p>Multiple SimCenter: using multiple SimCenter-format recordings</p></li>
+<li><p>User Specified Database: selecting and scaling ground motions from the user-specified flatfile</p></li>
+</ol>
+</div>
+<div class="section" id="engineering-demand-parameter-generator">
+<h2>Engineering Demand Parameter Generator<a class="headerlink" href="#engineering-demand-parameter-generator" title="Permalink to this headline">¶</a></h2>
+<p>Applications to identify the output parameters of interest given the ground motion and structural model.</p>
+<ol class="arabic simple">
+<li><p>Standard Earthquake: maximum story drift ratio, lateral story displacement, peak floor acceleration</p></li>
+<li><p>User Defined: user-specified EDP</p></li>
+</ol>
+</div>
+<div class="section" id="finite-element-application">
+<h2>Finite Element Application<a class="headerlink" href="#finite-element-application" title="Permalink to this headline">¶</a></h2>
+<p>Applications used to determine the response output parameters given the ground motion and structural model.</p>
+<ol class="arabic simple">
+<li><p>OpenSees: Open System for Earthquake Engineering Simulation</p></li>
+</ol>
+</div>
+<div class="section" id="uncertainty-quantification">
+<h2>Uncertainty Quantification<a class="headerlink" href="#uncertainty-quantification" title="Permalink to this headline">¶</a></h2>
+<p>Applications to perform the uncertainty quantification for the response parameters given the inputs and the random variables present.</p>
+<ol class="arabic">
+<li><p>Forward Uncertainty Propagation</p>
 <blockquote>
-<div><ul class="simple">
-<li><p class="card-text">Redesigned and generalized UQ architecture</p></li>
-<li><p class="card-text">Generalized workflow managers support non-building assets</p></li>
-<li><p class="card-text">Surrogate modeling capabilities for characterizing events and earthquake response</p></li>
-</ul>
+<div><ol class="upperalpha simple">
+<li><p>Dakota Options <span class="blue">[← New option to discard working directories after each model evaluation]</span></p>
+<ol class="arabic simple">
+<li><p>Monte Carlo Sampling (MCS)</p></li>
+<li><p>Latin Hypercube Sampling (LHS)</p></li>
+<li><p>Gaussian Process Regression</p></li>
+<li><p>Polynomial Chaos Expansion</p></li>
+</ol>
+</li>
+<li><p><span class="blue">SimCenterUQ Options</span></p>
+<ol class="arabic simple">
+<li><p><span class="blue">Monte Carlo Sampling (MCS)</span></p>
+<ol class="loweralpha simple">
+<li><p><span class="blue">Resample from existing correlated dataset of samples</span></p></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
 </div></blockquote>
 </li>
-<li><p class="card-text">All features of EE-UQ up to v3.2.0, including:</p>
+<li><p>Global Sensitivity Analysis</p>
 <blockquote>
-<div><ul class="simple">
-<li><p class="card-text">Advanced options for PEER NGA Event selection</p></li>
-<li><p class="card-text">Site-specific seismic disaggregation</p></li>
-<li><p class="card-text">Steel and concrete building model generators</p></li>
-<li><p class="card-text">MDOF-LU approximate shear column model generator</p></li>
-</ul>
+<div><ol class="upperalpha simple">
+<li><p>Dakota Sensitivity Options</p>
+<ol class="arabic simple">
+<li><p>MCS</p></li>
+<li><p>LHS</p></li>
+</ol>
+</li>
+<li><p><span class="blue">SimCenterUQ Sensitivity Options</span></p>
+<ol class="arabic simple">
+<li><p><span class="blue">Probability Model-based Global Sensitivity Analysis (PM-GSA)</span></p>
+<ol class="loweralpha simple">
+<li><p><span class="blue">Import input/output samples from data files</span></p></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
 </div></blockquote>
 </li>
-<li><p class="card-text">Redesigned user interface for Performance Assessment with Pelicun 3:</p>
+<li><p>Surrogate Modeling</p>
 <blockquote>
-<div><ul class="simple">
-<li><p class="card-text">Takes advantage of the new databases developed for Pelicun 3 to allow users to use custom components, demands, damage processes, and consequence functions.</p></li>
-<li><p class="card-text">Decouples and generalizes demand, damage, and loss calculations.</p></li>
-<li><p class="card-text">Enables performance assessment under any type of natural hazard event</p></li>
-<li><p class="card-text">Supports modeling cascading damages</p></li>
-<li><p class="card-text">Supports custom mapping between damage states and consequence functions</p></li>
-<li><p class="card-text">Supports global consequences with uncertainty (e.g., uncertain replacement cost)</p></li>
-<li><p class="card-text">Substantial improvement in computational efficiency for large performance models</p></li>
-<li><p class="card-text">Two redesigned examples demonstrate capabilities</p></li>
-</ul>
+<div><ol class="upperalpha simple">
+<li><p>SimCenterUQ Engine Surrogating Options:</p>
+<ol class="arabic simple">
+<li><p>Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)</p></li>
+</ol>
+</li>
+</ol>
 </div></blockquote>
 </li>
-</ul>
-</div>
-</details></div></blockquote>
-</div>
-<div class="section" id="version-2-0">
-<h2>Version 2.0<a class="headerlink" href="#version-2-0" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This is a major release and it breaks compatibility. Input files used for PBE 2.x will need to be converted to work with the new version.</p>
-</div>
-<details class="sphinx-bs dropdown card mb-3" open="open">
-<summary class="summary-title card-header">
-Version 2.0.0<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text"><strong>Release date:</strong> October 2019</p>
-<p class="card-text">Major updates:</p>
-<ul>
-<li><p class="card-text">All updates in EE-UQ from version v1.2.0 to v2.0.1 changes</p></li>
-<li><p class="card-text">Update DL interface:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p class="card-text">General settings are organized around Damage, Response, and Loss Models</p></li>
-<li><p class="card-text">Components tab got a completely new look that facilitates the definition of component groups for each fragility group.</p></li>
-<li><p class="card-text">Dependencies moved to a new, fourth tab that will eventually house all advanced functionality</p></li>
-</ul>
-</div></blockquote>
-</li>
-<li><p class="card-text">Support for loading and saving performance model (i.e., component definitions) using standard csv files.</p></li>
-<li><p class="card-text">Support for loading external EDP files using standard csv files. This enables the user to run a loss assessment without running the response estimation inside PBE.</p></li>
-<li><p class="card-text">Added damage and loss data from FEMA P58 second edition to the database.</p></li>
-<li><p class="card-text">Migrated to a new, more readable and flexible damage and loss model description in saved json files - not compatible with earlier versions.</p></li>
-</ul>
-</div>
-</details></div></blockquote>
-<p>Users are welcome to contact us on the <a class="reference external" href="http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0">Message Board</a> for new feature requests.</p>
+</ol>
 </div>
 </div>
 
