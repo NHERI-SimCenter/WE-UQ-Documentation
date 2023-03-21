@@ -1,0 +1,486 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>4.3. Digital Wind Tunnel &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="5. Requirements" href="../../../../reqments/WEUQ.html" />
+    <link rel="prev" title="4.2. 3 Story Building: Sensitivity Analysis" href="../weuq-0007/README.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/WE-UQ-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/WEUQ/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/weCapabilities.html">5. Cababilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/weReleaseNotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/wePlans.html">7. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">4. Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../weuq-0001/README.html">4.1. 9 Story Building: Sampling Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../weuq-0007/README.html">4.2. 3 Story Building: Sensitivity Analysis</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.3. Digital Wind Tunnel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cfd-modeling">4.3.1. CFD modeling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inflow-configurations-in-the-digital-wind-tunnel">4.3.2. Inflow configurations in the Digital Wind Tunnel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#direct-specification-of-inflow-turbulence-through-uploading-a-table">4.3.2.1. Direct specification of inflow turbulence through uploading a table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#specification-via-prescribed-functions">4.3.2.2. Specification via prescribed functions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#running-a-cfd-simulation-in-the-digital-wind-tunnel">4.3.3. Running a CFD simulation in the Digital Wind Tunnel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/WEUQ.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Wind Engineering with Uncertainty Quantification</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../examples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
+        
+      <li><span class="section-number">4.3. </span>Digital Wind Tunnel</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/user_manual/examples/desktop/weuq-0011/README.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="digital-wind-tunnel">
+<span id="weuq-0011"></span><h1><span class="section-number">4.3. </span>Digital Wind Tunnel<a class="headerlink" href="#digital-wind-tunnel" title="Permalink to this headline">¶</a></h1>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%" />
+<col style="width: 61%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Problem files</p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples//weuq-0011//">weuq-0011/</a></p></td>
+</tr>
+</tbody>
+</table>
+<p>Digital Wind Tunnel is implemented in WE-UQ Version 2.3.0. This feature aims to provide the users with the computational tool to run CFD simulations with the user-defined atmospheric boundary layer inflow conditions and the user-defined OpenFOAM model.</p>
+<p>This project is collaborated with the University of Florida (UF) NHERI Experimental Facility (EF). Multiple inflow conditions characterized by the roughness height and friction velocity were generated by changing the orientation and height of the Terraformer in the wind tunnel. The mean flow structure at each inflow condition is captured by velocity probes downstream <a class="footnote-reference brackets" href="#catarelli2020" id="id1">1</a>.</p>
+<div class="align-center figure" id="id4">
+<a class="reference internal image-reference" href="../../../../../_images/UFWindTunnel.png"><img alt="../../../../../_images/UFWindTunnel.png" src="../../../../../_images/UFWindTunnel.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.3.1 </span><span class="caption-text">UF’s BLWT facility <a class="footnote-reference brackets" href="#catarelli2020" id="id2">1</a>.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>The Digital Wind Tunnel would allow users to edit the geometric information and inflow conditions through a user interface of WE-UQ, and run the CFD simulations to obtain the aerodynamic loads on structures aided by the open-source CFD software named OpenFOAM and structural responses aided by OpenSees. Compared to traditional physical wind tunnel, the digital wind tunnel would allow for great flexibility in testing different designs and wind scenarios, and has free access to the TACC Frontera computing nodes. In particular, in the Digital Wind Tunnel, the empty domain analysis enables users to simulate the atmospheric boundary layer flows with the user-defined inflow wind characteristics including mean wind velocity profiles, Reynolds stress tensor and length scales. The mean flow structure can also be captured downstream using the sampling functions in OpenFOAM, which can be further validated through the wind tunnel data.</p>
+<div class="align-center figure" id="id5">
+<a class="reference internal image-reference" href="../../../../../_images/DWTsketch.png"><img alt="../../../../../_images/DWTsketch.png" src="../../../../../_images/DWTsketch.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.3.2 </span><span class="caption-text">Schematic diagram for the Digital Wind Tunnel.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="cfd-modeling">
+<h2><span class="section-number">4.3.1. </span>CFD modeling<a class="headerlink" href="#cfd-modeling" title="Permalink to this headline">¶</a></h2>
+<p>The first step to run a CFD simulation in the Digital Wind Tunnel is to set up an OpenFOAM case which involves creating a directory structure with specific files that define the simulation settings, such as the geometry, mesh, and boundary conditions. The Digital Wind Tunnel allows users to upload their own model to run CFD simulations. To prepare the OpenFOAM case directory, three sub-directories are needed: <em>0</em>, <em>constant</em> and <em>system</em>.</p>
+<div class="align-center figure" id="id6">
+<a class="reference internal image-reference" href="../../../../../_images/openfoam_structure.png"><img alt="../../../../../_images/openfoam_structure.png" src="../../../../../_images/openfoam_structure.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.3.1.1 </span><span class="caption-text">Directory structure for an OpenFOAM case.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>To run a simulation in the Digital Wind Tunnel, select the <strong>EVT</strong> panel in the user interface. From the Load Generator, pull down menu and select the <strong>CFD - Digital Wind Tunnel</strong>. The CFD model can be uploaded by pressing the <strong>Browse</strong> button in the section of <strong>OpenFOAM Parameters</strong>.</p>
+<div class="align-center figure" id="id7">
+<a class="reference internal image-reference" href="../../../../../_images/User-interface.png"><img alt="../../../../../_images/User-interface.png" src="../../../../../_images/User-interface.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.3.1.2 </span><span class="caption-text">User interface of the digital wind tunnel.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>Alternatively, users can run a CFD simulation using the benchmark CFD model embedded in the Digital Wind Tunnel for empty domain analyses. The following table provides the basic information about the CFD modeling. Large eddy simulation (LES) was employed to model the turbulent flow. The CFD model can be downloaded from <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Resources/DigitalWindTunnel/">github website</a>.</p>
+<span id="table-benchmark"></span><table class="docutils align-center" id="id8">
+<caption><span class="caption-number">Table 4.3.1.1 </span><span class="caption-text">Model parameters for the benchmark CFD simulation</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>descriptions</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Domain size</p></td>
+<td><p>10*5*3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Grid number</p></td>
+<td><p>5,638,659</p></td>
+</tr>
+<tr class="row-even"><td><p>Mesh generator</p></td>
+<td><p>snappyHexMesh</p></td>
+</tr>
+<tr class="row-odd"><td><p>Turbulence model</p></td>
+<td><p>Large eddy simulation</p></td>
+</tr>
+</tbody>
+</table>
+<div class="align-center figure" id="id9">
+<a class="reference internal image-reference" href="../../../../../_images/Mesh.png"><img alt="../../../../../_images/Mesh.png" src="../../../../../_images/Mesh.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.3.1.3 </span><span class="caption-text">Mesh generation for the benchmark CFD model.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="inflow-configurations-in-the-digital-wind-tunnel">
+<h2><span class="section-number">4.3.2. </span>Inflow configurations in the Digital Wind Tunnel<a class="headerlink" href="#inflow-configurations-in-the-digital-wind-tunnel" title="Permalink to this headline">¶</a></h2>
+<p>After the mesh generation and basic configurations for CFD modeling have been established, it is crucial to generate inflow turbulence that conforms to the desired atmospheric boundary layer flows. This step is essential in setting up a CFD model that can accurately simulate atmospheric flows across a broad spectrum of length and time scales. One common approach to generating inflow turbulence is to use synthetic inflow generation, which involves synthesizing turbulent fluctuations at the inflow boundary based on statistical properties of the turbulence.</p>
+<p>In the Digital Wind Tunnel, the synthetic inflow turbulence generation is enabled by the Turbulence Inflow Tool (TInF) developed by the NHERI SimCenter. Multiple synthetic inflow generation approaches are implemented in TInF, including the Digital Filtering Method and Synthetic Eddy Method. The TInF tool can utilize the statistical properties defined by users to produce a time series of turbulent fluctuations at the inflow boundary, which can then be integrated into WE-UQ for running a CFD simulations. The TInF tool can be directly downloaded from <a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterDocumentation/">github website</a>.</p>
+<p>There are two ways to specify the user-defined inflow boundary conditions that characterize the desired atmospheric boundary layer flows: <em>direct specification</em> and <em>specification via prescribed functions</em>.</p>
+<div class="section" id="direct-specification-of-inflow-turbulence-through-uploading-a-table">
+<h3><span class="section-number">4.3.2.1. </span>Direct specification of inflow turbulence through uploading a table<a class="headerlink" href="#direct-specification-of-inflow-turbulence-through-uploading-a-table" title="Permalink to this headline">¶</a></h3>
+<p>In the context of <em>direct specification</em>, the Digital Wind Tunnel allows users to specify the inflow turbulence properties obtained from wind tunnel measurements, such as mean velocity, Reynolds stress, and length scales at the inflow boundary for a CFD simulation. For example, the following table Specifies one inflow condition based on wind tunnel measurements at the UF BLWT facility:</p>
+<div class="align-center figure" id="id10">
+<a class="reference internal image-reference" href="../../../../../_images/table.png"><img alt="../../../../../_images/table.png" src="../../../../../_images/table.png" style="width: 1000px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.3.2.1.1 </span><span class="caption-text">Inflow turbulence properties based on the wind tunnel measurements.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Users need to adhere to the following table format when inputting the inflow parameters.</p>
+</div>
+<span id="table-directinput"></span><table class="docutils align-default" id="id11">
+<caption><span class="caption-number">Table 4.3.2.1.1 </span><span class="caption-text">Inputs of inflow parameters through <em>direct specification</em>
+       :align: center</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 22%" />
+<col style="width: 35%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Column 1 points</p></th>
+<th class="head"><p>Column 2 mean velocity</p></th>
+<th class="head"><p>Columns 3 to 8 Reynolds STress Tensor</p></th>
+<th class="head"><p>Columns 9 to 17 Length Scales</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Users can upload the table with the <em>.csv</em> format by pressing the <strong>Browse</strong> button in the section of <strong>Model Parameters</strong>.</p>
+<p>The Digital Wind Tunnel will modify the corresponding OpenFOAM case files based on the user’s inputs. In particular, the <em>boundaryData/inlet</em> directory inside the <em>constant</em> directory will be generated, which contains the information of the mean velocity profiles, Reynolds stress, and length
+scales along the height based on the uploaded table.</p>
+<div class="align-center figure" id="id12">
+<a class="reference internal image-reference" href="../../../../../_images/Direct_table.png"><img alt="../../../../../_images/Direct_table.png" src="../../../../../_images/Direct_table.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.3.2.1.2 </span><span class="caption-text">Specifying inflow turbulence through uploading a table.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="specification-via-prescribed-functions">
+<h3><span class="section-number">4.3.2.2. </span>Specification via prescribed functions<a class="headerlink" href="#specification-via-prescribed-functions" title="Permalink to this headline">¶</a></h3>
+<p>If the wind tunnel data is not available, the user can also specify the inflow conditions through the embedded functions in the Digital Wind Tunnel. There are three functions to characterize the atmospheric inflow profiles: uniform function, exponential function and logarithmic function. The uniform function assumes a constant wind velocity over the entire simulation domain, but may not accurately represent the complex nature of atmospheric boundary layer flows. The exponential function is often used to represent the vertical profile of wind velocity in the atmospheric boundary layer. The logarithmic function is another commonly used function that also represents the vertical profile of wind speed in the atmospheric boundary layer, based on the assumption of a logarithmic variation of wind velocity with height.</p>
+<div class="align-center figure" id="id13">
+<a class="reference internal image-reference" href="../../../../../_images/TInF_function.png"><img alt="../../../../../_images/TInF_function.png" src="../../../../../_images/TInF_function.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.3.2.2.1 </span><span class="caption-text">Inflow configuration using embedded functions.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+<p>The Digital Wind Tunnel offers several methods to generate synthetic turbulence at the inflow boundary, including digital filtering method. When a user selects a particular method, the Digital Wind Tunnel will modify the corresponding OpenFOAM case files based on the user’s inputs. For instance, if the digital filtering approach is selected, WE-UQ will automatically modify the inflow file <em>U</em> in the OpenFOAM case directory to set up the basic parameters for the approach.</p>
+<p>The related entries are in the form of</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>boundaryField
+{
+    inlet
+    {
+        type            turbulentDFMInlet;
+        filterType      exponential;
+        gridFactor      1;
+        filterFactor    4;
+        periodicInY     false;
+        periodicInZ     false;
+        cleanRestart    false;
+        value           $internalField;
+    }
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="running-a-cfd-simulation-in-the-digital-wind-tunnel">
+<h2><span class="section-number">4.3.3. </span>Running a CFD simulation in the Digital Wind Tunnel<a class="headerlink" href="#running-a-cfd-simulation-in-the-digital-wind-tunnel" title="Permalink to this headline">¶</a></h2>
+<p>After the CFD model is set up, the next step is to run the CFD simulations. Press the <strong>RUN at DesignSafe</strong> button to submit the job to TACC Frontera HPC resources. Once the simulation is completed, download the data from <strong>GET from DesignSafe</strong>. Post-processing tools including paraView can be used to visualize and analyze the flow simulations. Once the CFD simulation with the specified inflow conditions has been performed, the velocity profiles downstream can be computed from the resulting data and compared with experimental measurements to validate the accuracy of the simulation. This validation step is important to ensure that the simulated results are reliable and can be used for further analysis including building design.</p>
+<div class="align-center figure" id="id14">
+<a class="reference internal image-reference" href="../../../../../_images/Post-processing.png"><img alt="../../../../../_images/Post-processing.png" src="../../../../../_images/Post-processing.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.3.3.1 </span><span class="caption-text">Post-processing tools for visualizing and validating the inflow turbulence profiles.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<dl class="footnote brackets">
+<dt class="label" id="catarelli2020"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
+<dd><p>Catarelli, R. A., Fernández-Cabán, P. L., Masters, F. J., Bridge, J. A., Gurley, K. R., &amp; Matyas, C. J. (2020). Automated terrain generation for precise atmospheric boundary layer simulation in the wind tunnel. Journal of Wind Engineering and Industrial Aerodynamics, 207, 104276.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2023, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-2', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>

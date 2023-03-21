@@ -111,9 +111,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../releases/wePlans.html">5. Release Plans</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">6. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">7. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../releases/weCapabilities.html">5. Cababilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../releases/weReleaseNotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../releases/wePlans.html">7. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul>
@@ -207,135 +209,7 @@
 <p>The following are a few examples showing the usage of WE-UQ. The files for the examples are available on Github.</p>
 <div class="toctree-wrapper compound">
 </div>
-<div class="toctree-wrapper compound">
-</div>
-
-
-<div class="twbs">
-  
-  <hr>
-
-  <div class="gallery" id="gallery">
-  
-<div class="card shadow-sm mb-3 UV-1-1 UM-1-1-1 UM-1-1  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
-  <div class="row g-0 mb-3">
-    <div class="card-header">
-        <p>
-        <a href="./weuq-0001/README.html"> 
-              <h5 style="--bs-gutter-x: 1.5em;">9 Story Building: Sampling Analysis</h5>
-          </a>
-        </p>
-    </div>
-    <div class="col-md-6"> 
-      <div class="card-body">
-        <p class="card-text bg-light">Forward propagation of a 9-story frame with stochastic wind loading and default EDPs.</p>
-          
-      </div>
-    </div>
-        
-      <div class="col-md-5 ml-auto mr-2 my-3">
-       <img src="../../../../_images/9Story.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
-      </div>
-        
-  </div>
-</div>
-
-  
-<div class="card shadow-sm mb-3 UV-1-1 UM-1-1-1 UM-1-1  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
-  <div class="row g-0 mb-3">
-    <div class="card-header">
-        <p>
-        <a href="./weuq-0007/README.html"> 
-              <h5 style="--bs-gutter-x: 1.5em;">3 Story Building: Sensitivity Analysis</h5>
-          </a>
-        </p>
-    </div>
-    <div class="col-md-6"> 
-      <div class="card-body">
-        <p class="card-text bg-light">This study uses WE-UQ's built-in interface to the TPU wind tunel datasets in the analysis of a 3 story building with quantified uncertainty.</p>
-          
-      </div>
-    </div>
-        
-      <div class="col-md-5 ml-auto mr-2 my-3">
-       <img src="../../../../_images/3story.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
-      </div>
-        
-  </div>
-</div>
-
-  </div>
-</div>
-
-<script>
-function findGetParameter(parameterName) {
-	var result = null,
-		tmp = [];
-	location.search
-		.substr(1)
-		.split("&")
-		.forEach(function (item) {
-		  tmp = item.split("=");
-		  if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
-		});
-	return result;
-} 
-
-/*if(window.location.search) {
-  selectedFilters.push(findGetParameter("rtm"));
-}*/
-
-/*let selectedFilters = [];*/
-let selectedFilters = window.location.search.split("=")[1].split(",");
-const images  = document.getElementsByClassName("gallery-item");
-const filters = [...document.querySelectorAll('.filter select')];
-const toggles = [...document.querySelectorAll('.filter input')];
-
-var show = function (elem) {
-    elem.style.display = 'block';
-};
-var hide = function (elem) {
-    elem.style.display = 'none';
-};
-var toggleFilter =  function(el,elid) {
-    const filter = document.getElementById(elid);
-    filter.disabled = !el.checked;
-   
-    if ("createEvent" in document) {
-        var evt = document.createEvent("HTMLEvents");
-        evt.initEvent("change", false, true);
-        filter.dispatchEvent(evt);
-    }
-    else
-        filter.fireEvent("change");
-};
-
-for (filter of selectedFilters){
-    for (const image of images) {
-        if (selectedFilters.every(filter => image.classList.contains(filter.replace(".","-")))) {
-            show(image);
-        } else {
-            hide(image)
-        };
-    }
-}
-/*
-for (const filter of filters) {
-    filter.addEventListener('change', function(event) {
-        selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
-        console.log(selectedFilters);
-        for (const image of images) {
-            if (selectedFilters.every(filter => image.classList.contains(filter))) {
-                show(image);
-            } else {
-                hide(image)
-            };
-        };
-    })
-};
-*/
-</script>
-</div>
+Expecting ',' delimiter: line 131 column 11 (char 4494)</div>
 
 
            </div>
