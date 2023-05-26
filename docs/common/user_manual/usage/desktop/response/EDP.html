@@ -114,15 +114,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../releases/weCapabilities.html">5. Capabilities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../releases/weReleaseNotes.html">6. Release Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../releases/wePlans.html">7. Release Plans</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/wePlans.html">6. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">7. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Guide</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Interface</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GI.html">2.2. GI: General Information</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.3. SIM: Structural Model</a></li>
@@ -132,13 +131,14 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.7. EDP: Demand Parameters</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#standard">2.7.1. Standard</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#user-defined">2.7.2. User Defined</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#none">2.7.3. None</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="resEE.html">2.8. RES: Results</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">3. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
@@ -201,7 +201,7 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
+          <li><a href="../usage.html"><span class="section-number">2. </span>User Interface</a> &raquo;</li>
         
       <li><span class="section-number">2.7. </span>EDP: Demand Parameters</li>
     
@@ -229,6 +229,7 @@ the simulation runs. There are a number of options available in the pull-down</p
 <ol class="arabic simple">
 <li><p>Standard</p></li>
 <li><p>User Defined</p></li>
+<li><p>None</p></li>
 </ol>
 <div class="section" id="standard">
 <h2><span class="section-number">2.7.1. </span>Standard<a class="headerlink" href="#standard" title="Permalink to this headline">¶</a></h2>
@@ -266,9 +267,9 @@ containing a series of recorder commands.</p></li>
 <blockquote>
 <div><p>A recorder file passed to OpenSees might look like the following:</p>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># recorder EnvelopeNode -file $filename -node $nodeTag1 ... $nodeTagN -dof $DOF1 $DOF2 disp</span>
-<span class="nv">recorder</span> EnvelopeNode <span class="o">-</span>file node.out <span class="o">-</span>node <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="o">-</span>dof <span class="mi">1</span> disp
+<span class="nv">recorder</span><span class="w"> </span>EnvelopeNode<span class="w"> </span><span class="o">-</span>file<span class="w"> </span>node.out<span class="w"> </span><span class="o">-</span>node<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">1</span><span class="w"> </span>disp
 <span class="c"># recorder EnvelopeElement -file $filename -ele $eleTag1 ... $eleTagN forces</span>
-<span class="nv">recorder</span> EnvelopeElement <span class="o">-</span>file ele.out <span class="o">-</span>ele <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> forces
+<span class="nv">recorder</span><span class="w"> </span>EnvelopeElement<span class="w"> </span><span class="o">-</span>file<span class="w"> </span>ele.out<span class="w"> </span><span class="o">-</span>ele<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span>forces
 </pre></div>
 </div>
 </div></blockquote>
@@ -344,31 +345,31 @@ python file below along with the tcl script for creating recorders in OpenSees.<
 </pre></div>
 </div>
 </details><details class="summary-example-post-processing-tcl-file">
-<summary>Example post-processing tcl file</summary><div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> nodeIn <span class="k">[</span><span class="nb">open</span> node.out r<span class="k">]</span>
-<span class="k">while</span> <span class="k">{</span> <span class="k">[</span><span class="nb">gets</span> <span class="nv">$nodeIn</span> data<span class="k">]</span> <span class="o">&gt;=</span> <span class="nv">0</span> <span class="k">}</span> <span class="k">{</span>
-        <span class="k">set</span> maxDisplacement <span class="nv">$data</span>
+<summary>Example post-processing tcl file</summary><div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span><span class="w"> </span>nodeIn<span class="w"> </span><span class="k">[</span><span class="nb">open</span><span class="w"> </span>node.out<span class="w"> </span>r<span class="k">]</span>
+<span class="k">while</span><span class="w"> </span><span class="k">{</span><span class="w"> </span><span class="k">[</span><span class="nb">gets</span><span class="w"> </span><span class="nv">$nodeIn</span><span class="w"> </span>data<span class="k">]</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nv">0</span><span class="w"> </span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span>maxDisplacement<span class="w"> </span><span class="nv">$data</span>
 <span class="k">}</span>
-<span class="nb">puts</span> <span class="nv">$maxDisplacement</span>
+<span class="nb">puts</span><span class="w"> </span><span class="nv">$maxDisplacement</span>
 
 <span class="c"># create file handler to write results to output &amp; list into which we will put results</span>
-<span class="k">set</span> resultFile <span class="k">[</span><span class="nb">open</span> results.out w<span class="k">]</span>
-<span class="k">set</span> results <span class="k">[]</span>
+<span class="k">set</span><span class="w"> </span>resultFile<span class="w"> </span><span class="k">[</span><span class="nb">open</span><span class="w"> </span>results.out<span class="w"> </span>w<span class="k">]</span>
+<span class="k">set</span><span class="w"> </span>results<span class="w"> </span><span class="k">[]</span>
 
 <span class="c"># for each quanity in list of QoI passed</span>
 <span class="c">#  - get nodeTag</span>
 <span class="c">#  - get nodal displacement if valid node, output 0.0 if not</span>
 <span class="c">#  - for valid node output displacement, note if dof not provided output 1&#39;st dof</span>
 
-<span class="k">foreach</span> edp <span class="nv">$listQoI</span> <span class="k">{</span>
-        <span class="k">set</span> splitEDP <span class="k">[</span><span class="nb">split</span> <span class="nv">$edp</span> <span class="s2">&quot;_&quot;</span><span class="k">]</span>
-        <span class="k">set</span> nodeTag <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$splitEDP</span> <span class="mi">1</span><span class="k">]</span>
-                <span class="k">if</span> <span class="k">{[</span><span class="nb">llength</span> <span class="nv">$splitEDP</span><span class="k">]</span> <span class="o">==</span> <span class="nv">3</span><span class="k">}</span> <span class="k">{</span>
-                        <span class="k">set</span> dof <span class="mi">1</span>
-        <span class="k">}</span> <span class="k">else</span> <span class="k">{</span>
-                        <span class="k">set</span> dof <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$splitEDP</span> <span class="mi">3</span><span class="k">]</span>
-        <span class="k">}</span>
-        <span class="k">set</span> nodeDisp <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$maxDisplacement</span> <span class="k">[expr</span> <span class="k">((</span><span class="nv">$nodeTag-1</span><span class="k">)</span><span class="o">*</span><span class="nv">2</span><span class="k">)</span><span class="o">+</span><span class="nv">$dof-1</span><span class="k">]]</span>
-        <span class="nb">lappend</span> results <span class="nv">$nodeDisp</span>
+<span class="k">foreach</span><span class="w"> </span>edp<span class="w"> </span><span class="nv">$listQoI</span><span class="w"> </span><span class="k">{</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span>splitEDP<span class="w"> </span><span class="k">[</span><span class="nb">split</span><span class="w"> </span><span class="nv">$edp</span><span class="w"> </span><span class="s2">&quot;_&quot;</span><span class="k">]</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span>nodeTag<span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$splitEDP</span><span class="w"> </span><span class="mi">1</span><span class="k">]</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="k">{[</span><span class="nb">llength</span><span class="w"> </span><span class="nv">$splitEDP</span><span class="k">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">3</span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
+<span class="w">                        </span><span class="k">set</span><span class="w"> </span>dof<span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="k">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">{</span>
+<span class="w">                        </span><span class="k">set</span><span class="w"> </span>dof<span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$splitEDP</span><span class="w"> </span><span class="mi">3</span><span class="k">]</span>
+<span class="w">        </span><span class="k">}</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span>nodeDisp<span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$maxDisplacement</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="k">((</span><span class="nv">$nodeTag-1</span><span class="k">)</span><span class="o">*</span><span class="nv">2</span><span class="k">)</span><span class="o">+</span><span class="nv">$dof-1</span><span class="k">]]</span>
+<span class="w">        </span><span class="nb">lappend</span><span class="w"> </span>results<span class="w"> </span><span class="nv">$nodeDisp</span>
 <span class="k">}</span>
 </pre></div>
 </div>
@@ -388,6 +389,14 @@ file. If the process script has an array of strings named named
 EDP’s the script, the Response Parameters will be initially set with
 these values from the script.</p>
 </div></blockquote>
+</div>
+<div class="section" id="none">
+<h2><span class="section-number">2.7.3. </span>None<a class="headerlink" href="#none" title="Permalink to this headline">¶</a></h2>
+<p>This option is used only when the user specifies a surrogate model in the SIM tab. Because a surrogate model can evaluate only the EDPs that are pre-trained, we automatically display those quantities, and do not allow users to modify the list.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This option is not for training a surrogate model but for using a pre-trained surrogate model.</p>
+</div>
 </div>
 </div>
 

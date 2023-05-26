@@ -51,7 +51,7 @@
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="2.6. RV: Random Variables" href="RV.html" />
-    <link rel="prev" title="2.4.7. Multiple Existing" href="wind/WeUQExisting.html" />
+    <link rel="prev" title="2.4.10. Wind Force Spectrum" href="wind/WindForceSpectrum.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -115,27 +115,31 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">4. How To Cite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../releases/weCapabilities.html">5. Capabilities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../releases/weReleaseNotes.html">6. Release Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../releases/wePlans.html">7. Release Plans</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">8. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../releases/wePlans.html">6. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">7. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="usage.html">2. User Guide</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="usage.html">2. User Interface</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="GI.html">2.2. GI: General Information</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SIM.html">2.3. SIM: Structural Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="wind/WindEvents.html">2.4. EVT: Wind Events</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.5. FEM: Finite Element Method</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.5. FEM: Finite Element Method</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">2.5.1. OpenSees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multi-model">2.5.2. Multi Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#none">2.5.3. None</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="RV.html">2.6. RV: Random Variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="response/EDP.html">2.7. EDP: Demand Parameters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="response/resEE.html">2.8. RES: Results</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">3. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
@@ -198,7 +202,7 @@
     
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
+          <li><a href="usage.html"><span class="section-number">2. </span>User Interface</a> &raquo;</li>
         
       <li><span class="section-number">2.5. </span>FEM: Finite Element Method</li>
     
@@ -221,18 +225,23 @@
             
   <div class="section" id="fem-finite-element-method">
 <span id="lblfem"></span><h1><span class="section-number">2.5. </span>FEM: Finite Element Method<a class="headerlink" href="#fem-finite-element-method" title="Permalink to this headline">¶</a></h1>
-<p>The <strong>FEM</strong> tab will present users with a selection of FEM
-applications that will take a building model generated by the BIM
-application and the EVENT from the event application and perform a
-deterministic simulation of structural response. The default application is the OpenSees application.</p>
-<p>Currently, there is one application OpenSees. The current OpenSees implementation extends the standard OpenSees executable with a pre- and post-processor to take the BIM and EVENT
-files and use OpenSees to simulate the response, and return it in an EDP file.</p>
-<div class="align-center figure" id="id1">
+<p>The <strong>FEM</strong> tab will present users with a selection of FEM applications that will take a building model generated by the BIM application and the EVENT from the event application and perform a deterministic simulation of structural response.</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#id1" id="id5">OpenSees</a></p></li>
+<li><p><a class="reference internal" href="#multi-model" id="id6">Multi Model</a></p></li>
+<li><p><a class="reference internal" href="#none" id="id7">None</a></p></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id5"><span class="section-number">2.5.1. </span>OpenSees</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>The default application is the OpenSees application. The current OpenSees implementation extends the standard OpenSees executable with a pre- and post-processor to take the BIM and EVENT files and use OpenSees to simulate the response, and return it in an EDP file.</p>
+<div class="align-center figure" id="id2">
 <span id="figfem"></span><img alt="../../../../_images/OpenSeesFEM.png" src="../../../../_images/OpenSeesFEM.png" />
-<p class="caption"><span class="caption-number">Fig. 2.5.1 </span><span class="caption-text">Options for OpenSees.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.5.1.1 </span><span class="caption-text">Options for OpenSees.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>For the <strong>OpenSees</strong> application the user is required to specify the
-options to be used in the transient analysis. As shown in <a class="reference internal" href="#figfem"><span class="std std-numref">Fig. 2.5.1</span></a>,
+options to be used in the transient analysis. As shown in <a class="reference internal" href="#figfem"><span class="std std-numref">Fig. 2.5.1.1</span></a>,
 this includes the choice of:</p>
 <blockquote>
 <div><ol class="arabic">
@@ -246,9 +255,9 @@ this includes the choice of:</p>
 <li><p>Rayleigh Damping. With Rayleigh damping the user mist provide the damping ratio, <span class="math notranslate nohighlight">\(\zeta\)</span> and specify two modes from which the damping coefficients <span class="math notranslate nohighlight">\(a_0\)</span> and <span class="math notranslate nohighlight">\(a_1\)</span> will be determined. Mass proportional damping can be obtained by setting the <strong>Mode 2</strong> option to 0, <strong>stiffness proportional damping</strong> by setting <strong>Mode 1</strong> option to 0.</p></li>
 <li><p>Modal Damping: With modal damping the user specifies the number of modes and the damping ratio <span class="math notranslate nohighlight">\(\zeta\)</span>. In addition the user has the option of specifying a <strong>stiffness proportional damping ratio</strong>, which as mentioned in the <a class="reference internal" href="../../../technical_manual/desktop/damping.html#lbldamping"><span class="std std-ref">Damping Options</span></a> is used to provide additional damping for the higher modes.</p></li>
 </ol>
-<div class="align-center figure" id="id2">
+<div class="align-center figure" id="id3">
 <img alt="../../../../_images/OpenSeesFEM-Modal.png" src="../../../../_images/OpenSeesFEM-Modal.png" />
-<p class="caption"><span class="caption-number">Fig. 2.5.2 </span><span class="caption-text">Modal Damping Options for OpenSees</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.5.1.2 </span><span class="caption-text">Modal Damping Options for OpenSees</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 </li>
@@ -272,6 +281,28 @@ analyze $numStep $dt
 <p>If the user specifies their own analysis script to run
 instead of the default, they can take advantage of the <strong>numStep</strong> and <strong>dt</strong> variables that
 are obtained from the EVENT and are automatically set by the program.</p>
+</div>
+<div class="section" id="multi-model">
+<h2><a class="toc-backref" href="#id6"><span class="section-number">2.5.2. </span>Multi Model</a><a class="headerlink" href="#multi-model" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Multi Model</strong> simulation application allows users to define multiple finite element analysis options. The Add and Remove buttons allow users to control the number of sets of options they want to use while conducting the analysis.</p>
+<p>By adding a model, a new tab is created in the FEM panel where users can choose one of the finite element analysis applications described in the sections above and provide the inputs necessary to define the required analysis options. Users also need to specify their belief corresponding to that analysis option. The beliefs are expressed as non-negative numerical values. The belief value in each tab is defined relative to the values in the other tabs, and the beliefs do not need to sum to 1.</p>
+<div class="align-center figure" id="id4">
+<a class="reference internal image-reference" href="../../../../_images/multimodelFEM.png"><img alt="../../../../_images/multimodelFEM.png" src="../../../../_images/multimodelFEM.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.5.2.1 </span><span class="caption-text">Selecting a set of finite element analysis options within a Multi Model FEM Application</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a Multi Model application is selected, at least 2 models must be defined.</p>
+</div>
+</div>
+<div class="section" id="none">
+<h2><a class="toc-backref" href="#id7"><span class="section-number">2.5.3. </span>None</a><a class="headerlink" href="#none" title="Permalink to this headline">¶</a></h2>
+<p>This option is used only when the user specifies a surrogate model in SIM tab. Because they do not need an FEM solver, the option None should be selected.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This option is not for training a surrogate model but for using a pre-trained surrogate model.</p>
+</div>
+</div>
 </div>
 
 

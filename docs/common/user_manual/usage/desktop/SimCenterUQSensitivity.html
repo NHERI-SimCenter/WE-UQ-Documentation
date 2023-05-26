@@ -50,7 +50,7 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="2.1.3.3. Surrogate Modeling" href="SimCenterUQSurrogate.html" />
+    <link rel="next" title="2.1.3.3. Gaussian Process (GP) Surrogate Modeling" href="SimCenterUQSurrogate.html" />
     <link rel="prev" title="2.1.3.1. Forward Propagation" href="SimCenterUQSampling.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -115,17 +115,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">4. How To Cite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../releases/weCapabilities.html">5. Capabilities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../releases/weReleaseNotes.html">6. Release Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../releases/wePlans.html">7. Release Plans</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">8. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../releases/wePlans.html">6. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">7. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage.html">2. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">2. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">3. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
@@ -188,7 +187,7 @@
     
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
+          <li><a href="usage.html"><span class="section-number">2. </span>User Interface</a> &raquo;</li>
         
           <li><a href="UQ.html"><span class="section-number">2.1. </span>UQ: Uncertainty Quantification</a> &raquo;</li>
         
@@ -259,7 +258,7 @@
 <li><p>Train Points (Input): The number of columns should match the number of RVs presented in the <strong>RV tab</strong> and also match with required inputs of the simulation model provided in the <strong>FEM tab</strong>. <strong>The order of the columns should match thoses of the random variables presented in the RV tab</strong></p></li>
 <li><p>System Responses (Output): The number of columns and the order of columns should match the QoI quantities presented in <strong>QoI tab</strong>.</p></li>
 <li><p>Both files need to be provided, and the number of columns for the two files should be the same.</p></li>
-<li><p>See <a class="reference internal" href="SimCenterUQSurrogate.html#figsim4"><span class="std std-numref">Fig. 2.1.3.3.4</span></a> for example input data sheets.</p></li>
+<li><p>See <a class="reference internal" href="SimCenterUQSurrogate.html#figsim4"><span class="std std-numref">Fig. 2.1.3.3.5</span></a> for example input data sheets.</p></li>
 </ul>
 <div class="align-center figure" id="id6">
 <span id="figsim4"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate4_SimUQ.jpg"><img alt="../../../../_images/Surrogate4_SimUQ.jpg" src="../../../../_images/Surrogate4_SimUQ.jpg" style="width: 800px;" /></a>
@@ -271,17 +270,17 @@
 <blockquote>
 <div><div class="literal-block-wrapper docutils container" id="id7">
 <div class="code-block-caption"><span class="caption-number">Listing 2.1.3.2.1 </span><span class="caption-text">Creating binary dataset (row-major, float point) using Matlab</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% RV and QoI are matrices with size of (nsamp x ndim) </span><span class="w"></span>
-<span class="c">% nsamp: number of samples</span><span class="w"></span>
-<span class="c">% ndim : number of RVs or QoIs</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% RV and QoI are matrices with size of (nsamp x ndim) </span>
+<span class="c">% nsamp: number of samples</span>
+<span class="c">% ndim : number of RVs or QoIs</span>
 
-<span class="n">fileID</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fopen</span><span class="p">(</span><span class="s">&#39;RV.bin&#39;</span><span class="p">,</span><span class="s">&#39;w&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">fwrite</span><span class="p">(</span><span class="n">fileID</span><span class="p">,</span><span class="n">RV</span><span class="o">&#39;</span><span class="p">,</span><span class="s">&#39;float&#39;</span><span class="p">);</span><span class="w"> </span><span class="c">% RV matrix is transposed because Matlab uses column-major binary</span><span class="w"></span>
-<span class="nb">fclose</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span><span class="w"></span>
+<span class="n">fileID</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fopen</span><span class="p">(</span><span class="s">&#39;RV.bin&#39;</span><span class="p">,</span><span class="s">&#39;w&#39;</span><span class="p">);</span>
+<span class="nb">fwrite</span><span class="p">(</span><span class="n">fileID</span><span class="p">,</span><span class="n">RV</span><span class="o">&#39;</span><span class="p">,</span><span class="s">&#39;float&#39;</span><span class="p">);</span><span class="w"> </span><span class="c">% RV matrix is transposed because Matlab uses column-major binary</span>
+<span class="nb">fclose</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span>
 
-<span class="n">fileID</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fopen</span><span class="p">(</span><span class="s">&#39;QoI.bin&#39;</span><span class="p">,</span><span class="s">&#39;w&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">fwrite</span><span class="p">(</span><span class="n">fileID</span><span class="p">,</span><span class="n">QoI</span><span class="o">&#39;</span><span class="p">,</span><span class="s">&#39;float&#39;</span><span class="p">);</span><span class="w"> </span><span class="c">% QoI matrix is transposed because Matlab uses column-major binary</span><span class="w"></span>
-<span class="nb">fclose</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span><span class="w"></span>
+<span class="n">fileID</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fopen</span><span class="p">(</span><span class="s">&#39;QoI.bin&#39;</span><span class="p">,</span><span class="s">&#39;w&#39;</span><span class="p">);</span>
+<span class="nb">fwrite</span><span class="p">(</span><span class="n">fileID</span><span class="p">,</span><span class="n">QoI</span><span class="o">&#39;</span><span class="p">,</span><span class="s">&#39;float&#39;</span><span class="p">);</span><span class="w"> </span><span class="c">% QoI matrix is transposed because Matlab uses column-major binary</span>
+<span class="nb">fclose</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>

@@ -1,0 +1,536 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.4. Wind Tunnel-Informed Stochastic Wind Load Generation &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="4. Troubleshooting" href="../../../troubleshooting/desktop/troubleshooting.html" />
+    <link rel="prev" title="3.3. Digital Wind Tunnel" href="../weuq-0011/README.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/WE-UQ-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/WEUQ/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/weCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/wePlans.html">6. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">7. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">3. Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../weuq-0001/README.html">3.1. 9 Story Building: Sampling Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../weuq-0007/README.html">3.2. 3 Story Building: Sensitivity Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../weuq-0011/README.html">3.3. Digital Wind Tunnel</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.4. Wind Tunnel-Informed Stochastic Wind Load Generation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#preparation-of-wind-force-time-history-file">3.4.1. Preparation of “Wind Force Time History File”</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#workflow">3.4.2. Workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">3.4.3. Preparation of “Wind Force Time History File”</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/WEUQ.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Wind Engineering with Uncertainty Quantification</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../examples.html"><span class="section-number">3. </span>Examples</a> &raquo;</li>
+        
+      <li><span class="section-number">3.4. </span>Wind Tunnel-Informed Stochastic Wind Load Generation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/user_manual/examples/desktop/weuq-0012/README.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="wind-tunnel-informed-stochastic-wind-load-generation">
+<span id="weuq-0012"></span><h1><span class="section-number">3.4. </span>Wind Tunnel-Informed Stochastic Wind Load Generation<a class="headerlink" href="#wind-tunnel-informed-stochastic-wind-load-generation" title="Permalink to this headline">¶</a></h1>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%" />
+<col style="width: 61%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Problem files</p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples//weuq-0012//">weuq-0012/</a></p></td>
+</tr>
+</tbody>
+</table>
+<p>This example estimates the probabilistic response of a building model excited by wind tunnel-informed stochastic wind load. This example uses the experimental data obtained in University of Florida (UF) NHERI Experimental Facility (EF), and applies the generated load to a 25-story rectangular shape building response simulation model.</p>
+<div class="align-center figure" id="id5">
+<span id="fig-we12-1"></span><a class="reference internal image-reference" href="../../../../../_images/we12_1.png"><img alt="../../../../../_images/we12_1.png" src="../../../../../_images/we12_1.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.4.1 </span><span class="caption-text">Generating full-scale wind force time series from a model-scale wind force time series obtained from wind tunnel experiments.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>This example uses the data presented in <a class="reference internal" href="#duarte2023" id="id1"><span>[Duarte2023]</span></a>.</p>
+<dl class="citation">
+<dt class="label" id="duarte2023"><span class="brackets">Duarte2023</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id3">3</a>)</span></dt>
+<dd><p>Duarte, T. G. A., Arunachalam, S., Subgranon, A., &amp; Spence, S. M. (2023). Uncertainty Quantification of a Wind Tunnel-Informed Stochastic Wind Load Model for Wind Engineering Applications. arXiv preprint arXiv:2305.06253.</p>
+</dd>
+</dl>
+<div class="section" id="preparation-of-wind-force-time-history-file">
+<h2><span class="section-number">3.4.1. </span>Preparation of “Wind Force Time History File”<a class="headerlink" href="#preparation-of-wind-force-time-history-file" title="Permalink to this headline">¶</a></h2>
+<p>The experimental records should first be post-processed by the user such that <strong>wind force time histories applied at each floor and each component</strong> can be directly imported in WE-UQ at the EVT tab. The dataset can be imported as either a matlab binary file or a json file. Additionally, the model-scale dimensions and additional information on the experiment should be provided. Please refer to <a class="reference internal" href="../../../usage/desktop/wind/ExperimentalWindForce.html#lblexperimentalwindforce"><span class="std std-ref">the user manual</span></a> for the list of variables the file should contain. In this example, the variables in the below table is imported as a json file. Note that the x- and y- directional forces and z-directional moments at each of the 25 stories are recorded for 32 sec with dt=0.0016 sec (20,000 time points). The reference wind speed (Vref) was measured on top of the building model.</p>
+<table class="docutils align-center" id="id6">
+<caption><span class="caption-number">Table 3.4.1.1 </span><span class="caption-text">Variables imported to WE-UQ</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 43%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Values</p></th>
+<th class="head"><p>Units</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>B</p></td>
+<td><p>0.3</p></td>
+<td><p>m</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p>0.6</p></td>
+<td><p>m</p></td>
+</tr>
+<tr class="row-even"><td><p>H</p></td>
+<td><p>0.5</p></td>
+<td><p>m</p></td>
+</tr>
+<tr class="row-odd"><td><p>fs</p></td>
+<td><p>625</p></td>
+<td><p>m</p></td>
+</tr>
+<tr class="row-even"><td><p>Vref</p></td>
+<td><p>12.25</p></td>
+<td><p>m</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fx</p></td>
+<td><p>[25x20000] array</p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-even"><td><p>Fy</p></td>
+<td><p>[25x20000] array</p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tz</p></td>
+<td><p>[25x20000] array</p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-even"><td><p>t</p></td>
+<td><p>[1x20000] array</p></td>
+<td><p>sec</p></td>
+</tr>
+</tbody>
+</table>
+<div class="align-center figure" id="id7">
+<span id="fig-we12-2"></span><a class="reference internal image-reference" href="../../../../../_images/we12_2.png"><img alt="../../../../../_images/we12_2.png" src="../../../../../_images/we12_2.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.4.1.1 </span><span class="caption-text">The experiment was performed at UF <a class="reference internal" href="#duarte2023" id="id2"><span>[Duarte2023]</span></a>.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id8">
+<span id="fig-we12-3"></span><a class="reference internal image-reference" href="../../../../../_images/we12_3.png"><img alt="../../../../../_images/we12_3.png" src="../../../../../_images/we12_3.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.4.1.2 </span><span class="caption-text">Examples of Wind Force Time Series in Fx, Fy, Tz arrays <a class="reference internal" href="#duarte2023" id="id3"><span>[Duarte2023]</span></a>.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<p>The json file used in this example is named <code class="docutils literal notranslate"><span class="pre">Forces_ANG000_phase1.json</span></code>, and it can be found at <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples//weuq-0012//src">weuq-0012/src</a>. Using this information, WE-UQ will generate the stochastic wind loads that apply to a full-scale building model with <strong>scaling factor of 200</strong>.</p>
+</div>
+<div class="section" id="workflow">
+<h2><span class="section-number">3.4.2. </span>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This example can be directly loaded from the menu bar at the top of the screen by clicking “Examples”-“E4: Wind Tunnel-Informed Stochastic Wind Load Generation”. The user may want to increase the number of samples in the UQ tab for more stable results.</p>
+</div>
+<ol class="arabic simple">
+<li><p>In the UQ tab, click “forward propagation” to perform Monte Carlo simulation. Set the number of samples 50.</p></li>
+</ol>
+<div class="align-center figure" id="id9">
+<a class="reference internal image-reference" href="../../../../../_images/we12_UQ.png"><img alt="../../../../../_images/we12_UQ.png" src="../../../../../_images/we12_UQ.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.4.2.1 </span><span class="caption-text">UQ tab</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>In the GI tab, set <strong># Stories</strong> 25 as our dataset is for a 25-story building. Multiply the building scaling factor 200 by the model dimensions (0.5m x 0.3m x 0.6m; this information should be imported in “Wind Force Time History File” at the EVT tab as shown in the previous section) and specify the full-scale building dimension at <strong>Height, Width, and Depth</strong>, which respectively are 100, 60, and 120. Define the <strong>Force and Length Units</strong> of Newtons and Meters.</p></li>
+</ol>
+<div class="align-center figure" id="id10">
+<a class="reference internal image-reference" href="../../../../../_images/we12_GI.png"><img alt="../../../../../_images/we12_GI.png" src="../../../../../_images/we12_GI.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.4.2.2 </span><span class="caption-text">GI tab</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>In the SIM tab, the building properties are specified. We used the floor weights of 1.e7 across the floors, and the stiffness values in each story are given as</p></li>
+</ol>
+<div class="align-center figure" id="id11">
+<a class="reference internal image-reference" href="../../../../../_images/we12_SIM.png"><img alt="../../../../../_images/we12_SIM.png" src="../../../../../_images/we12_SIM.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.4.2.3 </span><span class="caption-text">SIM tab</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<table class="docutils align-default" id="id12">
+<caption><span class="caption-number">Table 3.4.2.1 </span><span class="caption-text">Stiffness of the structure</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Floors</p></th>
+<th class="head"><p>Stiffness</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1-5</p></td>
+<td><p>8.e8</p></td>
+</tr>
+<tr class="row-odd"><td><p>6-11</p></td>
+<td><p>5.e8</p></td>
+</tr>
+<tr class="row-even"><td><p>12-14</p></td>
+<td><p>4.e8</p></td>
+</tr>
+<tr class="row-odd"><td><p>15-17</p></td>
+<td><p>3.e8</p></td>
+</tr>
+<tr class="row-even"><td><p>18-19</p></td>
+<td><p>2.5e8</p></td>
+</tr>
+<tr class="row-odd"><td><p>20-21</p></td>
+<td><p>1.7e8</p></td>
+</tr>
+<tr class="row-even"><td><p>20-21</p></td>
+<td><p>1.7e8</p></td>
+</tr>
+<tr class="row-odd"><td><p>22-24</p></td>
+<td><p>1.2e8</p></td>
+</tr>
+<tr class="row-even"><td><p>25</p></td>
+<td><p>0.7e8</p></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="4">
+<li><p>In the EVT tab, select the “Experimental Wind Forces” option for the Load Generator. Let us consider 25% of modes for the principal orthogonal decomposition (POD). The Full Scale Reference Wind Speed at the top of the building is set 30 m/s. The duration of the generated wind loads is set to 1600 sec. The “Wind Force Time History File” shown in the previous section is imported next. The model scale is auto-populated only if the datasets are provided in a json file (instead of a matlab binary file). For estimating the cross-power spectrum density function (CPSD), a window size of 4 sec, and an overlap percentage of 50 % are used. Please refer to <a class="reference internal" href="../../../usage/desktop/wind/ExperimentalWindForce.html#lblexperimentalwindforce"><span class="std std-ref">the user manual</span></a> for more details of those parameters.</p></li>
+</ol>
+<div class="align-center figure" id="id13">
+<a class="reference internal image-reference" href="../../../../../_images/we12_EVT.png"><img alt="../../../../../_images/we12_EVT.png" src="../../../../../_images/we12_EVT.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.4.2.4 </span><span class="caption-text">EVT tab</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>The FEM and EDP tabs are kept as default. Under the <strong>Standard Wind</strong> EDP, in this example, the structural model will automatically output peak floor acceleration (PFA), peak floor displacement respective to the ground (PFD), Peak inter-story drift ratio (PID), root-mean-squared acceleration (RMSA).</p></li>
+<li><p>In the RV tab, only a <code class="docutils literal notranslate"><span class="pre">dummy</span></code> variable that is not used in the UQ analysis is specified. This is because, in this example, we are interested in only the uncertainty that comes from the stochasticity of the wind time history.</p></li>
+</ol>
+<div class="align-center figure" id="id14">
+<a class="reference internal image-reference" href="../../../../../_images/we12_RV.png"><img alt="../../../../../_images/we12_RV.png" src="../../../../../_images/we12_RV.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.4.2.5 </span><span class="caption-text">RV tab</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The user can additionally specify random variables for structural parameters by putting a string for some of the structural properties in GI tab (e.g. “W” for the floor weight instead of 1.e7), and specifying the corresponding probability distribution at the RV tab (e.g. name: W, distribution: Normal, Mean: 1.e7, Standard Dev: 1.e6).</p>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Once all the information is provided, click the Run or Run at DesignSafe button to run the analysis.</p></li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h2><span class="section-number">3.4.3. </span>Preparation of “Wind Force Time History File”<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Once the analysis is done, the sampling results will be displayed in the RES tab. Note that the EDP name consists of the quantity of interest, story number, and the direction of interest - for example:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>1-PFA-0-1 : <strong>peak floor acceleration</strong> at the <strong>ground floor</strong>, <strong>component 1</strong> (x-dir)</p></li>
+<li><p>1-PFD-1-2 : <strong>peak floor displacement</strong> (respective to the ground) at the <strong>1st floor</strong> ceiling, <strong>component 2</strong> (y-dir)</p></li>
+<li><p>1-PID-3-1 : <strong>peak inter-story drift ratio</strong> of the <strong>3rd floor</strong>, <strong>component 1</strong> (x-dir)</p></li>
+<li><p>1-RMSA-10-1 : <strong>root-mean-squared acceleration</strong> of the <strong>10th floor</strong>, <strong>component 1</strong> (x-dir)</p></li>
+</ul>
+</div></blockquote>
+<p>The response statistics are first displayed.</p>
+<div class="align-center figure" id="id15">
+<a class="reference internal image-reference" href="../../../../../_images/we12_RES1.png"><img alt="../../../../../_images/we12_RES1.png" src="../../../../../_images/we12_RES1.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.4.3.1 </span><span class="caption-text">RES tab - statistics</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+<p>Additionally, the user can browse the sample realization values and inspect the correlation between various components.</p>
+<div class="align-center figure" id="id16">
+<a class="reference internal image-reference" href="../../../../../_images/we12_RES2.png"><img alt="../../../../../_images/we12_RES2.png" src="../../../../../_images/we12_RES2.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.4.3.2 </span><span class="caption-text">RES tab - scatter plots</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The user can interact with the plot as follows.</p>
+<ul class="simple">
+<li><p>Windows: left-click sets the Y axis (ordinate). right-click sets the X axis (abscissa).</p></li>
+<li><p>MAC: fn-clink, option-click, and command-click all set the Y axis (ordinate). ctrl-click sets the X axis (abscissa).</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2023, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-2', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>
