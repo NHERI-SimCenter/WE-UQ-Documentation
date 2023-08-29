@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.4. Wind Tunnel-Informed Stochastic Wind Load Generation &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>3.3. Wind Tunnel-Informed Stochastic Wind Load Generation &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="4. Troubleshooting" href="../../../troubleshooting/desktop/troubleshooting.html" />
-    <link rel="prev" title="3.3. Digital Wind Tunnel" href="../weuq-0011/README.html" />
+    <link rel="next" title="3.4. Digital Wind Tunnel I: Empty Domain Simulation" href="../weuq-0011/README.html" />
+    <link rel="prev" title="3.2. 3 Story Building: Sensitivity Analysis" href="../weuq-0007/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -114,9 +114,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../releases/weCapabilities.html">5. Capabilities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../releases/wePlans.html">6. Release Plans</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">7. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/weReleaseNotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/wePlans.html">7. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -125,18 +126,24 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../examples.html">3. Examples</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../weuq-0001/README.html">3.1. 9 Story Building: Sampling Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../weuq-0007/README.html">3.2. 3 Story Building: Sensitivity Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../weuq-0011/README.html">3.3. Digital Wind Tunnel</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.4. Wind Tunnel-Informed Stochastic Wind Load Generation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#preparation-of-wind-force-time-history-file">3.4.1. Preparation of “Wind Force Time History File”</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#workflow">3.4.2. Workflow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">3.4.3. Preparation of “Wind Force Time History File”</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.3. Wind Tunnel-Informed Stochastic Wind Load Generation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#preparation-of-wind-force-time-history-file">3.3.1. Preparation of “Wind Force Time History File”</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#workflow">3.3.2. Workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">3.3.3. Preparation of “Wind Force Time History File”</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../weuq-0011/README.html">3.4. Digital Wind Tunnel I: Empty Domain Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../weuq-0013/README.html">3.5. Digital Wind Tunnel II: Wind Loads on Isolated Building</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -199,7 +206,7 @@
         
           <li><a href="../examples.html"><span class="section-number">3. </span>Examples</a> &raquo;</li>
         
-      <li><span class="section-number">3.4. </span>Wind Tunnel-Informed Stochastic Wind Load Generation</li>
+      <li><span class="section-number">3.3. </span>Wind Tunnel-Informed Stochastic Wind Load Generation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -219,7 +226,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="wind-tunnel-informed-stochastic-wind-load-generation">
-<span id="weuq-0012"></span><h1><span class="section-number">3.4. </span>Wind Tunnel-Informed Stochastic Wind Load Generation<a class="headerlink" href="#wind-tunnel-informed-stochastic-wind-load-generation" title="Permalink to this headline">¶</a></h1>
+<span id="weuq-0012"></span><h1><span class="section-number">3.3. </span>Wind Tunnel-Informed Stochastic Wind Load Generation<a class="headerlink" href="#wind-tunnel-informed-stochastic-wind-load-generation" title="Permalink to this headline">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 39%" />
@@ -234,7 +241,7 @@
 <p>This example estimates the probabilistic response of a building model excited by wind tunnel-informed stochastic wind load. This example uses the experimental data obtained in University of Florida (UF) NHERI Experimental Facility (EF), and applies the generated load to a 25-story rectangular shape building response simulation model.</p>
 <div class="align-center figure" id="id5">
 <span id="fig-we12-1"></span><a class="reference internal image-reference" href="../../../../../_images/we12_1.png"><img alt="../../../../../_images/we12_1.png" src="../../../../../_images/we12_1.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.4.1 </span><span class="caption-text">Generating full-scale wind force time series from a model-scale wind force time series obtained from wind tunnel experiments.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3.1 </span><span class="caption-text">Generating full-scale wind force time series from a model-scale wind force time series obtained from wind tunnel experiments.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>This example uses the data presented in <a class="reference internal" href="#duarte2023" id="id1"><span>[Duarte2023]</span></a>.</p>
 <dl class="citation">
@@ -243,10 +250,10 @@
 </dd>
 </dl>
 <div class="section" id="preparation-of-wind-force-time-history-file">
-<h2><span class="section-number">3.4.1. </span>Preparation of “Wind Force Time History File”<a class="headerlink" href="#preparation-of-wind-force-time-history-file" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3.1. </span>Preparation of “Wind Force Time History File”<a class="headerlink" href="#preparation-of-wind-force-time-history-file" title="Permalink to this headline">¶</a></h2>
 <p>The experimental records should first be post-processed by the user such that <strong>wind force time histories applied at each floor and each component</strong> can be directly imported in WE-UQ at the EVT tab. The dataset can be imported as either a matlab binary file or a json file. Additionally, the model-scale dimensions and additional information on the experiment should be provided. Please refer to <a class="reference internal" href="../../../usage/desktop/wind/ExperimentalWindForce.html#lblexperimentalwindforce"><span class="std std-ref">the user manual</span></a> for the list of variables the file should contain. In this example, the variables in the below table is imported as a json file. Note that the x- and y- directional forces and z-directional moments at each of the 25 stories are recorded for 32 sec with dt=0.0016 sec (20,000 time points). The reference wind speed (Vref) was measured on top of the building model.</p>
 <table class="docutils align-center" id="id6">
-<caption><span class="caption-number">Table 3.4.1.1 </span><span class="caption-text">Variables imported to WE-UQ</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 3.3.1.1 </span><span class="caption-text">Variables imported to WE-UQ</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 21%" />
 <col style="width: 43%" />
@@ -299,16 +306,16 @@
 </table>
 <div class="align-center figure" id="id7">
 <span id="fig-we12-2"></span><a class="reference internal image-reference" href="../../../../../_images/we12_2.png"><img alt="../../../../../_images/we12_2.png" src="../../../../../_images/we12_2.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.4.1.1 </span><span class="caption-text">The experiment was performed at UF <a class="reference internal" href="#duarte2023" id="id2"><span>[Duarte2023]</span></a>.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3.1.1 </span><span class="caption-text">The experiment was performed at UF <a class="reference internal" href="#duarte2023" id="id2"><span>[Duarte2023]</span></a>.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id8">
 <span id="fig-we12-3"></span><a class="reference internal image-reference" href="../../../../../_images/we12_3.png"><img alt="../../../../../_images/we12_3.png" src="../../../../../_images/we12_3.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.4.1.2 </span><span class="caption-text">Examples of Wind Force Time Series in Fx, Fy, Tz arrays <a class="reference internal" href="#duarte2023" id="id3"><span>[Duarte2023]</span></a>.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3.1.2 </span><span class="caption-text">Examples of Wind Force Time Series in Fx, Fy, Tz arrays <a class="reference internal" href="#duarte2023" id="id3"><span>[Duarte2023]</span></a>.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>The json file used in this example is named <code class="docutils literal notranslate"><span class="pre">Forces_ANG000_phase1.json</span></code>, and it can be found at <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples//weuq-0012//src">weuq-0012/src</a>. Using this information, WE-UQ will generate the stochastic wind loads that apply to a full-scale building model with <strong>scaling factor of 200</strong>.</p>
 </div>
 <div class="section" id="workflow">
-<h2><span class="section-number">3.4.2. </span>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3.2. </span>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This example can be directly loaded from the menu bar at the top of the screen by clicking “Examples”-“E4: Wind Tunnel-Informed Stochastic Wind Load Generation”. The user may want to increase the number of samples in the UQ tab for more stable results.</p>
@@ -318,24 +325,24 @@
 </ol>
 <div class="align-center figure" id="id9">
 <a class="reference internal image-reference" href="../../../../../_images/we12_UQ.png"><img alt="../../../../../_images/we12_UQ.png" src="../../../../../_images/we12_UQ.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.4.2.1 </span><span class="caption-text">UQ tab</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3.2.1 </span><span class="caption-text">UQ tab</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>In the GI tab, set <strong># Stories</strong> 25 as our dataset is for a 25-story building. Multiply the building scaling factor 200 by the model dimensions (0.5m x 0.3m x 0.6m; this information should be imported in “Wind Force Time History File” at the EVT tab as shown in the previous section) and specify the full-scale building dimension at <strong>Height, Width, and Depth</strong>, which respectively are 100, 60, and 120. Define the <strong>Force and Length Units</strong> of Newtons and Meters.</p></li>
 </ol>
 <div class="align-center figure" id="id10">
 <a class="reference internal image-reference" href="../../../../../_images/we12_GI.png"><img alt="../../../../../_images/we12_GI.png" src="../../../../../_images/we12_GI.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.4.2.2 </span><span class="caption-text">GI tab</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3.2.2 </span><span class="caption-text">GI tab</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple" start="3">
 <li><p>In the SIM tab, the building properties are specified. We used the floor weights of 1.e7 across the floors, and the stiffness values in each story are given as</p></li>
 </ol>
 <div class="align-center figure" id="id11">
 <a class="reference internal image-reference" href="../../../../../_images/we12_SIM.png"><img alt="../../../../../_images/we12_SIM.png" src="../../../../../_images/we12_SIM.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.4.2.3 </span><span class="caption-text">SIM tab</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3.2.3 </span><span class="caption-text">SIM tab</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <table class="docutils align-default" id="id12">
-<caption><span class="caption-number">Table 3.4.2.1 </span><span class="caption-text">Stiffness of the structure</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 3.3.2.1 </span><span class="caption-text">Stiffness of the structure</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -380,7 +387,7 @@
 </ol>
 <div class="align-center figure" id="id13">
 <a class="reference internal image-reference" href="../../../../../_images/we12_EVT.png"><img alt="../../../../../_images/we12_EVT.png" src="../../../../../_images/we12_EVT.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.4.2.4 </span><span class="caption-text">EVT tab</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3.2.4 </span><span class="caption-text">EVT tab</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple" start="5">
 <li><p>The FEM and EDP tabs are kept as default. Under the <strong>Standard Wind</strong> EDP, in this example, the structural model will automatically output peak floor acceleration (PFA), peak floor displacement respective to the ground (PFD), Peak inter-story drift ratio (PID), root-mean-squared acceleration (RMSA).</p></li>
@@ -388,7 +395,7 @@
 </ol>
 <div class="align-center figure" id="id14">
 <a class="reference internal image-reference" href="../../../../../_images/we12_RV.png"><img alt="../../../../../_images/we12_RV.png" src="../../../../../_images/we12_RV.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.4.2.5 </span><span class="caption-text">RV tab</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3.2.5 </span><span class="caption-text">RV tab</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -399,7 +406,7 @@
 </ol>
 </div>
 <div class="section" id="id4">
-<h2><span class="section-number">3.4.3. </span>Preparation of “Wind Force Time History File”<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3.3. </span>Preparation of “Wind Force Time History File”<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>Once the analysis is done, the sampling results will be displayed in the RES tab. Note that the EDP name consists of the quantity of interest, story number, and the direction of interest - for example:</p>
 <blockquote>
 <div><ul class="simple">
@@ -412,12 +419,12 @@
 <p>The response statistics are first displayed.</p>
 <div class="align-center figure" id="id15">
 <a class="reference internal image-reference" href="../../../../../_images/we12_RES1.png"><img alt="../../../../../_images/we12_RES1.png" src="../../../../../_images/we12_RES1.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.4.3.1 </span><span class="caption-text">RES tab - statistics</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3.3.1 </span><span class="caption-text">RES tab - statistics</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <p>Additionally, the user can browse the sample realization values and inspect the correlation between various components.</p>
 <div class="align-center figure" id="id16">
 <a class="reference internal image-reference" href="../../../../../_images/we12_RES2.png"><img alt="../../../../../_images/we12_RES2.png" src="../../../../../_images/we12_RES2.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.4.3.2 </span><span class="caption-text">RES tab - scatter plots</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3.3.2 </span><span class="caption-text">RES tab - scatter plots</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

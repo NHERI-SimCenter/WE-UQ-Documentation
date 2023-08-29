@@ -114,9 +114,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">4. How To Cite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../releases/weCapabilities.html">5. Capabilities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../releases/wePlans.html">6. Release Plans</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">7. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../releases/weReleaseNotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../releases/wePlans.html">7. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -124,8 +125,9 @@
 <li class="toctree-l2"><a class="reference internal" href="install_Windows.html">1.1. Install on Windows 10</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">1.2. Install on macOS 10</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#install-python-3-9">1.2.1. Install Python 3.9</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#download-the-application">1.2.3. Download the Application</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#test-the-installation">1.2.4. Test the Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-openfoam-for-macos">1.2.3. Install OpenFOAM for macOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#download-the-application">1.2.4. Download the Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-the-installation">1.2.5. Test the Installation</a></li>
 </ul>
 </li>
 </ul>
@@ -135,6 +137,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -280,12 +287,21 @@
 <p>If the result is <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code> you will need to edit the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file or the <code class="docutils literal notranslate"><span class="pre">bash_profile</span></code> file. If the result is <code class="docutils literal notranslate"><span class="pre">/bin/zsh</span></code> you will need to edit the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.zprofile</span></code>. Typically, the <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code> or the <code class="docutils literal notranslate"><span class="pre">.zprofile</span></code> file is the one to edit as by design these will invoke the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file. If in doubt, look for these files in your home directory and see which of these other installers have modified.</p>
 </div>
 </div>
+<div class="section" id="install-openfoam-for-macos">
+<h2><span class="section-number">1.2.3. </span>Install OpenFOAM for macOS<a class="headerlink" href="#install-openfoam-for-macos" title="Permalink to this headline">¶</a></h2>
+<p>This version of the WE-UQ app uses <em>OpenFOAM</em> for pre-processing the CFD model. At the backend, the mesh generation and visualization in the GUI utilize <em>OpenFOAM-10</em> built in meshing tools.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The packaged distribution of OpenFOAM is only available for Linux system. To install OpenFOAM on macOS, the user needs to use  Docker for Mac. Docker will provides a virtual environment for running Linux applications on macOS.</p>
+</div>
+<p>To install OpenFOAM-10 on macOS, follow the instruction in <a class="reference external" href="https://openfoam.org/download/10-macos/">OpenFOAM for macOS</a> .</p>
+</div>
 <div class="section" id="download-the-application">
-<h2><span class="section-number">1.2.3. </span>Download the Application<a class="headerlink" href="#download-the-application" title="Permalink to this headline">¶</a></h2>
-<p>To download the WE-UQ app, navigate to the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ">WE-UQ Download</a> page which should resemble <a class="reference internal" href="#figdownload-we"><span class="std std-numref">Fig. 1.2.3.4</span></a>. The download page contains a list of downloadable files and directories.</p>
+<h2><span class="section-number">1.2.4. </span>Download the Application<a class="headerlink" href="#download-the-application" title="Permalink to this headline">¶</a></h2>
+<p>To download the WE-UQ app, navigate to the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ">WE-UQ Download</a> page which should resemble <a class="reference internal" href="#figdownload-we"><span class="std std-numref">Fig. 1.2.4.4</span></a>. The download page contains a list of downloadable files and directories.</p>
 <div class="align-center figure" id="id10">
 <span id="figdownload-we"></span><img alt="../../../../_images/weDownload.png" src="../../../../_images/weDownload.png" />
-<p class="caption"><span class="caption-number">Fig. 1.2.3.4 </span><span class="caption-text">WE-UQ download page.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.4.4 </span><span class="caption-text">WE-UQ download page.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <p>Click on the file with a name ending with <strong>Mac_Download.dmg</strong> to download the WE-UQ app. In the pop-up window, click on the <strong>Download</strong> button in the bottom right corner. After the download has completed, open the dmg file and copy the WE-UQ app application to a location in your filesystem.</p>
 <div class="admonition note">
@@ -294,7 +310,7 @@
 </div>
 </div>
 <div class="section" id="test-the-installation">
-<h2><span class="section-number">1.2.4. </span>Test the Installation<a class="headerlink" href="#test-the-installation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.2.5. </span>Test the Installation<a class="headerlink" href="#test-the-installation" title="Permalink to this headline">¶</a></h2>
 <p>Once the installation procedure has been completed, it is a good practice to run some basic checks. Navigate to the location where you placed the application and open it by running the WE-UQ.exe executable.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -304,10 +320,10 @@
 <img alt="../../../../_images/AppleSecurity.png" src="../../../../_images/AppleSecurity.png" />
 </div>
 </div>
-<p>Once the application started, you should see the user interface shown in <a class="reference internal" href="#figui-we"><span class="std std-numref">Fig. 1.2.4.4</span></a>. We recommend running the example problem <a class="reference internal" href="../../examples/desktop/weuq-0001/README.html#weuq-0001"><span class="std std-ref">9 Story Building: Sampling Analysis</span></a> to test the application.</p>
+<p>Once the application started, you should see the user interface shown in <a class="reference internal" href="#figui-we"><span class="std std-numref">Fig. 1.2.5.4</span></a>. We recommend running the example problem <a class="reference internal" href="../../examples/desktop/weuq-0001/README.html#weuq-0001"><span class="std std-ref">9 Story Building: Sampling Analysis</span></a> to test the application.</p>
 <div class="align-center figure" id="id16">
 <span id="figui-we"></span><img alt="../../../../_images/WE-UQ.png" src="../../../../_images/WE-UQ.png" />
-<p class="caption"><span class="caption-number">Fig. 1.2.4.4 </span><span class="caption-text">WE-UQ application on startup.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.5.4 </span><span class="caption-text">WE-UQ application on startup.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

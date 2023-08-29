@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.4.9. Experimental Wind Force &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>2.4.8. Experimental Wind Force &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.4.10. Wind Force Spectrum" href="WindForceSpectrum.html" />
-    <link rel="prev" title="2.4.8. Digital Wind Tunnel" href="DigitalWindTunnel.html" />
+    <link rel="next" title="2.4.9. Wind Force Spectrum" href="WindForceSpectrum.html" />
+    <link rel="prev" title="2.4.7. Multiple Existing" href="WeUQExisting.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -114,9 +114,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../releases/weCapabilities.html">5. Capabilities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../releases/wePlans.html">6. Release Plans</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">7. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/weReleaseNotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/wePlans.html">7. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -127,19 +128,18 @@
 <li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.3. SIM: Structural Model</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="WindEvents.html">2.4. EVT: Wind Events</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="stochasticWind.html">2.4.1. Stochastic Wind</a></li>
-<li class="toctree-l3"><a class="reference internal" href="CFDBasic.html">2.4.2. CFD Basic Template</a></li>
-<li class="toctree-l3"><a class="reference internal" href="CFDExpert.html">2.4.3. CFD Expert Template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DigitalWindTunnel.html">2.4.2. Digital Wind Tunnel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IsolatedBuildingCFD.html">2.4.3. Isolated Building CFD Model</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DEDMHrp.html">2.4.4. Database-Enabled Design Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="lowRiseTPU.html">2.4.5. Data from Tokyo Polytechnic University</a></li>
 <li class="toctree-l3"><a class="reference internal" href="windTunnelExp.html">2.4.6. Wind Tunnel Experiment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="WeUQExisting.html">2.4.7. Multiple Existing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DigitalWindTunnel.html">2.4.8. Digital Wind Tunnel</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.9. Experimental Wind Force</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#user-inputs">2.4.9.1. User Inputs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#wind-force-time-history-file">2.4.9.2. Wind Force Time History File</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.8. Experimental Wind Force</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#user-inputs">2.4.8.1. User Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wind-force-time-history-file">2.4.8.2. Wind Force Time History File</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="WindForceSpectrum.html">2.4.10. Wind Force Spectrum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WindForceSpectrum.html">2.4.9. Wind Force Spectrum</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
@@ -152,6 +152,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -216,7 +221,7 @@
         
           <li><a href="WindEvents.html"><span class="section-number">2.4. </span>EVT: Wind Events</a> &raquo;</li>
         
-      <li><span class="section-number">2.4.9. </span>Experimental Wind Force</li>
+      <li><span class="section-number">2.4.8. </span>Experimental Wind Force</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -236,11 +241,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="experimental-wind-force">
-<span id="lblexperimentalwindforce"></span><h1><span class="section-number">2.4.9. </span>Experimental Wind Force<a class="headerlink" href="#experimental-wind-force" title="Permalink to this headline">¶</a></h1>
+<span id="lblexperimentalwindforce"></span><h1><span class="section-number">2.4.8. </span>Experimental Wind Force<a class="headerlink" href="#experimental-wind-force" title="Permalink to this headline">¶</a></h1>
 <p>This application takes the wind force time series data obtained from a wind tunnel experiment and allows us to generate multiple stochastic (full-scale) wind time histories that preserve the spectral properties. The wind load is assumed to follow a Gaussian stochastic process. This algorithm follows the implementation details in <a class="reference internal" href="WindForceSpectrum.html#duarte2023" id="id1"><span>[Duarte2023]</span></a>.</p>
 <div class="align-center figure" id="id3">
 <span id="fig-experimentalwind0"></span><a class="reference internal image-reference" href="../../../../../_images/weuqExperimentalWindForces0.png"><img alt="../../../../../_images/weuqExperimentalWindForces0.png" src="../../../../../_images/weuqExperimentalWindForces0.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.9.1 </span><span class="caption-text">Generating full-scale wind force history from a model-scale wind force time history obtained from wind tunnel experiments.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.8.1 </span><span class="caption-text">Generating full-scale wind force history from a model-scale wind force time history obtained from wind tunnel experiments.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="citation">
 <dt class="label" id="duarte2023"><span class="brackets">Duarte2023</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
@@ -248,10 +253,10 @@
 </dd>
 </dl>
 <div class="section" id="user-inputs">
-<h2><span class="section-number">2.4.9.1. </span>User Inputs<a class="headerlink" href="#user-inputs" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.8.1. </span>User Inputs<a class="headerlink" href="#user-inputs" title="Permalink to this headline">¶</a></h2>
 <div class="align-center figure" id="id4">
 <span id="fig-experimentalwind1"></span><img alt="../../../../../_images/weuqExperimentalWindForces.png" src="../../../../../_images/weuqExperimentalWindForces.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.9.1.1 </span><span class="caption-text">Option to import experimental wind force time history</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.8.1.1 </span><span class="caption-text">Option to import experimental wind force time history</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
 <li><p><strong>Percentage of Modes</strong>: The truncation criteria for the proper orthogonal decomposition.</p></li>
@@ -265,12 +270,12 @@
 <p>Additional parameters for estimating cross-power spectrum density function can be specified, i.e. <strong>Window Size</strong> and <strong>Overlap Percentage</strong>. Note that the engine implemented in WE-UQ uses <code class="docutils literal notranslate"><span class="pre">scipy.signal.csd</span></code> function, and the detailed parameter information can be found in the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.csd.html">scipy user manual</a>.</p>
 <div class="align-center figure" id="id5">
 <span id="fig-experimentalwind2"></span><a class="reference internal image-reference" href="../../../../../_images/weuqExperimentalWindForces2.png"><img alt="../../../../../_images/weuqExperimentalWindForces2.png" src="../../../../../_images/weuqExperimentalWindForces2.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.9.1.2 </span><span class="caption-text">Option to import experimental wind force time history</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.8.1.2 </span><span class="caption-text">Option to import experimental wind force time history</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>The <strong>Full Scale Building Geometry</strong> and the <strong>Units</strong> are specified in the GI tab. The correct <strong>number of stories</strong> should also be provided.</p>
 <div class="align-center figure" id="id6">
 <span id="fig-experimentalwind5"></span><a class="reference internal image-reference" href="../../../../../_images/weuqExperimentalWindForces5.png"><img alt="../../../../../_images/weuqExperimentalWindForces5.png" src="../../../../../_images/weuqExperimentalWindForces5.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.9.1.3 </span><span class="caption-text">GI tab (Only the variables in the red box are relevant to the current module.)</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.8.1.3 </span><span class="caption-text">GI tab (Only the variables in the red box are relevant to the current module.)</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -278,10 +283,10 @@
 </div>
 </div>
 <div class="section" id="wind-force-time-history-file">
-<h2><span class="section-number">2.4.9.2. </span>Wind Force Time History File<a class="headerlink" href="#wind-force-time-history-file" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.8.2. </span>Wind Force Time History File<a class="headerlink" href="#wind-force-time-history-file" title="Permalink to this headline">¶</a></h2>
 <div class="align-center figure" id="id7">
 <span id="fig-experimentalwind6"></span><a class="reference internal image-reference" href="../../../../../_images/weuqExperimentalWindForces6.png"><img alt="../../../../../_images/weuqExperimentalWindForces6.png" src="../../../../../_images/weuqExperimentalWindForces6.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.9.2.1 </span><span class="caption-text">Schematic representation of the building and the loads, and the coordinate system (<a class="reference internal" href="WindForceSpectrum.html#duarte2023" id="id2"><span>[Duarte2023]</span></a> )</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.8.2.1 </span><span class="caption-text">Schematic representation of the building and the loads, and the coordinate system (<a class="reference internal" href="WindForceSpectrum.html#duarte2023" id="id2"><span>[Duarte2023]</span></a> )</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>The details of experimental wind force data should be provided either in a matlab binary (.mat) or json (.json) file. The following variables (or keys) need to be included (<code class="docutils literal notranslate"><span class="pre">ntimestep</span></code>: number of time steps, <code class="docutils literal notranslate"><span class="pre">nfloor</span></code>: number of floors of the building)</p>
 <ul class="simple">
@@ -297,11 +302,11 @@
 </ul>
 <div class="align-center figure" id="id8">
 <span id="fig-experimentalwind3"></span><a class="reference internal image-reference" href="../../../../../_images/weuqExperimentalWindForces3.png"><img alt="../../../../../_images/weuqExperimentalWindForces3.png" src="../../../../../_images/weuqExperimentalWindForces3.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.9.2.2 </span><span class="caption-text">Example of information inside a matlab binary file (.mat) (<code class="docutils literal notranslate"><span class="pre">nfloor</span></code> = 25, <code class="docutils literal notranslate"><span class="pre">ntimesteps</span></code> = 20,000, units: meter, Newton, second)</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.8.2.2 </span><span class="caption-text">Example of information inside a matlab binary file (.mat) (<code class="docutils literal notranslate"><span class="pre">nfloor</span></code> = 25, <code class="docutils literal notranslate"><span class="pre">ntimesteps</span></code> = 20,000, units: meter, Newton, second)</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id9">
 <span id="fig-experimentalwind4"></span><a class="reference internal image-reference" href="../../../../../_images/weuqExperimentalWindForces4.png"><img alt="../../../../../_images/weuqExperimentalWindForces4.png" src="../../../../../_images/weuqExperimentalWindForces4.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.9.2.3 </span><span class="caption-text">Example of information inside a Json file (.json) (<code class="docutils literal notranslate"><span class="pre">nfloor</span></code> = 25, <code class="docutils literal notranslate"><span class="pre">ntimesteps</span></code> = 20,000, units: meter, Newton, second)</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.8.2.3 </span><span class="caption-text">Example of information inside a Json file (.json) (<code class="docutils literal notranslate"><span class="pre">nfloor</span></code> = 25, <code class="docutils literal notranslate"><span class="pre">ntimesteps</span></code> = 20,000, units: meter, Newton, second)</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p>The example Json file shown in the image can be found at <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples//weuq-0012//src">weuq-0012/src</a>, named <code class="docutils literal notranslate"><span class="pre">Forces_ANG000_phase1.json</span></code></p>
 </div>

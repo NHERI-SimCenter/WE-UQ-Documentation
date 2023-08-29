@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.4.8. Digital Wind Tunnel &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>2.4.2. Digital Wind Tunnel &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.4.9. Experimental Wind Force" href="ExperimentalWindForce.html" />
-    <link rel="prev" title="2.4.7. Multiple Existing" href="WeUQExisting.html" />
+    <link rel="next" title="2.4.3. Isolated Building CFD Model" href="IsolatedBuildingCFD.html" />
+    <link rel="prev" title="2.4.1. Stochastic Wind" href="stochasticWind.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -114,9 +114,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../releases/weCapabilities.html">5. Capabilities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../releases/wePlans.html">6. Release Plans</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">7. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/weReleaseNotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/wePlans.html">7. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -127,15 +128,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.3. SIM: Structural Model</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="WindEvents.html">2.4. EVT: Wind Events</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="stochasticWind.html">2.4.1. Stochastic Wind</a></li>
-<li class="toctree-l3"><a class="reference internal" href="CFDBasic.html">2.4.2. CFD Basic Template</a></li>
-<li class="toctree-l3"><a class="reference internal" href="CFDExpert.html">2.4.3. CFD Expert Template</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.2. Digital Wind Tunnel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IsolatedBuildingCFD.html">2.4.3. Isolated Building CFD Model</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DEDMHrp.html">2.4.4. Database-Enabled Design Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="lowRiseTPU.html">2.4.5. Data from Tokyo Polytechnic University</a></li>
 <li class="toctree-l3"><a class="reference internal" href="windTunnelExp.html">2.4.6. Wind Tunnel Experiment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="WeUQExisting.html">2.4.7. Multiple Existing</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.8. Digital Wind Tunnel</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ExperimentalWindForce.html">2.4.9. Experimental Wind Force</a></li>
-<li class="toctree-l3"><a class="reference internal" href="WindForceSpectrum.html">2.4.10. Wind Force Spectrum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ExperimentalWindForce.html">2.4.8. Experimental Wind Force</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WindForceSpectrum.html">2.4.9. Wind Force Spectrum</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
@@ -148,6 +148,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -212,7 +217,7 @@
         
           <li><a href="WindEvents.html"><span class="section-number">2.4. </span>EVT: Wind Events</a> &raquo;</li>
         
-      <li><span class="section-number">2.4.8. </span>Digital Wind Tunnel</li>
+      <li><span class="section-number">2.4.2. </span>Digital Wind Tunnel</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -232,7 +237,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="digital-wind-tunnel">
-<h1><span class="section-number">2.4.8. </span>Digital Wind Tunnel<a class="headerlink" href="#digital-wind-tunnel" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2.4.2. </span>Digital Wind Tunnel<a class="headerlink" href="#digital-wind-tunnel" title="Permalink to this headline">¶</a></h1>
 <p>The Digital Wind Tunnel provides great flexibility in testing different designs and wind scenarios. This features allows users to run CFD simulations with user-defined atmospheric boundary layer inflow conditions and with user-defined OpenFOAM models. It can be implemented with the empty domain for validation purposes, or users can provide their own building model for analysis. This initial version is limited in scope due to the following assumptions:</p>
 <ol class="arabic simple">
 <li><p>Meshing is performed using the <em>snappyHexMesh</em> tool.</p></li>
@@ -244,26 +249,26 @@
 <p>It is important to note that this type of event is only supported when running the simulation at DesignSafe and does not run on the local computer. For that reason, users need to create a DesignSafe account in order to use this feature.</p>
 <p>The user needs to input certain parameters, which are summarized as follows:</p>
 <ol class="arabic simple">
-<li><p><strong>Case:</strong> The user-defined OpenFOAM case can be uploaded by pressing the “Browse” button as shown in <a class="reference internal" href="#fig-dwt-upload-case"><span class="std std-numref">Fig. 2.4.8.1</span></a>. By default, this is set to a benchmark case that is provided by the SimCenter in the community directory.</p></li>
-<li><p><strong>Inflow Conditions:</strong> Select the patch where the inflow conditions will be specified for the CFD simulation as shown in <a class="reference internal" href="#fig-dwt-inflow-method"><span class="std std-numref">Fig. 2.4.8.2</span></a>.</p></li>
-<li><p><strong>Method selection:</strong> Select the inflow turbulence generation approach as shown in <a class="reference internal" href="#fig-dwt-inflow-method"><span class="std std-numref">Fig. 2.4.8.2</span></a>. The Digital Wind Tunnel incorporates the Turbulence Inflow Tool (TInF) developed by NHERI SimCenter, which features four inflow turbulence generation approaches. The basic parameter settings can be referred to <a class="reference external" href="https://nheri-simcenter.github.io/TinF-Documentation/">Turbulence Inflow Tool (TInF) documentation</a>.</p></li>
+<li><p><strong>Case:</strong> The user-defined OpenFOAM case can be uploaded by pressing the “Browse” button as shown in <a class="reference internal" href="#fig-dwt-upload-case"><span class="std std-numref">Fig. 2.4.2.1</span></a>. By default, this is set to a benchmark case that is provided by the SimCenter in the community directory.</p></li>
+<li><p><strong>Inflow Conditions:</strong> Select the patch where the inflow conditions will be specified for the CFD simulation as shown in <a class="reference internal" href="#fig-dwt-inflow-method"><span class="std std-numref">Fig. 2.4.2.2</span></a>.</p></li>
+<li><p><strong>Method selection:</strong> Select the inflow turbulence generation approach as shown in <a class="reference internal" href="#fig-dwt-inflow-method"><span class="std std-numref">Fig. 2.4.2.2</span></a>. The Digital Wind Tunnel incorporates the Turbulence Inflow Tool (TInF) developed by NHERI SimCenter, which features four inflow turbulence generation approaches. The basic parameter settings can be referred to <a class="reference external" href="https://nheri-simcenter.github.io/TinF-Documentation/">Turbulence Inflow Tool (TInF) documentation</a>.</p></li>
 </ol>
 <div class="align-center figure" id="id2">
 <span id="fig-dwt-upload-case"></span><img alt="../../../../../_images/DWTcase.png" src="../../../../../_images/DWTcase.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.8.1 </span><span class="caption-text">Uploading a user-defined CFD model.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.2.1 </span><span class="caption-text">Uploading a user-defined CFD model.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id3">
 <span id="fig-dwt-inflow-method"></span><img alt="../../../../../_images/DWTmethod.png" src="../../../../../_images/DWTmethod.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.8.2 </span><span class="caption-text">Selecting the inflow patch and turbulence generation approach.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.2.2 </span><span class="caption-text">Selecting the inflow patch and turbulence generation approach.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
-<p>After selecting a particular approach for inflow turbulence generation, the statistical information of the inflow turbulence is required by the selected approach. The Digital Wind Tunnel offers two input options for users as shown in <a class="reference internal" href="#fig-dwt-inflow-option2"><span class="std std-numref">Fig. 2.4.8.3</span></a>:</p>
+<p>After selecting a particular approach for inflow turbulence generation, the statistical information of the inflow turbulence is required by the selected approach. The Digital Wind Tunnel offers two input options for users as shown in <a class="reference internal" href="#fig-dwt-inflow-option2"><span class="std std-numref">Fig. 2.4.2.3</span></a>:</p>
 <ol class="arabic simple">
 <li><p><strong>User-defined inflow boundary data:</strong> This option allows users to specify the inflow turbulence properties obtained from wind tunnel measurements, such as mean velocity, Reynolds stress, and length scales at the inflow boundary for a CFD simulation. By pressing the “Browse” button, the <strong>csv</strong> file format can be uploaded and displayed in the user interface.</p></li>
 <li><p><strong>Inflow turbulence parameters:</strong> Users can also specify the inflow conditions through the embedded functions in the Digital Wind Tunnel. There are three functions to characterize the atmospheric inflow profiles: uniform function, exponential function and logarithmic function. The uniform function assumes a constant wind velocity over the entire simulation domain, but may not accurately represent the complex nature of atmospheric boundary layer flows. The exponential function is often used to represent the vertical profile of wind velocity in the atmospheric boundary layer. The logarithmic function is another commonly used function that also represents the vertical profile of wind speed in the atmospheric boundary layer, based on the assumption of a logarithmic variation of wind velocity with height. Detailed information about the parameter settings can be referred to <a class="reference external" href="https://nheri-simcenter.github.io/TinF-Documentation/">Turbulence Inflow Tool (TInF) documentation</a>.</p></li>
 </ol>
 <div class="align-center figure" id="id4">
 <span id="fig-dwt-inflow-option2"></span><img alt="../../../../../_images/DWTvelocity.png" src="../../../../../_images/DWTvelocity.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.8.3 </span><span class="caption-text">Two options to configure inflow conditions.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.2.3 </span><span class="caption-text">Two options to configure inflow conditions.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>After the CFD model with the appropriate inflow conditions is set up, the next step is to run the simulation. Press the <strong>RUN at DesignSafe</strong> button to submit the job to TACC Frontera HPC resources. Once the simulation is completed, download the data from <strong>GET from DesignSafe</strong> for post-processing.</p>
 </div>
