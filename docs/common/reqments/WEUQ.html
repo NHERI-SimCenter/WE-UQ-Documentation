@@ -221,7 +221,7 @@
             
   <div class="section" id="requirements">
 <span id="lblrequirements"></span><h1><span class="section-number">5. </span>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h1>
-<p>The following contains the functional requirements for the WE-UQ application. These requirements are broken down into a number of groups, <strong>general</strong>, <strong>earthquake loading</strong>, <strong>building description</strong>, <strong>analysis</strong>, and <strong>UQ</strong>.</p>
+<p>The following contains the functional requirements for the WE-UQ application. These requirements are broken down into a number of groups, <strong>general</strong>, <strong>wind loading</strong>, <strong>building description</strong>, <strong>analysis</strong>, and <strong>UQ</strong>.</p>
 <p>The purpose of presenting these requirements is to inform the community on the present capabilities of the WE-UQ application and features that could be added. The original set of requirements have come from a set of grand challenge reports, <strong>GC</strong>. These original requirements have been broken into a smaller set of deliverable features by the senior faculty associated with the project, <strong>SP</strong>. Additional requirements have come from users through the User Forum, <strong>UF</strong>. See section <span class="xref std std-ref">features</span> if you have additional features you would like to see.</p>
 <div class="section" id="general-requirements">
 <h2><span class="section-number">5.1. </span>General Requirements<a class="headerlink" href="#general-requirements" title="Permalink to this headline">¶</a></h2>
@@ -442,7 +442,231 @@
 <div class="section" id="loading-requirements">
 <h2><span class="section-number">5.2. </span>Loading Requirements<a class="headerlink" href="#loading-requirements" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-given docutils align-default" id="id6">
-<caption><span class="caption-number">Table 5.2.1 </span><span class="caption-text">Requirements - Earthquake Loading</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 5.2.1 </span><span class="caption-text">Requirements - Wind Loading</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 60%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Source</p></th>
+<th class="head"><p>Priority</p></th>
+<th class="head"><p>Version</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>WL</p></td>
+<td><p>Loading from Wind Hazards (Hurricane, Downbursts, Tornados) on Local and Regional Assets</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-odd"><td><p>WL.1</p></td>
+<td><p>Regional Loading due to Wind Hazards</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>WL.1.1</p></td>
+<td><p>Regional Hurricane Wind Options</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-odd"><td><p>WL.1.1.1</p></td>
+<td><p>Utilize GIS and online to account for wind speed given local terrain, topography and nearby buildings</p></td>
+<td><p>GC</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>WL.1.1.2</p></td>
+<td><p>MultiScale Wind Models</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>WL.1.1.3</p></td>
+<td><p>Multi-scale models for wind and water flows, i.e. lower fidelity regional models with more refined models to capture local flow</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>WL.1.2</p></td>
+<td><p>Modeling and simulation for determination of wind loads due to non-synoptic winds, including tornadoes</p></td>
+<td><p>GC</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>WL.1.3</p></td>
+<td><p>Interface with Open-Source Applications that can provide Hazard loading</p></td>
+<td><p>GC</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>WL.1.3.1</p></td>
+<td><p>Interface with NOAA</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>WL.2</p></td>
+<td><p>Local Scale Wind Hazard Options</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>WL.2.1</p></td>
+<td><p>Utilize Extensive wind tunnel datasets in industry and academia for wide range of building shapes</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>WL.2.1.1</p></td>
+<td><p>Accommodate Range of Low Rise building shapes</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>WL.2.1.1.1</p></td>
+<td><p>Flat Shaped Roof - TPU dataset</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>WL.2.1.1.2</p></td>
+<td><p>Gable Shaped Roof - TPU dataset</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>WL.2.1.1.3</p></td>
+<td><p>Hipped Shaped Roof - TPU dataset</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>WL.2.1.2</p></td>
+<td><p>Accommodate Range of High Rise building</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>WL.2.1.3</p></td>
+<td><p>Non Isolated Low Rise Buildings - TPU dataset</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-odd"><td><p>WL.2.2</p></td>
+<td><p>Interface with data driven</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>WL.2.2.1</p></td>
+<td><p>Interface with Vortex Winds DEDM-HRP Web service</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>WL.2.3</p></td>
+<td><p>Accommodate Data from Wind Tunnel Experiment</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>WL.2.4</p></td>
+<td><p>Simple CFD model generation and turbulence modeling</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>WL.2.5</p></td>
+<td><p>Computational Fluid Dynamics tool for utilizing open source CFD software for practitioners</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>WL.2.5.1</p></td>
+<td><p>Uncoupled OpenFOAM CFD model with nonlinear FEM code for building response</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>WL.2.5.1</p></td>
+<td><p>Coupled OpenFOAM CFD model with linear FEM code for building response</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+</tr>
+<tr class="row-even"><td><p>WL.2.5.2</p></td>
+<td><p>Inflow Conditions for non-synoptic winds</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>WL.2.6</p></td>
+<td><p>Quantification of Effects of Wind Borne Debris</p></td>
+<td><p>GC</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>WL.2.7</p></td>
+<td><p>Ability to utilize synthetic wind loading algorithms</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p>WL.2.7.1</p></td>
+<td><p>per Wittig and Sinha</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+</tr>
+<tr class="row-even"><td><p>WL.2.8</p></td>
+<td><p>Hazard modification by terrain, topography, and nearby buildings</p></td>
+<td><p>GC</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>WL.2.9</p></td>
+<td><p>Probabilistic methods are needed to enable site-specific and storm-type specific characterization of likely debris types, weights, and speeds</p></td>
+<td><p>GC</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>WL.2.10</p></td>
+<td><p>Joint description for hurricane wind, storm surge, and wave hazards</p></td>
+<td><p>GC</p></td>
+<td><p>D</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>WL.2.11</p></td>
+<td><p>Libraries of high resolution hurricane wind/surge/wave simulations</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>WL.2.12</p></td>
+<td><p>Multi-scale models for wind and water flows, i.e. lower fidelity regional models with more refined models to capture local flow</p></td>
+<td><p>SP</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>WL.2.13</p></td>
+<td><p>Ability to select surrogate modeling events</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default" id="id7">
+<caption><span class="caption-number">Table 5.2.2 </span><span class="caption-text">Requirements - Earthquake Loading</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 50%" />
@@ -634,8 +858,8 @@
 </div>
 <div class="section" id="uq-requirements">
 <h2><span class="section-number">5.3. </span>UQ Requirements<a class="headerlink" href="#uq-requirements" title="Permalink to this headline">¶</a></h2>
-<table class="colwidths-given docutils align-default" id="id7">
-<caption><span class="caption-number">Table 5.3.1 </span><span class="caption-text">Requirements - Uncertainty Quantification Methods and Variables</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<table class="colwidths-given docutils align-default" id="id8">
+<caption><span class="caption-number">Table 5.3.1 </span><span class="caption-text">Requirements - Uncertainty Quantification Methods and Variables</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 50%" />
@@ -948,8 +1172,8 @@
 </div>
 <div class="section" id="modeling-requirements">
 <h2><span class="section-number">5.4. </span>Modeling Requirements<a class="headerlink" href="#modeling-requirements" title="Permalink to this headline">¶</a></h2>
-<table class="colwidths-given docutils align-default" id="id8">
-<caption><span class="caption-number">Table 5.4.1 </span><span class="caption-text">Requirements - Modeling</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<table class="colwidths-given docutils align-default" id="id9">
+<caption><span class="caption-number">Table 5.4.1 </span><span class="caption-text">Requirements - Modeling</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 50%" />
@@ -1038,8 +1262,8 @@
 </div>
 <div class="section" id="analysis-requirements">
 <h2><span class="section-number">5.5. </span>Analysis Requirements<a class="headerlink" href="#analysis-requirements" title="Permalink to this headline">¶</a></h2>
-<table class="colwidths-given docutils align-default" id="id9">
-<caption><span class="caption-number">Table 5.5.1 </span><span class="caption-text">Requirements - Analysis</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
+<table class="colwidths-given docutils align-default" id="id10">
+<caption><span class="caption-number">Table 5.5.1 </span><span class="caption-text">Requirements - Analysis</span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 50%" />
@@ -1149,8 +1373,8 @@
 </div>
 <div class="section" id="common-research-application-requirements">
 <h2><span class="section-number">5.6. </span>Common Research Application Requirements<a class="headerlink" href="#common-research-application-requirements" title="Permalink to this headline">¶</a></h2>
-<table class="colwidths-given docutils align-default" id="id10">
-<caption><span class="caption-number">Table 5.6.1 </span><span class="caption-text">Requirements - CR</span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
+<table class="colwidths-given docutils align-default" id="id11">
+<caption><span class="caption-number">Table 5.6.1 </span><span class="caption-text">Requirements - CR</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 50%" />
