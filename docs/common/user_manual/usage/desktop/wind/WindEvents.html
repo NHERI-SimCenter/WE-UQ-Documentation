@@ -122,18 +122,20 @@
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Guide</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Interface</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GI.html">2.2. GI: General Information</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.3. SIM: Structural Model</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.4. EVT: Wind Events</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="stochasticWind.html">2.4.1. Stochastic Wind</a></li>
-<li class="toctree-l3"><a class="reference internal" href="CFDBasic.html">2.4.2. CFD Basic Template</a></li>
-<li class="toctree-l3"><a class="reference internal" href="CFDExpert.html">2.4.3. CFD Expert Template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DigitalWindTunnel.html">2.4.2. Digital Wind Tunnel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IsolatedBuildingCFD.html">2.4.3. Isolated Building CFD Model</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DEDMHrp.html">2.4.4. Database-Enabled Design Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="lowRiseTPU.html">2.4.5. Data from Tokyo Polytechnic University</a></li>
 <li class="toctree-l3"><a class="reference internal" href="windTunnelExp.html">2.4.6. Wind Tunnel Experiment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="WeUQExisting.html">2.4.7. Multiple Existing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ExperimentalWindForce.html">2.4.8. Experimental Wind Force (Time Series Input)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WindForceSpectrum.html">2.4.9. Wind Force Spectrum</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
@@ -142,8 +144,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../response/resEE.html">2.8. RES: Results</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">3. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
@@ -206,7 +208,7 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
+          <li><a href="../usage.html"><span class="section-number">2. </span>User Interface</a> &raquo;</li>
         
       <li><span class="section-number">2.4. </span>EVT: Wind Events</li>
     
@@ -233,12 +235,56 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="stochasticWind.html">2.4.1. Stochastic Wind</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CFDBasic.html">2.4.2. CFD Basic Template</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CFDExpert.html">2.4.3. CFD Expert Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DigitalWindTunnel.html">2.4.2. Digital Wind Tunnel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IsolatedBuildingCFD.html">2.4.3. Isolated Building CFD Model</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="IsolatedBuildingCFD.html#start">2.4.3.1. Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IsolatedBuildingCFD.html#geometry">2.4.3.2. Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="IsolatedBuildingCFD.html#meshing">2.4.3.3. Meshing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="IsolatedBuildingCFD.html#background-mesh">Background Mesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IsolatedBuildingCFD.html#refinement-regions">Refinement Regions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IsolatedBuildingCFD.html#surface-refinements">Surface Refinements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IsolatedBuildingCFD.html#edge-refinement">Edge Refinement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IsolatedBuildingCFD.html#prism-layers">Prism Layers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IsolatedBuildingCFD.html#advanced-options">Advanced Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IsolatedBuildingCFD.html#running-the-mesh">Running the Mesh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IsolatedBuildingCFD.html#viewing-the-mesh">Viewing the Mesh</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="IsolatedBuildingCFD.html#boundary-conditions">2.4.3.4. Boundary Conditions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="IsolatedBuildingCFD.html#approaching-wind-characteristics">Approaching Wind Characteristics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IsolatedBuildingCFD.html#initial-and-boundary-conditions">Initial and Boundary Conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IsolatedBuildingCFD.html#inflow-generation">Inflow Generation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="IsolatedBuildingCFD.html#numerical-setup">2.4.3.5. Numerical Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="IsolatedBuildingCFD.html#turbulence-modeling">Turbulence Modeling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IsolatedBuildingCFD.html#solver-selection">Solver Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IsolatedBuildingCFD.html#duration-and-time-step">Duration and Time Step</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IsolatedBuildingCFD.html#parallelization">Parallelization</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="IsolatedBuildingCFD.html#monitoring">2.4.3.6. Monitoring</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="IsolatedBuildingCFD.html#base-loads">Base Loads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IsolatedBuildingCFD.html#story-loads">Story Loads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IsolatedBuildingCFD.html#cladding-loads">Cladding Loads</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="DEDMHrp.html">2.4.4. Database-Enabled Design Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lowRiseTPU.html">2.4.5. Data from Tokyo Polytechnic University</a></li>
 <li class="toctree-l1"><a class="reference internal" href="windTunnelExp.html">2.4.6. Wind Tunnel Experiment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="WeUQExisting.html">2.4.7. Multiple Existing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExperimentalWindForce.html">2.4.8. Experimental Wind Force (Time Series Input)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ExperimentalWindForce.html#user-inputs">2.4.8.1. User Inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ExperimentalWindForce.html#wind-force-time-history-file">2.4.8.2. Wind Force Time History File</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="WindForceSpectrum.html">2.4.9. Wind Force Spectrum</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="WindForceSpectrum.html#user-inputs">2.4.9.1. User Inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WindForceSpectrum.html#wind-force-spectrum-file">2.4.9.2. Wind Force Spectrum File</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>

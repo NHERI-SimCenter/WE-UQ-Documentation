@@ -1,0 +1,825 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2.4.3. Isolated Building CFD Model &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="2.4.4. Database-Enabled Design Module" href="DEDMHrp.html" />
+    <link rel="prev" title="2.4.2. Digital Wind Tunnel" href="DigitalWindTunnel.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/WE-UQ-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/WEUQ/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/weCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/weReleaseNotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/wePlans.html">7. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GI.html">2.2. GI: General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.3. SIM: Structural Model</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="WindEvents.html">2.4. EVT: Wind Events</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="stochasticWind.html">2.4.1. Stochastic Wind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DigitalWindTunnel.html">2.4.2. Digital Wind Tunnel</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.3. Isolated Building CFD Model</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#start">2.4.3.1. Start</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geometry">2.4.3.2. Geometry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#meshing">2.4.3.3. Meshing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#boundary-conditions">2.4.3.4. Boundary Conditions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#numerical-setup">2.4.3.5. Numerical Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#monitoring">2.4.3.6. Monitoring</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="DEDMHrp.html">2.4.4. Database-Enabled Design Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lowRiseTPU.html">2.4.5. Data from Tokyo Polytechnic University</a></li>
+<li class="toctree-l3"><a class="reference internal" href="windTunnelExp.html">2.4.6. Wind Tunnel Experiment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WeUQExisting.html">2.4.7. Multiple Existing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ExperimentalWindForce.html">2.4.8. Experimental Wind Force (Time Series Input)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WindForceSpectrum.html">2.4.9. Wind Force Spectrum</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.6. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../response/EDP.html">2.7. EDP: Demand Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../response/resEE.html">2.8. RES: Results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">3. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/WEUQ.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Wind Engineering with Uncertainty Quantification</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../usage.html"><span class="section-number">2. </span>User Interface</a> &raquo;</li>
+        
+          <li><a href="WindEvents.html"><span class="section-number">2.4. </span>EVT: Wind Events</a> &raquo;</li>
+        
+      <li><span class="section-number">2.4.3. </span>Isolated Building CFD Model</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/user_manual/usage/desktop/wind/IsolatedBuildingCFD.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="isolated-building-cfd-model">
+<span id="lblisolatedbuildingcfd"></span><h1><span class="section-number">2.4.3. </span>Isolated Building CFD Model<a class="headerlink" href="#isolated-building-cfd-model" title="Permalink to this headline">¶</a></h1>
+<p>The Isolated Building CFD Model is a Computational Fluid Dynamics (CFD) based wind load generator for an isolated building with a rectangularly shaped plan area. It provides greater flexibility in modeling the approaching wind and the wind-induced loads on the building. This event allows the user to seamlessly define the computational model with interactive GUI support. <a class="reference internal" href="#fig-iso-cfd-workflow"><span class="std std-numref">Fig. 2.4.3.1</span></a> shows the overall CFD-based workflow as within the framework of WE-UQ. The modeling process is automated with different pre-/post-processing functionalities. The user needs to provide information related to geometry, mesh generation, boundary conditions, turbulence modeling, solver selection, etc. One of the most salient features includes automatic meshing with a user-interactive interface. At the backend, the CFD simulations are conducted by executing open-source CFD solvers from OpenFOAM <a class="reference internal" href="#greenshields2015" id="id1"><span>[Greenshields2015]</span></a>. The user needs to follow the following procedure to model wind loading using this event.</p>
+<div class="align-center figure" id="id11">
+<span id="fig-iso-cfd-workflow"></span><img alt="../../../../../_images/WEUQ_CFD_Workflow.png" src="../../../../../_images/WEUQ_CFD_Workflow.png" />
+<p class="caption"><span class="caption-number">Fig. 2.4.3.1 </span><span class="caption-text">The high-level CFD-based workflow with uncertainty quantification.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic simple">
+<li><p>Define the geometry of the building and the computational domain</p></li>
+<li><p>Generate the mesh using global and local refinement options</p></li>
+<li><p>Define boundary conditions with the characteristics of the approaching wind</p></li>
+<li><p>Specify turbulence model, solver type, and other numerical setups</p></li>
+<li><p>Define the outputs to be monitored from the CFD simulation</p></li>
+<li><p>Submit the simulation to run remotely and follow up on the progress</p></li>
+<li><p>Post-process and verify the results from the simulation</p></li>
+</ol>
+<p>Considering the high computational cost of the simulation, the CFD models can only be run remotely using High-Performance Computing (HPC) resources at DesignSafe-CI. Thus, the user is required to have DesignSafe account to run the simulations. Also, the generated CFD model is saved locally as a standard OpenFOAM case. This will permit the user to copy this directory and run the simulation using their own OpenFOAM installation elsewhere.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is important to note that, no uncertainty is considered in the CFD simulation. At this stage of development, the CFD results inform the workflow in a rather deterministic manner.</p>
+</div>
+<p>Overall, the GUI of the CFD-even has two regions, the <em>Input Panel</em> where the user can specify details of the CFD model, and the <em>Model View Panel</em> for visualizing the geometry and generated mesh (see <a class="reference internal" href="#fig-iso-gui-overview"><span class="std std-numref">Fig. 2.4.3.2</span></a>). The <em>Input Panel</em> contains a tabbed interface for defining different components of the CFD workflow. Whereas, the <em>Model View Panel</em> holds the VTK representation of the computational domain and a toolbar for manipulating the view of the model. Individual components in each part of the GUI are described in the following subsections.</p>
+<div class="align-center figure" id="id12">
+<span id="fig-iso-gui-overview"></span><img alt="../../../../../_images/input_and_model_view_panel.svg" src="../../../../../_images/input_and_model_view_panel.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.2 </span><span class="caption-text">Parts of the GUI for the CFD-based wind load event.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="start">
+<h2><span class="section-number">2.4.3.1. </span>Start<a class="headerlink" href="#start" title="Permalink to this headline">¶</a></h2>
+<p>This tab outlines the main steps in the CFD modeling process. It provides the path to the working directory and options for the unit system.</p>
+<ol class="arabic">
+<li><p><strong>Path:</strong> The path where the created OpenFOAM case will be saved. The “Browse” button in <a class="reference internal" href="#fig-iso-gui-overview"><span class="std std-numref">Fig. 2.4.3.2</span></a> can be used to change the location to any user-specified directory. By default, this path points to SimCenter’s working directory in <em>Documents</em>.</p></li>
+<li><p><strong>Units:</strong> Select units for mass, length, time and angle. The units for each property can be specified at the bottom of the <em>Start</em> tab as shown in <a class="reference internal" href="#fig-iso-gui-overview"><span class="std std-numref">Fig. 2.4.3.2</span></a>.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To define the CFD models, units specified under this event are used (not those defined in the <em>GI</em> tab of the main workflow). Throughout the CFD modeling process, the physical properties need to be specified using the units provided here consistently. Currently, the CFD-even is defined using the metric system.</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="geometry">
+<h2><span class="section-number">2.4.3.2. </span>Geometry<a class="headerlink" href="#geometry" title="Permalink to this headline">¶</a></h2>
+<p>Here the geometry and dimensions of the building and computational domain are defined. It is common to conduct CFD simulations as a replica of actual wind tunnel testing facilities. For this type of application, the user must specify the dimensions of the tunnel and the geometric scale used to construct the building model in the experiment. In <a class="reference internal" href="#fig-iso-geometry-tab"><span class="std std-numref">Fig. 2.4.3.2.1</span></a>, all the inputs are related to the geometry of the building and the computational domain.</p>
+<div class="align-center figure" id="id13">
+<span id="fig-iso-geometry-tab"></span><img alt="../../../../../_images/geometry_tab.svg" src="../../../../../_images/geometry_tab.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.2.1 </span><span class="caption-text"><strong>Geometry</strong> tab for editing dimensions/configurations of the building and computational domain.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic">
+<li><p><strong>Input Dimension Normalization</strong>: This option specifies whether to use normalized dimensions for specifying the domain dimensions. The normalization is done relative to the building height. The user must specify whether to use <em>Relative</em> or <em>Absolute</em> dimensions.</p></li>
+<li><p><strong>Geometric Scale</strong>: If the CFD simulation is conducted at a reduced scale, the geometric scale (the ratio of full-scale to model-scale dimensions) must be specified here.</p></li>
+<li><p><strong>Building Width</strong>, <strong>Building Depth</strong> and <strong>Building Height</strong> are the dimensions of the building in full-scale. The dimensions of the building are defined in the <em>GI</em> tab and cannot be changed here.</p></li>
+<li><p><strong>Wind Direction</strong>: The angle of incidence of the approaching wind measured from the x-axis in a counterclockwise direction. The wind direction is accounted for indirectly by rotating the building configuration relative to the rest of the computational domain.</p></li>
+<li><p><strong>Domain Length</strong>: Represents the length of the domain in the stream-wise direction (x-direction). If the <em>Relative</em> dimensions are specified, the input should be normalized by the building height.</p></li>
+<li><p><strong>Domain Width</strong>: The lateral dimension of the domain in the y-direction.</p></li>
+<li><p><strong>Domain Height</strong>: The vertical extension of the domain in the z-direction.</p></li>
+<li><p><strong>Fetch Length</strong>: Distance between the inlet of the domain and the building center.</p></li>
+<li><p><strong>COST Recommendation</strong>: This option specifies whether to use the COST(<a class="reference internal" href="#franke2007" id="id2"><span>[Franke2007]</span></a>) recommendations to determine the extent of the computational domain.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the CFD simulation is run for a validation purpose i.e., to compare with an experimental measurement, it is recommended to make the extent of the domain the same as the test section of the wind tunnel. This typically requires the width and height of the domain to be the same as the experimental facility. However, the length of the domain can be reduced by applying synthetically generated inflow turbulence at the inlet that satisfies important statistics of a fully developed wind flow. Details about inflow turbulence generations can be found in (Ref TInf).</p>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>Location of Absolute Origin</strong>: This option specifies the location of the absolute origin for the coordinate system where <span class="math notranslate nohighlight">\((x = 0, y = 0, z = 0)\)</span>. There are three options: <em>Building Bottom Center</em>, <em>Domain Bottom Left Corner</em>, and <em>Custom</em>. By default, the origin is the <em>Building Bottom Center</em>. The origin also can be changed to any user-specified point by using the <em>Custom</em> option and editing the coordinates (see the bottom of <a class="reference internal" href="#fig-iso-geometry-tab"><span class="std std-numref">Fig. 2.4.3.2.1</span></a>).</p></li>
+</ol>
+</div>
+<div class="section" id="meshing">
+<h2><span class="section-number">2.4.3.3. </span>Meshing<a class="headerlink" href="#meshing" title="Permalink to this headline">¶</a></h2>
+<p>The mesh (computational grid) is generated employing OpenFOAM’s <em>snappyHexMesh</em> tool. The procedure involves first defining a regularly spaced background mesh for the whole domain. Then, further refinements are made progressively as we get close to the surface of the building. The building geometry is created as a Stereolithography (STL) surface from its width, depth and height. Finally, the meshing is performed locally on the user’s machine. Thus, the user can interactively visualize the mesh using the model view window on the right. The step-by-step procedure to define the mesh for this event involves:</p>
+<ul class="simple">
+<li><p><strong>Step 1</strong>: Define a background structured mesh.</p></li>
+<li><p><strong>Step 2</strong>: Specify the volumetric refinement regions.</p></li>
+<li><p><strong>Step 3</strong>: Specify refinement on the building surface.</p></li>
+<li><p><strong>Step 4</strong>: Apply further refinements to the edges of the building.</p></li>
+<li><p><strong>Step 5</strong>: Add prism layers on the building surface in the wall-normal direction.</p></li>
+</ul>
+<div class="align-center figure" id="id14">
+<span id="fig-iso-mesh-tab"></span><img alt="../../../../../_images/mesh_tab.svg" src="../../../../../_images/mesh_tab.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.3.1 </span><span class="caption-text"><strong>Mesh</strong> tab for generating the computational grid using <em>snappyHexMesh</em> tool.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<p>The following subsections describe the GUI for each step. Further details of the <em>snappyHexMesh</em> meshing tool used can be found in <a class="reference internal" href="#greenshields2022" id="id3"><span>[Greenshields2022]</span></a>.</p>
+<div class="section" id="background-mesh">
+<h3>Background Mesh<a class="headerlink" href="#background-mesh" title="Permalink to this headline">¶</a></h3>
+<p>The background mesh is the grid used in the far field away from the area where the building is located. The user needs to define a background mesh before running <em>snappyHexMesh</em>. The ideal grid for the background mesh is hexahedral (hex) cells. Thus, the background mesh is generated using OpenFOAM’s <em>blockMesh</em> utility as a structured grid. To start, the user needs to specify the number of cells in the three-orthogonal directions as shown in <a class="reference internal" href="#fig-iso-mesh-tab"><span class="std std-numref">Fig. 2.4.3.3.1</span></a>. Once the information in the <em>Background Mesh</em> tab (see <a class="reference internal" href="#fig-iso-mesh-tab"><span class="std std-numref">Fig. 2.4.3.3.1</span></a>) is filled, the user can press the <em>Run blockMesh</em> button to generate and visualize the background mesh. The mesh is automatically updated on the model view panel as seen in <a class="reference internal" href="#fig-iso-gui-overview"><span class="std std-numref">Fig. 2.4.3.2</span></a>. Descriptions of the fields used to define the background mesh are given below.</p>
+<ol class="arabic">
+<li><p><strong>Direction</strong>: The axis along which the number of cells will be specified. The mesh information must be provided in <span class="math notranslate nohighlight">\((x, y, z)\)</span> directions separately.</p></li>
+<li><p><strong>No. Cells</strong>: Number of cells in each direction.</p></li>
+<li><p><strong>Grading</strong>: This field provides expansion ratios to generate a graded mesh in any direction. These values specify the ratio of the width of the first cell to the last cell along the direction considered. Specially, will be useful if one wants to provide stretched cells near the ground surface.</p></li>
+<li><p><strong>Grid Size</strong>: The width of cells in a specified direction.  This field is automatically calculated as the user edits the <strong>No. Cells</strong> field.</p>
+<blockquote>
+<div><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is recommended to use nearly cubical cells for the background mesh. This can be achieved by changing the <strong>No. Cells</strong> in each direction until the corresponding <strong>Grid Size</strong> felids are approximately equal. Especially close to the building location, the use of nearly cubical cells is important for the <em>snappyHexMesh</em> to operate properly.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the <strong>Input Dimension Normalization</strong> in the <em>Geometry</em> tab of this event is set to <em>Relative</em>, all the dimensions used for defining meshing e.g. <strong>Grid Size</strong>, are expressed relative to the building height.</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="refinement-regions">
+<h3>Refinement Regions<a class="headerlink" href="#refinement-regions" title="Permalink to this headline">¶</a></h3>
+<p>Once the background mesh is generated, further mesh refinements can be added using refinement regions (boxes). To achieve this, the user can specify multiple refinement regions. The refinement regions are boxes defining the extent of the region, and the corresponding refinement level. <a class="reference internal" href="#fig-iso-mesh-tab-regional"><span class="std std-numref">Fig. 2.4.3.3.2</span></a> shows a sample input with four refinement boxes. It is recommended to have both global and local refinement regions. Here global refinement refers to a box that extends from the inlet of the domain up to the wake of the study building. Whereas, local refinements cover the region in the vicinity of the building. For example, Box1 and Box2 in <a class="reference internal" href="#fig-iso-mesh-tab-regional"><span class="std std-numref">Fig. 2.4.3.3.2</span></a> are of global type, whereas Box3 and Box4 are local refinements. In the current version of the tool, the refinement regions can only be box-shaped. Here descriptions of each field are provided.</p>
+<div class="align-center figure" id="id15">
+<span id="fig-iso-mesh-tab-regional"></span><img alt="../../../../../_images/mesh_tab_regional_refinement.svg" src="../../../../../_images/mesh_tab_regional_refinement.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.3.2 </span><span class="caption-text">Specification of the refinement regions.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic simple">
+<li><p><strong>Name</strong>: Name of the refinement box, any unique identifier text can be used here.</p></li>
+<li><p><strong>Level</strong>: Specifies the level of refinement for each region. Can start at 1 for the outermost refinement region and goes up to the highest level used close to the building. To reduce abrupt changes in grid size, the refinement level should be incremented by 1 as one goes from lower to higher refinement levels.</p></li>
+<li><p><strong>X-min</strong>, <strong>Y-min</strong> and <strong>Z-min</strong> are the coordinates of the minimum point for the bounding box encompassing the refinement region.</p></li>
+<li><p><strong>X-max</strong>, <strong>Y-max</strong> and <strong>Z-max</strong> are the coordinates of the maximum point for the bounding box encompassing the refinement region.</p></li>
+</ol>
+<p>To add a new refinement region the user can use <strong>Add Region</strong> button shown in <a class="reference internal" href="#fig-iso-mesh-tab-regional"><span class="std std-numref">Fig. 2.4.3.3.2</span></a>. In a similar way, to remove an existing region, first, the user needs to select a row from the table and press the <strong>Remove Region</strong> button.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All the refinements are done by progressively splitting the cells from the previous level. Thus, the mesh size is reduced by half when we go one refinement level higher.</p>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="surface-refinements">
+<h3>Surface Refinements<a class="headerlink" href="#surface-refinements" title="Permalink to this headline">¶</a></h3>
+<p>Near solid walls, surface refinements can be added to resolve important flow features. Especially on the building surface, additional refinements are often necessary to capture the wind loads (e.g., surface pressure fluctuations) more accurately. Surface refinement is defined by specifying the name of the target surface, the required refinement level, and the refinement distance as shown in <a class="reference internal" href="#fig-iso-mesh-tab-surface"><span class="std std-numref">Fig. 2.4.3.3.3</span></a>.</p>
+<div class="align-center figure" id="id16">
+<span id="fig-iso-mesh-tab-surface"></span><img alt="../../../../../_images/mesh_tab_surface_refinement.svg" src="../../../../../_images/mesh_tab_surface_refinement.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.3.3 </span><span class="caption-text">Specification of the surface refinements.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic simple">
+<li><p><strong>Add Surface Refinement</strong>: If this option is checked, the surface refinement will be added to the building surface. If the user wants not to use any surface refinement this option needs to be unchecked.</p></li>
+<li><p><strong>Surface Name</strong>: Name of the surface where the refinement will be applied. Currently, it supports only the building surface and this field cannot be edited.</p></li>
+<li><p><strong>Refinement Level</strong>: Specifies the level of refinement as it continues from the regional refinement. Needs to be bigger (at least by 1 level) than the highest refinement level used in the <em>Regional Refinement</em> tab earlier.</p></li>
+<li><p><strong>Refinement Distance</strong>: This represents a wall-normal distance that the surface refinement will extend outward in the domain. This distance is always measured from the target (building) surface. For example, if 0.5 is used, the near-surface refinement will encompass a region with a distance of 0.5 units away from the surface in all directions.</p></li>
+</ol>
+</div>
+<div class="section" id="edge-refinement">
+<h3>Edge Refinement<a class="headerlink" href="#edge-refinement" title="Permalink to this headline">¶</a></h3>
+<p>Near the building edges, the flow separation point can be better captured by employing edge refinement options. If the user opts for edge refinement, the grid around the edges of the building will automatically be refined to the specified level. In addition to improving the resolution of wind flow, the use of edge refinements results in a more accurate representation of the building geometry. <a class="reference internal" href="#fig-iso-mesh-tab-edge"><span class="std std-numref">Fig. 2.4.3.3.4</span></a> shows the fields to specify the edge refinement.</p>
+<div class="align-center figure" id="id17">
+<span id="fig-iso-mesh-tab-edge"></span><img alt="../../../../../_images/mesh_tab_edge_refinement.svg" src="../../../../../_images/mesh_tab_edge_refinement.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.3.4 </span><span class="caption-text">Specification of the edge refinement.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic">
+<li><p><strong>Add Edge Refinement</strong>: If checked, the edges of the building will be further refined. If the user wants to mesh without edge refinement this option needs to be unchecked.</p></li>
+<li><p><strong>Refinement Edge</strong>: Target edges for the refinement. Currently, this option applies only to the building edges.</p></li>
+<li><p><strong>Refinement Level</strong>: Specifies the level of refinement for the edges. To better resolve the edges, it needs to be bigger than the highest refinement level used in the <em>Surface Refinement</em> tab.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Near sharp edges, sometimes the building geometry might not be resolved well. In this case, the quality of the generated grid can be improved by adjusting the feature resolution angle in <em>Advanced Options</em> section. Note that changes to meshing parameters will not take effect unless the user runs the whole mesh generation again.</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="prism-layers">
+<h3>Prism Layers<a class="headerlink" href="#prism-layers" title="Permalink to this headline">¶</a></h3>
+<p>Another important refinement option includes prism layers. Prism layers are dense layers of usually stretched cells added near solid boundaries. By adding multiple prismatic layers of cells on the building surface, one can improve the resolution of the thin boundary layer that develops on the walls. The prism layers are inserted by splitting the first layer of off-wall cells on the surface. The inputs needed to specify prism layers are shown in <a class="reference internal" href="#fig-iso-mesh-tab-prism-layers"><span class="std std-numref">Fig. 2.4.3.3.5</span></a>.</p>
+<div class="align-center figure" id="id18">
+<span id="fig-iso-mesh-tab-prism-layers"></span><img alt="../../../../../_images/mesh_tab_prism_layers.svg" src="../../../../../_images/mesh_tab_prism_layers.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.3.5 </span><span class="caption-text">Adding prism layers to the building surface.</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic">
+<li><p><strong>Add Prism Layers</strong>: If checked, prism layers will be applied on the building surface.</p></li>
+<li><p><strong>Surface Name</strong>: Name of the target wall for adding the layers. Currently, this option is limited to the building surfaces.</p></li>
+<li><p><strong>Number of Layers</strong>: The number of prism layers to be added.</p></li>
+<li><p><strong>Expansion Ratio</strong>: The ratio of thicknesses of two consecutive layers. Should be kept below 1.5. For a more elaborate explanation, please refer to the recommendations in <a class="reference internal" href="#franke2007" id="id4"><span>[Franke2007]</span></a>.</p></li>
+<li><p><strong>Final Layer Thickness</strong>: Thickness of the final prism layer relative to the size of the first off-wall cell before the prism layers are inserted.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Generally, adding more prism layers increases solution accuracy. However, when the thickness of the cells close to the building surface becomes small, the time step used for the solver must also be reduced proportionally to keep the simulation stable.</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="advanced-options">
+<h3>Advanced Options<a class="headerlink" href="#advanced-options" title="Permalink to this headline">¶</a></h3>
+<p>Additional options for mesh generations can be found under the <em>Advanced Options</em> group as shown in <a class="reference internal" href="#fig-iso-mesh-tab-advanced-options"><span class="std std-numref">Fig. 2.4.3.3.6</span></a>. These options include:</p>
+<div class="align-center figure" id="id19">
+<span id="fig-iso-mesh-tab-advanced-options"></span><img alt="../../../../../_images/mesh_tab_advanced_options.svg" src="../../../../../_images/mesh_tab_advanced_options.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.3.6 </span><span class="caption-text">Advanced meshing control options.</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic">
+<li><p><strong>Number of Cells Between Levels</strong>: The number of buffer cells between two consecutive refinement levels. For closely spaced refinements, this will provide a relatively smooth transition avoiding a sudden jump in mesh size over a short distance.</p></li>
+<li><p><strong>Feature Resolution Angle</strong>: Edges created by two intersecting surfaces with angles higher than the value specified for this field will be further refined. By default, it is set to <span class="math notranslate nohighlight">\(30^o\)</span>. For a building with sharp angles, to better resolve the edges, a smaller value should be specified.</p></li>
+<li><p><strong>Run Mesh In Parallel</strong>: If this option is turned on, the mesh generation will run in parallel. This is particularly needed when generating dense meshes that take considerable time to run in serial.</p></li>
+<li><p><strong>Number of Processors</strong>: The number of processors to utilize if the mesh generation is executed in parallel. Note that this value can be different from the number of processors used for the main simulation.</p>
+<blockquote>
+<div><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For parallel mesh generation, the number of processors specified here must be less than or equal to the number of computing cores available on the user’s machine.</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="running-the-mesh">
+<h3>Running the Mesh<a class="headerlink" href="#running-the-mesh" title="Permalink to this headline">¶</a></h3>
+<p>One of the main improvements in the current release of the tool is the mesh generation module. Now, the user can create geometry, generate a mesh and view the mesh on their local machine. Once the input parameters for the mesh are filled, the next step is to run, check and view the mesh. After the mesh is run successfully, a sample message in the <em>Program Output</em> window is shown in <a class="reference internal" href="#fig-iso-mesh-tab-run-mesh"><span class="std std-numref">Fig. 2.4.3.3.7</span></a>.</p>
+<div class="align-center figure" id="id20">
+<span id="fig-iso-mesh-tab-run-mesh"></span><img alt="../../../../../_images/mesh_tab_run_and_check_mesh.svg" src="../../../../../_images/mesh_tab_run_and_check_mesh.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.3.7 </span><span class="caption-text">Running and checking the mesh generation process.</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic">
+<li><p><strong>Run blockMesh</strong>: Creates the background mesh required for the final mesh.</p></li>
+<li><p><strong>Run snappyHexMesh</strong>: Generates the final mesh by applying all the refinements specified. When the mesh generation is completed, the log file is printed in the <em>Program Output</em> window at the bottom. If there are any issues in the mesh generation procedure, they will be shown here.</p></li>
+<li><p><strong>Run checkMesh</strong>: Checks if the generated mesh satisfies the recommended mesh quality requirements. After the check is completed, the result is shown on the <em>Program Output</em> window (see <a class="reference internal" href="#fig-iso-mesh-tab-run-mesh"><span class="std std-numref">Fig. 2.4.3.3.7</span></a>). The user needs to make sure that the mesh check is completed with a <em>Mesh Ok</em> status before running the solver. Also, information such as the number of cells, points, faces, etc., are displayed in the same window.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that the mesh generation is run locally for visualization purposes. When the simulation is submitted to run remotely, just the CFD solver is initiated, and the whole mesh is regenerated on the remote server from the input parameters. This will permit the user to run heavy meshing remotely while visualizing a small mesh (light version) of the original model here.</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="viewing-the-mesh">
+<h3>Viewing the Mesh<a class="headerlink" href="#viewing-the-mesh" title="Permalink to this headline">¶</a></h3>
+<p>After the mesh generation is completed the <em>Model View Window</em> is updated automatically. This window provides the user with different options for visualizing the mesh. These options are found on a toolbar positioned at the top as seen <a class="reference internal" href="#fig-iso-view-mesh-options"><span class="std std-numref">Fig. 2.4.3.3.8</span></a>.</p>
+<div class="align-center figure" id="id21">
+<span id="fig-iso-view-mesh-options"></span><img alt="../../../../../_images/mesh_vis_window.svg" src="../../../../../_images/mesh_vis_window.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.3.8 </span><span class="caption-text"><em>Model View Window</em> for viewing and checking the generated mesh.</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</div>
+<p>The user can have a different view of the generated model by changing the following options:</p>
+<ol class="arabic">
+<li><p><strong>View</strong>: Provides options for changing the view to the whole or parts of the mesh. There are three options available.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>AllMesh</strong>: Shows the mesh for the entire computational domain.</p></li>
+<li><p><strong>Breakout</strong>: Display a breakout view of the computational domain.</p></li>
+<li><p><strong>Building</strong>: Shows only the geometry/mesh of the study building.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Representation</strong>: Provides options for changing the representation of the mesh surface. Three surface view options are implemented.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>SurfaceWithGrid</strong>: Renders the surfaces and the edges together. This option is the default choice for visualizing the mesh.</p></li>
+<li><p><strong>Surface</strong>: Renders only the surface of the computational domain. This option can be used if the user wants to view only the geometry of the domain without the grid.</p></li>
+<li><p><strong>Wireframe</strong>: Shows only the edge of the generated grid without rendering the surfaces.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Transparency</strong>: Controls how transparent the model surface is. By default, it is set to zero.</p></li>
+<li><p><strong>Reload</strong>: Rereads the mesh from the case directory if there are changes or updates.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="boundary-conditions">
+<h2><span class="section-number">2.4.3.4. </span>Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this headline">¶</a></h2>
+<p>In the <em>Boundary Conditions</em> tab, the user defines the values of wind fields at the domain boundaries. First, the user specifies the general characteristics of the approaching wind in the <em>Wind Characteristics</em> group. Then, specific boundary conditions for each face of the domain are provided in the <em>Boundary Conditions</em> group. If the user selects turbulent inflow condition at the inlet, in the <em>Inflow Generation</em> group the method and the inputs needed to generate artificial inflow boundary conditions will be specified.</p>
+<div class="align-center figure" id="id22">
+<span id="fig-iso-bc-tab"></span><img alt="../../../../../_images/boundary_conditions_tab.svg" src="../../../../../_images/boundary_conditions_tab.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.4.1 </span><span class="caption-text">Boundary condition specification.</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="approaching-wind-characteristics">
+<h3>Approaching Wind Characteristics<a class="headerlink" href="#approaching-wind-characteristics" title="Permalink to this headline">¶</a></h3>
+<p>The workflow offers the user a means to perform the CFD simulation at a reduced scale. If the simulation is done at a reduced scale, the characteristics of the approaching wind must be defined in the same scale.</p>
+<ol class="arabic simple">
+<li><p><strong>Velocity Scale</strong>: This represents a factor to scale the velocity.</p></li>
+<li><p><strong>Wind Speed at Reference Height</strong>: Mean wind speed at the reference height (e.g. at the roof height). If the simulation is done at a reduced scale, the wind speed in the model scale needs to be provided.</p></li>
+<li><p><strong>Reference Height</strong>: Reference height where the <strong>Wind Speed at Reference Height</strong> is defined. By default, this value will be the building height.</p></li>
+<li><p><strong>Aerodynamic Roughness Length</strong>: Surrounding terrain aerodynamic roughness length for the particular wind direction being simulated.</p></li>
+<li><p><strong>Time Scale</strong>: Time scale of the simulation. It is automatically calculated from the <strong>Geometric Scale</strong> in <em>Geometry</em> tab and the <strong>Velocity Scale</strong>.</p></li>
+<li><p><strong>Air Density</strong>: Density of air at the particular region where the building is located. By default, a value of 1.225 is specified for a <span class="math notranslate nohighlight">\(15^\circ C\)</span> temperature and atmospheric pressure at sea level.</p></li>
+<li><p><strong>Kinematic Viscosity</strong>: This represents the ratio of absolute air viscosity to air density. The default value is set to <span class="math notranslate nohighlight">\(1.5 \times 10^{-5} m^2/s\)</span>.</p></li>
+<li><p><strong>Reynolds Number</strong>: Reynolds number is calculated based on the building height and reference wind speed. Reynolds number expressed the ratio of inertial forces to viscous forces. This field cannot be edited, and the value for this simulation can be determined by clicking the <strong>Calculate</strong> button.</p></li>
+</ol>
+</div>
+<div class="section" id="initial-and-boundary-conditions">
+<h3>Initial and Boundary Conditions<a class="headerlink" href="#initial-and-boundary-conditions" title="Permalink to this headline">¶</a></h3>
+<p>Types of boundary conditions corresponding to each face of the domain are defined here. The names for the boundary conditions are based on <em>OpenFOAM</em> dictionary files.</p>
+<ol class="arabic">
+<li><p><strong>Inlet</strong>: Defines the boundary conditions at the inlet of the computational domain. Here we have three options:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Uniform</strong>: Specify a constant uniform value at the inlet taking the value specified for <strong>Wind Speed at Reference Height</strong>.</p></li>
+<li><p><strong>MeanABL</strong>: Defines mean velocity profile based on the logarithm law of the wall. To calculate the logarithmic profile the reference height and velocity defined in <em>Wind Characteristics</em> ground are used. This boundary condition assumes the approaching wind is a smooth flow.</p></li>
+<li><p><strong>TInf</strong>: Specifies synthetic turbulent inflow at the inlet that varies with space and time. When this option is selected, <em>Inflow Generation</em> group will be automatically enabled and the user can control the inflow turbulence generation procedure.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Outlet</strong>: The boundary condition used at the outlet. By default, it is set to <em>zeroPressureOutlet</em> which makes the pressure field at the outlet zero. Hence, the reference pressure used for the wind load calculation can be assumed to be zero.</p></li>
+<li><p><strong>Sides</strong>: The boundary conditions used on side boundaries (front and back) of the domain are selected here. The value can assume four options:</p>
+<ul class="simple">
+<li><p><strong>symmetric</strong>: Specifies zero normal gradient boundary condition for the velocity on the side faces of the domain. Sets</p></li>
+<li><p><strong>slip</strong>: Specifies slip but impermeable boundary conditions for side faces. This will set zero normal gradient boundary conditions for the flow parallel to the surface.</p></li>
+<li><p><strong>noSlip</strong>: Sets the velocity on the side faces to zero.</p></li>
+<li><p><strong>cyclic</strong>: This option will link the side patches together by setting the cyclic boundary condition for pressure and velocity fields.</p></li>
+</ul>
+</li>
+<li><p><strong>Top</strong>: The boundary condition used on the top boundary of the domain. It can assume three options:</p>
+<ul class="simple">
+<li><p><strong>symmetric</strong>: Specifies zero normal gradient boundary condition for the velocity.</p></li>
+<li><p><strong>slip</strong>: Specifies slip but impermeable boundary conditions for top faces. This will set zero normal gradient boundary conditions for the flow parallel to the surface.</p></li>
+<li><p><strong>noSlip</strong>: Sets the velocity on the top faces to zero.</p></li>
+</ul>
+</li>
+<li><p><strong>Ground</strong>: Define the boundary condition on the ground surface. There are three boundary condition types:</p>
+<ul class="simple">
+<li><p><strong>noSlip</strong>: Sets the velocity on the ground face to zero.</p></li>
+<li><p><strong>smoothWallFunction</strong>: Specifies a smooth wall function on the ground surface.</p></li>
+<li><p><strong>roughWallFunction</strong>: Defines a rough wall boundary condition. This will be defined based on the aerodynamic roughness length defined previously.</p></li>
+</ul>
+</li>
+<li><p><strong>Building</strong>: Define the boundary condition on the building surface. There are three boundary condition types:</p>
+<ul class="simple">
+<li><p><strong>noSlip</strong>: Sets the velocity on the building face to zero.</p></li>
+<li><p><strong>smoothWallFunction</strong>: Specifies a smooth wall function on the building surface.</p></li>
+<li><p><strong>roughWallFunction</strong>: Defines a rough wall boundary condition based on sand grain roughness.</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="inflow-generation">
+<h3>Inflow Generation<a class="headerlink" href="#inflow-generation" title="Permalink to this headline">¶</a></h3>
+<p>If <em>TInf</em> option is specified at the <em>inlet</em> of the boundary, inputs for the inflow generation are specified here.</p>
+<ol class="arabic simple">
+<li><p><strong>Generation Method</strong>: The technique for generating the inflow turbulence. Five different methods commonly used in the computational wind engineering community are implemented.</p>
+<ul class="simple">
+<li><p><strong>DFSR</strong>: Uses Divergence-free Spectral Representation (DFSR) method developed by <a class="reference internal" href="#melaku2021" id="id5"><span>[Melaku2021]</span></a>.</p></li>
+<li><p><strong>DFM</strong>: Uses Digital Filtering Method (DFM) developed by <a class="reference internal" href="#klein2003" id="id6"><span>[Klein2003]</span></a> and <a class="reference internal" href="#xie2008" id="id7"><span>[Xie2008]</span></a>.</p></li>
+<li><p><strong>SEM</strong>: Uses Synthetic Eddy Method (SEM) developed by <a class="reference internal" href="#jarrin2006" id="id8"><span>[Jarrin2006]</span></a>.</p></li>
+<li><p><strong>DFSEM</strong>: Uses Divergence-free Synthetic Eddy Method (DFSEM) developed by <a class="reference internal" href="#poletto2013" id="id9"><span>[Poletto2013]</span></a>.</p></li>
+<li><p><strong>TSM</strong>: Uses Turbulent Spot Method (TSM) developed by <a class="reference internal" href="#kroger2018" id="id10"><span>[Kröger2018]</span></a>.</p></li>
+</ul>
+</li>
+<li><p><strong>Inflow Time Step</strong>: The time step used for generating inflow turbulence.  Can assume a value different from the solver time step.  For intermediate time steps, a linear interpolation is used.</p></li>
+<li><p><strong>Max. Frequency</strong>: Define the maximum cut-off frequency for the inflow generation. Directly calculated from the inflow time step as <span class="math notranslate nohighlight">\(f_{max} = 1/(2\Delta t)\)</span>.</p></li>
+<li><p><strong>Wind Profile</strong>: Provides options to define wind profiles used for the inflow generation in a tabular form.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="numerical-setup">
+<h2><span class="section-number">2.4.3.5. </span>Numerical Setup<a class="headerlink" href="#numerical-setup" title="Permalink to this headline">¶</a></h2>
+<p>In this tab, selections related to turbulence modeling, solver type, duration and time step options are specified. First, the user will specify the type of simulation to run. Both transient and steady-state options are available. Then, the type of solver suitable for the selected simulation is specified. Finally, options related to the duration and time step of the simulation are defined.</p>
+<div class="align-center figure" id="id23">
+<span id="fig-iso-numerical-setup-tab"></span><img alt="../../../../../_images/numerical_setup_tab.svg" src="../../../../../_images/numerical_setup_tab.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.5.1 </span><span class="caption-text">Specification of the numerical setup.</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="turbulence-modeling">
+<h3>Turbulence Modeling<a class="headerlink" href="#turbulence-modeling" title="Permalink to this headline">¶</a></h3>
+<p>The Reynolds number for wind load simulation is usually high in the order of <span class="math notranslate nohighlight">\(Re = 10^7\)</span> (full-scale). This makes it highly challenging to resolve all scales of the wind fluctuations. We need to use an appropriate turbulence model to represent the effect of small-scale turbulence.</p>
+<ol class="arabic simple">
+<li><p><strong>Simulation Type</strong>: Specifies the type of turbulence modeling scheme to be used. Three turbulence modeling options are supported:</p>
+<ul class="simple">
+<li><p><strong>LES</strong>: Should be selected if the user wants to run a large-eddy simulation with subgrid scale formulation for the unresolved scale of the flow. This option is the default choice for the wind load simulation.</p></li>
+<li><p><strong>RANS</strong>: Used for steady-state simulation using Reynolds-averaged Navier–Stokes equations. Suitable only for modeling mean flow quantities and mean wind loads.</p></li>
+<li><p><strong>DES</strong>: Uses a detached eddy simulation (DES) turbulence model. DES model uses a RANS model close to the wall and switches to LES for regions far enough from the wall.</p></li>
+</ul>
+</li>
+<li><p><strong>Sub-grid Scale Model</strong>: Provides options to select Sub-grid scale (SGS) model. Three SGS models are supported in the current version.</p>
+<ul class="simple">
+<li><p><strong>Smagorinsky</strong>: Specifies a standard Smagorinsky model with model coefficients <span class="math notranslate nohighlight">\(C_k = 0.094\)</span> and <span class="math notranslate nohighlight">\(C_e = 1.048\)</span></p></li>
+<li><p><strong>WALE</strong>: Used the Wall-Adapting Local Eddy-viscosityWALE (WALE) SGS model with model coefficients <span class="math notranslate nohighlight">\(C_k = 0.094, C_e = 1.048\)</span> and <span class="math notranslate nohighlight">\(C_w = 0.325\)</span>.</p></li>
+<li><p><strong>kEqn</strong>: Uses a one-equation eddy-viscosity model with an addition momentum balance equation for turbulent kinetic energy.</p></li>
+<li><p><strong>dynamicKEqn</strong>: Specifies a dynamic one-equation eddy-viscosity model with model constants dynamically calculated.</p></li>
+</ul>
+</li>
+<li><p><strong>RANS Model Type</strong>: Specifies the type of RANS closure model to use. Supports three options:</p>
+<ul class="simple">
+<li><p><strong>kEpsilon</strong>: Specifies the standard two-equation K-Epsilon model</p></li>
+<li><p><strong>kOmega</strong>: Specifies two-equation K-Omega model.</p></li>
+<li><p><strong>SST</strong>: Uses a shear stress transport (SST) turbulence model.</p></li>
+</ul>
+</li>
+<li><p><strong>DES Model Type</strong>: Specifies the type of DES model to use:</p>
+<ul class="simple">
+<li><p><strong>SpalartAllmarasDES</strong>: Specifies Spalart-Allmaras Detached Eddy Simulation (DES) model</p></li>
+<li><p><strong>SpalartAllmarasDDES</strong>: Uses Spalart-Allmaras Delayed Detached Eddy Simulation (DDES) model</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="solver-selection">
+<h3>Solver Selection<a class="headerlink" href="#solver-selection" title="Permalink to this headline">¶</a></h3>
+<p>Depending on the type of simulation selected (i.e. steady-state and transient), the type of solver must be selected appropriately. For LES and DES turbulence models, use transient solvers such as Pressure-Implicit with Splitting of Operators (PISO) and for RANS models, recommended to use a steady-state solver like Semi-Implicit Method for Pressure Linked Equations (SIMPLE).</p>
+<ol class="arabic simple">
+<li><p><strong>Solver Type</strong>: Specifies the type of DES model to use:</p>
+<ul class="simple">
+<li><p><strong>pisoFoam</strong>: Uses a transient solver for incompressible, turbulent flow, using the PISO algorithm</p></li>
+<li><p><strong>pimpleFoam</strong>: Uses a transient solver based on PISO on the (PISO) algorithm and supports a dynamic type stepping.</p></li>
+<li><p><strong>simpleFoam</strong>: Uses a steady-state for incompressible, turbulent flow, using the SIMPLE algorithm</p></li>
+</ul>
+</li>
+<li><p><strong>Number of Non-Orthogonal Correctors</strong>: Additional correction loops to account for mesh non-orthogonality. The default value is set to one. For highly non-orthogonal mesh, a higher value needs to be used.</p></li>
+<li><p><strong>Number of Corrector Loops</strong>: Specifies the number of pressure-corrector loops per each time iteration. The default value is set to 2. This value is valid only for transient solvers.</p></li>
+<li><p><strong>Number of Outer Corrector Loops</strong>: Specifies the number PISO loops to run for each time step. This value is valid only for <em>pimpleFoam</em> solver. The <em>pimpleFoam</em> solver works by running multiple PISO iterations, and if this field is set to 1, it will run in a PISO mode.</p></li>
+</ol>
+</div>
+<div class="section" id="duration-and-time-step">
+<h3>Duration and Time Step<a class="headerlink" href="#duration-and-time-step" title="Permalink to this headline">¶</a></h3>
+<p>The duration and time step of the simulation must be specified in line with the <em>Time Scale</em> used for the model. For wind load simulation it is recommended to have a 1 hour equivalent duration in full scale. However, for integrated wind loads, a statical convergence can be achieved at a much shorter duration.</p>
+<ol class="arabic simple">
+<li><p><strong>Duration</strong>: The length of the simulation (physical time) at chosen <em>Time Scale</em> in seconds. The simulation will end once the solver reaches this time.</p></li>
+<li><p><strong>Time Step</strong>: The time increment used for the solver. Note that the numerical stability of the solver is highly sensitive to the time step. To estimate the recommended time step that will keep the maximum Courant number (<span class="math notranslate nohighlight">\(C_o\)</span>) below unity, click the <strong>Calculate</strong> button next to it. The estimated time step can always be edited to make a slightly higher or lower value that is easy to remember. Time advancement has two options:</p>
+<ul class="simple">
+<li><p><strong>Constant</strong>: Makes the time step constant and does not change at each time iteration.</p></li>
+<li><p><strong>Adjustable</strong>: Makes the time step change every iteration by checking the simulation does not exceed the maximum Courant number (<span class="math notranslate nohighlight">\(C_o\)</span>) specified. It works only with <em>pimpleFoam</em>.</p></li>
+</ul>
+</li>
+<li><p><strong>Maximum Courant Number</strong>: The maximum value of Courant number (<span class="math notranslate nohighlight">\(C_o\)</span>) also known as Courant–Friedrichs–Lewy (CFL) number. It needs to be specified only for <em>pimpleFoam</em> solver and a value as high as 7 can be used.</p></li>
+</ol>
+</div>
+<div class="section" id="parallelization">
+<h3>Parallelization<a class="headerlink" href="#parallelization" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Run Simulation in Parallel</strong>: If checked, the simulation will run in parallel and the user needs to specify the number of processors. Otherwise, the simulation is conducted in serial. For the high-fidelity simulation, it is recommended to run in parallel.</p></li>
+<li><p><strong>Number of Processors</strong>: This represents the number of subdomains that will be used in the OpenFOAM case. It needs to match the computational resources availed when the job gets submitted to <em>DesignSafe</em> to run remotely.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="monitoring">
+<h2><span class="section-number">2.4.3.6. </span>Monitoring<a class="headerlink" href="#monitoring" title="Permalink to this headline">¶</a></h2>
+<p>The CFD simulation is typically run using millions of grids. Saving all the simulation data at each time step slows down the solver and takes lots of space. Therefore, in this event, we monitor only relevant quantities (wind loads and flow fields) that will be used in the workflow. Under this tab, the user selects the type of wind loads to monitor which include integrated loads on the structure as well as surface pressure fluctuations at specific points on the building walls. Integrated loads represent the wind forces the building structure experiences. Two types of integrated loads are monitored, which include <em>Base Loads</em> and <em>Story Loads</em>.</p>
+<div class="align-center figure" id="id24">
+<span id="fig-iso-monitoring-tab"></span><img alt="../../../../../_images/monitoring_tab.svg" src="../../../../../_images/monitoring_tab.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.6.1 </span><span class="caption-text">Results to monitor from the CFD simulations</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="base-loads">
+<h3>Base Loads<a class="headerlink" href="#base-loads" title="Permalink to this headline">¶</a></h3>
+<p>This will monitor the time history of the base shear forces and overturning moment on the building. The values are calculated by integrating the pressure fluctuations over the building surface.</p>
+<ol class="arabic simple">
+<li><p><strong>Monitor Base Loads</strong>: If checked the base loads will be monitored. By default, this option is checked.</p></li>
+<li><p><strong>Write Interval</strong>: Represents the frequency (interval measured in time steps) at which the base loads will be recorded. For example, if the user specifies 10, then the base loads will be written at every <span class="math notranslate nohighlight">\(10 \times \Delta t\)</span> seconds, where <span class="math notranslate nohighlight">\(\Delta t\)</span> is the solver <strong>Time Step</strong>. It can only take an integer value.</p></li>
+</ol>
+</div>
+<div class="section" id="story-loads">
+<h3>Story Loads<a class="headerlink" href="#story-loads" title="Permalink to this headline">¶</a></h3>
+<p>Since the story forces are needed for the main workflow, they are always monitored from the CFD simulation.</p>
+<ol class="arabic simple">
+<li><p><strong>Floor Height Specification</strong>: Specifies if the floor heights are <em>Uniform Floor Height</em> or not.</p></li>
+<li><p><strong>Number of Stories</strong>: The number of floors. This field cannot be changed here and is directly taken from the <strong>GI</strong> panel.</p></li>
+<li><p><strong>Floor to Floor Distance</strong>: The floor-to-floor height in the model scale, and cannot be edited here.</p></li>
+<li><p><strong>Write Interval</strong>: The interval at which the story loads are written. This time step is the one that the structural solver will use. If checked the base loads will be monitored.</p></li>
+</ol>
+</div>
+<div class="section" id="cladding-loads">
+<h3>Cladding Loads<a class="headerlink" href="#cladding-loads" title="Permalink to this headline">¶</a></h3>
+<p>For the cladding loads, local pressure fluctuations on the building surface can be monitored. The cladding loads can be monitored on points automatically created by the application or on a set of points imported from an existing <em>.CSV</em> file.</p>
+<ol class="arabic simple">
+<li><p><strong>Sample Pressure Data on the Building Surface</strong>: If checked, the surface pressure data will be monitored on the building surface.</p></li>
+<li><p><strong>Create a Grid of Sampling Points</strong>: If checked, the pressure monitoring points on the building surface are automatically created as a regularly spaced grid of points on each face of the building. Three inputs are needed to create these points aromatically:</p>
+<ul class="simple">
+<li><p><strong>Number of Points Along Width</strong>: The number of grid points along the building width.</p></li>
+<li><p><strong>Number of Points Along Depth</strong>: The number of grid points along the building depth.</p></li>
+<li><p><strong>Number of Points Along Height</strong>: The number of grid points along the building height.</p></li>
+</ul>
+</li>
+<li><p><strong>Import Sampling Points(*.CSV)</strong>: If this option is checked, the user needs to click the <strong>Open Sampling Point File</strong> button and select a <em>CSV</em> file containing a table of <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(z\)</span> coordinates of the points.</p></li>
+<li><p><strong>Write Interval</strong>: The interval at which the pressure data is written.</p></li>
+</ol>
+<p>The sampling points can be visualized on the building surface by clicking <strong>Show Coordinate of Points</strong>. This will open the STL file of the building with points marked on the building surface. A sample demo is shown in <a class="reference internal" href="#fig-iso-monitoring-tab"><span class="std std-numref">Fig. 2.4.3.6.1</span></a> . On the left side of the opened window, a table for the coordinates is shown, while on the right side, the 3D visualization is displaced.</p>
+<dl class="citation">
+<dt class="label" id="greenshields2015"><span class="brackets"><a class="fn-backref" href="#id1">Greenshields2015</a></span></dt>
+<dd><p>Greenshields, C.J. (2015). OpenFOAM Programmer’s Guide. OpenFOAM Foundation Ltd.</p>
+</dd>
+<dt class="label" id="franke2007"><span class="brackets">Franke2007</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id4">2</a>)</span></dt>
+<dd><p>Franke, J., Hellsten, A., Schlünzen, K.H. and Carissimo, B., 2007. COST Action 732: Best practice guideline for the CFD simulation of flows in the urban environment.</p>
+</dd>
+<dt class="label" id="greenshields2022"><span class="brackets"><a class="fn-backref" href="#id3">Greenshields2022</a></span></dt>
+<dd><p>Greenshields, C.J. (2022). <a class="reference external" href="https://doc.cfd.direct/openfoam/user-guide-v10/snappyhexmesh">https://doc.cfd.direct/openfoam/user-guide-v10/snappyhexmesh</a></p>
+</dd>
+<dt class="label" id="melaku2021"><span class="brackets"><a class="fn-backref" href="#id5">Melaku2021</a></span></dt>
+<dd><p>Melaku, A.F. and Bitsuamlak, G.T., 2021. A divergence-free inflow turbulence generator using spectral representation method for large-eddy simulation of ABL flows. Journal of Wind Engineering and Industrial Aerodynamics, 212, p.104580.</p>
+</dd>
+<dt class="label" id="klein2003"><span class="brackets"><a class="fn-backref" href="#id6">Klein2003</a></span></dt>
+<dd><p>Klein, M., Sadiki, A. and Janicka, J., 2003. A digital filter based generation of inflow data for spatially developing direct numerical or large eddy simulations. Journal of Computational Physics, 186(2), pp.652-665.</p>
+</dd>
+<dt class="label" id="xie2008"><span class="brackets"><a class="fn-backref" href="#id7">Xie2008</a></span></dt>
+<dd><p>Xie, Z.T. and Castro, I.P., 2008. Efficient generation of inflow conditions for large eddy simulation of street-scale flows. Flow, turbulence and combustion, 81, pp.449-470.</p>
+</dd>
+<dt class="label" id="jarrin2006"><span class="brackets"><a class="fn-backref" href="#id8">Jarrin2006</a></span></dt>
+<dd><p>Jarrin, N., Benhamadouche, S., Laurence, D. and Prosser, R., 2006. A synthetic-eddy-method for generating inflow conditions for large-eddy simulations. International Journal of Heat and Fluid Flow, 27(4), pp.585-593.</p>
+</dd>
+<dt class="label" id="poletto2013"><span class="brackets"><a class="fn-backref" href="#id9">Poletto2013</a></span></dt>
+<dd><p>Poletto, R., Craft, T. and Revell, A., 2013. A new divergence free synthetic eddy method for the reproduction of inlet flow conditions for LES. Flow, turbulence and combustion, 91, pp.519-539.</p>
+</dd>
+<dt class="label" id="kroger2018"><span class="brackets"><a class="fn-backref" href="#id10">Kröger2018</a></span></dt>
+<dd><p>Kröger, H. and Kornev, N., 2018. Generation of divergence free synthetic inflow turbulence with arbitrary anisotropy. Computers &amp; Fluids, 165, pp.78-88.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2023, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-2', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>

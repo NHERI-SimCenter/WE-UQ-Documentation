@@ -121,9 +121,9 @@
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../usage/desktop/usage.html">2. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../usage/desktop/usage.html">2. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../examples/desktop/examples.html">3. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
@@ -315,20 +315,20 @@
 <li><p>Next select the <strong>EVT</strong> panel. From the Load Generator pull down menu select the <strong>Low Rise TPU</strong> option. Leave the exposure condition as <strong>B</strong>. Set the drag coefficient as <strong>1.3</strong> and enter <code class="docutils literal notranslate"><span class="pre">gustWS</span></code> for the 3 sec gust wind speed at the 33 ft height.</p></li>
 </ol>
 <div class="align-center figure">
-<img alt="../../../../../../_images/9story-EVENT5.png" src="../../../../../../_images/9story-EVENT5.png" />
+<img alt="../../../../../../_images/9story-EVENT4.png" src="../../../../../../_images/9story-EVENT4.png" />
 </div>
 <ol class="arabic simple" start="3">
 <li><p>Next choose the <strong>FEM</strong> panel. Here we will change the entries to use Rayleigh damping, with rayleigh factor chosen using <strong>1</strong> and <strong>6</strong> modes. For the <strong>MDOF</strong> model generator, because it generates a model with two translational and 1 rotational degree-of-freedom in each direction and because we have provided the same <strong>k</strong> values in each translational direction, i.e. we will have duplicate eigenvalues, we specify as shown in the figure modes <strong>1</strong> and <strong>6</strong>.</p></li>
 </ol>
 <div class="align-center figure">
-<img alt="../../../../../../_images/9story-FEM5.png" src="../../../../../../_images/9story-FEM5.png" />
+<img alt="../../../../../../_images/9story-FEM4.png" src="../../../../../../_images/9story-FEM4.png" />
 </div>
 <ol class="arabic simple" start="4">
 <li><p>We will skip the <strong>EDP</strong> panel leaving it in it’s default condition, that being to use the <strong>Standard Wind</strong> EDP generator.</p></li>
 <li><p>For the <strong>RV</strong> panel, we will enter the distributions and values for our random variables. Because of the steps we have followed and entries we have made, the panel when we open it should contain the <strong>3</strong> random variables and they should all be set constant. For the w, k and wS random variables we change the distributions to normal and enter the values given for the problem, as shown in figure below.</p></li>
 </ol>
 <div class="align-center figure">
-<img alt="../../../../../../_images/9story-RV6.png" src="../../../../../../_images/9story-RV6.png" />
+<img alt="../../../../../../_images/9story-RV5.png" src="../../../../../../_images/9story-RV5.png" />
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -338,15 +338,15 @@
 <li><p>Next click on the <strong>Run</strong> button. This will cause the backend application to launch Dakota. When done the <strong>RES</strong> tab will be selected and the results will be displayed. The results show the values the mean and standard deviation. The peak displacement of the roof, is the quantity <strong>1-PFD-9-1</strong> (first event (tool to be extended to multiple events), 9th floor (in US ground floor considered 0), and 1 dof direction). the <strong>PFA</strong> quantity defines peak floor acceleration, the <strong>RMSA</strong> quantity the root mean square of floor accelerations, and the <strong>PID</strong> quantity corresponds to peak interstory drift.</p></li>
 </ol>
 <div class="align-center figure">
-<img alt="../../../../../../_images/9story-RES16.png" src="../../../../../../_images/9story-RES16.png" />
+<img alt="../../../../../../_images/9story-RES15.png" src="../../../../../../_images/9story-RES15.png" />
 </div>
 <p>If the user selects the <strong>Data</strong> tab in the results panel, they will be presented with both a graphical plot and a tabular listing of the data. By left- and right-clicking with the mouse in the individual columns the axis change (left mouse click controls vertical axis, right mouse click the horizontal axis).</p>
 <div class="align-center figure">
-<img alt="../../../../../../_images/9story-RES26.png" src="../../../../../../_images/9story-RES26.png" />
+<img alt="../../../../../../_images/9story-RES25.png" src="../../../../../../_images/9story-RES25.png" />
 </div>
 <p>Various views of the graphical display can be obtained by left and right clicking in the columns of the tabular data. If a singular column of the tabular data is pressed with both right and left buttons a frequency and CDF will be displayed, as shown in figure below.</p>
 <div class="align-center figure">
-<img alt="../../../../../../_images/9story-RES66.png" src="../../../../../../_images/9story-RES66.png" />
+<img alt="../../../../../../_images/9story-RES65.png" src="../../../../../../_images/9story-RES65.png" />
 </div>
 </div>
 <div class="section" id="user-defined-output">

@@ -123,9 +123,9 @@
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/usage/desktop/usage.html">2. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/usage/desktop/usage.html">2. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/examples/desktop/examples.html">3. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
@@ -254,19 +254,19 @@ outputFaceIndices (0 1 2 3 4 5);
 <p>When the simulations are finished, one can easily verify if the synthetic turbulence meet the initial requirements by conducting a statistical analysis of the velocity fluctuations contained in the files. For simplicity, we have provided a Matlab R code for the statistical analysis of the velocity fluctuations which are capable of computing the correlation coefficients and the velocity spectral functions of the synthetic turbulence at some specific face elements on the inflow patch. The code should be placed in the root dictionary of the case project before running. While running, the code will automatically search for the data files existing in the ”postProcessing” folder, create and write figures demonstrating the comparison of the synthetic results with the targeted values for each face element. A number of examples are given below for demonstration.</p>
 <div class="align-center figure" id="id1">
 <span id="figtinf1v"></span><img alt="../../../../../_images/vTinF1.png" src="../../../../../_images/vTinF1.png" />
-<p class="caption"><span class="caption-number">Fig. 4.2.2 </span><span class="caption-text">Synthetic turbulence using the digital filtering method with <span class="math notranslate nohighlight">\(U = 10m/s\)</span>, <span class="math notranslate nohighlight">\(L_{ux} = 1m\)</span>, <span class="math notranslate nohighlight">\(L_{vx} = 0.75m\)</span>, and <span class="math notranslate nohighlight">\(L_{wx} = 0.5m\)</span></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2.1 </span><span class="caption-text">Synthetic turbulence using the digital filtering method with <span class="math notranslate nohighlight">\(U = 10m/s\)</span>, <span class="math notranslate nohighlight">\(L_{ux} = 1m\)</span>, <span class="math notranslate nohighlight">\(L_{vx} = 0.75m\)</span>, and <span class="math notranslate nohighlight">\(L_{wx} = 0.5m\)</span></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id2">
 <span id="figtinf2v"></span><img alt="../../../../../_images/vTinF2.png" src="../../../../../_images/vTinF2.png" />
-<p class="caption"><span class="caption-number">Fig. 4.2.3 </span><span class="caption-text">Synthetic turbulence using the synthetic eddy method with <span class="math notranslate nohighlight">\(U = 10m/s\)</span>, <span class="math notranslate nohighlight">\(L_{ux} = 1m\)</span>, <span class="math notranslate nohighlight">\(L_{vx} = 0.75m\)</span>, and <span class="math notranslate nohighlight">\(L_{wx} = 0.5m\)</span> and and Gaussian function for eddy shape</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2.2 </span><span class="caption-text">Synthetic turbulence using the synthetic eddy method with <span class="math notranslate nohighlight">\(U = 10m/s\)</span>, <span class="math notranslate nohighlight">\(L_{ux} = 1m\)</span>, <span class="math notranslate nohighlight">\(L_{vx} = 0.75m\)</span>, and <span class="math notranslate nohighlight">\(L_{wx} = 0.5m\)</span> and and Gaussian function for eddy shape</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id3">
 <span id="figtinf3v"></span><img alt="../../../../../_images/vTinF3.png" src="../../../../../_images/vTinF3.png" />
-<p class="caption"><span class="caption-number">Fig. 4.2.4 </span><span class="caption-text">Synthetic turbulence using the synthetic eddy method with <span class="math notranslate nohighlight">\(U = 10m/s\)</span>, <span class="math notranslate nohighlight">\(L_{ux} = 1m\)</span>, <span class="math notranslate nohighlight">\(L_{vx} = 0.75m\)</span>, and <span class="math notranslate nohighlight">\(L_{wx} = 0.5m\)</span> and tent function for eddy shape</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2.3 </span><span class="caption-text">Synthetic turbulence using the synthetic eddy method with <span class="math notranslate nohighlight">\(U = 10m/s\)</span>, <span class="math notranslate nohighlight">\(L_{ux} = 1m\)</span>, <span class="math notranslate nohighlight">\(L_{vx} = 0.75m\)</span>, and <span class="math notranslate nohighlight">\(L_{wx} = 0.5m\)</span> and tent function for eddy shape</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id4">
 <span id="figtinf4v"></span><img alt="../../../../../_images/vTinF4.png" src="../../../../../_images/vTinF4.png" />
-<p class="caption"><span class="caption-number">Fig. 4.2.5 </span><span class="caption-text">Synthetic turbulence using the synthetic eddy method with <span class="math notranslate nohighlight">\(U = 10m/s\)</span>, <span class="math notranslate nohighlight">\(L_{ux} = 1m\)</span>, <span class="math notranslate nohighlight">\(L_{vx} = 0.75m\)</span>, and <span class="math notranslate nohighlight">\(L_{wx} = 0.5m\)</span> and step function for eddy shape</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2.4 </span><span class="caption-text">Synthetic turbulence using the synthetic eddy method with <span class="math notranslate nohighlight">\(U = 10m/s\)</span>, <span class="math notranslate nohighlight">\(L_{ux} = 1m\)</span>, <span class="math notranslate nohighlight">\(L_{vx} = 0.75m\)</span>, and <span class="math notranslate nohighlight">\(L_{wx} = 0.5m\)</span> and step function for eddy shape</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 

@@ -120,9 +120,9 @@
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/usage.html">2. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/usage.html">2. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/desktop/examples.html">3. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
@@ -206,14 +206,14 @@
             
   <div class="section" id="capabilities">
 <span id="lbl-capabilities-quofem"></span><h1>Capabilities<a class="headerlink" href="#capabilities" title="Permalink to this headline">¶</a></h1>
-<p><strong>Version 3.2</strong> of the WE-UQ app was released in <strong>September 22</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
+<p>Version 3.0 of the WE-UQ app was released on <strong>October 2, 2023</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
 <div class="section" id="uq-uncertainty-quantification-and-optimization-options">
 <h2>UQ (Uncertainty Quantification and Optimization Options)<a class="headerlink" href="#uq-uncertainty-quantification-and-optimization-options" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p>Forward Uncertainty Propagation</p>
 <blockquote>
 <div><ol class="upperalpha simple">
-<li><p><a class="reference internal" href="../usage/desktop/DakotaSampling.html#lbldakotaforward"><span class="std std-ref">Dakota</span></a> <span class="blue">[← New option to discard working directories after each model evaluation]</span></p>
+<li><p><a class="reference internal" href="../usage/desktop/DakotaSampling.html#lbldakotaforward"><span class="std std-ref">Dakota</span></a></p>
 <ol class="arabic simple">
 <li><p>Monte Carlo Sampling (MCS)</p></li>
 <li><p>Latin Hypercube Sampling (LHS)</p></li>
@@ -225,9 +225,10 @@
 <ol class="arabic simple">
 <li><p>Monte Carlo Sampling (MCS)</p>
 <ol class="loweralpha simple">
-<li><p>Resample from existing correlated dataset of samples</p></li>
+<li><p>Resample from the existing correlated dataset of samples</p></li>
 </ol>
 </li>
+<li><p><span class="blue">Multi-fidelity Monte Calro</span></p></li>
 </ol>
 </li>
 </ol>
@@ -251,7 +252,7 @@
 <li><p>Group-wise Sobol indices</p></li>
 <li><p>Principal component analysis and probabilistic model-based GSA (PCA-PSA) for high-dimensional QoIs</p></li>
 <li><p>Aggregated Sobol indices for field QoIs</p></li>
-<li><p><span class="blue">Import input/output samples from data files</span></p></li>
+<li><p>Import input/output samples from data files</p></li>
 </ol>
 </li>
 </ol>
@@ -272,7 +273,7 @@
 </ol>
 </div></blockquote>
 </li>
-<li><p>Bayesian Calibration <span class="blue">[← formerly Inverse Problem]</span></p>
+<li><p>Bayesian Calibration</p>
 <blockquote>
 <div><ol class="upperalpha simple">
 <li><p><a class="reference internal" href="../usage/desktop/DakotaBayesianCalibration.html#lbldakotabayesiancalibration"><span class="std std-ref">Dakota</span></a></p>
@@ -294,7 +295,7 @@
 </ol>
 </div></blockquote>
 </li>
-<li><p>Deterministic Calibration <span class="blue">[← formerly Parameter Estimation]</span></p>
+<li><p>Deterministic Calibration</p>
 <blockquote>
 <div><ol class="upperalpha simple">
 <li><p><a class="reference internal" href="../usage/desktop/DakotaDeterministicCalibration.html#lbldakotadeterministiccalibration"><span class="std std-ref">Dakota</span></a></p>
@@ -312,12 +313,12 @@
 <div><ol class="upperalpha simple">
 <li><p>SimCenterUQ</p>
 <ol class="arabic simple">
-<li><p><a class="reference internal" href="../usage/desktop/SimCenterUQSurrogate.html#lblsimsurrogate"><span class="std std-ref">Train Gaussian Process (GP) Surrogate Model</span></a> <span class="blue">[← Enhanced speed and stability]</span></p>
+<li><p><a class="reference internal" href="../usage/desktop/SimCenterUQSurrogate.html#lblsimsurrogate"><span class="std std-ref">Train Gaussian Process (GP) Surrogate Model</span></a></p>
 <ol class="loweralpha simple">
 <li><p>Multifidelity surrogate modeling</p></li>
-<li><p>Adaptive design of experiments options for surrogate modeling</p></li>
+<li><p>Adaptive design of experiment options for surrogate modeling</p></li>
 <li><p>Nugget optimization options for surrogate modeling</p></li>
-<li><p><span class="blue">Stochastic Kriging</span></p></li>
+<li><p>Stochastic Kriging</p></li>
 </ol>
 </li>
 <li><p><a class="reference internal" href="../usage/desktop/SimCenterUQPLoM.html#lblsimcenteruqplom"><span class="std std-ref">Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)</span></a> *</p></li>
@@ -344,10 +345,11 @@
 <ol class="arabic simple">
 <li><p>OpenSees</p></li>
 <li><p>FEAPpv</p></li>
-<li><p>Python <span class="blue">[← formerly OpenSeesPy]</span></p></li>
+<li><p>Python</p></li>
 <li><p>Custom</p></li>
 <li><p>SurrogateGP</p></li>
-<li><p><span class="blue">None</span></p></li>
+<li><p>None</p></li>
+<li><p>Multiple models</p></li>
 </ol>
 </div>
 <div class="section" id="rv-random-variable-options">
@@ -377,7 +379,7 @@
 <p class="admonition-title">Note</p>
 <p><sup>1</sup>: For SimCentreUQ and UCSD algorithms only, the RVs can be defined by any of parameters, moments, or a dataset.
 <sup>2</sup>: Available for Optimization routines in Dakota only.
-<sup>3</sup>: Avaliable in SimCenterUQ and UCSD only.</p>
+<sup>3</sup>: Available in SimCenterUQ and UCSD only.</p>
 </div>
 </div>
 <div class="section" id="edp-outputs-from-computational-models">
@@ -401,11 +403,11 @@
 <li><p>All output values presented in spreadsheet</p>
 <blockquote>
 <div><ol class="upperalpha simple">
-<li><p>Update chart by clicking on spreadsheet columns</p></li>
+<li><p>Update the chart by clicking on spreadsheet columns</p></li>
 </ol>
 </div></blockquote>
 </li>
-<li><p>Output values visualized in interactive chart</p>
+<li><p>Output values visualized in the interactive chart</p>
 <blockquote>
 <div><ol class="upperalpha simple">
 <li><p>Scatter plot</p></li>
@@ -426,11 +428,12 @@
 </ol>
 </div></blockquote>
 </li>
-<li><p>Visualization of surrogate modeling results</p>
+<li><p>Visualization of surrogate modeling (GP) results</p>
 <blockquote>
 <div><ol class="upperalpha simple">
 <li><p>Goodness-of-fit measures</p></li>
-<li><p>90% confidence interval and <span class="blue">prediction interval</span></p></li>
+<li><p>90% confidence interval and prediction interval</p></li>
+<li><p>Save GP model</p></li>
 </ol>
 </div></blockquote>
 </li>

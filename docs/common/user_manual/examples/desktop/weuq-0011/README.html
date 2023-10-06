@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>4.3. Digital Wind Tunnel &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>3.4. Digital Wind Tunnel I: Empty Domain Simulation &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="5. Requirements" href="../../../../reqments/WEUQ.html" />
-    <link rel="prev" title="4.2. 3 Story Building: Sensitivity Analysis" href="../weuq-0007/README.html" />
+    <link rel="next" title="3.5. Digital Wind Tunnel II: Wind Loads on Isolated Building" href="../weuq-0013/README.html" />
+    <link rel="prev" title="3.3. Wind Tunnel-Informed Stochastic Wind Load Generation" href="../weuq-0012/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -122,23 +122,25 @@
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">4. Examples</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../weuq-0001/README.html">4.1. 9 Story Building: Sampling Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../weuq-0007/README.html">4.2. 3 Story Building: Sensitivity Analysis</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.3. Digital Wind Tunnel</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#cfd-modeling">4.3.1. CFD modeling</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#inflow-configurations-in-the-digital-wind-tunnel">4.3.2. Inflow configurations in the Digital Wind Tunnel</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#direct-specification-of-inflow-turbulence-through-uploading-a-table">4.3.2.1. Direct specification of inflow turbulence through uploading a table</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#specification-via-prescribed-functions">4.3.2.2. Specification via prescribed functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">3. Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../weuq-0001/README.html">3.1. 9 Story Building: Sampling Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../weuq-0007/README.html">3.2. 3 Story Building: Sensitivity Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../weuq-0012/README.html">3.3. Wind Tunnel-Informed Stochastic Wind Load Generation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.4. Digital Wind Tunnel I: Empty Domain Simulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cfd-modeling">3.4.1. CFD modeling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inflow-configurations-in-the-digital-wind-tunnel">3.4.2. Inflow configurations in the Digital Wind Tunnel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#direct-specification-of-inflow-turbulence-through-uploading-a-table">3.4.2.1. Direct specification of inflow turbulence through uploading a table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#specification-via-prescribed-functions">3.4.2.2. Specification via prescribed functions</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#running-a-cfd-simulation-in-the-digital-wind-tunnel">4.3.3. Running a CFD simulation in the Digital Wind Tunnel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-a-cfd-simulation-in-the-digital-wind-tunnel">3.4.3. Running a CFD simulation in the Digital Wind Tunnel</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../weuq-0013/README.html">3.5. Digital Wind Tunnel II: Wind Loads on Isolated Building</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
@@ -201,9 +203,9 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../examples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
+          <li><a href="../examples.html"><span class="section-number">3. </span>Examples</a> &raquo;</li>
         
-      <li><span class="section-number">4.3. </span>Digital Wind Tunnel</li>
+      <li><span class="section-number">3.4. </span>Digital Wind Tunnel I: Empty Domain Simulation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -222,8 +224,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="digital-wind-tunnel">
-<span id="weuq-0011"></span><h1><span class="section-number">4.3. </span>Digital Wind Tunnel<a class="headerlink" href="#digital-wind-tunnel" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="digital-wind-tunnel-i-empty-domain-simulation">
+<span id="weuq-0011"></span><h1><span class="section-number">3.4. </span>Digital Wind Tunnel I: Empty Domain Simulation<a class="headerlink" href="#digital-wind-tunnel-i-empty-domain-simulation" title="Permalink to this headline">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 39%" />
@@ -236,31 +238,31 @@
 </tbody>
 </table>
 <p>Digital Wind Tunnel is implemented in WE-UQ Version 2.3.0. This feature aims to provide the users with the computational tool to run CFD simulations with the user-defined atmospheric boundary layer inflow conditions and the user-defined OpenFOAM model.</p>
-<p>This project is collaborated with the University of Florida (UF) NHERI Experimental Facility (EF). Multiple inflow conditions characterized by the roughness height and friction velocity were generated by changing the orientation and height of the Terraformer in the wind tunnel. The mean flow structure at each inflow condition is captured by velocity probes downstream <a class="footnote-reference brackets" href="#catarelli2020" id="id1">1</a>.</p>
+<p>This project collaborates with the University of Florida (UF) NHERI Experimental Facility (EF). Multiple inflow conditions characterized by the roughness height and friction velocity were generated by changing the orientation and height of the Terraformer in the wind tunnel. The mean flow structure at each inflow condition is captured by velocity probes downstream <a class="footnote-reference brackets" href="#catarelli2020" id="id1">1</a>.</p>
 <div class="align-center figure" id="id4">
 <a class="reference internal image-reference" href="../../../../../_images/UFWindTunnel.png"><img alt="../../../../../_images/UFWindTunnel.png" src="../../../../../_images/UFWindTunnel.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.3.1 </span><span class="caption-text">UF’s BLWT facility <a class="footnote-reference brackets" href="#catarelli2020" id="id2">1</a>.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.4.1 </span><span class="caption-text">UF’s BLWT facility <a class="footnote-reference brackets" href="#catarelli2020" id="id2">1</a>.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>The Digital Wind Tunnel would allow users to edit the geometric information and inflow conditions through a user interface of WE-UQ, and run the CFD simulations to obtain the aerodynamic loads on structures aided by the open-source CFD software named OpenFOAM and structural responses aided by OpenSees. Compared to traditional physical wind tunnel, the digital wind tunnel would allow for great flexibility in testing different designs and wind scenarios, and has free access to the TACC Frontera computing nodes. In particular, in the Digital Wind Tunnel, the empty domain analysis enables users to simulate the atmospheric boundary layer flows with the user-defined inflow wind characteristics including mean wind velocity profiles, Reynolds stress tensor and length scales. The mean flow structure can also be captured downstream using the sampling functions in OpenFOAM, which can be further validated through the wind tunnel data.</p>
 <div class="align-center figure" id="id5">
 <a class="reference internal image-reference" href="../../../../../_images/DWTsketch.png"><img alt="../../../../../_images/DWTsketch.png" src="../../../../../_images/DWTsketch.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.3.2 </span><span class="caption-text">Schematic diagram for the Digital Wind Tunnel.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.4.2 </span><span class="caption-text">Schematic diagram for the Digital Wind Tunnel.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="cfd-modeling">
-<h2><span class="section-number">4.3.1. </span>CFD modeling<a class="headerlink" href="#cfd-modeling" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.1. </span>CFD modeling<a class="headerlink" href="#cfd-modeling" title="Permalink to this headline">¶</a></h2>
 <p>The first step to run a CFD simulation in the Digital Wind Tunnel is to set up an OpenFOAM case which involves creating a directory structure with specific files that define the simulation settings, such as the geometry, mesh, and boundary conditions. The Digital Wind Tunnel allows users to upload their own model to run CFD simulations. To prepare the OpenFOAM case directory, three sub-directories are needed: <em>0</em>, <em>constant</em> and <em>system</em>.</p>
 <div class="align-center figure" id="id6">
 <a class="reference internal image-reference" href="../../../../../_images/openfoam_structure.png"><img alt="../../../../../_images/openfoam_structure.png" src="../../../../../_images/openfoam_structure.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.3.1.1 </span><span class="caption-text">Directory structure for an OpenFOAM case.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.4.1.1 </span><span class="caption-text">Directory structure for an OpenFOAM case.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>To run a simulation in the Digital Wind Tunnel, select the <strong>EVT</strong> panel in the user interface. From the Load Generator, pull down menu and select the <strong>CFD - Digital Wind Tunnel</strong>. The CFD model can be uploaded by pressing the <strong>Browse</strong> button in the section of <strong>OpenFOAM Parameters</strong>.</p>
 <div class="align-center figure" id="id7">
 <a class="reference internal image-reference" href="../../../../../_images/User-interface.png"><img alt="../../../../../_images/User-interface.png" src="../../../../../_images/User-interface.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.3.1.2 </span><span class="caption-text">User interface of the digital wind tunnel.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.4.1.2 </span><span class="caption-text">User interface of the digital wind tunnel.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>Alternatively, users can run a CFD simulation using the benchmark CFD model embedded in the Digital Wind Tunnel for empty domain analyses. The following table provides the basic information about the CFD modeling. Large eddy simulation (LES) was employed to model the turbulent flow. The CFD model can be downloaded from <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Resources/DigitalWindTunnel/">github website</a>.</p>
 <span id="table-benchmark"></span><table class="docutils align-center" id="id8">
-<caption><span class="caption-number">Table 4.3.1.1 </span><span class="caption-text">Model parameters for the benchmark CFD simulation</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 3.4.1.1 </span><span class="caption-text">Model parameters for the benchmark CFD simulation</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 22%" />
 <col style="width: 78%" />
@@ -287,27 +289,27 @@
 </table>
 <div class="align-center figure" id="id9">
 <a class="reference internal image-reference" href="../../../../../_images/Mesh.png"><img alt="../../../../../_images/Mesh.png" src="../../../../../_images/Mesh.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.3.1.3 </span><span class="caption-text">Mesh generation for the benchmark CFD model.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.4.1.3 </span><span class="caption-text">Mesh generation for the benchmark CFD model.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="inflow-configurations-in-the-digital-wind-tunnel">
-<h2><span class="section-number">4.3.2. </span>Inflow configurations in the Digital Wind Tunnel<a class="headerlink" href="#inflow-configurations-in-the-digital-wind-tunnel" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.2. </span>Inflow configurations in the Digital Wind Tunnel<a class="headerlink" href="#inflow-configurations-in-the-digital-wind-tunnel" title="Permalink to this headline">¶</a></h2>
 <p>After the mesh generation and basic configurations for CFD modeling have been established, it is crucial to generate inflow turbulence that conforms to the desired atmospheric boundary layer flows. This step is essential in setting up a CFD model that can accurately simulate atmospheric flows across a broad spectrum of length and time scales. One common approach to generating inflow turbulence is to use synthetic inflow generation, which involves synthesizing turbulent fluctuations at the inflow boundary based on statistical properties of the turbulence.</p>
 <p>In the Digital Wind Tunnel, the synthetic inflow turbulence generation is enabled by the Turbulence Inflow Tool (TInF) developed by the NHERI SimCenter. Multiple synthetic inflow generation approaches are implemented in TInF, including the Digital Filtering Method and Synthetic Eddy Method. The TInF tool can utilize the statistical properties defined by users to produce a time series of turbulent fluctuations at the inflow boundary, which can then be integrated into WE-UQ for running a CFD simulations. The TInF tool can be directly downloaded from <a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterDocumentation/">github website</a>.</p>
 <p>There are two ways to specify the user-defined inflow boundary conditions that characterize the desired atmospheric boundary layer flows: <em>direct specification</em> and <em>specification via prescribed functions</em>.</p>
 <div class="section" id="direct-specification-of-inflow-turbulence-through-uploading-a-table">
-<h3><span class="section-number">4.3.2.1. </span>Direct specification of inflow turbulence through uploading a table<a class="headerlink" href="#direct-specification-of-inflow-turbulence-through-uploading-a-table" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.2.1. </span>Direct specification of inflow turbulence through uploading a table<a class="headerlink" href="#direct-specification-of-inflow-turbulence-through-uploading-a-table" title="Permalink to this headline">¶</a></h3>
 <p>In the context of <em>direct specification</em>, the Digital Wind Tunnel allows users to specify the inflow turbulence properties obtained from wind tunnel measurements, such as mean velocity, Reynolds stress, and length scales at the inflow boundary for a CFD simulation. For example, the following table Specifies one inflow condition based on wind tunnel measurements at the UF BLWT facility:</p>
 <div class="align-center figure" id="id10">
 <a class="reference internal image-reference" href="../../../../../_images/table.png"><img alt="../../../../../_images/table.png" src="../../../../../_images/table.png" style="width: 1000px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.3.2.1.1 </span><span class="caption-text">Inflow turbulence properties based on the wind tunnel measurements.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.4.2.1.1 </span><span class="caption-text">Inflow turbulence properties based on the wind tunnel measurements.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Users need to adhere to the following table format when inputting the inflow parameters.</p>
 </div>
 <span id="table-directinput"></span><table class="docutils align-default" id="id11">
-<caption><span class="caption-number">Table 4.3.2.1.1 </span><span class="caption-text">Inputs of inflow parameters through <em>direct specification</em>
+<caption><span class="caption-number">Table 3.4.2.1.1 </span><span class="caption-text">Inputs of inflow parameters through <em>direct specification</em>
        :align: center</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 15%" />
@@ -335,15 +337,15 @@
 scales along the height based on the uploaded table.</p>
 <div class="align-center figure" id="id12">
 <a class="reference internal image-reference" href="../../../../../_images/Direct_table.png"><img alt="../../../../../_images/Direct_table.png" src="../../../../../_images/Direct_table.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.3.2.1.2 </span><span class="caption-text">Specifying inflow turbulence through uploading a table.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.4.2.1.2 </span><span class="caption-text">Specifying inflow turbulence through uploading a table.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="specification-via-prescribed-functions">
-<h3><span class="section-number">4.3.2.2. </span>Specification via prescribed functions<a class="headerlink" href="#specification-via-prescribed-functions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.2.2. </span>Specification via prescribed functions<a class="headerlink" href="#specification-via-prescribed-functions" title="Permalink to this headline">¶</a></h3>
 <p>If the wind tunnel data is not available, the user can also specify the inflow conditions through the embedded functions in the Digital Wind Tunnel. There are three functions to characterize the atmospheric inflow profiles: uniform function, exponential function and logarithmic function. The uniform function assumes a constant wind velocity over the entire simulation domain, but may not accurately represent the complex nature of atmospheric boundary layer flows. The exponential function is often used to represent the vertical profile of wind velocity in the atmospheric boundary layer. The logarithmic function is another commonly used function that also represents the vertical profile of wind speed in the atmospheric boundary layer, based on the assumption of a logarithmic variation of wind velocity with height.</p>
 <div class="align-center figure" id="id13">
 <a class="reference internal image-reference" href="../../../../../_images/TInF_function.png"><img alt="../../../../../_images/TInF_function.png" src="../../../../../_images/TInF_function.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.3.2.2.1 </span><span class="caption-text">Inflow configuration using embedded functions.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.4.2.2.1 </span><span class="caption-text">Inflow configuration using embedded functions.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 <p>The Digital Wind Tunnel offers several methods to generate synthetic turbulence at the inflow boundary, including digital filtering method. When a user selects a particular method, the Digital Wind Tunnel will modify the corresponding OpenFOAM case files based on the user’s inputs. For instance, if the digital filtering approach is selected, WE-UQ will automatically modify the inflow file <em>U</em> in the OpenFOAM case directory to set up the basic parameters for the approach.</p>
 <p>The related entries are in the form of</p>
@@ -366,12 +368,13 @@ scales along the height based on the uploaded table.</p>
 </div>
 </div>
 <div class="section" id="running-a-cfd-simulation-in-the-digital-wind-tunnel">
-<h2><span class="section-number">4.3.3. </span>Running a CFD simulation in the Digital Wind Tunnel<a class="headerlink" href="#running-a-cfd-simulation-in-the-digital-wind-tunnel" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.3. </span>Running a CFD simulation in the Digital Wind Tunnel<a class="headerlink" href="#running-a-cfd-simulation-in-the-digital-wind-tunnel" title="Permalink to this headline">¶</a></h2>
 <p>After the CFD model is set up, the next step is to run the CFD simulations. Press the <strong>RUN at DesignSafe</strong> button to submit the job to TACC Frontera HPC resources. Once the simulation is completed, download the data from <strong>GET from DesignSafe</strong>. Post-processing tools including paraView can be used to visualize and analyze the flow simulations. Once the CFD simulation with the specified inflow conditions has been performed, the velocity profiles downstream can be computed from the resulting data and compared with experimental measurements to validate the accuracy of the simulation. This validation step is important to ensure that the simulated results are reliable and can be used for further analysis including building design.</p>
 <div class="align-center figure" id="id14">
 <a class="reference internal image-reference" href="../../../../../_images/Post-processing.png"><img alt="../../../../../_images/Post-processing.png" src="../../../../../_images/Post-processing.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.3.3.1 </span><span class="caption-text">Post-processing tools for visualizing and validating the inflow turbulence profiles.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.4.3.1 </span><span class="caption-text">Post-processing tools for visualizing and validating the inflow turbulence profiles.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
+<p>To further process the velocity profiles downstream, users can utilize the OpenFOAM embedded sampling functions such as <em>probe</em> to gather the velocity data and validate the profile. Additionally, users can refer to the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published/PRJ-3918/">Jupyter Notebooks project</a> published in DesignSafe to visualize and plot the velocity profile downstream.</p>
 <dl class="footnote brackets">
 <dt class="label" id="catarelli2020"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
 <dd><p>Catarelli, R. A., Fernández-Cabán, P. L., Masters, F. J., Bridge, J. A., Gurley, K. R., &amp; Matyas, C. J. (2020). Automated terrain generation for precise atmospheric boundary layer simulation in the wind tunnel. Journal of Wind Engineering and Industrial Aerodynamics, 207, 104276.</p>

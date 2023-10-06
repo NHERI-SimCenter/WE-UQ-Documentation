@@ -1,0 +1,412 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2.4.8. Experimental Wind Force (Time Series Input) &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="2.4.9. Wind Force Spectrum" href="WindForceSpectrum.html" />
+    <link rel="prev" title="2.4.7. Multiple Existing" href="WeUQExisting.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/WE-UQ-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/WEUQ/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/weCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/weReleaseNotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/wePlans.html">7. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../GI.html">2.2. GI: General Information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.3. SIM: Structural Model</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="WindEvents.html">2.4. EVT: Wind Events</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="stochasticWind.html">2.4.1. Stochastic Wind</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DigitalWindTunnel.html">2.4.2. Digital Wind Tunnel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IsolatedBuildingCFD.html">2.4.3. Isolated Building CFD Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DEDMHrp.html">2.4.4. Database-Enabled Design Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lowRiseTPU.html">2.4.5. Data from Tokyo Polytechnic University</a></li>
+<li class="toctree-l3"><a class="reference internal" href="windTunnelExp.html">2.4.6. Wind Tunnel Experiment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WeUQExisting.html">2.4.7. Multiple Existing</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.8. Experimental Wind Force (Time Series Input)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#user-inputs">2.4.8.1. User Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wind-force-time-history-file">2.4.8.2. Wind Force Time History File</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="WindForceSpectrum.html">2.4.9. Wind Force Spectrum</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.6. RV: Random Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../response/EDP.html">2.7. EDP: Demand Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../response/resEE.html">2.8. RES: Results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">3. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/WEUQ.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Wind Engineering with Uncertainty Quantification</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../usage.html"><span class="section-number">2. </span>User Interface</a> &raquo;</li>
+        
+          <li><a href="WindEvents.html"><span class="section-number">2.4. </span>EVT: Wind Events</a> &raquo;</li>
+        
+      <li><span class="section-number">2.4.8. </span>Experimental Wind Force (Time Series Input)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/user_manual/usage/desktop/wind/ExperimentalWindForce.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="experimental-wind-force-time-series-input">
+<span id="lblexperimentalwindforce"></span><h1><span class="section-number">2.4.8. </span>Experimental Wind Force (Time Series Input)<a class="headerlink" href="#experimental-wind-force-time-series-input" title="Permalink to this headline">¶</a></h1>
+<p>The application takes multivariate stationary wind force time series data obtained from a wind tunnel experiment and can generate multiple realizations of the full-scale multivariate Gaussian wind force time series that is accurate up to the second-order properties (i.e., mean, CPSD functions, correlation) of the input data. Based on the Central Limit Theorem, the wind forces can be approximately modeled as Gaussian processes due to the integral effects of the incident pressures. This algorithm follows the implementation details in <a class="reference internal" href="WindForceSpectrum.html#duarte2023" id="id1"><span>[Duarte2023]</span></a> and the theory manual is available <a class="reference internal" href="../../../../technical_manual/desktop/WEUQ/dataInformedStochasticWind.html#lbldatainformedwindtheory"><span class="std std-ref">here</span></a>.</p>
+<div class="align-center figure" id="id4">
+<span id="fig-experimentalwind0"></span><a class="reference internal image-reference" href="../../../../../_images/weuqExperimentalWindForces0.png"><img alt="../../../../../_images/weuqExperimentalWindForces0.png" src="../../../../../_images/weuqExperimentalWindForces0.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.4.8.1 </span><span class="caption-text">Generating full-scale wind force history from a model-scale wind force time history obtained from wind tunnel experiments.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<dl class="citation">
+<dt class="label" id="duarte2023"><span class="brackets">Duarte2023</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id3">3</a>)</span></dt>
+<dd><p>Duarte, T.G., Arunachalam, S., Subgranon, A. and Spence, S.M., (2023). Uncertainty Quantification and Simulation of Wind-Tunnel-Informed Stochastic Wind Loads. Wind, 3(3), pp.375-393.</p>
+</dd>
+</dl>
+<div class="section" id="user-inputs">
+<h2><span class="section-number">2.4.8.1. </span>User Inputs<a class="headerlink" href="#user-inputs" title="Permalink to this headline">¶</a></h2>
+<div class="align-center figure" id="id5">
+<span id="fig-experimentalwind1"></span><img alt="../../../../../_images/weuqExperimentalWindForces.png" src="../../../../../_images/weuqExperimentalWindForces.png" />
+<p class="caption"><span class="caption-number">Fig. 2.4.8.1.1 </span><span class="caption-text">Option to import experimental wind force time history</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>The input parameters for the application interface are provided below.
+* <strong>Percentage of Modes</strong>: Percentage of modes (dominant modes) that will be included to obtain the loading process. If 100% of modes are included, the simulated process is exact up to the second order, but additional computation cost is expected. It is recommended to include at least 25% of modes to have negligible errors in the simulation at a reasonable computational cost <a class="reference internal" href="WindForceSpectrum.html#duarte2023" id="id2"><span>[Duarte2023]</span></a>
+* <strong>Full Scale Reference Wind Speed</strong>: The full-scale wind speed at the reference point of the building (e.g., top of the building). The reference point location should match that of the model used in the wind tunnel testing.
+* <strong>Full Scale Duration</strong>: The duration of wind force time series that will be generated by this engine.
+* <strong>Seed</strong>: The seed for the random number generator.
+* <strong>File Name</strong>: “Wind Force Time History File” that contains model geometry and wind tunnel experiment details. The data can be provided either as a MATLAB binary file (.mat) or a json (.json) file. Please see the next section for the details of the variables (keys) needed in the file.
+* <strong>Model Scale</strong>: This is the geometric length scale. This value is automatically estimated after reading the “Wind Force Time History File”, as a ratio between the full-scale and model-scale building dimensions. Only if the file is imported in a json format, the model scale ratio will be displayed.
+* The units can be modified at GI tab.</p>
+<p>Additional input parameters for estimating cross-power spectral density function can be specified, i.e., <strong>Window Size</strong> and <strong>Overlap Percentage</strong>. The “Window Size” is the length of the Hanning window function given in seconds. Its values can range from [0, L], where L is the record duration used as input. A window size of 4 s is suggested for wind tunnel records lasting about 30 s – 60 s, but the user has the flexibility to define this variable according to specific case study requirements. The “Overlap Percentage” determines the extent of overlap between segments of the signal. A value of 50% overlap is suggested. Note that the engine implemented in WE-UQ uses <code class="docutils literal notranslate"><span class="pre">scipy.signal.csd</span></code> function, and the detailed parameter information can be found in the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.csd.html">scipy user manual</a>.</p>
+<div class="align-center figure" id="id6">
+<span id="fig-experimentalwind2"></span><a class="reference internal image-reference" href="../../../../../_images/weuqExperimentalWindForces2.png"><img alt="../../../../../_images/weuqExperimentalWindForces2.png" src="../../../../../_images/weuqExperimentalWindForces2.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.4.8.1.2 </span><span class="caption-text">Option to import experimental wind force time history</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>The <strong>Full Scale Building Geometry</strong> and the <strong>Units</strong> are specified in the GI tab. The correct <strong>number of stories</strong> should also be provided.</p>
+<div class="align-center figure" id="id7">
+<span id="fig-experimentalwind5"></span><a class="reference internal image-reference" href="../../../../../_images/weuqExperimentalWindForces5.png"><img alt="../../../../../_images/weuqExperimentalWindForces5.png" src="../../../../../_images/weuqExperimentalWindForces5.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.4.8.1.3 </span><span class="caption-text">GI tab (Only the variables in the red box are relevant to the current module.)</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This algorithm assumes that <strong>the building is uniformly scaled in all dimensions</strong>, meaning if model height is scaled by 1/200 for the experiment, width (breath) and depth is also scaled by 1/200. Therefore the ratio of model-scale dimensions (B,H,D) provided in the “Wind Force Time History File” should match that of the full-scale dimensions (Height, Width, Depth) specified in the GI tab. Otherwise, WE-UQ will give a warning message in blue font color as shown in the screen capture above.</p>
+</div>
+</div>
+<div class="section" id="wind-force-time-history-file">
+<h2><span class="section-number">2.4.8.2. </span>Wind Force Time History File<a class="headerlink" href="#wind-force-time-history-file" title="Permalink to this headline">¶</a></h2>
+<div class="align-center figure" id="id8">
+<span id="fig-experimentalwind6"></span><a class="reference internal image-reference" href="../../../../../_images/weuqExperimentalWindForces6.png"><img alt="../../../../../_images/weuqExperimentalWindForces6.png" src="../../../../../_images/weuqExperimentalWindForces6.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.4.8.2.1 </span><span class="caption-text">Schematic representation of the building and the loads, and the coordinate system (<a class="reference internal" href="WindForceSpectrum.html#duarte2023" id="id3"><span>[Duarte2023]</span></a> )</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<p>The details of experimental wind force data should be provided either in a MATLAB binary (.mat) or json (.json) file. The following variables (or keys) need to be included (<code class="docutils literal notranslate"><span class="pre">ntimestep</span></code>: number of time steps, <code class="docutils literal notranslate"><span class="pre">nfloor</span></code>: number of floors of the building)</p>
+<ul class="simple">
+<li><p><strong>B</strong>: Scalar. Breath (Width) of the building model used in the experiment (Length unit defined in GI tab)</p></li>
+<li><p><strong>D</strong>: Scalar. Depth of the building model used in the experiment (Length unit defined in GI tab)</p></li>
+<li><p><strong>H</strong>: Scalar. Height of the building model used in the experiment (Length unit defined in GI tab)</p></li>
+<li><p><strong>fs</strong>: Scalar. Sampling frequency (Hz)</p></li>
+<li><p><strong>Fx</strong>: 2D array with size [<code class="docutils literal notranslate"><span class="pre">ntimestep</span></code> x <code class="docutils literal notranslate"><span class="pre">nfloor</span></code>]. The x-directional wind force time history measured at each story (Force unit defined in GI tab)</p></li>
+<li><p><strong>Fy</strong>: 2D array with size [<code class="docutils literal notranslate"><span class="pre">ntimestep</span></code> x <code class="docutils literal notranslate"><span class="pre">nfloor</span></code>]. The y-directional wind force time history measured at each story (Force unit defined in GI tab)</p></li>
+<li><p><strong>Tz</strong>: 2D array with size [<code class="docutils literal notranslate"><span class="pre">ntimestep</span></code> x <code class="docutils literal notranslate"><span class="pre">nfloor</span></code>]. The z-directional wind force moment time history measured at each story (Force unit defined in GI tab)</p></li>
+<li><p><strong>t</strong>: 1D array with size [1 x <code class="docutils literal notranslate"><span class="pre">ntimestep</span></code>]. The time series data for the wind force time histories Fx, Fy, Tz (sec).</p></li>
+<li><p><strong>Vref</strong>: Scalar. Model Scale Reference Wind Speed at the reference point of the building. The reference point of the model should match that of the full-scale building (Velocity with length unit defined in GI tab and sec).</p></li>
+</ul>
+<div class="align-center figure" id="id9">
+<span id="fig-experimentalwind3"></span><a class="reference internal image-reference" href="../../../../../_images/weuqExperimentalWindForces3.png"><img alt="../../../../../_images/weuqExperimentalWindForces3.png" src="../../../../../_images/weuqExperimentalWindForces3.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.4.8.2.2 </span><span class="caption-text">Example of information inside a matlab binary file (.mat) (<code class="docutils literal notranslate"><span class="pre">nfloor</span></code> = 25, <code class="docutils literal notranslate"><span class="pre">ntimesteps</span></code> = 20,000, units: meter, Newton, second)</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id10">
+<span id="fig-experimentalwind4"></span><a class="reference internal image-reference" href="../../../../../_images/weuqExperimentalWindForces4.png"><img alt="../../../../../_images/weuqExperimentalWindForces4.png" src="../../../../../_images/weuqExperimentalWindForces4.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.4.8.2.3 </span><span class="caption-text">Example of information inside a Json file (.json) (<code class="docutils literal notranslate"><span class="pre">nfloor</span></code> = 25, <code class="docutils literal notranslate"><span class="pre">ntimesteps</span></code> = 20,000, units: meter, Newton, second)</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<p>The example Json file shown in the image can be found at <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples//weuq-0012//src">weuq-0012/src</a>, named <code class="docutils literal notranslate"><span class="pre">Forces_ANG000_phase1.json</span></code></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2023, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-2', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>

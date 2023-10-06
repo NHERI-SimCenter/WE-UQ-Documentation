@@ -122,7 +122,7 @@
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Guide</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Interface</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GI.html">2.2. GI: General Information</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.3. SIM: Structural Model</a></li>
@@ -132,13 +132,14 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.7. EDP: Demand Parameters</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#standard">2.7.1. Standard</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#user-defined">2.7.2. User Defined</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#none">2.7.3. None</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="resEE.html">2.8. RES: Results</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">3. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
@@ -201,7 +202,7 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
+          <li><a href="../usage.html"><span class="section-number">2. </span>User Interface</a> &raquo;</li>
         
       <li><span class="section-number">2.7. </span>EDP: Demand Parameters</li>
     
@@ -229,6 +230,7 @@ the simulation runs. There are a number of options available in the pull-down</p
 <ol class="arabic simple">
 <li><p>Standard</p></li>
 <li><p>User Defined</p></li>
+<li><p>None</p></li>
 </ol>
 <div class="section" id="standard">
 <h2><span class="section-number">2.7.1. </span>Standard<a class="headerlink" href="#standard" title="Permalink to this headline">¶</a></h2>
@@ -388,6 +390,14 @@ file. If the process script has an array of strings named named
 EDP’s the script, the Response Parameters will be initially set with
 these values from the script.</p>
 </div></blockquote>
+</div>
+<div class="section" id="none">
+<h2><span class="section-number">2.7.3. </span>None<a class="headerlink" href="#none" title="Permalink to this headline">¶</a></h2>
+<p>This option is used only when the user specifies a surrogate model in the SIM tab. Because a surrogate model can evaluate only the EDPs that are pre-trained, we automatically display those quantities, and do not allow users to modify the list.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This option is not for training a surrogate model but for using a pre-trained surrogate model.</p>
+</div>
 </div>
 </div>
 

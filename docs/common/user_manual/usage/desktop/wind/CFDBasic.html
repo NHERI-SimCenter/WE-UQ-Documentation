@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.4.2. CFD Basic Template &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>CFD Basic Template &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -49,8 +49,6 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.4.3. CFD Expert Template" href="CFDExpert.html" />
-    <link rel="prev" title="2.4.1. Stochastic Wind" href="stochasticWind.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -120,30 +118,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../GI.html">2.2. GI: General Information</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.3. SIM: Structural Model</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="WindEvents.html">2.4. EVT: Wind Events</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="stochasticWind.html">2.4.1. Stochastic Wind</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.2. CFD Basic Template</a></li>
-<li class="toctree-l3"><a class="reference internal" href="CFDExpert.html">2.4.3. CFD Expert Template</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DEDMHrp.html">2.4.4. Database-Enabled Design Module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lowRiseTPU.html">2.4.5. Data from Tokyo Polytechnic University</a></li>
-<li class="toctree-l3"><a class="reference internal" href="windTunnelExp.html">2.4.6. Wind Tunnel Experiment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="WeUQExisting.html">2.4.7. Multiple Existing</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.6. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../response/EDP.html">2.7. EDP: Demand Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../response/resEE.html">2.8. RES: Results</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">3. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
@@ -206,11 +185,7 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../usage.html"><span class="section-number">2. </span>User Guide</a> &raquo;</li>
-        
-          <li><a href="WindEvents.html"><span class="section-number">2.4. </span>EVT: Wind Events</a> &raquo;</li>
-        
-      <li><span class="section-number">2.4.2. </span>CFD Basic Template</li>
+      <li>CFD Basic Template</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -230,11 +205,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="cfd-basic-template">
-<h1><span class="section-number">2.4.2. </span>CFD Basic Template<a class="headerlink" href="#cfd-basic-template" title="Permalink to this headline">¶</a></h1>
-<p>This event facilitates generating a CFD model for wind flow around a building. A template is provided to the user to generate an OpenFOAM model based on a set of parameters for mesh generation and CFD simulation. The user needs to specify the domain size, mesh size, boundary conditions, simulation parameters and the method for extracting wind forces on the building as shown in <a class="reference internal" href="#fig-cfd-template"><span class="std std-numref">Fig. 2.4.2.1</span></a>.</p>
+<h1>CFD Basic Template<a class="headerlink" href="#cfd-basic-template" title="Permalink to this headline">¶</a></h1>
+<p>This event facilitates generating a CFD model for wind flow around a building. A template is provided to the user to generate an OpenFOAM model based on a set of parameters for mesh generation and CFD simulation. The user needs to specify the domain size, mesh size, boundary conditions, simulation parameters and the method for extracting wind forces on the building as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-cfd-template</span></code>.</p>
 <div class="align-center figure" id="id1">
 <span id="fig-cfd-template"></span><img alt="../../../../../_images/cfd_template.png" src="../../../../../_images/cfd_template.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.2.1 </span><span class="caption-text">CFD template event.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">CFD template event.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>The following are the steps the user should follow to use the CFD template:</p>
 <ol class="arabic simple">
