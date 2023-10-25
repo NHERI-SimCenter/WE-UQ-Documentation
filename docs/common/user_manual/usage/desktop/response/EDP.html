@@ -143,6 +143,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -268,9 +273,9 @@ containing a series of recorder commands.</p></li>
 <blockquote>
 <div><p>A recorder file passed to OpenSees might look like the following:</p>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># recorder EnvelopeNode -file $filename -node $nodeTag1 ... $nodeTagN -dof $DOF1 $DOF2 disp</span>
-<span class="nv">recorder</span> EnvelopeNode <span class="o">-</span>file node.out <span class="o">-</span>node <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="o">-</span>dof <span class="mi">1</span> disp
+<span class="nv">recorder</span><span class="w"> </span>EnvelopeNode<span class="w"> </span><span class="o">-</span>file<span class="w"> </span>node.out<span class="w"> </span><span class="o">-</span>node<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">1</span><span class="w"> </span>disp
 <span class="c"># recorder EnvelopeElement -file $filename -ele $eleTag1 ... $eleTagN forces</span>
-<span class="nv">recorder</span> EnvelopeElement <span class="o">-</span>file ele.out <span class="o">-</span>ele <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> forces
+<span class="nv">recorder</span><span class="w"> </span>EnvelopeElement<span class="w"> </span><span class="o">-</span>file<span class="w"> </span>ele.out<span class="w"> </span><span class="o">-</span>ele<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span>forces
 </pre></div>
 </div>
 </div></blockquote>
@@ -346,31 +351,31 @@ python file below along with the tcl script for creating recorders in OpenSees.<
 </pre></div>
 </div>
 </details><details class="summary-example-post-processing-tcl-file">
-<summary>Example post-processing tcl file</summary><div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> nodeIn <span class="k">[</span><span class="nb">open</span> node.out r<span class="k">]</span>
-<span class="k">while</span> <span class="k">{</span> <span class="k">[</span><span class="nb">gets</span> <span class="nv">$nodeIn</span> data<span class="k">]</span> <span class="o">&gt;=</span> <span class="nv">0</span> <span class="k">}</span> <span class="k">{</span>
-        <span class="k">set</span> maxDisplacement <span class="nv">$data</span>
+<summary>Example post-processing tcl file</summary><div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span><span class="w"> </span>nodeIn<span class="w"> </span><span class="k">[</span><span class="nb">open</span><span class="w"> </span>node.out<span class="w"> </span>r<span class="k">]</span>
+<span class="k">while</span><span class="w"> </span><span class="k">{</span><span class="w"> </span><span class="k">[</span><span class="nb">gets</span><span class="w"> </span><span class="nv">$nodeIn</span><span class="w"> </span>data<span class="k">]</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nv">0</span><span class="w"> </span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span>maxDisplacement<span class="w"> </span><span class="nv">$data</span>
 <span class="k">}</span>
-<span class="nb">puts</span> <span class="nv">$maxDisplacement</span>
+<span class="nb">puts</span><span class="w"> </span><span class="nv">$maxDisplacement</span>
 
 <span class="c"># create file handler to write results to output &amp; list into which we will put results</span>
-<span class="k">set</span> resultFile <span class="k">[</span><span class="nb">open</span> results.out w<span class="k">]</span>
-<span class="k">set</span> results <span class="k">[]</span>
+<span class="k">set</span><span class="w"> </span>resultFile<span class="w"> </span><span class="k">[</span><span class="nb">open</span><span class="w"> </span>results.out<span class="w"> </span>w<span class="k">]</span>
+<span class="k">set</span><span class="w"> </span>results<span class="w"> </span><span class="k">[]</span>
 
 <span class="c"># for each quanity in list of QoI passed</span>
 <span class="c">#  - get nodeTag</span>
 <span class="c">#  - get nodal displacement if valid node, output 0.0 if not</span>
 <span class="c">#  - for valid node output displacement, note if dof not provided output 1&#39;st dof</span>
 
-<span class="k">foreach</span> edp <span class="nv">$listQoI</span> <span class="k">{</span>
-        <span class="k">set</span> splitEDP <span class="k">[</span><span class="nb">split</span> <span class="nv">$edp</span> <span class="s2">&quot;_&quot;</span><span class="k">]</span>
-        <span class="k">set</span> nodeTag <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$splitEDP</span> <span class="mi">1</span><span class="k">]</span>
-                <span class="k">if</span> <span class="k">{[</span><span class="nb">llength</span> <span class="nv">$splitEDP</span><span class="k">]</span> <span class="o">==</span> <span class="nv">3</span><span class="k">}</span> <span class="k">{</span>
-                        <span class="k">set</span> dof <span class="mi">1</span>
-        <span class="k">}</span> <span class="k">else</span> <span class="k">{</span>
-                        <span class="k">set</span> dof <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$splitEDP</span> <span class="mi">3</span><span class="k">]</span>
-        <span class="k">}</span>
-        <span class="k">set</span> nodeDisp <span class="k">[</span><span class="nb">lindex</span> <span class="nv">$maxDisplacement</span> <span class="k">[expr</span> <span class="k">((</span><span class="nv">$nodeTag-1</span><span class="k">)</span><span class="o">*</span><span class="nv">2</span><span class="k">)</span><span class="o">+</span><span class="nv">$dof-1</span><span class="k">]]</span>
-        <span class="nb">lappend</span> results <span class="nv">$nodeDisp</span>
+<span class="k">foreach</span><span class="w"> </span>edp<span class="w"> </span><span class="nv">$listQoI</span><span class="w"> </span><span class="k">{</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span>splitEDP<span class="w"> </span><span class="k">[</span><span class="nb">split</span><span class="w"> </span><span class="nv">$edp</span><span class="w"> </span><span class="s2">&quot;_&quot;</span><span class="k">]</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span>nodeTag<span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$splitEDP</span><span class="w"> </span><span class="mi">1</span><span class="k">]</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="k">{[</span><span class="nb">llength</span><span class="w"> </span><span class="nv">$splitEDP</span><span class="k">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">3</span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
+<span class="w">                        </span><span class="k">set</span><span class="w"> </span>dof<span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="k">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">{</span>
+<span class="w">                        </span><span class="k">set</span><span class="w"> </span>dof<span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$splitEDP</span><span class="w"> </span><span class="mi">3</span><span class="k">]</span>
+<span class="w">        </span><span class="k">}</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span>nodeDisp<span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$maxDisplacement</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="k">((</span><span class="nv">$nodeTag-1</span><span class="k">)</span><span class="o">*</span><span class="nv">2</span><span class="k">)</span><span class="o">+</span><span class="nv">$dof-1</span><span class="k">]]</span>
+<span class="w">        </span><span class="nb">lappend</span><span class="w"> </span>results<span class="w"> </span><span class="nv">$nodeDisp</span>
 <span class="k">}</span>
 </pre></div>
 </div>

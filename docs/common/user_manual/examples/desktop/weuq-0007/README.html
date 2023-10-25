@@ -134,12 +134,18 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../weuq-0012/README.html">3.3. Wind Tunnel-Informed Stochastic Wind Load Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../weuq-0011/README.html">3.4. Digital Wind Tunnel I: Empty Domain Simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../weuq-0013/README.html">3.5. Digital Wind Tunnel II: Wind Loads on Isolated Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../weuq-0013/README.html">3.5. Digital Wind Tunnel II: Wind Loads on Isolated Building with Simple Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../weuq-0014/README.html">3.6. Digital Wind Tunnel II: Wind Loads on Isolated Building with Complex Geometry</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -254,7 +260,7 @@
 <div class="section" id="global-sensitivity-analysis">
 <h2><span class="section-number">3.2.1. </span>Global Sensitivity Analysis<a class="headerlink" href="#global-sensitivity-analysis" title="Permalink to this headline">¶</a></h2>
 <p>In a global sensitivity analysis the user is wishing to understand what is the influence of the individual random variables on the quantities of interest. This is typically done before the user launches large scale forward uncertainty problems in order to limit the number of random variables used so as to limit the number of simulations performed.</p>
-<p>For this problem we will limit the response qunataties of interest to the following six quantaties. Peak Roof displacement in 1 and 2 directions, root mean square (RMS) accelerations in 1 and 2 directions, Peak BAse shear and moments in 1 and 2 directions. In order to do this we will introduce User defined EPD quantaties, which necessitates the followng two files: <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/3Story/recorder.tcl">recorder.tcl</a> and <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/3Story/postprocess.tcl">postprocess.tcl</a>.  These files are the same as those presented in <a class="reference internal" href="../../../fmkExamples/desktopNEW/weuq-0001/README.html#lblwe-example9"><span class="std std-ref">9 Story Building: Sampling Analysis</span></a></p>
+<p>For this problem we will limit the response qunataties of interest to the following six quantaties. Peak Roof displacement in 1 and 2 directions, root mean square (RMS) accelerations in 1 and 2 directions, Peak BAse shear and moments in 1 and 2 directions. In order to do this we will introduce User defined EPD quantaties, which necessitates the followng two files: <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/3Story/recorder.tcl">recorder.tcl</a> and <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/3Story/postprocess.tcl">postprocess.tcl</a>.  These files are the same as those presented in <span class="xref std std-ref">lblWE-Example9</span></p>
 <p>To perform a Global Sensitivity  analysis the user would perform the following steps:</p>
 <ol class="arabic">
 <li><p>Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota. From the UQ Method Category drop down menu select Sensitivity Analysis, Keeping the method as LHS (Latin Hypercube). Change the #samples to 500 and the seed to 20 as shown in the figure.</p>

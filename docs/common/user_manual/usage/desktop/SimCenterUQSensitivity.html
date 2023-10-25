@@ -129,6 +129,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -271,17 +276,17 @@
 <blockquote>
 <div><div class="literal-block-wrapper docutils container" id="id7">
 <div class="code-block-caption"><span class="caption-number">Listing 2.1.3.2.1 </span><span class="caption-text">Creating binary dataset (row-major, float point) using Matlab</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% RV and QoI are matrices with size of (nsamp x ndim) </span><span class="w"></span>
-<span class="c">% nsamp: number of samples</span><span class="w"></span>
-<span class="c">% ndim : number of RVs or QoIs</span><span class="w"></span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% RV and QoI are matrices with size of (nsamp x ndim) </span>
+<span class="c">% nsamp: number of samples</span>
+<span class="c">% ndim : number of RVs or QoIs</span>
 
-<span class="n">fileID</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fopen</span><span class="p">(</span><span class="s">&#39;RV.bin&#39;</span><span class="p">,</span><span class="s">&#39;w&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">fwrite</span><span class="p">(</span><span class="n">fileID</span><span class="p">,</span><span class="n">RV</span><span class="o">&#39;</span><span class="p">,</span><span class="s">&#39;float&#39;</span><span class="p">);</span><span class="w"> </span><span class="c">% RV matrix is transposed because Matlab uses column-major binary</span><span class="w"></span>
-<span class="nb">fclose</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span><span class="w"></span>
+<span class="n">fileID</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fopen</span><span class="p">(</span><span class="s">&#39;RV.bin&#39;</span><span class="p">,</span><span class="s">&#39;w&#39;</span><span class="p">);</span>
+<span class="nb">fwrite</span><span class="p">(</span><span class="n">fileID</span><span class="p">,</span><span class="n">RV</span><span class="o">&#39;</span><span class="p">,</span><span class="s">&#39;float&#39;</span><span class="p">);</span><span class="w"> </span><span class="c">% RV matrix is transposed because Matlab uses column-major binary</span>
+<span class="nb">fclose</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span>
 
-<span class="n">fileID</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fopen</span><span class="p">(</span><span class="s">&#39;QoI.bin&#39;</span><span class="p">,</span><span class="s">&#39;w&#39;</span><span class="p">);</span><span class="w"></span>
-<span class="nb">fwrite</span><span class="p">(</span><span class="n">fileID</span><span class="p">,</span><span class="n">QoI</span><span class="o">&#39;</span><span class="p">,</span><span class="s">&#39;float&#39;</span><span class="p">);</span><span class="w"> </span><span class="c">% QoI matrix is transposed because Matlab uses column-major binary</span><span class="w"></span>
-<span class="nb">fclose</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span><span class="w"></span>
+<span class="n">fileID</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fopen</span><span class="p">(</span><span class="s">&#39;QoI.bin&#39;</span><span class="p">,</span><span class="s">&#39;w&#39;</span><span class="p">);</span>
+<span class="nb">fwrite</span><span class="p">(</span><span class="n">fileID</span><span class="p">,</span><span class="n">QoI</span><span class="o">&#39;</span><span class="p">,</span><span class="s">&#39;float&#39;</span><span class="p">);</span><span class="w"> </span><span class="c">% QoI matrix is transposed because Matlab uses column-major binary</span>
+<span class="nb">fclose</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>

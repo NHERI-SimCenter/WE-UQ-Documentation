@@ -126,6 +126,11 @@
 <li class="toctree-l1"><a class="reference internal" href="WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dldb/repair/index.html">2. Repair Consequence Models</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -933,7 +938,19 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>UF.1</p></td>
+<tr class="row-even"><td><p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>UF.1</p></td>
 <td><p>Ability to use basic Monte Carlo and LHS methods</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -945,7 +962,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>UF.2</p></td>
+<tr class="row-even"><td><p>UF.2</p></td>
 <td><p>Ability to use Gaussian Process Regression</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -957,7 +974,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>UF.3</p></td>
+<tr class="row-odd"><td><p>UF.3</p></td>
 <td><p>Ability to use Own External UQ Engine</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -969,7 +986,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>UF.4</p></td>
+<tr class="row-even"><td><p>UF.4</p></td>
 <td><p>Ability to use Multi-Scale Monte Carlo</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -981,7 +998,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>UF.5</p></td>
+<tr class="row-odd"><td><p>UF.5</p></td>
 <td><p>Ability to use Multi-Fidelity Models</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -993,7 +1010,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>UR.1</p></td>
+<tr class="row-even"><td><p>UR.1</p></td>
 <td><p>Ability to use First Order Reliability method</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -1005,7 +1022,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>UR.2</p></td>
+<tr class="row-odd"><td><p>UR.2</p></td>
 <td><p>Ability to use Second Order Reliability method</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -1017,7 +1034,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>UR.3</p></td>
+<tr class="row-even"><td><p>UR.3</p></td>
 <td><p>Ability to use Surrogate Based Reliability</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -1029,7 +1046,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>UR.4</p></td>
+<tr class="row-odd"><td><p>UR.4</p></td>
 <td><p>Ability to use Importance Sampling</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -1041,7 +1058,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>UG.1</p></td>
+<tr class="row-even"><td><p>UG.1</p></td>
 <td><p>Ability to obtain Global Sensitivity Sobol indices</p></td>
 <td><p>UF</p></td>
 <td><p>M</p></td>
@@ -1053,7 +1070,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>UG.2</p></td>
+<tr class="row-odd"><td><p>UG.2</p></td>
 <td><p>Ability to use probability model-based global sensitivity analysis (PM-GSA)</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -1065,7 +1082,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>US.1</p></td>
+<tr class="row-even"><td><p>US.1</p></td>
 <td><p>Ability to Construct Gaussian Process (GP) Regression Model from a Simulation Model</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -1077,7 +1094,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>US.2</p></td>
+<tr class="row-odd"><td><p>US.2</p></td>
 <td><p>Ability to Construct GP Regression Model from Input-output Dataset</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -1089,7 +1106,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>US.3</p></td>
+<tr class="row-even"><td><p>US.3</p></td>
 <td><p>Ability to use Surrogate Model for UQ Analysis</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -1101,7 +1118,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>US.4</p></td>
+<tr class="row-odd"><td><p>US.4</p></td>
 <td><p>Ability to Save the Surrogate Model</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -1113,7 +1130,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>US.5</p></td>
+<tr class="row-even"><td><p>US.5</p></td>
 <td><p>Ability to Use Adaptive Design of Experiments</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -1125,7 +1142,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>US.6</p></td>
+<tr class="row-odd"><td><p>US.6</p></td>
 <td><p>Ability to Asses Reliability of Surrogate Model</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -1137,7 +1154,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>US.7</p></td>
+<tr class="row-even"><td><p>US.7</p></td>
 <td><p>Ability to Build Surrogate Under Stochastic Excitation</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -1149,7 +1166,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>US.8</p></td>
+<tr class="row-odd"><td><p>US.8</p></td>
 <td><p>Ability to Use Physics-Informed Machine Learning</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -1161,7 +1178,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>UN.1</p></td>
+<tr class="row-even"><td><p>UN.1</p></td>
 <td><p>Ability to use Gauss-Newton solvers for parameter estimation</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -1173,7 +1190,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>UN.2</p></td>
+<tr class="row-odd"><td><p>UN.2</p></td>
 <td><p>Ability to read calibration data from file</p></td>
 <td><p>UF</p></td>
 <td><p>M</p></td>
@@ -1185,7 +1202,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>UN.3</p></td>
+<tr class="row-even"><td><p>UN.3</p></td>
 <td><p>Ability to handle non-scalar response quantities</p></td>
 <td><p>UF</p></td>
 <td><p>M</p></td>
@@ -1197,7 +1214,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>UB.1</p></td>
+<tr class="row-odd"><td><p>UB.1</p></td>
 <td><p>Ability to use DREAM algorithm for Bayesian inference</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -1209,7 +1226,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>UB.2</p></td>
+<tr class="row-even"><td><p>UB.2</p></td>
 <td><p>Ability to use TMCMC algorithm for Bayesian inference</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -1221,7 +1238,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>UB.3</p></td>
+<tr class="row-odd"><td><p>UB.3</p></td>
 <td><p>Ability to read calibration data from file</p></td>
 <td><p>UF</p></td>
 <td><p>M</p></td>
@@ -1233,7 +1250,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>UB.4</p></td>
+<tr class="row-even"><td><p>UB.4</p></td>
 <td><p>Ability to handle non-scalar response quantities</p></td>
 <td><p>UF</p></td>
 <td><p>M</p></td>
@@ -1245,7 +1262,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>UB.5</p></td>
+<tr class="row-odd"><td><p>UB.5</p></td>
 <td><p>Ability to calibrate multipliers on error covariance</p></td>
 <td><p>UF</p></td>
 <td><p>M</p></td>
@@ -1257,7 +1274,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>UB.6</p></td>
+<tr class="row-even"><td><p>UB.6</p></td>
 <td><p>Ability to use a default log-likelihood function</p></td>
 <td><p>UF</p></td>
 <td><p>M</p></td>
@@ -1269,7 +1286,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>UB.7</p></td>
+<tr class="row-odd"><td><p>UB.7</p></td>
 <td><p>Ability to use Kalman Filtering</p></td>
 <td><p>UF</p></td>
 <td><p>M</p></td>
@@ -1281,7 +1298,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>UB.8</p></td>
+<tr class="row-even"><td><p>UB.8</p></td>
 <td><p>Ability to use Particle Filtering</p></td>
 <td><p>UF</p></td>
 <td><p>M</p></td>
@@ -1293,7 +1310,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>UH.1</p></td>
+<tr class="row-odd"><td><p>UH.1</p></td>
 <td><p>Ability to sample from manifold</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -1305,7 +1322,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>UH.2</p></td>
+<tr class="row-even"><td><p>UH.2</p></td>
 <td><p>Ability to build Reduced Order Model</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -1317,7 +1334,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>UO.1</p></td>
+<tr class="row-odd"><td><p>UO.1</p></td>
 <td><p>Ability to use User-Specified External UQ Engine</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -1329,7 +1346,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>UO.2</p></td>
+<tr class="row-even"><td><p>UO.2</p></td>
 <td><p>Ability to use Own External FEM Application</p></td>
 <td><p>UF</p></td>
 <td><p>M</p></td>
@@ -1341,7 +1358,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>UM.1</strong></p></td>
+<tr class="row-odd"><td><p><strong>UM.1</strong></p></td>
 <td><p><strong>Ability to use various Reliability Methods</strong></p></td>
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
@@ -1353,7 +1370,7 @@
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
 </tr>
-<tr class="row-odd"><td><p>UM.1.1</p></td>
+<tr class="row-even"><td><p>UM.1.1</p></td>
 <td><p>Ability to use First Order Reliability method</p></td>
 <td><p>UF</p></td>
 <td><p>M</p></td>
@@ -1365,7 +1382,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>UM.1.2</p></td>
+<tr class="row-odd"><td><p>UM.1.2</p></td>
 <td><p>Ability to use Surrogate Based Reliability</p></td>
 <td><p>UF</p></td>
 <td><p>M</p></td>
@@ -1377,7 +1394,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>UM.1.3</p></td>
+<tr class="row-even"><td><p>UM.1.3</p></td>
 <td><p>Ability to use Own External Application to generate Results</p></td>
 <td><p>UF</p></td>
 <td><p>M</p></td>
@@ -1389,7 +1406,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>UM.2</strong></p></td>
+<tr class="row-odd"><td><p><strong>UM.2</strong></p></td>
 <td><p><strong>Ability to user various Sensitivity Methods</strong></p></td>
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
@@ -1401,7 +1418,7 @@
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
 </tr>
-<tr class="row-odd"><td><p>UM.2.1</p></td>
+<tr class="row-even"><td><p>UM.2.1</p></td>
 <td><p>Ability to obtain Global Sensitivity Sobol’s indices</p></td>
 <td><p>UF</p></td>
 <td><p>M</p></td>
@@ -1412,6 +1429,30 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 <td><p>_</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; Stashed changes</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -2183,7 +2224,19 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><strong>REC.1</strong></p></td>
+<tr class="row-even"><td><p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>REC.1</strong></p></td>
 <td><p><strong>Building Recovery</strong></p></td>
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
@@ -2195,7 +2248,7 @@
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
 </tr>
-<tr class="row-odd"><td><p>REC.1.1</p></td>
+<tr class="row-even"><td><p>REC.1.1</p></td>
 <td><p>Incorporate advanced methods for building recovery time estimation</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -2207,7 +2260,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>REC.2</strong></p></td>
+<tr class="row-odd"><td><p><strong>REC.2</strong></p></td>
 <td><p><strong>Housing and Community Recovery</strong></p></td>
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
@@ -2219,7 +2272,7 @@
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
 </tr>
-<tr class="row-odd"><td><p>REC.2.1</p></td>
+<tr class="row-even"><td><p>REC.2.1</p></td>
 <td><p>Incorporate modeling of the recovery of households and communities</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -2231,7 +2284,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>REC.3</strong></p></td>
+<tr class="row-odd"><td><p><strong>REC.3</strong></p></td>
 <td><p><strong>Infrastructure Recovery</strong></p></td>
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
@@ -2243,7 +2296,7 @@
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
 </tr>
-<tr class="row-odd"><td><p>REC.3.1</p></td>
+<tr class="row-even"><td><p>REC.3.1</p></td>
 <td><p>Incorporate modeling of the recovery of transportation networks</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -2255,7 +2308,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>REC.3.2</p></td>
+<tr class="row-odd"><td><p>REC.3.2</p></td>
 <td><p>Incorporate modeling of the recovery of buried pipeline networks</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -2267,7 +2320,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>REC.3.3</p></td>
+<tr class="row-even"><td><p>REC.3.3</p></td>
 <td><p>Incorporate modeling of the recovery of power networks</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -2279,7 +2332,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>REC.4</strong></p></td>
+<tr class="row-odd"><td><p><strong>REC.4</strong></p></td>
 <td><p><strong>Business Recovery</strong></p></td>
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
@@ -2291,7 +2344,7 @@
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
 </tr>
-<tr class="row-odd"><td><p>REC.4.1</p></td>
+<tr class="row-even"><td><p>REC.4.1</p></td>
 <td><p>Incorporate modeling of the recovery of businesses</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -2303,7 +2356,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>REC.4.2</p></td>
+<tr class="row-odd"><td><p>REC.4.2</p></td>
 <td><p>Ability to incorporate improved indirect economic loss estimation models</p></td>
 <td><p>GC</p></td>
 <td><p>M</p></td>
@@ -2315,7 +2368,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>REC.4.3</p></td>
+<tr class="row-even"><td><p>REC.4.3</p></td>
 <td><p>Ability to include demand surge in determination of losses</p></td>
 <td><p>GC</p></td>
 <td><p>M</p></td>
@@ -2327,7 +2380,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>REC.5</strong></p></td>
+<tr class="row-odd"><td><p><strong>REC.5</strong></p></td>
 <td><p><strong>Interdependencies</strong></p></td>
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
@@ -2339,7 +2392,7 @@
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
 </tr>
-<tr class="row-odd"><td><p>REC.5.1</p></td>
+<tr class="row-even"><td><p>REC.5.1</p></td>
 <td><p>Implement a framework to model interdependencies between the recovery of various systems</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -2351,7 +2404,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>REC.5.2</p></td>
+<tr class="row-odd"><td><p>REC.5.2</p></td>
 <td><p>Ability to include lifeline disruptions</p></td>
 <td><p>GC</p></td>
 <td><p>M</p></td>
@@ -2363,7 +2416,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>REC.6</strong></p></td>
+<tr class="row-even"><td><p><strong>REC.6</strong></p></td>
 <td><p><strong>Metrics of recovery</strong></p></td>
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
@@ -2375,7 +2428,7 @@
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
 </tr>
-<tr class="row-even"><td><p>REC.6.1</p></td>
+<tr class="row-odd"><td><p>REC.6.1</p></td>
 <td><p>Implement metrics to inform recovery and community resilience based on the outputs of the available recovery models</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -2386,6 +2439,30 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 <td><p>_</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; Stashed changes</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -2431,7 +2508,19 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><strong>CR.1</strong></p></td>
+<tr class="row-even"><td><p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>CR.1</strong></p></td>
 <td><p><strong>Open-source software where developers can test new data and develop algorithms</strong></p></td>
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
@@ -2443,7 +2532,7 @@
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
 </tr>
-<tr class="row-odd"><td><p>CR.1.1</p></td>
+<tr class="row-even"><td><p>CR.1.1</p></td>
 <td><p>Provide open-source applications utilizing code hosting platforms, e.g. GitHub</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -2455,7 +2544,7 @@
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/R2DTool">link</a></p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>CR.1.2</p></td>
+<tr class="row-odd"><td><p>CR.1.2</p></td>
 <td><p>Assign an open-source licensce that allows free use.</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -2467,7 +2556,7 @@
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/R2DTool/blob/master/LICENSE">link</a></p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>CR.2</strong></p></td>
+<tr class="row-even"><td><p><strong>CR.2</strong></p></td>
 <td><p><strong>Ability of Practicing Engineers to use multiple coupled resources (applications, databases, viz tools) in engineering practice</strong></p></td>
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
@@ -2479,7 +2568,7 @@
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
 </tr>
-<tr class="row-even"><td><p>CR.2.1</p></td>
+<tr class="row-odd"><td><p>CR.2.1</p></td>
 <td><p>Allow users to launch scientific workflows</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -2491,7 +2580,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>CR.3</strong></p></td>
+<tr class="row-even"><td><p><strong>CR.3</strong></p></td>
 <td><p><strong>Ability to utilize resources beyond the desktop including HPC</strong></p></td>
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
@@ -2503,7 +2592,7 @@
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
 </tr>
-<tr class="row-even"><td><p>CR.3.1</p></td>
+<tr class="row-odd"><td><p>CR.3.1</p></td>
 <td><p>Allow users to utilize HPC resources at TACC through DesignSafe</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -2515,7 +2604,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>CR.4</strong></p></td>
+<tr class="row-even"><td><p><strong>CR.4</strong></p></td>
 <td><p><strong>Efficient use of multiple coupled and linked models requiring sharing and inter-operability of databases, computing environments, networks, visualization tools, and analysis systems</strong></p></td>
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
@@ -2527,7 +2616,7 @@
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
 </tr>
-<tr class="row-even"><td><p>CR.4.1</p></td>
+<tr class="row-odd"><td><p>CR.4.1</p></td>
 <td><p>Identify and include external analysis systems</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -2539,7 +2628,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>CR.4.2</p></td>
+<tr class="row-even"><td><p>CR.4.2</p></td>
 <td><p>Identify and include external databases</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -2551,7 +2640,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>CR.4.3</p></td>
+<tr class="row-odd"><td><p>CR.4.3</p></td>
 <td><p>Identify and include external viz tools</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -2563,7 +2652,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>CR.4.4</p></td>
+<tr class="row-even"><td><p>CR.4.4</p></td>
 <td><p>Identify and include external computing env</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -2575,7 +2664,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>CR.5</strong></p></td>
+<tr class="row-odd"><td><p><strong>CR.5</strong></p></td>
 <td><p><strong>Tool available for download from web</strong></p></td>
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
@@ -2587,7 +2676,7 @@
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
 </tr>
-<tr class="row-odd"><td><p>CR.5.1</p></td>
+<tr class="row-even"><td><p>CR.5.1</p></td>
 <td><p>Tool downloadable from DesignSafe website</p></td>
 <td><p>GC</p></td>
 <td><p>M</p></td>
@@ -2599,7 +2688,7 @@
 <td><p><a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt">link</a></p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>CR.6</strong></p></td>
+<tr class="row-odd"><td><p><strong>CR.6</strong></p></td>
 <td><p><strong>Ability to benefit from programs that move research results into practice and obtain training</strong></p></td>
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
@@ -2611,7 +2700,7 @@
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
 </tr>
-<tr class="row-odd"><td><p>CR.6.1</p></td>
+<tr class="row-even"><td><p>CR.6.1</p></td>
 <td><p>Ability to use educational provisions to gain interdisclipinary education so as to gain expertise in earth sciences and physics, engineering mechanics, geotechnical engineering, and structural engineering in order to be qualified to perform these simulations</p></td>
 <td><p>GC</p></td>
 <td><p>D</p></td>
@@ -2623,7 +2712,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>CR.6.2</p></td>
+<tr class="row-odd"><td><p>CR.6.2</p></td>
 <td><p>Documentation exists demonstrainting application usage</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -2635,7 +2724,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>CR.6.3</p></td>
+<tr class="row-even"><td><p>CR.6.3</p></td>
 <td><p>Video Exists demonstrating application usage</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -2647,7 +2736,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>CR.6.4</p></td>
+<tr class="row-odd"><td><p>CR.6.4</p></td>
 <td><p>Tool Training through online and in person training events</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -2659,7 +2748,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>CR.7</p></td>
+<tr class="row-even"><td><p>CR.7</p></td>
 <td><p>Verification Examples Exist</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -2671,7 +2760,7 @@
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>CR.8</strong></p></td>
+<tr class="row-odd"><td><p><strong>CR.8</strong></p></td>
 <td><p><strong>validation of proposed analytical models against existing empirical datasets</strong></p></td>
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
@@ -2683,7 +2772,7 @@
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
 </tr>
-<tr class="row-odd"><td><p>CR.8.1</p></td>
+<tr class="row-even"><td><p>CR.8.1</p></td>
 <td><p>Validation Examples Exist, validated against tests or other software</p></td>
 <td><p>GC</p></td>
 <td><p>M</p></td>
@@ -2695,7 +2784,7 @@
 <td><p><a class="reference external" href="https://NHERI-SimCenter.github.io/R2D-Documentation/common/developer_manual/verification/desktop/verification.html">link</a></p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>CR.9</p></td>
+<tr class="row-odd"><td><p>CR.9</p></td>
 <td><p>Tool to allow user to load and save user inputs</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
@@ -2707,7 +2796,7 @@
 <td><p><strong>core</strong></p></td>
 <td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>CR.10</p></td>
+<tr class="row-even"><td><p>CR.10</p></td>
 <td><p>Installer which installs application and all needed software</p></td>
 <td><p>UF</p></td>
 <td><p>D</p></td>
@@ -2718,6 +2807,30 @@
 <td><p><a class="reference external" href="https://NHERI-SimCenter.github.io/PBE-Documentation/common/user_manual/installation/desktop/installation.html">link</a></p></td>
 <td><p><a class="reference external" href="https://NHERI-SimCenter.github.io/R2D-Documentation/common/user_manual/installation/desktop/installation.html">link</a></p></td>
 <td><p>_</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; Stashed changes</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>

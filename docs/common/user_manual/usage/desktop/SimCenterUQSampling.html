@@ -129,6 +129,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -233,19 +238,19 @@
 <p>Any correlation values for this coupled datasets <strong>additionally specified in the RV tab</strong> will be <strong>ignored</strong>. Note that the correlation of the data is already reflected in the analysis by introducing the same resampling index.</p>
 </div>
 <p>For example, consider the case where two variables <span class="math notranslate nohighlight">\(w\)</span> and <span class="math notranslate nohighlight">\(wR\)</span> are provided as 10 discrete data points in the RV tab as in <a class="reference internal" href="#figsimsamp4"><span class="std std-numref">Fig. 2.1.3.1.1</span></a>.</p>
-<div class="align-center figure" id="id1">
+<div class="align-center figure" id="id3">
 <span id="figsimsamp4"></span><a class="reference internal image-reference" href="../../../../_images/SimUQ_sampling4.png"><img alt="../../../../_images/SimUQ_sampling4.png" src="../../../../_images/SimUQ_sampling4.png" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.3.1.1 </span><span class="caption-text">Example RV tab. The RVs <span class="math notranslate nohighlight">\(w\)</span> and <span class="math notranslate nohighlight">\(wR\)</span> have the same sample size when they are specified to be coupled as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figSimSamp3</span></code>.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.1.1 </span><span class="caption-text">Example RV tab. The RVs <span class="math notranslate nohighlight">\(w\)</span> and <span class="math notranslate nohighlight">\(wR\)</span> have the same sample size when they are specified to be coupled as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figSimSamp3</span></code>.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>Below is an example of 100 realizations of the two variables when they are considered to be <em>independent</em>, i.e. without checking the “Resample RVs from correlated dataset” option.</p>
-<div class="align-center figure" id="id2">
+<div class="align-center figure" id="id4">
 <span id="figsimsamp1"></span><a class="reference internal image-reference" href="../../../../_images/SimUQ_sampling2.png"><img alt="../../../../_images/SimUQ_sampling2.png" src="../../../../_images/SimUQ_sampling2.png" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.3.1.2 </span><span class="caption-text">Example of correlated samples (when the “Resample …” option in the UQ tab is enabled).</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.1.2 </span><span class="caption-text">Example of correlated samples (when the “Resample …” option in the UQ tab is enabled).</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>On the other hand, if the two datasets are considered correlated, i.e. if “Resample RVs from correlated dataset” are checked and the group {w,wR} is reported in the field as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figSimSamp3</span></code>, 100 realization pairs of the RVs will be stacked on top of the provided 10 data points.</p>
-<div class="align-center figure" id="id3">
+<div class="align-center figure" id="id5">
 <span id="figsimsamp2"></span><a class="reference internal image-reference" href="../../../../_images/SimUQ_sampling1.png"><img alt="../../../../_images/SimUQ_sampling1.png" src="../../../../_images/SimUQ_sampling1.png" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.3.1.3 </span><span class="caption-text">Example of uncorrelated samples (when the “Resample …” option in the UQ tab is enabled).</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.1.3 </span><span class="caption-text">Example of uncorrelated samples (when the “Resample …” option in the UQ tab is enabled).</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>This feature is especially useful when the user wants to perform a forward UQ analysis directly using the posterior samples obtained from Markov Chain Monte Carlo or other Bayesian sampling approaches.</p>
 <div class="admonition tip">

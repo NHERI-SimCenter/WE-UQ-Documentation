@@ -128,12 +128,18 @@
 <li class="toctree-l2"><a class="reference internal" href="weuq-0007/README.html">3.2. 3 Story Building: Sensitivity Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="weuq-0012/README.html">3.3. Wind Tunnel-Informed Stochastic Wind Load Generation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="weuq-0011/README.html">3.4. Digital Wind Tunnel I: Empty Domain Simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="weuq-0013/README.html">3.5. Digital Wind Tunnel II: Wind Loads on Isolated Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="weuq-0013/README.html">3.5. Digital Wind Tunnel II: Wind Loads on Isolated Building with Simple Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="weuq-0014/README.html">3.6. Digital Wind Tunnel II: Wind Loads on Isolated Building with Complex Geometry</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -327,19 +333,43 @@
     <div class="card-header">
         <p>
         <a href="./weuq-0013/README.html"> 
-              <h5 style="--bs-gutter-x: 1.5em;">Digital Wind Tunnel II: Wind Loads on Isolated Building</h5>
+              <h5 style="--bs-gutter-x: 1.5em;">Digital Wind Tunnel II: Wind Loads on Isolated Building with Simple Geometry</h5>
           </a>
         </p>
     </div>
     <div class="col-md-6"> 
       <div class="card-body">
-        <p class="card-text bg-light">This example demonstrates the application of a Computational Fluid Dynamics (CFD) based wind load generator using 50-story building. The workflow uses a transient CFD-solver for simulation wind loads and evaluates the response the building with uncertainty in the structural properties</p>
+        <p class="card-text bg-light">This example demonstrates the application of a Computational Fluid Dynamics (CFD) based wind load generator using a building with simple box type geometry. The workflow uses a transient CFD-solver for simulation wind loads and evaluates the response the building with uncertainty in the structural properties</p>
           
       </div>
     </div>
         
       <div class="col-md-5 ml-auto mr-2 my-3">
-       <img src="../../../../_images/we13_schematic_wind_building_domain.svg"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+       <img src="../../../../_images/we13_computational_domain.svg"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+      </div>
+        
+  </div>
+</div>
+
+  
+<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
+  <div class="row g-0 mb-3">
+    <div class="card-header">
+        <p>
+        <a href="./weuq-0014/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">Digital Wind Tunnel II: Wind Loads on Isolated Building with Complex Geometry</h5>
+          </a>
+        </p>
+    </div>
+    <div class="col-md-6"> 
+      <div class="card-body">
+        <p class="card-text bg-light">This example demonstrated the Computational Fluid Dynamics (CFD) based wind load generator for a building with complex geometry. The study building used in the example resembles a landmark tall building. The workflow uses a transient CFD-solver for simulation wind loads and evaluates the response the building with uncertainty in the structural properties</p>
+          
+      </div>
+    </div>
+        
+      <div class="col-md-5 ml-auto mr-2 my-3">
+       <img src="../../../../_images/we14_study_building.svg"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
       </div>
         
   </div>
