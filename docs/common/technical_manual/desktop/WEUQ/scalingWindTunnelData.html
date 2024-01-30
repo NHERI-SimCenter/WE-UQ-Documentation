@@ -40,6 +40,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -128,11 +129,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul class="current">
@@ -227,10 +223,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="scaling-wind-tunnel-data">
-<h1><span class="section-number">1.3. </span>Scaling Wind Tunnel Data<a class="headerlink" href="#scaling-wind-tunnel-data" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1.3. </span>Scaling Wind Tunnel Data<a class="headerlink" href="#scaling-wind-tunnel-data" title="Permalink to this heading">¶</a></h1>
 <p>In general, the physical size of the model used in a wind tunnel test will be different from the real world structure. As a consequence of this scaling, laws of <a class="reference external" href="https://en.wikipedia.org/wiki/Similitude_(model)">similitude</a> are used to convert the data coming from a wind tunnel experiment to forces acting on the real structure.</p>
 <div class="section" id="wind-tunnel-data">
-<h2>Wind Tunnel Data<a class="headerlink" href="#wind-tunnel-data" title="Permalink to this headline">¶</a></h2>
+<h2>Wind Tunnel Data<a class="headerlink" href="#wind-tunnel-data" title="Permalink to this heading">¶</a></h2>
 <p>The data obtained from a wind tunnel typically contains the following:</p>
 <ol class="arabic simple">
 <li><p>Building dimensions. For example, for a cuboid-shaped building, this would contain: height, breadth(width) and depth.</p></li>
@@ -240,7 +236,7 @@
 </ol>
 </div>
 <div class="section" id="time-step-for-real-structure-transient-analysis">
-<h2>Time Step for Real Structure Transient Analysis<a class="headerlink" href="#time-step-for-real-structure-transient-analysis" title="Permalink to this headline">¶</a></h2>
+<h2>Time Step for Real Structure Transient Analysis<a class="headerlink" href="#time-step-for-real-structure-transient-analysis" title="Permalink to this heading">¶</a></h2>
 <p>Due to similitude, is is necessary to convert the time step <span class="math notranslate nohighlight">\(\Delta t_M\)</span> or frequency <span class="math notranslate nohighlight">\(f_M\)</span> obtained from wind tunnel data to one that is used in the transient analysis of the full-scale structure, <span class="math notranslate nohighlight">\(\Delta t_R\)</span> or <span class="math notranslate nohighlight">\(f_R\)</span>. (note: the subscript <span class="math notranslate nohighlight">\(M\)</span> is used for model parameter and subscript <span class="math notranslate nohighlight">\(R\)</span> for real-world structure). This is done by determining some scale factors which relate ratios of quantity in model scale to quantity in real world scale.</p>
 <ol class="arabic simple">
 <li><p>Length factor, <span class="math notranslate nohighlight">\(\lambda_L = \frac{D_M}{D_R}\)</span></p></li>
@@ -257,7 +253,7 @@
 <p>It should be noted that the model and the real structure should have geometric similarity. This means that the model should scale similarly in all directions to the real world structure. In calculations used in SimCenter the length factor hL is calculated using the height of the real structure and the height of the model.</p>
 </div>
 <div class="section" id="force-calculation-on-real-structure-floors">
-<h2>Force Calculation on Real Structure Floors<a class="headerlink" href="#force-calculation-on-real-structure-floors" title="Permalink to this headline">¶</a></h2>
+<h2>Force Calculation on Real Structure Floors<a class="headerlink" href="#force-calculation-on-real-structure-floors" title="Permalink to this heading">¶</a></h2>
 <p>The pressure at a location in the real structure corresponding to a pressure tap location in the model can be obtained from
 the following equation:</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-2">
@@ -286,7 +282,7 @@ the wind tunnel are not needed, this is because <span class="math notranslate no
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

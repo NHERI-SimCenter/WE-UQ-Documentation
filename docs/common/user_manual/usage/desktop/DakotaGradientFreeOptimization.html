@@ -40,6 +40,7 @@
         <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -126,11 +127,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -210,11 +206,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="gradient-free-parameter-estimation">
-<span id="lbldakotagradientfreeestimation"></span><h1>Gradient-free Parameter Estimation<a class="headerlink" href="#gradient-free-parameter-estimation" title="Permalink to this headline">¶</a></h1>
+<span id="lbldakotagradientfreeestimation"></span><h1>Gradient-free Parameter Estimation<a class="headerlink" href="#gradient-free-parameter-estimation" title="Permalink to this heading">¶</a></h1>
 <p>It is not uncommon for engineering problems that the gradient of a computational model with respect to the model parameters is not reliably estimated. Sometimes, the objective function for deterministic calibration is not differentiable. In such situations, a gradient-based local search algorithm might fail to locate the optimum parameter values that provide the best fit of the model predictions to the data. A gradient-free local search method can be employed for deterministic calibration instead of a gradient-based algorithm in such scenarios.</p>
-<p>Gradient-free optimization methods are used to minimize an objective function based solely on evaluation of the objective function values without the use of any derivative information or any approximation of the derivatives. When concerned with parameter estimation, the objective function is typically the sum of the squared differences between the predictions from a model and the calibration data. However, any objective function that the user desires can be employed. When performing grdient-free parameter estimation, the model (or the post-processing script, if any), should be defined in a way that returns the  objective function value (a single scalar quantity) in a file called <code class="docutils literal notranslate"><span class="pre">results.out</span></code>.</p>
+<p>Gradient-free optimization methods are used to minimize an objective function based solely on an evaluation of the objective function values without the use of any derivative information or any approximation of the derivatives. When concerned with parameter estimation, the objective function is typically the sum of the squared differences between the predictions from a model and the calibration data. However, any objective function that the user desires can be employed. When performing gradient-free parameter estimation, the model (or the post-processing script, if any), should be defined in a way that returns the objective function value (a single scalar quantity) in a file called <code class="docutils literal notranslate"><span class="pre">results.out</span></code>.</p>
 <p>The parameters of the model (which is defined in the <strong>FEM</strong> panel) are defined in the <strong>RV</strong> panel. The bounds of the domain within which the optimal values of the parameters need to be searched for are also specified in the <strong>RV</strong> panel, along with the initial point at which the search will start. No prior specification of the distribution associated with the random variables is necessary.</p>
-<p>The output from the model is the objective function value, and this can be given a name which is defined in the <strong>EDP</strong> panel. The length must be set equal to 1.</p>
+<p>The output from the model is the objective function value, and this can be given a name that is defined in the <strong>EDP</strong> panel. The length must be set equal to 1.</p>
 <p>The algorithms employed will find a set of parameter values that <strong>minimizes</strong> the objective function.</p>
 <p>The panel that is presented to the user when this Dakota Category is chosen, is as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">figGradientFreeParameterEstimation</span></code>.</p>
 <div class="align-center figure" id="id1">
@@ -222,20 +218,20 @@
 <p class="caption"><span class="caption-text">Input panel for gradient-free parameter estimation using Dakota.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="pattern-search">
-<h2>Pattern Search<a class="headerlink" href="#pattern-search" title="Permalink to this headline">¶</a></h2>
+<h2>Pattern Search<a class="headerlink" href="#pattern-search" title="Permalink to this heading">¶</a></h2>
 <p>Gradient-free parameter estimation uses the pattern search algorithm that is available in Dakota, called <em>coliny_pattern_search</em>. Please refer to the Dakota user manual for more details about the algorithm. The inputs that are required for this algorithm are:</p>
 <ol class="arabic simple">
 <li><p>Initial step size: this defines the initial size of the offsets used in the pattern search algorithm</p></li>
 <li><p>Contraction factor: this specifies the ratio of the reduction in the offset size used in the pattern search algorithm</p></li>
-<li><p>Max # model evals: This is a termination criterion. This specifies the maximum number of model evaluations allowed during the search for the optimum parameter values. This sets the total compuational budget for the pattern search algorithm.</p></li>
+<li><p>Max # model evals: This is a termination criterion. This specifies the maximum number of model evaluations allowed during the search for the optimum parameter values. This sets the total computational budget for the pattern search algorithm.</p></li>
 <li><p>Max # iterations: This is a termination criterion. This specifies the maximum number of iterations allowed in the optimization algorithm. During each iteration of the algorithm, several model evaluations occur in parallel.</p></li>
-<li><p>Variable tolerance: This is a terminiation criterion. This specifies the maximum permitted change in the value of the parameters being estimated from one iteration to the next.</p></li>
-<li><p>Convergence tolerance: This is a termination criterion. This soecifies the maximum permitted change in the value of the objective function from one iteration to the next.</p></li>
+<li><p>Variable tolerance: This is a termination criterion. This specifies the maximum permitted change in the value of the parameters being estimated from one iteration to the next.</p></li>
+<li><p>Convergence tolerance: This is a termination criterion. This specifies the maximum permitted change in the value of the objective function from one iteration to the next.</p></li>
 </ol>
 <p>The search for the optimum parameter value will terminate once any of the four available termination criteria are met.</p>
 <dl class="citation">
 <dt class="label" id="torczon"><span class="brackets">Torczon</span></dt>
-<dd><p>Virginia Torczon. On the convergence of pattern search algortihms. SIAM J. Optim. Vol. 7, No. 1, pp. 1–25, February 1997.</p>
+<dd><p>Virginia Torczon. On the convergence of pattern search algorithms. SIAM J. Optim. Vol. 7, No. 1, pp. 1–25, February 1997.</p>
 </dd>
 </dl>
 </div>
@@ -251,7 +247,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -141,11 +142,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -227,7 +223,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="wind-tunnel-informed-stochastic-wind-load-generation">
-<span id="weuq-0012"></span><h1><span class="section-number">3.3. </span>Wind Tunnel-Informed Stochastic Wind Load Generation<a class="headerlink" href="#wind-tunnel-informed-stochastic-wind-load-generation" title="Permalink to this headline">¶</a></h1>
+<span id="weuq-0012"></span><h1><span class="section-number">3.3. </span>Wind Tunnel-Informed Stochastic Wind Load Generation<a class="headerlink" href="#wind-tunnel-informed-stochastic-wind-load-generation" title="Permalink to this heading">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 39%" />
@@ -244,14 +240,14 @@
 <span id="fig-we12-1"></span><a class="reference internal image-reference" href="../../../../../_images/we12_1.png"><img alt="../../../../../_images/we12_1.png" src="../../../../../_images/we12_1.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.3.1 </span><span class="caption-text">Generating full-scale wind force time series from a model-scale wind force time series obtained from wind tunnel experiments.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
-<p>This example uses the data presented in <a class="reference internal" href="#duarte2023" id="id1"><span>[Duarte2023]</span></a>.</p>
+<p>This example uses the data presented in <a class="reference internal" href="../../../usage/desktop/wind/WindForceSpectrum.html#duarte2023" id="id1"><span>[Duarte2023]</span></a>.</p>
 <dl class="citation">
 <dt class="label" id="duarte2023"><span class="brackets">Duarte2023</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id3">3</a>)</span></dt>
 <dd><p>Duarte, T.G., Arunachalam, S., Subgranon, A. and Spence, S.M., (2023). Uncertainty Quantification and Simulation of Wind-Tunnel-Informed Stochastic Wind Loads. Wind, 3(3), pp.375-393.</p>
 </dd>
 </dl>
 <div class="section" id="preparation-of-wind-force-time-history-file">
-<h2><span class="section-number">3.3.1. </span>Preparation of “Wind Force Time History File”<a class="headerlink" href="#preparation-of-wind-force-time-history-file" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3.1. </span>Preparation of “Wind Force Time History File”<a class="headerlink" href="#preparation-of-wind-force-time-history-file" title="Permalink to this heading">¶</a></h2>
 <p>The experimental records should first be reformatted by the user such that <strong>wind force time histories recorded at each floor in x-, y-, and z- directions (Fx, Fy, and Tz, respectively)</strong> can be directly imported in WE-UQ in the EVT tab. The dataset can be imported as either a MATLAB binary file or a json file. Additionally, the model-scale dimensions and additional information on the experiment should be provided. Please refer to <a class="reference internal" href="../../../usage/desktop/wind/ExperimentalWindForce.html#lblexperimentalwindforce"><span class="std std-ref">the User Manual</span></a> for the list of variables the file should contain. In this example, the variables in the table below are imported as a json file. Note that the x- and y- directional forces and z-directional moments at each of the 25 stories are recorded for 32 sec with dt=0.0016 sec (20,000 time points). The reference wind speed (Vref) was measured at top of the building model.</p>
 <table class="docutils align-center" id="id5">
 <caption><span class="caption-number">Table 3.3.1.1 </span><span class="caption-text">Variables imported to WE-UQ</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
@@ -307,16 +303,16 @@
 </table>
 <div class="align-center figure" id="id6">
 <span id="fig-we12-2"></span><a class="reference internal image-reference" href="../../../../../_images/we12_2.png"><img alt="../../../../../_images/we12_2.png" src="../../../../../_images/we12_2.png" style="width: 300px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.3.1.1 </span><span class="caption-text">The experiment was performed at UF <a class="reference internal" href="#duarte2023" id="id2"><span>[Duarte2023]</span></a>.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3.1.1 </span><span class="caption-text">The experiment was performed at UF <a class="reference internal" href="../../../usage/desktop/wind/WindForceSpectrum.html#duarte2023" id="id2"><span>[Duarte2023]</span></a>.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id7">
 <span id="fig-we12-3"></span><a class="reference internal image-reference" href="../../../../../_images/we12_3.png"><img alt="../../../../../_images/we12_3.png" src="../../../../../_images/we12_3.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.3.1.2 </span><span class="caption-text">Examples of Wind Force Time Series in Fx, Fy, Tz arrays <a class="reference internal" href="#duarte2023" id="id3"><span>[Duarte2023]</span></a>.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3.1.2 </span><span class="caption-text">Examples of Wind Force Time Series in Fx, Fy, Tz arrays <a class="reference internal" href="../../../usage/desktop/wind/WindForceSpectrum.html#duarte2023" id="id3"><span>[Duarte2023]</span></a>.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>The json file used in this example is named <code class="docutils literal notranslate"><span class="pre">Forces_ANG000_phase1.json</span></code>, and it can be found at <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples//weuq-0012//src">weuq-0012/src</a>. Using this information, WE-UQ will generate the stochastic wind loads that apply to a full-scale building model with <strong>scaling factor of 200</strong>.</p>
 </div>
 <div class="section" id="workflow">
-<h2><span class="section-number">3.3.2. </span>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3.2. </span>Workflow<a class="headerlink" href="#workflow" title="Permalink to this heading">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This example can be directly loaded from the menu bar at the top of the screen by clicking “Examples”-“E4: Wind Tunnel-Informed Stochastic Wind Load Generation”. The user may want to increase the number of samples in the UQ tab for more stable results.</p>
@@ -407,7 +403,7 @@
 </ol>
 </div>
 <div class="section" id="results">
-<h2><span class="section-number">3.3.3. </span>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3.3. </span>Results<a class="headerlink" href="#results" title="Permalink to this heading">¶</a></h2>
 <p>Once the analysis is done, the sampling results will be displayed in the RES tab. Note that the EDP name consists of the quantity of interest, story number, and the direction of interest - for example:</p>
 <blockquote>
 <div><ul class="simple">
@@ -448,7 +444,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

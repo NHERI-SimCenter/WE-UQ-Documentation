@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -142,11 +143,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -228,7 +224,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="story-building-sensitivity-analysis">
-<span id="weuq-0007"></span><h1><span class="section-number">3.2. </span>3 Story Building: Sensitivity Analysis<a class="headerlink" href="#story-building-sensitivity-analysis" title="Permalink to this headline">¶</a></h1>
+<span id="weuq-0007"></span><h1><span class="section-number">3.2. </span>3 Story Building: Sensitivity Analysis<a class="headerlink" href="#story-building-sensitivity-analysis" title="Permalink to this heading">¶</a></h1>
 <p>Consider the problem of uncertainty quantification in a three story steel building. The building being modelled is the 3 story Boston building presented in the FEMA-355C report. From the description in Appendix B of the FEMA document the building is a rectangular building <strong>120</strong> ft by <strong>180</strong> ft with a height above ground of <strong>39</strong> ft. The building weight is approx. <strong>6,500</strong> kips. Eigenvalues are shown in Table 5.1. of the FEMA document to be between <strong>1.6</strong> sec and <strong>1.9</strong> sec depending on connection detals. For this example (and for demonstrative purposes only), this building will be modelled as a shear building with <strong>10</strong> nodes and <strong>9</strong> elements, as shown in following figure. For loading, the TPU Low Rise Wind Generation tool will be used with the mean wind speed being treated as a random variable with a normal distribtion described by a mean <span class="math notranslate nohighlight">\(\mu_{gustWS}=20 \mathrm{mph}\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sigma_{gustWS} =3 \mathrm{mph}\)</span> (COV = 15%).</p>
 <div class="align-center figure" id="id5">
 <a class="reference internal image-reference" href="../../../../../_images/3story.png"><img alt="../../../../../_images/3story.png" src="../../../../../_images/3story.png" style="height: 600px;" /></a>
@@ -258,7 +254,7 @@
 <p>Do not place the file in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing this file multiple times (a copy will be made for each sample specified). If you are like us, your root, Downloads or Documents folders contains and awful lot of files and when the backend workflow runs you will slowly find you will run out of disk space!</p>
 </div>
 <div class="section" id="global-sensitivity-analysis">
-<h2><span class="section-number">3.2.1. </span>Global Sensitivity Analysis<a class="headerlink" href="#global-sensitivity-analysis" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.1. </span>Global Sensitivity Analysis<a class="headerlink" href="#global-sensitivity-analysis" title="Permalink to this heading">¶</a></h2>
 <p>In a global sensitivity analysis the user is wishing to understand what is the influence of the individual random variables on the quantities of interest. This is typically done before the user launches large scale forward uncertainty problems in order to limit the number of random variables used so as to limit the number of simulations performed.</p>
 <p>For this problem we will limit the response qunataties of interest to the following six quantaties. Peak Roof displacement in 1 and 2 directions, root mean square (RMS) accelerations in 1 and 2 directions, Peak BAse shear and moments in 1 and 2 directions. In order to do this we will introduce User defined EPD quantaties, which necessitates the followng two files: <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/3Story/recorder.tcl">recorder.tcl</a> and <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/3Story/postprocess.tcl">postprocess.tcl</a>.  These files are the same as those presented in <span class="xref std std-ref">lblWE-Example9</span></p>
 <p>To perform a Global Sensitivity  analysis the user would perform the following steps:</p>
@@ -322,7 +318,7 @@
 </div>
 </div>
 <div class="section" id="user-defined-output">
-<h2><span class="section-number">3.2.2. </span>User Defined Output<a class="headerlink" href="#user-defined-output" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.2. </span>User Defined Output<a class="headerlink" href="#user-defined-output" title="Permalink to this heading">¶</a></h2>
 <p>In this section we will demonstrate the use of the user defined output option for the EDP panel. In the previous example we got the standard output, which can be both a lot and also limited (in sense you may not get the information you want). In this example we will present how to obtain results just for the roof displacement, the displacement of node <strong>10</strong> in both the <strong>MDOF</strong> and <strong>OpenSees</strong> model generator examples and shear force at the base of the structure. For the OpenSees model, it is also possible to obtain the overturning moment (something not possible in MDOF model due to fact it is modelled using spring elements). The examples could be extended to output for example the element end rotations, plastic rotations, …</p>
 <p>For this example you will need two additional file <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/blob/master/Examples/9story/recorder.tcl">recorder.tcl</a> and <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/9story/postprocess.tcl">postprocess.tcl</a>.</p>
 <p>The recorder script as shown will record the envelope displacements and RMS acceleratiuons in the first two degrees-of-freedom for the nodes in the modes. The script will also record the element forces. The file is as shown below:</p>
@@ -346,7 +342,7 @@
 </ol>
 </div>
 <div class="section" id="reliability-analysis">
-<h2><span class="section-number">3.2.3. </span>Reliability Analysis<a class="headerlink" href="#reliability-analysis" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.3. </span>Reliability Analysis<a class="headerlink" href="#reliability-analysis" title="Permalink to this heading">¶</a></h2>
 <p>If the user is interested in the probability that certain response measure will be exceeded an alternative strategy is to perform a reliability analysis. To perform a reliability analysis the steps above would be repeated with the exception that the user would select a reliability analysis method instead of a Forward Propagation method. To obtain reliability results using the Global Reliability methose presented in Dakota choose the <strong>Global Reliability</strong> methods from the methods drop down menu. In the response levels enter a values of <strong>0.5</strong> and <strong>0.8</strong>, specifying that we are interested in the value of the CDF for a displacement of the roof of 0.5in and 0.8in, i.e. what is probability that displacement will be less than 0.8in.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/9story-UQ-Reliability1.png" src="../../../../../_images/9story-UQ-Reliability1.png" />
@@ -375,7 +371,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

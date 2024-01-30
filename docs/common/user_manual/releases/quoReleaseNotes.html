@@ -40,6 +40,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -126,11 +127,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -210,9 +206,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="release-notes">
-<span id="lbl-release-quofem"></span><h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-release-quofem"></span><h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this heading">¶</a></h1>
 <div class="section" id="major-version-3">
-<h2>Major Version 3<a class="headerlink" href="#major-version-3" title="Permalink to this headline">¶</a></h2>
+<h2>Major Version 3<a class="headerlink" href="#major-version-3" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -220,7 +216,22 @@
 </div>
 <details class="sphinx-bs dropdown card mb-3" open="open">
 <summary class="summary-title card-header">
-Version 3.4 (<span class="blue">Current</span>)<div class="summary-down docutils">
+Version 3.5 (<span class="blue">Current</span>)<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text"><strong>Release date:</strong> December. 2023</p>
+<dl class="simple">
+<dt><strong>Highlights</strong></dt><dd><ol class="arabic simple">
+<li><p class="card-text">Bayesian calibration of a <strong>hierarchical model</strong></p></li>
+</ol>
+</dd>
+</dl>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Version 3.4<div class="summary-down docutils">
 <svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="summary-up docutils">
 <svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
@@ -291,7 +302,7 @@ Version 3.1<div class="summary-down docutils">
 <blockquote>
 <div><ol class="arabic simple">
 <li><p class="card-text">New efficient global sensitivity analysis method for high-dimensional output (GSA-PCA)</p></li>
-<li><p class="card-text">“Save RVs” and “Save QoIs” buttons added to the results tab spreadsheet</p></li>
+<li><p class="card-text">“Save RVs” and “Save QoIs” buttons were added to the results tab spreadsheet</p></li>
 <li><p class="card-text">“NaN” handling option added to SimCenterUQ engine</p></li>
 <li><p class="card-text">Improvements to reliability analysis and global sensitivity analysis user interface</p></li>
 <li><p class="card-text">Minor bug fixes in the user interface, surrogate modeling, and sensitivity analysis scripts</p></li>
@@ -322,7 +333,7 @@ Version 3.0<div class="summary-down docutils">
 </details></div></blockquote>
 </div>
 <div class="section" id="major-version-2">
-<h2>Major Version 2<a class="headerlink" href="#major-version-2" title="Permalink to this headline">¶</a></h2>
+<h2>Major Version 2<a class="headerlink" href="#major-version-2" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><details class="sphinx-bs dropdown card mb-3">
 <summary class="summary-title card-header">
@@ -337,7 +348,7 @@ Version 2.4.1<div class="summary-down docutils">
 <div><ol class="arabic simple">
 <li><p class="card-text">Added ‘file_save’ keyword in dakota.in to not delete paramsDakota.in files</p></li>
 <li><p class="card-text">SimCenterUQ RV tab - preventing path strings from being deleted when “choose” is clicked (dataset inputs)</p></li>
-<li><p class="card-text">SimCenterUQ checks if python packages are missing in the environment and shows an error message if needed</p></li>
+<li><p class="card-text">SimCenterUQ checks if Python packages are missing in the environment and shows an error message if needed</p></li>
 <li><p class="card-text">Minor fixes in surrogate UI (nugget values option should not show up by default, RVs should be uniform by default)</p></li>
 <li><p class="card-text">A fix to prevent the mixed use of slash/backslash when printing a path</p></li>
 <li><p class="card-text">Parameter values are passed to the log-likelihood script when using the UCSD_UQ engine</p></li>
@@ -355,7 +366,7 @@ Version 2.4.0<div class="summary-down docutils">
 <p class="card-text">Highlights</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p class="card-text">New forward propagation method in SimCenterUQ to import existing sample sets (eg. samples obtained by MCMC)</p></li>
+<li><p class="card-text">New forward propagation method in SimCenterUQ to import existing sample sets (e.g. samples obtained by MCMC)</p></li>
 <li><p class="card-text">New multi-fidelity surrogate modeling option in SimCenterUQ</p></li>
 <li><p class="card-text">Local/remote parallel computing support for SimCenterUQ methods</p></li>
 <li><p class="card-text">Visualization improved for surrogate results</p></li>
@@ -434,7 +445,7 @@ Version 2.0<div class="summary-down docutils">
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

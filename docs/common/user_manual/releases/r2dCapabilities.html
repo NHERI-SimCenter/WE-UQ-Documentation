@@ -40,6 +40,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -126,11 +127,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -210,9 +206,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="capabilities">
-<span id="lbl-capabilities-eeuq"></span><h1>Capabilities<a class="headerlink" href="#capabilities" title="Permalink to this headline">¶</a></h1>
-<p><strong>Version 3.0</strong> of WE-UQ app was released <strong>May 2023</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.) Note the version introduced major changes in how tool is used. Some of existing <strong>Haz</strong> options were moved to a new <strong>Tool</strong> main menu option.</p>
-<p><strong>Release date:</strong> May, 2023</p>
+<span id="lbl-capabilities-eeuq"></span><h1>Capabilities<a class="headerlink" href="#capabilities" title="Permalink to this heading">¶</a></h1>
+<p><strong>Version</strong> 3.1 of WE-UQ app was released <strong>Jan 2024</strong>. The following is the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)
+The major update from Version 3.0 is adding the analysis capability for <span class="blue">regional transportation infrastructure</span>. Note that since version 3.0, most <strong>Haz</strong> options were moved to the <strong>Tool</strong> main menu.</p>
+<p><strong>Release date:</strong> Dec, 2023</p>
 <ol class="arabic">
 <li><p><strong>Hazard Types</strong>:</p>
 <blockquote>
@@ -220,7 +217,7 @@
 <li><p><span class="xref std std-ref">User specified earthquakes</span>.</p></li>
 <li><p><span class="xref std std-ref">User specified hurricanes</span>.</p></li>
 <li><dl class="simple">
-<dt><span class="xref std std-ref">ShakeMap Scenarios</span>, which suports importing the following ShakeMap outputs:</dt><dd><ol class="loweralpha simple">
+<dt><span class="xref std std-ref">ShakeMap Scenarios</span>, which supports importing the following ShakeMap outputs:</dt><dd><ol class="loweralpha simple">
 <li><p>ShakeMap ground motion grid in .xml format.</p></li>
 <li><p>PGA contours in .json format.</p></li>
 <li><p>Fault rupture in .json format.</p></li>
@@ -233,19 +230,27 @@
 </ul>
 </div></blockquote>
 </li>
-<li><dl class="simple">
-<dt><strong>Asset Types</strong>:</dt><dd><ul class="simple">
+<li><p><strong>Asset Types</strong>:</p>
+<blockquote>
+<div><ul class="simple">
 <li><dl class="simple">
 <dt><span class="xref std std-ref">Buildings</span>:</dt><dd><ol class="loweralpha simple">
-<li><p>Building database in a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> format.</p></li>
-<li><p>Building database in a <code class="docutils literal notranslate"><span class="pre">.gis</span></code> format.</p></li>
+<li><p>Load building database in a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> format.</p></li>
+<li><p>Load building database in a <code class="docutils literal notranslate"><span class="pre">.gis</span></code> format.</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><span class="xref std std-ref">Transportation infrastructure</span>:</dt><dd><ol class="loweralpha simple">
+<li><p><span class="blue">Load transportation infrastructure database in SimCenter’s</span> <code class="docutils literal notranslate"><span class="pre">.geojson</span></code> <span class="blue">format.</span></p></li>
+<li><p><span class="blue">Load transportation infrastructure database in common</span> <code class="docutils literal notranslate"><span class="pre">.gis</span></code> <span class="blue">format.</span></p></li>
 </ol>
 </dd>
 </dl>
 </li>
 </ul>
-</dd>
-</dl>
+</div></blockquote>
 </li>
 <li><dl class="simple">
 <dt><strong>Asset Modeling</strong>:</dt><dd><ul class="simple">
@@ -253,8 +258,15 @@
 <dt><span class="xref std std-ref">Buildings</span>:</dt><dd><ol class="loweralpha simple">
 <li><p>MDOF-LU (MDOF shear building model)</p></li>
 <li><p>OpenSeesPy script building generator</p></li>
-<li><p>IMasEDP, i.e., no analysis as the IM is considered the EDP</p></li>
+<li><p>IMasEDP, i.e., no structural modeling, and the Intensity Measures (IMs) are considered the Engineering Demand Parameters (EDPs)</p></li>
 <li><p>CustomPy</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><span class="xref std std-ref">Transportation infrastructure</span>:</dt><dd><ol class="loweralpha simple">
+<li><p>IMasEDP, i.e., no structural modeling, and the Intensity Measures (IMs) are considered the Engineering Demand Parameters (EDPs)</p></li>
 </ol>
 </dd>
 </dl>
@@ -263,16 +275,23 @@
 </dd>
 </dl>
 </li>
-<li><dl>
-<dt><strong>Asset Analysis</strong>:</dt><dd><ul>
-<li><dl>
+<li><dl class="simple">
+<dt><strong>Asset Analysis</strong>:</dt><dd><ul class="simple">
+<li><dl class="simple">
 <dt><span class="xref std std-ref">Buildings</span>:</dt><dd><ol class="loweralpha simple">
 <li><p>OpenSees</p></li>
 <li><p>OpenSeesPy</p></li>
 <li><p>IMasEDP, i.e., no analysis as the IM is considered the EDP</p></li>
+<li><p>CustomPy for CustomPy in Asset Modeling</p></li>
+<li><p>None for IMasEDP option in Modeling.</p></li>
 </ol>
-<p>d. CustomPy for CustomPy in Asset Modeling
-d. None for IMasEDP option in Modeling.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><span class="xref std std-ref">Transportation infrastructure</span>:</dt><dd><ol class="loweralpha simple">
+<li><p>None for IMasEDP option in Modeling.</p></li>
+</ol>
 </dd>
 </dl>
 </li>
@@ -283,9 +302,9 @@ d. None for IMasEDP option in Modeling.</p>
 <li><dl class="simple">
 <dt><strong>Damage and Loss</strong>:</dt><dd><ul class="simple">
 <li><dl class="simple">
-<dt>Buildings:</dt><dd><ul>
+<dt><span class="xref std std-ref">Buildings</span>:</dt><dd><ul>
 <li><dl class="simple">
-<dt><span class="xref std std-ref">Pelicun</span></dt><dd><ol class="loweralpha simple">
+<dt>Pelicun</dt><dd><ol class="loweralpha simple">
 <li><p>HAZUS MH EQ</p></li>
 <li><p>HAZUS MH EQ IM</p></li>
 <li><p>HAZUS MH HU</p></li>
@@ -294,6 +313,14 @@ d. None for IMasEDP option in Modeling.</p>
 </dl>
 </li>
 </ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><span class="xref std std-ref">Transportation infrastructure</span></dt><dd><ol class="loweralpha simple">
+<li><p>HAZUS MH EQ</p></li>
+<li><p>HAZUS MH EQ IM</p></li>
+</ol>
 </dd>
 </dl>
 </li>
@@ -323,7 +350,7 @@ d. None for IMasEDP option in Modeling.</p>
 <dt>Site definition:</dt><dd><ol class="loweralpha simple">
 <li><p>Grid</p></li>
 <li><p>Point</p></li>
-<li><p>Scattered sites (user defined sites in .csv format)</p></li>
+<li><p>Scattered sites (user-defined sites in .csv format)</p></li>
 </ol>
 </dd>
 </dl>
@@ -331,10 +358,9 @@ d. None for IMasEDP option in Modeling.</p>
 <li><dl class="simple">
 <dt>Rupture forecast models:</dt><dd><ol class="loweralpha simple">
 <li><p>OpenSHA UCERF rupture forecast models</p></li>
-<li><p>OpenSHA Point source user defined</p></li>
-<li><p>OpenQuake Scenario Based</p></li>
-<li><p>OpenQuake Classical PSHA</p></li>
-<li><p><span class="blue">Hazard Occurrence Model</span></p></li>
+<li><p>OpenSHA Point source user-defined</p></li>
+<li><p>OpenQuake rupture forecast</p></li>
+<li><p>Hazard Occurrence Model</p></li>
 </ol>
 </dd>
 </dl>
@@ -375,7 +401,7 @@ d. None for IMasEDP option in Modeling.</p>
 </li>
 <li><dl class="simple">
 <dt>Intensity Measures:</dt><dd><ol class="loweralpha simple">
-<li><p>Spectral accelertion (SA)</p></li>
+<li><p>Spectral acceleration (SA)</p></li>
 <li><p>Peak ground acceleraation (PGA)</p></li>
 </ol>
 </dd>
@@ -384,10 +410,9 @@ d. None for IMasEDP option in Modeling.</p>
 <li><dl class="simple">
 <dt>Vs30 Model:</dt><dd><ol class="loweralpha simple">
 <li><p>CGS/Wills Vs30 (Wills et al., 2015)</p></li>
-<li><p>Peak ground acceleraation (PGA)</p></li>
 <li><p>Thompson California Vs30 (Thompson et al., 2018)</p></li>
 <li><p>Global Vs30 (Heath et al., 2020)</p></li>
-<li><p>User Defined`</p></li>
+<li><p>User Defined</p></li>
 </ol>
 </dd>
 </dl>
@@ -407,8 +432,8 @@ d. None for IMasEDP option in Modeling.</p>
 </li>
 <li><dl class="simple">
 <dt>Hurricane track definition:</dt><dd><ol class="loweralpha simple">
-<li><p>User defined sites in .csv format</p></li>
-<li><p>Select from database of historical hurricanes</p></li>
+<li><p>User-defined sites in .csv format</p></li>
+<li><p>Select from a database of historical hurricanes</p></li>
 <li><p>Truncate hurricane track functionality</p></li>
 </ol>
 </dd>
@@ -416,8 +441,8 @@ d. None for IMasEDP option in Modeling.</p>
 </li>
 <li><dl class="simple">
 <dt>Landfall location and parameters:</dt><dd><ol class="loweralpha simple">
-<li><p>User select on GIS map</p></li>
-<li><p>Manual user entry in input box</p></li>
+<li><p>User selects on GIS map</p></li>
+<li><p>Manual user entry in the input box</p></li>
 </ol>
 </dd>
 </dl>
@@ -452,7 +477,7 @@ d. None for IMasEDP option in Modeling.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

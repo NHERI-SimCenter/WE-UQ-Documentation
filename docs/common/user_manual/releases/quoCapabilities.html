@@ -40,6 +40,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -126,11 +127,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -210,10 +206,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="capabilities">
-<span id="lbl-capabilities-quofem"></span><h1>Capabilities<a class="headerlink" href="#capabilities" title="Permalink to this headline">¶</a></h1>
-<p>Version 3.1 of the WE-UQ app was released on <strong>October 2, 2023</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
+<span id="lbl-capabilities-quofem"></span><h1>Capabilities<a class="headerlink" href="#capabilities" title="Permalink to this heading">¶</a></h1>
+<p>Version 3.1 of the WE-UQ app was released on <strong>December 29, 2023</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
 <div class="section" id="uq-uncertainty-quantification-and-optimization-options">
-<h2>UQ (Uncertainty Quantification and Optimization Options)<a class="headerlink" href="#uq-uncertainty-quantification-and-optimization-options" title="Permalink to this headline">¶</a></h2>
+<h2>UQ (Uncertainty Quantification and Optimization Options)<a class="headerlink" href="#uq-uncertainty-quantification-and-optimization-options" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic">
 <li><p>Forward Uncertainty Propagation</p>
 <blockquote>
@@ -233,7 +229,7 @@
 <li><p>Resample from the existing correlated dataset of samples</p></li>
 </ol>
 </li>
-<li><p><span class="blue">Multi-fidelity Monte Calro</span></p></li>
+<li><p>Multi-fidelity Monte Carlo</p></li>
 </ol>
 </li>
 </ol>
@@ -280,13 +276,13 @@
 </li>
 <li><p>Bayesian Calibration</p>
 <blockquote>
-<div><ol class="upperalpha simple">
+<div><ol class="upperalpha">
 <li><p><a class="reference internal" href="../usage/desktop/DakotaBayesianCalibration.html#lbldakotabayesiancalibration"><span class="std std-ref">Dakota</span></a></p>
 <ol class="arabic simple">
 <li><p>DREAM</p></li>
 </ol>
 </li>
-<li><p><a class="reference internal" href="../usage/desktop/UCSD_UQ_TMCMC.html#lblucsdtmcmc"><span class="std std-ref">UCSD_UQ</span></a></p>
+<li><p><a class="reference internal" href="../usage/desktop/UCSD_UQ_TMCMC.html#lblucsdtmcmc"><span class="std std-ref">TMCMC</span></a></p>
 <ol class="arabic simple">
 <li><p>Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation</p>
 <ol class="loweralpha simple">
@@ -294,6 +290,17 @@
 <li><p>Override default error covariance structure</p></li>
 <li><p>Calibrate multipliers on error covariance structure</p></li>
 </ol>
+</li>
+</ol>
+</li>
+<li><p><a class="reference internal" href="../usage/desktop/UCSD_UQ_Hierarchical.html#lblucsdhierarchical"><span class="std std-ref">Hierarchical Models</span></a></p>
+<ol class="arabic">
+<li><p><span class="blue">Bayesian updating of parameters of a hierarchical model</span></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Quantify aleatory uncertainty in the parameter values of a computational model</p></li>
+</ol>
+</div></blockquote>
 </li>
 </ol>
 </li>
@@ -342,11 +349,11 @@
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Support for the running computation to be preformed on TACC’s high performance computer, Frontera, is provided through DesignSafe for all but the methods indicated with a star (*).</p>
+<p>Support for the running computation to be performed on TACC’s high-performance computer, Frontera, is provided through DesignSafe for all but the methods indicated with a star (*).</p>
 </div>
 </div>
 <div class="section" id="fem-computational-model-specification">
-<h2>FEM (Computational Model Specification)<a class="headerlink" href="#fem-computational-model-specification" title="Permalink to this headline">¶</a></h2>
+<h2>FEM (Computational Model Specification)<a class="headerlink" href="#fem-computational-model-specification" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>OpenSees</p></li>
 <li><p>FEAPpv</p></li>
@@ -358,7 +365,7 @@
 </ol>
 </div>
 <div class="section" id="rv-random-variable-options">
-<h2>RV (Random Variable Options)<a class="headerlink" href="#rv-random-variable-options" title="Permalink to this headline">¶</a></h2>
+<h2>RV (Random Variable Options)<a class="headerlink" href="#rv-random-variable-options" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic">
 <li><p>Inspect PDF of RV</p></li>
 <li><p>Distributions available: <sup>1</sup></p>
@@ -382,20 +389,20 @@
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><sup>1</sup>: For SimCentreUQ and UCSD algorithms only, the RVs can be defined by any of parameters, moments, or a dataset.
+<p><sup>1</sup>: For SimCenterUQ and UCSD algorithms only, the RVs can be defined through any of these options - parameters, moments, or a dataset.
 <sup>2</sup>: Available for Optimization routines in Dakota only.
 <sup>3</sup>: Available in SimCenterUQ and UCSD only.</p>
 </div>
 </div>
 <div class="section" id="edp-outputs-from-computational-models">
-<h2>EDP (Outputs from Computational Models)<a class="headerlink" href="#edp-outputs-from-computational-models" title="Permalink to this headline">¶</a></h2>
+<h2>EDP (Outputs from Computational Models)<a class="headerlink" href="#edp-outputs-from-computational-models" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Scalar quantities of interest</p></li>
 <li><p>Vector quantities of interest</p></li>
 </ol>
 </div>
 <div class="section" id="res-summary-and-visualization-of-uq-analysis-results">
-<h2>RES (Summary and Visualization of UQ Analysis Results)<a class="headerlink" href="#res-summary-and-visualization-of-uq-analysis-results" title="Permalink to this headline">¶</a></h2>
+<h2>RES (Summary and Visualization of UQ Analysis Results)<a class="headerlink" href="#res-summary-and-visualization-of-uq-analysis-results" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic">
 <li><p>Summary statistics of outputs displayed</p>
 <blockquote>
@@ -405,7 +412,7 @@
 </ol>
 </div></blockquote>
 </li>
-<li><p>All output values presented in spreadsheet</p>
+<li><p>All output values presented in the spreadsheet</p>
 <blockquote>
 <div><ol class="upperalpha simple">
 <li><p>Update the chart by clicking on spreadsheet columns</p></li>
@@ -464,7 +471,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

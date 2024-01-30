@@ -40,6 +40,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -126,11 +127,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -210,26 +206,19 @@
            <div itemprop="articleBody">
             
   <div class="section" id="release-plans">
-<span id="lbl-future-r2d"></span><h1>Release Plans<a class="headerlink" href="#release-plans" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-future-r2d"></span><h1>Release Plans<a class="headerlink" href="#release-plans" title="Permalink to this heading">¶</a></h1>
 <p>The following features are planned to be developed for upcoming releases of WE-UQ app. We are actively working on the features in the next release. Farther development priorities may change depending on feedback from the community. If you have any suggestions, we encourage you to contribute and contact us through the SimCenter Forum.</p>
-<div class="section" id="june-2023">
-<h2>June 2023<a class="headerlink" href="#june-2023" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="march-2024">
+<h2>March 2024<a class="headerlink" href="#march-2024" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Water Distribution Network, buried pipelines.(1.3.4.3)</p></li>
-</ol>
-</div>
-<div class="section" id="sept-2023">
-<h2>Sept 2023<a class="headerlink" href="#sept-2023" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
 <li><p>Efficient forward propagation using Multi-Fidelity Monte-Carlo (1.2.3.1) - Use a few realizations of the output calculated with expensive, high-fidelity models to evaluate and correct the bias in efficient, approximate models, such as surrogates. With little extra computational demands, this method provides a substantial improvement in surrogate model performance if you have the high-fidelity models available that were used to train the surrogates.</p></li>
-<li><p>Support transportation networks hazus level analysis (1.3.4.3) and provide corresponding Examples (1.3.4.7) - Extend the scope of tool with transportation networks and add examples that can serve as templates.</p></li>
 <li><p>Add datasets to simulate subassembly damage and losses under wind demands (1.3.5.1) - Data from recent publications in the Performance-Based Wind Engineering literature is collected to enable high-resolution performance assessment under wind hazard, add data to DB-DamegeAndLoss.</p></li>
-<li><p>Incorprate surrogate models created by other SimCenter tools in regional assesments (1.3.6.1) - Other tools can export models in a standard format that can be imported directly in R2D for use in regional simulations.</p></li>
 <li><p>Probabilistic asset inventories (1.3.6.2) - Calibrate, store, and propagate uncertainties in building features at the regional scale. For example, we have some but not all information for all buildings in an area, fill in the gaps using information we do know.</p></li>
 </ol>
 </div>
-<div class="section" id="march-2024">
-<h2>March 2024<a class="headerlink" href="#march-2024" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="june-2024">
+<h2>June 2024<a class="headerlink" href="#june-2024" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Automatic access to physics-based ground motion simulation results (1.1.1.3)</p></li>
 <li><p>Add datasets to simulate subassembly damage and losses under water demands (1.3.5.2)</p></li>
@@ -237,16 +226,16 @@
 </ol>
 </div>
 <div class="section" id="sept-2024">
-<h2>Sept 2024<a class="headerlink" href="#sept-2024" title="Permalink to this headline">¶</a></h2>
+<h2>Sept 2024<a class="headerlink" href="#sept-2024" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Develop methods to model interdependencies between physical components, housing, socio-economic functions, and lifelines (1.3.4.6)</p></li>
 <li><p>Add datasets to simulate high-resolution damages and losses in transportation networks (1.3.5.3)</p></li>
 <li><p>Develop and implement metrics and their visualization to inform recovery and community resilience (1.4.3.2)</p></li>
-<li><p>Look at aspects related to recovery. Housholds (1.4.3.2), Infrastructure )1.4.2.4), Business operations (1.4.2.5)</p></li>
+<li><p>Look at aspects related to recovery. Housholds (1.4.3.2), Infrastructure (1.4.2.4), Business operations (1.4.2.5)</p></li>
 </ol>
 </div>
 <div class="section" id="sept-2025">
-<h2>Sept 2025<a class="headerlink" href="#sept-2025" title="Permalink to this headline">¶</a></h2>
+<h2>Sept 2025<a class="headerlink" href="#sept-2025" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Multi-fidelity models in regional simulations (1.3.3.1)</p></li>
 <li><p>Multi-scale models for wind and water (1.3.3.2)</p></li>
@@ -270,7 +259,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

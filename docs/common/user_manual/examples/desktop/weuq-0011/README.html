@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -145,11 +146,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -231,7 +227,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="digital-wind-tunnel-i-empty-domain-simulation">
-<span id="weuq-0011"></span><h1><span class="section-number">3.4. </span>Digital Wind Tunnel I: Empty Domain Simulation<a class="headerlink" href="#digital-wind-tunnel-i-empty-domain-simulation" title="Permalink to this headline">¶</a></h1>
+<span id="weuq-0011"></span><h1><span class="section-number">3.4. </span>Digital Wind Tunnel I: Empty Domain Simulation<a class="headerlink" href="#digital-wind-tunnel-i-empty-domain-simulation" title="Permalink to this heading">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 39%" />
@@ -255,7 +251,7 @@
 <p class="caption"><span class="caption-number">Fig. 3.4.2 </span><span class="caption-text">Schematic diagram for the Digital Wind Tunnel.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="cfd-modeling">
-<h2><span class="section-number">3.4.1. </span>CFD modeling<a class="headerlink" href="#cfd-modeling" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.1. </span>CFD modeling<a class="headerlink" href="#cfd-modeling" title="Permalink to this heading">¶</a></h2>
 <p>The first step to run a CFD simulation in the Digital Wind Tunnel is to set up an OpenFOAM case which involves creating a directory structure with specific files that define the simulation settings, such as the geometry, mesh, and boundary conditions. The Digital Wind Tunnel allows users to upload their own model to run CFD simulations. To prepare the OpenFOAM case directory, three sub-directories are needed: <em>0</em>, <em>constant</em> and <em>system</em>.</p>
 <div class="align-center figure" id="id6">
 <a class="reference internal image-reference" href="../../../../../_images/openfoam_structure.png"><img alt="../../../../../_images/openfoam_structure.png" src="../../../../../_images/openfoam_structure.png" style="width: 400px;" /></a>
@@ -299,12 +295,12 @@
 </div>
 </div>
 <div class="section" id="inflow-configurations-in-the-digital-wind-tunnel">
-<h2><span class="section-number">3.4.2. </span>Inflow configurations in the Digital Wind Tunnel<a class="headerlink" href="#inflow-configurations-in-the-digital-wind-tunnel" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.2. </span>Inflow configurations in the Digital Wind Tunnel<a class="headerlink" href="#inflow-configurations-in-the-digital-wind-tunnel" title="Permalink to this heading">¶</a></h2>
 <p>After the mesh generation and basic configurations for CFD modeling have been established, it is crucial to generate inflow turbulence that conforms to the desired atmospheric boundary layer flows. This step is essential in setting up a CFD model that can accurately simulate atmospheric flows across a broad spectrum of length and time scales. One common approach to generating inflow turbulence is to use synthetic inflow generation, which involves synthesizing turbulent fluctuations at the inflow boundary based on statistical properties of the turbulence.</p>
 <p>In the Digital Wind Tunnel, the synthetic inflow turbulence generation is enabled by the Turbulence Inflow Tool (TInF) developed by the NHERI SimCenter. Multiple synthetic inflow generation approaches are implemented in TInF, including the Digital Filtering Method and Synthetic Eddy Method. The TInF tool can utilize the statistical properties defined by users to produce a time series of turbulent fluctuations at the inflow boundary, which can then be integrated into WE-UQ for running a CFD simulations. The TInF tool can be directly downloaded from <a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterDocumentation/">github website</a>.</p>
 <p>There are two ways to specify the user-defined inflow boundary conditions that characterize the desired atmospheric boundary layer flows: <em>direct specification</em> and <em>specification via prescribed functions</em>.</p>
 <div class="section" id="direct-specification-of-inflow-turbulence-through-uploading-a-table">
-<h3><span class="section-number">3.4.2.1. </span>Direct specification of inflow turbulence through uploading a table<a class="headerlink" href="#direct-specification-of-inflow-turbulence-through-uploading-a-table" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.2.1. </span>Direct specification of inflow turbulence through uploading a table<a class="headerlink" href="#direct-specification-of-inflow-turbulence-through-uploading-a-table" title="Permalink to this heading">¶</a></h3>
 <p>In the context of <em>direct specification</em>, the Digital Wind Tunnel allows users to specify the inflow turbulence properties obtained from wind tunnel measurements, such as mean velocity, Reynolds stress, and length scales at the inflow boundary for a CFD simulation. For example, the following table Specifies one inflow condition based on wind tunnel measurements at the UF BLWT facility:</p>
 <div class="align-center figure" id="id10">
 <a class="reference internal image-reference" href="../../../../../_images/table.png"><img alt="../../../../../_images/table.png" src="../../../../../_images/table.png" style="width: 1000px;" /></a>
@@ -347,7 +343,7 @@ scales along the height based on the uploaded table.</p>
 </div>
 </div>
 <div class="section" id="specification-via-prescribed-functions">
-<h3><span class="section-number">3.4.2.2. </span>Specification via prescribed functions<a class="headerlink" href="#specification-via-prescribed-functions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.2.2. </span>Specification via prescribed functions<a class="headerlink" href="#specification-via-prescribed-functions" title="Permalink to this heading">¶</a></h3>
 <p>If the wind tunnel data is not available, the user can also specify the inflow conditions through the embedded functions in the Digital Wind Tunnel. There are three functions to characterize the atmospheric inflow profiles: uniform function, exponential function and logarithmic function. The uniform function assumes a constant wind velocity over the entire simulation domain, but may not accurately represent the complex nature of atmospheric boundary layer flows. The exponential function is often used to represent the vertical profile of wind velocity in the atmospheric boundary layer. The logarithmic function is another commonly used function that also represents the vertical profile of wind speed in the atmospheric boundary layer, based on the assumption of a logarithmic variation of wind velocity with height.</p>
 <div class="align-center figure" id="id13">
 <a class="reference internal image-reference" href="../../../../../_images/TInF_function.png"><img alt="../../../../../_images/TInF_function.png" src="../../../../../_images/TInF_function.png" style="width: 500px;" /></a>
@@ -374,7 +370,7 @@ scales along the height based on the uploaded table.</p>
 </div>
 </div>
 <div class="section" id="running-a-cfd-simulation-in-the-digital-wind-tunnel">
-<h2><span class="section-number">3.4.3. </span>Running a CFD simulation in the Digital Wind Tunnel<a class="headerlink" href="#running-a-cfd-simulation-in-the-digital-wind-tunnel" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.3. </span>Running a CFD simulation in the Digital Wind Tunnel<a class="headerlink" href="#running-a-cfd-simulation-in-the-digital-wind-tunnel" title="Permalink to this heading">¶</a></h2>
 <p>After the CFD model is set up, the next step is to run the CFD simulations. Press the <strong>RUN at DesignSafe</strong> button to submit the job to TACC Frontera HPC resources. Once the simulation is completed, download the data from <strong>GET from DesignSafe</strong>. Post-processing tools including paraView can be used to visualize and analyze the flow simulations. Once the CFD simulation with the specified inflow conditions has been performed, the velocity profiles downstream can be computed from the resulting data and compared with experimental measurements to validate the accuracy of the simulation. This validation step is important to ensure that the simulated results are reliable and can be used for further analysis including building design.</p>
 <div class="align-center figure" id="id14">
 <a class="reference internal image-reference" href="../../../../../_images/Post-processing.png"><img alt="../../../../../_images/Post-processing.png" src="../../../../../_images/Post-processing.png" style="width: 500px;" /></a>
@@ -399,7 +395,7 @@ scales along the height based on the uploaded table.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

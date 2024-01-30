@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -158,11 +159,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -246,8 +242,8 @@
            <div itemprop="articleBody">
             
   <div class="section" id="isolated-building-cfd-model">
-<span id="lblisolatedbuildingcfd"></span><h1><span class="section-number">2.4.3. </span>Isolated Building CFD Model<a class="headerlink" href="#isolated-building-cfd-model" title="Permalink to this headline">¶</a></h1>
-<p>The Isolated Building CFD Model is a Computational Fluid Dynamics (CFD) based wind load generator for an isolated building. It provides greater flexibility in modeling the approaching wind and the wind-induced loads on the building. This event allows the user to seamlessly define the computational model with interactive GUI support. <a class="reference internal" href="#fig-iso-cfd-workflow"><span class="std std-numref">Fig. 2.4.3.1</span></a> shows the high-level view of CFD-based framework as it fits to the overall workflow of WE-UQ. The modeling process is automated with different pre-/post-processing functionalities. The user needs to provide information related to geometry, mesh generation, boundary conditions, turbulence modeling, solver selection, etc. One of the most salient features includes automatic meshing with a user-interactive interface. At the backend, the CFD simulations are conducted by executing open-source CFD solvers from OpenFOAM <a class="reference internal" href="#greenshields2015" id="id1"><span>[Greenshields2015]</span></a>. The user needs to follow the following procedure to model wind loading using this event.</p>
+<span id="lblisolatedbuildingcfd"></span><h1><span class="section-number">2.4.3. </span>Isolated Building CFD Model<a class="headerlink" href="#isolated-building-cfd-model" title="Permalink to this heading">¶</a></h1>
+<p>The Isolated Building CFD Model is a Computational Fluid Dynamics (CFD) based wind load generator for an isolated building. It provides greater flexibility in modeling the approaching wind and the wind-induced loads on the building. This event allows the user to seamlessly define the computational model with interactive GUI support. <a class="reference internal" href="#fig-iso-cfd-workflow"><span class="std std-numref">Fig. 2.4.3.1</span></a> shows the high-level view of CFD-based framework as it fits the overall workflow of WE-UQ. The modeling process is automated with different pre-/post-processing functionalities. The user needs to provide information related to geometry, mesh generation, boundary conditions, turbulence modeling, solver selection, etc. One of the most salient features includes automatic meshing with a user-interactive interface. At the backend, the CFD simulations are conducted by executing open-source CFD solvers from OpenFOAM <a class="reference internal" href="#greenshields2015" id="id1"><span>[Greenshields2015]</span></a>. The user needs to follow the following procedure to model wind loading using this event.</p>
 <div class="align-center figure" id="id11">
 <span id="fig-iso-cfd-workflow"></span><img alt="../../../../../_images/WEUQ_CFD_Workflow.png" src="../../../../../_images/WEUQ_CFD_Workflow.png" />
 <p class="caption"><span class="caption-number">Fig. 2.4.3.1 </span><span class="caption-text">The high-level CFD-based workflow with uncertainty quantification.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
@@ -271,7 +267,7 @@
 <span id="fig-iso-gui-overview"></span><img alt="../../../../../_images/input_and_model_view_panel.svg" src="../../../../../_images/input_and_model_view_panel.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.2 </span><span class="caption-text">Parts of the GUI for the CFD-based wind load event.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="start">
-<h2><span class="section-number">2.4.3.1. </span>Start<a class="headerlink" href="#start" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.3.1. </span>Start<a class="headerlink" href="#start" title="Permalink to this heading">¶</a></h2>
 <p>This tab outlines the main steps in the CFD modeling process. It provides the path to the working directory and options for the unit system.</p>
 <ol class="arabic">
 <li><p><strong>Path:</strong> The path where the created OpenFOAM case will be saved. The “Browse” button in <a class="reference internal" href="#fig-iso-gui-overview"><span class="std std-numref">Fig. 2.4.3.2</span></a> can be used to change the location to any user-specified directory. By default, this path points to SimCenter’s working directory in <em>Documents</em>.</p></li>
@@ -286,7 +282,7 @@
 </ol>
 </div>
 <div class="section" id="geometry">
-<h2><span class="section-number">2.4.3.2. </span>Geometry<a class="headerlink" href="#geometry" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.3.2. </span>Geometry<a class="headerlink" href="#geometry" title="Permalink to this heading">¶</a></h2>
 <p>In the <strong>Geometry</strong> tab, the geometry and dimensions of the building and computational domain are defined. It is common to conduct CFD simulations as a replica of actual wind tunnel testing facilities. For this type of application, the user must specify the dimensions of the tunnel and the geometric scale used to construct the building model in the experiment. In <a class="reference internal" href="#fig-iso-geometry-tab"><span class="std std-numref">Fig. 2.4.3.2.1</span></a>, all the inputs related to the geometry of the building and the domain are shown.</p>
 <div class="align-center figure" id="id13">
 <span id="fig-iso-geometry-tab"></span><img alt="../../../../../_images/geometry_tab.svg" src="../../../../../_images/geometry_tab.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.2.1 </span><span class="caption-text"><strong>Geometry</strong> tab for defining the geometry of the building and computational domain.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
@@ -312,7 +308,7 @@
 <li><p><strong>Location of Absolute Origin</strong>: This option specifies the location of the absolute origin for the coordinate system where <span class="math notranslate nohighlight">\((x = 0, y = 0, z = 0)\)</span>. There are three options: <em>Building Bottom Center</em>, <em>Domain Bottom Left Corner</em>, and <em>Custom</em>. By default, the origin is the <em>Building Bottom Center</em>. The origin also can be changed to any user-specified point by using the <em>Custom</em> option and editing the coordinates (see the bottom of <a class="reference internal" href="#fig-iso-geometry-tab"><span class="std std-numref">Fig. 2.4.3.2.1</span></a>).</p></li>
 </ol>
 <div class="section" id="importing-stl-surface">
-<h3>Importing STL Surface<a class="headerlink" href="#importing-stl-surface" title="Permalink to this headline">¶</a></h3>
+<h3>Importing STL Surface<a class="headerlink" href="#importing-stl-surface" title="Permalink to this heading">¶</a></h3>
 <p>For buildings with complex shapes, the user can specify the building geometry by clicking <strong>Import STL</strong> button under <em>Building Shape</em> group (see  <a class="reference internal" href="#fig-iso-geometry-tab"><span class="std std-numref">Fig. 2.4.3.2.1</span></a>). This opens a new window shown in <a class="reference internal" href="#fig-iso-import-stl"><span class="std std-numref">Fig. 2.4.3.2.2</span></a> which will allow the user to import an STL file. The properties of the STL geometry and options to transform the model are given below.</p>
 <div class="figure align-center" id="id14">
 <span id="fig-iso-import-stl"></span><a class="reference internal image-reference" href="../../../../../_images/import_stl_dialog.svg"><img alt="../../../../../_images/import_stl_dialog.svg" src="../../../../../_images/import_stl_dialog.svg" width="50%" /></a>
@@ -332,7 +328,7 @@
 </div>
 </div>
 <div class="section" id="meshing">
-<h2><span class="section-number">2.4.3.3. </span>Meshing<a class="headerlink" href="#meshing" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.3.3. </span>Meshing<a class="headerlink" href="#meshing" title="Permalink to this heading">¶</a></h2>
 <p>The mesh (computational grid) is generated employing OpenFOAM’s <em>snappyHexMesh</em> tool. The procedure involves first defining a regularly spaced background mesh for the whole domain. Then, further refinements are made progressively as we get close to the surface of the building. The building geometry is created as a Stereolithography (STL) surface from its width, depth and height. Finally, the meshing is performed locally on the user’s machine. Thus, the user can interactively visualize the mesh using the model view window on the right. The step-by-step procedure to define the mesh for this event involves:</p>
 <ul class="simple">
 <li><p><strong>Step 1</strong>: Define a background structured mesh.</p></li>
@@ -346,7 +342,7 @@
 </div>
 <p>The following subsections describe the GUI for each step. Further details of the <em>snappyHexMesh</em> meshing tool used can be found in <a class="reference internal" href="#greenshields2022" id="id3"><span>[Greenshields2022]</span></a>.</p>
 <div class="section" id="background-mesh">
-<h3>Background Mesh<a class="headerlink" href="#background-mesh" title="Permalink to this headline">¶</a></h3>
+<h3>Background Mesh<a class="headerlink" href="#background-mesh" title="Permalink to this heading">¶</a></h3>
 <p>The background mesh is the grid used in the far field away from the area where the building is located. The user needs to define a background mesh before running <em>snappyHexMesh</em>. The ideal grid for the background mesh is hexahedral (hex) cells. Thus, the background mesh is generated using OpenFOAM’s <em>blockMesh</em> utility as a structured grid. To start, the user needs to specify the number of cells in the three-orthogonal directions as shown in <a class="reference internal" href="#fig-iso-mesh-tab"><span class="std std-numref">Fig. 2.4.3.3.1</span></a>. Once the information in the <em>Background Mesh</em> tab (see <a class="reference internal" href="#fig-iso-mesh-tab"><span class="std std-numref">Fig. 2.4.3.3.1</span></a>) is filled, the user can press the <em>Run blockMesh</em> button to generate and visualize the background mesh. The mesh is automatically updated on the model view panel as seen in <a class="reference internal" href="#fig-iso-gui-overview"><span class="std std-numref">Fig. 2.4.3.2</span></a>. Descriptions of the fields used to define the background mesh are given below.</p>
 <ol class="arabic">
 <li><p><strong>Direction</strong>: The axis along which the number of cells will be specified. The mesh information must be provided in <span class="math notranslate nohighlight">\((x, y, z)\)</span> directions separately.</p></li>
@@ -367,7 +363,7 @@
 </ol>
 </div>
 <div class="section" id="refinement-regions">
-<h3>Refinement Regions<a class="headerlink" href="#refinement-regions" title="Permalink to this headline">¶</a></h3>
+<h3>Refinement Regions<a class="headerlink" href="#refinement-regions" title="Permalink to this heading">¶</a></h3>
 <p>Once the background mesh is generated, further mesh refinements can be added using refinement regions (boxes). To achieve this, the user can specify multiple refinement regions. The refinement regions are boxes defining the extent of the region, and the corresponding refinement level. <a class="reference internal" href="#fig-iso-mesh-tab-regional"><span class="std std-numref">Fig. 2.4.3.3.2</span></a> shows a sample input with four refinement boxes. It is recommended to have both global and local refinement regions. Here global refinement refers to a box that extends from the inlet of the domain up to the wake of the study building. Whereas, local refinements cover the region in the vicinity of the building. For example, Box1 and Box2 in <a class="reference internal" href="#fig-iso-mesh-tab-regional"><span class="std std-numref">Fig. 2.4.3.3.2</span></a> are of global type, whereas Box3 and Box4 are local refinements. In the current version of the tool, the refinement regions can only be box-shaped. Here descriptions of each field are provided.</p>
 <div class="align-center figure" id="id16">
 <span id="fig-iso-mesh-tab-regional"></span><img alt="../../../../../_images/mesh_tab_regional_refinement.svg" src="../../../../../_images/mesh_tab_regional_refinement.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.3.2 </span><span class="caption-text">Specification of the refinement regions.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
@@ -387,7 +383,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="surface-refinements">
-<h3>Surface Refinements<a class="headerlink" href="#surface-refinements" title="Permalink to this headline">¶</a></h3>
+<h3>Surface Refinements<a class="headerlink" href="#surface-refinements" title="Permalink to this heading">¶</a></h3>
 <p>Near solid walls, surface refinements can be added to resolve important flow features. Especially on the building surface, additional refinements are often necessary to capture the wind loads (e.g., surface pressure fluctuations) more accurately. Surface refinement is defined by specifying the name of the target surface, the required refinement level, and the refinement distance as shown in <a class="reference internal" href="#fig-iso-mesh-tab-surface"><span class="std std-numref">Fig. 2.4.3.3.3</span></a>.</p>
 <div class="align-center figure" id="id17">
 <span id="fig-iso-mesh-tab-surface"></span><img alt="../../../../../_images/mesh_tab_surface_refinement.svg" src="../../../../../_images/mesh_tab_surface_refinement.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.3.3 </span><span class="caption-text">Specification of the surface refinements.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
@@ -400,7 +396,7 @@
 </ol>
 </div>
 <div class="section" id="edge-refinement">
-<h3>Edge Refinement<a class="headerlink" href="#edge-refinement" title="Permalink to this headline">¶</a></h3>
+<h3>Edge Refinement<a class="headerlink" href="#edge-refinement" title="Permalink to this heading">¶</a></h3>
 <p>Near the building edges, the flow separation point can be better captured by employing edge refinement options. If the user opts for edge refinement, the grid around the edges of the building will automatically be refined to the specified level. In addition to improving the resolution of wind flow, the use of edge refinements results in a more accurate representation of the building geometry. <a class="reference internal" href="#fig-iso-mesh-tab-edge"><span class="std std-numref">Fig. 2.4.3.3.4</span></a> shows the fields to specify the edge refinement.</p>
 <div class="align-center figure" id="id18">
 <span id="fig-iso-mesh-tab-edge"></span><img alt="../../../../../_images/mesh_tab_edge_refinement.svg" src="../../../../../_images/mesh_tab_edge_refinement.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.3.4 </span><span class="caption-text">Specification of the edge refinement.</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
@@ -419,7 +415,7 @@
 </ol>
 </div>
 <div class="section" id="prism-layers">
-<h3>Prism Layers<a class="headerlink" href="#prism-layers" title="Permalink to this headline">¶</a></h3>
+<h3>Prism Layers<a class="headerlink" href="#prism-layers" title="Permalink to this heading">¶</a></h3>
 <p>Another important refinement option includes prism layers. Prism layers are dense layers of usually stretched cells added near solid boundaries. By adding multiple prismatic layers of cells on the building surface, one can improve the resolution of the thin boundary layer that develops on the walls. The prism layers are inserted by splitting the first layer of off-wall cells on the surface. The inputs needed to specify prism layers are shown in <a class="reference internal" href="#fig-iso-mesh-tab-prism-layers"><span class="std std-numref">Fig. 2.4.3.3.5</span></a>.</p>
 <div class="align-center figure" id="id19">
 <span id="fig-iso-mesh-tab-prism-layers"></span><img alt="../../../../../_images/mesh_tab_prism_layers.svg" src="../../../../../_images/mesh_tab_prism_layers.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.3.5 </span><span class="caption-text">Adding prism layers to the building surface.</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
@@ -440,7 +436,7 @@
 </ol>
 </div>
 <div class="section" id="advanced-options">
-<h3>Advanced Options<a class="headerlink" href="#advanced-options" title="Permalink to this headline">¶</a></h3>
+<h3>Advanced Options<a class="headerlink" href="#advanced-options" title="Permalink to this heading">¶</a></h3>
 <p>Additional options for mesh generations can be found under the <em>Advanced Options</em> group as shown in <a class="reference internal" href="#fig-iso-mesh-tab-advanced-options"><span class="std std-numref">Fig. 2.4.3.3.6</span></a>. These options include:</p>
 <div class="align-center figure" id="id20">
 <span id="fig-iso-mesh-tab-advanced-options"></span><img alt="../../../../../_images/mesh_tab_advanced_options.svg" src="../../../../../_images/mesh_tab_advanced_options.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.3.6 </span><span class="caption-text">Advanced meshing control options.</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
@@ -460,7 +456,7 @@
 </ol>
 </div>
 <div class="section" id="running-the-mesh">
-<h3>Running the Mesh<a class="headerlink" href="#running-the-mesh" title="Permalink to this headline">¶</a></h3>
+<h3>Running the Mesh<a class="headerlink" href="#running-the-mesh" title="Permalink to this heading">¶</a></h3>
 <p>One of the main improvements in the current release of the tool is the mesh generation module. Now, the user can create geometry, generate a mesh and view the mesh on their local machine. Once the input parameters for the mesh are filled, the next step is to run, check and view the mesh. After the mesh is run successfully, a sample message in the <em>Program Output</em> window is shown in <a class="reference internal" href="#fig-iso-mesh-tab-run-mesh"><span class="std std-numref">Fig. 2.4.3.3.7</span></a>.</p>
 <div class="align-center figure" id="id21">
 <span id="fig-iso-mesh-tab-run-mesh"></span><img alt="../../../../../_images/mesh_tab_run_and_check_mesh.svg" src="../../../../../_images/mesh_tab_run_and_check_mesh.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.3.7 </span><span class="caption-text">Running and checking the mesh generation process.</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
@@ -479,7 +475,7 @@
 </ol>
 </div>
 <div class="section" id="viewing-the-mesh">
-<h3>Viewing the Mesh<a class="headerlink" href="#viewing-the-mesh" title="Permalink to this headline">¶</a></h3>
+<h3>Viewing the Mesh<a class="headerlink" href="#viewing-the-mesh" title="Permalink to this heading">¶</a></h3>
 <p>After the mesh generation is completed the <em>Model View Window</em> is updated automatically. This window provides the user with different options for visualizing the mesh. These options are found on a toolbar positioned at the top as seen <a class="reference internal" href="#fig-iso-view-mesh-options"><span class="std std-numref">Fig. 2.4.3.3.8</span></a>.</p>
 <div class="align-center figure" id="id22">
 <span id="fig-iso-view-mesh-options"></span><img alt="../../../../../_images/mesh_vis_window.svg" src="../../../../../_images/mesh_vis_window.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.3.8 </span><span class="caption-text"><em>Model View Window</em> for viewing and checking the generated mesh.</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
@@ -510,13 +506,13 @@
 </div>
 </div>
 <div class="section" id="boundary-conditions">
-<h2><span class="section-number">2.4.3.4. </span>Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.3.4. </span>Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this heading">¶</a></h2>
 <p>In the <em>Boundary Conditions</em> tab, the user defines the values of wind fields at the domain boundaries. First, the user specifies the general characteristics of the approaching wind in the <em>Wind Characteristics</em> group. Then, specific boundary conditions for each face of the domain are provided in the <em>Boundary Conditions</em> group. If the user selects turbulent inflow condition at the inlet, in the <em>Inflow Generation</em> group the method and the inputs needed to generate artificial inflow boundary conditions will be specified.</p>
 <div class="align-center figure" id="id23">
 <span id="fig-iso-bc-tab"></span><img alt="../../../../../_images/boundary_conditions_tab.svg" src="../../../../../_images/boundary_conditions_tab.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.4.1 </span><span class="caption-text">Boundary condition specification.</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="approaching-wind-characteristics">
-<h3>Approaching Wind Characteristics<a class="headerlink" href="#approaching-wind-characteristics" title="Permalink to this headline">¶</a></h3>
+<h3>Approaching Wind Characteristics<a class="headerlink" href="#approaching-wind-characteristics" title="Permalink to this heading">¶</a></h3>
 <p>The workflow offers the user a means to perform the CFD simulation at a reduced scale. If the simulation is done at a reduced scale, the characteristics of the approaching wind must be defined in the same scale.</p>
 <ol class="arabic simple">
 <li><p><strong>Velocity Scale</strong>: This represents a factor to scale the velocity.</p></li>
@@ -530,7 +526,7 @@
 </ol>
 </div>
 <div class="section" id="initial-and-boundary-conditions">
-<h3>Initial and Boundary Conditions<a class="headerlink" href="#initial-and-boundary-conditions" title="Permalink to this headline">¶</a></h3>
+<h3>Initial and Boundary Conditions<a class="headerlink" href="#initial-and-boundary-conditions" title="Permalink to this heading">¶</a></h3>
 <p>Types of boundary conditions corresponding to each face of the domain are defined here. The names for the boundary conditions are based on <em>OpenFOAM</em> dictionary files.</p>
 <ol class="arabic">
 <li><p><strong>Inlet</strong>: Defines the boundary conditions at the inlet of the computational domain. Here we have three options:</p>
@@ -575,7 +571,7 @@
 </ol>
 </div>
 <div class="section" id="inflow-generation">
-<h3>Inflow Generation<a class="headerlink" href="#inflow-generation" title="Permalink to this headline">¶</a></h3>
+<h3>Inflow Generation<a class="headerlink" href="#inflow-generation" title="Permalink to this heading">¶</a></h3>
 <p>If <em>TInf</em> option is specified at the <em>inlet</em> of the boundary, inputs for the inflow generation are specified here.</p>
 <ol class="arabic simple">
 <li><p><strong>Generation Method</strong>: The technique for generating the inflow turbulence. Five different methods commonly used in the computational wind engineering community are implemented.</p>
@@ -594,13 +590,13 @@
 </div>
 </div>
 <div class="section" id="numerical-setup">
-<h2><span class="section-number">2.4.3.5. </span>Numerical Setup<a class="headerlink" href="#numerical-setup" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.3.5. </span>Numerical Setup<a class="headerlink" href="#numerical-setup" title="Permalink to this heading">¶</a></h2>
 <p>In this tab, selections related to turbulence modeling, solver type, duration and time step options are specified. First, the user will specify the type of simulation to run. Both transient and steady-state options are available. Then, the type of solver suitable for the selected simulation is specified. Finally, options related to the duration and time step of the simulation are defined.</p>
 <div class="align-center figure" id="id24">
 <span id="fig-iso-numerical-setup-tab"></span><img alt="../../../../../_images/numerical_setup_tab.svg" src="../../../../../_images/numerical_setup_tab.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.5.1 </span><span class="caption-text">Specification of the numerical setup.</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="turbulence-modeling">
-<h3>Turbulence Modeling<a class="headerlink" href="#turbulence-modeling" title="Permalink to this headline">¶</a></h3>
+<h3>Turbulence Modeling<a class="headerlink" href="#turbulence-modeling" title="Permalink to this heading">¶</a></h3>
 <p>The Reynolds number for wind load simulation is usually high in the order of <span class="math notranslate nohighlight">\(Re = 10^7\)</span> (full-scale). This makes it highly challenging to resolve all scales of the wind fluctuations. We need to use an appropriate turbulence model to represent the effect of small-scale turbulence.</p>
 <ol class="arabic simple">
 <li><p><strong>Simulation Type</strong>: Specifies the type of turbulence modeling scheme to be used. Three turbulence modeling options are supported:</p>
@@ -634,7 +630,7 @@
 </ol>
 </div>
 <div class="section" id="solver-selection">
-<h3>Solver Selection<a class="headerlink" href="#solver-selection" title="Permalink to this headline">¶</a></h3>
+<h3>Solver Selection<a class="headerlink" href="#solver-selection" title="Permalink to this heading">¶</a></h3>
 <p>Depending on the type of simulation selected (i.e. steady-state and transient), the type of solver must be selected appropriately. For LES and DES turbulence models, use transient solvers such as Pressure-Implicit with Splitting of Operators (PISO) and for RANS models, recommended to use a steady-state solver like Semi-Implicit Method for Pressure Linked Equations (SIMPLE).</p>
 <ol class="arabic simple">
 <li><p><strong>Solver Type</strong>: Specifies the type of DES model to use:</p>
@@ -650,7 +646,7 @@
 </ol>
 </div>
 <div class="section" id="duration-and-time-step">
-<h3>Duration and Time Step<a class="headerlink" href="#duration-and-time-step" title="Permalink to this headline">¶</a></h3>
+<h3>Duration and Time Step<a class="headerlink" href="#duration-and-time-step" title="Permalink to this heading">¶</a></h3>
 <p>The duration and time step of the simulation must be specified in line with the <em>Time Scale</em> used for the model. For wind load simulation it is recommended to have a 1 hour equivalent duration in full scale. However, for integrated wind loads, a statical convergence can be achieved at a much shorter duration.</p>
 <ol class="arabic simple">
 <li><p><strong>Duration</strong>: The length of the simulation (physical time) at chosen <em>Time Scale</em> in seconds. The simulation will end once the solver reaches this time.</p></li>
@@ -664,7 +660,7 @@
 </ol>
 </div>
 <div class="section" id="parallelization">
-<h3>Parallelization<a class="headerlink" href="#parallelization" title="Permalink to this headline">¶</a></h3>
+<h3>Parallelization<a class="headerlink" href="#parallelization" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic simple">
 <li><p><strong>Run Simulation in Parallel</strong>: If checked, the simulation will run in parallel and the user needs to specify the number of processors. Otherwise, the simulation is conducted in serial. For the high-fidelity simulation, it is recommended to run in parallel.</p></li>
 <li><p><strong>Number of Processors</strong>: This represents the number of subdomains that will be used in the OpenFOAM case. It needs to match the computational resources availed when the job gets submitted to <em>DesignSafe</em> to run remotely.</p></li>
@@ -672,13 +668,13 @@
 </div>
 </div>
 <div class="section" id="monitoring">
-<h2><span class="section-number">2.4.3.6. </span>Monitoring<a class="headerlink" href="#monitoring" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4.3.6. </span>Monitoring<a class="headerlink" href="#monitoring" title="Permalink to this heading">¶</a></h2>
 <p>The CFD simulation is typically run using millions of grids. Saving all the simulation data at each time step slows down the solver and takes lots of space. Therefore, in this event, we monitor only relevant quantities (wind loads and flow fields) that will be used in the workflow. Under this tab, the user selects the type of wind loads to monitor which include integrated loads on the structure as well as surface pressure fluctuations at specific points on the building walls. Integrated loads represent the wind forces the building structure experiences. Two types of integrated loads are monitored, which include <em>Base Loads</em> and <em>Story Loads</em>.</p>
 <div class="align-center figure" id="id25">
 <span id="fig-iso-monitoring-tab"></span><img alt="../../../../../_images/monitoring_tab.svg" src="../../../../../_images/monitoring_tab.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.6.1 </span><span class="caption-text">Results to monitor from the CFD simulations</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="base-loads">
-<h3>Base Loads<a class="headerlink" href="#base-loads" title="Permalink to this headline">¶</a></h3>
+<h3>Base Loads<a class="headerlink" href="#base-loads" title="Permalink to this heading">¶</a></h3>
 <p>This will monitor the time history of the base shear forces and overturning moment on the building. The values are calculated by integrating the pressure fluctuations over the building surface.</p>
 <ol class="arabic simple">
 <li><p><strong>Monitor Base Loads</strong>: If checked the base loads will be monitored. By default, this option is checked.</p></li>
@@ -686,7 +682,7 @@
 </ol>
 </div>
 <div class="section" id="story-loads">
-<h3>Story Loads<a class="headerlink" href="#story-loads" title="Permalink to this headline">¶</a></h3>
+<h3>Story Loads<a class="headerlink" href="#story-loads" title="Permalink to this heading">¶</a></h3>
 <p>Since the story forces are needed for the main workflow, they are always monitored from the CFD simulation.</p>
 <ol class="arabic simple">
 <li><p><strong>Floor Height Specification</strong>: Specifies if the floor heights are <em>Uniform Floor Height</em> or not.</p></li>
@@ -696,7 +692,7 @@
 </ol>
 </div>
 <div class="section" id="cladding-loads">
-<h3>Cladding Loads<a class="headerlink" href="#cladding-loads" title="Permalink to this headline">¶</a></h3>
+<h3>Cladding Loads<a class="headerlink" href="#cladding-loads" title="Permalink to this heading">¶</a></h3>
 <p>For the cladding loads, local pressure fluctuations on the building surface can be monitored. The cladding loads can be monitored on points automatically created by the application or on a set of points imported from an existing <em>.CSV</em> file.</p>
 <ol class="arabic simple">
 <li><p><strong>Sample Pressure Data on the Building Surface</strong>: If checked, the surface pressure data will be monitored on the building surface.</p></li>
@@ -754,7 +750,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

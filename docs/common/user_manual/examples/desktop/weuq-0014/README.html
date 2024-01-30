@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -152,11 +153,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/WEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -238,7 +234,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="digital-wind-tunnel-ii-wind-loads-on-isolated-building-with-complex-geometry">
-<span id="weuq-0014"></span><h1><span class="section-number">3.6. </span>Digital Wind Tunnel II: Wind Loads on Isolated Building with Complex Geometry<a class="headerlink" href="#digital-wind-tunnel-ii-wind-loads-on-isolated-building-with-complex-geometry" title="Permalink to this headline">¶</a></h1>
+<span id="weuq-0014"></span><h1><span class="section-number">3.6. </span>Digital Wind Tunnel II: Wind Loads on Isolated Building with Complex Geometry<a class="headerlink" href="#digital-wind-tunnel-ii-wind-loads-on-isolated-building-with-complex-geometry" title="Permalink to this heading">¶</a></h1>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 39%" />
@@ -341,7 +337,7 @@
 </table>
 <p>The upwind condition chosen for this example is open exposure type with aerodynamic roughness length of <span class="math notranslate nohighlight">\(z_0 = 0.03\)</span> for wind direction <span class="math notranslate nohighlight">\(\theta = 0^o\)</span>. For simplicity, the effect of the surrounding buildings is neglected and a smooth inflow boundary condition is adopted at the inlet.</p>
 <div class="section" id="workflow">
-<span id="workflow-section"></span><h2><span class="section-number">3.6.1. </span>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h2>
+<span id="workflow-section"></span><h2><span class="section-number">3.6.1. </span>Workflow<a class="headerlink" href="#workflow" title="Permalink to this heading">¶</a></h2>
 <p>In this example, the overall workflow is demonstrated by introducing uncertainty in the structural model. No uncertainties were considered in the wind parameters or CFD simulations. The user needs to go through the following procedure to define the Uncertainty Quantification (UQ) technique, building information, structural properties, and CFD model parameters.</p>
 <blockquote>
 <div><div class="admonition note">
@@ -350,7 +346,7 @@
 </div>
 </div></blockquote>
 <div class="section" id="uq-method">
-<h3><span class="section-number">3.6.1.1. </span>UQ Method<a class="headerlink" href="#uq-method" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.6.1.1. </span>UQ Method<a class="headerlink" href="#uq-method" title="Permalink to this heading">¶</a></h3>
 <p>Specify the details of uncertainty analysis in the <strong>UQ</strong> panel. This example uses forward uncertainty propagation. Select “Forward Propagation” for UQ Method and specify “Dakota” for UQ Engine driver. For specific UQ algorithm, use Latin Hypercube (“LHC”). Change the number of samples to 500 and set the seed to 101.</p>
 <div class="align-center figure" id="id3">
 <a class="reference internal image-reference" href="../../../../../_images/we14_UQ_panel.svg"><img alt="../../../../../_images/we14_UQ_panel.svg" src="../../../../../_images/we14_UQ_panel.svg" width="80%" /></a>
@@ -358,7 +354,7 @@
 </div>
 </div>
 <div class="section" id="general-information">
-<h3><span class="section-number">3.6.1.2. </span>General Information<a class="headerlink" href="#general-information" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.6.1.2. </span>General Information<a class="headerlink" href="#general-information" title="Permalink to this heading">¶</a></h3>
 <p>Next, in the <strong>GI</strong> panel, specify the properties of the building and the unit system. For the <strong># Stories</strong> use 108 assuming a floor height of approximately 4 m. Set the <strong>Height</strong>, <strong>Width</strong> and <strong>Depth</strong> to 442.1, 68.58 and 68.58 with a <strong>Plan Area</strong> of 4703.22. Define the units for <strong>Force</strong> and <strong>Length</strong> as “Newtons” and “Meters”, respectively.</p>
 <div class="figure align-center" id="id4">
 <a class="reference internal image-reference" href="../../../../../_images/we14_GI_panel.svg"><img alt="../../../../../_images/we14_GI_panel.svg" src="../../../../../_images/we14_GI_panel.svg" width="75%" /></a>
@@ -366,7 +362,7 @@
 </div>
 </div>
 <div class="section" id="structural-properties">
-<h3><span class="section-number">3.6.1.3. </span>Structural Properties<a class="headerlink" href="#structural-properties" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.6.1.3. </span>Structural Properties<a class="headerlink" href="#structural-properties" title="Permalink to this heading">¶</a></h3>
 <p>In the SIM panel, select “MDOF” generator. Specify the <strong>Floor Weights</strong> based on the distribution given in <a class="reference internal" href="#tbl-we14-2"><span class="std std-numref">Table 3.6.1.3.1</span></a>. Replace the <strong>Story Stiffness</strong> with <strong>k</strong> to designate it as a random variable. Later the statistical properties of this random variable will be defined in <strong>RV</strong> panel. Then, input damping, yield strength, hardening ratio and other parameters as shown in <a class="reference internal" href="#fig-we14-sim-panel"><span class="std std-numref">Fig. 3.6.1.3.1</span></a>.</p>
 <span id="tbl-we14-2"></span><table class="docutils align-center" id="id5">
 <caption><span class="caption-number">Table 3.6.1.3.1 </span><span class="caption-text">Floor mass distribution</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
@@ -400,7 +396,7 @@
 </div>
 </div>
 <div class="section" id="cfd-model">
-<h3><span class="section-number">3.6.1.4. </span>CFD Model<a class="headerlink" href="#cfd-model" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.6.1.4. </span>CFD Model<a class="headerlink" href="#cfd-model" title="Permalink to this heading">¶</a></h3>
 <p>To set up the CFD model, in the <strong>EVT</strong> panel, select “CFD - Wind Loads on Isolated Building” for <strong>Load Generator</strong>.  Detailed documentation on how to define the CFD model can be found in <a class="reference internal" href="../../../usage/desktop/wind/IsolatedBuildingCFD.html#lblisolatedbuildingcfd"><span class="std std-ref">the user manual</span></a>.</p>
 <ol class="arabic simple">
 <li><p>Specify the path to the case directory in <em>Start</em> tab, by clicking <strong>Browse</strong> button. Use version 9 for <strong>Version of OpenFOAM Distribution</strong>.</p></li>
@@ -499,7 +495,7 @@
 </ol>
 </div>
 <div class="section" id="finite-element-analysis">
-<h3><span class="section-number">3.6.1.5. </span>Finite Element Analysis<a class="headerlink" href="#finite-element-analysis" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.6.1.5. </span>Finite Element Analysis<a class="headerlink" href="#finite-element-analysis" title="Permalink to this heading">¶</a></h3>
 <p>The finite element analysis options, specified the <strong>FEM</strong> panel. For this example, keep the default values as seen in <a class="reference internal" href="#fig-we14-fem-panel"><span class="std std-numref">Fig. 3.6.1.5.1</span></a>.</p>
 <div class="figure align-center" id="id19">
 <span id="fig-we14-fem-panel"></span><a class="reference internal image-reference" href="../../../../../_images/we14_FEM_panel.svg"><img alt="../../../../../_images/we14_FEM_panel.svg" src="../../../../../_images/we14_FEM_panel.svg" width="75%" /></a>
@@ -507,7 +503,7 @@
 </div>
 </div>
 <div class="section" id="engineering-demand-parameter">
-<h3><span class="section-number">3.6.1.6. </span>Engineering Demand Parameter<a class="headerlink" href="#engineering-demand-parameter" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.6.1.6. </span>Engineering Demand Parameter<a class="headerlink" href="#engineering-demand-parameter" title="Permalink to this heading">¶</a></h3>
 <p>Next, specify Engineering Demand Parameters (EDPs) in the <strong>EDP</strong> panel. Select <em>Standard Wind</em> EDPs which include floor displacement, acceleration and inter-story drift.</p>
 <div class="figure align-center" id="id20">
 <a class="reference internal image-reference" href="../../../../../_images/we14_EDP_panel.svg"><img alt="../../../../../_images/we14_EDP_panel.svg" src="../../../../../_images/we14_EDP_panel.svg" width="75%" /></a>
@@ -515,7 +511,7 @@
 </div>
 </div>
 <div class="section" id="random-variables">
-<h3><span class="section-number">3.6.1.7. </span>Random Variables<a class="headerlink" href="#random-variables" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.6.1.7. </span>Random Variables<a class="headerlink" href="#random-variables" title="Permalink to this heading">¶</a></h3>
 <p>The random variables are defined in <strong>RV</strong> tab. Here, the floor stiffness named as <span class="math notranslate nohighlight">\(k\)</span> in <strong>SIM</strong> panel is automatically assigned as a random variable. Select <em>Normal</em> for its probability <strong>Distribution</strong>  with <span class="math notranslate nohighlight">\(5 \times 10^{8}\)</span> for the <strong>Mean</strong> and <span class="math notranslate nohighlight">\(5 \times 10^{7}\)</span> for <strong>Standard Dev</strong>.</p>
 <div class="figure align-center" id="id21">
 <a class="reference internal image-reference" href="../../../../../_images/we14_RV_panel.svg"><img alt="../../../../../_images/we14_RV_panel.svg" src="../../../../../_images/we14_RV_panel.svg" width="75%" /></a>
@@ -523,7 +519,7 @@
 </div>
 </div>
 <div class="section" id="running-the-simulation">
-<h3><span class="section-number">3.6.1.8. </span>Running the Simulation<a class="headerlink" href="#running-the-simulation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.6.1.8. </span>Running the Simulation<a class="headerlink" href="#running-the-simulation" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><p>To run the CFD simulation, first login to <em>DesignSafe</em> with your credential. Then, run the job remotely by clicking <strong>RUN at DesignSafe</strong>. Give the simulation a <strong>Job Name</strong>.  Set <strong>Num Nodes</strong> to 1 and <strong># Processes Per Node</strong> to 56. For the <strong>Max Run Time</strong>, specify <em>20:00:00</em>. Finally, click the <strong>Submit</strong> button to send the job to <em>DesignSafe</em>.</p>
 </div></blockquote>
@@ -533,7 +529,7 @@
 </div>
 </div>
 <div class="section" id="results">
-<h3><span class="section-number">3.6.1.9. </span>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.6.1.9. </span>Results<a class="headerlink" href="#results" title="Permalink to this heading">¶</a></h3>
 <p>The status of the remote job can be tracked by clicking <strong>GET from DesignSafe</strong>. Once the remote job finishes, the results can be reloaded by selecting <strong>Retrieve Data</strong> option right-click clicking on the job name. Then, the results will be displayed in <strong>RES</strong> tab. The responses qualitative reported for <em>Standard</em> EDP include statistics of floor displacement, acceleration and inter-story drift, e.g.,</p>
 <blockquote>
 <div><ul class="simple">
@@ -556,7 +552,7 @@
 </div>
 </div>
 <div class="section" id="flow-visualization">
-<h2><span class="section-number">3.6.2. </span>Flow visualization<a class="headerlink" href="#flow-visualization" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.6.2. </span>Flow visualization<a class="headerlink" href="#flow-visualization" title="Permalink to this heading">¶</a></h2>
 <p>The full simulation data can be retrieved from <em>DesignSafe</em> and visualized remotely using Paraview. <a class="reference internal" href="#fig-we14-cfd-result"><span class="std std-numref">Fig. 3.6.2.1</span></a> shows the streamlines and velocity contour taken on a vertical stream-wise section. From the plots, it is clearly visible that important flow features such as vortex shading and turbulence at the wake are captured.</p>
 <div class="align-center figure" id="id25">
 <span id="fig-we14-cfd-result"></span><a class="reference internal image-reference" href="../../../../../_images/we14_CFD_Results.svg"><img alt="../../../../../_images/we14_CFD_Results.svg" src="../../../../../_images/we14_CFD_Results.svg" width="100%" /></a>
@@ -580,7 +576,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>
