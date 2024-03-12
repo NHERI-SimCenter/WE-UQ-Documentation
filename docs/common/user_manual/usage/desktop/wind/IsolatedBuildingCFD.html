@@ -154,10 +154,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../response/resEE.html">2.8. RES: Results</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">3. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/WEUQ.html">5. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">3. Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/WEUQ.html">6. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -243,7 +244,7 @@
             
   <div class="section" id="isolated-building-cfd-model">
 <span id="lblisolatedbuildingcfd"></span><h1><span class="section-number">2.4.3. </span>Isolated Building CFD Model<a class="headerlink" href="#isolated-building-cfd-model" title="Permalink to this heading">¶</a></h1>
-<p>The Isolated Building CFD Model is a Computational Fluid Dynamics (CFD) based wind load generator for an isolated building. It provides greater flexibility in modeling the approaching wind and the wind-induced loads on the building. This event allows the user to seamlessly define the computational model with interactive GUI support. <a class="reference internal" href="#fig-iso-cfd-workflow"><span class="std std-numref">Fig. 2.4.3.1</span></a> shows the high-level view of CFD-based framework as it fits the overall workflow of WE-UQ. The modeling process is automated with different pre-/post-processing functionalities. The user needs to provide information related to geometry, mesh generation, boundary conditions, turbulence modeling, solver selection, etc. One of the most salient features includes automatic meshing with a user-interactive interface. At the backend, the CFD simulations are conducted by executing open-source CFD solvers from OpenFOAM <a class="reference internal" href="#greenshields2015" id="id1"><span>[Greenshields2015]</span></a>. The user needs to follow the following procedure to model wind loading using this event.</p>
+<p>The Isolated Building CFD Model is a Computational Fluid Dynamics (CFD) based wind load generator for an isolated building. It provides greater flexibility in modeling the approaching wind and the wind-induced loads on the building. This event allows the user to seamlessly define the computational model with interactive GUI support. <a class="reference internal" href="#fig-iso-cfd-workflow"><span class="std std-numref">Fig. 2.4.3.1</span></a> shows the high-level view of CFD-based framework as it fits the overall workflow of WE-UQ. The modeling process is automated with different pre-/post-processing functionalities. The user needs to provide information related to geometry, mesh generation, boundary conditions, turbulence modeling, solver selection, etc. One of the most salient features includes automatic meshing with a user-interactive interface. At the backend, the CFD simulations are conducted by executing open-source CFD solvers from OpenFOAM <a class="reference internal" href="tools.html#greenshields2015" id="id1"><span>[Greenshields2015]</span></a>. The user needs to follow the following procedure to model wind loading using this event.</p>
 <div class="align-center figure" id="id11">
 <span id="fig-iso-cfd-workflow"></span><img alt="../../../../../_images/WEUQ_CFD_Workflow.png" src="../../../../../_images/WEUQ_CFD_Workflow.png" />
 <p class="caption"><span class="caption-number">Fig. 2.4.3.1 </span><span class="caption-text">The high-level CFD-based workflow with uncertainty quantification.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
@@ -297,7 +298,7 @@
 <li><p><strong>Domain Width</strong>: The lateral dimension of the domain in the y-direction.</p></li>
 <li><p><strong>Domain Height</strong>: The vertical extension of the domain in the z-direction.</p></li>
 <li><p><strong>Fetch Length</strong>: Distance between the inlet of the domain and the building center.</p></li>
-<li><p><strong>COST Recommendation</strong>: This option specifies whether to use the COST(<a class="reference internal" href="#franke2007" id="id2"><span>[Franke2007]</span></a>) recommendations to determine the extent of the computational domain.</p>
+<li><p><strong>COST Recommendation</strong>: This option specifies whether to use the COST(<a class="reference internal" href="tools.html#franke2007" id="id2"><span>[Franke2007]</span></a>) recommendations to determine the extent of the computational domain.</p>
 <blockquote>
 <div><div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -340,7 +341,7 @@
 <div class="align-center figure" id="id15">
 <span id="fig-iso-mesh-tab"></span><img alt="../../../../../_images/mesh_tab.svg" src="../../../../../_images/mesh_tab.svg" /><p class="caption"><span class="caption-number">Fig. 2.4.3.3.1 </span><span class="caption-text"><strong>Mesh</strong> tab for generating the computational grid using <em>snappyHexMesh</em> tool.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
-<p>The following subsections describe the GUI for each step. Further details of the <em>snappyHexMesh</em> meshing tool used can be found in <a class="reference internal" href="#greenshields2022" id="id3"><span>[Greenshields2022]</span></a>.</p>
+<p>The following subsections describe the GUI for each step. Further details of the <em>snappyHexMesh</em> meshing tool used can be found in <a class="reference internal" href="tools.html#greenshields2022" id="id3"><span>[Greenshields2022]</span></a>.</p>
 <div class="section" id="background-mesh">
 <h3>Background Mesh<a class="headerlink" href="#background-mesh" title="Permalink to this heading">¶</a></h3>
 <p>The background mesh is the grid used in the far field away from the area where the building is located. The user needs to define a background mesh before running <em>snappyHexMesh</em>. The ideal grid for the background mesh is hexahedral (hex) cells. Thus, the background mesh is generated using OpenFOAM’s <em>blockMesh</em> utility as a structured grid. To start, the user needs to specify the number of cells in the three-orthogonal directions as shown in <a class="reference internal" href="#fig-iso-mesh-tab"><span class="std std-numref">Fig. 2.4.3.3.1</span></a>. Once the information in the <em>Background Mesh</em> tab (see <a class="reference internal" href="#fig-iso-mesh-tab"><span class="std std-numref">Fig. 2.4.3.3.1</span></a>) is filled, the user can press the <em>Run blockMesh</em> button to generate and visualize the background mesh. The mesh is automatically updated on the model view panel as seen in <a class="reference internal" href="#fig-iso-gui-overview"><span class="std std-numref">Fig. 2.4.3.2</span></a>. Descriptions of the fields used to define the background mesh are given below.</p>
@@ -424,7 +425,7 @@
 <li><p><strong>Add Prism Layers</strong>: If checked, prism layers will be applied on the building surface.</p></li>
 <li><p><strong>Surface Name</strong>: Name of the target wall for adding the layers. Currently, this option is limited to the building surfaces.</p></li>
 <li><p><strong>Number of Layers</strong>: The number of prism layers to be added.</p></li>
-<li><p><strong>Expansion Ratio</strong>: The ratio of thicknesses of two consecutive layers. Should be kept below 1.5. For a more elaborate explanation, please refer to the recommendations in <a class="reference internal" href="#franke2007" id="id4"><span>[Franke2007]</span></a>.</p></li>
+<li><p><strong>Expansion Ratio</strong>: The ratio of thicknesses of two consecutive layers. Should be kept below 1.5. For a more elaborate explanation, please refer to the recommendations in <a class="reference internal" href="tools.html#franke2007" id="id4"><span>[Franke2007]</span></a>.</p></li>
 <li><p><strong>Final Layer Thickness</strong>: Thickness of the final prism layer relative to the size of the first off-wall cell before the prism layers are inserted.</p>
 <blockquote>
 <div><div class="admonition note">
@@ -576,11 +577,11 @@
 <ol class="arabic simple">
 <li><p><strong>Generation Method</strong>: The technique for generating the inflow turbulence. Five different methods commonly used in the computational wind engineering community are implemented.</p>
 <ul class="simple">
-<li><p><strong>DFSR</strong>: Uses Divergence-free Spectral Representation (DFSR) method developed by <a class="reference internal" href="#melaku2021" id="id5"><span>[Melaku2021]</span></a>.</p></li>
-<li><p><strong>DFM</strong>: Uses Digital Filtering Method (DFM) developed by <a class="reference internal" href="#klein2003" id="id6"><span>[Klein2003]</span></a> and <a class="reference internal" href="#xie2008" id="id7"><span>[Xie2008]</span></a>.</p></li>
-<li><p><strong>SEM</strong>: Uses Synthetic Eddy Method (SEM) developed by <a class="reference internal" href="#jarrin2006" id="id8"><span>[Jarrin2006]</span></a>.</p></li>
-<li><p><strong>DFSEM</strong>: Uses Divergence-free Synthetic Eddy Method (DFSEM) developed by <a class="reference internal" href="#poletto2013" id="id9"><span>[Poletto2013]</span></a>.</p></li>
-<li><p><strong>TSM</strong>: Uses Turbulent Spot Method (TSM) developed by <a class="reference internal" href="#kroger2018" id="id10"><span>[Kröger2018]</span></a>.</p></li>
+<li><p><strong>DFSR</strong>: Uses Divergence-free Spectral Representation (DFSR) method developed by <a class="reference internal" href="tools.html#melaku2021" id="id5"><span>[Melaku2021]</span></a>.</p></li>
+<li><p><strong>DFM</strong>: Uses Digital Filtering Method (DFM) developed by <a class="reference internal" href="tools.html#klein2003" id="id6"><span>[Klein2003]</span></a> and <a class="reference internal" href="tools.html#xie2008" id="id7"><span>[Xie2008]</span></a>.</p></li>
+<li><p><strong>SEM</strong>: Uses Synthetic Eddy Method (SEM) developed by <a class="reference internal" href="tools.html#jarrin2006" id="id8"><span>[Jarrin2006]</span></a>.</p></li>
+<li><p><strong>DFSEM</strong>: Uses Divergence-free Synthetic Eddy Method (DFSEM) developed by <a class="reference internal" href="tools.html#poletto2013" id="id9"><span>[Poletto2013]</span></a>.</p></li>
+<li><p><strong>TSM</strong>: Uses Turbulent Spot Method (TSM) developed by <a class="reference internal" href="tools.html#kroger2018" id="id10"><span>[Kröger2018]</span></a>.</p></li>
 </ul>
 </li>
 <li><p><strong>Inflow Time Step</strong>: The time step used for generating inflow turbulence.  Can assume a value different from the solver time step.  For intermediate time steps, a linear interpolation is used.</p></li>

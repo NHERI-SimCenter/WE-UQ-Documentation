@@ -1,0 +1,496 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3. Tools &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="4. Examples" href="../../../examples/desktop/examples.html" />
+    <link rel="prev" title="2.8. RES: Results" href="../response/resEE.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/WE-UQ-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/WEUQ/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/weCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/weReleaseNotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/wePlans.html">7. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Interface</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#empty-domain-cfd-simulation">3.1. Empty Domain CFD Simulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#start">3.1.1. Start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#computational-domain">3.1.2. Computational Domain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mesh-generation">3.1.3. Mesh Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#boundary-conditions">3.1.4. Boundary Conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#numerical-setup">3.1.5. Numerical Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#result-monitoring">3.1.6. Result Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cfd-result">3.1.7. CFD Result</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/WEUQ.html">6. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Wind Engineering with Uncertainty Quantification</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">3. </span>Tools</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/user_manual/usage/desktop/wind/tools.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tools">
+<span id="weuq-tools"></span><h1><span class="section-number">3. </span>Tools<a class="headerlink" href="#tools" title="Permalink to this heading">¶</a></h1>
+<p>The main menu toolbar contains the tools dropdown menu. Tools in WE-UQ are applications that are provided to create inputs for certain workflow applications, e.g. the <strong>Empty Domain CFD Simulation</strong> tool will provide a way to calibrate wind profiles that will be used as input for the main wind load CFD simulation.</p>
+<div class="section" id="empty-domain-cfd-simulation">
+<span id="lblemptydomaincfd"></span><h2><span class="section-number">3.1. </span>Empty Domain CFD Simulation<a class="headerlink" href="#empty-domain-cfd-simulation" title="Permalink to this heading">¶</a></h2>
+<p>When performing wind load evaluation on buildings using CFD, it is often necessary to calibrate the characteristics of the approaching Atmospheric Boundary Layer(ABL) flow. This is particularly important for transient simulations (i.e., LES) as the flow characteristics change downstream of the inlet. Thus, it is customary to run an empty domain simulation and evaluate the statistics of the flow at the incident location (i.e. where the building/structure will be placed). If the statistics of flow do not match the target wind profiles, the boundary conditions need to be rescaled. This process is often an iterative procedure that requires running an empty domain simulation multiple times. Once the target profiles are matched, the final boundary conditions can be used in the main wind load simulation. <a class="reference internal" href="#fig-emp-cfd-workflow"><span class="std std-numref">Fig. 3.1.1</span></a> describes this procedure schematically. The inputs of the empty domain simulation can be imported from the main simulation in the form of <code class="docutils literal notranslate"><span class="pre">JSON</span></code> file. Further reading material for running an empty domain simulation can be found in <a class="reference internal" href="#lamberti2018" id="id1"><span>[Lamberti2018]</span></a>, <a class="reference internal" href="#melaku2021" id="id2"><span>[Melaku2021]</span></a>, <a class="reference internal" href="#melaku2024" id="id3"><span>[Melaku2024]</span></a>.</p>
+<div class="figure align-center" id="id4">
+<span id="fig-emp-cfd-workflow"></span><a class="reference internal image-reference" href="../../../../../_images/WEUQ_empty_domain_workflow.png"><img alt="../../../../../_images/WEUQ_empty_domain_workflow.png" src="../../../../../_images/WEUQ_empty_domain_workflow.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1.1 </span><span class="caption-text">The procedure of calibrating wind profiles using empty domain simulation.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>To define CFD model for the empty domain simulation, the user needs to follow the following key steps:</p>
+<ol class="arabic simple">
+<li><p>Define the size of the computational domain</p></li>
+<li><p>Generate the mesh with refinement regions</p></li>
+<li><p>Define boundary conditions</p></li>
+<li><p>Specify numerical setups</p></li>
+<li><p>Setup the wind profiles to be monitored</p></li>
+<li><p>Submit the simulation to run remotely</p></li>
+<li><p>Post-process and verify the results</p></li>
+</ol>
+<p>Considering the high computational cost of the simulation, the CFD models can only be run remotely using High-Performance Computing (HPC) resources at DesignSafe-CI. Thus, the user is required to have DesignSafe account to run the simulations. Also, the generated CFD model is saved locally as a typical OpenFOAM case. This will allow the user to copy this directory and run the simulation elsewhere.</p>
+<p>To set up empty domain simulation in WE-UQ, from the <em>Menu Bar</em> click <strong>Tools</strong> and select <em>CFD - Empty Domain Simulation</em> as shown in <a class="reference internal" href="#fig-tools-menu-bar"><span class="std std-numref">Fig. 3.1.2</span></a>. This will open up a new dialog window for defining the CFD model (see <a class="reference internal" href="#fig-emp-dmn-window"><span class="std std-numref">Fig. 3.1.3</span></a>). The workflow for this feature is similar to <a class="reference internal" href="IsolatedBuildingCFD.html#lblisolatedbuildingcfd"><span class="std std-ref">Isolated Building CFD Model</span></a> and the user needs to refer to this manual for details instructions. Here a brief step-by-step procedure is given.</p>
+<div class="figure align-center" id="id5">
+<span id="fig-tools-menu-bar"></span><a class="reference internal image-reference" href="../../../../../_images/open_empty_domain_from_menu_bar.svg"><img alt="../../../../../_images/open_empty_domain_from_menu_bar.svg" src="../../../../../_images/open_empty_domain_from_menu_bar.svg" width="50%" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1.2 </span><span class="caption-text">Open dialog window for setting up empty domain simulation.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id6">
+<span id="fig-emp-dmn-window"></span><a class="reference internal image-reference" href="../../../../../_images/empty_domain_dialog_window.svg"><img alt="../../../../../_images/empty_domain_dialog_window.svg" src="../../../../../_images/empty_domain_dialog_window.svg" width="80%" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1.3 </span><span class="caption-text">Empty domain simulation setup window.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="start">
+<h3><span class="section-number">3.1.1. </span>Start<a class="headerlink" href="#start" title="Permalink to this heading">¶</a></h3>
+<p><a class="reference internal" href="#fig-emp-dmn-start"><span class="std std-numref">Fig. 3.1.1.1</span></a> shows the <em>Start</em> tab of the simulation window. Here the user needs to define the location of the OpenFOAM case directory in <strong>Path</strong>. This location could be anywhere on the user’s machine. However, it is recommended to put it in the user’s <code class="docutils literal notranslate"><span class="pre">Documents</span></code> folder under <code class="docutils literal notranslate"><span class="pre">WE-UQ/LocalWorkDir</span></code> subfolder. The version of the OpenFOAM pre-processors for this tool is <code class="docutils literal notranslate"><span class="pre">Version</span> <span class="pre">10</span></code> and all the units are metrics.</p>
+<div class="figure align-center" id="id7">
+<span id="fig-emp-dmn-start"></span><a class="reference internal image-reference" href="../../../../../_images/empty_domain_start_tab.svg"><img alt="../../../../../_images/empty_domain_start_tab.svg" src="../../../../../_images/empty_domain_start_tab.svg" width="75%" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1.1.1 </span><span class="caption-text">Specifying the working directory in <em>Start</em> tab of the workflow.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="computational-domain">
+<h3><span class="section-number">3.1.2. </span>Computational Domain<a class="headerlink" href="#computational-domain" title="Permalink to this heading">¶</a></h3>
+<p>In <em>Geometry</em> tab specify details related to the size of the computation domain, geometric scale and coordinate system as seen in <a class="reference internal" href="#fig-emp-dmn-geometry"><span class="std std-numref">Fig. 3.1.2.1</span></a>.  The model for empty domain CFD simulation can be recreated from a <code class="docutils literal notranslate"><span class="pre">JSON</span></code> setup file exported from the main wind load simulation as demonstrated in <a class="reference internal" href="#fig-emp-cfd-workflow"><span class="std std-numref">Fig. 3.1.1</span></a>.</p>
+<div class="figure align-center" id="id8">
+<span id="fig-emp-dmn-geometry"></span><a class="reference internal image-reference" href="../../../../../_images/empty_domain_geometry_tab.svg"><img alt="../../../../../_images/empty_domain_geometry_tab.svg" src="../../../../../_images/empty_domain_geometry_tab.svg" width="75%" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1.2.1 </span><span class="caption-text">Define the dimensions of the computational domain in <em>Geometry</em> tab of the workflow</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic simple">
+<li><p><strong>Geometric Scale</strong>: The ratio of the full-scale dimensions to the model scale dimensions. If a simulation is run at full scale, this value should be set to 1.0.</p></li>
+<li><p><strong>Main Domain JSON Setup File</strong>: Used to import <code class="docutils literal notranslate"><span class="pre">JSON</span></code> file from the main wind load simulation by clicking the button <strong>Import JSON</strong>. This will automatically populate fields matching the dimension and boundary conditions from the wind load simulation domain.</p></li>
+<li><p><strong>Domain Length (X-axis)</strong>: Dimension of the domain in the streamwise direction (x-axis).</p></li>
+<li><p><strong>Domain Width (Y-axis)</strong>: Dimension of the domain in the lateral direction (y-axis).</p></li>
+<li><p><strong>Domain Height (Z-axis)</strong>: Height of the domain in in vertical direction (z-axis).</p></li>
+<li><p><strong>Fetch Length (X-axis)</strong>: The distance between the inlet of the computational domain and the anticipated location of the structure. This is the location where the incident wind profiles will be monitored.</p></li>
+</ol>
+</div>
+<div class="section" id="mesh-generation">
+<h3><span class="section-number">3.1.3. </span>Mesh Generation<a class="headerlink" href="#mesh-generation" title="Permalink to this heading">¶</a></h3>
+<p>The mesh generation follows the same procedure described in <a class="reference internal" href="IsolatedBuildingCFD.html#lblisolatedbuildingcfd"><span class="std std-ref">Isolated Building CFD Model</span></a>. For the empty domain simulation, only a background mesh with regional refinements is needed as shown in <a class="reference internal" href="#fig-emp-dmn-mesh"><span class="std std-numref">Fig. 3.1.3.1</span></a>. Once the user defines meshing parameters in <em>Background Mesh</em> and <em>Regional Refinements</em> subtabs, the final grid can be generated by clicking <strong>Run Final Mesh</strong> button shown in <a class="reference internal" href="#fig-emp-dmn-mesh"><span class="std std-numref">Fig. 3.1.3.1</span></a>.</p>
+<div class="figure align-center" id="id9">
+<span id="fig-emp-dmn-mesh"></span><a class="reference internal image-reference" href="../../../../../_images/empty_domain_mesh_tab.svg"><img alt="../../../../../_images/empty_domain_mesh_tab.svg" src="../../../../../_images/empty_domain_mesh_tab.svg" width="75%" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1.3.1 </span><span class="caption-text">Define mesh parameters and generate the computational grid in <em>Mesh</em> tab of the workflow</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="boundary-conditions">
+<h3><span class="section-number">3.1.4. </span>Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this heading">¶</a></h3>
+<p>Before defining boundary conditions, for ABL flows, the user needs to set the characteristics of the approaching wind. This is done by defining parameters such as exposure conditions, and reference wind speed and physical properties flows as seen in <a class="reference internal" href="#fig-emp-dmn-bc"><span class="std std-numref">Fig. 3.1.4.1</span></a>. The most important boundary condition for ABL flows is the inlet boundary. This boundary condition can be set as a turbulent inflow by using <em>TInf</em> option at the <strong>Inlet</strong>. Then, details about the inflow turbulence generation can be specified under <strong>Inflow Generation</strong>  part (see <a class="reference internal" href="#fig-emp-dmn-bc"><span class="std std-numref">Fig. 3.1.4.1</span></a>). Here are the inputs needed for setting up turbulent inflow:</p>
+<ol class="arabic simple">
+<li><p><strong>Generation Method</strong>: Specifies the type of inflow turbulence generation method. By default, it is set to the Digital Filtering Method (DFM). Similarly, techniques based on the spectral representation method such as Divergence-free Spectral Representation (DFSR) method, can be used here.</p></li>
+<li><p><strong>Wind Profile</strong>: Define the target profile of the approaching wind. The target profiles can be imported from a <code class="docutils literal notranslate"><span class="pre">*.csv</span></code> file by using <strong>Import (.csv)</strong> button. Once the file is imported, it can be displayed in tabular format by clicking <strong>Show Wind Profiles</strong> as seen in <a class="reference internal" href="#fig-emp-dmn-prof-tbl"><span class="std std-numref">Fig. 3.1.4.2</span></a>. The target profiles are defined by prescribing the variation of mean velocity, Reynold’s stress, and integral lenght scale profile along the height of the domain (z-direction).</p></li>
+</ol>
+<div class="figure align-center" id="id10">
+<span id="fig-emp-dmn-bc"></span><a class="reference internal image-reference" href="../../../../../_images/empty_domain_bc_tab.svg"><img alt="../../../../../_images/empty_domain_bc_tab.svg" src="../../../../../_images/empty_domain_bc_tab.svg" width="75%" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1.4.1 </span><span class="caption-text">Specify the inflow boundary conditions using the <em>TInf</em> option in the <em>Boundary Conditions</em> tab.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id11">
+<span id="fig-emp-dmn-prof-tbl"></span><a class="reference internal image-reference" href="../../../../../_images/empty_domain_bc_profile.svg"><img alt="../../../../../_images/empty_domain_bc_profile.svg" src="../../../../../_images/empty_domain_bc_profile.svg" width="85%" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1.4.2 </span><span class="caption-text">Display the target wind profiles by clicking <strong>Show Wind Profiles</strong> button.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="numerical-setup">
+<h3><span class="section-number">3.1.5. </span>Numerical Setup<a class="headerlink" href="#numerical-setup" title="Permalink to this heading">¶</a></h3>
+<p>For specifying parameters related to the turbulence model, solver and numerical methods used, please refer to the description in <a class="reference internal" href="IsolatedBuildingCFD.html#lblisolatedbuildingcfd"><span class="std std-ref">Isolated Building CFD Model</span></a>.</p>
+</div>
+<div class="section" id="result-monitoring">
+<h3><span class="section-number">3.1.6. </span>Result Monitoring<a class="headerlink" href="#result-monitoring" title="Permalink to this heading">¶</a></h3>
+<p>The main result often studied in empty domain simulation is the downstream evolution of the wind profiles. The workflow provides options to monitor wind profiles along a line probe. Also, the 2D snapshot of the flow field can be recorded by defining VTK planes. Details about the input fields in <a class="reference internal" href="#fig-emp-dmn-res-mon"><span class="std std-numref">Fig. 3.1.6.1</span></a> are provided below.</p>
+<div class="figure align-center" id="id12">
+<span id="fig-emp-dmn-res-mon"></span><a class="reference internal image-reference" href="../../../../../_images/empty_domain_result_monitoring.svg"><img alt="../../../../../_images/empty_domain_result_monitoring.svg" src="../../../../../_images/empty_domain_result_monitoring.svg" width="75%" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1.6.1 </span><span class="caption-text">Define line probes to monitor wind profiles and VTK planes for the flow field in <em>Monitoring</em> tab of the workflow.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>Line Probes</strong></p>
+<p>The line probes monitor velocity or pressure field along a line. To define a line the user needs to specify the <strong>Name</strong>, start and end coordinates of the line, <strong>No. Points</strong> on the line, <strong>Field</strong> as shown in <a class="reference internal" href="#fig-emp-dmn-res-mon"><span class="std std-numref">Fig. 3.1.6.1</span></a>.</p>
+<ol class="arabic simple">
+<li><p><strong>Record Wind Profiles</strong>: If this option is checked wind profiles will be recorded while the simulation is running.</p></li>
+<li><p><strong>Add Profile</strong>: Adds a new line probe in the table.</p></li>
+<li><p><strong>Remove Profile</strong>: Removes a selected line probe from the table.</p></li>
+<li><p><strong>Field Write Interval</strong>: The interval (as a multiple of the time step) at which to record the wind profiles.</p></li>
+<li><p><strong>Write Start Time</strong>: A allows the user to specify a time from which to start monitoring results. For unsteady CFD simulations, it is common for the first few time steps to experience very transient fluctuations and it’s recommended to avoid this part from the analysis.</p></li>
+</ol>
+<p><strong>VTK Planes</strong></p>
+<p>The flow field on a section of the domain can be monitored by defining 2D planes. The resulting flow field will be saved in <code class="docutils literal notranslate"><span class="pre">*.vtk</span></code> format. A VTK plane can be defined by specifying its <strong>Name</strong>, <strong>Normal</strong> axis, <strong>X</strong>, <strong>Y</strong>, <strong>Z</strong> coordinates of a point on the plane, <strong>Start Time</strong>, <strong>End Time</strong> and <strong>Field</strong> in a tabular format as shown in <a class="reference internal" href="#fig-emp-dmn-res-mon"><span class="std std-numref">Fig. 3.1.6.1</span></a>.</p>
+<ol class="arabic simple">
+<li><p><strong>Sample Flow Field</strong>: If this option is checked the flow field on a VTK plane will be saved while the simulation is running.</p></li>
+<li><p><strong>Add Plane</strong>: Adds a new VTK  plane in the table.</p></li>
+<li><p><strong>Remove Plane</strong>: Removes a selected VTK plane from the table.</p></li>
+<li><p><strong>Flow Write Interval</strong>: The interval (as a multiple of the time step) at which to record the VTK plane.</p></li>
+</ol>
+</div>
+<div class="section" id="cfd-result">
+<h3><span class="section-number">3.1.7. </span>CFD Result<a class="headerlink" href="#cfd-result" title="Permalink to this heading">¶</a></h3>
+<p>After the simulation is completed, the results can be displayed in the <em>Results</em> tab. The results are calculated based on the monitoring options the user supplied in the previous tab. The workflow post-processes the characteristics of the approaching flow including wind profiles, velocity spectra as well as pressure fluctuations. <a class="reference internal" href="#fig-emp-dmn-res-dsp"><span class="std std-numref">Fig. 3.1.7.1</span></a> shows the <em>Results</em> tab with all paoting options.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To display the results in this tab, first, the user needs to make sure the CFD simulation is completed successfully and the results are retrieved from <em>DesignSafe</em> by clicking <strong>GET From DesignSafe</strong> button.</p>
+</div>
+</div></blockquote>
+<div class="figure align-center" id="id13">
+<span id="fig-emp-dmn-res-dsp"></span><a class="reference internal image-reference" href="../../../../../_images/empty_domain_result_display.svg"><img alt="../../../../../_images/empty_domain_result_display.svg" src="../../../../../_images/empty_domain_result_display.svg" width="75%" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1.7.1 </span><span class="caption-text">Plot the wind profiles, velocity spectra and pressure fluctuations in the <em>Results</em> tab of the workflow.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic simple">
+<li><p><strong>Wind Profiles</strong>: After selecting the line probe from the combo box under <strong>Name of the Profile</strong>, the user can plot the comparison of the wind profiles from the simulation with the target values by clicking <strong>Plot Profile</strong> button.</p></li>
+<li><p><strong>Velocity Spectra</strong>: After selecting the name of the line probe and height above the ground (<strong>Location</strong>), the user can plot the comparison of the velocity spectra from the simulation with the target spectra by clicking <strong>Plot Spectra</strong> button. The spectra are computed at 4 locations along the height i.e., <span class="math notranslate nohighlight">\([0.25 H_{ref}, 0.5 H_{ref}, H_{ref}, 2H_{ref}]\)</span>, where <span class="math notranslate nohighlight">\(H_ref\)</span> the reference height defined in the <em>Boundary Conditions</em> tab.</p></li>
+<li><p><strong>Pressure Fluctuations</strong>: Similarly, by selecting <strong>Name of the Profile</strong>, the distribution of pressure fluctuations (standard deviation) can be displayed.</p></li>
+</ol>
+<p>Sample plots for wind profiles, velocity spectra and pressure fluctuations are shown in <a class="reference internal" href="#fig-emp-dmn-res-spl"><span class="std std-numref">Fig. 3.1.7.2</span></a>.</p>
+<div class="figure align-center" id="id14">
+<span id="fig-emp-dmn-res-spl"></span><a class="reference internal image-reference" href="../../../../../_images/empty_domain_result_sample.svg"><img alt="../../../../../_images/empty_domain_result_sample.svg" src="../../../../../_images/empty_domain_result_sample.svg" width="100%" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.1.7.2 </span><span class="caption-text">Sample plots of the results from the empty domain simulation.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<dl class="citation">
+<dt class="label" id="greenshields2015"><span class="brackets">Greenshields2015</span></dt>
+<dd><p>Greenshields, C.J. (2015). OpenFOAM Programmer’s Guide. OpenFOAM Foundation Ltd.</p>
+</dd>
+<dt class="label" id="franke2007"><span class="brackets">Franke2007</span></dt>
+<dd><p>Franke, J., Hellsten, A., Schlünzen, K.H. and Carissimo, B., 2007. COST Action 732: Best practice guideline for the CFD simulation of flows in the urban environment.</p>
+</dd>
+<dt class="label" id="greenshields2022"><span class="brackets">Greenshields2022</span></dt>
+<dd><p>Greenshields, C.J. (2022). <a class="reference external" href="https://doc.cfd.direct/openfoam/user-guide-v10/snappyhexmesh">https://doc.cfd.direct/openfoam/user-guide-v10/snappyhexmesh</a></p>
+</dd>
+<dt class="label" id="melaku2021"><span class="brackets"><a class="fn-backref" href="#id2">Melaku2021</a></span></dt>
+<dd><p>Melaku, A.F. and Bitsuamlak, G.T., 2021. A divergence-free inflow turbulence generator using spectral representation method for large-eddy simulation of ABL flows. Journal of Wind Engineering and Industrial Aerodynamics, 212, p.104580.</p>
+</dd>
+<dt class="label" id="lamberti2018"><span class="brackets"><a class="fn-backref" href="#id1">Lamberti2018</a></span></dt>
+<dd><p>Lamberti, G., García-Sánchez, C., Sousa, J. and Gorlé, C., 2018. Optimizing turbulent inflow conditions for large-eddy simulations of the atmospheric boundary layer. Journal of Wind Engineering and Industrial Aerodynamics, 177, pp.32-44.</p>
+</dd>
+<dt class="label" id="melaku2024"><span class="brackets"><a class="fn-backref" href="#id3">Melaku2024</a></span></dt>
+<dd><p>Melaku, A.F. and Bitsuamlak, G.T., 2024. Prospect of LES for predicting wind loads and responses of tall buildings: A validation study. Journal of Wind Engineering and Industrial Aerodynamics, 244, p.105613.</p>
+</dd>
+<dt class="label" id="klein2003"><span class="brackets">Klein2003</span></dt>
+<dd><p>Klein, M., Sadiki, A. and Janicka, J., 2003. A digital filter based generation of inflow data for spatially developing direct numerical or large eddy simulations. Journal of Computational Physics, 186(2), pp.652-665.</p>
+</dd>
+<dt class="label" id="xie2008"><span class="brackets">Xie2008</span></dt>
+<dd><p>Xie, Z.T. and Castro, I.P., 2008. Efficient generation of inflow conditions for large eddy simulation of street-scale flows. Flow, turbulence and combustion, 81, pp.449-470.</p>
+</dd>
+<dt class="label" id="jarrin2006"><span class="brackets">Jarrin2006</span></dt>
+<dd><p>Jarrin, N., Benhamadouche, S., Laurence, D. and Prosser, R., 2006. A synthetic-eddy-method for generating inflow conditions for large-eddy simulations. International Journal of Heat and Fluid Flow, 27(4), pp.585-593.</p>
+</dd>
+<dt class="label" id="poletto2013"><span class="brackets">Poletto2013</span></dt>
+<dd><p>Poletto, R., Craft, T. and Revell, A., 2013. A new divergence free synthetic eddy method for the reproduction of inlet flow conditions for LES. Flow, turbulence and combustion, 91, pp.519-539.</p>
+</dd>
+<dt class="label" id="kroger2018"><span class="brackets">Kröger2018</span></dt>
+<dd><p>Kröger, H. and Kornev, N., 2018. Generation of divergence free synthetic inflow turbulence with arbitrary anisotropy. Computers &amp; Fluids, 165, pp.78-88.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2024, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-2', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>

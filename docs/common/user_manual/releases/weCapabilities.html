@@ -120,6 +120,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#engineering-demand-parameter-generator">5.3. Engineering Demand Parameter Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#finite-element-application">5.4. Finite Element Application</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#uncertainty-quantification">5.5. Uncertainty Quantification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#addition-tools">5.6. Addition Tools</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="weReleaseNotes.html">6. Release Notes</a></li>
@@ -131,10 +132,11 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage/desktop/usage.html">2. User Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/desktop/examples.html">3. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../reqments/WEUQ.html">5. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/wind/tools.html">3. Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reqments/WEUQ.html">6. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -216,7 +218,7 @@
             
   <div class="section" id="capabilities">
 <span id="lbl-capabilities-weuq"></span><h1><span class="section-number">5. </span>Capabilities<a class="headerlink" href="#capabilities" title="Permalink to this heading">¶</a></h1>
-<p><strong>Version 3.1.0</strong> of WE-UQ app was released <strong>October 2023</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
+<p><strong>Version 3.2.0</strong> of WE-UQ app was released <strong>March 2024</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
 <div class="section" id="structural-information-model">
 <h2><span class="section-number">5.1. </span>Structural Information Model<a class="headerlink" href="#structural-information-model" title="Permalink to this heading">¶</a></h2>
 <p>Applications are used to specify/select the structural model to be used in the analysis.</p>
@@ -233,7 +235,7 @@
 <ol class="arabic simple">
 <li><p>Stochastic Wind: simulating stochastic wind speed using spectral method</p></li>
 <li><p>CFD-Digital Wind Tunnel: CFD simulation of boundary layer wind tunnel</p></li>
-<li><p><span class="blue">CFD-Wind Load on Isolated Buildings: CFD-based wind load simulation for isolated buildings with complex geometry</span></p></li>
+<li><p>CFD-Wind Load on Isolated Buildings: CFD-based wind load simulation for isolated buildings with complex geometry</p></li>
 <li><p>DEDM_HRP: database-enabled design framework based on wind-tunnel data for high-rise buildings</p></li>
 <li><p>LowRiseTPU: extracting aerodynamics loads based on TPU database for low-rise buildings</p></li>
 <li><p>Wind Tunnel Experiment: uses pressure tap measurements from building in wind tunnel experiment</p></li>
@@ -312,6 +314,13 @@ a. Resample from an existing correlated dataset of samples</p></li>
 </ol>
 </div></blockquote>
 </li>
+</ol>
+</div>
+<div class="section" id="addition-tools">
+<h2><span class="section-number">5.6. </span>Addition Tools<a class="headerlink" href="#addition-tools" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p><span class="blue">Empty Domain CFD Simulation</span>:
+Capability to perform empty domain simulation to characterize Atmospheric Boundary Layer (ABL) flows using large-eddy simulation (LES). This added feature uses the Turbulence Inflow Tool (TInF) tool for calibrating ABL flows for a subsequent wind load evaluation study.</p></li>
 </ol>
 </div>
 </div>

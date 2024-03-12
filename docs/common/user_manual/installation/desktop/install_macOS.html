@@ -127,17 +127,18 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">1.2. Install on macOS 10</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#install-python-3-9">1.2.1. Install Python 3.9</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#install-openfoam-for-macos">1.2.3. Install OpenFOAM for macOS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#download-the-application">1.2.4. Download the Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#download-the-application-move-it-from-the-dmg-image">1.2.4. Download the Application &amp; Move it from the DMG image</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#test-the-installation">1.2.5. Test the Installation</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/usage.html">2. User Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">3. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../reqments/WEUQ.html">5. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/wind/tools.html">3. Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reqments/WEUQ.html">6. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -279,17 +280,17 @@
 </div>
 <p>To install OpenFOAM-10 on macOS, follow the instructions in <a class="reference external" href="https://openfoam.org/download/10-macos/">OpenFOAM for macOS</a> .</p>
 </div>
-<div class="section" id="download-the-application">
-<h2><span class="section-number">1.2.4. </span>Download the Application<a class="headerlink" href="#download-the-application" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="download-the-application-move-it-from-the-dmg-image">
+<h2><span class="section-number">1.2.4. </span>Download the Application &amp; Move it from the DMG image<a class="headerlink" href="#download-the-application-move-it-from-the-dmg-image" title="Permalink to this heading">¶</a></h2>
 <p>To download the WE-UQ app, navigate to the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ">WE-UQ Download</a> page which should resemble <a class="reference internal" href="#figdownload-we"><span class="std std-numref">Fig. 1.2.4.4</span></a>. The download page contains a list of downloadable files and directories.</p>
 <div class="align-center figure" id="id11">
 <span id="figdownload-we"></span><img alt="../../../../_images/weDownload.png" src="../../../../_images/weDownload.png" />
 <p class="caption"><span class="caption-number">Fig. 1.2.4.4 </span><span class="caption-text">WE-UQ download page.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
-<p>Click on the file with a name ending with <strong>Mac_Download.dmg</strong> to download the WE-UQ app. In the pop-up window, click on the <strong>Download</strong> button in the bottom right corner. After the download is completed, open the dmg file and copy the WE-UQ app application to a location in your filesystem.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>We suggest copying the application to your Desktop. After copying the application, you can move the dmg file to the trash or eject it.</p>
+<p>Click on the file with a name ending with <strong>Mac_Download.dmg</strong> to download the WE-UQ app. In the pop-up window, click on the <strong>Download</strong> button in the bottom right corner. After the download is completed, open the dmg file and <strong>MOVE</strong> the WE-UQ app application by dragging on it to a location in your filesystem. After the application has been copied to a location outside the dmg, the dmg can be deleted and the application run.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The application must be copied to a location on your filesystem outside of the DMG image. If you run the WE-UQ app from within the dmg, i.e. if you open the dmg and then start the application from the window that pops up, it will <strong>FAIL</strong> when you try to run any workflow.</p>
 </div>
 </div>
 <div class="section" id="test-the-installation">
