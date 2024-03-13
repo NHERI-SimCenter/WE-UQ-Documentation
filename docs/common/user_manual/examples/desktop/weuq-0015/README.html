@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>4.7. Digital Wind Tunnel: Calibrating ABL Flows using Large-eddy Simulation &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>4.7. Digital Wind Tunnel II: Characterizing ABL Flows using Large-eddy Simulation &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -133,20 +133,21 @@
 <li class="toctree-l2"><a class="reference internal" href="../weuq-0011/README.html">4.4. Digital Wind Tunnel I: Empty Domain Simulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../weuq-0013/README.html">4.5. Digital Wind Tunnel II: Wind Loads on Isolated Building with Simple Geometry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../weuq-0014/README.html">4.6. Digital Wind Tunnel II: Wind Loads on Isolated Building with Complex Geometry</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.7. Digital Wind Tunnel: Calibrating ABL Flows using Large-eddy Simulation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#workflow">4.7.1. Workflow</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#uq-method">4.7.1.1. UQ Method</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#general-information">4.7.1.2. General Information</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#structural-properties">4.7.1.3. Structural Properties</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cfd-model">4.7.1.4. CFD Model</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#finite-element-analysis">4.7.1.5. Finite Element Analysis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#engineering-demand-parameter">4.7.1.6. Engineering Demand Parameter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#random-variables">4.7.1.7. Random Variables</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#running-the-simulation">4.7.1.8. Running the Simulation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#results">4.7.1.9. Results</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.7. Digital Wind Tunnel II: Characterizing ABL Flows using Large-eddy Simulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#start">4.7.1. Start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#domain-dimensions">4.7.2. Domain Dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mesh-generation">4.7.3. Mesh Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#boundary-conditions">4.7.4. Boundary Conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#numerical-setup">4.7.5. Numerical Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-results-to-monitor">4.7.6. Set Results to Monitor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-the-simulation">4.7.7. Run the Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#show-results">4.7.8. Show Results</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#wind-profiles">4.7.8.1. Wind Profiles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#velocity-spectra">4.7.8.2. Velocity Spectra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pressure-fluctuation">4.7.8.3. Pressure Fluctuation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wind-field-visualization">4.7.8.4. Wind Field Visualization</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#flow-visualization">4.7.2. Flow visualization</a></li>
 </ul>
 </li>
 </ul>
@@ -216,7 +217,7 @@
         
           <li><a href="../examples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
         
-      <li><span class="section-number">4.7. </span>Digital Wind Tunnel: Calibrating ABL Flows using Large-eddy Simulation</li>
+      <li><span class="section-number">4.7. </span>Digital Wind Tunnel II: Characterizing ABL Flows using Large-eddy Simulation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -235,27 +236,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="digital-wind-tunnel-calibrating-abl-flows-using-large-eddy-simulation">
-<span id="weuq-0015"></span><h1><span class="section-number">4.7. </span>Digital Wind Tunnel: Calibrating ABL Flows using Large-eddy Simulation<a class="headerlink" href="#digital-wind-tunnel-calibrating-abl-flows-using-large-eddy-simulation" title="Permalink to this heading">¶</a></h1>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 39%" />
-<col style="width: 61%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p>Problem files</p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples//weuq-0015//">weuq-0015/</a></p></td>
-</tr>
-</tbody>
-</table>
-<p>In this example, the CFD-based workflow for determining the wind-induced response of a building with arbitrary geometry is demonstrated. The shape of the study building resembles a landmark tall building i.e., Willis Tower (formerly known as Sears Tower) located in Chicago, Illinois, United States. In full-scale, the building measures 442.1 m high after some geometric simplification. <a class="reference internal" href="#fig-we14-1"><span class="std std-numref">Fig. 4.7.1</span></a> shows the STL representation of the building to be imported to the workflow. Except for the building geometry, most of the input parameters used in this example are similar to the example in <a class="reference internal" href="../weuq-0013/README.html#weuq-0013"><span class="std std-numref">Section 4.5</span></a>.</p>
-<div class="figure align-center" id="id1">
-<span id="fig-we14-1"></span><a class="reference internal image-reference" href="../../../../../_images/we14_study_building1.svg"><img alt="../../../../../_images/we14_study_building1.svg" src="../../../../../_images/we14_study_building1.svg" width="35%" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7.1 </span><span class="caption-text">Geometry and configuration of the study building</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+  <div class="section" id="digital-wind-tunnel-ii-characterizing-abl-flows-using-large-eddy-simulation">
+<span id="weuq-0015"></span><h1><span class="section-number">4.7. </span>Digital Wind Tunnel II: Characterizing ABL Flows using Large-eddy Simulation<a class="headerlink" href="#digital-wind-tunnel-ii-characterizing-abl-flows-using-large-eddy-simulation" title="Permalink to this heading">¶</a></h1>
+<p>This example uses the Digital Twin capability implemented in WE-UQ Version 3.2.0. It demonstrates the procedure for calibrating Atmospheric Boundary Layer (ABL) flows using large eddy simulation in an empty domain configuration. For creating the CFD model, the inputs are taken from a wind tunnel experiment conducted at the boundary layer wind tunnel of Tokyo Polytechnic University (TPU). The cross-section dimensions of the CFD model are set to match the wind tunnel dimensions in the test section. <a class="reference internal" href="#fig-we15-dmn"><span class="std std-numref">Fig. 4.7.1</span></a> shows the extent of the computational domain with dimensions. Fetch distance measures the distance between the inlet anticipated location of the structure. At this location, the characteristics of the approaching wind will be examined. This example is developed based on the works of <a class="reference internal" href="#chew2024" id="id1"><span>[Chew2024]</span></a> and <a class="reference internal" href="../../../usage/desktop/wind/tools.html#melaku2024" id="id2"><span>[Melaku2024]</span></a>. Detailed instructions to set up the CFD model can be found in the documentation of <a class="reference internal" href="../../../usage/desktop/wind/tools.html#lblemptydomaincfd"><span class="std std-ref">Empty Domain CFD Simulation</span></a>.</p>
+<div class="figure align-center" id="id3">
+<span id="fig-we15-dmn"></span><a class="reference internal image-reference" href="../../../../../_images/we15_domain_geometry.svg"><img alt="../../../../../_images/we15_domain_geometry.svg" src="../../../../../_images/we15_domain_geometry.svg" width="60%" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.7.1 </span><span class="caption-text">Configuration of the computational domain for empty domain analysis</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
-<p>In this example, the simulation is conducted in full-scale. The geometric and flow properties are given in <a class="reference internal" href="#tbl-we14-1"><span class="std std-numref">Table 4.7.1</span></a>. The detailed CFD-based workflow is illustrated in <a class="reference internal" href="#workflow-section"><span class="std std-ref">Workflow</span></a>.</p>
-<span id="tbl-we14-1"></span><table class="docutils align-center" id="id2">
-<caption><span class="caption-number">Table 4.7.1 </span><span class="caption-text">Parameters needed to define the CFD model</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<p>The simulation for this example is run at 1:400 geometric scale similar to the wind tunnel study. Details about the geometry the CFD model and the target flow characteristics are given in <a class="reference internal" href="#tbl-we15-1"><span class="std std-numref">Table 4.7.1</span></a>.</p>
+<span id="tbl-we15-1"></span><table class="docutils align-center" id="id4" style="width: 75%">
+<caption><span class="caption-number">Table 4.7.1 </span><span class="caption-text">Parameters needed to define the CFD model</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 21%" />
 <col style="width: 46%" />
@@ -270,54 +260,54 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(B\)</span></p></td>
-<td><p>Building width</p></td>
-<td><p>68.58</p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(L_x\)</span></p></td>
+<td><p>Domain length</p></td>
+<td><p>5.2</p></td>
 <td><p>m</p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(D\)</span></p></td>
-<td><p>Building depth</p></td>
-<td><p>68.58</p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(L_y\)</span></p></td>
+<td><p>Domain width</p></td>
+<td><p>2.2</p></td>
 <td><p>m</p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(H\)</span></p></td>
-<td><p>Building height</p></td>
-<td><p>442.1</p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(L_z\)</span></p></td>
+<td><p>Domain height</p></td>
+<td><p>1.8</p></td>
 <td><p>m</p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\lambda_L\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(L_f\)</span></p></td>
+<td><p>Wind fetch distance</p></td>
+<td><p>2.1</p></td>
+<td><p>m</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\lambda_L\)</span></p></td>
 <td><p>Geometric scale</p></td>
-<td><p>1.0</p></td>
+<td><p>1:400</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\lambda_V\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\lambda_V\)</span></p></td>
 <td><p>Velocity scale</p></td>
-<td><p>1.0</p></td>
+<td><p>1:4</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\lambda_T\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\lambda_T\)</span></p></td>
 <td><p>Time scale</p></td>
-<td><p>1.0</p></td>
+<td><p>1:100</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(U_H\)</span></p></td>
-<td><p>Roof-height mean wind speed</p></td>
-<td><p>60.00</p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(U_{ref}\)</span></p></td>
+<td><p>Reference wind speed</p></td>
+<td><p>10.69</p></td>
 <td><p>m/s</p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
 <td><p>Duration of the simulation</p></td>
-<td><p>1200</p></td>
+<td><p>37</p></td>
 <td><p>s</p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\theta\)</span></p></td>
-<td><p>Wind direction</p></td>
-<td><p>0</p></td>
-<td><p>degrees</p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(z_0\)</span></p></td>
 <td><p>Aerodynamic roughness length in full scale</p></td>
-<td><p>0.03</p></td>
+<td><p>0.5</p></td>
 <td><p>m</p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\rho_{air}\)</span></p></td>
@@ -332,239 +322,128 @@
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(f_{s}\)</span></p></td>
 <td><p>Sampling frequency (rate)</p></td>
-<td><p>10</p></td>
+<td><p>200</p></td>
 <td><p>Hz</p></td>
 </tr>
 </tbody>
 </table>
-<p>The upwind condition chosen for this example is open exposure type with aerodynamic roughness length of <span class="math notranslate nohighlight">\(z_0 = 0.03\)</span> for wind direction <span class="math notranslate nohighlight">\(\theta = 0^o\)</span>. For simplicity, the effect of the surrounding buildings is neglected and a smooth inflow boundary condition is adopted at the inlet.</p>
-<div class="section" id="workflow">
-<span id="workflow-section"></span><h2><span class="section-number">4.7.1. </span>Workflow<a class="headerlink" href="#workflow" title="Permalink to this heading">¶</a></h2>
-<p>In this example, the overall workflow is demonstrated by introducing uncertainty in the structural model. No uncertainties were considered in the wind parameters or CFD simulations. The user needs to go through the following procedure to define the Uncertainty Quantification (UQ) technique, building information, structural properties, and CFD model parameters.</p>
+<div class="section" id="start">
+<h2><span class="section-number">4.7.1. </span>Start<a class="headerlink" href="#start" title="Permalink to this heading">¶</a></h2>
+<p>First, open the workflow by selecting <strong>Tools -&gt; CFD - Empty Domain Simulation</strong> from the menu bar. Then, load the JSON setup file using <strong>LOAD File</strong> button. The JSON file can be found <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples/weuq-0015/src/input.json">here</a>. Once the JSON file is loaded, in the <em>Start</em> tab, change the <strong>Path</strong> to your preferred directory by clicking <strong>Browse</strong> button as shown in <a class="reference internal" href="#fig-we15-start"><span class="std std-numref">Fig. 4.7.1.1</span></a>. Leave the remaining settings to their default values.</p>
 <blockquote>
 <div><div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This example can be directly loaded from the menu bar at the top of the screen by clicking “Examples”-“E6: Wind Load Evaluation on a Complex Shape Isolated Building Using CFD”.</p>
+<p>If the <strong>Path</strong> field does not automatically change when the JSON path is loaded, you can manually copy and paste your working directory path into the field.</p>
 </div>
 </div></blockquote>
-<div class="section" id="uq-method">
-<h3><span class="section-number">4.7.1.1. </span>UQ Method<a class="headerlink" href="#uq-method" title="Permalink to this heading">¶</a></h3>
-<p>Specify the details of uncertainty analysis in the <strong>UQ</strong> panel. This example uses forward uncertainty propagation. Select “Forward Propagation” for UQ Method and specify “Dakota” for UQ Engine driver. For specific UQ algorithm, use Latin Hypercube (“LHC”). Change the number of samples to 500 and set the seed to 101.</p>
-<div class="align-center figure" id="id3">
-<a class="reference internal image-reference" href="../../../../../_images/we14_UQ_panel1.svg"><img alt="../../../../../_images/we14_UQ_panel1.svg" src="../../../../../_images/we14_UQ_panel1.svg" width="80%" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7.1.1.1 </span><span class="caption-text">Selection of the Uncertainty Quantification Technique</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<div class="figure align-center" id="id5">
+<span id="fig-we15-start"></span><a class="reference internal image-reference" href="../../../../../_images/we15_start_tab.svg"><img alt="../../../../../_images/we15_start_tab.svg" src="../../../../../_images/we15_start_tab.svg" width="75%" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.7.1.1 </span><span class="caption-text">Setup the path to the working directory in the <em>Start</em> tab of the workflow.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </div>
-<div class="section" id="general-information">
-<h3><span class="section-number">4.7.1.2. </span>General Information<a class="headerlink" href="#general-information" title="Permalink to this heading">¶</a></h3>
-<p>Next, in the <strong>GI</strong> panel, specify the properties of the building and the unit system. For the <strong># Stories</strong> use 108 assuming a floor height of approximately 4 m. Set the <strong>Height</strong>, <strong>Width</strong> and <strong>Depth</strong> to 442.1, 68.58 and 68.58 with a <strong>Plan Area</strong> of 4703.22. Define the units for <strong>Force</strong> and <strong>Length</strong> as “Newtons” and “Meters”, respectively.</p>
-<div class="figure align-center" id="id4">
-<a class="reference internal image-reference" href="../../../../../_images/we14_GI_panel1.svg"><img alt="../../../../../_images/we14_GI_panel1.svg" src="../../../../../_images/we14_GI_panel1.svg" width="75%" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7.1.2.1 </span><span class="caption-text">Set the building properties in <strong>GI</strong> panel</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="structural-properties">
-<h3><span class="section-number">4.7.1.3. </span>Structural Properties<a class="headerlink" href="#structural-properties" title="Permalink to this heading">¶</a></h3>
-<p>In the SIM panel, select “MDOF” generator. Specify the <strong>Floor Weights</strong> based on the distribution given in <a class="reference internal" href="#tbl-we14-2"><span class="std std-numref">Table 4.7.1.3.1</span></a>. Replace the <strong>Story Stiffness</strong> with <strong>k</strong> to designate it as a random variable. Later the statistical properties of this random variable will be defined in <strong>RV</strong> panel. Then, input damping, yield strength, hardening ratio and other parameters as shown in <a class="reference internal" href="#fig-we14-sim-panel"><span class="std std-numref">Fig. 4.7.1.3.1</span></a>.</p>
-<span id="tbl-we14-2"></span><table class="docutils align-center" id="id5">
-<caption><span class="caption-number">Table 4.7.1.3.1 </span><span class="caption-text">Floor mass distribution</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Floors</p></th>
-<th class="head"><p>Mass</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>1-50</p></td>
-<td><p>2.0e8</p></td>
-</tr>
-<tr class="row-odd"><td><p>51-66</p></td>
-<td><p>1.5e8</p></td>
-</tr>
-<tr class="row-even"><td><p>67-90</p></td>
-<td><p>1.0e8</p></td>
-</tr>
-<tr class="row-odd"><td><p>91-108</p></td>
-<td><p>0.5e8</p></td>
-</tr>
-</tbody>
-</table>
+<div class="section" id="domain-dimensions">
+<h2><span class="section-number">4.7.2. </span>Domain Dimensions<a class="headerlink" href="#domain-dimensions" title="Permalink to this heading">¶</a></h2>
+<p>Since the CFD simulation is run at a reduced scale, change the <strong>Geometric Scale</strong> (<span class="math notranslate nohighlight">\(\lambda_L\)</span>) to 1:400 as given in <a class="reference internal" href="#tbl-we15-1"><span class="std std-numref">Table 4.7.1</span></a>. In the text, you need to put only 400. Set the lenght (<span class="math notranslate nohighlight">\(L_x\)</span> ), width(<span class="math notranslate nohighlight">\(L_y\)</span> ) and height (<span class="math notranslate nohighlight">\(L_z\)</span> ) of the computational to 5.2 m, 2.2 m, 1.8 m, respectively, as shown in <a class="reference internal" href="#fig-we15-geom"><span class="std std-numref">Fig. 4.7.2.1</span></a>. For the <strong>Fetch lenght (X-axis)</strong> specify 2.1 m.</p>
 <div class="figure align-center" id="id6">
-<span id="fig-we14-sim-panel"></span><a class="reference internal image-reference" href="../../../../../_images/we14_SIM_panel1.svg"><img alt="../../../../../_images/we14_SIM_panel1.svg" src="../../../../../_images/we14_SIM_panel1.svg" width="75%" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7.1.3.1 </span><span class="caption-text">Define the structural properties in <strong>SIM</strong> panel</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<span id="fig-we15-geom"></span><a class="reference internal image-reference" href="../../../../../_images/we15_geometry_tab.svg"><img alt="../../../../../_images/we15_geometry_tab.svg" src="../../../../../_images/we15_geometry_tab.svg" width="80%" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.7.2.1 </span><span class="caption-text">Set the dimensions of the computational domain in the <em>Geometry</em> tab.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div>
-<div class="section" id="cfd-model">
-<h3><span class="section-number">4.7.1.4. </span>CFD Model<a class="headerlink" href="#cfd-model" title="Permalink to this heading">¶</a></h3>
-<p>To set up the CFD model, in the <strong>EVT</strong> panel, select “CFD - Wind Loads on Isolated Building” for <strong>Load Generator</strong>.  Detailed documentation on how to define the CFD model can be found in <a class="reference internal" href="../../../usage/desktop/wind/IsolatedBuildingCFD.html#lblisolatedbuildingcfd"><span class="std std-ref">the user manual</span></a>.</p>
-<ol class="arabic simple">
-<li><p>Specify the path to the case directory in <em>Start</em> tab, by clicking <strong>Browse</strong> button. Use version 9 for <strong>Version of OpenFOAM Distribution</strong>.</p></li>
-</ol>
+<div class="section" id="mesh-generation">
+<h2><span class="section-number">4.7.3. </span>Mesh Generation<a class="headerlink" href="#mesh-generation" title="Permalink to this heading">¶</a></h2>
+<p>The mesh is generated by first creating a background grid. Make a uniformly spaced background mesh by specifying <strong>No. of Cells</strong> in x, y and z directions to 52, 44 and 36. Then, generate the background mesh by clicking <strong>Run Background Mesh</strong> button. Next, in the <em>Regional Refinements</em> subtab define local refinements. For this example, we create three refinement boxes shown in <a class="reference internal" href="#fig-we15-mesh"><span class="std std-numref">Fig. 4.7.3.1</span></a>. The refinement regions are created by providing the min and max coordinates of the bounding boxes. Then, the final mesh is generated by clicking the <strong>Run Final Mesh</strong> button. This will automatically update the mesh visualization window on the right panel.</p>
 <div class="figure align-center" id="id7">
-<a class="reference internal image-reference" href="../../../../../_images/we14_EVT_Start_tab1.svg"><img alt="../../../../../_images/we14_EVT_Start_tab1.svg" src="../../../../../_images/we14_EVT_Start_tab1.svg" width="75%" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7.1.4.1 </span><span class="caption-text">Setting up the case directory and OpenFOAM version in the <em>Start</em> tab</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<span id="fig-we15-mesh"></span><a class="reference internal image-reference" href="../../../../../_images/we15_mesh_tab.svg"><img alt="../../../../../_images/we15_mesh_tab.svg" src="../../../../../_images/we15_mesh_tab.svg" width="100%" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.7.3.1 </span><span class="caption-text">Define meshing controls and generate the grid in <em>Mesh</em> tab.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
-<ol class="arabic simple" start="2">
-<li><p>In the <em>Geometry</em> tab, first set the <strong>Input Dimension Normalization</strong> to <em>Relative</em> to put the size of the domain relative to the building height. For <strong>Geometric Scale</strong> of the CFD model use 1 as the simulation is conducted in full scale. Set the <strong>Shape Type</strong> to <em>Complex</em> and import the building geometry by clicking <strong>Import STL</strong> as shown in <a class="reference internal" href="#fig-we14-import-stl"><span class="std std-numref">Fig. 4.7.1.4.2</span></a>. Set the <strong>Wind Direction</strong> to 0 to simulate wind incidence normal to the building face. To automatically determine the building dimensions, check the <strong>COST Recommendation</strong> option. For the coordinate system, specify the <strong>Absolute Origin</strong> as <em>Building Bottom Center</em>. See <a class="reference internal" href="#fig-we14-geometry-tab"><span class="std std-numref">Fig. 4.7.1.4.3</span></a> for the details.</p></li>
-</ol>
+</div>
+<div class="section" id="boundary-conditions">
+<h2><span class="section-number">4.7.4. </span>Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this heading">¶</a></h2>
+<p>Set the fields in <em>Wind characteristics</em> group based on the values provided in <a class="reference internal" href="#tbl-we15-1"><span class="std std-numref">Table 4.7.1</span></a>. Set the <strong>Velocity Scale</strong> (<span class="math notranslate nohighlight">\(\lambda_V\)</span>) to 4, <strong>Reference Wind Speed</strong> (<span class="math notranslate nohighlight">\(U_{ref}\)</span>) to 10.69 m/s, <strong>Reference Height</strong> (<span class="math notranslate nohighlight">\(H_{ref}\)</span>) to 0.3 m and <strong>Roughness Lenght</strong> (<span class="math notranslate nohighlight">\(z_0\)</span>) in full-scale to 0.5 m. For the boundary conditions, use <em>TInf</em> option at the inlet of the domain. For the ground surface, use <em>roughWallFunction</em> and setup the boundary conditions on the remaining surfaces as seen in <a class="reference internal" href="#fig-we15-bc"><span class="std std-numref">Fig. 4.7.4.1</span></a>.</p>
+<p>If <em>TInf</em> is used for the inlet, specify the turbulence generation scheme in <em>Inflow Generation</em> group. For this example, use <em>DFM</em> which represents Digital Filtering Method. To specify the target wind profiles, click <strong>Import(*.csv)</strong> and locate the <code class="docutils literal notranslate"><span class="pre">*.csv</span></code> file you download from <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples/weuq-0015/src/target_wind_profiles.json">here</a>.</p>
 <div class="figure align-center" id="id8">
-<span id="fig-we14-import-stl"></span><a class="reference internal image-reference" href="../../../../../_images/we14_EVT_Import_stl1.svg"><img alt="../../../../../_images/we14_EVT_Import_stl1.svg" src="../../../../../_images/we14_EVT_Import_stl1.svg" width="100%" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7.1.4.2 </span><span class="caption-text">Import the building geometry</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<span id="fig-we15-bc"></span><a class="reference internal image-reference" href="../../../../../_images/we15_bc_tab.svg"><img alt="../../../../../_images/we15_bc_tab.svg" src="../../../../../_images/we15_bc_tab.svg" width="75%" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.7.4.1 </span><span class="caption-text">Setup wind characteristics with the boundary conditions in <em>Boundary Conditions</em> tab.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
+</div>
+<div class="section" id="numerical-setup">
+<h2><span class="section-number">4.7.5. </span>Numerical Setup<a class="headerlink" href="#numerical-setup" title="Permalink to this heading">¶</a></h2>
+<p>Set the turbulence modeling, solver type, duration and time step options in <em>Numerical Setup</em> tab. For the <strong>Simulation Type</strong> use <em>LES</em> and select <em>dynamicKEqn</em> for the <strong>Sub-grid Scale Model</strong>. Set the <strong>Solver Type</strong> to <em>pimpleFoam</em> with 1 <strong>Number of Non-Orthogonal Correctors</strong> , 2 <strong>Number of Corrector Loops</strong> and 1 <strong>Number of Outer Corrector Loops</strong>. Set the maximum Courant number to 1.0 and select <strong>Adjustable</strong> time step.</p>
+<p>For the <strong>Duration</strong> of the simulation, use <span class="math notranslate nohighlight">\(37 s\)</span> based on what is specified in <a class="reference internal" href="#tbl-we15-1"><span class="std std-numref">Table 4.7.1</span></a>. This time step translates to <span class="math notranslate nohighlight">\(3700s\)</span> in full scale with a time scale 1:100, which is a litter over the recommended 1 hour duration. The <strong>Time Steep</strong> can be calculated automatically from the smallest mesh size by clicking <strong>Calculate</strong> button. For this example, the calculated time step is <span class="math notranslate nohighlight">\(0.000736624 s\)</span>, which is changed to a conservative value of <span class="math notranslate nohighlight">\(0.005 s\)</span>. Finally, check the <strong>Run Simulation in Parallel</strong> option and put 56 for the <strong>Number of Processors</strong>.</p>
 <div class="figure align-center" id="id9">
-<span id="fig-we14-geometry-tab"></span><a class="reference internal image-reference" href="../../../../../_images/we14_EVT_Geometry_tab1.svg"><img alt="../../../../../_images/we14_EVT_Geometry_tab1.svg" src="../../../../../_images/we14_EVT_Geometry_tab1.svg" width="100%" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7.1.4.3 </span><span class="caption-text">Defining the domain dimensions and the building geometry.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<span id="fig-we15-num-setup"></span><a class="reference internal image-reference" href="../../../../../_images/we15_numerical_setup_tab.svg"><img alt="../../../../../_images/we15_numerical_setup_tab.svg" src="../../../../../_images/we15_numerical_setup_tab.svg" width="75%" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.7.5.1 </span><span class="caption-text">Edit inputs in <em>Numerical Setup</em> tab</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
-<ol class="arabic" start="2">
-<li><p>Follow the steps below to set up the computational grid in the <em>Mesh</em> tab.</p>
-<p><strong>Background Mesh:</strong></p>
-<p>In the <em>Background Mesh</em> subtab, first create a structured grid with <strong>No. of Cells</strong> in <em>X-axis</em>, <em>Y-axis</em> and <em>Z-axis</em> set to 80, 40 and 24.</p>
+</div>
+<div class="section" id="set-results-to-monitor">
+<h2><span class="section-number">4.7.6. </span>Set Results to Monitor<a class="headerlink" href="#set-results-to-monitor" title="Permalink to this heading">¶</a></h2>
+<p>In the <em>Monitoring</em> tab, specify simulation results to be recorded as seen in <a class="reference internal" href="#fig-we15-mon"><span class="std std-numref">Fig. 4.7.6.1</span></a>. For this example, we will monitor both the velocity and pressure distribution at selected places in the computational domain. Firstly, check <strong>Record Wind Profiles</strong> checkbox. Then, add three line probes (profiles) by clicking <strong>Add Profile</strong> and edit details as shown in bellow figure. For example, <em>Profile1</em> is located at the inlet and measures the characteristics flow velocity. <em>Profile2</em> is located downstream and measures the incident flow (i.e., the wind the structure will experience) on a vertical line. Whereas, <em>Profile3</em> measures the downstream evolution of the pressure fluctuation in the stream-wise direction. Also, specify the <strong>Field Write Interval</strong> to 10 and <strong>Write Start Time</strong> to 1.</p>
+<p>To monitor the snapshot of the flow field, check <strong>Sample Flow Field</strong> and add two section planes for monitoring the velocity field. Edit the table entries as seen in <a class="reference internal" href="#fig-we15-mon"><span class="std std-numref">Fig. 4.7.6.1</span></a>. <em>Plane1</em> is a vertical plane normal to the y-axis and monitors the snapshot of the velocity field from 1 s to 3 s.  <em>Plane2</em> is a horizontal plane normal to the z-axis and monitors the snapshot of the velocity field from 1 s to 3 s. The files for both planes will be written every 50 time step (i.e <span class="math notranslate nohighlight">\(50 \times 0.0005 = 0.025 s\)</span>) as specified in <strong>Flow Write Interval</strong>.</p>
 <div class="figure align-center" id="id10">
-<a class="reference internal image-reference" href="../../../../../_images/we14_EVT_Mesh_tab1.svg"><img alt="../../../../../_images/we14_EVT_Mesh_tab1.svg" src="../../../../../_images/we14_EVT_Mesh_tab1.svg" width="100%" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7.1.4.4 </span><span class="caption-text">Define the computational grid in <em>Mesh</em> tab</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<span id="fig-we15-mon"></span><a class="reference internal image-reference" href="../../../../../_images/we15_monitoring_tab.svg"><img alt="../../../../../_images/we15_monitoring_tab.svg" src="../../../../../_images/we15_monitoring_tab.svg" width="75%" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.7.6.1 </span><span class="caption-text">Specify results to record in the <em>Monitoring</em> tab</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
-<p><strong>Regional Refinements:</strong></p>
-<p>Create regional refinements by adding 4 boxes as shown in the table below. The <strong>Mesh Size</strong> relative to building height is given in the last column of the table.</p>
+</div>
+<div class="section" id="run-the-simulation">
+<h2><span class="section-number">4.7.7. </span>Run the Simulation<a class="headerlink" href="#run-the-simulation" title="Permalink to this heading">¶</a></h2>
+<p>First, in the main WE-UQ window login to <em>DesignSafe</em> with your credentials. Then, in the CFD workflow window, submit the simulation by clicking <strong>RUN at DesignSafe</strong>. Then, provide the simulation a <strong>Job Name</strong>. Set <strong>Num Nodes</strong> to 1 and <strong># Processes Per Node</strong> to 56 with a <strong>Max Run Time</strong> of  <em>12:00:00</em>. Finally, click the <strong>Submit</strong> button to send the model to <em>DesignSafe</em>.</p>
 <div class="figure align-center" id="id11">
-<a class="reference internal image-reference" href="../../../../../_images/we14_EVT_Mesh_RegionalRefinement_tab1.svg"><img alt="../../../../../_images/we14_EVT_Mesh_RegionalRefinement_tab1.svg" src="../../../../../_images/we14_EVT_Mesh_RegionalRefinement_tab1.svg" width="75%" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7.1.4.5 </span><span class="caption-text">Create regional refinements</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="../../../../../_images/we15_run_job.svg"><img alt="../../../../../_images/we15_run_job.svg" src="../../../../../_images/we15_run_job.svg" width="30%" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.7.7.1 </span><span class="caption-text">Submit the simulation.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
-<p><strong>Surface Refinements:</strong></p>
-<p>In the <em>Surface Refinements</em> sub-tab, check the <em>Add Surface Refinements</em> box. Set the <strong>Refinement Level</strong> and <strong>Refinement Distance</strong> as shown in the figure.</p>
+</div>
+<div class="section" id="show-results">
+<h2><span class="section-number">4.7.8. </span>Show Results<a class="headerlink" href="#show-results" title="Permalink to this heading">¶</a></h2>
+<p>After submitting the simulation, you can check the status of the remote job by clicking <strong>GET from DesignSafe</strong>. Once the remote job is finished, the results can be reloaded by selecting <strong>Retrieve Data</strong> after right-clicking on the job name. This will automatically download the CFD results and activate the <em>Results</em> tab. In this tab, we can examine the characteristics of the flow in different ways, e.g., plot wind profiles, velocity spectra, and pressure fluctuation as seen <a class="reference internal" href="#fig-we15-res"><span class="std std-numref">Fig. 4.7.8.1</span></a> .</p>
 <div class="figure align-center" id="id12">
-<a class="reference internal image-reference" href="../../../../../_images/we14_EVT_Mesh_SurfaceRefinement_tab1.svg"><img alt="../../../../../_images/we14_EVT_Mesh_SurfaceRefinement_tab1.svg" src="../../../../../_images/we14_EVT_Mesh_SurfaceRefinement_tab1.svg" width="75%" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7.1.4.6 </span><span class="caption-text">Create surface refinements</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<span id="fig-we15-res"></span><a class="reference internal image-reference" href="../../../../../_images/we15_results_tab.svg"><img alt="../../../../../_images/we15_results_tab.svg" src="../../../../../_images/we15_results_tab.svg" width="75%" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.7.8.1 </span><span class="caption-text">Show the post-processed outputs in the <em>Results</em>.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
-<p><strong>Edge Refinements:</strong></p>
-<p>Create additional refinements along the building edges by checking <em>Add Edge Refinements</em> option. See the figure below for the details.</p>
+<div class="section" id="wind-profiles">
+<h3><span class="section-number">4.7.8.1. </span>Wind Profiles<a class="headerlink" href="#wind-profiles" title="Permalink to this heading">¶</a></h3>
+<p>In the <em>Monitoring</em> tab, we specified two line probes for monitoring the velocity profile at the inlet and incident location. To plot these profiles under <strong>Wind Profile</strong> select <strong>Name of the Profile</strong> as <em>Profile1</em> and click <strong>Plot Profile</strong> button. For example, <a class="reference internal" href="#fig-we15-res-prof"><span class="std std-numref">Fig. 4.7.8.1.1</span></a> shows the velocity profiles at the inlet which include mean velocity, turbulence intensity and length scale profiles. In this plot, the dotted black lines show the target profiles, while the red solid lines with o are the results from the CFD.</p>
 <div class="figure align-center" id="id13">
-<a class="reference internal image-reference" href="../../../../../_images/we14_EVT_Mesh_EdgeRefinement_tab1.svg"><img alt="../../../../../_images/we14_EVT_Mesh_EdgeRefinement_tab1.svg" src="../../../../../_images/we14_EVT_Mesh_EdgeRefinement_tab1.svg" width="75%" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7.1.4.7 </span><span class="caption-text">Apply further refinements along the building edges</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<span id="fig-we15-res-prof"></span><a class="reference internal image-reference" href="../../../../../_images/we15_results_prof.svg"><img alt="../../../../../_images/we15_results_prof.svg" src="../../../../../_images/we15_results_prof.svg" width="90%" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.7.8.1.1 </span><span class="caption-text">Comparison of the wind profiles from the CFD at the inlet with the targets values</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
-<p><strong>Prism Layers:</strong></p>
-<p>In the <em>Prism Layers</em> sub-tab,  uncheck <em>Add Prism Layers</em> option.</p>
+</div>
+<div class="section" id="velocity-spectra">
+<h3><span class="section-number">4.7.8.2. </span>Velocity Spectra<a class="headerlink" href="#velocity-spectra" title="Permalink to this heading">¶</a></h3>
+<p>Similarly, the velocity spectra at different heights can be shown by clicking <strong>Plot Spectra</strong>. For instance, <a class="reference internal" href="#fig-we15-res-spec"><span class="std std-numref">Fig. 4.7.8.2.1</span></a> shows the reduced velocity spectra at <span class="math notranslate nohighlight">\(H_{ref}\)</span> for the three components of the velocity. Also, the figure compares the spectra from the CFD (red solid line) with the target von Kármán model (black dotted lines).</p>
 <div class="figure align-center" id="id14">
-<a class="reference internal image-reference" href="../../../../../_images/we14_EVT_Mesh_PrismLayers_tab1.svg"><img alt="../../../../../_images/we14_EVT_Mesh_PrismLayers_tab1.svg" src="../../../../../_images/we14_EVT_Mesh_PrismLayers_tab1.svg" width="75%" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7.1.4.8 </span><span class="caption-text">Adding Prism Layers</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<span id="fig-we15-res-spec"></span><a class="reference internal image-reference" href="../../../../../_images/we15_results_spectra.svg"><img alt="../../../../../_images/we15_results_spectra.svg" src="../../../../../_images/we15_results_spectra.svg" width="100%" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.7.8.2.1 </span><span class="caption-text">Comparison of the velocity spectra from CFD with von Kármán at inlet.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
-<p><strong>Run Mesh</strong></p>
-<p>To generate the computational grid with all the refinements applied, click <strong>Run Final Mesh</strong> button in <em>Mesh</em> tab . Once meshing is done, in the side window, the model will be updated automatically displaying the generated grid.</p>
+</div>
+<div class="section" id="pressure-fluctuation">
+<h3><span class="section-number">4.7.8.3. </span>Pressure Fluctuation<a class="headerlink" href="#pressure-fluctuation" title="Permalink to this heading">¶</a></h3>
+<p>To examine the downstream evolution of the pressure field, select <em>Profile1</em> for the profile name and plot pressure distribution. <a class="reference internal" href="#fig-we15-res-prs"><span class="std std-numref">Fig. 4.7.8.3.1</span></a> shows the standard deviation of the pressure on the ground surface. The x-axis shows the distance from the inlet of the domain. Using turbulent inflow at the inlet often introduces artificial pressure fluctuation at the inlet. However, this fluctuation decays as the flow progresses downstream as shown in <a class="reference internal" href="#fig-we15-res-prs"><span class="std std-numref">Fig. 4.7.8.3.1</span></a>.</p>
 <div class="figure align-center" id="id15">
-<a class="reference internal image-reference" href="../../../../../_images/we14_EVT_Mesh_View1.svg"><img alt="../../../../../_images/we14_EVT_Mesh_View1.svg" src="../../../../../_images/we14_EVT_Mesh_View1.svg" width="100%" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7.1.4.9 </span><span class="caption-text">Breakout View of the Mesh</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<span id="fig-we15-res-prs"></span><a class="reference internal image-reference" href="../../../../../_images/we15_results_pressure.svg"><img alt="../../../../../_images/we15_results_pressure.svg" src="../../../../../_images/we15_results_pressure.svg" width="60%" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.7.8.3.1 </span><span class="caption-text">Evolution of pressure fluctuation downstream of the inlet.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
-</li>
-</ol>
-<ol class="arabic" start="4">
-<li><p>To define initial and boundary conditions, select <em>Boundary Conditions</em> tab.</p>
-<ul class="simple">
-<li><p>Based on the values given in <a class="reference internal" href="#tbl-we14-1"><span class="std std-numref">Table 4.7.1</span></a>, set the <strong>Velocity Scale</strong> to 1, <strong>Wind Speed At Reference Height</strong> to <span class="math notranslate nohighlight">\(60 m/s\)</span>, and the <strong>Reference Height</strong> as building height, which is <span class="math notranslate nohighlight">\(442.1 m\)</span>. For the <strong>Aerodynamic Roughness Length</strong> use <span class="math notranslate nohighlight">\(0.03 m\)</span>. Set  <strong>Air Density</strong> and <strong>Kinematic Viscosity</strong> to <span class="math notranslate nohighlight">\(1.225 \, kg/m^3\)</span> and <span class="math notranslate nohighlight">\(1.5 \times 10^{-5} \, m^2/s\)</span>, respectively. The Reynolds number (<span class="math notranslate nohighlight">\(Re\)</span>) can be determined by clicking <strong>Calculate</strong> button, which gives <span class="math notranslate nohighlight">\(1.77 \times 10^{9}\)</span>.</p></li>
-<li><p>At the <strong>Inlet</strong> of the domain use <em>MeanABL</em> which specifies a mean velocity profile based on the logarithmic profile. For <strong>Outlet</strong> set a <em>zeroPressureOutlet</em> boundary condition. On the <strong>Side</strong> and <strong>Top</strong> faces of the domain use <em>slip</em> wall boundary conditions. For the <strong>Ground</strong> surface, apply <em>roughWallFunction</em>. Finally, the <strong>Building</strong> surface, use <em>smoothWallFunction</em> assuming the building has a smooth surface.</p></li>
-</ul>
+</div>
+<div class="section" id="wind-field-visualization">
+<h3><span class="section-number">4.7.8.4. </span>Wind Field Visualization<a class="headerlink" href="#wind-field-visualization" title="Permalink to this heading">¶</a></h3>
+<p>Furthermore, the full simulation data can be found in <code class="docutils literal notranslate"><span class="pre">Documents/WE-UQ/RemoteWorkDir/results</span></code> folder. This directory contains the OpenFOAM case files with all <code class="docutils literal notranslate"><span class="pre">*.log</span></code> files showing the outputs from each step in the simulation. The user can visualize this data locally using Paraview. After launching Paraview, open <strong>File -&gt; Open</strong> and locate the path <code class="docutils literal notranslate"><span class="pre">Documents/WE-UQ/RemoteWorkDir/results/</span></code>. Then, open the file <code class="docutils literal notranslate"><span class="pre">vis.foam</span></code> and load the simulation results to Paraview. The following figure shows a sample visualization of the developing turbulent flow structure in the domain.</p>
 <div class="figure align-center" id="id16">
-<a class="reference internal image-reference" href="../../../../../_images/we14_EVT_BoundaryConditions1.svg"><img alt="../../../../../_images/we14_EVT_BoundaryConditions1.svg" src="../../../../../_images/we14_EVT_BoundaryConditions1.svg" width="75%" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7.1.4.10 </span><span class="caption-text">Setup the <em>Boundary Conditions</em></span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="../../../../../_images/we15_results_flow_vis.svg"><img alt="../../../../../_images/we15_results_flow_vis.svg" src="../../../../../_images/we15_results_flow_vis.svg" width="80%" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.7.8.4.1 </span><span class="caption-text">Visualization of the upcoming flow structure close to the ground.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
-</li>
-<li><p>Specify turbulence modeling, solver type, duration and time step options in <em>Numerical Setup</em> tab.</p>
-<ul class="simple">
-<li><p>In <strong>Turbulence Modeling</strong> group, set <strong>Simulation Type</strong> to <em>LES</em> and select <em>Smagorinsky</em> for the <strong>Sub-grid Scale Model</strong>.</p></li>
-<li><p>For the <strong>Solver Type</strong>, specify <em>pisoFoam</em> and put 1 for <strong>Number of Non-Orthogonal Correctors</strong> to add an additional iteration for the non-orthogonal gird close to the building surface.</p></li>
-<li><p>For the <strong>Duration</strong> of the simulation, use <span class="math notranslate nohighlight">\(1200 s\)</span> based on what is defined in <a class="reference internal" href="#tbl-we14-1"><span class="std std-numref">Table 4.7.1</span></a>. Determined the approximate <strong>Time Steep</strong> by clicking <strong>Calculate</strong> button. For this example, the estimated time step that give a Courant number close to unity is <span class="math notranslate nohighlight">\(0.0143913 s\)</span>, which is changed to <span class="math notranslate nohighlight">\(0.01 s\)</span> for convenience.</p></li>
-<li><p>Check the <strong>Run Simulation in Parallel</strong> option and specify the <strong>Number of Processors</strong> to the 56.</p></li>
-</ul>
-</li>
-</ol>
-<div class="figure align-center" id="id17">
-<span id="fig-we13-cfd-num-setup"></span><a class="reference internal image-reference" href="../../../../../_images/we14_EVT_NumericalSetup1.svg"><img alt="../../../../../_images/we14_EVT_NumericalSetup1.svg" src="../../../../../_images/we14_EVT_NumericalSetup1.svg" width="75%" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7.1.4.11 </span><span class="caption-text">Edit inputs in <em>Numerical Setup</em> tab</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
-</div>
-<ol class="arabic" start="6">
-<li><p>Monitor wind loads from the CFD simulation in the <em>Monitoring</em> tab.</p>
-<ul class="simple">
-<li><p>Check <strong>Monitor Base Loads</strong> to record integrated loads at the base of the building, and set the <strong>Write Interval</strong> to 10.</p></li>
-<li><p>Change the <strong>Write Interval</strong> for story loads to 10, which gives records the loads at an interval of <span class="math notranslate nohighlight">\(\Delta t \times 10 = 0.1s\)</span>.</p></li>
-<li><p>Since only integrated loads are needed for the analysis, uncheck the <strong>Sample Pressure Data on the Building Surface</strong> option.</p></li>
-</ul>
-<div class="figure align-center" id="id18">
-<a class="reference internal image-reference" href="../../../../../_images/we14_EVT_Monitoring1.svg"><img alt="../../../../../_images/we14_EVT_Monitoring1.svg" src="../../../../../_images/we14_EVT_Monitoring1.svg" width="75%" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7.1.4.12 </span><span class="caption-text">Select the outputs from CFD in the <em>Monitoring</em> tab</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
-</div>
-</li>
-</ol>
-</div>
-<div class="section" id="finite-element-analysis">
-<h3><span class="section-number">4.7.1.5. </span>Finite Element Analysis<a class="headerlink" href="#finite-element-analysis" title="Permalink to this heading">¶</a></h3>
-<p>The finite element analysis options, specified the <strong>FEM</strong> panel. For this example, keep the default values as seen in <a class="reference internal" href="#fig-we14-fem-panel"><span class="std std-numref">Fig. 4.7.1.5.1</span></a>.</p>
-<div class="figure align-center" id="id19">
-<span id="fig-we14-fem-panel"></span><a class="reference internal image-reference" href="../../../../../_images/we14_FEM_panel1.svg"><img alt="../../../../../_images/we14_FEM_panel1.svg" src="../../../../../_images/we14_FEM_panel1.svg" width="75%" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7.1.5.1 </span><span class="caption-text">Setup the Finite Element analysis options</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="engineering-demand-parameter">
-<h3><span class="section-number">4.7.1.6. </span>Engineering Demand Parameter<a class="headerlink" href="#engineering-demand-parameter" title="Permalink to this heading">¶</a></h3>
-<p>Next, specify Engineering Demand Parameters (EDPs) in the <strong>EDP</strong> panel. Select <em>Standard Wind</em> EDPs which include floor displacement, acceleration and inter-story drift.</p>
-<div class="figure align-center" id="id20">
-<a class="reference internal image-reference" href="../../../../../_images/we14_EDP_panel1.svg"><img alt="../../../../../_images/we14_EDP_panel1.svg" src="../../../../../_images/we14_EDP_panel1.svg" width="75%" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7.1.6.1 </span><span class="caption-text">Select the EDPs to measure</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="random-variables">
-<h3><span class="section-number">4.7.1.7. </span>Random Variables<a class="headerlink" href="#random-variables" title="Permalink to this heading">¶</a></h3>
-<p>The random variables are defined in <strong>RV</strong> tab. Here, the floor stiffness named as <span class="math notranslate nohighlight">\(k\)</span> in <strong>SIM</strong> panel is automatically assigned as a random variable. Select <em>Normal</em> for its probability <strong>Distribution</strong>  with <span class="math notranslate nohighlight">\(5 \times 10^{8}\)</span> for the <strong>Mean</strong> and <span class="math notranslate nohighlight">\(5 \times 10^{7}\)</span> for <strong>Standard Dev</strong>.</p>
-<div class="figure align-center" id="id21">
-<a class="reference internal image-reference" href="../../../../../_images/we14_RV_panel1.svg"><img alt="../../../../../_images/we14_RV_panel1.svg" src="../../../../../_images/we14_RV_panel1.svg" width="75%" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7.1.7.1 </span><span class="caption-text">Define the Random Variable (RV)</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="running-the-simulation">
-<h3><span class="section-number">4.7.1.8. </span>Running the Simulation<a class="headerlink" href="#running-the-simulation" title="Permalink to this heading">¶</a></h3>
-<blockquote>
-<div><p>To run the CFD simulation, first login to <em>DesignSafe</em> with your credential. Then, run the job remotely by clicking <strong>RUN at DesignSafe</strong>. Give the simulation a <strong>Job Name</strong>.  Set <strong>Num Nodes</strong> to 1 and <strong># Processes Per Node</strong> to 56. For the <strong>Max Run Time</strong>, specify <em>20:00:00</em>. Finally, click the <strong>Submit</strong> button to send the job to <em>DesignSafe</em>.</p>
-</div></blockquote>
-<div class="figure align-center" id="id22">
-<a class="reference internal image-reference" href="../../../../../_images/we14_RunJob1.svg"><img alt="../../../../../_images/we14_RunJob1.svg" src="../../../../../_images/we14_RunJob1.svg" width="80%" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7.1.8.1 </span><span class="caption-text">Submit the simulation to the remote server (DesignSafe-CI)</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-<div class="section" id="results">
-<h3><span class="section-number">4.7.1.9. </span>Results<a class="headerlink" href="#results" title="Permalink to this heading">¶</a></h3>
-<p>The status of the remote job can be tracked by clicking <strong>GET from DesignSafe</strong>. Once the remote job finishes, the results can be reloaded by selecting <strong>Retrieve Data</strong> option right-click clicking on the job name. Then, the results will be displayed in <strong>RES</strong> tab. The responses qualitative reported for <em>Standard</em> EDP include statistics of floor displacement, acceleration and inter-story drift, e.g.,</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>1-PFA-0-1: represents <strong>peak floor acceleration</strong> at the <strong>ground floor</strong> for <strong>component 1</strong> (x-dir)</p></li>
-<li><p>1-PFD-1-2: represents <strong>peak floor displacement</strong> (relative to the ground) at the <strong>1st floor</strong> ceiling for <strong>component 2</strong> (y-dir)</p></li>
-<li><p>1-PID-3-1: represents  <strong>peak inter-story drift ratio</strong> of the <strong>3rd floor</strong> for <strong>component 1</strong> (x-dir) and</p></li>
-<li><p>1-RMSA-108-1: represents <strong>root-mean-squared acceleration</strong> of the <strong>106th floor</strong> for <strong>component 1</strong> (x-dir).</p></li>
-</ul>
-</div></blockquote>
-<p>The <em>Summary</em> tab of the panel, shows the four statistical moments of the EDPs which include <em>Mean</em>, <em>StdDev</em>, <em>Skewness</em> and <em>Kurtosis</em>.</p>
-<div class="figure align-center" id="id23">
-<a class="reference internal image-reference" href="../../../../../_images/we14_RES_Summary1.svg"><img alt="../../../../../_images/we14_RES_Summary1.svg" src="../../../../../_images/we14_RES_Summary1.svg" width="75%" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7.1.9.1 </span><span class="caption-text">Summary of the recorded EDPs in <strong>RES</strong> panel</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
-</div>
-<p>By switching to <em>Data Values</em> tab, the user can also visualize all the realizations of the simulation. The figure below shows the variation of the top-floor acceleration with floor stiffness.</p>
-<div class="align-center figure" id="id24">
-<a class="reference internal image-reference" href="../../../../../_images/we14_RES_DataValues1.svg"><img alt="../../../../../_images/we14_RES_DataValues1.svg" src="../../../../../_images/we14_RES_DataValues1.svg" width="75%" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7.1.9.2 </span><span class="caption-text">(scatter-plot) Top-floor acceleration vs floor stiffness, (table) Report of EDPs for all realizations</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-</div>
-<div class="section" id="flow-visualization">
-<h2><span class="section-number">4.7.2. </span>Flow visualization<a class="headerlink" href="#flow-visualization" title="Permalink to this heading">¶</a></h2>
-<p>The full simulation data can be retrieved from <em>DesignSafe</em> and visualized remotely using Paraview. <a class="reference internal" href="#fig-we14-cfd-result"><span class="std std-numref">Fig. 4.7.2.1</span></a> shows the streamlines and velocity contour taken on a vertical stream-wise section. From the plots, it is clearly visible that important flow features such as vortex shading and turbulence at the wake are captured.</p>
-<div class="align-center figure" id="id25">
-<span id="fig-we14-cfd-result"></span><a class="reference internal image-reference" href="../../../../../_images/we14_CFD_Results1.svg"><img alt="../../../../../_images/we14_CFD_Results1.svg" src="../../../../../_images/we14_CFD_Results1.svg" width="100%" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.7.2.1 </span><span class="caption-text">Instantaneous velocity field around the building.</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
-</div>
-<dl class="citation">
-<dt class="label" id="franke2007"><span class="brackets">Franke2007</span></dt>
-<dd><p>Franke, J., Hellsten, A., Schlünzen, K.H. and Carissimo, B., 2007. COST Action 732: Best practice guideline for the CFD simulation of flows in the urban environment.</p>
+<p>To visualize <em>Plane1</em> defined in <em>Monitoring</em> tab, load <code class="docutils literal notranslate"><span class="pre">Documents/WE-UQ/RemoteWorkDir/results/Plane1_renamed/Velocity_T*.vtk</span></code> files to Paraview and create the visualization. The following two videos for <em>Plane1</em> and <em>Plane2</em> are created from VTK samples saved during the simulations.</p>
+<div style="text-align: center;">
+   <video controls src="../../../../../_static/videos/WE-UQ/weuq-0015/we15_vis_plane1.mp4" width="560" height="315"> </video>
+</div><div style="text-align: center;">
+   <video controls src="../../../../../_static/videos/WE-UQ/weuq-0015/we15_vis_plane2.mp4" width="560" height="315"> </video>
+</div><dl class="citation">
+<dt class="label" id="chew2024"><span class="brackets"><a class="fn-backref" href="#id1">Chew2024</a></span></dt>
+<dd><p>Chew, L.W., Melaku A.F. Ciarlatani, M.F., and Gorlé, C. Validation of LES predictions for wind pressures on a high-rise building: why wind tunnel validation datasets should report detailed turbulent wind statistics. In preparation.</p>
+</dd>
+<dt class="label" id="melaku2024"><span class="brackets"><a class="fn-backref" href="#id2">Melaku2024</a></span></dt>
+<dd><p>Melaku, A.F. and Bitsuamlak, G.T., 2024. Prospect of LES for predicting wind loads and responses of tall buildings: A validation study. Journal of Wind Engineering and Industrial Aerodynamics, 244, p.105613.</p>
 </dd>
 </dl>
+</div>
 </div>
 </div>
 

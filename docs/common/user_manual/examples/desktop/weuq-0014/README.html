@@ -51,7 +51,7 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="4.7. Digital Wind Tunnel: Calibrating ABL Flows using Large-eddy Simulation" href="../weuq-0015/README.html" />
+    <link rel="next" title="4.7. Digital Wind Tunnel II: Characterizing ABL Flows using Large-eddy Simulation" href="../weuq-0015/README.html" />
     <link rel="prev" title="4.5. Digital Wind Tunnel II: Wind Loads on Isolated Building with Simple Geometry" href="../weuq-0013/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -148,7 +148,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#flow-visualization">4.6.2. Flow visualization</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../weuq-0015/README.html">4.7. Digital Wind Tunnel: Calibrating ABL Flows using Large-eddy Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../weuq-0015/README.html">4.7. Digital Wind Tunnel II: Characterizing ABL Flows using Large-eddy Simulation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
@@ -248,12 +248,12 @@
 </tr>
 </tbody>
 </table>
-<p>In this example, the CFD-based workflow for determining the wind-induced response of a building with arbitrary geometry is demonstrated. The shape of the study building resembles a landmark tall building i.e., Willis Tower (formerly known as Sears Tower) located in Chicago, Illinois, United States. In full-scale, the building measures 442.1 m high after some geometric simplification. <a class="reference internal" href="../weuq-0015/README.html#fig-we14-1"><span class="std std-numref">Fig. 4.7.1</span></a> shows the STL representation of the building to be imported to the workflow. Except for the building geometry, most of the input parameters used in this example are similar to the example in <a class="reference internal" href="../weuq-0013/README.html#weuq-0013"><span class="std std-numref">Section 4.5</span></a>.</p>
+<p>In this example, the CFD-based workflow for determining the wind-induced response of a building with arbitrary geometry is demonstrated. The shape of the study building resembles a landmark tall building i.e., Willis Tower (formerly known as Sears Tower) located in Chicago, Illinois, United States. In full-scale, the building measures 442.1 m high after some geometric simplification. <a class="reference internal" href="#fig-we14-1"><span class="std std-numref">Fig. 4.6.1</span></a> shows the STL representation of the building to be imported to the workflow. Except for the building geometry, most of the input parameters used in this example are similar to the example in <a class="reference internal" href="../weuq-0013/README.html#weuq-0013"><span class="std std-numref">Section 4.5</span></a>.</p>
 <div class="figure align-center" id="id1">
 <span id="fig-we14-1"></span><a class="reference internal image-reference" href="../../../../../_images/we14_study_building.svg"><img alt="../../../../../_images/we14_study_building.svg" src="../../../../../_images/we14_study_building.svg" width="35%" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.6.1 </span><span class="caption-text">Geometry and configuration of the study building</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>In this example, the simulation is conducted in full-scale. The geometric and flow properties are given in <a class="reference internal" href="../weuq-0015/README.html#tbl-we14-1"><span class="std std-numref">Table 4.7.1</span></a>. The detailed CFD-based workflow is illustrated in <a class="reference internal" href="../weuq-0015/README.html#workflow-section"><span class="std std-ref">Workflow</span></a>.</p>
+<p>In this example, the simulation is conducted in full-scale. The geometric and flow properties are given in <a class="reference internal" href="#tbl-we14-1"><span class="std std-numref">Table 4.6.1</span></a>. The detailed CFD-based workflow is illustrated in <a class="reference internal" href="#workflow-section"><span class="std std-ref">Workflow</span></a>.</p>
 <span id="tbl-we14-1"></span><table class="docutils align-center" id="id2">
 <caption><span class="caption-number">Table 4.6.1 </span><span class="caption-text">Parameters needed to define the CFD model</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -365,7 +365,7 @@
 </div>
 <div class="section" id="structural-properties">
 <h3><span class="section-number">4.6.1.3. </span>Structural Properties<a class="headerlink" href="#structural-properties" title="Permalink to this heading">¶</a></h3>
-<p>In the SIM panel, select “MDOF” generator. Specify the <strong>Floor Weights</strong> based on the distribution given in <a class="reference internal" href="../weuq-0015/README.html#tbl-we14-2"><span class="std std-numref">Table 4.7.1.3.1</span></a>. Replace the <strong>Story Stiffness</strong> with <strong>k</strong> to designate it as a random variable. Later the statistical properties of this random variable will be defined in <strong>RV</strong> panel. Then, input damping, yield strength, hardening ratio and other parameters as shown in <a class="reference internal" href="../weuq-0015/README.html#fig-we14-sim-panel"><span class="std std-numref">Fig. 4.7.1.3.1</span></a>.</p>
+<p>In the SIM panel, select “MDOF” generator. Specify the <strong>Floor Weights</strong> based on the distribution given in <a class="reference internal" href="#tbl-we14-2"><span class="std std-numref">Table 4.6.1.3.1</span></a>. Replace the <strong>Story Stiffness</strong> with <strong>k</strong> to designate it as a random variable. Later the statistical properties of this random variable will be defined in <strong>RV</strong> panel. Then, input damping, yield strength, hardening ratio and other parameters as shown in <a class="reference internal" href="#fig-we14-sim-panel"><span class="std std-numref">Fig. 4.6.1.3.1</span></a>.</p>
 <span id="tbl-we14-2"></span><table class="docutils align-center" id="id5">
 <caption><span class="caption-number">Table 4.6.1.3.1 </span><span class="caption-text">Floor mass distribution</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -408,7 +408,7 @@
 <p class="caption"><span class="caption-number">Fig. 4.6.1.4.1 </span><span class="caption-text">Setting up the case directory and OpenFOAM version in the <em>Start</em> tab</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple" start="2">
-<li><p>In the <em>Geometry</em> tab, first set the <strong>Input Dimension Normalization</strong> to <em>Relative</em> to put the size of the domain relative to the building height. For <strong>Geometric Scale</strong> of the CFD model use 1 as the simulation is conducted in full scale. Set the <strong>Shape Type</strong> to <em>Complex</em> and import the building geometry by clicking <strong>Import STL</strong> as shown in <a class="reference internal" href="../weuq-0015/README.html#fig-we14-import-stl"><span class="std std-numref">Fig. 4.7.1.4.2</span></a>. Set the <strong>Wind Direction</strong> to 0 to simulate wind incidence normal to the building face. To automatically determine the building dimensions, check the <strong>COST Recommendation</strong> option. For the coordinate system, specify the <strong>Absolute Origin</strong> as <em>Building Bottom Center</em>. See <a class="reference internal" href="../weuq-0015/README.html#fig-we14-geometry-tab"><span class="std std-numref">Fig. 4.7.1.4.3</span></a> for the details.</p></li>
+<li><p>In the <em>Geometry</em> tab, first set the <strong>Input Dimension Normalization</strong> to <em>Relative</em> to put the size of the domain relative to the building height. For <strong>Geometric Scale</strong> of the CFD model use 1 as the simulation is conducted in full scale. Set the <strong>Shape Type</strong> to <em>Complex</em> and import the building geometry by clicking <strong>Import STL</strong> as shown in <a class="reference internal" href="#fig-we14-import-stl"><span class="std std-numref">Fig. 4.6.1.4.2</span></a>. Set the <strong>Wind Direction</strong> to 0 to simulate wind incidence normal to the building face. To automatically determine the building dimensions, check the <strong>COST Recommendation</strong> option. For the coordinate system, specify the <strong>Absolute Origin</strong> as <em>Building Bottom Center</em>. See <a class="reference internal" href="#fig-we14-geometry-tab"><span class="std std-numref">Fig. 4.6.1.4.3</span></a> for the details.</p></li>
 </ol>
 <div class="figure align-center" id="id8">
 <span id="fig-we14-import-stl"></span><a class="reference internal image-reference" href="../../../../../_images/we14_EVT_Import_stl.svg"><img alt="../../../../../_images/we14_EVT_Import_stl.svg" src="../../../../../_images/we14_EVT_Import_stl.svg" width="100%" /></a>
@@ -461,7 +461,7 @@
 <ol class="arabic" start="4">
 <li><p>To define initial and boundary conditions, select <em>Boundary Conditions</em> tab.</p>
 <ul class="simple">
-<li><p>Based on the values given in <a class="reference internal" href="../weuq-0015/README.html#tbl-we14-1"><span class="std std-numref">Table 4.7.1</span></a>, set the <strong>Velocity Scale</strong> to 1, <strong>Wind Speed At Reference Height</strong> to <span class="math notranslate nohighlight">\(60 m/s\)</span>, and the <strong>Reference Height</strong> as building height, which is <span class="math notranslate nohighlight">\(442.1 m\)</span>. For the <strong>Aerodynamic Roughness Length</strong> use <span class="math notranslate nohighlight">\(0.03 m\)</span>. Set  <strong>Air Density</strong> and <strong>Kinematic Viscosity</strong> to <span class="math notranslate nohighlight">\(1.225 \, kg/m^3\)</span> and <span class="math notranslate nohighlight">\(1.5 \times 10^{-5} \, m^2/s\)</span>, respectively. The Reynolds number (<span class="math notranslate nohighlight">\(Re\)</span>) can be determined by clicking <strong>Calculate</strong> button, which gives <span class="math notranslate nohighlight">\(1.77 \times 10^{9}\)</span>.</p></li>
+<li><p>Based on the values given in <a class="reference internal" href="#tbl-we14-1"><span class="std std-numref">Table 4.6.1</span></a>, set the <strong>Velocity Scale</strong> to 1, <strong>Wind Speed At Reference Height</strong> to <span class="math notranslate nohighlight">\(60 m/s\)</span>, and the <strong>Reference Height</strong> as building height, which is <span class="math notranslate nohighlight">\(442.1 m\)</span>. For the <strong>Aerodynamic Roughness Length</strong> use <span class="math notranslate nohighlight">\(0.03 m\)</span>. Set  <strong>Air Density</strong> and <strong>Kinematic Viscosity</strong> to <span class="math notranslate nohighlight">\(1.225 \, kg/m^3\)</span> and <span class="math notranslate nohighlight">\(1.5 \times 10^{-5} \, m^2/s\)</span>, respectively. The Reynolds number (<span class="math notranslate nohighlight">\(Re\)</span>) can be determined by clicking <strong>Calculate</strong> button, which gives <span class="math notranslate nohighlight">\(1.77 \times 10^{9}\)</span>.</p></li>
 <li><p>At the <strong>Inlet</strong> of the domain use <em>MeanABL</em> which specifies a mean velocity profile based on the logarithmic profile. For <strong>Outlet</strong> set a <em>zeroPressureOutlet</em> boundary condition. On the <strong>Side</strong> and <strong>Top</strong> faces of the domain use <em>slip</em> wall boundary conditions. For the <strong>Ground</strong> surface, apply <em>roughWallFunction</em>. Finally, the <strong>Building</strong> surface, use <em>smoothWallFunction</em> assuming the building has a smooth surface.</p></li>
 </ul>
 <div class="figure align-center" id="id16">
@@ -473,13 +473,13 @@
 <ul class="simple">
 <li><p>In <strong>Turbulence Modeling</strong> group, set <strong>Simulation Type</strong> to <em>LES</em> and select <em>Smagorinsky</em> for the <strong>Sub-grid Scale Model</strong>.</p></li>
 <li><p>For the <strong>Solver Type</strong>, specify <em>pisoFoam</em> and put 1 for <strong>Number of Non-Orthogonal Correctors</strong> to add an additional iteration for the non-orthogonal gird close to the building surface.</p></li>
-<li><p>For the <strong>Duration</strong> of the simulation, use <span class="math notranslate nohighlight">\(1200 s\)</span> based on what is defined in <a class="reference internal" href="../weuq-0015/README.html#tbl-we14-1"><span class="std std-numref">Table 4.7.1</span></a>. Determined the approximate <strong>Time Steep</strong> by clicking <strong>Calculate</strong> button. For this example, the estimated time step that give a Courant number close to unity is <span class="math notranslate nohighlight">\(0.0143913 s\)</span>, which is changed to <span class="math notranslate nohighlight">\(0.01 s\)</span> for convenience.</p></li>
+<li><p>For the <strong>Duration</strong> of the simulation, use <span class="math notranslate nohighlight">\(1200 s\)</span> based on what is defined in <a class="reference internal" href="#tbl-we14-1"><span class="std std-numref">Table 4.6.1</span></a>. Determined the approximate <strong>Time Steep</strong> by clicking <strong>Calculate</strong> button. For this example, the estimated time step that give a Courant number close to unity is <span class="math notranslate nohighlight">\(0.0143913 s\)</span>, which is changed to <span class="math notranslate nohighlight">\(0.01 s\)</span> for convenience.</p></li>
 <li><p>Check the <strong>Run Simulation in Parallel</strong> option and specify the <strong>Number of Processors</strong> to the 56.</p></li>
 </ul>
 </li>
 </ol>
 <div class="figure align-center" id="id17">
-<span id="fig-we13-cfd-num-setup"></span><a class="reference internal image-reference" href="../../../../../_images/we14_EVT_NumericalSetup.svg"><img alt="../../../../../_images/we14_EVT_NumericalSetup.svg" src="../../../../../_images/we14_EVT_NumericalSetup.svg" width="75%" /></a>
+<span id="fig-we14-cfd-num-setup"></span><a class="reference internal image-reference" href="../../../../../_images/we14_EVT_NumericalSetup.svg"><img alt="../../../../../_images/we14_EVT_NumericalSetup.svg" src="../../../../../_images/we14_EVT_NumericalSetup.svg" width="75%" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.6.1.4.11 </span><span class="caption-text">Edit inputs in <em>Numerical Setup</em> tab</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic" start="6">
@@ -498,7 +498,7 @@
 </div>
 <div class="section" id="finite-element-analysis">
 <h3><span class="section-number">4.6.1.5. </span>Finite Element Analysis<a class="headerlink" href="#finite-element-analysis" title="Permalink to this heading">¶</a></h3>
-<p>The finite element analysis options, specified the <strong>FEM</strong> panel. For this example, keep the default values as seen in <a class="reference internal" href="../weuq-0015/README.html#fig-we14-fem-panel"><span class="std std-numref">Fig. 4.7.1.5.1</span></a>.</p>
+<p>The finite element analysis options, specified the <strong>FEM</strong> panel. For this example, keep the default values as seen in <a class="reference internal" href="#fig-we14-fem-panel"><span class="std std-numref">Fig. 4.6.1.5.1</span></a>.</p>
 <div class="figure align-center" id="id19">
 <span id="fig-we14-fem-panel"></span><a class="reference internal image-reference" href="../../../../../_images/we14_FEM_panel.svg"><img alt="../../../../../_images/we14_FEM_panel.svg" src="../../../../../_images/we14_FEM_panel.svg" width="75%" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.6.1.5.1 </span><span class="caption-text">Setup the Finite Element analysis options</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
@@ -555,7 +555,7 @@
 </div>
 <div class="section" id="flow-visualization">
 <h2><span class="section-number">4.6.2. </span>Flow visualization<a class="headerlink" href="#flow-visualization" title="Permalink to this heading">¶</a></h2>
-<p>The full simulation data can be retrieved from <em>DesignSafe</em> and visualized remotely using Paraview. <a class="reference internal" href="../weuq-0015/README.html#fig-we14-cfd-result"><span class="std std-numref">Fig. 4.7.2.1</span></a> shows the streamlines and velocity contour taken on a vertical stream-wise section. From the plots, it is clearly visible that important flow features such as vortex shading and turbulence at the wake are captured.</p>
+<p>The full simulation data can be retrieved from <em>DesignSafe</em> and visualized remotely using Paraview. <a class="reference internal" href="#fig-we14-cfd-result"><span class="std std-numref">Fig. 4.6.2.1</span></a> shows the streamlines and velocity contour taken on a vertical stream-wise section. From the plots, it is clearly visible that important flow features such as vortex shading and turbulence at the wake are captured.</p>
 <div class="align-center figure" id="id25">
 <span id="fig-we14-cfd-result"></span><a class="reference internal image-reference" href="../../../../../_images/we14_CFD_Results.svg"><img alt="../../../../../_images/we14_CFD_Results.svg" src="../../../../../_images/we14_CFD_Results.svg" width="100%" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.6.2.1 </span><span class="caption-text">Instantaneous velocity field around the building.</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
