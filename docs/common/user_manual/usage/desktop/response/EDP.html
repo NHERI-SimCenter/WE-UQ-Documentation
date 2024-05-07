@@ -16,9 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -42,6 +40,7 @@
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/design-tabs.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
@@ -227,18 +226,15 @@
             
   <div class="section" id="edp-demand-parameters">
 <span id="lbledp"></span><h1><span class="section-number">2.7. </span>EDP: Demand Parameters<a class="headerlink" href="#edp-demand-parameters" title="Permalink to this heading">¶</a></h1>
-<p>This panel is where the user selects which outputs will be displayed when
-the simulation runs. There are a number of options available in the pull-down</p>
+<p>This panel is where the user selects which outputs will be displayed when the simulation runs. There are a number of options available in the pull-down:</p>
 <ol class="arabic simple">
 <li><p>Standard</p></li>
-<li><p>User Defined</p></li>
+<li><p>User-Defined</p></li>
 <li><p>None</p></li>
 </ol>
 <div class="section" id="standard">
 <h2><span class="section-number">2.7.1. </span>Standard<a class="headerlink" href="#standard" title="Permalink to this heading">¶</a></h2>
-<p>When the user selects there are no additional
-inputs required. The standard EDP generator will ensure the
-the max absolute value of the following are obtained:</p>
+<p>When the user selects this option, there are no additional inputs required. The standard EDP generator will ensure the max absolute value of the following is obtained:</p>
 <ol class="arabic simple">
 <li><p>Relative Floor displacements:</p></li>
 <li><p>Absolute Floor Accelerations</p></li>
@@ -246,48 +242,128 @@ the max absolute value of the following are obtained:</p>
 </ol>
 <p>The results will contain results for these in abbreviated form:</p>
 <ol class="arabic simple">
-<li><p>PFD peak relative floor displacement Event#-PFD-FLOOR-CLINE</p></li>
-<li><p>PFA peak floor acceleration Event#-PFA-FLOOR-CLINE</p></li>
-<li><p>PID peak inter-story drift: Event#-PID-STORY-CLINE</p></li>
+<li><p>PFD peak relative floor displacement Event#-PFD-FLOOR-DIR</p></li>
+<li><p>PFA peak floor acceleration Event#-PFA-FLOOR-DIR</p></li>
+<li><p>PID peak inter-story drift: Event#-PID-STORY-DIR</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Floors are numbered starting at floor 0, and stories are numbered starting at story 1.</p>
+<p>FLOOR is numbered starting at floor 0, and STORY is numbered starting at story 1. DIR is either 1 or 2</p>
 </div>
 </div>
 <div class="section" id="user-defined">
 <h2><span class="section-number">2.7.2. </span>User Defined<a class="headerlink" href="#user-defined" title="Permalink to this heading">¶</a></h2>
-<p>As shown in fig userEDP, this panel allows the user to determine their own output and process it. When using this option the user provides additional data:</p>
+<p>As shown in the figure, this panel allows the user to determine their own output and process it. When using this option the user provides additional data:</p>
 <div class="align-center figure" id="id1">
 <img alt="../../../../../_images/userDefinedEDP.png" src="../../../../../_images/userDefinedEDP.png" />
-<p class="caption"><span class="caption-number">Fig. 2.7.2.1 </span><span class="caption-text">User Defined EDP panel.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.7.2.1 </span><span class="caption-text">User-Defined EDP panel.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple">
-<li><p>Additional Input: These are additional commands that are invoked by the analysis application
-before the transient analysis is performed. For example, for OpenSees this would be a script
-containing a series of recorder commands.</p></li>
+<li><p>Additional Input: These are additional commands that are invoked by the analysis application before the transient analysis is performed. For example, for OpenSees this would be a script
+containing a series of recorder commands. A recorder file passed to OpenSees might look like the following:</p></li>
 </ol>
 <blockquote>
-<div><p>A recorder file passed to OpenSees might look like the following:</p>
-<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># recorder EnvelopeNode -file $filename -node $nodeTag1 ... $nodeTagN -dof $DOF1 $DOF2 disp</span>
+<div><div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c"># recorder EnvelopeNode -file $filename -node $nodeTag1 ... $nodeTagN -dof $DOF1 $DOF2 disp</span>
 <span class="nv">recorder</span><span class="w"> </span>EnvelopeNode<span class="w"> </span><span class="o">-</span>file<span class="w"> </span>node.out<span class="w"> </span><span class="o">-</span>node<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">-</span>dof<span class="w"> </span><span class="mi">1</span><span class="w"> </span>disp
 <span class="c"># recorder EnvelopeElement -file $filename -ele $eleTag1 ... $eleTagN forces</span>
 <span class="nv">recorder</span><span class="w"> </span>EnvelopeElement<span class="w"> </span><span class="o">-</span>file<span class="w"> </span>ele.out<span class="w"> </span><span class="o">-</span>ele<span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span>forces
 </pre></div>
 </div>
 </div></blockquote>
-<ol class="arabic simple" start="2">
-<li><p>Postprocess Script: This is a python or tcl script that will be invoked</p></li>
-</ol>
+<ol class="arabic" start="2">
+<li><p>Postprocess Script: This is a python or tcl script that will be invoked after the finite element application has run. It must be provided by the user. Its purpose is to process the output files and create a single file, results.out. This file must contain a single line with as many entries as EDP’s specified. For example, a python postprocessing file that would take the outputs from the recorder commands of the previous code block to create the results file needed by the applications is illustrated as the example python file below along with the tcl script for creating recorders in OpenSees.</p>
 <blockquote>
-<div><p>after the finite element application has run. It must be provided by
-the user. It’s purpose is to process the output files and create a
-single file, results.out. This file must contain a single line with
-as many entries as EDP’s specified.</p>
-<p>For example, a python postprocessing file that would take the outputs from the recorder commands of
-the pervious code block to create the results file needed by the applications is illustrated as the example
-python file below along with the tcl script for creating recorders in OpenSees.</p>
-</div></blockquote>
+<div><details class="summary-example-post-processing-python-file">
+<summary>Example post-processing python file</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+<span class="c1"># written: fmk, adamzs 01/18</span>
+<span class="c1"># import functions for Python 2.X support</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">):</span>
+        <span class="nb">range</span><span class="o">=</span><span class="n">xrange</span>
+        <span class="n">string_types</span> <span class="o">=</span> <span class="n">basestring</span>
+<span class="k">else</span><span class="p">:</span>
+        <span class="n">string_types</span> <span class="o">=</span> <span class="nb">str</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="k">def</span> <span class="nf">process_results</span><span class="p">(</span><span class="n">inputArgs</span><span class="p">):</span>
+        <span class="c1">#</span>
+        <span class="c1"># process output file &quot;node.out&quot; for nodal displacements</span>
+        <span class="c1">#</span>
+        <span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s1">&#39;node.out&#39;</span><span class="p">,</span> <span class="s1">&#39;rt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">inFile</span><span class="p">:</span>
+                <span class="n">line</span> <span class="o">=</span> <span class="n">inFile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+                <span class="n">line</span> <span class="o">=</span> <span class="n">inFile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+                <span class="n">line</span> <span class="o">=</span> <span class="n">inFile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+                <span class="n">displ</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+                <span class="n">numNode</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">displ</span><span class="p">)</span>
+        <span class="n">inFile</span><span class="o">.</span><span class="n">close</span>
+
+        <span class="c1"># now process the input args and write the results file</span>
+        <span class="n">outFile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;results.out&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+
+        <span class="c1"># note for now assuming no ERROR in user data</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">inputArgs</span><span class="p">:</span>
+                <span class="n">theList</span><span class="o">=</span><span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">theList</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">):</span>
+                        <span class="n">dof</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">theList</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+                <span class="k">else</span><span class="p">:</span>
+                        <span class="n">dof</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">theList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Node&quot;</span><span class="p">):</span>
+                        <span class="n">nodeTag</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">theList</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">nodeTag</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">nodeTag</span> <span class="o">&lt;=</span> <span class="n">numNode</span><span class="p">):</span>
+                                <span class="k">if</span> <span class="p">(</span><span class="n">theList</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Disp&quot;</span><span class="p">):</span>
+                                        <span class="n">nodeDisp</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">displ</span><span class="p">[((</span><span class="n">nodeTag</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">dof</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+                                        <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">nodeDisp</span><span class="p">))</span>
+                                        <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+                                <span class="k">else</span><span class="p">:</span>
+                                        <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;0. &#39;</span><span class="p">)</span>
+                        <span class="k">else</span><span class="p">:</span>
+                                <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;0. &#39;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                        <span class="n">outFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;0. &#39;</span><span class="p">)</span>
+
+        <span class="n">outFile</span><span class="o">.</span><span class="n">close</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+        <span class="n">responses</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+                <span class="n">responses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+        <span class="n">process_results</span><span class="p">(</span><span class="n">responses</span><span class="p">)</span>
+</pre></div>
+</div>
+</details><details class="summary-example-post-processing-tcl-file">
+<summary>Example post-processing tcl file</summary><div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span><span class="w"> </span>nodeIn<span class="w"> </span><span class="k">[</span><span class="nb">open</span><span class="w"> </span>node.out<span class="w"> </span>r<span class="k">]</span>
+<span class="k">while</span><span class="w"> </span><span class="k">{</span><span class="w"> </span><span class="k">[</span><span class="nb">gets</span><span class="w"> </span><span class="nv">$nodeIn</span><span class="w"> </span>data<span class="k">]</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nv">0</span><span class="w"> </span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span>maxDisplacement<span class="w"> </span><span class="nv">$data</span>
+<span class="k">}</span>
+<span class="nb">puts</span><span class="w"> </span><span class="nv">$maxDisplacement</span>
+
+<span class="c"># create file handler to write results to output &amp; list into which we will put results</span>
+<span class="k">set</span><span class="w"> </span>resultFile<span class="w"> </span><span class="k">[</span><span class="nb">open</span><span class="w"> </span>results.out<span class="w"> </span>w<span class="k">]</span>
+<span class="k">set</span><span class="w"> </span>results<span class="w"> </span><span class="k">[]</span>
+
+<span class="c"># for each quanity in list of QoI passed</span>
+<span class="c">#  - get nodeTag</span>
+<span class="c">#  - get nodal displacement if valid node, output 0.0 if not</span>
+<span class="c">#  - for valid node output displacement, note if dof not provided output 1&#39;st dof</span>
+
+<span class="k">foreach</span><span class="w"> </span>edp<span class="w"> </span><span class="nv">$listQoI</span><span class="w"> </span><span class="k">{</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span>splitEDP<span class="w"> </span><span class="k">[</span><span class="nb">split</span><span class="w"> </span><span class="nv">$edp</span><span class="w"> </span><span class="s2">&quot;_&quot;</span><span class="k">]</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span>nodeTag<span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$splitEDP</span><span class="w"> </span><span class="mi">1</span><span class="k">]</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="k">{[</span><span class="nb">llength</span><span class="w"> </span><span class="nv">$splitEDP</span><span class="k">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">3</span><span class="k">}</span><span class="w"> </span><span class="k">{</span>
+<span class="w">                        </span><span class="k">set</span><span class="w"> </span>dof<span class="w"> </span><span class="mi">1</span>
+<span class="w">        </span><span class="k">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">{</span>
+<span class="w">                        </span><span class="k">set</span><span class="w"> </span>dof<span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$splitEDP</span><span class="w"> </span><span class="mi">3</span><span class="k">]</span>
+<span class="w">        </span><span class="k">}</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span>nodeDisp<span class="w"> </span><span class="k">[</span><span class="nb">lindex</span><span class="w"> </span><span class="nv">$maxDisplacement</span><span class="w"> </span><span class="k">[expr</span><span class="w"> </span><span class="k">((</span><span class="nv">$nodeTag-1</span><span class="k">)</span><span class="o">*</span><span class="nv">2</span><span class="k">)</span><span class="o">+</span><span class="nv">$dof-1</span><span class="k">]]</span>
+<span class="w">        </span><span class="nb">lappend</span><span class="w"> </span>results<span class="w"> </span><span class="nv">$nodeDisp</span>
+<span class="k">}</span>
+</pre></div>
+</div>
+</details></div></blockquote>
+</li>
+</ol>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -296,18 +372,12 @@ python file below along with the tcl script for creating recorders in OpenSees.<
 <p>The name of the output file used in the post-processing script must be <strong>results.out</strong>.</p>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>Response Parameters. This is an area in which the user</p></li>
+<li><p>Response Parameters. This is an area in which the user associates a variable name with the column of the results output file. If the process script has an array of strings named named EDP’s the script, the Response Parameters will be initially set with these values from the script.</p></li>
 </ol>
-<blockquote>
-<div><p>associates a variable name with the column of the results output
-file. If the process script has an array of strings named named
-EDP’s the script, the Response Parameters will be initially set with
-these values from the script.</p>
-</div></blockquote>
 </div>
 <div class="section" id="none">
 <h2><span class="section-number">2.7.3. </span>None<a class="headerlink" href="#none" title="Permalink to this heading">¶</a></h2>
-<p>This option is used only when the user specifies a surrogate model in the SIM tab. Because a surrogate model can evaluate only the EDPs that are pre-trained, we automatically display those quantities, and do not allow users to modify the list.</p>
+<p>This option is used only when the user specifies a surrogate model in the SIM tab. Because a surrogate model can evaluate only the EDPs that are pre-trained, we automatically display those quantities and do not allow users to modify the list.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This option is not for training a surrogate model but for using a pre-trained surrogate model.</p>

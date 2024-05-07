@@ -16,9 +16,7 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
@@ -42,6 +40,7 @@
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/design-tabs.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
@@ -116,12 +115,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/cite.html">4. How To Cite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="weCapabilities.html">5. Capabilities</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">6. Release Notes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#version-3-2-current">6.1. Version 3.2 (Current)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-3-1">6.2. Version 3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-3-0-0">6.3. Version 3.0.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-2-3">6.4. Version 2.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-2-0">6.5. Version 2.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-1-0-first-release">6.6. Version 1.0 (First Release)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-3-3-current">6.1. Version 3.3 (Current)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-3-2">6.2. Version 3.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-3-1">6.3. Version 3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-3-0-0">6.4. Version 3.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-2-3">6.5. Version 2.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-2-0">6.6. Version 2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-1-0-first-release">6.7. Version 1.0 (First Release)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="wePlans.html">7. Release Plans</a></li>
@@ -218,8 +218,16 @@
             
   <div class="section" id="release-notes">
 <span id="lbl-release-weuq"></span><h1><span class="section-number">6. </span>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this heading">¶</a></h1>
-<div class="section" id="version-3-2-current">
-<h2><span class="section-number">6.1. </span>Version 3.2 (Current)<a class="headerlink" href="#version-3-2-current" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="version-3-3-current">
+<h2><span class="section-number">6.1. </span>Version 3.3 (Current)<a class="headerlink" href="#version-3-3-current" title="Permalink to this heading">¶</a></h2>
+<p><strong>Release date:</strong> Apr. 2024</p>
+<p><strong>Highlights</strong></p>
+<ol class="arabic simple">
+<li><p>A new wind load generator module: wind-tunnel informed stochastic wind pressure generator</p></li>
+</ol>
+</div>
+<div class="section" id="version-3-2">
+<h2><span class="section-number">6.2. </span>Version 3.2<a class="headerlink" href="#version-3-2" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> Mar. 2024</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
@@ -229,10 +237,11 @@
 <li><p>Supports visualization of the simulation data using Paraview on local machine.</p></li>
 <li><p>Addressed bugs in the prior release</p></li>
 <li><p>Created a new example to demonstrate the recently added CFD features.</p></li>
+<li><p>Option for multi-fidelity sampling, allowing for FEM models of different fidelity</p></li>
 </ol>
 </div>
 <div class="section" id="version-3-1">
-<h2><span class="section-number">6.2. </span>Version 3.1<a class="headerlink" href="#version-3-1" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.3. </span>Version 3.1<a class="headerlink" href="#version-3-1" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> Oct. 2023</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
@@ -243,7 +252,7 @@
 </ol>
 </div>
 <div class="section" id="version-3-0-0">
-<h2><span class="section-number">6.3. </span>Version 3.0.0<a class="headerlink" href="#version-3-0-0" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.4. </span>Version 3.0.0<a class="headerlink" href="#version-3-0-0" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> July. 2023</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
@@ -288,7 +297,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="version-2-3">
-<h2><span class="section-number">6.4. </span>Version 2.3<a class="headerlink" href="#version-2-3" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.5. </span>Version 2.3<a class="headerlink" href="#version-2-3" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> March. 2022</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
@@ -300,7 +309,7 @@
 </ol>
 </div>
 <div class="section" id="version-2-0">
-<h2><span class="section-number">6.5. </span>Version 2.0<a class="headerlink" href="#version-2-0" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.6. </span>Version 2.0<a class="headerlink" href="#version-2-0" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> September. 2019</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
@@ -311,7 +320,7 @@
 </ol>
 </div>
 <div class="section" id="version-1-0-first-release">
-<h2><span class="section-number">6.6. </span>Version 1.0 (First Release)<a class="headerlink" href="#version-1-0-first-release" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.7. </span>Version 1.0 (First Release)<a class="headerlink" href="#version-1-0-first-release" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> July. 2019</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">

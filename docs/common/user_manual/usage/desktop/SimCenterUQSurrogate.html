@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.1.3.3. Gaussian Process (GP) Surrogate Modeling &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>Gaussian Process (GP) Surrogate Modeling &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -16,9 +16,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
@@ -42,6 +40,7 @@
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/design-tabs.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -51,8 +50,6 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="2.1.3.4. Probabilistic Learning on Manifolds (PLoM)" href="SimCenterUQPLoM.html" />
-    <link rel="prev" title="2.1.3.2. Global Sensitivity Analysis" href="SimCenterUQSensitivity.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -190,11 +187,7 @@
     
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="usage.html"><span class="section-number">2. </span>User Interface</a> &raquo;</li>
-        
-          <li><a href="UQ.html"><span class="section-number">2.1. </span>UQ: Uncertainty Quantification</a> &raquo;</li>
-        
-      <li><span class="section-number">2.1.3.3. </span>Gaussian Process (GP) Surrogate Modeling</li>
+      <li>Gaussian Process (GP) Surrogate Modeling</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -214,38 +207,15 @@
            <div itemprop="articleBody">
             
   <div class="section" id="gaussian-process-gp-surrogate-modeling">
-<span id="lblsimsurrogate"></span><h1><span class="section-number">2.1.3.3. </span>Gaussian Process (GP) Surrogate Modeling<a class="headerlink" href="#gaussian-process-gp-surrogate-modeling" title="Permalink to this heading">¶</a></h1>
+<span id="lblsimsurrogate"></span><h1>Gaussian Process (GP) Surrogate Modeling<a class="headerlink" href="#gaussian-process-gp-surrogate-modeling" title="Permalink to this heading">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Surrogate modeling functionality of WE-UQ is built upon <a class="reference external" href="https://sheffieldml.github.io/GPy/">GPy</a> library (available under BSD 3-clause license), an opensource python framework for Gaussian process modeling developed in the Sheffield machine learning group.</p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Update: 01.04.2024</p>
-<p><strong>Only on Mac</strong>, the GPy module (v.1.12 or lower) has a dependency version compatibility issue with other python packages SimCenter uses.
-To run GPy on SimCenter tools, one needs to install the latest developer release of GPy. Below is the error message you get.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Surrogate modeling module uses GPy python package which is facing a version compatibility issue at this moment (01.05.2024).</span>
-<span class="go">To use the surrogate module, one needs to update manually the GPy version to 1.13. The instructions can be found in the documentation:</span>
-<span class="gp">https://nheri-simcenter.github.io/quoFEM-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html#</span>lblsimsurrogate
-</pre></div>
-</div>
-<p>Until the GPy version v1.13 is available on pip, one can install the <a class="reference external" href="https://github.com/SheffieldML/GPy">developer release of GPy v1.13</a> by typing the following commands one by one in the terminal</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone https://github.com/SheffieldML/GPy.git</span>
-<span class="go">cd GPy</span>
-<span class="go">{$PathToPythonExe} -m pip uninstall GPy</span>
-<span class="go">{$PathToPythonExe} setup.py install</span>
-</pre></div>
-</div>
-<p>where <code class="docutils literal notranslate"><span class="pre">{$PathToPythonExe}</span></code> should be replaced with the python path found in the File-Preference window. After the third line, they will ask for the confirmation (type Y and enter). Check the installation status by typing</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{$PathToPythonExe} -m pip show GPy</span>
-</pre></div>
-</div>
-<p>and confirming that the version appears as 1.13.x. For any questions and bug reports, please contact us through <a class="reference external" href="https://simcenter-messageboard.designsafe-ci.org/smf/index.php">user forum</a>.</p>
-</div>
 <p>The <code class="docutils literal notranslate"><span class="pre">Train</span> <span class="pre">GP</span> <span class="pre">Surrogate</span> <span class="pre">Model</span></code> module is used to construct a Gaussian process (GP) based <strong>surrogate model</strong> that substitutes expensive computational <strong>simulation models</strong>. The challenge of surrogate modeling in earthquake engineering arrives from the stochasticity in the ground motion time history and corresponding stochastic output.</p>
 <div class="align-center figure" id="id9">
 <span id="figsimee1"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate_EEUQ1.png"><img alt="../../../../_images/Surrogate_EEUQ1.png" src="../../../../_images/Surrogate_EEUQ1.png" style="width: 1000px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.3.3.1 </span><span class="caption-text">Surrogate Modeling in EE-UQ</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Surrogate Modeling in EE-UQ</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
 <li><p><strong>Output of surrogate model</strong>: Following the performance-based earthquake engineering practice, the response estimation module in SimCenter workflow concerns only the peak responses (e.g. peak acceleration, peak drift ratio at each floor) rather than the whole time history. Therefore, the surrogate modeling algorithms in this tool are designed to predict the non-time history responses.</p></li>
@@ -268,7 +238,7 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 <p>When the <strong>Training Dataset</strong> option is set to the <code class="docutils literal notranslate"><span class="pre">Sampling</span> <span class="pre">and</span> <span class="pre">Simulation</span></code>, a simulation model should be presented in the later tabs. The training points are sampled adaptively by the design of experiments.</p>
 <div class="align-center figure" id="id10">
 <span id="figsim1"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate1_SimUQ.png"><img alt="../../../../_images/Surrogate1_SimUQ.png" src="../../../../_images/Surrogate1_SimUQ.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.3.3.2 </span><span class="caption-text">Input panel for surrogate modeling</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Input panel for surrogate modeling</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <ul>
 <li><p><strong>Maximum Number of Model Runs</strong>: When the number of simulation runs reaches the limit, the analysis will be terminated.</p></li>
@@ -277,7 +247,7 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 <blockquote>
 <div><blockquote>
 <div><div class="math notranslate nohighlight" id="equation-nrmse">
-<span class="eqno">(2.1.3.3.3)<a class="headerlink" href="#equation-nrmse" title="Permalink to this equation">¶</a></span>\[\begin{align*}
+<span class="eqno">()<a class="headerlink" href="#equation-nrmse" title="Permalink to this equation">¶</a></span>\[\begin{align*}
     \rm{NRMSE} ~ &amp;= \frac{\sqrt{\frac{1}{N} \sum^{N}_{k=1} (y_k-\hat{y}_k)^2}}{\max_{k=1,...,N}(y_k)-\min_{k=1,...,N}(y_k)}
 \end{align*}\]</div>
 </div></blockquote>
@@ -298,7 +268,7 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 <p><span class="blue">Advanced Options for Gaussian Process Model</span></p>
 <div class="align-center figure" id="id11">
 <span id="figsim2"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate2_SimUQ.png"><img alt="../../../../_images/Surrogate2_SimUQ.png" src="../../../../_images/Surrogate2_SimUQ.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.3.3.3 </span><span class="caption-text">Sampling and Simulation - Case 1</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Sampling and Simulation - Case 1</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <p><span class="blue">Start with Existing Dataset</span></p>
 </div>
@@ -307,7 +277,7 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 <p>The bounds of RVs need to cover the domain of interest in future applications, while it should not be unnecessarily stretched. <strong>Input type</strong> and <strong>Distribution</strong> should be set to <strong>Parameters</strong> and <strong>Uniform</strong>. When a dataset is provided, make sure to match the order of RVs in the <strong>RV tab</strong> to the order of data columns. Any correlation values will be ignored.</p>
 <div class="align-center figure" id="id21">
 <span id="figsim7"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate7_SimUQ.jpg"><img alt="../../../../_images/Surrogate7_SimUQ.jpg" src="../../../../_images/Surrogate7_SimUQ.jpg" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.3.3.13 </span><span class="caption-text">Example of RV tab</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Example of RV tab</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -333,7 +303,7 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 </div>
 <blockquote>
 <div><div class="math notranslate nohighlight" id="equation-r2">
-<span class="eqno">(2.1.3.3.2)<a class="headerlink" href="#equation-r2" title="Permalink to this equation">¶</a></span>\[\begin{align*}
+<span class="eqno">()<a class="headerlink" href="#equation-r2" title="Permalink to this equation">¶</a></span>\[\begin{align*}
     R^2 &amp;= 1 - \frac{\sum^N_{k=1} (\hat{y}_k-\mu_\hat{y})^2}{\sum^N_{k=1} (\hat{y}_k-y_k)^2}
 \end{align*}\]</div>
 </div></blockquote>
@@ -344,7 +314,7 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 <li><p><strong>Normalized root-mean-squared-error (NRMSE)</strong></p>
 <blockquote>
 <div><div class="math notranslate nohighlight" id="equation-nrmse">
-<span class="eqno">(2.1.3.3.3)<a class="headerlink" href="#equation-nrmse" title="Permalink to this equation">¶</a></span>\[\begin{align*}
+<span class="eqno">()<a class="headerlink" href="#equation-nrmse" title="Permalink to this equation">¶</a></span>\[\begin{align*}
     \rm{NRMSE} ~ &amp;= \frac{\sqrt{\frac{1}{N_t} \sum^{N_t}_{k=1} (y_k-\hat{y}_k)^2}}{\max_{k=1,...,N_t}(y_k)-\min_{k=1,...,N_t}(y_k)}
 \end{align*}\]</div>
 </div></blockquote>
@@ -357,7 +327,7 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 <div class="line">Correlation coefficient is a statistic that measures linear correlation between two variables</div>
 </div>
 <div class="math notranslate nohighlight" id="equation-corr">
-<span class="eqno">(2.1.3.3.4)<a class="headerlink" href="#equation-corr" title="Permalink to this equation">¶</a></span>\[  \rho_{y,\hat{y}} = \frac{\sum^N_{k=1}(y_k-\mu_{y})(\hat{y}_k-\mu_{\hat{y}})} {\sigma_y \sigma_\hat{y}}\]</div>
+<span class="eqno">()<a class="headerlink" href="#equation-corr" title="Permalink to this equation">¶</a></span>\[  \rho_{y,\hat{y}} = \frac{\sum^N_{k=1}(y_k-\mu_{y})(\hat{y}_k-\mu_{\hat{y}})} {\sigma_y \sigma_\hat{y}}\]</div>
 <div class="line-block">
 <div class="line">where</div>
 <div class="line-block">
@@ -380,7 +350,7 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 <li><p><strong>Inter-quartile ratio (IQR)</strong>: IQR provides the ratio of the sample QoIs that lies in 25-75% LOOCV prediction bounds (interquartile range). The IQR values should theoretically approach 0.5 if the prediction is accurate.</p></li>
 <li><p><strong>Cramer-Von Mises statistics</strong>: Cramer-Von Mises statistics calculate the normality score. The assumption of a GP is that the observations follow a normal distribution conditional on the input parameters. To assess the normality of the model predictions, the difference between the mean prediction <span class="math notranslate nohighlight">\(\hat{y}_k\)</span> and the sample observation  <span class="math notranslate nohighlight">\(y_k\)</span> value is divided by the standard deviation prediction from surrogate <span class="math notranslate nohighlight">\(\hat{\sigma}_{y,k}\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-normed">
-<span class="eqno">(2.1.3.3.5)<a class="headerlink" href="#equation-normed" title="Permalink to this equation">¶</a></span>\[  u_k = \frac{y_k-\hat{y}_k} {\hat{\sigma}_{y,k}}\]</div>
+<span class="eqno">()<a class="headerlink" href="#equation-normed" title="Permalink to this equation">¶</a></span>\[  u_k = \frac{y_k-\hat{y}_k} {\hat{\sigma}_{y,k}}\]</div>
 </li>
 </ul>
 <blockquote>
@@ -390,7 +360,7 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 <p>Additionally, <strong>scatter plot</strong> between the predicted and exact responses is presented: Well-trained model will form a clear diagonal line in case (i), or be distributed normally around the diagonal line in case (ii). A poorly trained model will have points that are more scattered around.</p>
 <div class="align-center figure" id="id22">
 <span id="figsim8"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate8_SimUQ.jpg"><img alt="../../../../_images/Surrogate8_SimUQ.jpg" src="../../../../_images/Surrogate8_SimUQ.jpg" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.3.3.14 </span><span class="caption-text">Well-trained surrogate (left) and poorly trained surrogate (right) models</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Well-trained surrogate (left) and poorly trained surrogate (right) models</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -424,11 +394,11 @@ To run GPy on SimCenter tools, one needs to install the latest developer release
 </ul>
 <div class="align-center figure" id="id23">
 <span id="figsim9"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate9_SimUQ.jpg"><img alt="../../../../_images/Surrogate9_SimUQ.jpg" src="../../../../_images/Surrogate9_SimUQ.jpg" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.3.3.15 </span><span class="caption-text">Saving options</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Saving options</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id24">
 <span id="figsim10"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate10_SimUQ.png"><img alt="../../../../_images/Surrogate10_SimUQ.png" src="../../../../_images/Surrogate10_SimUQ.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1.3.3.16 </span><span class="caption-text">Example outputs from saving options</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Example outputs from saving options</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="citation">
 <dt class="label" id="patsialis2021"><span class="brackets"><a class="fn-backref" href="#id6">Patsialis2021</a></span></dt>

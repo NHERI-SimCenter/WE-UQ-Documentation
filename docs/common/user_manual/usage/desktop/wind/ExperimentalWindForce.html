@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.4.8. Experimental Wind Force (Time Series Input) &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>2.4.8. Experimental Wind Force &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -16,9 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -42,6 +40,7 @@
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/design-tabs.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
@@ -50,7 +49,7 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.4.9. Wind Force Spectrum" href="WindForceSpectrum.html" />
+    <link rel="next" title="2.4.9. Experimental Wind Pressure" href="ExperimentalWindPressure.html" />
     <link rel="prev" title="2.4.7. Multiple Existing" href="WeUQExisting.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -135,12 +134,13 @@
 <li class="toctree-l3"><a class="reference internal" href="lowRiseTPU.html">2.4.5. Data from Tokyo Polytechnic University</a></li>
 <li class="toctree-l3"><a class="reference internal" href="windTunnelExp.html">2.4.6. Wind Tunnel Experiment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="WeUQExisting.html">2.4.7. Multiple Existing</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.8. Experimental Wind Force (Time Series Input)</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.8. Experimental Wind Force</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#user-inputs">2.4.8.1. User Inputs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#wind-force-time-history-file">2.4.8.2. Wind Force Time History File</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="WindForceSpectrum.html">2.4.9. Wind Force Spectrum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ExperimentalWindPressure.html">2.4.9. Experimental Wind Pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WindForceSpectrum.html">2.4.10. Wind Force Spectrum</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
@@ -218,7 +218,7 @@
         
           <li><a href="WindEvents.html"><span class="section-number">2.4. </span>EVT: Wind Events</a> &raquo;</li>
         
-      <li><span class="section-number">2.4.8. </span>Experimental Wind Force (Time Series Input)</li>
+      <li><span class="section-number">2.4.8. </span>Experimental Wind Force</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -237,8 +237,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="experimental-wind-force-time-series-input">
-<span id="lblexperimentalwindforce"></span><h1><span class="section-number">2.4.8. </span>Experimental Wind Force (Time Series Input)<a class="headerlink" href="#experimental-wind-force-time-series-input" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="experimental-wind-force">
+<span id="lblexperimentalwindforce"></span><h1><span class="section-number">2.4.8. </span>Experimental Wind Force<a class="headerlink" href="#experimental-wind-force" title="Permalink to this heading">¶</a></h1>
 <p>The application takes multivariate stationary wind force time series data obtained from a wind tunnel experiment and can generate multiple realizations of the full-scale multivariate Gaussian wind force time series that is accurate up to the second-order properties (i.e., mean, CPSD functions, correlation) of the input data. Based on the Central Limit Theorem, the wind forces can be approximately modeled as Gaussian processes due to the integral effects of the incident pressures. This algorithm follows the implementation details in <a class="reference internal" href="WindForceSpectrum.html#duarte2023" id="id1"><span>[Duarte2023]</span></a> and the theory manual is available <a class="reference internal" href="../../../../technical_manual/desktop/WEUQ/dataInformedStochasticWind.html#lbldatainformedwindtheory"><span class="std std-ref">here</span></a>.</p>
 <div class="align-center figure" id="id4">
 <span id="fig-experimentalwind0"></span><a class="reference internal image-reference" href="../../../../../_images/weuqExperimentalWindForces0.png"><img alt="../../../../../_images/weuqExperimentalWindForces0.png" src="../../../../../_images/weuqExperimentalWindForces0.png" style="width: 800px;" /></a>

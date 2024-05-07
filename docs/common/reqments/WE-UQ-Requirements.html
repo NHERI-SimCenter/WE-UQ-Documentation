@@ -16,9 +16,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
 
@@ -42,6 +40,7 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/design-tabs.js"></script>
         <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
@@ -208,8 +207,8 @@
             
   <div class="section" id="general-requirements">
 <h1>General Requirements<a class="headerlink" href="#general-requirements" title="Permalink to this heading">¶</a></h1>
-<table class="colwidths-given docutils align-default" id="id9">
-<caption><span class="caption-text">Requirements - General</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
+<table class="colwidths-given docutils align-default" id="id42">
+<caption><span class="caption-text">Requirements - General</span><a class="headerlink" href="#id42" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 9%" />
 <col style="width: 55%" />
@@ -223,8 +222,8 @@
 <th class="head"><p>Description</p></th>
 <th class="head"><p>Source</p></th>
 <th class="head"><p>Priority</p></th>
-<th class="head"><p>Version</p></th>
-<th class="head"><p>WBS</p></th>
+<th class="head"><p>Status</p></th>
+<th class="head"><p>Implementation</p></th>
 </tr>
 </thead>
 <tbody>
@@ -233,13 +232,13 @@
 <td></td>
 <td></td>
 <td><p>InProgress</p></td>
-<td></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/index.html">Application</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>WE.1</p></td>
-<td><p>Adaptation of non-linear analysis methods used in seismic design</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
+<tr class="row-odd"><td><p><strong>WE.1</strong></p></td>
+<td><p><strong>Adaptation of non-linear analysis methods used in seismic design</strong></p></td>
+<td><p><strong>GC</strong></p></td>
+<td><p><strong>M</strong></p></td>
+<td><p><strong>Implemented</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p>WE.1.1</p></td>
@@ -247,24 +246,38 @@
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td><p>Implemented</p></td>
-<td></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/SIM.html">SIM</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>WE.1.2</p></td>
 <td><p>Include ability to perform nonlinear analysis on the building models listed in ANA</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/SIM.html">SIM</a></p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>WE.2</p></td>
-<td><p>Ability to select from Wind Loading Options listed in WL2</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
+<tr class="row-odd"><td><p><strong>WE.2</strong></p></td>
+<td><p><strong>Ability to select from Wind Loading Options listed in WL2</strong></p></td>
+<td><p><strong>SP</strong></p></td>
+<td><p><strong>M</strong></p></td>
+<td><p><strong>Implemented</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>WE.3</p></td>
-<td><p>Ability to use Various UQ Methods and Variable Options</p></td>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>WE.3</strong></p></td>
+<td><p><strong>Ability to use Various UQ Methods and Variable Options</strong></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -275,73 +288,101 @@
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td><p>Implemented</p></td>
-<td></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/examples/desktop/weuq-0014/README.html">Example</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>WE.3.2</p></td>
 <td><p>Ability to use Reliability Methods listed in UQ under UR</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td><p>Implemented</p></td>
-<td></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/examples/desktop/weuq-0007/README.html">Example</a></p></td>
 </tr>
 <tr class="row-even"><td><p>WE.3.3</p></td>
 <td><p>Ability to use Global Sensitivity Methods listed in UQ under UG</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td><p>Implemented</p></td>
-<td></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/examples/desktop/weuq-0007/README.html">Example</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>WE.3.4</p></td>
 <td><p>Ability to both use and create surrogates listed in UQ under US</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
-<td></td>
-<td></td>
+<td><p>InProgress</p></td>
+<td><p>1.2.2.2</p></td>
 </tr>
 <tr class="row-even"><td><p>WE.3.5</p></td>
 <td><p>Ability to use High Dimensional UQ listed in UQ under UH</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
+<td><p>InProgress</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>WE.4</p></td>
-<td><p>Ability to see pressure distribution on buildings</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
+<tr class="row-even"><td><p><strong>WE.4</strong></p></td>
+<td><p><strong>Ability to see pressure distribution on buildings</strong></p></td>
+<td><p><strong>GC</strong></p></td>
+<td><p><strong>M</strong></p></td>
+<td><p>InProgress</p></td>
+<td><p>1.2.1.1</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>WE.5</p></td>
-<td><p>Ability to obtain basic building responses</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>WE.6</p></td>
-<td><p>Ability to Visualize the Results</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
+<tr class="row-even"><td><p><strong>WE.5</strong></p></td>
+<td><p><strong>Ability to obtain basic building responses</strong></p></td>
+<td><p><strong>SP</strong></p></td>
+<td><p><strong>M</strong></p></td>
 <td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/response/EDP.html">EDP</a></p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>WE.6.1</p></td>
+<tr class="row-even"><td><p><strong>WE.6</strong></p></td>
+<td><p><strong>Ability to Visualize the Results</strong></p></td>
+<td><p><strong>SP</strong></p></td>
+<td><p><strong>M</strong></p></td>
+<td><p><strong>Implemented</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>WE.6.1</p></td>
 <td><p>Ability to view individual sample results</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td><p>Implemented</p></td>
-<td></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/response/resEE.html">RES</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>WE.6.2</p></td>
+<tr class="row-even"><td><p>WE.6.2</p></td>
 <td><p>Ability to graphically view the results to show distribution in respone</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/response/resEE.html">RES</a></p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>WE.7</p></td>
-<td><p>Misc User Requests</p></td>
+<tr class="row-even"><td><p><strong>WE.7</strong></p></td>
+<td><p><strong>Miscelleneous User Requests</strong></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -365,39 +406,53 @@
 <td><p>Create a digital twin of the Wall of Wind facility to allow researchers to simulate experiments</p></td>
 <td><p>UF</p></td>
 <td><p>M</p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>WE.8</p></td>
-<td><p>Tool should incorporate data from www</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
 <td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/examples/desktop/weuq-0015/README.html">Example</a></p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>WE.8.1</p></td>
+<tr class="row-odd"><td><p><strong>WE.8</strong></p></td>
+<td><p><strong>Tool should incorporate data from www</strong></p></td>
+<td><p><strong>GC</strong></p></td>
+<td><p><strong>M</strong></p></td>
+<td><p><strong>Implemented</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>WE.8.1</p></td>
 <td><p>Tool could obtain loading from Vortex Winds over www</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td><p>Implemented</p></td>
-<td></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/wind/DEDMHrp.html">Event</a></p></td>
 </tr>
-<tr class="row-even"><td><p>WE.8.2</p></td>
+<tr class="row-odd"><td><p>WE.8.2</p></td>
 <td><p>Tool should obtain loading info from TPU wind tunnel tests</p></td>
 <td><p>SP</p></td>
 <td><p>D</p></td>
 <td><p>Implemented</p></td>
-<td></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/examples/desktop/weuq-0007/README.html">Example</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>WE.8.3</p></td>
+<tr class="row-even"><td><p>WE.8.3</p></td>
 <td><p>Tool should obtain building modelling info from database through  www</p></td>
 <td><p>SP</p></td>
 <td><p>D</p></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>WE.9</p></td>
-<td><p>General Software Requirements</p></td>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>WE.9</strong></p></td>
+<td><p><strong>General Software Requirements</strong></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -413,920 +468,263 @@
 </tbody>
 </table>
 <div class="line-block">
-<div class="line">key:</div>
-<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
-<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
-<div class="line">Status: Implements, InProgress and Blank (i.e. not started)</div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
+<div class="line"><strong>Key:</strong></div>
+<div class="line-block">
+<div class="line"><strong>Source</strong>: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line"><strong>Priority</strong>: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line"><strong>Status</strong>: Implemented, InProgress, and Blank (i.e. not started)</div>
+<div class="line"><strong>Implementation</strong>: UM=User Manual, DM=Developer Manual, SC=Source Code</div>
+</div>
 </div>
 </div>
 <div class="section" id="loading-requirements">
 <h1>Loading Requirements<a class="headerlink" href="#loading-requirements" title="Permalink to this heading">¶</a></h1>
-<table class="colwidths-given docutils align-default" id="id10">
-<caption><span class="caption-text">Requirements - Wind Loading</span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
+<table class="colwidths-given docutils align-default" id="id43">
+<caption><span class="caption-text">Requirements - Wind Loading</span><a class="headerlink" href="#id43" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 10%" />
-<col style="width: 60%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
+<col style="width: 9%" />
+<col style="width: 55%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>#</p></th>
 <th class="head"><p>Description</p></th>
 <th class="head"><p>Source</p></th>
 <th class="head"><p>Priority</p></th>
-<th class="head"><p>Version</p></th>
+<th class="head"><p>Status</p></th>
+<th class="head"><p>Implementation</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>WL</p></td>
-<td><p>Loading from Wind Hazards (Hurricane, Downbursts, Tornados) on Local and Regional Assets</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td><p>InProgress</p></td>
+<tr class="row-even"><td><p><strong>WL.1</strong></p></td>
+<td><p><strong>Regional Loading due to Wind Hazards</strong></p></td>
+<td><p><strong>_</strong></p></td>
+<td><p><strong>_</strong></p></td>
+<td></td>
+<td><p><strong>_</strong></p></td>
 </tr>
-<tr class="row-odd"><td><p>WL.1</p></td>
-<td><p>Regional Loading due to Wind Hazards</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td><p>InProgress</p></td>
+<tr class="row-odd"><td><p><strong>WL.1.1</strong></p></td>
+<td><p><strong>Regional Hurricane Wind Options</strong></p></td>
+<td><p><strong>_</strong></p></td>
+<td><p><strong>_</strong></p></td>
+<td><p><strong>_</strong></p></td>
+<td><p><strong>_</strong></p></td>
 </tr>
-<tr class="row-even"><td><p>WL.1.1</p></td>
-<td><p>Regional Hurricane Wind Options</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td><p>InProgress</p></td>
-</tr>
-<tr class="row-odd"><td><p>WL.1.1.1</p></td>
+<tr class="row-even"><td><p>WL.1.1.1</p></td>
 <td><p>Utilize GIS and online to account for wind speed given local terrain, topography and nearby buildings</p></td>
 <td><p>GC</p></td>
 <td><p>D</p></td>
-<td></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>WL.1.1.2</p></td>
-<td><p>MultiScale Wind Models</p></td>
-<td><p>SP</p></td>
-<td><p>D</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>WL.1.1.3</p></td>
+<tr class="row-odd"><td><p>WL.1.1.2</p></td>
 <td><p>Multi-scale models for wind and water flows, i.e. lower fidelity regional models with more refined models to capture local flow</p></td>
 <td><p>SP</p></td>
 <td><p>D</p></td>
-<td></td>
+<td><p>InProgress</p></td>
+<td><p>N/A</p></td>
 </tr>
-<tr class="row-even"><td><p>WL.1.2</p></td>
+<tr class="row-even"><td><p>WL.1.1.3</p></td>
+<td><p>Multi-scale models for wind and water flows, i.e. lower fidelity regional models with more refined models to capture local flow</p></td>
+<td><p>SP</p></td>
+<td><p>D</p></td>
+<td><p>InProgress</p></td>
+<td><p>1.1.3.3.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>WL.1.2</p></td>
 <td><p>Modeling and simulation for determination of wind loads due to non-synoptic winds, including tornadoes</p></td>
 <td><p>GC</p></td>
 <td><p>D</p></td>
-<td></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>WL.1.3</p></td>
-<td><p>Interface with Open-Source Applications that can provide Hazard loading</p></td>
-<td><p>GC</p></td>
-<td><p>D</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>WL.1.3.1</p></td>
+<tr class="row-even"><td><p>WL.1.3</p></td>
 <td><p>Interface with NOAA</p></td>
 <td><p>SP</p></td>
 <td><p>D</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>WL.2</p></td>
-<td><p>Local Scale Wind Hazard Options</p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>WL.2.1</p></td>
-<td><p>Utilize Extensive wind tunnel datasets in industry and academia for wide range of building shapes</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
 <td><p>Implemented</p></td>
+<td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>WL.2.1.1</p></td>
-<td><p>Accommodate Range of Low Rise building shapes</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td></td>
+<tr class="row-odd"><td><p><strong>WL.2</strong></p></td>
+<td><p><strong>Local Scale Wind Hazard Options</strong></p></td>
+<td><p><strong>SP</strong></p></td>
+<td><p><strong>M</strong></p></td>
+<td><p><strong>Implemented</strong></p></td>
+<td><p><strong>_</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>WL.2.1</strong></p></td>
+<td><p><strong>Utilize Extensive wind tunnel datasets in industry and academia for wide range of building shapes</strong></p></td>
+<td><p><strong>_</strong></p></td>
+<td><p><strong>_</strong></p></td>
+<td><p><strong>_</strong></p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/examples/desktop/weuq-0007/README.html">weuq-0007</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>WL.2.1.1</strong></p></td>
+<td><p><strong>Accommodate Range of Low Rise building shapes</strong></p></td>
+<td><p><strong>_</strong></p></td>
+<td><p><strong>_</strong></p></td>
+<td><p><strong>_</strong></p></td>
+<td><p><strong>_</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>WL.2.1.1.1</p></td>
 <td><p>Flat Shaped Roof - TPU dataset</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/examples/desktop/weuq-0007/README.html">weuq-0007</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>WL.2.1.1.2</p></td>
 <td><p>Gable Shaped Roof - TPU dataset</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
-<td></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/examples/desktop/weuq-0007/README.html">weuq-0007</a></p></td>
 </tr>
 <tr class="row-even"><td><p>WL.2.1.1.3</p></td>
 <td><p>Hipped Shaped Roof - TPU dataset</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
-<td></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/examples/desktop/weuq-0007/README.html">weuq-0007</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>WL.2.1.2</p></td>
 <td><p>Accommodate Range of High Rise building</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td><p>InProgress</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/wind/windTunnelExp.html">UM</a></p></td>
 </tr>
 <tr class="row-even"><td><p>WL.2.1.3</p></td>
 <td><p>Non Isolated Low Rise Buildings - TPU dataset</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td><p>InProgress</p></td>
+<td><p>_</p></td>
 </tr>
 <tr class="row-odd"><td><p>WL.2.2</p></td>
-<td><p>Interface with data driven</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td><p>InProgress</p></td>
-</tr>
-<tr class="row-even"><td><p>WL.2.2.1</p></td>
-<td><p>Interface with Vortex Winds DEDM-HRP Web service</p></td>
+<td><p>Interface with data-driven Interface with Vortex Winds DEDM-HRP Web service</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/wind/DEDMHrp.html">UM</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>WL.2.3</p></td>
+<tr class="row-even"><td><p>WL.2.3</p></td>
 <td><p>Accommodate Data from Wind Tunnel Experiment</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/wind/lowRiseTPU.html">UM</a></p></td>
 </tr>
-<tr class="row-even"><td><p>WL.2.4</p></td>
+<tr class="row-odd"><td><p>WL.2.4</p></td>
 <td><p>Simple CFD model generation and turbulence modeling</p></td>
 <td><p>GC</p></td>
 <td><p>M</p></td>
 <td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/examples/desktop/weuq-0013/README.html">weuq-0013</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>WL.2.5</p></td>
-<td><p>Computational Fluid Dynamics tool for utilizing open source CFD software for practitioners</p></td>
-<td><p>GC</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
+<tr class="row-even"><td><p><strong>WL.2.5</strong></p></td>
+<td><p><strong>Computational Fluid Dynamics tool for utilizing open source CFD software for practitioners</strong></p></td>
+<td><p><strong>_</strong></p></td>
+<td><p><strong>_</strong></p></td>
+<td><p><strong>_</strong></p></td>
+<td><p><strong>_</strong></p></td>
 </tr>
-<tr class="row-even"><td><p>WL.2.5.1</p></td>
+<tr class="row-odd"><td><p>WL.2.5.1</p></td>
 <td><p>Uncoupled OpenFOAM CFD model with nonlinear FEM code for building response</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/examples/desktop/weuq-0013/README.html">weuq-0013</a></p></td>
 </tr>
-<tr class="row-odd"><td><p>WL.2.5.1</p></td>
+<tr class="row-even"><td><p>WL.2.5.2</p></td>
 <td><p>Coupled OpenFOAM CFD model with linear FEM code for building response</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td><p>InProgress</p></td>
+<td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>WL.2.5.2</p></td>
+<tr class="row-odd"><td><p>WL.2.5.3</p></td>
 <td><p>Inflow Conditions for non-synoptic winds</p></td>
 <td><p>GC</p></td>
 <td><p>M</p></td>
-<td></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
 </tr>
-<tr class="row-odd"><td><p>WL.2.6</p></td>
+<tr class="row-even"><td><p>WL.2.6</p></td>
 <td><p>Quantification of Effects of Wind Borne Debris</p></td>
 <td><p>GC</p></td>
 <td><p>D</p></td>
-<td></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
 </tr>
-<tr class="row-even"><td><p>WL.2.7</p></td>
-<td><p>Ability to utilize synthetic wind loading algorithms</p></td>
-<td><p>SP</p></td>
-<td><p>M</p></td>
-<td><p>Implemented</p></td>
-</tr>
-<tr class="row-odd"><td><p>WL.2.7.1</p></td>
-<td><p>per Wittig and Sinha</p></td>
+<tr class="row-odd"><td><p>WL.2.7</p></td>
+<td><p>Ability to utilize synthetic wind loading algorithms per Wittig and Sinha</p></td>
 <td><p>SP</p></td>
 <td><p>D</p></td>
 <td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/examples/desktop/weuq-0001/README.html">weuq-0001</a></p></td>
 </tr>
 <tr class="row-even"><td><p>WL.2.8</p></td>
 <td><p>Hazard modification by terrain, topography, and nearby buildings</p></td>
 <td><p>GC</p></td>
 <td><p>D</p></td>
-<td></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
 </tr>
 <tr class="row-odd"><td><p>WL.2.9</p></td>
-<td><p>Probabilistic methods are needed to enable site-specific and storm-type specific characterization of likely debris types, weights, and speeds</p></td>
+<td><p>Probabilistic methods are needed to enable site-specific and storm-type specific characterization of likely debris types, weights,and speeds</p></td>
 <td><p>GC</p></td>
 <td><p>D</p></td>
-<td></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
 </tr>
 <tr class="row-even"><td><p>WL.2.10</p></td>
 <td><p>Joint description for hurricane wind, storm surge, and wave hazards</p></td>
 <td><p>GC</p></td>
 <td><p>D</p></td>
-<td></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
 </tr>
 <tr class="row-odd"><td><p>WL.2.11</p></td>
-<td><p>Libraries of high resolution hurricane wind/surge/wave simulations</p></td>
+<td><p>Libraries of high-resolution hurricane wind/surge/wave simulations</p></td>
 <td><p>GC</p></td>
 <td><p>M</p></td>
-<td></td>
+<td><p>InProgress</p></td>
+<td><p>_</p></td>
 </tr>
 <tr class="row-even"><td><p>WL.2.12</p></td>
 <td><p>Multi-scale models for wind and water flows, i.e. lower fidelity regional models with more refined models to capture local flow</p></td>
 <td><p>SP</p></td>
-<td></td>
-<td></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+<td><p>_</p></td>
 </tr>
 <tr class="row-odd"><td><p>WL.2.13</p></td>
 <td><p>Ability to select surrogate modeling events</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<div class="line-block">
-<div class="line">key:</div>
-<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
-<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
-<div class="line">Status: Implements, InProgress and Blank (i.e. not started)</div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-</div>
-</div>
-<div class="section" id="uq-requirements">
-<h1>UQ Requirements<a class="headerlink" href="#uq-requirements" title="Permalink to this heading">¶</a></h1>
-<table class="colwidths-given docutils align-default" id="id11">
-<caption><span class="caption-text">Requirements - Uncertainty Quantification Methods and Variables</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 50%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>#</p></th>
-<th class="head"><p>Description</p></th>
-<th class="head"><p>Source</p></th>
-<th class="head"><p>Priority</p></th>
-<th class="head"><p>Status</p></th>
-<th class="head"><p>Implementation</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>UF.1</p></td>
-<td><blockquote>
-<div><p>“Ability to use basic Monte Carlo and LHS methods”</p>
-</div></blockquote>
-</td>
-<td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
 <td><p>_</p></td>
-</tr>
-<tr class="row-odd"><td><p>UF.2</p></td>
-<td><blockquote>
-<div><p>“Ability to use Gaussian Process Regression”</p>
-</div></blockquote>
-</td>
-<td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-even"><td><p>UF.3</p></td>
-<td><blockquote>
-<div><p>“Ability to use Own External UQ Engine”</p>
-</div></blockquote>
-</td>
-<td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-odd"><td><p>UF.4</p></td>
-<td><blockquote>
-<div><p>“Ability to use Multi-Scale Monte Carlo”</p>
-</div></blockquote>
-</td>
-<td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-even"><td><p>UF.5</p></td>
-<td><blockquote>
-<div><p>“Ability to use Multi-Fidelity Models”</p>
-</div></blockquote>
-</td>
-<td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“InProgress”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-odd"><td><p>UR.1</p></td>
-<td><blockquote>
-<div><p>“Ability to use First Order Reliability method”</p>
-</div></blockquote>
-</td>
-<td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-even"><td><p>UR.2</p></td>
-<td><blockquote>
-<div><p>“Ability to use Second Order Reliability method”</p>
-</div></blockquote>
-</td>
-<td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-odd"><td><p>UR.3</p></td>
-<td><blockquote>
-<div><p>“Ability to use Surrogate Based Reliability”</p>
-</div></blockquote>
-</td>
-<td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-even"><td><p>UR.4</p></td>
-<td><blockquote>
-<div><p>“Ability to use Importance Sampling”</p>
-</div></blockquote>
-</td>
-<td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-odd"><td><p>UG.1</p></td>
-<td><blockquote>
-<div><p>“Ability to obtain Global Sensitivity Sobol indices”</p>
-</div></blockquote>
-</td>
-<td><p>UF</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-even"><td><p>UG.2</p></td>
-<td><blockquote>
-<div><p>“Ability to use probability model-based global sensitivity analysis (PM-GSA)”</p>
-</div></blockquote>
-</td>
-<td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-odd"><td><p>US.1</p></td>
-<td><blockquote>
-<div><p>“Ability to Construct Gaussian Process (GP) Regression Model from a Simulation Model”</p>
-</div></blockquote>
-</td>
-<td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“InProgress”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-even"><td><p>US.2</p></td>
-<td><blockquote>
-<div><p>“Ability to Construct GP Regression Model from Input-output Dataset”</p>
-</div></blockquote>
-</td>
-<td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“InProgress”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-odd"><td><p>US.3</p></td>
-<td><blockquote>
-<div><p>“Ability to use Surrogate Model for UQ Analysis”</p>
-</div></blockquote>
-</td>
-<td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“InProgress”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-even"><td><p>US.4</p></td>
-<td><blockquote>
-<div><p>“Ability to Save the Surrogate Model”</p>
-</div></blockquote>
-</td>
-<td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“InProgress”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-odd"><td><p>US.5</p></td>
-<td><blockquote>
-<div><p>“Ability to Use Adaptive Design of Experiments”</p>
-</div></blockquote>
-</td>
-<td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“InProgress”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-even"><td><p>US.6</p></td>
-<td><blockquote>
-<div><p>“Ability to Asses Reliability of Surrogate Model”</p>
-</div></blockquote>
-</td>
-<td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-odd"><td><p>US.7</p></td>
-<td><blockquote>
-<div><p>“Ability to Build Surrogate Under Stochastic Excitation”</p>
-</div></blockquote>
-</td>
-<td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“InProgress”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-even"><td><p>US.8</p></td>
-<td><blockquote>
-<div><p>“Ability to Use Physics-Informed Machine Learning”</p>
-</div></blockquote>
-</td>
-<td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-odd"><td><p>UN.1</p></td>
-<td><blockquote>
-<div><p>“Ability to use Gauss-Newton solvers for parameter estimation”</p>
-</div></blockquote>
-</td>
-<td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-even"><td><p>UN.2</p></td>
-<td><blockquote>
-<div><p>“Ability to read calibration data from file”</p>
-</div></blockquote>
-</td>
-<td><p>UF</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-odd"><td><p>UN.3</p></td>
-<td><blockquote>
-<div><p>“Ability to handle non-scalar response quantities”</p>
-</div></blockquote>
-</td>
-<td><p>UF</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-even"><td><p>UB.1</p></td>
-<td><blockquote>
-<div><p>“Ability to use DREAM algorithm for Bayesian inference”</p>
-</div></blockquote>
-</td>
-<td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-odd"><td><p>UB.2</p></td>
-<td><blockquote>
-<div><p>“Ability to use TMCMC algorithm for Bayesian inference”</p>
-</div></blockquote>
-</td>
-<td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-even"><td><p>UB.3</p></td>
-<td><blockquote>
-<div><p>“Ability to read calibration data from file”</p>
-</div></blockquote>
-</td>
-<td><p>UF</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-odd"><td><p>UB.4</p></td>
-<td><blockquote>
-<div><p>“Ability to handle non-scalar response quantities”</p>
-</div></blockquote>
-</td>
-<td><p>UF</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-even"><td><p>UB.5</p></td>
-<td><blockquote>
-<div><p>“Ability to calibrate multipliers on error covariance”</p>
-</div></blockquote>
-</td>
-<td><p>UF</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-odd"><td><p>UB.6</p></td>
-<td><blockquote>
-<div><p>“Ability to use a default log-likelihood function”</p>
-</div></blockquote>
-</td>
-<td><p>UF</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-even"><td><p>UB.7</p></td>
-<td><blockquote>
-<div><p>“Ability to use Kalman Filtering”</p>
-</div></blockquote>
-</td>
-<td><p>UF</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-odd"><td><p>UB.8</p></td>
-<td><blockquote>
-<div><p>“Ability to use Particle Filtering”</p>
-</div></blockquote>
-</td>
-<td><p>UF</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-even"><td><p>UH.1</p></td>
-<td><blockquote>
-<div><p>“Ability to sample from manifold”</p>
-</div></blockquote>
-</td>
-<td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-odd"><td><p>UH.2</p></td>
-<td><blockquote>
-<div><p>“Ability to build Reduced Order Model”</p>
-</div></blockquote>
-</td>
-<td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-even"><td><p>UO.1</p></td>
-<td><blockquote>
-<div><p>“Ability to use User-Specified External UQ Engine”</p>
-</div></blockquote>
-</td>
-<td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-odd"><td><p>UO.2</p></td>
-<td><blockquote>
-<div><p>“Ability to use Own External FEM Application”</p>
-</div></blockquote>
-</td>
-<td><p>UF</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>UM.1</strong></p></td>
-<td><blockquote>
-<div><p>“<strong>Ability to use various Reliability Methods</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="row-odd"><td><p>UM.1.1</p></td>
-<td><blockquote>
-<div><p>“Ability to use First Order Reliability method”</p>
-</div></blockquote>
-</td>
-<td><p>UF</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-even"><td><p>UM.1.2</p></td>
-<td><blockquote>
-<div><p>“Ability to use Surrogate Based Reliability”</p>
-</div></blockquote>
-</td>
-<td><p>UF</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-odd"><td><p>UM.1.3</p></td>
-<td><blockquote>
-<div><p>“Ability to use Own External Application to generate Results”</p>
-</div></blockquote>
-</td>
-<td><p>UF</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>UM.2</strong></p></td>
-<td><blockquote>
-<div><p>“<strong>Ability to user various Sensitivity Methods</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="row-odd"><td><p>UM.2.1</p></td>
-<td><blockquote>
-<div><p>“Ability to obtain Global Sensitivity Sobol’s indices”</p>
-</div></blockquote>
-</td>
-<td><p>UF</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
 <td><p>_</p></td>
 </tr>
 </tbody>
 </table>
 <div class="line-block">
-<div class="line">key:</div>
-<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
-<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
-<div class="line">Status: Implements, InProgress and Blank (i.e. not started)</div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
+<div class="line"><strong>Key:</strong></div>
+<div class="line-block">
+<div class="line"><strong>Source</strong>: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line"><strong>Priority</strong>: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line"><strong>Status</strong>: Implemented, InProgress, and Blank (i.e. not started)</div>
+<div class="line"><strong>Implementation</strong>: UM=User Manual, DM=Developer Manual, SC=Source Code</div>
+</div>
 </div>
 </div>
 <div class="section" id="modeling-requirements">
 <h1>Modeling Requirements<a class="headerlink" href="#modeling-requirements" title="Permalink to this heading">¶</a></h1>
-<table class="colwidths-given docutils align-default" id="id12">
-<caption><span class="caption-text">Requirements - Modeling</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<table class="colwidths-given docutils align-default" id="id44">
+<caption><span class="caption-text">Requirements - Modeling</span><a class="headerlink" href="#id44" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 50%" />
@@ -1345,29 +743,43 @@
 </tr>
 </thead>
 <tbody>
+<tr class="row-even"><td><p><strong>MOD</strong></p></td>
+<td><p><strong>Asset Model Generators for Analysis</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>BM</p></td>
+<td><p>Asset Model Generators for Buildings</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 <tr class="row-even"><td><p>BM.1</p></td>
-<td><p>Ability to quickly create a simple nonlinear building model for simple methods of seismic evaluation</p></td>
+<td><p>Ability to quickly create a simple nonlinear building model</p></td>
 <td><p>GC</p></td>
 <td><p>D</p></td>
 <td><p>Implemented</p></td>
-<td><p>_</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/examples/desktop/weuq-0012/README.html">weuq-0012</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>BM.2</p></td>
 <td><p>Ability to use existing OpenSees model scripts</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td><p>Implemented</p></td>
-<td><p>_</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/examples/desktop/weuq-0001/README.html">weuq-0001</a></p></td>
 </tr>
 <tr class="row-even"><td><p>BM.3</p></td>
-<td><p>Ability to define building and use Expert System to generate FE mesh</p></td>
+<td><p>Ability to define a building and use Expert System to generate FE mesh</p></td>
 <td><p>SP</p></td>
 <td><p>D</p></td>
-<td><p>_</p></td>
+<td><p>Implemented</p></td>
 <td><p>_</p></td>
 </tr>
 <tr class="row-odd"><td><p>BM.4</p></td>
-<td><p>Ability to define building and use Machine Learning applications to generate FE</p></td>
+<td><p>Ability to define a building and use Machine Learning applications to generate FE</p></td>
 <td><p>GC</p></td>
 <td><p>D</p></td>
 <td><p>_</p></td>
@@ -1388,35 +800,49 @@
 <td><p>_</p></td>
 </tr>
 <tr class="row-even"><td><p>BM.7</p></td>
-<td><p>Ability to incoporate AutoSDA Steel Design Application in Local Applications</p></td>
+<td><p>Ability to incorporate AutoSDA Steel Design Application in Local Applications</p></td>
 <td><p>UF</p></td>
 <td><p>M</p></td>
 <td><p>Implemented</p></td>
 <td><p>_</p></td>
 </tr>
 <tr class="row-odd"><td><p>BM.8</p></td>
-<td><p>Ability to use user supplied python script to generate mesh</p></td>
+<td><p>Ability to use user-supplied Python script to generate mesh</p></td>
 <td><p>UF</p></td>
 <td><p>M</p></td>
+<td><p>InProgress</p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/SimCenterCommon/blob/master/Workflow/SIM/CustomPy.cpp">SC</a></p></td>
+</tr>
+<tr class="row-even"><td><p>BM.9</p></td>
+<td><p>Ability to use multiple models of similar fidelity</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
 <td><p>Implemented</p></td>
-<td><p>_</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>BM.10</p></td>
+<td><p>Ability to use multiple models of different fidelity</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 <div class="line-block">
-<div class="line">key:</div>
-<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
-<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
-<div class="line">Status: Implements, InProgress and Blank (i.e. not started)</div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
+<div class="line"><strong>Key:</strong></div>
+<div class="line-block">
+<div class="line"><strong>Source</strong>: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line"><strong>Priority</strong>: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line"><strong>Status</strong>: Implemented, InProgress, and Blank (i.e. not started)</div>
+<div class="line"><strong>Implementation</strong>: UM=User Manual, DM=Developer Manual, SC=Source Code</div>
+</div>
 </div>
 </div>
 <div class="section" id="analysis-requirements">
 <h1>Analysis Requirements<a class="headerlink" href="#analysis-requirements" title="Permalink to this heading">¶</a></h1>
-<table class="colwidths-given docutils align-default" id="id13">
-<caption><span class="caption-text">Requirements - Analysis</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
+<table class="colwidths-given docutils align-default" id="id45">
+<caption><span class="caption-text">Requirements - Analysis</span><a class="headerlink" href="#id45" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 50%" />
@@ -1450,35 +876,35 @@
 <td><p>_</p></td>
 </tr>
 <tr class="row-even"><td><p>ANA.1.2</p></td>
-<td><p>Ability to provide own OpenSees Analysis script to OpenSees engine.</p></td>
+<td><p>Ability to provide own OpenSees Analysis script to OpenSees engine</p></td>
 <td><p>SP</p></td>
 <td><p>D</p></td>
 <td><p>Implemented</p></td>
 <td><p>_</p></td>
 </tr>
 <tr class="row-odd"><td><p>ANA.1.3</p></td>
-<td><p>Ability to provide own Python script and use OpenSeesPy engine.</p></td>
+<td><p>Ability to provide own Python script and use OpenSeesPy engine</p></td>
 <td><p>SP</p></td>
 <td><p>D</p></td>
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
 <tr class="row-even"><td><p>ANA.1.4</p></td>
-<td><p>Ability to use alternative FEM engines.</p></td>
+<td><p>Ability to use alternative FEM engines</p></td>
 <td><p>SP</p></td>
 <td><p>M</p></td>
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
 <tr class="row-odd"><td><p>ANA.2</p></td>
-<td><p>Ability to know if an analysis run fails.</p></td>
+<td><p>Ability to know if an analysis run fails</p></td>
 <td><p>UF</p></td>
 <td><p>M</p></td>
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>ANA.3</strong></p></td>
-<td><p><strong>Ability to specify Modal Damping.</strong></p></td>
+<td><p><strong>Ability to specify Modal Damping</strong></p></td>
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
 <td><p><strong>_</strong></p></td>
@@ -1496,38 +922,505 @@
 <td><p>UF</p></td>
 <td><p>M</p></td>
 <td><p>Implemented</p></td>
-<td><p>_</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/examples/desktop/weuq-0001/README.html">weuq-0001</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>ANA.4</p></td>
-<td><p>Ability to run for more than 60hours at DesignSafe</p></td>
+<td><p>Ability to run for more than 60 hours at DesignSafe</p></td>
 <td><p>UF</p></td>
 <td><p>D</p></td>
 <td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
 <tr class="row-even"><td><p>ANA.5</p></td>
-<td><p>Ability to specify number of iterations in convergence test</p></td>
+<td><p>Ability to specify the number of iterations in convergence test</p></td>
 <td><p>UF</p></td>
 <td><p>M</p></td>
 <td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/examples/desktop/weuq-0001/README.html">weuq-0001</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ANA.6</p></td>
+<td><p>Ability to use multiple analysis options</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><strong>Key:</strong></div>
+<div class="line-block">
+<div class="line"><strong>Source</strong>: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line"><strong>Priority</strong>: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line"><strong>Status</strong>: Implemented, InProgress, and Blank (i.e. not started)</div>
+<div class="line"><strong>Implementation</strong>: UM=User Manual, DM=Developer Manual, SC=Source Code</div>
+</div>
+</div>
+</div>
+<div class="section" id="uq-requirements">
+<h1>UQ Requirements<a class="headerlink" href="#uq-requirements" title="Permalink to this heading">¶</a></h1>
+<table class="colwidths-given docutils align-default" id="id46">
+<caption><span class="caption-text">Requirements - Uncertainty Quantification Methods and Variables</span><a class="headerlink" href="#id46" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 50%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Source</p></th>
+<th class="head"><p>Priority</p></th>
+<th class="head"><p>Status</p></th>
+<th class="head"><p>Implementation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>UF.1</p></td>
+<td><p>Ability to use basic Monte Carlo and LHS methods</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/examples/desktop/weuq-0001/README.html">weuq-0001</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>UF.2</p></td>
+<td><p>Ability to use Gaussian Process Regression</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-even"><td><p>UF.3</p></td>
+<td><p>Ability to use Multi-Scale Monte Carlo</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-odd"><td><p>UF.4</p></td>
+<td><p>Ability to use Multi-Fidelity Models</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/SimCenterUQMF.html#lblsimforwardmf">UM</a></p></td>
+</tr>
+<tr class="row-even"><td><p>UF.5</p></td>
+<td><p>Ability to use Multi-model Forward Propagation</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/examples/desktop/weuq-0001/README.html">weuq-0001</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>UR.1</p></td>
+<td><p>Ability to use First Order Reliability method</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/DakotaReliability.html">UM</a></p></td>
+</tr>
+<tr class="row-even"><td><p>UR.2</p></td>
+<td><p>Ability to use Second Order Reliability method</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/DakotaReliability.html">UM</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>UR.3</p></td>
+<td><p>Ability to use Surrogate Based Reliability</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/DakotaReliability.html">UM</a></p></td>
+</tr>
+<tr class="row-even"><td><p>UR.4</p></td>
+<td><p>Ability to use Importance Sampling</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/DakotaReliability.html">UM</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>UG.1</p></td>
+<td><p>Ability to obtain Global Sensitivity Sobol indices</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/DakotaSensitivity.html">UM</a></p></td>
+</tr>
+<tr class="row-even"><td><p>UG.2</p></td>
+<td><p>Ability to use probability model-based global sensitivity analysis (PM-GSA)</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/SimCenterUQSensitivity.html">UM</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>UG.3</p></td>
+<td><p>Ability to use probability model-based global sensitivity analysis (PM-GSA) for high-dimensional outputs</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/SimCenterUQSensitivity.html">UM</a></p></td>
+</tr>
+<tr class="row-even"><td><p>US.1</p></td>
+<td><p>Ability to Construct Gaussian Process (GP) Regression Model from a Simulation Model</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>US.2</p></td>
+<td><p>Ability to Construct GP Regression Model from Input-output Dataset</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-even"><td><p>US.3</p></td>
+<td><p>Ability to use Surrogate Model for UQ Analysis</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>US.4</p></td>
+<td><p>Ability to Save the Surrogate Model</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-even"><td><p>US.5</p></td>
+<td><p>Ability to Use Adaptive Design of Experiments</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>US.6</p></td>
+<td><p>Ability to Assess Reliability of Surrogate Model</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-even"><td><p>US.7</p></td>
+<td><p>Ability to Build Surrogate Under Stochastic Excitation</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>US.8</p></td>
+<td><p>Ability to Use Physics-Informed Machine Learning</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-even"><td><p>UN.1</p></td>
+<td><p>Ability to use Gauss-Newton solvers for parameter estimation</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>UN.2</p></td>
+<td><p>Ability to read calibration data from a file</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-even"><td><p>UN.3</p></td>
+<td><p>Ability to handle non-scalar response quantities</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>UN.4</p></td>
+<td><p>Ability to run gradient-free parameter estimation</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-even"><td><p>UB.1</p></td>
+<td><p>Ability to use DREAM algorithm for Bayesian inference</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>UB.2</p></td>
+<td><p>Ability to use TMCMC algorithm for Bayesian inference</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-even"><td><p>UB.3</p></td>
+<td><p>Ability to read calibration data from a file</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>UB.4</p></td>
+<td><p>Ability to handle non-scalar response quantities</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-even"><td><p>UB.5</p></td>
+<td><p>Ability to calibrate multipliers on error covariance</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>UB.6</p></td>
+<td><p>Ability to use a default log-likelihood function</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-even"><td><p>UB.7</p></td>
+<td><p>Ability to use Kalman Filtering</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-odd"><td><p>UB.8</p></td>
+<td><p>Ability to use Particle Filtering</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-even"><td><p>UB.9</p></td>
+<td><p>Ability to perform model-class selection/averaging</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>UB.10</p></td>
+<td><p>Ability to perform hierarchical Bayesian calibration</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-even"><td><p>UB.11</p></td>
+<td><p>Ability to perform surrogate-aided Bayesian calibration</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td><p>In Progress</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>UH.1</p></td>
+<td><p>Ability to sample from manifold</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-even"><td><p>UH.2</p></td>
+<td><p>Ability to build Reduced Order Model</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>In Progress</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>UO.1</p></td>
+<td><p>Ability to use User-Specified External UQ Engine</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-even"><td><p>UO.2</p></td>
+<td><p>Ability to use Own External FEM Application</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>UO.3</p></td>
+<td><p>Ability to use UQ Engines other than SimCenterUQ, Dakota, or UCSD-UQ</p></td>
+<td><p>UF</p></td>
+<td><p>P</p></td>
+<td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
 </tbody>
 </table>
 <div class="line-block">
-<div class="line">key:</div>
-<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
-<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
-<div class="line">Status: Implements, InProgress and Blank (i.e. not started)</div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
+<div class="line"><strong>Key:</strong></div>
+<div class="line-block">
+<div class="line"><strong>Source</strong>: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line"><strong>Priority</strong>: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line"><strong>Status</strong>: Implemented, InProgress, and Blank (i.e. not started)</div>
+<div class="line"><strong>Implementation</strong>: UM=User Manual, DM=Developer Manual, SC=Source Code</div>
+</div>
+</div>
+</div>
+<div class="section" id="rv-requirements">
+<h1>RV Requirements<a class="headerlink" href="#rv-requirements" title="Permalink to this heading">¶</a></h1>
+<table class="colwidths-given docutils align-default" id="id47">
+<caption><span class="caption-text">Requirements - Random Variables</span><a class="headerlink" href="#id47" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 50%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Source</p></th>
+<th class="head"><p>Priority</p></th>
+<th class="head"><p>Status</p></th>
+<th class="head"><p>Implementation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>RV.1</strong></p></td>
+<td><p><strong>Various Random Variable Probability Distributions</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>RV.1.1</p></td>
+<td><p>Normal</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/examples/desktop/weuq-0001/README.html">weuq-0001</a></p></td>
+</tr>
+<tr class="row-even"><td><p>RV.1.2</p></td>
+<td><p>Lognormal</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://NHERI-SimCenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/RV.html">UM</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>RV.1.3</p></td>
+<td><p>Uniform</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://NHERI-SimCenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/RV.html">UM</a></p></td>
+</tr>
+<tr class="row-even"><td><p>RV.1.4</p></td>
+<td><p>Beta</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://NHERI-SimCenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/RV.html">UM</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>RV.1.5</p></td>
+<td><p>Weibull</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://NHERI-SimCenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/RV.html">UM</a></p></td>
+</tr>
+<tr class="row-even"><td><p>RV.1.6</p></td>
+<td><p>Gumbel</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://NHERI-SimCenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/RV.html">UM</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>RV.1.7</p></td>
+<td><p>Exponential</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-even"><td><p>RV.1.8</p></td>
+<td><p>Discrete</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-odd"><td><p>RV.1.9</p></td>
+<td><p>Gamma</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-even"><td><p>RV.1.10</p></td>
+<td><p>Chi-squared</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-odd"><td><p>RV.1.11</p></td>
+<td><p>Truncated Exponential</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-even"><td><p>RV.2</p></td>
+<td><p>User-defined Distribution</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-odd"><td><p>RV.3</p></td>
+<td><p>Define Correlation Matrix</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://NHERI-SimCenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/RV.html">UM</a></p></td>
+</tr>
+<tr class="row-even"><td><p>RV.4</p></td>
+<td><p>Random Fields</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-odd"><td><p>RV.5</p></td>
+<td><p>Ability to View Graphically the density function when defining the RV</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/examples/desktop/weuq-0013/README.html">weuq-0013</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><strong>Key:</strong></div>
+<div class="line-block">
+<div class="line"><strong>Source</strong>: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line"><strong>Priority</strong>: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line"><strong>Status</strong>: Implemented, InProgress, and Blank (i.e. not started)</div>
+<div class="line"><strong>Implementation</strong>: UM=User Manual, DM=Developer Manual, SC=Source Code</div>
+</div>
 </div>
 </div>
 <div class="section" id="common-research-application-requirements">
 <h1>Common Research Application Requirements<a class="headerlink" href="#common-research-application-requirements" title="Permalink to this heading">¶</a></h1>
-<table class="colwidths-given docutils align-default" id="id14">
-<caption><span class="caption-text">Requirements - CR</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<table class="colwidths-given docutils align-default" id="id48">
+<caption><span class="caption-text">Requirements - CR</span><a class="headerlink" href="#id48" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 50%" />
@@ -1547,438 +1440,183 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><strong>CR.1</strong></p></td>
-<td><blockquote>
-<div><p>“<strong>Open-source software where developers can test new data and develop algorithms</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
+<td><p><strong>Open-source software where developers can test new data and develop algorithms</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><p>CR.1.1</p></td>
-<td><blockquote>
-<div><p>“Provide open-source applications utilizing code hosting platforms</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>e.g. GitHub”</p>
-</div></blockquote>
-</td>
+<td><p>Provide open-source applications utilizing code hosting platforms, e.g. GitHub</p></td>
 <td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<a class="reference external" href="https://github.com/NHERI-SimCenter/EE-UQ">link</a>”</p>
-</div></blockquote>
-</td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ">WE-UQ</a></p></td>
 </tr>
 <tr class="row-even"><td><p>CR.1.2</p></td>
-<td><blockquote>
-<div><p>“Assign an open-source licensce that allows free use.”</p>
-</div></blockquote>
-</td>
+<td><p>Assign an open-source license that allows free use</p></td>
 <td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/blob/master/LICENSE">link</a>”</p>
-</div></blockquote>
-</td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/blob/master/LICENSE">WE-UQ</a></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>CR.2</strong></p></td>
-<td><blockquote>
-<div><p>“<a href="#id2"><span class="problematic" id="id3">**</span></a>Ability of Practicing Engineers to use multiple coupled resources (applications</p>
-</div></blockquote>
-</td>
-<td><p>databases</p></td>
-<td><blockquote>
-<div><p>viz tools) in engineering practice**”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
+<td><p><strong>Ability to use multiple coupled resources (applications, databases, viz tools) by Practicing Engineers</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="row-even"><td><p>CR.2.1</p></td>
-<td><blockquote>
-<div><p>“Allow users to launch scientific workflows”</p>
-</div></blockquote>
-</td>
+<td><p>Allow users to launch scientific workflows</p></td>
 <td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ">WE-UQ</a></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>CR.3</strong></p></td>
-<td><blockquote>
-<div><p>“<strong>Ability to utilize resources beyond the desktop including HPC</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
+<td><p><strong>Ability to utilize resources beyond the desktop including HPC</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="row-even"><td><p>CR.3.1</p></td>
-<td><blockquote>
-<div><p>“Allow users to utilize HPC resources at TACC through DesignSafe”</p>
-</div></blockquote>
-</td>
+<td><p>Allow users to utilize HPC resources at TACC through DesignSafe</p></td>
 <td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ">WE-UQ</a></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>CR.4</strong></p></td>
-<td><blockquote>
-<div><p>“<a href="#id4"><span class="problematic" id="id5">**</span></a>Efficient use of multiple coupled and linked models requiring sharing and inter-operability of databases</p>
-</div></blockquote>
-</td>
-<td><p>computing environments</p></td>
-<td><p>networks</p></td>
-<td><p>visualization tools</p></td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
+<td><p><strong>Efficient use of multiple coupled and linked models requiring sharing and inter-operability of databases, computing environments, networks, visualization tools, and analysis systems</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="row-even"><td><p>CR.4.1</p></td>
-<td><blockquote>
-<div><p>“Identify and include external analysis systems”</p>
-</div></blockquote>
-</td>
+<td><p>Identify and include external analysis systems</p></td>
 <td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“InProgress”</p>
-</div></blockquote>
-</td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
 <td><p>_</p></td>
 </tr>
 <tr class="row-odd"><td><p>CR.4.2</p></td>
-<td><blockquote>
-<div><p>“Identify and include external databases”</p>
-</div></blockquote>
-</td>
+<td><p>Identify and include external databases</p></td>
 <td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“InProgress”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+<td><p><a class="reference external" href="https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/wind/lowRiseTPU.html">UM</a></p></td>
 </tr>
 <tr class="row-even"><td><p>CR.4.3</p></td>
-<td><blockquote>
-<div><p>“Identify and include external viz tools”</p>
-</div></blockquote>
-</td>
+<td><p>Identify and include external viz tools</p></td>
 <td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“InProgress”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/blob/master/EVENTS/IsolatedBuildingCFD/SimCenterVTKRenderingWidget.cpp">SC</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>CR.4.4</p></td>
-<td><blockquote>
-<div><p>“Identify and include external computing env”</p>
-</div></blockquote>
-</td>
+<td><p>Identify and include external computing env</p></td>
 <td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Inprogress”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
+<td><p>M</p></td>
+<td><p>Inprogress</p></td>
+<td><p>1.1.2.5.5</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>CR.5</strong></p></td>
-<td><blockquote>
-<div><p>“<strong>Tool available for download from web</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
+<td><p><strong>Tool available for download from web</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><p>CR.5.1</p></td>
-<td><blockquote>
-<div><p>“Tool downloadable from DesignSafe website”</p>
-</div></blockquote>
-</td>
+<td><p>Tool downloadable from DesignSafe website</p></td>
 <td><p>GC</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ">link</a>”</p>
-</div></blockquote>
-</td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ">WE-UQ</a></p></td>
 </tr>
 <tr class="row-even"><td><p><strong>CR.6</strong></p></td>
-<td><blockquote>
-<div><p>“<strong>Ability to benefit from programs that move research results into practice and obtain training</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
+<td><p><strong>Ability to benefit from programs that move research results into practice and obtain training</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><p>CR.6.1</p></td>
-<td><blockquote>
-<div><p>“Ability to use educational provisions to gain interdisclipinary education so as to gain expertise in earth sciences and physics</p>
-</div></blockquote>
-</td>
-<td><p>engineering mechanics</p></td>
-<td><p>geotechnical engineering</p></td>
-<td><blockquote>
-<div><p>and structural engineering in order to be qualified to perform these simulations”</p>
-</div></blockquote>
-</td>
+<td><p>Ability to use educational provisions to gain interdisciplinary education for expertise in earth sciences and physics, engineering mechanics, geotechnical engineering, and structural engineering to be qualified to perform these simulations</p></td>
+<td><p>GC</p></td>
+<td><p>D</p></td>
+<td><p>_</p></td>
 <td><p>_</p></td>
 </tr>
 <tr class="row-even"><td><p>CR.6.2</p></td>
-<td><blockquote>
-<div><p>“Documentation exists demonstrainting application usage”</p>
-</div></blockquote>
-</td>
+<td><p>Documentation exists demonstrating application usage</p></td>
 <td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
 <td><p>_</p></td>
 </tr>
 <tr class="row-odd"><td><p>CR.6.3</p></td>
-<td><blockquote>
-<div><p>“Video Exists demonstrating application usage”</p>
-</div></blockquote>
-</td>
+<td><p>Video exists demonstrating application usage</p></td>
 <td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
 <td><p>_</p></td>
 </tr>
 <tr class="row-even"><td><p>CR.6.4</p></td>
-<td><blockquote>
-<div><p>“Tool Training through online and in person training events”</p>
-</div></blockquote>
-</td>
+<td><p>Tool training through online and in-person training events</p></td>
 <td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
 <td><p>_</p></td>
 </tr>
 <tr class="row-odd"><td><p>CR.7</p></td>
-<td><blockquote>
-<div><p>“Verification Examples Exist”</p>
-</div></blockquote>
-</td>
+<td><p>Verification examples exist</p></td>
 <td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://NHERI-SimCenter.github.io/WE-UQ-Documentation/common/developer_manual/verification/desktop/verification.html">WE-UQ</a></p></td>
 </tr>
 <tr class="row-even"><td><p><strong>CR.8</strong></p></td>
-<td><blockquote>
-<div><p>“<strong>validation of proposed analytical models against existing empirical datasets</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<strong>_</strong>”</p>
-</div></blockquote>
-</td>
+<td><p><strong>Validation of proposed analytical models against existing empirical datasets</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><p>CR.8.1</p></td>
-<td><blockquote>
-<div><p>“Validation Examples Exist</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>validated against tests or other software”</p>
-</div></blockquote>
-</td>
+<td><p>Validation examples exist, validated against tests or other software</p></td>
 <td><p>GC</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“<a class="reference external" href="https://NHERI-SimCenter.github.io/EE-UQ-Documentation/common/developer_manual/verification/desktop/verification.html">link</a>”</p>
-</div></blockquote>
-</td>
+<td><p>M</p></td>
+<td><p>_</p></td>
+<td></td>
 </tr>
 <tr class="row-even"><td><p>CR.9</p></td>
-<td><blockquote>
-<div><p>“Tool to allow user to load and save user inputs”</p>
-</div></blockquote>
-</td>
+<td><p>Tool to allow users to load and save user inputs</p></td>
 <td><p>SP</p></td>
-<td><blockquote>
-<div><p>“M”</p>
-</div></blockquote>
-</td>
-<td><blockquote>
-<div><p>“Implemented”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><strong>core</strong></p></td>
 </tr>
 <tr class="row-odd"><td><p>CR.10</p></td>
-<td><blockquote>
-<div><p>“Installer which installs application and all needed software”</p>
-</div></blockquote>
-</td>
+<td><p>Installer which installs the application and all needed software</p></td>
 <td><p>UF</p></td>
-<td><blockquote>
-<div><p>“D”</p>
-</div></blockquote>
-</td>
-<td><p>_</p></td>
-<td><blockquote>
-<div><p>“<a class="reference external" href="https://NHERI-SimCenter.github.io/WE-UQ-Documentation/common/user_manual/installation/desktop/installation.html">link</a>”</p>
-</div></blockquote>
-</td>
+<td><p>D</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://NHERI-SimCenter.github.io/WE-UQ-Documentation/common/user_manual/installation/desktop/installation.html">WE-UQ</a></p></td>
 </tr>
 </tbody>
 </table>
 <div class="line-block">
-<div class="line">key:</div>
-<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
-<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
-<div class="line">Status: Implements, InProgress and Blank (i.e. not started)</div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
+<div class="line"><strong>Key:</strong></div>
+<div class="line-block">
+<div class="line"><strong>Source</strong>: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line"><strong>Priority</strong>: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line"><strong>Status</strong>: Implemented, InProgress, and Blank (i.e. not started)</div>
+<div class="line"><strong>Implementation</strong>: UM=User Manual, DM=Developer Manual, SC=Source Code</div>
+</div>
 </div>
 </div>
 

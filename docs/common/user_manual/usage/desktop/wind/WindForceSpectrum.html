@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.4.9. Wind Force Spectrum &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>2.4.10. Wind Force Spectrum &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -16,9 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -42,6 +40,7 @@
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/design-tabs.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
@@ -51,7 +50,7 @@
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
     <link rel="next" title="2.5. FEM: Finite Element Method" href="../FEM.html" />
-    <link rel="prev" title="2.4.8. Experimental Wind Force (Time Series Input)" href="ExperimentalWindForce.html" />
+    <link rel="prev" title="2.4.9. Experimental Wind Pressure" href="ExperimentalWindPressure.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -135,10 +134,11 @@
 <li class="toctree-l3"><a class="reference internal" href="lowRiseTPU.html">2.4.5. Data from Tokyo Polytechnic University</a></li>
 <li class="toctree-l3"><a class="reference internal" href="windTunnelExp.html">2.4.6. Wind Tunnel Experiment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="WeUQExisting.html">2.4.7. Multiple Existing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ExperimentalWindForce.html">2.4.8. Experimental Wind Force (Time Series Input)</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.9. Wind Force Spectrum</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#user-inputs">2.4.9.1. User Inputs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#wind-force-spectrum-file">2.4.9.2. Wind Force Spectrum File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ExperimentalWindForce.html">2.4.8. Experimental Wind Force</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ExperimentalWindPressure.html">2.4.9. Experimental Wind Pressure</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.10. Wind Force Spectrum</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#user-inputs">2.4.10.1. User Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wind-force-spectrum-file">2.4.10.2. Wind Force Spectrum File</a></li>
 </ul>
 </li>
 </ul>
@@ -218,7 +218,7 @@
         
           <li><a href="WindEvents.html"><span class="section-number">2.4. </span>EVT: Wind Events</a> &raquo;</li>
         
-      <li><span class="section-number">2.4.9. </span>Wind Force Spectrum</li>
+      <li><span class="section-number">2.4.10. </span>Wind Force Spectrum</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -238,17 +238,17 @@
            <div itemprop="articleBody">
             
   <div class="section" id="wind-force-spectrum">
-<span id="lblwindforcespectrum"></span><h1><span class="section-number">2.4.9. </span>Wind Force Spectrum<a class="headerlink" href="#wind-force-spectrum" title="Permalink to this heading">¶</a></h1>
+<span id="lblwindforcespectrum"></span><h1><span class="section-number">2.4.10. </span>Wind Force Spectrum<a class="headerlink" href="#wind-force-spectrum" title="Permalink to this heading">¶</a></h1>
 <p>This application generates stochastic wind force time histories based on the cross-power spectral density (CPSD) matrix which the user derives from the wind tunnel data. This algorithm follows the implementation details in <a class="reference internal" href="#duarte2023" id="id1"><span>[Duarte2023]</span></a> and the theory manual is available <a class="reference internal" href="../../../../technical_manual/desktop/WEUQ/dataInformedStochasticWind.html#lbldatainformedwindtheory"><span class="std std-ref">here</span></a>.</p>
 <div class="align-center figure" id="id4">
 <a class="reference internal image-reference" href="../../../../../_images/weuqWindForceSpectrum0.png"><img alt="../../../../../_images/weuqWindForceSpectrum0.png" src="../../../../../_images/weuqWindForceSpectrum0.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.9.1 </span><span class="caption-text">Generating full-scale wind time history from a model-scale cross-power spectrum density (CPSD) function</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.10.1 </span><span class="caption-text">Generating full-scale wind time history from a model-scale cross-power spectrum density (CPSD) function</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="user-inputs">
-<h2><span class="section-number">2.4.9.1. </span>User Inputs<a class="headerlink" href="#user-inputs" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">2.4.10.1. </span>User Inputs<a class="headerlink" href="#user-inputs" title="Permalink to this heading">¶</a></h2>
 <div class="align-center figure" id="id5">
 <span id="fig-experimentalwind1"></span><img alt="../../../../../_images/weuqExperimentalWindForces.png" src="../../../../../_images/weuqExperimentalWindForces.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.9.1.1 </span><span class="caption-text">Option to import experimental wind force time history</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.10.1.1 </span><span class="caption-text">Option to import experimental wind force time history</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>The input parameters for the application interface are provided below.</p>
 <ul class="simple">
@@ -263,7 +263,7 @@
 <p>The <strong>Full Scale Building Geometry</strong> and the <strong>Units</strong> are specified in the GI tab. The correct <strong>number of stories</strong> should also be provided.</p>
 <div class="align-center figure" id="id6">
 <span id="fig-experimentalwind5"></span><a class="reference internal image-reference" href="../../../../../_images/weuqExperimentalWindForces5.png"><img alt="../../../../../_images/weuqExperimentalWindForces5.png" src="../../../../../_images/weuqExperimentalWindForces5.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.9.1.2 </span><span class="caption-text">GI tab (Only the variables in the red box are relevant to the current module.)</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.10.1.2 </span><span class="caption-text">GI tab (Only the variables in the red box are relevant to the current module.)</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -271,10 +271,10 @@
 </div>
 </div>
 <div class="section" id="wind-force-spectrum-file">
-<h2><span class="section-number">2.4.9.2. </span>Wind Force Spectrum File<a class="headerlink" href="#wind-force-spectrum-file" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">2.4.10.2. </span>Wind Force Spectrum File<a class="headerlink" href="#wind-force-spectrum-file" title="Permalink to this heading">¶</a></h2>
 <div class="align-center figure" id="id7">
 <span id="fig-experimentalwind6"></span><a class="reference internal image-reference" href="../../../../../_images/weuqExperimentalWindForces6.png"><img alt="../../../../../_images/weuqExperimentalWindForces6.png" src="../../../../../_images/weuqExperimentalWindForces6.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.9.2.1 </span><span class="caption-text">Schematic representation of the building and the loads, and the coordinate system (<a class="reference internal" href="#duarte2023" id="id3"><span>[Duarte2023]</span></a> )</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.10.2.1 </span><span class="caption-text">Schematic representation of the building and the loads, and the coordinate system (<a class="reference internal" href="#duarte2023" id="id3"><span>[Duarte2023]</span></a> )</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>The wind force spectra obtained from the experimental data should be provided either as a MATLAB binary (.mat) or json (.json) file. The following variables (or keys) need to be included (<code class="docutils literal notranslate"><span class="pre">nfreq</span></code>: number of frequency discretization, <code class="docutils literal notranslate"><span class="pre">ncomp</span></code>: number of components of interest, equal to number of floor times 3)</p>
 <ul class="simple">
@@ -298,11 +298,11 @@
 </ul>
 <div class="align-center figure" id="id8">
 <span id="fig-spectrumwind3"></span><a class="reference internal image-reference" href="../../../../../_images/weuqWindForceSpectrum1.png"><img alt="../../../../../_images/weuqWindForceSpectrum1.png" src="../../../../../_images/weuqWindForceSpectrum1.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.9.2.2 </span><span class="caption-text">Example of information inside a matlab binary file (.mat) (<code class="docutils literal notranslate"><span class="pre">nfloor</span></code> = 25, <code class="docutils literal notranslate"><span class="pre">ntimesteps</span></code> = 20,000, units: meter, Newton, second)</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.10.2.2 </span><span class="caption-text">Example of information inside a matlab binary file (.mat) (<code class="docutils literal notranslate"><span class="pre">nfloor</span></code> = 25, <code class="docutils literal notranslate"><span class="pre">ntimesteps</span></code> = 20,000, units: meter, Newton, second)</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id9">
 <span id="fig-spectrumwind4"></span><a class="reference internal image-reference" href="../../../../../_images/weuqWindForceSpectrum2.png"><img alt="../../../../../_images/weuqWindForceSpectrum2.png" src="../../../../../_images/weuqWindForceSpectrum2.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.9.2.3 </span><span class="caption-text">Example of information inside a Json file (.json) (<code class="docutils literal notranslate"><span class="pre">nfloor</span></code> = 25, <code class="docutils literal notranslate"><span class="pre">ntimesteps</span></code> = 20,000, units: meter, Newton, second)</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.10.2.3 </span><span class="caption-text">Example of information inside a Json file (.json) (<code class="docutils literal notranslate"><span class="pre">nfloor</span></code> = 25, <code class="docutils literal notranslate"><span class="pre">ntimesteps</span></code> = 20,000, units: meter, Newton, second)</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="citation">
 <dt class="label" id="duarte2023"><span class="brackets">Duarte2023</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id3">3</a>)</span></dt>

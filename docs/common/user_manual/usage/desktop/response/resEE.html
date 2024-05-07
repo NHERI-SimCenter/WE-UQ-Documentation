@@ -16,9 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -42,6 +40,7 @@
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/design-tabs.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
@@ -222,7 +221,7 @@
             
   <div class="section" id="res-results">
 <span id="lblgi"></span><h1><span class="section-number">2.8. </span>RES: Results<a class="headerlink" href="#res-results" title="Permalink to this heading">¶</a></h1>
-<p>A successful run or download of a job that ran successfully at <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a> will result in 2 tabbed widgets being displayed in the results panel.  The first tab, as shown in <a class="reference internal" href="#figresultssummary"><span class="std std-numref">Fig. 2.8.1</span></a> shows the summary statistics: <strong>mean</strong>, <strong>stdDev</strong>, and <strong>kurtosis</strong>.</p>
+<p>A successful run or download of a job that ran successfully at <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a> will result in 2 tabbed widgets being displayed in the results panel.  The first tab, as shown in <a class="reference internal" href="#figresultssummary"><span class="std std-numref">Fig. 2.8.1</span></a> shows the summary statistics, e.g. <strong>mean</strong> and <strong>stdDev</strong>.</p>
 <div class="align-center figure" id="id1">
 <span id="figresultssummary"></span><img alt="../../../../../_images/resultsSummary.png" src="../../../../../_images/resultsSummary.png" />
 <p class="caption"><span class="caption-number">Fig. 2.8.1 </span><span class="caption-text">Results summary.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
@@ -233,10 +232,13 @@ columns with left and right mouse buttons in the table below the
 graphic, the information in the graph is changed. Selecting the left
 mouse button changes the Y axis, the right mouse changes the X
 axis. If the same column is selected using both left and right keys,
-either the CDF and PDF is displayed. If the last mouse press was with the left
+either the cumulative density function (CDF) and probability density function (PDF) is displayed. If the last mouse press was with the left
 button, the PDF will be displayed; if the last mouse press was the right one, the CDF
 will be displayed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Regarding the columns in the table below the figure: You will see a column for each random variable the workflow came across and then the columns for the response quantities. There may be more random variables than you specified. This is because certain applications the user selected may introduce additional random variables for the UQ engine to consider.</p>
+</div>
 <div class="align-center figure" id="id2">
 <span id="figresultsdata"></span><img alt="../../../../../_images/resultsData.png" src="../../../../../_images/resultsData.png" />
 <p class="caption"><span class="caption-number">Fig. 2.8.2 </span><span class="caption-text">Results presented both graphically and in tabular form.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>

@@ -16,9 +16,7 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
@@ -42,6 +40,7 @@
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/design-tabs.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
@@ -208,9 +207,17 @@
             
   <div class="section" id="release-notes">
 <span id="lbl-release-eeuq"></span><h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this heading">¶</a></h1>
-<div class="section" id="version-3-4-0-current">
-<h2>Version 3.4.0 (Current)<a class="headerlink" href="#version-3-4-0-current" title="Permalink to this heading">¶</a></h2>
-<p><strong>Release date:</strong> September. 2023</p>
+<div class="section" id="version-3-5-0-current">
+<h2>Version 3.5.0 (Current)<a class="headerlink" href="#version-3-5-0-current" title="Permalink to this heading">¶</a></h2>
+<p><strong>Release date:</strong> March. 2024</p>
+<p><strong>Highlights</strong></p>
+<ol class="arabic simple">
+<li><p>Physics-based ground motion simulations generate by the <a class="reference external" href="https://sites.uw.edu/pnet/m9-simulations/">M9 project</a>.</p></li>
+</ol>
+</div>
+<div class="section" id="version-3-4-0">
+<h2>Version 3.4.0<a class="headerlink" href="#version-3-4-0" title="Permalink to this heading">¶</a></h2>
+<p><strong>Release date:</strong> October 2023</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
 <li><p>Multi Fidelity Monte Carlo (MFMC) method</p></li>
@@ -218,22 +225,22 @@
 </div>
 <div class="section" id="version-3-3-0">
 <h2>Version 3.3.0<a class="headerlink" href="#version-3-3-0" title="Permalink to this heading">¶</a></h2>
-<p><strong>Release date:</strong> March. 2023</p>
+<p><strong>Release date:</strong> March 2023</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
-<li><p>Multi model uncertainty propagation options for Modeling (SIM) and Analysis (FEM) tabs</p></li>
+<li><p>Multi-model uncertainty propagation options for Modeling (SIM) and Analysis (FEM) tabs</p></li>
 <li><p>Gaussian process surrogate modeling</p></li>
 </ol>
 </div>
 <div class="section" id="version-3-2-0">
 <h2>Version 3.2.0<a class="headerlink" href="#version-3-2-0" title="Permalink to this heading">¶</a></h2>
-<p><strong>Release date:</strong> Sept. 2022</p>
+<p><strong>Release date:</strong> September 2022</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
 <li><dl class="simple">
 <dt><strong>New Structural Information Model Generators</strong></dt><dd><ol class="loweralpha simple">
 <li><p>Concrete Building Model: automatic concrete building design and model generation</p></li>
-<li><p>MDOF-LU: MDOF shear building model built using user supplied Hazus data</p></li>
+<li><p>MDOF-LU: MDOF shear building model built using user-supplied Hazus data</p></li>
 </ol>
 </dd>
 </dl>
@@ -246,7 +253,7 @@
 <div class="section" id="version-3-1-0">
 <h2>Version 3.1.0<a class="headerlink" href="#version-3-1-0" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> July 2022</p>
-<p>** Highlights**</p>
+<p><strong>Highlights</strong></p>
 <ol class="arabic simple">
 <li><p>New Surrogate option in defining spectrum in PEER event</p></li>
 <li><p>Fixing the radio button in Multiple Event (uncheck is now enabled)</p></li>
@@ -255,7 +262,7 @@
 </div>
 <div class="section" id="version-3-0-0">
 <h2>Version 3.0.0<a class="headerlink" href="#version-3-0-0" title="Permalink to this heading">¶</a></h2>
-<p><strong>Release date:</strong> March. 2022</p>
+<p><strong>Release date:</strong> March 2022</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
 <li><p>New UQ engine: PLoM</p></li>
@@ -273,7 +280,7 @@
 </ol>
 <blockquote>
 <div><ol class="loweralpha simple">
-<li><p>Seismic hazard disaggregation at given return period and user-defined IM</p></li>
+<li><p>Seismic hazard disaggregation at a given return period and user-defined IM</p></li>
 <li><p>Target conditional mean spectrum (ASCE7) calculation based on disaggregated mean magnitude and distance</p></li>
 <li><p>Ground motion selection and scaling to the disaggregation-based target spectrum</p></li>
 </ol>
@@ -290,16 +297,16 @@
 </div>
 <div class="section" id="version-2-2-7">
 <h2>Version 2.2.7<a class="headerlink" href="#version-2-2-7" title="Permalink to this heading">¶</a></h2>
-<p><strong>Release date:</strong> Jan. 2022</p>
+<p><strong>Release date:</strong> January 2022</p>
 <p><strong>Highlights</strong></p>
-<p>#. New Options added for PEER NGA Event:
-Specifying the fault type, pulse-like feature, and duration filter in ground motion selection
-Adding the option of “Geometric” suite average for the PEER NGA West2 ground motion selection
-#. In User Defined EDP fixed a bug of using user-specified EDP names</p>
+<ol class="arabic simple">
+<li><p>New Options added for PEER NGA Event: Specifying the fault type, pulse-like feature, and duration filter in ground motion selection Adding the option of “Geometric” suite average for the PEER NGA West2 ground motion selection</p></li>
+<li><p>In User Defined EDP fixed a bug of using user-specified EDP names</p></li>
+</ol>
 </div>
 <div class="section" id="version-2-2-6">
 <h2>Version 2.2.6<a class="headerlink" href="#version-2-2-6" title="Permalink to this heading">¶</a></h2>
-<p><strong>Release date:</strong> Dec. 22nd, 2021</p>
+<p><strong>Release date:</strong> December 22, 2021</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
 <li><p>Specifying the fault type, pulse-like feature, and duration filter in ground motion selection</p></li>
@@ -316,15 +323,17 @@ Adding the option of “Geometric” suite average for the PEER NGA West2 ground
 </div>
 <div class="section" id="version-2-2-5">
 <h2>Version 2.2.5<a class="headerlink" href="#version-2-2-5" title="Permalink to this heading">¶</a></h2>
-<p><strong>Release date:</strong> Oct. 4th, 2021</p>
-<p><strong>Highlights</strong>
-#. new options for NGA selection
-#. option to select motions from user flat file
-#. changing look and feel for message box location</p>
+<p><strong>Release date:</strong> October 4, 2021</p>
+<p><strong>Highlights</strong></p>
+<ol class="arabic simple">
+<li><p>new options for NGA selection</p></li>
+<li><p>option to select motions from a user flatfile</p></li>
+<li><p>changing the look and feel of the message box location</p></li>
+</ol>
 </div>
 <div class="section" id="version-2-2-0">
 <h2>Version 2.2.0<a class="headerlink" href="#version-2-2-0" title="Permalink to this heading">¶</a></h2>
-<p><strong>Release date:</strong> Nov 6, 2020</p>
+<p><strong>Release date:</strong> November 6, 2020</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
 <li><p>Site response now allows for random fields in soil layers for soil properties</p></li>
@@ -339,7 +348,7 @@ Adding the option of “Geometric” suite average for the PEER NGA West2 ground
 <ol class="arabic simple">
 <li><p>Added Sensitivity and Reliability</p></li>
 <li><p>Added new spectrum options for peerNGA</p></li>
-<li><p>Modified FEM interface provides different damping options and more analysis options to user</p></li>
+<li><p>Modified FEM interface provides different damping options and more analysis options to users</p></li>
 </ol>
 </div>
 <div class="section" id="version-2-0-0">
@@ -348,7 +357,7 @@ Adding the option of “Geometric” suite average for the PEER NGA West2 ground
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
 <li><p>More UQ Sampling capabilities,</p></li>
-<li><p>another stocahstic loading module</p></li>
+<li><p>another stochastic loading module</p></li>
 <li><p>calling PEER NGA to select and download files</p></li>
 </ol>
 </div>
