@@ -129,7 +129,11 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_manual/desktop/WEUQ/scalingWindTunnelData.html">3. Scaling Wind Tunnel Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_manual/desktop/WEUQ/TinF.html">4. Turbulence Inflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_manual/desktop/WEUQ/dataInformedStochasticWind.html">5. Wind-tunnel informed stochastic wind load</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -207,7 +211,7 @@
             
   <div class="section" id="requirements">
 <span id="lblrequirements"></span><h1>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading">¶</a></h1>
-<p>The purpose of presenting these requirements is to inform the community on the present capabilities of the WE-UQ app and features that could be added. The original set of requirements have come from a set of grand challenge reports, <strong>GC</strong>. These original requirements have been broken into a smaller set of deliverable features by the senior faculty associated with the project, <strong>SP</strong>. Additional requirements have come from users, <strong>U</strong> See section <span class="xref std std-ref">features</span> if you have additional features you would like to see.</p>
+<p>The purpose of presenting these requirements is to inform the community on the present capabilities of the WE-UQ app and features that could be added. The original set of requirements have come from a set of grand challenge reports, <strong>GC</strong>. These original requirements have been broken into a smaller set of deliverable features by the senior faculty associated with the project, <strong>SP</strong>. Additional requirements have come from users, <strong>U</strong> See section <a class="reference internal" href="../user_manual/bugs.html#features"><span class="std std-ref">Feature Requests</span></a> if you have additional features you would like to see.</p>
 <div class="section" id="quofem-requirements">
 <h2>quoFEM Requirements<a class="headerlink" href="#quofem-requirements" title="Permalink to this heading">¶</a></h2>
 <table class="colwidths-given docutils align-default" id="id39">
@@ -221,6 +225,118 @@
 <col style="width: 10%" />
 </colgroup>
 <tbody>
+<tr class="row-odd"><td><p>QF.1.1</p></td>
+<td><p>Ability to use Forward Propagtion methods listed in UQ under UF</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-even"><td><p>QF.1.2</p></td>
+<td><p>Ability to use Random Variable Distributions defeined in RV</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-odd"><td><p>QF.1.3</p></td>
+<td><p>Ability to use Reliability Methods listed in UQ under UR</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-even"><td><p>QF.1.4</p></td>
+<td><p>Ability to use Global Sensitivity Methods listed in UQ under UG</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-odd"><td><p>QF.1.5</p></td>
+<td><p>Ability to both use and create surrogates listed in UQ under US</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-even"><td><p>QF.1.6</p></td>
+<td><p>Ability to use High Dimensional UQ listed in UQ under UH</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>InProgress</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-odd"><td><p>QF.1.7</p></td>
+<td><p>Ability to use Bayesian Calibration methods listed in UQ under UB</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-even"><td><p>QF.1.8</p></td>
+<td><p>Ability to use Nonlinear Least Squares  methods listed in UQ under UN</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-odd"><td><p>QF.2.1</p></td>
+<td><p>Ability to use OpenSees</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0011//">qfem-0011/</a></p></td>
+</tr>
+<tr class="row-even"><td><p>QF.2.2</p></td>
+<td><p>Ability to use OpenSeesPy</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-odd"><td><p>QF.2.3</p></td>
+<td><p>Ability to Incorporate User Own Applications</p></td>
+<td><p>UF</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples//qfem-0005//">qfem-0005/</a></p></td>
+</tr>
+<tr class="row-even"><td><p>QF.3.1</p></td>
+<td><p>Ability to view individual sample results</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><strong>core</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>QF.3.2</p></td>
+<td><p>Ability to graphically view the results to show distribution in response</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><strong>core</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>QF.3.3</p></td>
+<td><p>Ability to view statistical measures of response</p></td>
+<td><p>SP</p></td>
+<td><p>M</p></td>
+<td><p>Implemented</p></td>
+<td><p><strong>core</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>QF.4.1</p></td>
+<td><p>Run application from command line, include option to run remotely</p></td>
+<td><p>UF</p></td>
+<td><p>D</p></td>
+<td><p>_</p></td>
+<td><p>_</p></td>
+</tr>
+<tr class="row-even"><td><p>QF.7.1</p></td>
+<td><p>Application to Provide Common SimCenter Research Application Requirements listed in CR</p></td>
+<td><p>GC</p></td>
+<td><p>M</p></td>
+<td><p>InProgresss</p></td>
+<td><p>_</p></td>
+</tr>
 </tbody>
 </table>
 <div class="line-block">

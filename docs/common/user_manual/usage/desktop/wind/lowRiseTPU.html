@@ -140,8 +140,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.6. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../response/EDP.html">2.7. EDP: Demand Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../response/EDP.html">2.6. EDP: Demand Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.7. RV: Random Variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../response/resEE.html">2.8. RES: Results</a></li>
 </ul>
 </li>
@@ -153,7 +153,11 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/WEUQ/scalingWindTunnelData.html">3. Scaling Wind Tunnel Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/WEUQ/TinF.html">4. Turbulence Inflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/WEUQ/dataInformedStochasticWind.html">5. Wind-tunnel informed stochastic wind load</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -236,18 +240,18 @@
   <div class="section" id="data-from-tokyo-polytechnic-university">
 <h1><span class="section-number">2.4.5. </span>Data from Tokyo Polytechnic University<a class="headerlink" href="#data-from-tokyo-polytechnic-university" title="Permalink to this heading">¶</a></h1>
 <p>For this event type, full-scale floor loads are generated utilizing wind tunnel data made available by Tokyo Polytechnic University, specifically their <a class="reference external" href="http://wind.arch.t-kougei.ac.jp/system/eng/contents/code/tpu">TPU Aerodynamic Database</a>. The TPU Aerodynamic database provides a number of databases. Currently, this tool utilizes data provided for <a class="reference external" href="http://www.wind.arch.t-kougei.ac.jp/info_center/windpressure/lowrise/mainpage.html">Low Rise Buildings Without Eaves</a>. This database provides wind tunnel data of wind loads on low-rise buildings with gable, hip, and flat roofs. Information on the data and how it was obtained is provided in their <a class="reference external" href="http://www.wind.arch.t-kougei.ac.jp/info_center/windpressure/lowrise/Introductionofthedatabase.pdf">documentation</a>. The important wind field information: The turbulence density at a height of 10cm was about 0.25.  The test mean wind velocity at this height was about 7.4m/s, corresponding to about 22m/s at a height of 10m in full scale. The tests were performed on a limited number of buildings with different aspect ratios and wind coming from different angles on the building.</p>
-<p>As will be discussed in the theory section, the wind loads are obtained from the pressure tap data by determining a length factor and a velocity factor. The length factor is determined from the building height. The forces, unlike in DEDM-HRP, are determined from the building dimensions provided in the general information sheet and the length and velocity factors.</p>
+<p>As will be discussed in the theory section, the wind loads are obtained from the pressure tap data by determining a length factor and a velocity factor. The length factor is determined by the building height. The forces, unlike in DEDM-HRP, are determined from the building dimensions provided in the general information sheet and the length and velocity factors.</p>
 <div class="align-center figure" id="id1">
 <span id="fig-lowrise-tpu"></span><img alt="../../../../../_images/lowRiseTPU.png" src="../../../../../_images/lowRiseTPU.png" />
 <p class="caption"><span class="caption-number">Fig. 2.4.5.1 </span><span class="caption-text">Low rise TPU wind loading event.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>Inputs for this event type, as shown in figure <a class="reference internal" href="#fig-lowrise-tpu"><span class="std std-numref">Fig. 2.4.5.1</span></a> requires the user to specify which of the following tests to use:</p>
+<p>Inputs for this event type, as shown in figure <a class="reference internal" href="#fig-lowrise-tpu"><span class="std std-numref">Fig. 2.4.5.1</span></a> require the user to specify which of the following tests to use:</p>
 <ol class="arabic simple">
 <li><p>The roof type (currently only <strong>flat</strong> is supported).</p></li>
-<li><p>One of four height to breadth ratio options.</p></li>
-<li><p>One of three depth to breadth ratios.</p></li>
+<li><p>One of four height-to-breadth ratio options.</p></li>
+<li><p>One of three depth-to-breadth ratios.</p></li>
 <li><p>A roof pitch.</p></li>
-<li><p>The angle of incidence, 0 through 90 in 15 degree increments.</p></li>
+<li><p>The angle of incidence, 0 through 90 in 15-degree increments.</p></li>
 <li><p>Mean Wind Speed: The wind speed provided is used in determining the velocity factor and the applied loads.</p></li>
 </ol>
 <p>Random Variables: For this event, the wind speed can be a random variable.</p>

@@ -141,7 +141,11 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/WEUQ/scalingWindTunnelData.html">3. Scaling Wind Tunnel Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/WEUQ/TinF.html">4. Turbulence Inflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/WEUQ/dataInformedStochasticWind.html">5. Wind-tunnel informed stochastic wind load</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -232,20 +236,20 @@
 </pre></div>
 </div>
 <p>Ensure the output indicates Python 3.9 and <cite>machine=’x86_64’</cite>, as shown in the screenshot below. If not, proceed to install Python 3.9 x86.</p>
-<div class="align-center figure" id="id11">
+<div class="align-center figure" id="id9">
 <a class="reference internal image-reference" href="../../../../_images/pythonKernel.png"><img alt="../../../../_images/pythonKernel.png" src="../../../../_images/pythonKernel.png" style="width: 75%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.1.1 </span><span class="caption-text">Python: Kernel Version</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.1.1 </span><span class="caption-text">Python: Kernel Version</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>1.</strong> Visit <a class="reference external" href="https://www.python.org/downloads/macos/">Python.org</a> and download the <strong>macOS 64-bit Intel-only installer</strong> for Python 3.9.</p>
-<div class="align-center figure" id="id12">
+<div class="align-center figure" id="id10">
 <img alt="../../../../_images/pythonDownload.png" src="../../../../_images/pythonDownload.png" />
-<p class="caption"><span class="caption-number">Fig. 1.2.1.2 </span><span class="caption-text">Python: python.org MacOS Download Page</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.1.2 </span><span class="caption-text">Python: python.org MacOS Download Page</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>2.</strong> Run the installer. Upon completion, a folder with several files will open, as shown in the figure below. Execute <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Shell</span> <span class="pre">Profile.command.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">CertificateCommand.sh</span></code> by double-clicking each.</p>
 <blockquote>
-<div><div class="align-center figure" id="id13">
+<div><div class="align-center figure" id="id11">
 <a class="reference internal image-reference" href="../../../../_images/pythonInstallShell.png"><img alt="../../../../_images/pythonInstallShell.png" src="../../../../_images/pythonInstallShell.png" style="width: 75%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.1.3 </span><span class="caption-text">Python: Folder Displayed at Conclusion of Install</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.1.3 </span><span class="caption-text">Python: Folder Displayed at Conclusion of Install</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 <p><strong>3.</strong> Install additional packages via the <strong>nheri_simcenter</strong> package by starting a Terminal window and type the following command:</p>
@@ -258,15 +262,15 @@
 <ol class="arabic simple">
 <li><p>If you forget to invoke the <code class="docutils literal notranslate"><span class="pre">UpdateShellProfile.command.sh</span></code> script at the end of the install, you can always execute the correct shell file later to update the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> variable to point to the Python application.</p></li>
 </ol>
-<p>On Linux systems, the shell is the program that takes commands from the keyboard that you enter in the terminal window and passes them to the operating system to perform by invoking applications and passing data between applications. In the good old days, it was the only interface available to the user, i.e., there was no such thing as Finder! There are a number of shell programs that can be installed and made available to you. The most popular is the <strong>bash</strong> shell, the up and coming one is the <strong>Z</strong> shell. Power MacOS users will write shell scripts to do many many useful things. By default the applications that the shell program will invoke are limited to applications in a few specific directories that are defined in the users <code class="docutils literal notranslate"><span class="pre">PATH</span></code>. Users can modify this path by editing files that the shell program will read from everytime the program is started.</p>
-<p>When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of  some of the external applications that you have installed as <strong>OpenSees</strong> and <strong>Dakota</strong> do not provide installers that automatically do this when they are installed. Other applications, like <strong>Tcl</strong> provide scripts that you invoke to do it. In short you have to edit the file appropriate to the shell you are using.</p>
+<p>On Linux systems, the shell is the program that takes commands from the keyboard that you enter in the terminal window and passes them to the operating system to perform by invoking applications and passing data between applications. In the good old days, it was the only interface available to the user, i.e., there was no such thing as Finder! There are a number of shell programs that can be installed and made available to you. The most popular is the <strong>bash</strong> shell, and the up-and-coming one is the <strong>Z</strong> shell. Power MacOS users will write shell scripts to do many useful things. By default, the applications that the shell program will invoke are limited to applications in a few specific directories that are defined in the user’s <code class="docutils literal notranslate"><span class="pre">PATH</span></code>. Users can modify this path by editing files that the shell program will read from every time the program is started.</p>
+<p>When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of some of the external applications that you have installed as <strong>OpenSees</strong> and <strong>Dakota</strong> do not provide installers that automatically do this when they are installed. Other applications, like <strong>Tcl</strong> provide scripts that you invoke to do it. In short, you have to edit the file appropriate to the shell you are using.</p>
 <p>To find which shell program you are using when you issue commands inside the terminal window, type the following:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>env<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>SHELL
 </pre></div>
 </div>
 <p>If the result is <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code> you will need to edit the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file or the <code class="docutils literal notranslate"><span class="pre">bash_profile</span></code> file. If the result is <code class="docutils literal notranslate"><span class="pre">/bin/zsh</span></code> you will need to edit the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.zprofile</span></code>. Typically, the <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code> or the <code class="docutils literal notranslate"><span class="pre">.zprofile</span></code> file is the one to edit as by design these will invoke the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file. If in doubt, look for these files in your home directory and see which of these other installers have modified.</p>
 <ol class="arabic simple" start="2">
-<li><p>Python 3.10 from python.org will also work, though there is no x86 installer. The reason we do not recommend it’s usage is that there is additional settings that need to be modified in the application under the Preferences tab as that python package has a different mechanism for invoking the x86 version, specifically <strong>python3-intel64</strong>.</p></li>
+<li><p>Python 3.10 from python.org will also work, though there is no x86 installer. The reason we do not recommend its usage is that there are additional settings that need to be modified in the application under the Preferences tab as that python package has a different mechanism for invoking the x86 version, specifically <strong>python3-intel64</strong>.</p></li>
 </ol>
 </div>
 </div>
@@ -275,16 +279,16 @@
 <p>This version of the WE-UQ app uses <em>OpenFOAM</em> for pre-processing the CFD model. At the backend, the mesh generation and visualization in the GUI utilize <em>OpenFOAM-10</em> built-in meshing tools.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The packaged distribution of OpenFOAM is only available for Linux systems. To install OpenFOAM on macOS, the user needs to use  Docker for Mac. Docker will provide a virtual environment for running Linux applications on macOS.</p>
+<p>The packaged distribution of OpenFOAM is only available for Linux systems. To install OpenFOAM on macOS, the user needs to use Docker for Mac. Docker will provide a virtual environment for running Linux applications on macOS.</p>
 </div>
 <p>To install OpenFOAM-10 on macOS, follow the instructions in <a class="reference external" href="https://openfoam.org/download/10-macos/">OpenFOAM for macOS</a> .</p>
 </div>
 <div class="section" id="download-the-application">
 <h2><span class="section-number">1.2.4. </span><strong>Download the Application</strong><a class="headerlink" href="#download-the-application" title="Permalink to this heading">¶</a></h2>
 <p>To download the WE-UQ app, navigate to the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ">WE-UQ Download</a> page which should resemble <code class="xref std std-numref docutils literal notranslate"><span class="pre">figDownload-WE</span></code>. The download page contains a list of downloadable files and directories.</p>
-<div class="align-center figure" id="id17">
+<div class="align-center figure" id="id15">
 <span id="id6"></span><img alt="../../../../_images/weDownload.png" src="../../../../_images/weDownload.png" />
-<p class="caption"><span class="caption-number">Fig. 1.2.4.4 </span><span class="caption-text">WE-UQ download page.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.4.4 </span><span class="caption-text">WE-UQ download page.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <p>Click on the file with a name ending with <strong>Mac_Download.dmg</strong> to download the WE-UQ app. In the pop-up window, click on the <strong>Download</strong> button in the bottom right corner. After the download is completed, open the dmg file and <strong>copy</strong> the WE-UQ app <strong>to a location in your filesystem</strong>.</p>
 <div class="admonition note">
@@ -297,28 +301,24 @@
 <p>Once the installation procedure has been completed, it is a good practice to run some basic checks. Navigate to the location where you placed the application and open it by running the WE-UQ.exe executable.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>SimCenter apps are code-signed and notarized, but because they are not downloaded from the operating system’s app store, they may not be recognized as safe applications. Depending on your security settings, when you start a SimCenter app for the first time, your operating system may show a dialog box indicating it is unsafe. If this dialog appears, choose the cancel button. Try to start the app again, this time by right clicking on it and selecting open.</p>
-<p>If the app still fails to open. You need to go to System Settings-&gt;Privacy and Security. Under the Security section you need to at least temprarily select the option to allow applications downloaded from the <strong>App Store and Identified Developers</strong>. With this schecked try again. If it fails again, go back to System Settings-&gt;Privacy and Security. Just below the section you just checked, there should be some text about why the app was stopped and an option to <a href="#id9"><span class="problematic" id="id10">**</span></a>Open Anayway” , as shown in figure below. Click on the button and the app should start.</p>
+<p>SimCenter apps are code-signed and notarized, but because they are not downloaded from the operating system’s app store, they may not be recognized as safe applications. Depending on your security settings, when you start a SimCenter app for the first time, your operating system may show a dialog box indicating it is unsafe. If this dialog appears, choose the cancel button. Try to start the app again, this time by right-clicking on it and selecting open.</p>
+<p>If the app still fails to open. You need to go to System Settings-&gt;Privacy and Security. Under the Security section, you need to at least temporarily select the option to allow applications downloaded from the <strong>App Store and Identified Developers</strong>. With this checked try again. If it fails again, go back to System Settings-&gt;Privacy and Security. Just below the section you just checked, there should be some text about why the app was stopped and an option to <strong>Open Anyway</strong>, as shown in the figure below. Click on the button and the app should start.</p>
 <div class="align-center figure">
 <a class="reference internal image-reference" href="../../../../_images/AppleSecurity.png"><img alt="../../../../_images/AppleSecurity.png" src="../../../../_images/AppleSecurity.png" style="width: 50%;" /></a>
 </div>
 </div>
 <p>Once the application starts, verify the setup by running an example problem <a class="reference internal" href="../../examples/desktop/weuq-0001/README.html#weuq-0001"><span class="std std-ref">9 Story Building: Sampling Analysis</span></a>, see <a class="reference internal" href="#figui-we"><span class="std std-numref">Fig. 1.2.5.4</span></a>.</p>
-<div class="figure align-default" id="id23">
+<div class="figure align-default" id="id21">
 <span id="figui-we"></span><img alt="common/user_manual/installation/desktop/figures/WE-UQ.png:align:center:figclass:align-center:width:75%" src="common/user_manual/installation/desktop/figures/WE-UQ.png:align:center:figclass:align-center:width:75%" />
-<p class="caption"><span class="caption-number">Fig. 1.2.5.4 </span><span class="caption-text">WE-UQ application on startup.</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.5.4 </span><span class="caption-text">WE-UQ application on startup.</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>When the WE-UQ app is running, open the app/preferences or File/Preferences and make sure that python3 appears under <strong>External Applications:Python</strong>, as shown in the figure below. If you used older versions of SimCenter tools this was not the default. The exact location of python3 that you installed can be found by opening the terminal application and executing the <strong>which python3</strong> command. Enter the path shown as a response to the Preferences panel under Python and then press the <strong>Save</strong> button.</p>
-<blockquote>
-<div><blockquote>
-<div><div class="align-center figure">
+<p>When the WE-UQ app is running, open the app/preferences or File/Preferences and make sure that python3 appears under <strong>External Applications:Python</strong>, as shown in the figure below. If you used older versions of SimCenter tools this was not the default. The exact location of Python3 that you installed can be found by opening the terminal application and executing the <strong>which python3</strong> command. Enter the path shown as a response in the Preferences panel under Python and then press the <strong>Save</strong> button.</p>
+<div class="align-center figure" id="id24">
 <a class="reference internal image-reference" href="../../../../_images/pythonPreferences.png"><img alt="../../../../_images/pythonPreferences.png" src="../../../../_images/pythonPreferences.png" style="width: 75%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.2.5.7 </span><span class="caption-text">Set Python Preferences.</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
 </div>
-</div></blockquote>
-<p>Set Python Preferences.</p>
-</div></blockquote>
 </div>
 </div>
 </div>

@@ -138,8 +138,8 @@
 <li class="toctree-l2"><a class="reference internal" href="SIM.html">2.3. SIM: Structural Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="wind/WindEvents.html">2.4. EVT: Wind Events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="FEM.html">2.5. FEM: Finite Element Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RV.html">2.6. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="response/EDP.html">2.7. EDP: Demand Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="response/EDP.html">2.6. EDP: Demand Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RV.html">2.7. RV: Random Variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="response/resEE.html">2.8. RES: Results</a></li>
 </ul>
 </li>
@@ -151,7 +151,11 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/WEUQ/scalingWindTunnelData.html">3. Scaling Wind Tunnel Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/WEUQ/TinF.html">4. Turbulence Inflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/WEUQ/dataInformedStochasticWind.html">5. Wind-tunnel informed stochastic wind load</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -237,7 +241,7 @@
 <p><strong>Sobol indices</strong> are widely used variance-based global sensitivity measures which have two types: main effect and total effect sensitivity indices. The <strong>main effect index</strong> quantifies the fraction of variance in QoI that can be attributed to specific input random variable(s) but without considering the interaction effect with other input variables. The <strong>total effect index</strong>, on the other hand, additionally takes the interactions into account. <strong>Please read</strong> <a class="reference internal" href="../../../technical_manual/desktop/SimCenterUQTechnical.html#lbluqsimtechnical"><span class="std std-ref">HERE</span></a> <strong>for more details on the equations and implemented algorithms</strong>.</p>
 <div class="section" id="algorithm">
 <h2>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this heading">¶</a></h2>
-<p>In the SimCenterUQ engine, sensitivity indices are estimated by <strong>Gaussian mixture model-based probability distribution approximation</strong> method presented in Hu and Mahadevan (2019) <a class="reference internal" href="#hu19" id="id1"><span>[Hu19]</span></a>. To run this sensitivity analysis, the user has to specify the number of samples and a random seed. The method can handle correlated random variables as well.</p>
+<p>In the SimCenterUQ engine, sensitivity indices are estimated by the <strong>Gaussian mixture model-based probability distribution approximation</strong> method presented in Hu and Mahadevan (2019) <a class="reference internal" href="#hu19" id="id1"><span>[Hu19]</span></a>. To run this sensitivity analysis, the user has to specify the number of samples and a random seed. The method can handle correlated random variables as well.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
@@ -270,7 +274,7 @@
 <p class="caption"><span class="caption-number">Fig. 2.1.3.2.2 </span><span class="caption-text">Sensitivity analysis input panel (Import Dataset).</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <ul>
-<li><p>The directory to input and output dataset needs to be provided. The dataset can either be comma/tab-separated file or binary file.</p></li>
+<li><p>The directory to input and output dataset needs to be provided. The dataset can be either a comma/tab-separated file or a binary file.</p></li>
 <li><p><strong>Comma- or tab-separated file (.csv or .txt)</strong></p>
 <blockquote>
 <div><ul class="simple">
@@ -287,7 +291,7 @@
 </div>
 </div></blockquote>
 </li>
-<li><p><strong>Binary (.bin)</strong>: WE-UQ app accepts binary <strong>floating-point</strong> numeric matrix in a <strong>row major order</strong>. Below is an example Matlab script that can be used to create proper binary input files from [number of samples] x [input or output dimension] matlab matrix</p>
+<li><p><strong>Binary (.bin)</strong>: WE-UQ app accepts binary <strong>floating-point</strong> numeric matrix in a <strong>row major order</strong>. Below is an example Matlab script that can be used to create proper binary input files from [number of samples] x [input or output dimension] Matlab matrix</p>
 <blockquote>
 <div><div class="literal-block-wrapper docutils container" id="id7">
 <div class="code-block-caption"><span class="caption-number">Listing 2.1.3.2.1 </span><span class="caption-text">Creating binary dataset (row-major, float point) using Matlab</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
@@ -327,14 +331,14 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
-<li><p>When multiple outputs are considered, global sensitivity analysis is performed separately for each QoI, but the base Monte Carlo samples are can be re-used for different QoIs.</p></li>
-<li><p>When random variables defined in <strong>RV</strong> tab are not exhaustive, i.e. if the model contains <em>unexplained</em> randomness, the total Sobol index value may be underestimated by omitting the interaction with the missing variables.</p></li>
+<li><p>When multiple outputs are considered, global sensitivity analysis is performed separately for each QoI, but the base Monte Carlo samples can be re-used for different QoIs.</p></li>
+<li><p>When random variables defined in the <strong>RV</strong> tab are not exhaustive, i.e. if the model contains <em>unexplained</em> randomness, the total Sobol index value may be underestimated by omitting the interaction with the missing variables.</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="principal-component-analysis-pca-with-qoi">
 <h2>Principal Component Analysis (PCA) with QoI<a class="headerlink" href="#principal-component-analysis-pca-with-qoi" title="Permalink to this heading">¶</a></h2>
-<p>When the number of the quantity of interests (QoI) exceeds 15, quoFEM, by default, performs <strong>principal component analysis and probability model-based global sensitivity analysis (PCA-PSA)</strong>. The user can otherwise manually specify the option by selecting either <code class="docutils literal notranslate"><span class="pre">Yes</span></code> or <code class="docutils literal notranslate"><span class="pre">No</span></code>. If <code class="docutils literal notranslate"><span class="pre">Yes</span></code> is selected, the user can also provide the <code class="docutils literal notranslate"><span class="pre">potion</span> <span class="pre">of</span> <span class="pre">variance</span> <span class="pre">explained</span></code> in the range of 0 and 1.0. As this value gets close to 1, the accuracy of the approximation improves while the computational demand also increases. Note that when 1.0 is selected, the dimension will not be reduced. The default value is 0.99. We do not recommend using a value lower than 0.99 unless the user thoroughly understands its consequences.</p>
+<p>When the number of the quantities of interest (QoIs) exceeds 15, quoFEM, by default, performs <strong>principal component analysis and probability model-based global sensitivity analysis (PCA-PSA)</strong>. The user can otherwise manually specify the option by selecting either <code class="docutils literal notranslate"><span class="pre">Yes</span></code> or <code class="docutils literal notranslate"><span class="pre">No</span></code>. If <code class="docutils literal notranslate"><span class="pre">Yes</span></code> is selected, the user can also provide the <code class="docutils literal notranslate"><span class="pre">potion</span> <span class="pre">of</span> <span class="pre">variance</span> <span class="pre">explained</span></code> in the range of 0 and 1.0. As this value gets close to 1, the accuracy of the approximation improves while the computational demand also increases. Note that when 1.0 is selected, the dimension will not be reduced. The default value is 0.99. We do not recommend using a value lower than 0.99 unless the user thoroughly understands its consequences.</p>
 <div class="align-center figure" id="id9">
 <span id="figsimsensitivity4"></span><a class="reference internal image-reference" href="../../../../_images/Sensitivity3.png"><img alt="../../../../_images/Sensitivity3.png" src="../../../../_images/Sensitivity3.png" style="width: 1200px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.1.3.2.5 </span><span class="caption-text">Principal Component Analysis</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>

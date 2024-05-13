@@ -139,7 +139,11 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/WEUQ/scalingWindTunnelData.html">3. Scaling Wind Tunnel Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/WEUQ/TinF.html">4. Turbulence Inflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_manual/desktop/WEUQ/dataInformedStochasticWind.html">5. Wind-tunnel informed stochastic wind load</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -233,10 +237,10 @@
 <p>Applications used to specify/select wind loading for the structure.</p>
 <ol class="arabic simple">
 <li><p>Stochastic Wind: simulating stochastic wind speed using spectral method</p></li>
-<li><p>CFD-Digital Wind Tunnel: CFD simulation of boundary layer wind tunnel</p></li>
-<li><p>CFD-Wind Load on Isolated Buildings: CFD-based wind load simulation for isolated buildings with complex geometry</p></li>
+<li><p>CFD - Digital Wind Tunnel: CFD simulation of boundary layer wind tunnel</p></li>
+<li><p>CFD - Wind Load on Isolated Buildings: CFD-based wind load simulation for isolated buildings with complex geometry</p></li>
 <li><p>DEDM_HRP: database-enabled design framework based on wind-tunnel data for high-rise buildings</p></li>
-<li><p>LowRiseTPU: extracting aerodynamics loads based on TPU database for low-rise buildings</p></li>
+<li><p>LowRiseTPU: extracting aerodynamics loads based on the TPU database for low-rise buildings</p></li>
 <li><p>Wind Tunnel Experiment: uses pressure tap measurements from building in wind tunnel experiment</p></li>
 <li><p>Existing: User-supplied time-varying floor loads</p></li>
 </ol>
@@ -251,7 +255,7 @@
 </div>
 <div class="section" id="finite-element-application">
 <h2><span class="section-number">5.4. </span>Finite Element Application<a class="headerlink" href="#finite-element-application" title="Permalink to this heading">¶</a></h2>
-<p>Applications used to determine the response output parameters given the ground motion and structural model.</p>
+<p>Applications used to determine the response output parameters given the wind load generation and structural models.</p>
 <ol class="arabic simple">
 <li><p>OpenSees: Open System for Earthquake Engineering Simulation</p></li>
 <li><p>CustomPy: Any user-supplied Python application can be incorporated</p></li>
@@ -319,7 +323,7 @@ a. Resample from an existing correlated dataset of samples</p></li>
 <h2><span class="section-number">5.6. </span>Additional Tools<a class="headerlink" href="#additional-tools" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p><span class="blue">Empty Domain CFD Simulation</span>:
-Capability to perform empty domain simulation to characterize Atmospheric Boundary Layer (ABL) flows using large-eddy simulation (LES). This added feature uses the Turbulence Inflow Tool (TInF) tool for calibrating ABL flows for a subsequent wind load evaluation study.</p></li>
+Capability to perform empty domain simulation to characterize Atmospheric Boundary Layer (ABL) flows using large-eddy simulation (LES). This feature uses the Turbulence Inflow Tool (TInF) tool for calibrating ABL flows for a subsequent wind load evaluation study.</p></li>
 </ol>
 </div>
 </div>

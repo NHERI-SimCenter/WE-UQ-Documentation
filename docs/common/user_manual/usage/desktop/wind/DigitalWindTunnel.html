@@ -140,8 +140,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.6. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../response/EDP.html">2.7. EDP: Demand Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../response/EDP.html">2.6. EDP: Demand Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.7. RV: Random Variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../response/resEE.html">2.8. RES: Results</a></li>
 </ul>
 </li>
@@ -153,7 +153,11 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/WEUQ/scalingWindTunnelData.html">3. Scaling Wind Tunnel Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/WEUQ/TinF.html">4. Turbulence Inflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/WEUQ/dataInformedStochasticWind.html">5. Wind-tunnel informed stochastic wind load</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -240,10 +244,10 @@
 <li><p>Meshing is performed using the <em>snappyHexMesh</em> tool.</p></li>
 <li><p>OpenFOAM solvers supported are limited to <em>pisoFOAM</em>.</p></li>
 <li><p>Only horizontal forces are applied to the building model, the vertical force and moments are not considered.</p></li>
-<li><p>The building forces are extracted using the binning feature in OpenFOAM force module and thus, it is assumed that all the floors are of equal heights.</p></li>
+<li><p>The building forces are extracted using the binning feature in OpenFOAM forces module and thus, it is assumed that all the floors are of equal heights.</p></li>
 <li><p>No uncertainty is considered in the CFD analysis.</p></li>
 </ol>
-<p>It is important to note that this type of event is only supported when running the simulation at DesignSafe and does not run on the local computer. For that reason, users need to create a DesignSafe account in order to use this feature.</p>
+<p>It is important to note that this type of event is only supported when running the simulation at DesignSafe and does not run on the local computer. For that reason, users need to create a DesignSafe account to use this feature.</p>
 <p>The user needs to input certain parameters, which are summarized as follows:</p>
 <ol class="arabic simple">
 <li><p><strong>Case:</strong> The user-defined OpenFOAM case can be uploaded by pressing the “Browse” button as shown in <a class="reference internal" href="#fig-dwt-upload-case"><span class="std std-numref">Fig. 2.4.2.1</span></a>. By default, this is set to a benchmark case that is provided by the SimCenter in the community directory.</p></li>

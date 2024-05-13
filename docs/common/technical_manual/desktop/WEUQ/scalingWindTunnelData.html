@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>1.3. Scaling Wind Tunnel Data &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>3. Scaling Wind Tunnel Data &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -50,8 +50,8 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="1.4. Turbulence Inflow" href="TinF.html" />
-    <link rel="prev" title="1.2. Damping Options" href="../damping.html" />
+    <link rel="next" title="4. Turbulence Inflow" href="TinF.html" />
+    <link rel="prev" title="2. Damping Options" href="../damping.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -132,19 +132,16 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../technical_manual.html">1. Technical Manual</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../uqTechnical.html">1.1. Dakota Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../damping.html">1.2. Damping Options</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">1.3. Scaling Wind Tunnel Data</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#wind-tunnel-data">Wind Tunnel Data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#time-step-for-real-structure-transient-analysis">Time Step for Real Structure Transient Analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#force-calculation-on-real-structure-floors">Force Calculation on Real Structure Floors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../damping.html">2. Damping Options</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Scaling Wind Tunnel Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#wind-tunnel-data">3.1. Wind Tunnel Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#time-step-for-real-structure-transient-analysis">3.2. Time Step for Real Structure Transient Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#force-calculation-on-real-structure-floors">3.3. Force Calculation on Real Structure Floors</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="TinF.html">1.4. Turbulence Inflow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dataInformedStochasticWind.html">1.5. Wind-tunnel informed stochastic wind load</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="TinF.html">4. Turbulence Inflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataInformedStochasticWind.html">5. Wind-tunnel informed stochastic wind load</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -201,9 +198,9 @@
     
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../technical_manual.html"><span class="section-number">1. </span>Technical Manual</a> &raquo;</li>
+          <li><a href="../technical_manual.html">&lt;no title&gt;</a> &raquo;</li>
         
-      <li><span class="section-number">1.3. </span>Scaling Wind Tunnel Data</li>
+      <li><span class="section-number">3. </span>Scaling Wind Tunnel Data</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -223,10 +220,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="scaling-wind-tunnel-data">
-<h1><span class="section-number">1.3. </span>Scaling Wind Tunnel Data<a class="headerlink" href="#scaling-wind-tunnel-data" title="Permalink to this heading">¶</a></h1>
+<h1><span class="section-number">3. </span>Scaling Wind Tunnel Data<a class="headerlink" href="#scaling-wind-tunnel-data" title="Permalink to this heading">¶</a></h1>
 <p>In general, the physical size of the model used in a wind tunnel test will be different from the real world structure. As a consequence of this scaling, laws of <a class="reference external" href="https://en.wikipedia.org/wiki/Similitude_(model)">similitude</a> are used to convert the data coming from a wind tunnel experiment to forces acting on the real structure.</p>
 <div class="section" id="wind-tunnel-data">
-<h2>Wind Tunnel Data<a class="headerlink" href="#wind-tunnel-data" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">3.1. </span>Wind Tunnel Data<a class="headerlink" href="#wind-tunnel-data" title="Permalink to this heading">¶</a></h2>
 <p>The data obtained from a wind tunnel typically contains the following:</p>
 <ol class="arabic simple">
 <li><p>Building dimensions. For example, for a cuboid-shaped building, this would contain: height, breadth(width) and depth.</p></li>
@@ -236,7 +233,7 @@
 </ol>
 </div>
 <div class="section" id="time-step-for-real-structure-transient-analysis">
-<h2>Time Step for Real Structure Transient Analysis<a class="headerlink" href="#time-step-for-real-structure-transient-analysis" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">3.2. </span>Time Step for Real Structure Transient Analysis<a class="headerlink" href="#time-step-for-real-structure-transient-analysis" title="Permalink to this heading">¶</a></h2>
 <p>Due to similitude, is is necessary to convert the time step <span class="math notranslate nohighlight">\(\Delta t_M\)</span> or frequency <span class="math notranslate nohighlight">\(f_M\)</span> obtained from wind tunnel data to one that is used in the transient analysis of the full-scale structure, <span class="math notranslate nohighlight">\(\Delta t_R\)</span> or <span class="math notranslate nohighlight">\(f_R\)</span>. (note: the subscript <span class="math notranslate nohighlight">\(M\)</span> is used for model parameter and subscript <span class="math notranslate nohighlight">\(R\)</span> for real-world structure). This is done by determining some scale factors which relate ratios of quantity in model scale to quantity in real world scale.</p>
 <ol class="arabic simple">
 <li><p>Length factor, <span class="math notranslate nohighlight">\(\lambda_L = \frac{D_M}{D_R}\)</span></p></li>
@@ -246,28 +243,28 @@
 <p>where <span class="math notranslate nohighlight">\(D\)</span> represents the length dimension, <span class="math notranslate nohighlight">\(\Delta t\)</span> the time step, and <span class="math notranslate nohighlight">\(V\)</span> the velocity.</p>
 <p>There is a relationship between these scaling factors obtained from the definition of velocity (<span class="math notranslate nohighlight">\(V = \frac{D}{\Delta t}\)</span>) which is</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-0">
-<span class="eqno">(1.3.1)<a class="headerlink" href="#equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-0" title="Permalink to this equation">¶</a></span>\[\lambda_V =\frac{\lambda_ L}{\lambda_t}\]</div>
+<span class="eqno">(3.2.1)<a class="headerlink" href="#equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-0" title="Permalink to this equation">¶</a></span>\[\lambda_V =\frac{\lambda_ L}{\lambda_t}\]</div>
 <p>It is this relationship which can then be used to determine <span class="math notranslate nohighlight">\(\Delta t_R\)</span></p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-1">
-<span class="eqno">(1.3.2)<a class="headerlink" href="#equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-1" title="Permalink to this equation">¶</a></span>\[\Delta t_R = \Delta t_M *  \lambda T = \Delta t_M * \frac{\lambda_V}{\lambda_L}\]</div>
+<span class="eqno">(3.2.2)<a class="headerlink" href="#equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-1" title="Permalink to this equation">¶</a></span>\[\Delta t_R = \Delta t_M *  \lambda T = \Delta t_M * \frac{\lambda_V}{\lambda_L}\]</div>
 <p>It should be noted that the model and the real structure should have geometric similarity. This means that the model should scale similarly in all directions to the real world structure. In calculations used in SimCenter the length factor hL is calculated using the height of the real structure and the height of the model.</p>
 </div>
 <div class="section" id="force-calculation-on-real-structure-floors">
-<h2>Force Calculation on Real Structure Floors<a class="headerlink" href="#force-calculation-on-real-structure-floors" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">3.3. </span>Force Calculation on Real Structure Floors<a class="headerlink" href="#force-calculation-on-real-structure-floors" title="Permalink to this heading">¶</a></h2>
 <p>The pressure at a location in the real structure corresponding to a pressure tap location in the model can be obtained from
 the following equation:</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-2">
-<span class="eqno">(1.3.3)<a class="headerlink" href="#equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-2" title="Permalink to this equation">¶</a></span>\[P_R = C_p * 0.5*\rho * {V_R}^2\]</div>
+<span class="eqno">(3.3.1)<a class="headerlink" href="#equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-2" title="Permalink to this equation">¶</a></span>\[P_R = C_p * 0.5*\rho * {V_R}^2\]</div>
 <p>where <span class="math notranslate nohighlight">\(V_R\)</span> is the wind speed and <span class="math notranslate nohighlight">\(\rho\)</span> the full scale air density, typically <span class="math notranslate nohighlight">\(1.225kg/m^3\)</span>. It should be noted that the pressures in
 the wind tunnel are not needed, this is because <span class="math notranslate nohighlight">\(C_p\)</span> is a dimensionless parameter <span id="id1">[<a class="reference internal" href="../../../../index.html#id55" title="Sejun Park and DongHun Yeo. Database-assisted design and equivalent static wind loads for mid- and high-rise structures: concepts, software, and user's manual. Technical Report NIST TN 2000, National Institute of Standards and Technology, Gaithersburg, MD, June 2018. doi:10.6028/NIST.TN.2000.">PY18</a>]</span>. It should also be noted that it is essential that the wind speed <span class="math notranslate nohighlight">\(V_R\)</span> have same basis as the model wind speed <span class="math notranslate nohighlight">\(V_M\)</span>, i.e. averaging period, elevation, and vertical profile.</p>
 <p>The forces on the structure can be calculated by integrating the pressures over the external surface area of the building.</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-3">
-<span class="eqno">(1.3.4)<a class="headerlink" href="#equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-3" title="Permalink to this equation">¶</a></span>\[F = \int\limits_A P_R\]</div>
+<span class="eqno">(3.3.2)<a class="headerlink" href="#equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-3" title="Permalink to this equation">¶</a></span>\[F = \int\limits_A P_R\]</div>
 <p>As the pressures are not known for all points on the building, the approximation used is to break the building into a number of sections and assuming the pressure is constant over that section determine the force on the section and from that the force on the building. In the SimCenter application, the current approach is for each story to divide the surface of the building story into a number of sections. For each section we determine the closest tap location to obtain a <span class="math notranslate nohighlight">\(C_p\)</span> for that section. The force and moment contributed to the floor above and below the section are done assuming simply supported beam theory.</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-4">
-<span class="eqno">(1.3.5)<a class="headerlink" href="#equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-4" title="Permalink to this equation">¶</a></span>\[F_A = \sum\limits_{sections} F_{A^{section}} = \sum\limits_{sections} * F^{section} * \frac{b}{(a+b)} = \sum\limits_{sections} A^{section} * C_p^{section} * 0.5 * \rho *  V_R^2 * \frac{b}{(a+b)}\]</div>
+<span class="eqno">(3.3.3)<a class="headerlink" href="#equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-4" title="Permalink to this equation">¶</a></span>\[F_A = \sum\limits_{sections} F_{A^{section}} = \sum\limits_{sections} * F^{section} * \frac{b}{(a+b)} = \sum\limits_{sections} A^{section} * C_p^{section} * 0.5 * \rho *  V_R^2 * \frac{b}{(a+b)}\]</div>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-5">
-<span class="eqno">(1.3.6)<a class="headerlink" href="#equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-5" title="Permalink to this equation">¶</a></span>\[M_A =  \sum\limits_{sections} A^{section} * F_a *  c\]</div>
+<span class="eqno">(3.3.4)<a class="headerlink" href="#equation-common-technical-manual-desktop-weuq-scalingwindtunneldata-5" title="Permalink to this equation">¶</a></span>\[M_A =  \sum\limits_{sections} A^{section} * F_a *  c\]</div>
 <p>where <span class="math notranslate nohighlight">\(F_A\)</span> represents force on floor <em>A</em> due to section between floors <em>A</em> and <em>B</em> and  <span class="math notranslate nohighlight">\(M_A\)</span> the moment contribution due to these sections. These are calculated from <span class="math notranslate nohighlight">\(F_{A section}\)</span> the force contribution to floor <em>A</em> due to a particular section, <span class="math notranslate nohighlight">\(a\)</span> distance from centroid of section to floor <em>A</em>, <span class="math notranslate nohighlight">\(b\)</span> distance from centroid of section to floor <em>B</em>, and <span class="math notranslate nohighlight">\(c\)</span> distance from centroid of section to centroid of building face.</p>
 </div>
 </div>

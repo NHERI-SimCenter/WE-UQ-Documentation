@@ -130,7 +130,11 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/WEUQ/scalingWindTunnelData.html">3. Scaling Wind Tunnel Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/WEUQ/TinF.html">4. Turbulence Inflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/WEUQ/dataInformedStochasticWind.html">5. Wind-tunnel informed stochastic wind load</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -210,7 +214,7 @@
 <span id="lblsimsurrogate"></span><h1>Gaussian Process (GP) Surrogate Modeling<a class="headerlink" href="#gaussian-process-gp-surrogate-modeling" title="Permalink to this heading">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Surrogate modeling functionality of WE-UQ is built upon <a class="reference external" href="https://sheffieldml.github.io/GPy/">GPy</a> library (available under BSD 3-clause license), an opensource python framework for Gaussian process modeling developed in the Sheffield machine learning group.</p>
+<p>Surrogate modeling functionality of WE-UQ is built upon <a class="reference external" href="https://sheffieldml.github.io/GPy/">GPy</a> library (available under BSD 3-clause license), an opensource Python framework for Gaussian process modeling developed in the Sheffield machine learning group.</p>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">Train</span> <span class="pre">GP</span> <span class="pre">Surrogate</span> <span class="pre">Model</span></code> module is used to construct a Gaussian process (GP) based <strong>surrogate model</strong> that substitutes expensive computational <strong>simulation models</strong>. The challenge of surrogate modeling in earthquake engineering arrives from the stochasticity in the ground motion time history and corresponding stochastic output.</p>
 <div class="align-center figure" id="id9">
@@ -219,9 +223,9 @@
 </div>
 <ul class="simple">
 <li><p><strong>Output of surrogate model</strong>: Following the performance-based earthquake engineering practice, the response estimation module in SimCenter workflow concerns only the peak responses (e.g. peak acceleration, peak drift ratio at each floor) rather than the whole time history. Therefore, the surrogate modeling algorithms in this tool are designed to predict the non-time history responses.</p></li>
-<li><p><strong>Input of surrogate model</strong>: To keep the input dimension of the surrogate model to a reasonable scale, the ground motion time history are first parameterized into a number of key features in the algorithm. This can be, for example, the sources properties (e.g. M,R) or time/frequency domain excitation property at the site of interest (e.g. intensity measures) (<a class="reference internal" href="#kyprioti2021" id="id1"><span>[Kyprioti2021]</span></a>, <a class="reference internal" href="#zhong2023" id="id2"><span>[Zhong2023]</span></a>).</p></li>
+<li><p><strong>Input of surrogate model</strong>: To keep the input dimension of the surrogate model to a reasonable scale, the ground motion time history is first parameterized in the algorithm into several key features. This can be, for example, the source properties (e.g. M, R) or time/frequency domain excitation property at the site of interest (e.g. intensity measures) (<a class="reference internal" href="#kyprioti2021" id="id1"><span>[Kyprioti2021]</span></a>, <a class="reference internal" href="#zhong2023" id="id2"><span>[Zhong2023]</span></a>).</p></li>
 </ul>
-<p>The surrogate prediction of EDP given the ground motion parameters typically inherits significant randomness, as the amount of information provided by these parameters are not sufficient to determine the exact model peak response. Therefore, the key task in surrogate modeling is to capture the remaining amount of uncertainty in the EDP predictions, as shown in the above figure.</p>
+<p>The surrogate prediction of EDP given the ground motion parameters typically inherits significant randomness, as the amount of information provided by these parameters is not sufficient to determine the exact model peak response. Therefore, the key task in surrogate modeling is to capture the remaining amount of uncertainty in the EDP predictions, as shown in the above figure.</p>
 <p><strong>The trained surrogate model can be saved in a portable file (.json format) and later imported</strong> in place of the original simulation model for UQ analysis or optimization purposes. See user guide <a class="reference internal" href="SIM.html#sim-user-manual-eeuqsur"><span class="std std-ref">section 2.2.5</span></a> for how to import the surrogate model in WE-UQ.</p>
 <dl class="citation">
 <dt class="label" id="kyprioti2021"><span class="brackets"><a class="fn-backref" href="#id1">Kyprioti2021</a></span></dt>
@@ -254,7 +258,7 @@
 <div class="line-block">
 <div class="line">where</div>
 <div class="line-block">
-<div class="line"><span class="math notranslate nohighlight">\(y_k\)</span> : exact response from the model simulation</div>
+<div class="line"><span class="math notranslate nohighlight">\(y_k\)</span>: exact response from the model simulation</div>
 <div class="line"><span class="math notranslate nohighlight">\(\hat{y}_k\)</span>: estimated response by LOOCV surrogate model prediction</div>
 <div class="line"><span class="math notranslate nohighlight">\(N\)</span>: number of samples used to train the surrogate model</div>
 </div>
@@ -289,13 +293,13 @@
 <ul>
 <li><p><strong>Leave-one-out cross-validation (LOOCV)</strong></p>
 <div class="line-block">
-<div class="line">LOOCV prediction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}_k\)</span> at each sample location <span class="math notranslate nohighlight">\(\boldsymbol{x}_k\)</span> is obatined by the following procedure: A temporary surrogate model <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}=f^{sur}_{loo,k}(\boldsymbol{\boldsymbol{x}})\)</span> is constructed using the samples <span class="math notranslate nohighlight">\(\{\boldsymbol{x}_1,\boldsymbol{x}_2,...,\boldsymbol{x}_{k-1},\boldsymbol{x}_{k+1},...,\boldsymbol{x}_N\}\)</span> and the calibrated parameters, and the prediction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}_k=f^{sur}_{loo,k}(\boldsymbol{x}_k)\)</span> is compared with the exact outcome .</div>
+<div class="line">LOOCV prediction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}_k\)</span> at each sample location <span class="math notranslate nohighlight">\(\boldsymbol{x}_k\)</span> is obtained by the following procedure: A temporary surrogate model <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}=f^{sur}_{loo,k}(\boldsymbol{\boldsymbol{x}})\)</span> is constructed using the samples <span class="math notranslate nohighlight">\(\{\boldsymbol{x}_1,\boldsymbol{x}_2,...,\boldsymbol{x}_{k-1},\boldsymbol{x}_{k+1},...,\boldsymbol{x}_N\}\)</span> and the calibrated parameters, and the prediction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}_k=f^{sur}_{loo,k}(\boldsymbol{x}_k)\)</span> is compared with the exact outcome.</div>
 </div>
 </li>
 </ul>
 <p>We provide different verification measures for two different cases.</p>
 <ol class="lowerroman">
-<li><p>When nugget variance is low : The LOOCV prediction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}_k\)</span> is expected to match the exact outcome <span class="math notranslate nohighlight">\(\boldsymbol{y_k}=f(\boldsymbol{x}_k)\)</span> when the surrogate model is well-trained. To quantify the goodness, R2 error, normalized root-mean-squared-error (NRMSE), and correlation coefficient are provided:</p>
+<li><p>When nugget variance is low: The LOOCV prediction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}_k\)</span> is expected to match the exact outcome <span class="math notranslate nohighlight">\(\boldsymbol{y_k}=f(\boldsymbol{x}_k)\)</span> when the surrogate model is well-trained. To quantify the goodness, R2 error, normalized root-mean-squared-error (NRMSE), and correlation coefficient are provided:</p>
 <ul>
 <li><p><strong>R2 error</strong></p>
 <div class="line-block">
@@ -324,7 +328,7 @@
 </li>
 <li><p><strong>Correlation coefficient</strong></p>
 <div class="line-block">
-<div class="line">Correlation coefficient is a statistic that measures linear correlation between two variables</div>
+<div class="line">Correlation coefficient is a statistic that measures the linear correlation between two variables</div>
 </div>
 <div class="math notranslate nohighlight" id="equation-corr">
 <span class="eqno">()<a class="headerlink" href="#equation-corr" title="Permalink to this equation">¶</a></span>\[  \rho_{y,\hat{y}} = \frac{\sum^N_{k=1}(y_k-\mu_{y})(\hat{y}_k-\mu_{\hat{y}})} {\sigma_y \sigma_\hat{y}}\]</div>
@@ -343,12 +347,12 @@
 </li>
 </ul>
 </li>
-<li><p>When nugget variance is high : The distance between LOOCV prediction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}_k\)</span> and the exact outcome <span class="math notranslate nohighlight">\(\boldsymbol{y_k}=f(\boldsymbol{x}_k)\)</span> is expected to follow a normal distribution when the surrogate model is well-trained. To quantify the goodness, inter-quartile ratio (IQR) and Cramer-Von Mises statistics can be evaluated:</p></li>
+<li><p>When nugget variance is high: The distance between LOOCV prediction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{y}}_k\)</span> and the exact outcome <span class="math notranslate nohighlight">\(\boldsymbol{y_k}=f(\boldsymbol{x}_k)\)</span> is expected to follow a normal distribution when the surrogate model is well-trained. To quantify the goodness, inter-quartile ratio (IQR) and Cramer-Von Mises statistics can be evaluated:</p></li>
 </ol>
 <blockquote>
 <div><ul>
 <li><p><strong>Inter-quartile ratio (IQR)</strong>: IQR provides the ratio of the sample QoIs that lies in 25-75% LOOCV prediction bounds (interquartile range). The IQR values should theoretically approach 0.5 if the prediction is accurate.</p></li>
-<li><p><strong>Cramer-Von Mises statistics</strong>: Cramer-Von Mises statistics calculate the normality score. The assumption of a GP is that the observations follow a normal distribution conditional on the input parameters. To assess the normality of the model predictions, the difference between the mean prediction <span class="math notranslate nohighlight">\(\hat{y}_k\)</span> and the sample observation  <span class="math notranslate nohighlight">\(y_k\)</span> value is divided by the standard deviation prediction from surrogate <span class="math notranslate nohighlight">\(\hat{\sigma}_{y,k}\)</span>:</p>
+<li><p><strong>Cramer-Von Mises statistics</strong>: Cramer-Von Mises statistics calculate the normality score. A GP assumes that the observations follow a normal distribution conditional on the input parameters. To assess the normality of the model predictions, the difference between the mean prediction <span class="math notranslate nohighlight">\(\hat{y}_k\)</span> and the sample observation  <span class="math notranslate nohighlight">\(y_k\)</span> value is divided by the standard deviation prediction from surrogate <span class="math notranslate nohighlight">\(\hat{\sigma}_{y,k}\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-normed">
 <span class="eqno">()<a class="headerlink" href="#equation-normed" title="Permalink to this equation">¶</a></span>\[  u_k = \frac{y_k-\hat{y}_k} {\hat{\sigma}_{y,k}}\]</div>
 </li>
@@ -368,7 +372,7 @@
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Note that GP-based surrogate models can be used to fit only smooth, continuous functions. When the surrogate model is poorly trained, a parametric study is highly recommended to check any possible discontinuity presented in the simulation model.</p>
+<p>Note that GP-based surrogate models can be used to fit only smooth, continuous functions. When the surrogate model is poorly trained, a parametric study is highly recommended to check for any possible discontinuity presented in the simulation model.</p>
 </div>
 </div>
 <div class="section" id="saving-options">
@@ -377,8 +381,8 @@
 <li><p><strong>Save GP Model</strong>: The constructed surrogate model is saved. One main file and one auxiliary folder will be saved.</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><strong>SurroateGP Info File</strong> (default name: <code class="docutils literal notranslate"><span class="pre">SimGpModel.json</span></code>) : This file contains information required to quickly reconstruct the surrogate model and predict the response for different input realizations. This can be later imported in EEUQ.</p></li>
-<li><p><strong>Simulation template directory</strong> (default name: <code class="docutils literal notranslate"><span class="pre">tmplatedir_SIM</span></code>) : This folder contains all the scripts and commands to run the original dynamic time history analysis. This folder can later be imported into EEUQ along with the surrogate model to alternate between original simulations and surrogate predictions or compare the surrogate predictions to the response of the original model.</p></li>
+<li><p><strong>SurroateGP Info File</strong> (default name: <code class="docutils literal notranslate"><span class="pre">SimGpModel.json</span></code>): This file contains information required to quickly reconstruct the surrogate model and predict the response for different input realizations. This can be later imported into EEUQ.</p></li>
+<li><p><strong>Simulation template directory</strong> (default name: <code class="docutils literal notranslate"><span class="pre">tmplatedir_SIM</span></code>): This folder contains all the scripts and commands to run the original dynamic time history analysis. This folder can later be imported into EEUQ along with the surrogate model to alternate between original simulations and surrogate predictions or compare the surrogate predictions to the response of the original model.</p></li>
 <li><p>Only for the multi-fidelity case in quoFEM, additional <strong>SurroateGP model file</strong> (default name: <code class="docutils literal notranslate"><span class="pre">SimGpModel.pkl</span></code>) will be written along with the above two.</p></li>
 </ul>
 </div></blockquote>
@@ -386,7 +390,7 @@
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Do not place above surrogate model files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like us, your root, Downloads or Documents folders contains and awful lot of files and when the backend workflow runs you will slowly find you will run out of disk space!</p>
+<p>Do not place the above surrogate model files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like us, your root, Downloads, or Documents folders contain an awful lot of files and when the backend workflow runs you will slowly find you will run out of disk space!</p>
 </div>
 <ul class="simple">
 <li><p><strong>Save GP Info</strong>: This is a report generated for user reference. It contains the GP model parameter and other information. The default file name is <code class="docutils literal notranslate"><span class="pre">GPresults.out</span></code>.</p></li>

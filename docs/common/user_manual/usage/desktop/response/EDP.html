@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.7. EDP: Demand Parameters &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>2.6. EDP: Demand Parameters &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.8. RES: Results" href="resEE.html" />
-    <link rel="prev" title="2.6. RV: Random Variables" href="../RV.html" />
+    <link rel="next" title="2.7. RV: Random Variables" href="../RV.html" />
+    <link rel="prev" title="2.5. FEM: Finite Element Method" href="../FEM.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -128,13 +128,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.3. SIM: Structural Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../wind/WindEvents.html">2.4. EVT: Wind Events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.6. RV: Random Variables</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.7. EDP: Demand Parameters</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#standard">2.7.1. Standard</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#user-defined">2.7.2. User Defined</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#none">2.7.3. None</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.6. EDP: Demand Parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#standard">2.6.1. Standard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#user-defined">2.6.2. User Defined</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#none">2.6.3. None</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.7. RV: Random Variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="resEE.html">2.8. RES: Results</a></li>
 </ul>
 </li>
@@ -146,7 +146,11 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/WEUQ/scalingWindTunnelData.html">3. Scaling Wind Tunnel Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/WEUQ/TinF.html">4. Turbulence Inflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/WEUQ/dataInformedStochasticWind.html">5. Wind-tunnel informed stochastic wind load</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -205,7 +209,7 @@
         
           <li><a href="../usage.html"><span class="section-number">2. </span>User Interface</a> &raquo;</li>
         
-      <li><span class="section-number">2.7. </span>EDP: Demand Parameters</li>
+      <li><span class="section-number">2.6. </span>EDP: Demand Parameters</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -225,7 +229,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="edp-demand-parameters">
-<span id="lbledp"></span><h1><span class="section-number">2.7. </span>EDP: Demand Parameters<a class="headerlink" href="#edp-demand-parameters" title="Permalink to this heading">¶</a></h1>
+<span id="lbledp"></span><h1><span class="section-number">2.6. </span>EDP: Demand Parameters<a class="headerlink" href="#edp-demand-parameters" title="Permalink to this heading">¶</a></h1>
 <p>This panel is where the user selects which outputs will be displayed when the simulation runs. There are a number of options available in the pull-down:</p>
 <ol class="arabic simple">
 <li><p>Standard</p></li>
@@ -233,7 +237,7 @@
 <li><p>None</p></li>
 </ol>
 <div class="section" id="standard">
-<h2><span class="section-number">2.7.1. </span>Standard<a class="headerlink" href="#standard" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">2.6.1. </span>Standard<a class="headerlink" href="#standard" title="Permalink to this heading">¶</a></h2>
 <p>When the user selects this option, there are no additional inputs required. The standard EDP generator will ensure the max absolute value of the following is obtained:</p>
 <ol class="arabic simple">
 <li><p>Relative Floor displacements:</p></li>
@@ -252,11 +256,11 @@
 </div>
 </div>
 <div class="section" id="user-defined">
-<h2><span class="section-number">2.7.2. </span>User Defined<a class="headerlink" href="#user-defined" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">2.6.2. </span>User Defined<a class="headerlink" href="#user-defined" title="Permalink to this heading">¶</a></h2>
 <p>As shown in the figure, this panel allows the user to determine their own output and process it. When using this option the user provides additional data:</p>
 <div class="align-center figure" id="id1">
 <img alt="../../../../../_images/userDefinedEDP.png" src="../../../../../_images/userDefinedEDP.png" />
-<p class="caption"><span class="caption-number">Fig. 2.7.2.1 </span><span class="caption-text">User-Defined EDP panel.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.6.2.1 </span><span class="caption-text">User-Defined EDP panel.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple">
 <li><p>Additional Input: These are additional commands that are invoked by the analysis application before the transient analysis is performed. For example, for OpenSees this would be a script
@@ -376,7 +380,7 @@ containing a series of recorder commands. A recorder file passed to OpenSees mig
 </ol>
 </div>
 <div class="section" id="none">
-<h2><span class="section-number">2.7.3. </span>None<a class="headerlink" href="#none" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">2.6.3. </span>None<a class="headerlink" href="#none" title="Permalink to this heading">¶</a></h2>
 <p>This option is used only when the user specifies a surrogate model in the SIM tab. Because a surrogate model can evaluate only the EDPs that are pre-trained, we automatically display those quantities and do not allow users to modify the list.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

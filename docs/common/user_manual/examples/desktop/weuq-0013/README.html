@@ -158,7 +158,11 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/WEUQ/scalingWindTunnelData.html">3. Scaling Wind Tunnel Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/WEUQ/TinF.html">4. Turbulence Inflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/WEUQ/dataInformedStochasticWind.html">5. Wind-tunnel informed stochastic wind load</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -249,14 +253,14 @@
 </tr>
 </tbody>
 </table>
-<p>This example demonstrates a Computational Fluid Dynamics (CFD) based procedure for estimating the response of a building with simple box type geometry subjected to wind loading. The example demonstrates a step-by-step process for defining the CFD model based on a target experimental setup. The target experimental model is taken from Tokyo Polytechnic University (TPU) aerodynamic database. For ease of demonstration, in this example, some simplifying assumptions are taken to model the approaching wind condition. Once the CFD simulation are completed, the recorded wind loads are applied to a 45-story building for estimating the responses.</p>
+<p>This example demonstrates a Computational Fluid Dynamics (CFD) based procedure for estimating the response of a building with simple box-type geometry subjected to wind loading. The example demonstrates a step-by-step process for defining the CFD model based on a target experimental setup. The target experimental model is taken from Tokyo Polytechnic University (TPU) aerodynamic database. For ease of demonstration, in this example, some simplifying assumptions are taken to model the approaching wind condition. Once the CFD simulation is completed, the recorded wind loads are applied to a 45-story building for estimating the responses.</p>
 <div class="figure align-center" id="id5">
 <span id="fig-we13-1"></span><a class="reference internal image-reference" href="../../../../../_images/we13_computational_domain.svg"><img alt="../../../../../_images/we13_computational_domain.svg" src="../../../../../_images/we13_computational_domain.svg" width="600" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.5.1 </span><span class="caption-text">Setup of the CFD model: approaching wind, computational domain and the study building.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="target-experimental-measurement">
 <h2><span class="section-number">4.5.1. </span>Target Experimental Measurement<a class="headerlink" href="#target-experimental-measurement" title="Permalink to this heading">¶</a></h2>
-<p>Relevant geometric and flow properties taken from TPU database are provided <a class="reference internal" href="#tbl-we13-1"><span class="std std-numref">Table 4.5.1.1</span></a> . These parameters are then specified in WE-UQ as demonstrated in <a class="reference internal" href="../weuq-0014/README.html#workflow-section"><span class="std std-ref">Workflow</span></a>. In full-scale, the study building measures 200 m high with a 40 m square plan dimension. However, for simplicity, the CFD model is created in model scale (at 1:400 geometric scale) resembling that of the experimental version.</p>
+<p>Relevant geometric and flow properties taken from the TPU database are provided <a class="reference internal" href="#tbl-we13-1"><span class="std std-numref">Table 4.5.1.1</span></a> . These parameters are then specified in WE-UQ as demonstrated in <a class="reference internal" href="../weuq-0014/README.html#workflow-section"><span class="std std-ref">Workflow</span></a>. In full-scale, the study building measures 200 m high with a 40 m square plan dimension. However, for simplicity, the CFD model is created in model scale (at 1:400 geometric scale) resembling that of the experimental version.</p>
 <div class="figure align-center" id="fig-we13-tpu-model">
 <a class="reference internal image-reference" href="../../../../../_images/we13_tpu_building_demo.jpg"><img alt="../../../../../_images/we13_tpu_building_demo.jpg" src="../../../../../_images/we13_tpu_building_demo.jpg" style="width: 400px;" /></a>
 </div>
@@ -350,14 +354,14 @@
 <p>where <span class="math notranslate nohighlight">\(u_*\)</span>, <span class="math notranslate nohighlight">\(\kappa = 0.4\)</span> and <span class="math notranslate nohighlight">\(d\)</span> are the shear friction velocity, von Karman constant and displacement height, respectively. The value of <span class="math notranslate nohighlight">\(d\)</span> is set to zero, considering it is open exposure (for rough terrains it needs to be higher than 0). The shear friction velocity is determined by evaluating the log-law profile at the reference location (building height). Thus, <span class="math notranslate nohighlight">\(u_*\)</span> is computed as</p>
 <div class="math notranslate nohighlight" id="id1">
 <span id="equation-log-law-wind-profile"></span><span class="eqno">(4.5.1.2)<a class="headerlink" href="#id1" title="Permalink to this equation">¶</a></span>\[u_* = \frac{\kappa U_H}{\log(H/z_0)}.\]</div>
-<p>As shown in <a class="reference internal" href="#fig-we13-2"><span class="std std-numref">Fig. 4.5.1.1</span></a>, the log-law fit is reasonable for most part of the boundary layer height. However, in the upper part of the domain i.e., <span class="math notranslate nohighlight">\(z &gt; H(200 m)\)</span> it shows some deviation. For cases with larger deviations from log-law, a more accurate wind profiles developed by Deaves and Harris (D&amp;H model) need to be used (<a class="reference internal" href="#cook1997" id="id2"><span>[Cook1997]</span></a>). These profiles present a better description of the ABL turbulence and are also adopted in <a class="reference internal" href="#esdu2001" id="id3"><span>[ESDU2001]</span></a> standards.</p>
+<p>As shown in <a class="reference internal" href="#fig-we13-2"><span class="std std-numref">Fig. 4.5.1.1</span></a>, the log-law fit is reasonable for most part of the boundary layer height. However, in the upper part of the domain i.e., <span class="math notranslate nohighlight">\(z &gt; H(200 m)\)</span> it shows some deviation. For cases with larger deviations from the log-law, more accurate wind profiles developed by Deaves and Harris (D&amp;H model) need to be used (<a class="reference internal" href="#cook1997" id="id2"><span>[Cook1997]</span></a>). These profiles present a better description of the ABL turbulence and are also adopted in <a class="reference internal" href="#esdu2001" id="id3"><span>[ESDU2001]</span></a> standards.</p>
 <div class="figure align-center" id="id7">
 <span id="fig-we13-2"></span><a class="reference internal image-reference" href="../../../../../_images/we13_mean_velocity_profile_fitting.svg"><img alt="../../../../../_images/we13_mean_velocity_profile_fitting.svg" src="../../../../../_images/we13_mean_velocity_profile_fitting.svg" width="500" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.5.1.1 </span><span class="caption-text">Log-law fitting of the mean velocity profile from the experimental measurement.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For ease of demonstration, in this example, the wind is assumed to a smooth flow with no significant upcoming turbulence. However, realistic wind load simulation needs to account the turbulence in the upcoming flow using appropriate inflow boundary conditions.</p>
+<p>For ease of demonstration, in this example, the wind is assumed to have a smooth flow with no significant upcoming turbulence. However, realistic wind load simulation needs to account for the turbulence in the upcoming flow using appropriate inflow boundary conditions.</p>
 </div>
 <p>The experiment was run for a duration <span class="math notranslate nohighlight">\(T = 32.768s\)</span>. But for the CFD model, considering the computational cost of running long duration simulation, we used <span class="math notranslate nohighlight">\(T = 10s\)</span>. Also, since we used smooth inflow boundary conditions at the inlet, the wind loads will converge faster as compared to the case with a turbulent inlet. For monitoring the forces from the CFD model, we will specify the same sampling rate used in experimental measurement (<span class="math notranslate nohighlight">\(f_{s} = 1000 Hz\)</span>).</p>
 </div>
@@ -372,7 +376,7 @@
 </div></blockquote>
 <div class="section" id="uq-method">
 <h3><span class="section-number">4.5.2.1. </span>UQ Method<a class="headerlink" href="#uq-method" title="Permalink to this heading">¶</a></h3>
-<p>Specify the details of uncertainty analysis in the <strong>UQ</strong> panel. This example uses forward uncertainty propagation. Select “Forward Propagation” for UQ Method and specify “Dakota” for UQ Engine driver. For the UQ algorithm, use Latin Hypercube (“LHC”). Change the number of samples to 500 and set the seed to 101.</p>
+<p>Specify the details of uncertainty analysis in the <strong>UQ</strong> panel. This example uses forward uncertainty propagation. Select “Forward Propagation” for the UQ Method and specify “Dakota” for UQ Engine driver. For the UQ algorithm, use Latin Hypercube (“LHC”). Change the number of samples to 500 and set the seed to 101.</p>
 <div class="figure align-center" id="id8">
 <a class="reference internal image-reference" href="../../../../../_images/we13_UQ_panel.svg"><img alt="../../../../../_images/we13_UQ_panel.svg" src="../../../../../_images/we13_UQ_panel.svg" width="1000" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.5.2.1.1 </span><span class="caption-text">Selection of the Uncertainty Quantification Technique</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
@@ -384,7 +388,7 @@
 <blockquote>
 <div><div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Note that the CFD model is created at a reduced or model scale (i.e., 1 to 400) just like the target wind tunnel model. However, the building dimensions specified here need to be in full-scale (actual building dimensions).</p>
+<p>Note that the CFD model is created at a reduced model scale (i.e., 1 to 400) just like the target wind tunnel model. However, the building dimensions specified here need to be in full-scale (actual building dimensions).</p>
 </div>
 </div></blockquote>
 <div class="figure align-center" id="id9">
@@ -407,16 +411,16 @@
 <li><p>In the <em>Start</em> tab, specify the path where your CFD model will be saved by clicking <strong>Browse</strong> button. It is recommended to put it in the default path i.e., <code class="docutils literal notranslate"><span class="pre">Documents\WE-UQ\LocalWorkDir\IsolatedBuildingCFD</span></code>. Select the <strong>Version of OpenFOAM Distribution</strong> to 9. Use the steps outlined in <strong>Modeling Process</strong> box to guide you through procedure.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The CFD model are defined in metric system. Here after please use kilograms for <strong>Mass</strong>, meters for <strong>Length</strong>, second for <strong>Time</strong> and degrees for <strong>Angle</strong>.</p>
+<p>The CFD model is defined in the metric system. Here please use kilograms for <strong>Mass</strong>, meters for <strong>Length</strong>, seconds for <strong>Time</strong> and degrees for <strong>Angle</strong>.</p>
 </div>
 </li>
 </ol>
 <div class="figure align-center" id="id11">
 <a class="reference internal image-reference" href="../../../../../_images/we13_EVT_Start_tab.svg"><img alt="../../../../../_images/we13_EVT_Start_tab.svg" src="../../../../../_images/we13_EVT_Start_tab.svg" width="800" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.5.2.4.1 </span><span class="caption-text">Setup the path and version of OpenFOAM in <em>Start</em> tab</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.5.2.4.1 </span><span class="caption-text">Setup the path and version of OpenFOAM in the <em>Start</em> tab</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic" start="2">
-<li><p>Specify geometric details related to the building and computational domain in the <em>Geometry</em> tab. Set <strong>Input Dimension Normalization</strong> to <em>Relative</em> to size of the domain relative to the building height. Change the <strong>Geometric Scale</strong> of the CFD simulation to 1 to 400 based on the experimental setup (see <a class="reference internal" href="#tbl-we13-1"><span class="std std-numref">Table 4.5.1.1</span></a>). Set the <strong>Building Shape</strong> to <em>Simple</em> as the study building is a simple square building. In the <strong>Building Dimension and Orientation</strong> box specify the <strong>Wind Direction</strong> as 0 to simulate wind incidence normal to the building face. Check the <strong>COST Recommendation</strong> to automatically calculate the domain dimensions based on the COST <a class="reference internal" href="../../../usage/desktop/wind/tools.html#franke2007" id="id4"><span>[Franke2007]</span></a> recommendations. For the coordinate system, specify the <strong>Absolute Origin</strong> as <em>Building Bottom Center</em>.</p>
+<li><p>Specify geometric details related to the building and computational domain in the <em>Geometry</em> tab. Set <strong>Input Dimension Normalization</strong> to <em>Relative</em> to the size of the domain relative to the building height. Change the <strong>Geometric Scale</strong> of the CFD simulation to 1 to 400 based on the experimental setup (see <a class="reference internal" href="#tbl-we13-1"><span class="std std-numref">Table 4.5.1.1</span></a>). Set the <strong>Building Shape</strong> to <em>Simple</em> as the study building is a simple square building. In the <strong>Building Dimension and Orientation</strong> box specify the <strong>Wind Direction</strong> as 0 to simulate wind incidence normal to the building face. Check the <strong>COST Recommendation</strong> to automatically calculate the domain dimensions based on the COST <a class="reference internal" href="../../../usage/desktop/wind/tools.html#franke2007" id="id4"><span>[Franke2007]</span></a> recommendations. For the coordinate system, specify the <strong>Absolute Origin</strong> as <em>Building Bottom Center</em>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If the objective is to replicate a target wind tunnel setup fully, one might need to set the <strong>Domain Length</strong>, <strong>Domain Width</strong>, <strong>Domain Height</strong> and <strong>Fetch Length</strong> manually matching the dimensions of the actual testing facility.</p>
@@ -425,7 +429,7 @@
 </ol>
 <div class="figure align-center" id="id12">
 <a class="reference internal image-reference" href="../../../../../_images/we13_EVT_Geometry_tab.svg"><img alt="../../../../../_images/we13_EVT_Geometry_tab.svg" src="../../../../../_images/we13_EVT_Geometry_tab.svg" width="1100" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.5.2.4.2 </span><span class="caption-text">Define the building and domain geometry in <em>Geometry</em> tab</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.5.2.4.2 </span><span class="caption-text">Define the building and domain geometry in the <em>Geometry</em> tab</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic" start="3">
 <li><p>Generate the computational grid in the <em>Mesh</em> tab. Follow these steps to set the mesh parameters:</p>
@@ -433,10 +437,10 @@
 <p>Define the background (base) mesh as a structured grid with <strong>No. of Cells</strong> in <em>X-axis</em>, <em>Y-axis</em> and <em>Z-axis</em> set to 80, 40, 24. The grid size in each direction needs to be approximately the same.</p>
 <div class="figure align-center" id="id13">
 <a class="reference internal image-reference" href="../../../../../_images/we13_EVT_Mesh_tab.svg"><img alt="../../../../../_images/we13_EVT_Mesh_tab.svg" src="../../../../../_images/we13_EVT_Mesh_tab.svg" width="1100" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.5.2.4.3 </span><span class="caption-text">Define the computational grid in <em>Mesh</em> tab</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.5.2.4.3 </span><span class="caption-text">Define the computational grid in the <em>Mesh</em> tab</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Regional Refinements:</strong></p>
-<p>Create 4 boxes to set different refinement regions using the table shown below. Each refinement box needs to have name, refinement level, min and max coordinates. Set the <strong>Level</strong> with successive increments of 1 (i.e., 1 for <em>Box1</em>, 2 for <em>Box2</em>, etc.). The <strong>Mesh Size</strong> for each region is automatically calculated and provided in the last column of the table.</p>
+<p>Create 4 boxes to set different refinement regions using the table shown below. Each refinement box needs to have a name, refinement level, min and max coordinates. Set the <strong>Level</strong> with successive increments of 1 (i.e., 1 for <em>Box1</em>, 2 for <em>Box2</em>, etc.). The <strong>Mesh Size</strong> for each region is automatically calculated and provided in the last column of the table.</p>
 <div class="figure align-center" id="id14">
 <a class="reference internal image-reference" href="../../../../../_images/we13_EVT_Mesh_RegionalRefinement_tab.svg"><img alt="../../../../../_images/we13_EVT_Mesh_RegionalRefinement_tab.svg" src="../../../../../_images/we13_EVT_Mesh_RegionalRefinement_tab.svg" width="800" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.5.2.4.4 </span><span class="caption-text">Create regional refinements</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
@@ -448,25 +452,25 @@
 <p class="caption"><span class="caption-number">Fig. 4.5.2.4.5 </span><span class="caption-text">Create surface refinements</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Edge Refinements:</strong></p>
-<p>Select <em>Edge Refinements</em> sub-tab and check <em>Add Edge Refinements</em> box. For the <strong>Refinement Level</strong> use 7 effectively making the building edges have one level finer refinement than the rest of the building surface. Similarly, the estimated smallest cell size is given in <strong>Approx. Smallest Mesh Size</strong>.</p>
+<p>Select the <em>Edge Refinements</em> sub-tab and check the <em>Add Edge Refinements</em> box. For the <strong>Refinement Level</strong> use 7 effectively making the building edges have one level finer refinement than the rest of the building surface. Similarly, the estimated smallest cell size is given in <strong>Approx. Smallest Mesh Size</strong>.</p>
 <div class="figure align-center" id="id16">
 <a class="reference internal image-reference" href="../../../../../_images/we13_EVT_Mesh_EdgeRefinement_tab.svg"><img alt="../../../../../_images/we13_EVT_Mesh_EdgeRefinement_tab.svg" src="../../../../../_images/we13_EVT_Mesh_EdgeRefinement_tab.svg" width="800" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.5.2.4.6 </span><span class="caption-text">Apply further refinements along the building edges</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Prism Layers:</strong></p>
-<p>For this example no prism layers are added. Thus, in the <em>Prism Layers</em> sub-tab, uncheck <em>Add Prism Layers</em> box. However, for more accurate CFD simulation it is recommended to have prism layers.</p>
+<p>For this example, no prism layers are added. Thus, in the <em>Prism Layers</em> sub-tab, uncheck the <em>Add Prism Layers</em> box. However, for more accurate CFD simulation it is recommended to have prism layers.</p>
 <div class="figure align-center" id="id17">
 <a class="reference internal image-reference" href="../../../../../_images/we13_EVT_Mesh_PrismLayers_tab.svg"><img alt="../../../../../_images/we13_EVT_Mesh_PrismLayers_tab.svg" src="../../../../../_images/we13_EVT_Mesh_PrismLayers_tab.svg" width="800" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.5.2.4.7 </span><span class="caption-text">Adding Prism Layers</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Advanced Options:</strong></p>
-<p>Use the default values for parameters in <em>Advanced Options</em> group. If you want to use more transition (buffer) cells between each refinement level, change <strong>Number of Cells Between Levels</strong> to a higher value.</p>
+<p>Use the default values for parameters in the <em>Advanced Options</em> group. If you want to use more transition (buffer) cells between each refinement level, change <strong>Number of Cells Between Levels</strong> to a higher value.</p>
 <div class="figure align-center" id="id18">
 <a class="reference internal image-reference" href="../../../../../_images/we13_EVT_Mesh_AdvancedOptions.svg"><img alt="../../../../../_images/we13_EVT_Mesh_AdvancedOptions.svg" src="../../../../../_images/we13_EVT_Mesh_AdvancedOptions.svg" width="800" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.5.2.4.8 </span><span class="caption-text">Set <em>Advanced Options</em></span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Run Mesh</strong></p>
-<p>Once all mesh parameters are defined, click <strong>Run snappyHexMesh</strong> button to generate the final mesh. The progress of the mesh generation can be monitored on <strong>Program Output</strong>. When the mesh generation finishes successfully, the <em>Model View</em> window on the right side will get updated and the user can visualize the mesh. You can actively zoom, rotate and pan the generated mesh in 3D for a detailed view. The following figure shows an inside view of the computational domain after selecting a <em>Breakout</em> <strong>View</strong> option in the <em>Model View</em> panel.</p>
+<p>Once all mesh parameters are defined, click the <strong>Run snappyHexMesh</strong> button to generate the final mesh. The progress of the mesh generation can be monitored on <strong>Program Output</strong>. When the mesh generation finishes successfully, the <em>Model View</em> window on the right side will get updated and the user can visualize the mesh. You can actively zoom, rotate and pan the generated mesh in 3D for a detailed view. The following figure shows an inside view of the computational domain after selecting a <em>Breakout</em> <strong>View</strong> option in the <em>Model View</em> panel.</p>
 <div class="figure align-center" id="id19">
 <a class="reference internal image-reference" href="../../../../../_images/we13_EVT_Mesh_Run.svg"><img alt="../../../../../_images/we13_EVT_Mesh_Run.svg" src="../../../../../_images/we13_EVT_Mesh_Run.svg" width="800" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.5.2.4.9 </span><span class="caption-text">Running the mesh</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
@@ -486,11 +490,11 @@
 <p class="caption"><span class="caption-number">Fig. 4.5.2.4.11 </span><span class="caption-text">Setup the <em>Boundary Conditions</em></span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p>Specify turbulence modeling, solver type, duration and time step options in <em>Numerical Setup</em> tab.</p>
+<li><p>Specify turbulence modeling, solver type, duration and time step options in the <em>Numerical Setup</em> tab.</p>
 <ul class="simple">
 <li><p>For this example, since time-series of the wind forces are needed for the structural solver, we use transient CFD simulation. Thus, in <strong>Turbulence Modeling</strong> group, set <strong>Simulation Type</strong> to <em>LES</em> and select <em>Smagorinsky</em> for the <strong>Sub-grid Scale Model</strong>. The coefficients of the standard <em>Smagorinsky</em> model are printed in the following text box.</p></li>
 <li><p>For the <strong>Solver Type</strong> select <em>pisoFoam</em> in <strong>Solver Selection</strong> group . Set the <strong>Number of Non-Orthogonal Correctors</strong> to 1 to add additional solver iteration. This option will give better stability to the solver as the generated mesh is non-orthogonal (irregular) near the building surface.</p></li>
-<li><p>Specify <span class="math notranslate nohighlight">\(10 s\)</span> for the <strong>Duration</strong> of the simulation based on what is determined in <a class="reference internal" href="#tbl-we13-1"><span class="std std-numref">Table 4.5.1.1</span></a>. Compute the approximate <strong>Time Steep</strong> needed for a stable simulation by clicking <strong>Calculate</strong> button. Then, you can change the calculated time step to a slightly lower or higher value avoiding the use of long significant digits. For this example, the calculated value was <span class="math notranslate nohighlight">\(8.67919 \times 10^{-05}\)</span> but it was changed to <span class="math notranslate nohighlight">\(1.0 \times 10^{-04}\)</span> to make it a workable time step. Chose the <strong>Constant</strong> time step option.</p></li>
+<li><p>Specify <span class="math notranslate nohighlight">\(10 s\)</span> for the <strong>Duration</strong> of the simulation based on what is determined in <a class="reference internal" href="#tbl-we13-1"><span class="std std-numref">Table 4.5.1.1</span></a>. Compute the approximate <strong>Time Steep</strong> needed for a stable simulation by clicking <strong>Calculate</strong> button. Then, you can change the calculated time step to a slightly lower or higher value avoiding the use of long significant digits. For this example, the calculated value was <span class="math notranslate nohighlight">\(8.67919 \times 10^{-05}\)</span> but it was changed to <span class="math notranslate nohighlight">\(1.0 \times 10^{-04}\)</span> to make it a workable time step. Choose the <strong>Constant</strong> time step option.</p></li>
 <li><p>Check the <strong>Run Simulation in Parallel</strong> option and specify the <strong>Number of Processors</strong> to the 32. Depending on the number of grids used, the number of processors can be increased to a higher value.</p></li>
 </ul>
 </li>
@@ -531,7 +535,7 @@
 </div>
 <div class="section" id="random-variables">
 <h3><span class="section-number">4.5.2.7. </span>Random Variables<a class="headerlink" href="#random-variables" title="Permalink to this heading">¶</a></h3>
-<p>The random variables are defined in <strong>RV</strong> tab. Here, the floor stiffness named as <span class="math notranslate nohighlight">\(k\)</span> in <strong>SIM</strong> tab is automatically assigned as a random variable. Select <em>Normal</em> for the probability <strong>Distribution</strong> of the variable. Then, specify <span class="math notranslate nohighlight">\(4 \times 10^{8}\)</span> for the <strong>Mean</strong> and <span class="math notranslate nohighlight">\(4 \times 10^{7}\)</span> for <strong>Standard Dev</strong>. The user can also click <strong>Show PDF</strong> to inspect the probability density function of the variable as shown in <a class="reference internal" href="#fig-we13-rv-panel"><span class="std std-numref">Fig. 4.5.2.7.1</span></a></p>
+<p>The random variables are defined in the <strong>RV</strong> tab. Here, the floor stiffness named as <span class="math notranslate nohighlight">\(k\)</span> in <strong>SIM</strong> tab is automatically assigned as a random variable. Select <em>Normal</em> for the probability <strong>Distribution</strong> of the variable. Then, specify <span class="math notranslate nohighlight">\(4 \times 10^{8}\)</span> for the <strong>Mean</strong> and <span class="math notranslate nohighlight">\(4 \times 10^{7}\)</span> for <strong>Standard Dev</strong>. The user can also click <strong>Show PDF</strong> to inspect the probability density function of the variable as shown in <a class="reference internal" href="#fig-we13-rv-panel"><span class="std std-numref">Fig. 4.5.2.7.1</span></a></p>
 <div class="figure align-center" id="id26">
 <span id="fig-we13-rv-panel"></span><a class="reference internal image-reference" href="../../../../../_images/we13_RV_panel.svg"><img alt="../../../../../_images/we13_RV_panel.svg" src="../../../../../_images/we13_RV_panel.svg" width="800" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.5.2.7.1 </span><span class="caption-text">Define the Random Variable (RV)</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
@@ -543,11 +547,11 @@
 <blockquote>
 <div><div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>We know 17 hours is a really long time!! This is quite common in most LES-based wind loads evaluation studies. If you only want to test the example, please set <strong>Duration</strong> of the simulation in <strong>Numerical Setup</strong> tab of the <strong>EVT</strong> panel to a smaller value, say <span class="math notranslate nohighlight">\(0.1s\)</span>, and submit the simulation.</p>
+<p>We know 17 hours is a really long time!! This is quite common in most LES-based wind load evaluation studies. If you only want to test the example, please set the <strong>Duration</strong> of the simulation in the <strong>Numerical Setup</strong> tab of the <strong>EVT</strong> panel to a smaller value, say <span class="math notranslate nohighlight">\(0.1s\)</span>, and submit the simulation.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Note that the total number of processors used in the simulation equals <strong>Num Nodes</strong> <span class="math notranslate nohighlight">\(\times\)</span> <strong># Processes Per Node</strong>. This value must be the same as what is specified for <strong>Number of Processors</strong> in <strong>Numerical Setup</strong> tab of the CFD model (see <a class="reference internal" href="#fig-we13-cfd-num-setup"><span class="std std-numref">Fig. 4.5.2.4.12</span></a>).</p>
+<p>Note that the total number of processors used in the simulation equals <strong>Num Nodes</strong> <span class="math notranslate nohighlight">\(\times\)</span> <strong># Processes Per Node</strong>. This value must be the same as what is specified for the <strong>Number of Processors</strong> in the <strong>Numerical Setup</strong> tab of the CFD model (see <a class="reference internal" href="#fig-we13-cfd-num-setup"><span class="std std-numref">Fig. 4.5.2.4.12</span></a>).</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -559,7 +563,7 @@
 <p class="caption"><span class="caption-number">Fig. 4.5.2.8.1 </span><span class="caption-text">Submit the simulation to the remote server (DesignSafe-CI)</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
 </div>
 <p><strong>Monitor the Simulation</strong></p>
-<p>The progress (status) of the submitted job can be tracked by clicking <strong>GET from DesignSafe</strong>. A new window pops up showing all the jobs run on <em>DesignSafe</em>. Here right-click the name of your job, and select <strong>Refresh Job</strong> option to update the status of the job. If the job started the table will show <em>RUNNING</em> for the status. When the simulation is completed it will show <em>FINISHED</em>.</p>
+<p>The progress (status) of the submitted job can be tracked by clicking <strong>GET from DesignSafe</strong>. A new window pops up showing all the jobs run on <em>DesignSafe</em>. Here right-click the name of your job, and select the <strong>Refresh Job</strong> option to update the status of the job. If the job started the table will show <em>RUNNING</em> for the status. When the simulation is completed it will show <em>FINISHED</em>.</p>
 <div class="figure align-center" id="id28">
 <span id="fig-we13-monitor-job"></span><a class="reference internal image-reference" href="../../../../../_images/we13_MonitorJob.svg"><img alt="../../../../../_images/we13_MonitorJob.svg" src="../../../../../_images/we13_MonitorJob.svg" width="800" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.5.2.8.2 </span><span class="caption-text">Monitor the submitted job</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
@@ -567,7 +571,7 @@
 </div>
 <div class="section" id="results">
 <h3><span class="section-number">4.5.2.9. </span>Results<a class="headerlink" href="#results" title="Permalink to this heading">¶</a></h3>
-<p>Once the remote job finishes, the results can be reloaded by clicking <strong>Retrieve Data</strong> option in <a class="reference internal" href="#fig-we13-monitor-job"><span class="std std-numref">Fig. 4.5.2.8.2</span></a>. Then, the results will be displayed in <strong>RES</strong> tab. For the <em>Standard</em> EDP chosen the responses monitored are displayed for each floor and direction. For example, the naming of the EDPs with:</p>
+<p>Once the remote job finishes, the results can be reloaded by clicking the <strong>Retrieve Data</strong> option in <a class="reference internal" href="#fig-we13-monitor-job"><span class="std std-numref">Fig. 4.5.2.8.2</span></a>. Then, the results will be displayed in the <strong>RES</strong> tab. For the <em>Standard</em> EDP chosen the responses monitored are displayed for each floor and direction. For example, the naming of the EDPs with:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>1-PFA-0-1: represents <strong>peak floor acceleration</strong> at the <strong>ground floor</strong> for <strong>component 1</strong> (x-dir)</p></li>
@@ -581,7 +585,7 @@
 <a class="reference internal image-reference" href="../../../../../_images/we13_RES_Summary.svg"><img alt="../../../../../_images/we13_RES_Summary.svg" src="../../../../../_images/we13_RES_Summary.svg" width="800" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.5.2.9.1 </span><span class="caption-text">Summary of the recorded EDPs in <strong>RES</strong> panel</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
 </div>
-<p>In addition, by switching to <em>Data Values</em> tab, you can see all the realizations of the simulation and inspect the relationships between different entries. For instance, if you want to visualize the variation of the top-floor acceleration with floor stiffness, right-click “1-RMSA-50-2” column in the table. This will show the root-mean-squared acceleration in the cross-wind direction for all runs as shown on the left side of <a class="reference internal" href="#fig-we13-res-scatter"><span class="std std-numref">Fig. 4.5.2.9.2</span></a>. As you might expect, the floor acceleration generally decreases as the building becomes more stiff.</p>
+<p>In addition, by switching to the <em>Data Values</em> tab, you can see all the realizations of the simulation and inspect the relationships between different entries. For instance, if you want to visualize the variation of the top-floor acceleration with floor stiffness, right-click the “1-RMSA-50-2” column in the table. This will show the root-mean-squared acceleration in the cross-wind direction for all runs as shown on the left side of <a class="reference internal" href="#fig-we13-res-scatter"><span class="std std-numref">Fig. 4.5.2.9.2</span></a>. As you might expect, the floor acceleration generally decreases as the building becomes more stiff.</p>
 <div class="figure align-center" id="id30">
 <span id="fig-we13-res-scatter"></span><a class="reference internal image-reference" href="../../../../../_images/we13_RES_DataValues.svg"><img alt="../../../../../_images/we13_RES_DataValues.svg" src="../../../../../_images/we13_RES_DataValues.svg" width="1000" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.5.2.9.2 </span><span class="caption-text">(scatter-plot) Top-floor acceleration vs floor stiffness, (table) Report of EDPs for all realizations</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
@@ -599,7 +603,7 @@
 <div class="section" id="visualizing-the-cfd-output">
 <h2><span class="section-number">4.5.3. </span>Visualizing the CFD Output<a class="headerlink" href="#visualizing-the-cfd-output" title="Permalink to this heading">¶</a></h2>
 <p>The simulated case directory can be directly accessed on the <em>DesignSafe</em> data depot and visualized remotely using Paraview. The following plots show sample visualization of the instantaneous flow field.</p>
-<p>In <a class="reference internal" href="#fig-we13-cfd-result1"><span class="std std-numref">Fig. 4.5.3.1</span></a>, the streamlines of the approaching flow, as it passes around the building, are shown. On the building surface, the result pressure coefficient are displayed. It also shows the inside view of the mesh underlying.</p>
+<p>In <a class="reference internal" href="#fig-we13-cfd-result1"><span class="std std-numref">Fig. 4.5.3.1</span></a>, the streamlines of the approaching flow, as it passes around the building, are shown. On the building surface, the calculated pressure coefficients are displayed. It also shows the inside view of the mesh underlying.</p>
 <div class="figure align-center" id="id31">
 <span id="fig-we13-cfd-result1"></span><a class="reference internal image-reference" href="../../../../../_images/we13_CFD_Results_StreamLines.svg"><img alt="../../../../../_images/we13_CFD_Results_StreamLines.svg" src="../../../../../_images/we13_CFD_Results_StreamLines.svg" width="800" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.5.3.1 </span><span class="caption-text">Streamlines of the instantaneous velocity field around the building.</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
@@ -611,7 +615,7 @@
 </div>
 <dl class="citation">
 <dt class="label" id="cook1997"><span class="brackets"><a class="fn-backref" href="#id2">Cook1997</a></span></dt>
-<dd><p>Cook, N.J., 1997. The Deaves and Harris ABL model applied to heterogeneous terrain. Journal of wind engineering and industrial aerodynamics, 66(3), pp.197-214.</p>
+<dd><p>Cook, N.J., 1997. The Deaves and Harris ABL model applied to heterogeneous terrain. Journal of Wind Engineering and Industrial Aerodynamics, 66(3), pp.197-214.</p>
 </dd>
 <dt class="label" id="esdu2001"><span class="brackets"><a class="fn-backref" href="#id3">ESDU2001</a></span></dt>
 <dd><p>ESDU, I., 2001. Characteristics of Atmospheric Turbulence Near the Ground—Part II: Single Point Data for Strong Winds (Neutral Atmosphere). Engineering Sciences Data Unit, IHS Inc., London, UK, Report No. ESDU, 85020.</p>

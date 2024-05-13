@@ -50,7 +50,7 @@
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="2. Software Architecture" href="../../architecture/desktop/architecture.html" />
-    <link rel="prev" title="1.5. Wind-tunnel informed stochastic wind load" href="../../../technical_manual/desktop/WEUQ/dataInformedStochasticWind.html" />
+    <link rel="prev" title="5. Wind-tunnel informed stochastic wind load" href="../../../technical_manual/desktop/WEUQ/dataInformedStochasticWind.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -131,7 +131,11 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/WEUQ/scalingWindTunnelData.html">3. Scaling Wind Tunnel Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/WEUQ/TinF.html">4. Turbulence Inflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/WEUQ/dataInformedStochasticWind.html">5. Wind-tunnel informed stochastic wind load</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul class="current">
@@ -226,7 +230,7 @@
 <p>SimCenter tools all comprise a frontend user interface (UI) and backend applications. They are kept in separate GitHub repositories and are also built separately. The following sections outline (1) the applications needed to build and run, (2) instructions for building the backend applications, (3) instructions for building the frontend UI, and (4) operations to perform in the running UI to link the UI and the backend.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>As part of our continuous integration process, WE-UQ app is built every time we check code into the NHERI-SimCenter repositories. To do this we make use of a CI service. That current service is <a class="reference external" href="https://www.appveyor.com/">appveyor</a>. As a consequence in the WE-UQ app repo that you will clone as part of this build process there is a file <strong>appveyor.yml</strong>. This file contains shell commands that are issued to set up the operating system, download the software and build it. If the following commands fail for you, look at the appveyor.yml file to see what commands are currently being called as these may be more up-to-date than what is presented below.</p>
+<p>As part of our continuous integration process, WE-UQ app is built every time we check code into the NHERI-SimCenter repositories. To do this we make use of a CI service. That current service is <a class="reference external" href="https://www.appveyor.com/">appveyor</a>. As a consequence in the WE-UQ app repo that you will clone as part of this build process there is a file <strong>appveyor.yml</strong>. This file contains shell commands that are issued to set up the operating system, download the software, and build it. If the following commands fail for you, look at the appveyor.yml file to see what commands are currently being called as these may be more up-to-date than what is presented below.</p>
 </div>
 <div class="section" id="install-dependencies">
 <h2><span class="section-number">1.1. </span>Install Dependencies<a class="headerlink" href="#install-dependencies" title="Permalink to this heading">¶</a></h2>
@@ -256,7 +260,7 @@
 </div>
 <div class="section" id="build-the-backend-applications">
 <h2><span class="section-number">1.2. </span>Build the Backend Applications<a class="headerlink" href="#build-the-backend-applications" title="Permalink to this heading">¶</a></h2>
-<p>Instructions to build the backend workflow applications on your local desktop depend on your operating system, but is a 2 step process involving some initial setup and finally the build.</p>
+<p>Instructions to build the backend workflow applications on your local desktop depend on your operating system. This is a 2-step process involving some initial setup and finally the build.</p>
 <div class="section" id="setup-the-development-environment-with-conan">
 <h3><span class="section-number">1.2.1. </span>Setup the development environment with Conan<a class="headerlink" href="#setup-the-development-environment-with-conan" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic">
@@ -347,19 +351,19 @@
 </div></blockquote>
 </li>
 </ol>
-<p>If building and installation were successful, you should find a folder called <code class="docutils literal notranslate"><span class="pre">applications</span></code> in the repository with all the applications inside of it.   The name of this folder should not be changed.</p>
+<p>If building and installation were successful, you should find a folder called <code class="docutils literal notranslate"><span class="pre">applications</span></code> in the repository with all the applications inside of it. The name of this folder should not be changed.</p>
 </div>
 </div>
 <div class="section" id="build-the-user-interface">
 <h2><span class="section-number">1.3. </span>Build the User Interface<a class="headerlink" href="#build-the-user-interface" title="Permalink to this heading">¶</a></h2>
-<p>To build the interface, you first need to download the repo and a companion repo(SimCenterCommon) from Github using our <a class="reference external" href="https://github.com/NHERI-SimCenter">github repos</a>. In a folder in which you wish to build the application, issue the following two commands.</p>
+<p>To build the interface, you first need to download the repo and a companion repo(SimCenterCommon) from GitHub using our <a class="reference external" href="https://github.com/NHERI-SimCenter">GitHub repos</a>. In a folder in which you wish to build the application, issue the following two commands.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">NHERI</span><span class="o">-</span><span class="n">SimCenter</span><span class="o">/</span><span class="n">SimCenterCommon</span><span class="o">.</span><span class="n">git</span>
 <span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">NHERI</span><span class="o">-</span><span class="n">SimCenter</span><span class="o">/</span><span class="n">WE</span><span class="o">-</span><span class="n">UQ</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Use the above links if you just want to download and build the applications. If you intend to make changes to any of the code in the repo’s, you should fork that repo and then clone your forked repo. Forking a repo at <strong>github</strong> is done through your browser as shown on the following <a class="reference external" href="https://guides.github.com/activities/forking/">github guides page</a></p>
+<p>Use the above links if you just want to download and build the applications. If you intend to make changes to any of the code in the repos, you should fork that repo and then clone your forked repo. Forking a repo at <strong>GitHub</strong> is done through your browser as shown on the following <a class="reference external" href="https://guides.github.com/activities/forking/">GitHub guides page</a></p>
 </div>
 <p>You now have two ways to build the application: (1) using the <strong>Qt Creator</strong> desktop application provided by <strong>Qt</strong> and (2) from the terminal application.</p>
 <div class="section" id="build-using-qt-creator">
@@ -407,7 +411,7 @@ make</pre>
 <p>Once built, the tool <strong>Preferences</strong> needs to be modified. To do this, open the WE-UQ tool, then click on File -&gt; Preferences in the main menu if on Windows or WE-UQ -&gt; Preferences if on a Mac. This will bring up a dialog window shown below. You need to modify specific values:</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p>Python: provide the full path to the python interpreter.</p></li>
+<li><p>Python: provide the full path to the Python interpreter.</p></li>
 <li><p>OpenSees: provide the full path to the OpenSees executable</p></li>
 <li><p>Dakota: provide the full path to the Dakota executable.</p></li>
 <li><p>Custom Local Application: Here, select the checkbox to the left, and then provide the path to the SimCenterBackendApplications directory. The code assumes that the folder <strong>applications</strong>, which you created when building the backend applications, exists.</p></li>

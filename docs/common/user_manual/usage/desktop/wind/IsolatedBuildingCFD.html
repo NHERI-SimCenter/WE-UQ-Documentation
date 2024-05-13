@@ -149,8 +149,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.6. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../response/EDP.html">2.7. EDP: Demand Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../response/EDP.html">2.6. EDP: Demand Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.7. RV: Random Variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../response/resEE.html">2.8. RES: Results</a></li>
 </ul>
 </li>
@@ -162,7 +162,11 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/WEUQ/scalingWindTunnelData.html">3. Scaling Wind Tunnel Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/WEUQ/TinF.html">4. Turbulence Inflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/WEUQ/dataInformedStochasticWind.html">5. Wind-tunnel informed stochastic wind load</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -310,7 +314,7 @@
 </ol>
 <div class="section" id="importing-stl-surface">
 <h3>Importing STL Surface<a class="headerlink" href="#importing-stl-surface" title="Permalink to this heading">¶</a></h3>
-<p>For buildings with complex shapes, the user can specify the building geometry by clicking <strong>Import STL</strong> button under <em>Building Shape</em> group (see  <a class="reference internal" href="#fig-iso-geometry-tab"><span class="std std-numref">Fig. 2.4.3.2.1</span></a>). This opens a new window shown in <a class="reference internal" href="#fig-iso-import-stl"><span class="std std-numref">Fig. 2.4.3.2.2</span></a> which will allow the user to import an STL file. The properties of the STL geometry and options to transform the model are given below.</p>
+<p>For buildings with complex shapes, the user can specify the building geometry by clicking <strong>Import STL</strong> button under <em>Building Shape</em> group (see <a class="reference internal" href="#fig-iso-geometry-tab"><span class="std std-numref">Fig. 2.4.3.2.1</span></a>). This opens a new window shown in <a class="reference internal" href="#fig-iso-import-stl"><span class="std std-numref">Fig. 2.4.3.2.2</span></a> which will allow the user to import an STL file. The properties of the STL geometry and options to transform the model are given below.</p>
 <div class="figure align-center" id="id14">
 <span id="fig-iso-import-stl"></span><a class="reference internal image-reference" href="../../../../../_images/import_stl_dialog.svg"><img alt="../../../../../_images/import_stl_dialog.svg" src="../../../../../_images/import_stl_dialog.svg" width="50%" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.4.3.2.2 </span><span class="caption-text">Importing building geometry from an STL file.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
@@ -643,7 +647,7 @@
 </li>
 <li><p><strong>Number of Non-Orthogonal Correctors</strong>: Additional correction loops to account for mesh non-orthogonality. The default value is set to one. For highly non-orthogonal mesh, a higher value needs to be used.</p></li>
 <li><p><strong>Number of Corrector Loops</strong>: Specifies the number of pressure-corrector loops per each time iteration. The default value is set to 2. This value is valid only for transient solvers.</p></li>
-<li><p><strong>Number of Outer Corrector Loops</strong>: Specifies the number PISO loops to run for each time step. This value is valid only for <em>pimpleFoam</em> solver. The <em>pimpleFoam</em> solver works by running multiple PISO iterations, and if this field is set to 1, it will run in a PISO mode.</p></li>
+<li><p><strong>Number of Outer Corrector Loops</strong>: Specifies the number of PISO loops to run for each time step. This value is valid only for the <em>pimpleFoam</em> solver. The <em>pimpleFoam</em> solver works by running multiple PISO iterations, and if this field is set to 1, it will run in a PISO mode.</p></li>
 </ol>
 </div>
 <div class="section" id="duration-and-time-step">
@@ -722,7 +726,7 @@
 <dd><p>Melaku, A.F. and Bitsuamlak, G.T., 2021. A divergence-free inflow turbulence generator using spectral representation method for large-eddy simulation of ABL flows. Journal of Wind Engineering and Industrial Aerodynamics, 212, p.104580.</p>
 </dd>
 <dt class="label" id="klein2003"><span class="brackets"><a class="fn-backref" href="#id6">Klein2003</a></span></dt>
-<dd><p>Klein, M., Sadiki, A. and Janicka, J., 2003. A digital filter based generation of inflow data for spatially developing direct numerical or large eddy simulations. Journal of Computational Physics, 186(2), pp.652-665.</p>
+<dd><p>Klein, M., Sadiki, A. and Janicka, J., 2003. A digital filter-based generation of inflow data for spatially developing direct numerical or large eddy simulations. Journal of Computational Physics, 186(2), pp.652-665.</p>
 </dd>
 <dt class="label" id="xie2008"><span class="brackets"><a class="fn-backref" href="#id7">Xie2008</a></span></dt>
 <dd><p>Xie, Z.T. and Castro, I.P., 2008. Efficient generation of inflow conditions for large eddy simulation of street-scale flows. Flow, turbulence and combustion, 81, pp.449-470.</p>
@@ -731,10 +735,10 @@
 <dd><p>Jarrin, N., Benhamadouche, S., Laurence, D. and Prosser, R., 2006. A synthetic-eddy-method for generating inflow conditions for large-eddy simulations. International Journal of Heat and Fluid Flow, 27(4), pp.585-593.</p>
 </dd>
 <dt class="label" id="poletto2013"><span class="brackets"><a class="fn-backref" href="#id9">Poletto2013</a></span></dt>
-<dd><p>Poletto, R., Craft, T. and Revell, A., 2013. A new divergence free synthetic eddy method for the reproduction of inlet flow conditions for LES. Flow, turbulence and combustion, 91, pp.519-539.</p>
+<dd><p>Poletto, R., Craft, T. and Revell, A., 2013. A new divergence-free synthetic eddy method for the reproduction of inlet flow conditions for LES. Flow, turbulence and combustion, 91, pp.519-539.</p>
 </dd>
 <dt class="label" id="kroger2018"><span class="brackets"><a class="fn-backref" href="#id10">Kröger2018</a></span></dt>
-<dd><p>Kröger, H. and Kornev, N., 2018. Generation of divergence free synthetic inflow turbulence with arbitrary anisotropy. Computers &amp; Fluids, 165, pp.78-88.</p>
+<dd><p>Kröger, H. and Kornev, N., 2018. Generation of divergence-free synthetic inflow turbulence with arbitrary anisotropy. Computers &amp; Fluids, 165, pp.78-88.</p>
 </dd>
 </dl>
 </div>

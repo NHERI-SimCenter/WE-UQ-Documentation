@@ -147,7 +147,11 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/damping.html">2. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/WEUQ/scalingWindTunnelData.html">3. Scaling Wind Tunnel Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/WEUQ/TinF.html">4. Turbulence Inflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/WEUQ/dataInformedStochasticWind.html">5. Wind-tunnel informed stochastic wind load</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
@@ -227,7 +231,7 @@
             
   <div class="section" id="story-building-sampling-analysis">
 <span id="weuq-0001"></span><h1><span class="section-number">4.1. </span>9 Story Building: Sampling Analysis<a class="headerlink" href="#story-building-sampling-analysis" title="Permalink to this heading">¶</a></h1>
-<p>Consider the problem of uncertainty quantification in a nine story steel building. The building being modelled is the 9 story LA building presented in the FEMA-355C report. From the description in Appendix B of the FEMA document the building is a <strong>150</strong> ft square building with a height above ground of <strong>120</strong> ft with a weight of approx. <strong>19,800</strong> kips. Eigenvalues are shown in Table 5.1. of the FEMA document to be between <strong>2.3</strong> sec and <strong>2.2</strong> sec depending on connection detals. For this example (and for demonstrative purposes only), this building will be modelled as a shear building with <strong>10</strong> nodes and <strong>9</strong> elements, as shown in following figure. For loading, the Stochastic Wind Generation tool will be used with the gust wind speed being treated as a random variable with a normal distribtion described by a mean <span class="math notranslate nohighlight">\(\mu_{gustWS}=20 \mathrm{mph}\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sigma_{gustWS} =3 \mathrm{mph}\)</span>.</p>
+<p>Consider the problem of uncertainty quantification in a nine-story steel building. The building being modeled is the 9-story LA building presented in the FEMA-355C report. From the description in Appendix B of the FEMA document the building is a <strong>150</strong> ft square building with a height above ground of <strong>120</strong> ft with a weight of approx. <strong>19,800</strong> kips. Eigenvalues are shown in Table 5.1. of the FEMA document to be between <strong>2.3</strong> sec and <strong>2.2</strong> sec depending on connection details. For this example (and for demonstrative purposes only), this building will be modeled as a shear building with <strong>10</strong> nodes and <strong>9</strong> elements, as shown in the following figure. For loading, the Stochastic Wind Generation tool will be used with the gust wind speed being treated as a random variable with a normal distribution described by a mean <span class="math notranslate nohighlight">\(\mu_{gustWS}=20 \mathrm{mph}\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sigma_{gustWS} =3 \mathrm{mph}\)</span>.</p>
 <div class="align-center figure" id="id1">
 <a class="reference internal image-reference" href="../../../../../_images/9Story.png"><img alt="../../../../../_images/9Story.png" src="../../../../../_images/9Story.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 4.1.1 </span><span class="caption-text">Nine Story Downtown LA Building from FEMA-355C</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
@@ -288,7 +292,7 @@
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Do not place the file in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing this file multiple times (a copy will be made for each sample specified). If you are like us, your root, Downloads or Documents folders contains and awful lot of files and when the backend workflow runs you will slowly find you will run out of disk space!</p>
+<p>Do not place the file in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing this file multiple times (a copy will be made for each sample specified). If you are like us, your root, Downloads or Documents folders contain an awful lot of files and when the backend workflow runs you will slowly find you will run out of disk space!</p>
 </div>
 <div class="section" id="sampling-analysis">
 <h2><span class="section-number">4.1.1. </span>Sampling Analysis<a class="headerlink" href="#sampling-analysis" title="Permalink to this heading">¶</a></h2>
@@ -311,39 +315,39 @@
 <img alt="../../../../../_images/9story-UQ.png" src="../../../../../_images/9story-UQ.png" />
 </div>
 <ol class="arabic simple">
-<li><p>Next select the <strong>GI</strong> panel. In this panel the building properties and units are set. For this example enter <strong>9</strong> for the number of stories, <strong>1400</strong> for building height, and <strong>1600</strong> for building breadth and depth</p></li>
+<li><p>Next, select the <strong>GI</strong> panel. In this panel, the building properties and units are set. For this example enter <strong>9</strong> for the number of stories, <strong>1400</strong> for building height, and <strong>1600</strong> for building breadth and depth</p></li>
 </ol>
 <div class="align-center figure">
 <img alt="../../../../../_images/9story-GI.png" src="../../../../../_images/9story-GI.png" />
 </div>
 <ol class="arabic simple">
-<li><p>Next select the <strong>SIM</strong> panel from the input panel. This will default in the MDOF model generator. We will use this generator (the NOTE below contains instruction on how to use the OpenSees scipt instead). In the building information panel, the number of stories should show <strong>9</strong> and the story heights <strong>160</strong>. In the building Information box specify <strong>w</strong> for the floor weights and <strong>k</strong> for story stiffness (in both x and y directions).</p></li>
+<li><p>Then, select the <strong>SIM</strong> panel from the input panel. This will default in the MDOF model generator. We will use this generator (the NOTE below contains instructions on how to use the OpenSees script instead). In the building information panel, the number of stories should show <strong>9</strong> and the story height <strong>160</strong>. In the building Information box specify <strong>w</strong> for the floor weights and <strong>k</strong> for story stiffness (in both x and y directions).</p></li>
 </ol>
 <div class="align-center figure">
 <img alt="../../../../../_images/9story-SIM1.png" src="../../../../../_images/9story-SIM1.png" />
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>To specify instead to use the OpenSees script instead, from thee Model Generator pull down menu select <code class="docutils literal notranslate"><span class="pre">OpenSees</span></code>. For the fields in the panel presented enter the path to the <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples//weuq-0001/src/Frame9Model.tcl">Frame9Model.tcl</a> script. For both the Centroid  Nodes (those nodes were the floor loads will be applied) the Response Nodes (those nodes from which the reponse quantities will be evaluated) as <strong>1 2 3 4 5 6 7 8 9 10</strong> in the panel. The Response nodes will tell model generator which nodes correspond to nodes at the 4 floor levels for which responses are to be obtained when using the standard earthquake EDP’s.</p>
+<p>To specify instead to use the OpenSees script, from the Model Generator pull-down menu select <code class="docutils literal notranslate"><span class="pre">OpenSees</span></code>. For the fields in the panel presented enter the path to the <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples//weuq-0001/src/Frame9Model.tcl">Frame9Model.tcl</a> script. For both the Centroid  Nodes (those nodes where the floor loads will be applied) and the Response Nodes (those nodes from which the response quantities will be evaluated) as <strong>1 2 3 4 5 6 7 8 9 10</strong> in the panel. The Response nodes will tell the model generator which nodes correspond to nodes at the 4th-floor levels for which responses are to be obtained when using the standard earthquake EDP’s.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/9story-SIM2.png" src="../../../../../_images/9story-SIM2.png" />
 </div>
 </div>
 <ol class="arabic simple">
-<li><p>Next select the <strong>EVT</strong> panel. From the Load Generator pull down menu select the <strong>Stochastic Wind</strong> option. Leave the exposure condition as <strong>B</strong>. Set the drag coefficient as <strong>1.3</strong> and enter <code class="docutils literal notranslate"><span class="pre">gustWS</span></code> for the 3 sec gust wind speed at the 33 ft height.</p></li>
+<li><p>Next, select the <strong>EVT</strong> panel. From the Load Generator pull-down menu select the <strong>Stochastic Wind</strong> option. Leave the exposure condition as <strong>B</strong>. Set the drag coefficient as <strong>1.3</strong> and enter <code class="docutils literal notranslate"><span class="pre">gustWS</span></code> for the 3-sec gust wind speed at the 33 ft height.</p></li>
 </ol>
 <div class="align-center figure">
 <img alt="../../../../../_images/9story-EVENT.png" src="../../../../../_images/9story-EVENT.png" />
 </div>
 <ol class="arabic simple">
-<li><p>Next choose the <strong>FEM</strong> panel. Here we will change the entries to use Rayleigh damping, with rayleigh factor chosen using <strong>1</strong> and <strong>6</strong> modes. For the <strong>MDOF</strong> model generator, because it generates a model with two translational and 1 rotational degree-of-freedom in each direction and because we have provided the same <strong>k</strong> values in each translational direction, i.e. we will have duplicate eigenvalues, we specify as shown in the figure modes <strong>1</strong> and <strong>6</strong>.</p></li>
+<li><p>Next, choose the <strong>FEM</strong> panel. Here we will change the entries to use Rayleigh damping, with the Rayleigh factor chosen using <strong>1</strong> and <strong>6</strong> modes. For the <strong>MDOF</strong> model generator, because it generates a model with two translational and 1 rotational degree-of-freedom in each direction and because we have provided the same <strong>k</strong> values in each translational direction, i.e. we will have duplicate eigenvalues, we specify as shown in the figure modes <strong>1</strong> and <strong>6</strong>.</p></li>
 </ol>
 <div class="align-center figure">
 <img alt="../../../../../_images/9story-FEM.png" src="../../../../../_images/9story-FEM.png" />
 </div>
 <ol class="arabic simple" start="4">
-<li><p>We will skip the <strong>EDP</strong> panel leaving it in it’s default condition, that being to use the <strong>Standard Wind</strong> EDP generator.</p></li>
-<li><p>For the <strong>RV</strong> panel, we will enter the distributions and values for our random variables. Because of the steps we have followed and entries we have made, the panel when we open it should contain the <strong>3</strong> random variables and they should all be set constant. For the w, k and wS random variables we change the distributions to normal and enter the values given for the problem, as shown in figure below.</p></li>
+<li><p>We will skip the <strong>EDP</strong> panel leaving it in its default condition, that is to use the <strong>Standard Wind</strong> EDP generator.</p></li>
+<li><p>For the <strong>RV</strong> panel, we will enter the distributions and values for our random variables. Because of the steps we have followed and entries we have made, the panel when we open it should contain the <strong>3</strong> random variables and they should all be set constant. For the w, k and wS random variables we change the distributions to normal and enter the values given for the problem, as shown in the figure below.</p></li>
 </ol>
 <div class="align-center figure">
 <img alt="../../../../../_images/9story-RV.png" src="../../../../../_images/9story-RV.png" />
@@ -353,16 +357,16 @@
 <p>The user cannot leave any of the distributions for these values as constant for the Dakota UQ engine.</p>
 </div>
 <ol class="arabic simple" start="5">
-<li><p>Next click on the <strong>Run</strong> button. This will cause the backend application to launch dakota. When done the <strong>RES</strong> panel will be selected and the results will be displayed. The results show the values the mean and standard deviation. The peak displacement of the roof, is the quantity <strong>1-PFD-9-1</strong> (first event (tool to be extended to multiple events), 9th floor (in US ground floor considered 0), and 1 dof direction). the <strong>PFA</strong> quantity defines peak floor acceleration, the <strong>RMSA</strong> quantity the root mean square of floor accelerations, and the <strong>PID</strong> quantity corresponds to peak interstory drift.</p></li>
+<li><p>Next click on the <strong>Run</strong> button. This will cause the backend application to launch Dakota. When done the <strong>RES</strong> panel will be selected and the results will be displayed. The results show the values of the mean and standard deviation. The peak displacement of the roof is the quantity <strong>1-PFD-9-1</strong> (first event (tool to be extended to multiple events), 9th floor (in US ground floor considered 0), and 1 dof direction). the <strong>PFA</strong> quantity defines peak floor acceleration, the <strong>RMSA</strong> quantity is the root mean square of floor accelerations, and the <strong>PID</strong> quantity corresponds to peak inter-story drift.</p></li>
 </ol>
 <div class="align-center figure">
 <img alt="../../../../../_images/9story-RES1.png" src="../../../../../_images/9story-RES1.png" />
 </div>
-<p>If the user selects the “Data” tab in the results panel, they will be presented with both a graphical plot and a tabular listing of the data. By left- and right-clicking with the mouse in the individual columns the axis change (left mouse click controls vertical axis, right mouse click the horizontal axis).</p>
+<p>If the user selects the “Data” tab in the results panel, they will be presented with both a graphical plot and a tabular listing of the data. By left- and right-clicking with the mouse in the individual columns the axis changes (left mouse click controls the vertical axis, right mouse clicks the horizontal axis).</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/9story-RES2.png" src="../../../../../_images/9story-RES2.png" />
 </div>
-<p>Various views of the graphical display can be obtained by left and right clicking in the columns of the tabular data. If a singular column of the tabular data is pressed with both right and left buttons a frequency and CDF will be displayed, as shown in figure below.</p>
+<p>Various views of the graphical display can be obtained by left and right-clicking in the columns of the tabular data. If a singular column of the tabular data is pressed with both right and left buttons a frequency and CDF will be displayed, as shown in the figure below.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/9story-RES6.png" src="../../../../../_images/9story-RES6.png" />
 </div>
@@ -380,9 +384,9 @@
 </tr>
 </tbody>
 </table>
-<p>In this section we will demonstrate the use of the user defined output option for the EDP panel. In the previous example we got the standard output, which can be both a lot and also limited (in sense you may not get the information you want). In this example we will present how to obtain results just for the roof displacement, the displacement of node <strong>10</strong> in both the <strong>MDOF</strong> and <strong>OpenSees</strong> model generator examples and shear force at the base of the structure. For the OpenSees model, it is also possible to obtain the overturning moment (something not possible in MDOF model due to fact it is modelled using spring elements). The examples could be extended to output for example the element end rotations, plastic rotations, …</p>
-<p>For this example you will need two additional files, <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples//weuq-0002/src/FrameRecorder.tcl">FrameRecorder.tcl</a>.</p>
-<p>The recorder script as shown will record the envelope displacements and RMS accelerations in the first two degrees-of-freedom for the nodes in the modes. The script will also record the element forces. The file is as shown below:</p>
+<p>In this section, we will demonstrate the use of the user-defined output option for the EDP panel. In the previous example, we got the standard output, which can be both a lot and also limited (in the sense you may not get the information you want). In this example we will present how to obtain results just for the roof displacement, the displacement of node <strong>10</strong> in both the <strong>MDOF</strong> and <strong>OpenSees</strong> model generator examples and the shear force at the base of the structure. For the OpenSees model, it is also possible to obtain the overturning moment (something not possible in the MDOF model due to the fact it is modeled using spring elements). The examples could be extended to output for example the element end rotations, plastic rotations, …</p>
+<p>For this example, you will need two additional files, <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples//weuq-0002/src/FrameRecorder.tcl">FrameRecorder.tcl</a>.</p>
+<p>The recorder script as shown will record the envelope displacements and RMS accelerations in the first two degrees of freedom for the nodes in the modes. The script will also record the element forces. The file is as shown below:</p>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="k">set</span><span class="w"> </span>numNode<span class="w"> </span><span class="k">[</span><span class="nb">llength</span><span class="w"> </span><span class="k">[</span><span class="nv">getNodeTags</span><span class="k">]]</span>
 <span class="k">set</span><span class="w"> </span>numEle<span class="w"> </span><span class="k">[</span><span class="nb">llength</span><span class="w"> </span><span class="k">[</span><span class="nv">getEleTags</span><span class="k">]]</span>
 
@@ -443,16 +447,16 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The user has the option when using the OpenSees SIM application to provide no postprocess script (in which case the main script must create a <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file containing a single line with as many space separated numbers as QoI) or the user may provide a Python script that also performs the postprocessing. An example of a postprocessing Python script is <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples//weuq-0002/src/FramePost.py">FramePost.py</a>. The Python script at present only responds to nodal displacements.</p>
+<p>The user has the option when using the OpenSees SIM application to provide no post-process script (in which case the main script must create a <code class="docutils literal notranslate"><span class="pre">results.out</span></code> file containing a single line with as many space-separated numbers as QoI) or the user may provide a Python script that also performs the postprocessing. An example of a postprocessing Python script is <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples//weuq-0002/src/FramePost.py">FramePost.py</a>. The Python script at present only responds to nodal displacements.</p>
 </div>
-<p>The steps are the same as the previous example, with exception of step 4 defining the <strong>EDP</strong>.</p>
+<p>The steps are the same as the previous example, with the exception of step 4 defining the <strong>EDP</strong>.</p>
 <ol class="arabic">
-<li><p>For the <strong>EDP</strong> panel, we will change the generator to <strong>User Defined</strong>. In the panel that presents itself the user must provide the paths to both the recorder commands and the postprocessing script. Next the user must provide information on the response parameters they are interested in. The user presses the <strong>Add</strong> button and the enters <code class="docutils literal notranslate"><span class="pre">Disp_10_1</span></code>, <code class="docutils literal notranslate"><span class="pre">RMSA_10_1</span></code>, and <code class="docutils literal notranslate"><span class="pre">Force_1_1</span></code> in the entry field as shown in figure below.</p>
+<li><p>For the <strong>EDP</strong> panel, we will change the generator to <strong>User Defined</strong>. In the panel that presents itself, the user must provide the paths to both the recorder commands and the postprocessing script. Next, the user must provide information on the response parameters they are interested in. The user presses the <strong>Add</strong> button and the entries <code class="docutils literal notranslate"><span class="pre">Disp_10_1</span></code>, <code class="docutils literal notranslate"><span class="pre">RMSA_10_1</span></code>, and <code class="docutils literal notranslate"><span class="pre">Force_1_1</span></code> in the entry field as shown in the figure below.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/9story-EDP-USER.png" src="../../../../../_images/9story-EDP-USER.png" />
 </div>
 </li>
-<li><p>Next click on the <strong>Run</strong> button. This will cause the backend application to launch dakota. When done the <strong>RES</strong> panel will be selected and the results will be displayed. The results show the values the mean and standard deviation as before but now only for the one quantity of interest.</p>
+<li><p>Next, click on the <strong>Run</strong> button. This will cause the backend application to launch Dakota. When done the <strong>RES</strong> panel will be selected and the results will be displayed. The results show the values of the mean and standard deviation as before but now only for the one quantity of interest.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/9story-RES-USER.png" src="../../../../../_images/9story-RES-USER.png" />
 </div>
@@ -472,7 +476,7 @@
 </tr>
 </tbody>
 </table>
-<p>If the user is interested in the probability that certain response measure will be exceeded an alternative strategy is to perform a reliability analysis. To perform a reliability analysis the steps above would be repeated with the exception that the user would select a reliability analysis method instead of a Forward Propagation method. To obtain reliability results using the Global Reliability methose presented in Dakota choose the <strong>Global Reliability</strong> methods from the methods drop down menu. In the response levels enter a values of <strong>0.5</strong> and <strong>0.8</strong>, specifying that we are interested in the value of the CDF for a displacement of the roof of 0.5in and 0.8in, i.e. what is probability that displacement will be less than 0.8in.</p>
+<p>If the user is interested in the probability that certain response measures will be exceeded an alternative strategy is to perform a reliability analysis. To perform a reliability analysis the steps above would be repeated with the exception that the user would select a reliability analysis method instead of a Forward Propagation method. To obtain reliability results using the Global Reliability methods presented in Dakota choose the <strong>Global Reliability</strong> methods from the methods drop-down menu. In the response levels enter a value of <strong>0.5</strong> and <strong>0.8</strong>, specifying that we are interested in the value of the CDF for a displacement of the roof of 0.5in and 0.8in, i.e. what is the probability that displacement will be less than 0.8in.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/9story-UQ-Reliability.png" src="../../../../../_images/9story-UQ-Reliability.png" />
 </div>
