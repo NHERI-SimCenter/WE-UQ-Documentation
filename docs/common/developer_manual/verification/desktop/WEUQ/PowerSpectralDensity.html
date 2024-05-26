@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>4.1. Stochastically Generated Wind Loading &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>3.1. Stochastically Generated Wind Loading &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -50,8 +50,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="4.2. Verification of the Turbulence Inflow" href="TinFverification.html" />
-    <link rel="prev" title="4. Verification" href="../verification.html" />
+    <link rel="next" title="3.2. Verification of the Turbulence Inflow" href="TinFverification.html" />
+    <link rel="prev" title="3. Verification" href="../verification.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -141,14 +141,12 @@
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../verification.html">4. Verification</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.1. Stochastically Generated Wind Loading</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TinFverification.html">4.2. Verification of the Turbulence Inflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../how_to_extend.html">2. How to Extend</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../verification.html">3. Verification</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.1. Stochastically Generated Wind Loading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TinFverification.html">3.2. Verification of the Turbulence Inflow</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../coding_style/desktop/coding_style.html">5. Coding Style</a></li>
 </ul>
 
             
@@ -197,9 +195,9 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../verification.html"><span class="section-number">4. </span>Verification</a> &raquo;</li>
+          <li><a href="../verification.html"><span class="section-number">3. </span>Verification</a> &raquo;</li>
         
-      <li><span class="section-number">4.1. </span>Stochastically Generated Wind Loading</li>
+      <li><span class="section-number">3.1. </span>Stochastically Generated Wind Loading</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -219,7 +217,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="stochastically-generated-wind-loading">
-<h1><span class="section-number">4.1. </span>Stochastically Generated Wind Loading<a class="headerlink" href="#stochastically-generated-wind-loading" title="Permalink to this heading">¶</a></h1>
+<h1><span class="section-number">3.1. </span>Stochastically Generated Wind Loading<a class="headerlink" href="#stochastically-generated-wind-loading" title="Permalink to this heading">¶</a></h1>
 <p>The purpose of this analysis is to verify
 that WE-UQ app is able to reproduce the correct
 power spectral density when using stochastically generated wind speed
@@ -231,13 +229,13 @@ an analytical spectral density matrix based on the Kaimal wind spectrum
 model <span id="id2">[<a class="reference internal" href="../../../../../index.html#id13" title="J. C. Kaimal, J. C. Wyngaard, Y. Izumi, and O. R. Coté. Spectral characteristics of surface-layer turbulence. Quarterly Journal of the Royal Meteorological Society, 98(417):563-589, 1972. URL: https://rmets.onlinelibrary.wiley.com/doi/abs/10.1002/qj.49709841707, doi:10.1002/qj.49709841707.">KWICote72</a>, <a class="reference internal" href="../../../../../index.html#id14" title="Emil Simiu and Robert H Scanlan. Wind effects on structures: fundamentals and application to design. Book published by John Willey &amp; Sons Inc, 1996.">SS96</a>]</span> and the Davenport coherence
 function <span id="id3">[<a class="reference internal" href="../../../../../index.html#id15" title="AG Davenport. The dependence of wind loading on meteorological parameters. In Proc. of Int. Res. Seminar, Wind Effects On Buildings &amp; Structures, NRC, Ottawa. 1967.">Dav67</a>]</span>:</p>
 <div class="math notranslate nohighlight" id="equation-common-developer-manual-verification-desktop-weuq-powerspectraldensity-0">
-<span class="eqno">(4.1.4)<a class="headerlink" href="#equation-common-developer-manual-verification-desktop-weuq-powerspectraldensity-0" title="Permalink to this equation">¶</a></span>\[S_{rs} = \sqrt{S_{rr}(f) \cdot S_{ss}(f)} Coh(f)\]</div>
+<span class="eqno">(3.1.1)<a class="headerlink" href="#equation-common-developer-manual-verification-desktop-weuq-powerspectraldensity-0" title="Permalink to this equation">¶</a></span>\[S_{rs} = \sqrt{S_{rr}(f) \cdot S_{ss}(f)} Coh(f)\]</div>
 <p>where :math`S_{rr}` and <span class="math notranslate nohighlight">\(S_{ss}\)</span> are power spectral densities
 of fluctuating wind at locations <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(s\)</span> respectively; <span class="math notranslate nohighlight">\(Coh(f)\)</span> is the
 Davenport coherence function; and <span class="math notranslate nohighlight">\(f\)</span> is the frequency in Hz. This gives
 the two-dimensional, <span class="math notranslate nohighlight">\(n\)</span>-variate power spectral density matrix <span class="math notranslate nohighlight">\(S(f)\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-common-developer-manual-verification-desktop-weuq-powerspectraldensity-1">
-<span class="eqno">(4.1.5)<a class="headerlink" href="#equation-common-developer-manual-verification-desktop-weuq-powerspectraldensity-1" title="Permalink to this equation">¶</a></span>\[\begin{split}S(f) =
+<span class="eqno">(3.1.2)<a class="headerlink" href="#equation-common-developer-manual-verification-desktop-weuq-powerspectraldensity-1" title="Permalink to this equation">¶</a></span>\[\begin{split}S(f) =
    \begin{bmatrix}
       S_{11}(f) &amp; S_{12}(f) &amp; \dots &amp; S_{1n}(f) \\
       S_{21}(f) &amp; S_{12}(f) &amp; \dots &amp; S_{2n}(f) \\
@@ -247,7 +245,7 @@ the two-dimensional, <span class="math notranslate nohighlight">\(n\)</span>-var
 <p>The power spectral density based on the Kaimal wind spectrum is
 defined as:</p>
 <div class="math notranslate nohighlight" id="equation-common-developer-manual-verification-desktop-weuq-powerspectraldensity-2">
-<span class="eqno">(4.1.6)<a class="headerlink" href="#equation-common-developer-manual-verification-desktop-weuq-powerspectraldensity-2" title="Permalink to this equation">¶</a></span>\[S_{rr}(z_{r}, f) = u_{*}^{2} \cdot \frac{200 z_{r}}{\bar{U}(z_{r})} \cdot
+<span class="eqno">(3.1.3)<a class="headerlink" href="#equation-common-developer-manual-verification-desktop-weuq-powerspectraldensity-2" title="Permalink to this equation">¶</a></span>\[S_{rr}(z_{r}, f) = u_{*}^{2} \cdot \frac{200 z_{r}}{\bar{U}(z_{r})} \cdot
            \frac{1}{\left[1 + 50 \frac{f z_{r}}{\bar{U}(z_{r})}\right]^{\frac{5}{3}}}\]</div>
 <p>where <span class="math notranslate nohighlight">\(S_{rr}(f)\)</span> is the power spectral density of the fluctuating
 wind at location <span class="math notranslate nohighlight">\(z_{r}\)</span> and frequency <span class="math notranslate nohighlight">\(f\)</span> in Hz; <span class="math notranslate nohighlight">\(\bar{U}(z_{r})\)</span> is
@@ -255,30 +253,30 @@ the mean wind speed at location <span class="math notranslate nohighlight">\(z_{
 velocity. The one-sided Davenport coherence function describes the correlation
 between fluctuating winds at locations <span class="math notranslate nohighlight">\(z_{r}\)</span> and <span class="math notranslate nohighlight">\(z_{s}\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-common-developer-manual-verification-desktop-weuq-powerspectraldensity-3">
-<span class="eqno">(4.1.7)<a class="headerlink" href="#equation-common-developer-manual-verification-desktop-weuq-powerspectraldensity-3" title="Permalink to this equation">¶</a></span>\[Coh(f) = \text{exp}\left[-\frac{C_{z}f\lvert z_{r} -
+<span class="eqno">(3.1.4)<a class="headerlink" href="#equation-common-developer-manual-verification-desktop-weuq-powerspectraldensity-3" title="Permalink to this equation">¶</a></span>\[Coh(f) = \text{exp}\left[-\frac{C_{z}f\lvert z_{r} -
     z_{s}\rvert}{\frac{1}{2}\left[\bar{U}(z_{r}) + \bar{U}(z_{s})\right]}\right]\]</div>
 <p>The mean wind velocity at location <span class="math notranslate nohighlight">\(z_{r}\)</span> is defined based on exposure conditions
 defined in the ASCE 7 standard as follows:</p>
 <div class="math notranslate nohighlight" id="equation-common-developer-manual-verification-desktop-weuq-powerspectraldensity-4">
-<span class="eqno">(4.1.8)<a class="headerlink" href="#equation-common-developer-manual-verification-desktop-weuq-powerspectraldensity-4" title="Permalink to this equation">¶</a></span>\[\bar{U}(z) = \bar{b} \left(\frac{z}{33}\right)^{\bar{\alpha}}\left(\frac{88}{60}\right)V\]</div>
+<span class="eqno">(3.1.5)<a class="headerlink" href="#equation-common-developer-manual-verification-desktop-weuq-powerspectraldensity-4" title="Permalink to this equation">¶</a></span>\[\bar{U}(z) = \bar{b} \left(\frac{z}{33}\right)^{\bar{\alpha}}\left(\frac{88}{60}\right)V\]</div>
 <p>where <span class="math notranslate nohighlight">\(\bar{b}\)</span> and <span class="math notranslate nohighlight">\(\bar{\alpha}\)</span> are constants defined in ASCE 7 for
 different exposure conditions; <span class="math notranslate nohighlight">\(V\)</span> is the 3-second gust wind speed in miles
 per hour.</p>
 <div class="align-center figure" id="id4">
 <span id="fig-auto-corr"></span><img alt="../../../../../_images/S11.png" src="../../../../../_images/S11.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.2 </span><span class="caption-text">Comparison between theoretical and simulated auto power spectral density at the height of the first floor</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.4 </span><span class="caption-text">Comparison between theoretical and simulated auto power spectral density at the height of the first floor</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id5">
 <span id="fig-cross-corr"></span><img alt="../../../../../_images/S23.png" src="../../../../../_images/S23.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.3 </span><span class="caption-text">Comparison between theoretical and simulated cross power spectral density between the heights of the second and third floors</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.5 </span><span class="caption-text">Comparison between theoretical and simulated cross power spectral density between the heights of the second and third floors</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>In the validation example, a 3-story structure with exposure category
 D is subjected to wind loading with 3-second gust of 30 mph. An
 estimate of the power spectral density matrix for the stochastic wind
 velocity time history based on this condition was compared to the
 power spectral density matrix calculated based on the Kaimal spectrum
-with Davenport coherence. <a class="reference internal" href="#fig-auto-corr"><span class="std std-numref">Fig. 4.1.2</span></a> shows the auto correlation
-for the first floor (<span class="math notranslate nohighlight">\(S_{11}\)</span>) while <a class="reference internal" href="#fig-cross-corr"><span class="std std-numref">Fig. 4.1.3</span></a> shows the cross
+with Davenport coherence. <a class="reference internal" href="#fig-auto-corr"><span class="std std-numref">Fig. 3.1.4</span></a> shows the auto correlation
+for the first floor (<span class="math notranslate nohighlight">\(S_{11}\)</span>) while <a class="reference internal" href="#fig-cross-corr"><span class="std std-numref">Fig. 3.1.5</span></a> shows the cross
 correlation between the second and third floors (<span class="math notranslate nohighlight">\(S_{23}\)</span>). As can be seen in
 these two figures, the two different results show very good agreement
 between the theoretical Kaimal values and the estimates based on the

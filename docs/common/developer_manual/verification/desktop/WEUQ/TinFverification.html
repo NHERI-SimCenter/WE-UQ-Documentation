@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>4.2. Verification of the Turbulence Inflow &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>3.2. Verification of the Turbulence Inflow &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -50,8 +50,7 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="5. Coding Style" href="../../../coding_style/desktop/coding_style.html" />
-    <link rel="prev" title="4.1. Stochastically Generated Wind Loading" href="PowerSpectralDensity.html" />
+    <link rel="prev" title="3.1. Stochastically Generated Wind Loading" href="PowerSpectralDensity.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -141,14 +140,12 @@
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../verification.html">4. Verification</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="PowerSpectralDensity.html">4.1. Stochastically Generated Wind Loading</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.2. Verification of the Turbulence Inflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../how_to_extend.html">2. How to Extend</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../verification.html">3. Verification</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="PowerSpectralDensity.html">3.1. Stochastically Generated Wind Loading</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.2. Verification of the Turbulence Inflow</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../coding_style/desktop/coding_style.html">5. Coding Style</a></li>
 </ul>
 
             
@@ -197,9 +194,9 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../verification.html"><span class="section-number">4. </span>Verification</a> &raquo;</li>
+          <li><a href="../verification.html"><span class="section-number">3. </span>Verification</a> &raquo;</li>
         
-      <li><span class="section-number">4.2. </span>Verification of the Turbulence Inflow</li>
+      <li><span class="section-number">3.2. </span>Verification of the Turbulence Inflow</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -219,7 +216,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="verification-of-the-turbulence-inflow">
-<span id="lblverificationturbulenceinflow"></span><h1><span class="section-number">4.2. </span>Verification of the Turbulence Inflow<a class="headerlink" href="#verification-of-the-turbulence-inflow" title="Permalink to this heading">¶</a></h1>
+<span id="lblverificationturbulenceinflow"></span><h1><span class="section-number">3.2. </span>Verification of the Turbulence Inflow<a class="headerlink" href="#verification-of-the-turbulence-inflow" title="Permalink to this heading">¶</a></h1>
 <p>The performance of the turbulent inflow in reproducing the statistical properties of the targeted turbulence can be verified by examining the synthetic velocity fluctuations generated at the inflow patch. To carry out such a verification, the first step is to record those velocity fluctuations during the simulations which can be achieved by adding the following lines in the “inflowProperties” file.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>nOutputFace 6;
 outputFaceIndices (0 1 2 3 4 5);
@@ -259,19 +256,19 @@ outputFaceIndices (0 1 2 3 4 5);
 <p>When the simulations are finished, one can easily verify if the synthetic turbulence meet the initial requirements by conducting a statistical analysis of the velocity fluctuations contained in the files. For simplicity, we have provided a Matlab R code for the statistical analysis of the velocity fluctuations which are capable of computing the correlation coefficients and the velocity spectral functions of the synthetic turbulence at some specific face elements on the inflow patch. The code should be placed in the root dictionary of the case project before running. While running, the code will automatically search for the data files existing in the ”postProcessing” folder, create and write figures demonstrating the comparison of the synthetic results with the targeted values for each face element. A number of examples are given below for demonstration.</p>
 <div class="align-center figure" id="id1">
 <span id="figtinf1v"></span><img alt="../../../../../_images/vTinF1.png" src="../../../../../_images/vTinF1.png" />
-<p class="caption"><span class="caption-number">Fig. 4.2.2 </span><span class="caption-text">Synthetic turbulence using the digital filtering method with <span class="math notranslate nohighlight">\(U = 10m/s\)</span>, <span class="math notranslate nohighlight">\(L_{ux} = 1m\)</span>, <span class="math notranslate nohighlight">\(L_{vx} = 0.75m\)</span>, and <span class="math notranslate nohighlight">\(L_{wx} = 0.5m\)</span></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.1 </span><span class="caption-text">Synthetic turbulence using the digital filtering method with <span class="math notranslate nohighlight">\(U = 10m/s\)</span>, <span class="math notranslate nohighlight">\(L_{ux} = 1m\)</span>, <span class="math notranslate nohighlight">\(L_{vx} = 0.75m\)</span>, and <span class="math notranslate nohighlight">\(L_{wx} = 0.5m\)</span></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id2">
 <span id="figtinf2v"></span><img alt="../../../../../_images/vTinF2.png" src="../../../../../_images/vTinF2.png" />
-<p class="caption"><span class="caption-number">Fig. 4.2.3 </span><span class="caption-text">Synthetic turbulence using the synthetic eddy method with <span class="math notranslate nohighlight">\(U = 10m/s\)</span>, <span class="math notranslate nohighlight">\(L_{ux} = 1m\)</span>, <span class="math notranslate nohighlight">\(L_{vx} = 0.75m\)</span>, and <span class="math notranslate nohighlight">\(L_{wx} = 0.5m\)</span> and and Gaussian function for eddy shape</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.2 </span><span class="caption-text">Synthetic turbulence using the synthetic eddy method with <span class="math notranslate nohighlight">\(U = 10m/s\)</span>, <span class="math notranslate nohighlight">\(L_{ux} = 1m\)</span>, <span class="math notranslate nohighlight">\(L_{vx} = 0.75m\)</span>, and <span class="math notranslate nohighlight">\(L_{wx} = 0.5m\)</span> and and Gaussian function for eddy shape</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id3">
 <span id="figtinf3v"></span><img alt="../../../../../_images/vTinF3.png" src="../../../../../_images/vTinF3.png" />
-<p class="caption"><span class="caption-number">Fig. 4.2.4 </span><span class="caption-text">Synthetic turbulence using the synthetic eddy method with <span class="math notranslate nohighlight">\(U = 10m/s\)</span>, <span class="math notranslate nohighlight">\(L_{ux} = 1m\)</span>, <span class="math notranslate nohighlight">\(L_{vx} = 0.75m\)</span>, and <span class="math notranslate nohighlight">\(L_{wx} = 0.5m\)</span> and tent function for eddy shape</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.3 </span><span class="caption-text">Synthetic turbulence using the synthetic eddy method with <span class="math notranslate nohighlight">\(U = 10m/s\)</span>, <span class="math notranslate nohighlight">\(L_{ux} = 1m\)</span>, <span class="math notranslate nohighlight">\(L_{vx} = 0.75m\)</span>, and <span class="math notranslate nohighlight">\(L_{wx} = 0.5m\)</span> and tent function for eddy shape</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id4">
 <span id="figtinf4v"></span><img alt="../../../../../_images/vTinF4.png" src="../../../../../_images/vTinF4.png" />
-<p class="caption"><span class="caption-number">Fig. 4.2.5 </span><span class="caption-text">Synthetic turbulence using the synthetic eddy method with <span class="math notranslate nohighlight">\(U = 10m/s\)</span>, <span class="math notranslate nohighlight">\(L_{ux} = 1m\)</span>, <span class="math notranslate nohighlight">\(L_{vx} = 0.75m\)</span>, and <span class="math notranslate nohighlight">\(L_{wx} = 0.5m\)</span> and step function for eddy shape</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.4 </span><span class="caption-text">Synthetic turbulence using the synthetic eddy method with <span class="math notranslate nohighlight">\(U = 10m/s\)</span>, <span class="math notranslate nohighlight">\(L_{ux} = 1m\)</span>, <span class="math notranslate nohighlight">\(L_{vx} = 0.75m\)</span>, and <span class="math notranslate nohighlight">\(L_{wx} = 0.5m\)</span> and step function for eddy shape</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 
