@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.2.4.3. Event Applications &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>2.3.3. Event Applications &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.2.4.4. Modeling Applications" href="modelingApps.html" />
-    <link rel="prev" title="2.2.4.2. UQ Pre-processors" href="preprocUQ.html" />
+    <link rel="next" title="2.3.4. Modeling Applications" href="modelingApps.html" />
+    <link rel="prev" title="2.3.2. UQ Pre-processors" href="preprocUQ.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -141,21 +141,18 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../how_to_extend.html">2. How to Extend</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../../coding_style/desktop/coding_style.html">2.1. Coding Style</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../architecture.html">2.2. Software Architecture</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../overview.html">2.2.1. Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../file-types.html">2.2.3. File Types and Schemas</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../backendApplications.html">2.2.4. Backend Applications</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">2.2.4.3. Event Applications</a></li>
-<li class="toctree-l4"><a class="reference internal" href="modelingApps.html">2.2.4.4. Modeling Applications</a></li>
-<li class="toctree-l4"><a class="reference internal" href="EDPApps.html">2.2.4.5. EDP Applications</a></li>
-<li class="toctree-l4"><a class="reference internal" href="simulationApps.html">2.2.4.6. Simulation Applications</a></li>
-<li class="toctree-l4"><a class="reference internal" href="UQApps.html">2.2.4.7. UQ Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">2.1. Software Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c4model.html">2.2. C4 Model of the SimCenter Ecosystem</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../backendApplications.html">2.3. Backend Applications</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.3.3. Event Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modelingApps.html">2.3.4. Modeling Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EDPApps.html">2.3.5. EDP Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simulationApps.html">2.3.6. Simulation Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQApps.html">2.3.7. UQ Applications</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../c4model.html">2.2.5. C4 Model of Software Architecture</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../file-types.html">2.4. File Types and Schemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../coding_style/desktop/coding_style.html">2.5. Coding Style</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../verification/desktop/verification.html">3. Verification</a></li>
@@ -209,11 +206,11 @@
         
           <li><a href="../../../how_to_extend.html"><span class="section-number">2. </span>How to Extend</a> &raquo;</li>
         
-          <li><a href="../architecture.html"><span class="section-number">2.2. </span>Software Architecture</a> &raquo;</li>
+          <li><a href="../architecture.html">&lt;no title&gt;</a> &raquo;</li>
         
-          <li><a href="../backendApplications.html"><span class="section-number">2.2.4. </span>Backend Applications</a> &raquo;</li>
+          <li><a href="../backendApplications.html"><span class="section-number">2.3. </span>Backend Applications</a> &raquo;</li>
         
-      <li><span class="section-number">2.2.4.3. </span>Event Applications</li>
+      <li><span class="section-number">2.3.3. </span>Event Applications</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -233,14 +230,339 @@
            <div itemprop="articleBody">
             
   <div class="section" id="event-applications">
-<span id="lbleventapp"></span><h1><span class="section-number">2.2.4.3. </span>Event Applications<a class="headerlink" href="#event-applications" title="Permalink to this heading">¶</a></h1>
+<span id="lbleventapp"></span><h1><span class="section-number">2.3.3. </span>Event Applications<a class="headerlink" href="#event-applications" title="Permalink to this heading">¶</a></h1>
 <p>The <strong>event application</strong> takes the event(s) selected for a building site, associates each one with a simulation, and creates EVENT files containing the event intensity measures. It obtains the name of the event from the <a class="reference internal" href="buildingApps.html#lblbuildingapp"><span class="std std-ref">BIM file</span></a> and the intensity measure information from the input <a class="reference internal" href="../file-types/Inputs.html#lbluserdefinputs"><span class="std std-ref">event files</span></a>.
 This input information is saved in an <code class="docutils literal notranslate"><span class="pre">EVENT.json</span></code> file, located in its corresponding <strong>simulation working directory</strong>.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/backendapps_Events.png" src="../../../../../_images/backendapps_Events.png" />
 </div>
 <p>The following options for event applications vary in the type of event, event properties, and format of the event file that it processes.</p>
-main.html</div>
+main.html
+
+
+<hr>
+<div class="twbs">
+  <div class="gallery accordion" id="gallery">
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0004</code>
+        <h5 class="card-title mb-0" >
+          SimCenterEvent
+        </h5>
+        <p class="card-text">
+          Python file creating EVENT.json file containing on event intensity measure from individual event files. Supports all hazard event types (Earthquake, Wind, Hurricane).
+        </p>
+      </summary>
+
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0004">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0004')" >Inputs</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0004')" >CLI</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0004">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>Event files<code> &lt;string&gt;</code></dt>
+                  <dd>Event intensity measure saved in separate JSON files.</dd>
+                
+                  <dt>BIM file<code> &lt;string&gt;</code></dt>
+                  <dd>File containing a dictionary of building information.</dd>
+                
+                </dl>
+              </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0004">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre>usage: SimCenterEvent.py [-h] [--filenameBIM FILENAMEBIM]
+                         [--filenameEVENT FILENAMEEVENT]
+                         [--pathEventData PATHEVENTDATA] [--getRV [GETRV]]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --filenameBIM FILENAMEBIM
+  --filenameEVENT FILENAMEEVENT
+  --pathEventData PATHEVENTDATA
+  --getRV [GETRV]
+</pre>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0005</code>
+        <h5 class="card-title mb-0" >
+          ExistingSimCenterEvents
+        </h5>
+        <p class="card-text">
+          No description
+        </p>
+      </summary>
+
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0005">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0005')" >Inputs</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0005')" >CLI</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0005">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>filenameBIM<code> &lt;string&gt;</code></dt>
+                  <dd>name of bim file</dd>
+                
+                  <dt>filenameEVENT<code> &lt;FileName(W)&gt;</code></dt>
+                  <dd>name of file containing the event data</dd>
+                
+                </dl>
+              </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0005">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre></pre>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0006</code>
+        <h5 class="card-title mb-0" >
+          ExistingPEER_Events
+        </h5>
+        <p class="card-text">
+          Application file creating EVENT.json file containing on event intensity measure from individual event files. Supports all hazard event types (Earthquake, Wind, Hurricane).
+        </p>
+      </summary>
+
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0006">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0006')" >Inputs</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0006')" >CLI</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0006">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>Event files<code> &lt;string&gt;</code></dt>
+                  <dd>Event intensity measure saved in separate JSON files.</dd>
+                
+                  <dt>BIM file<code> &lt;string&gt;</code></dt>
+                  <dd>File containing a dictionary of building information.</dd>
+                
+                </dl>
+              </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0006">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre></pre>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0007</code>
+        <h5 class="card-title mb-0" >
+          Site Response
+        </h5>
+        <p class="card-text">
+          No description
+        </p>
+      </summary>
+
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0007">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0007')" >Inputs</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0007')" >CLI</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0007">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>filenameBIM<code> &lt;string&gt;</code></dt>
+                  <dd>name of bim file</dd>
+                
+                  <dt>filenameEVENT<code> &lt;FileName(W)&gt;</code></dt>
+                  <dd>name of file containing the event data</dd>
+                
+                </dl>
+              </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0007">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre></pre>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0008</code>
+        <h5 class="card-title mb-0" >
+          HazardBasedEvent
+        </h5>
+        <p class="card-text">
+          No description
+        </p>
+      </summary>
+
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0008">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0008')" >Inputs</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0008')" >CLI</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0008">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>filenameBIM<code> &lt;string&gt;</code></dt>
+                  <dd>name of bim file</dd>
+                
+                  <dt>filenameEVENT<code> &lt;FileName(W)&gt;</code></dt>
+                  <dd>name of file containing the event data</dd>
+                
+                </dl>
+              </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0008">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre></pre>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0009</code>
+        <h5 class="card-title mb-0" >
+          DEDM_HRP
+        </h5>
+        <p class="card-text">
+          No description
+        </p>
+      </summary>
+
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0009">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0009')" >Inputs</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0009')" >CLI</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0009">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>filenameBIM<code> &lt;string&gt;</code></dt>
+                  <dd>name of bim file</dd>
+                
+                  <dt>filenameEVENT<code> &lt;FileName(W)&gt;</code></dt>
+                  <dd>name of file containing the event data</dd>
+                
+                </dl>
+              </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0009">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre></pre>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  </div>
+</div>
+
+
+<script>
+function openCardTab(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script> 
+
+</div>
 
 
            </div>

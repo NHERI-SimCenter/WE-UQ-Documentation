@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.2.4.8. Building Applications &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>2.3.8. Building Applications &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.2.4.9. DL Applications" href="DLApps.html" />
-    <link rel="prev" title="2.2.4.7. UQ Applications" href="UQApps.html" />
+    <link rel="next" title="2.3.9. DL Applications" href="DLApps.html" />
+    <link rel="prev" title="2.3.7. UQ Applications" href="UQApps.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -192,11 +192,11 @@
         
           <li><a href="../../../how_to_extend.html"><span class="section-number">2. </span>How to Extend</a> &raquo;</li>
         
-          <li><a href="../architecture.html"><span class="section-number">2.2. </span>Software Architecture</a> &raquo;</li>
+          <li><a href="../architecture.html">&lt;no title&gt;</a> &raquo;</li>
         
-          <li><a href="../backendApplications.html"><span class="section-number">2.2.4. </span>Backend Applications</a> &raquo;</li>
+          <li><a href="../backendApplications.html"><span class="section-number">2.3. </span>Backend Applications</a> &raquo;</li>
         
-      <li><span class="section-number">2.2.4.8. </span>Building Applications</li>
+      <li><span class="section-number">2.3.8. </span>Building Applications</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -216,14 +216,228 @@
            <div itemprop="articleBody">
             
   <div class="section" id="building-applications">
-<span id="lblbuildingapp"></span><h1><span class="section-number">2.2.4.8. </span>Building Applications<a class="headerlink" href="#building-applications" title="Permalink to this heading">¶</a></h1>
+<span id="lblbuildingapp"></span><h1><span class="section-number">2.3.8. </span>Building Applications<a class="headerlink" href="#building-applications" title="Permalink to this heading">¶</a></h1>
 <p>The <strong>building application</strong> creates <em>building information model</em> (BIM) files for each building. It takes as input the range of asset IDs selected for simulation (expressed as “min” and “max” ID, specified in the <a class="reference internal" href="../file-types/Inputs.html#lbluserdefinputs"><span class="std std-ref">configuration file</span></a>) and the building-specific parameters for each simulation (specified in the <a class="reference internal" href="../file-types/Inputs.html#lbluserdefinputs"><span class="std std-ref">building source file</span></a>).
 The inputs are parsed into <code class="docutils literal notranslate"><span class="pre">#-BIM.json</span></code> files in the <strong>results</strong> folder.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/backendapps_Building.png" src="../../../../../_images/backendapps_Building.png" />
 </div>
 <p>The following options for building applications vary in the file type of the input building source file it processes.</p>
-main.html</div>
+main.html
+
+
+<hr>
+<div class="twbs">
+  <div class="gallery accordion" id="gallery">
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0001</code>
+        <h5 class="card-title mb-0" >
+          CSV_to_BIM
+        </h5>
+        <p class="card-text">
+          Parses building source information from CSV and saves into BIM.json files for each building.
+        </p>
+      </summary>
+
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0001">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0001')" >Inputs</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0001')" >CLI</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0001">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>Min<code> &lt;int&gt;</code></dt>
+                  <dd>Min id of building to run in workflow.</dd>
+                
+                  <dt>Max<code> &lt;int&gt;</code></dt>
+                  <dd>Max id of building to run in workflow.</dd>
+                
+                  <dt>Building source file<code> &lt;path&gt;</code></dt>
+                  <dd>Path to buildings database file.</dd>
+                
+                </dl>
+              </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0001">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre>usage: CSV_to_BIM.py [-h] [--buildingFile BUILDINGFILE]
+                     [--buildingSourceFile BUILDINGSOURCEFILE] [--Min MIN]
+                     [--Max MAX] [--getRV [GETRV]]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --buildingFile BUILDINGFILE
+  --buildingSourceFile BUILDINGSOURCEFILE
+  --Min MIN
+  --Max MAX
+  --getRV [GETRV]
+</pre>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0002</code>
+        <h5 class="card-title mb-0" >
+          GenericBimDatabase
+        </h5>
+        <p class="card-text">
+          No description
+        </p>
+      </summary>
+
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0002">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0002')" >Inputs</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0002')" >CLI</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0002">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>Min<code> &lt;int&gt;</code></dt>
+                  <dd>min id of building to obtain BIM for</dd>
+                
+                  <dt>Max<code> &lt;int&gt;</code></dt>
+                  <dd>max id of building to obtain BIM for</dd>
+                
+                  <dt>buildingSourceFile<code> &lt;path&gt;</code></dt>
+                  <dd>path to buildings file</dd>
+                
+                  <dt>config<code> &lt;path&gt;</code></dt>
+                  <dd>path to buildings config file</dd>
+                
+                </dl>
+              </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0002">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre></pre>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0003</code>
+        <h5 class="card-title mb-0" >
+          GeoJSON_to_BIM
+        </h5>
+        <p class="card-text">
+          No description
+        </p>
+      </summary>
+
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0003">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0003')" >Inputs</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0003')" >CLI</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0003">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>buildingFile<code> &lt;FileName(W)&gt;</code></dt>
+                  <dd>name of JSON file containing an array of id,filename pairs. For each building id the aplication creates a BIM file with name filename</dd>
+                
+                  <dt>Min<code> &lt;int&gt;</code></dt>
+                  <dd>min id of building to obtain BIM for</dd>
+                
+                  <dt>Max<code> &lt;int&gt;</code></dt>
+                  <dd>max id of building to obtain BIM for</dd>
+                
+                  <dt>buildingSourceFile<code> &lt;path&gt;</code></dt>
+                  <dd>path to buildings database file</dd>
+                
+                  <dt>configFile<code> &lt;path&gt;</code></dt>
+                  <dd>path to workflow config file</dd>
+                
+                </dl>
+              </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0003">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre>usage: GeoJSON_to_BIM.py [-h] [--buildingFile BUILDINGFILE]
+                         [--buildingSourceFile BUILDINGSOURCEFILE] [--Min MIN]
+                         [--Max MAX] [--getRV [GETRV]]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --buildingFile BUILDINGFILE
+  --buildingSourceFile BUILDINGSOURCEFILE
+  --Min MIN
+  --Max MAX
+  --getRV [GETRV]
+</pre>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  </div>
+</div>
+
+
+<script>
+function openCardTab(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script> 
+
+</div>
 
 
            </div>

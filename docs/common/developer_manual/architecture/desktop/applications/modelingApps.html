@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.2.4.4. Modeling Applications &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>2.3.4. Modeling Applications &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.2.4.5. EDP Applications" href="EDPApps.html" />
-    <link rel="prev" title="2.2.4.3. Event Applications" href="eventApps.html" />
+    <link rel="next" title="2.3.5. EDP Applications" href="EDPApps.html" />
+    <link rel="prev" title="2.3.3. Event Applications" href="eventApps.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -141,21 +141,18 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../how_to_extend.html">2. How to Extend</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../../coding_style/desktop/coding_style.html">2.1. Coding Style</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../architecture.html">2.2. Software Architecture</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../overview.html">2.2.1. Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../file-types.html">2.2.3. File Types and Schemas</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../backendApplications.html">2.2.4. Backend Applications</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="eventApps.html">2.2.4.3. Event Applications</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">2.2.4.4. Modeling Applications</a></li>
-<li class="toctree-l4"><a class="reference internal" href="EDPApps.html">2.2.4.5. EDP Applications</a></li>
-<li class="toctree-l4"><a class="reference internal" href="simulationApps.html">2.2.4.6. Simulation Applications</a></li>
-<li class="toctree-l4"><a class="reference internal" href="UQApps.html">2.2.4.7. UQ Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">2.1. Software Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c4model.html">2.2. C4 Model of the SimCenter Ecosystem</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../backendApplications.html">2.3. Backend Applications</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="eventApps.html">2.3.3. Event Applications</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.3.4. Modeling Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EDPApps.html">2.3.5. EDP Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simulationApps.html">2.3.6. Simulation Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UQApps.html">2.3.7. UQ Applications</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../c4model.html">2.2.5. C4 Model of Software Architecture</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../file-types.html">2.4. File Types and Schemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../coding_style/desktop/coding_style.html">2.5. Coding Style</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../verification/desktop/verification.html">3. Verification</a></li>
@@ -209,11 +206,11 @@
         
           <li><a href="../../../how_to_extend.html"><span class="section-number">2. </span>How to Extend</a> &raquo;</li>
         
-          <li><a href="../architecture.html"><span class="section-number">2.2. </span>Software Architecture</a> &raquo;</li>
+          <li><a href="../architecture.html">&lt;no title&gt;</a> &raquo;</li>
         
-          <li><a href="../backendApplications.html"><span class="section-number">2.2.4. </span>Backend Applications</a> &raquo;</li>
+          <li><a href="../backendApplications.html"><span class="section-number">2.3. </span>Backend Applications</a> &raquo;</li>
         
-      <li><span class="section-number">2.2.4.4. </span>Modeling Applications</li>
+      <li><span class="section-number">2.3.4. </span>Modeling Applications</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -233,7 +230,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="modeling-applications">
-<span id="lblmodelingapp"></span><h1><span class="section-number">2.2.4.4. </span>Modeling Applications<a class="headerlink" href="#modeling-applications" title="Permalink to this heading">¶</a></h1>
+<span id="lblmodelingapp"></span><h1><span class="section-number">2.3.4. </span>Modeling Applications<a class="headerlink" href="#modeling-applications" title="Permalink to this heading">¶</a></h1>
 <p>The <strong>modeling application</strong> consolidates information on the <em>structural analysis model</em> (SAM) used to represent the building on each site.
 It takes as input the <a class="reference internal" href="buildingApps.html#lblbuildingapp"><span class="std std-ref">BIM file</span></a>, the <a class="reference internal" href="eventApps.html#lbleventapp"><span class="std std-ref">EVENT file</span></a>, and information on the structural model used for response simulation, specified in the <a class="reference internal" href="../file-types/Inputs.html#lbluserdefinputs"><span class="std std-ref">configuration file</span></a>.
 The input structural model information is parsed into a <code class="docutils literal notranslate"><span class="pre">SAM.json</span></code> file, located in its corresponding <strong>simulation working directory</strong>.</p>
@@ -241,7 +238,277 @@ The input structural model information is parsed into a <code class="docutils li
 <img alt="../../../../../_images/backendapps_Modeling.png" src="../../../../../_images/backendapps_Modeling.png" />
 </div>
 <p>The following options for modeling applications vary in the type of model and finite element program used for response simulation.</p>
-main.html</div>
+main.html
+
+
+<hr>
+<div class="twbs">
+  <div class="gallery accordion" id="gallery">
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0019</code>
+        <h5 class="card-title mb-0" >
+          MDOF-LU
+        </h5>
+        <p class="card-text">
+          Creates SAM.json file and generates script for creating a hysteretic multi-degree of freedom (MDOF) system subject to earthquake time history analysis, based on the Lu method. Analysis is executed by the OpenSeesSimulation application.
+        </p>
+      </summary>
+
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0019">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0019')" >Inputs</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0019')" >CLI</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0019">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>BIM file<code> &lt;string&gt;</code></dt>
+                  <dd>File containing a dictionary of building information.</dd>
+                
+                  <dt>EVENT file<code> &lt;string&gt;</code></dt>
+                  <dd>File containing event intensity measure for each simulation per building.</dd>
+                
+                  <dt>HAZUS data<code> &lt;path&gt;</code></dt>
+                  <dd>Defines location of the HAZUS building configuration file.</dd>
+                
+                  <dt>stdStiffness<code> &lt;float&gt;</code></dt>
+                  <dd>Defines the standard deviation that should be considered when sampling the stiffness for the building.</dd>
+                
+                  <dt>stdDamping<code> &lt;float&gt;</code></dt>
+                  <dd>Defines the standard deviation that should be considered when sampling the damping ratio for the building.</dd>
+                
+                </dl>
+              </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0019">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre></pre>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0020</code>
+        <h5 class="card-title mb-0" >
+          OpenSeesInput
+        </h5>
+        <p class="card-text">
+          Creates SAM.json file containing model information for an input OpenSees structural model. Analysis is executed in the OpenSeesSimulation application.
+        </p>
+      </summary>
+
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0020">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0020')" >Inputs</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0020')" >CLI</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0020">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>filenameBIM<code> &lt;FileName(r)&gt;</code></dt>
+                  <dd>name of bim file</dd>
+                
+                  <dt>filenameEVENT<code> &lt;FileName(r)&gt;</code></dt>
+                  <dd>name of file containing the event data</dd>
+                
+                  <dt>filenameSAM<code> &lt;FileName(w)&gt;</code></dt>
+                  <dd>name of file containing the outputted SAM</dd>
+                
+                </dl>
+              </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0020">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre></pre>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0021</code>
+        <h5 class="card-title mb-0" >
+          OpenSeesPyInput
+        </h5>
+        <p class="card-text">
+          Creates SAM.json file containing model information for an input OpenSeesPy structural model. The functions 'build_model' and 'run_analysis' must be defined in the model script. Analysis is executed in the OpenSeesPySimulation application.
+        </p>
+      </summary>
+
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0021">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0021')" >Inputs</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0021')" >CLI</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0021">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>filenameBIM<code> &lt;string&gt;</code></dt>
+                  <dd>File containing a dictionary of building information.</dd>
+                
+                  <dt>filenameEVENT<code> &lt;string&gt;</code></dt>
+                  <dd>File containing event intensity measure for each simulation per building.</dd>
+                
+                  <dt>modelPath<code> &lt;FileName(r)&gt;</code></dt>
+                  <dd>Defines the location of the input OpenSeesPy model files.</dd>
+                
+                  <dt>mainScript<code> &lt;FileName(r)&gt;</code></dt>
+                  <dd>Defines the name of the main model file which contains the build_model and run_analysis functions.</dd>
+                
+                  <dt>ndm<code> &lt;string&gt;</code></dt>
+                  <dd>Defines the number of degrees of freedom in the numerical model.</dd>
+                
+                  <dt>dofMap<code> &lt;int&gt;</code></dt>
+                  <dd>By default, the workflow assumes X=1, Y=2, Z=3 mapping between directions and degrees of freedom, with XY being the horizontal directions. This input allows you to define an alternative mapping by providing three numbers separated by commas in a string, such as '1, 3, 2' if you wish to have Y as the vertical direction.</dd>
+                
+                  <dt>ctrlNodes<code> &lt;string&gt;</code></dt>
+                  <dd>Defines the IDs of nodes in the OpenSeesPy model where EDPs are recorded. If the number of ctrlNodes provided exceeds the number of stories, only the firsts n+1 nodes will be used for an n-story building.</dd>
+                
+                  <dt>filenameSAM<code> &lt;FileName(w)&gt;</code></dt>
+                  <dd>File containing model information for response simulation.</dd>
+                
+                </dl>
+              </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0021">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre>usage: OpenSeesPyInput.py [-h] [--filenameBIM FILENAMEBIM]
+                          [--filenameEVENT FILENAMEEVENT]
+                          [--filenameSAM FILENAMESAM]
+                          [--mainScript MAINSCRIPT] [--modelPath MODELPATH]
+                          [--ndm NDM] [--dofMap DOFMAP] [--getRV [GETRV]]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --filenameBIM FILENAMEBIM
+  --filenameEVENT FILENAMEEVENT
+  --filenameSAM FILENAMESAM
+  --mainScript MAINSCRIPT
+  --modelPath MODELPATH
+  --ndm NDM
+  --dofMap DOFMAP
+  --getRV [GETRV]
+</pre>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0022</code>
+        <h5 class="card-title mb-0" >
+          MDOF_BuildingModel
+        </h5>
+        <p class="card-text">
+          No description
+        </p>
+      </summary>
+
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0022">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0022')" >Inputs</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0022')" >CLI</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0022">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>filenameBIM<code> &lt;FileName(r)&gt;</code></dt>
+                  <dd>name of bim file</dd>
+                
+                  <dt>filenameEVENT<code> &lt;FileName(r)&gt;</code></dt>
+                  <dd>name of file containing the event data</dd>
+                
+                  <dt>filenameSAM<code> &lt;FileName(w)&gt;</code></dt>
+                  <dd>name of file containing the outputted SAM</dd>
+                
+                </dl>
+              </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0022">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre></pre>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  </div>
+</div>
+
+
+<script>
+function openCardTab(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script> 
+
+</div>
 
 
            </div>

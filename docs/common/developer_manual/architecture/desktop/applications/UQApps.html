@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.2.4.7. UQ Applications &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>2.3.7. UQ Applications &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.2.4.8. Building Applications" href="buildingApps.html" />
-    <link rel="prev" title="2.2.4.6. Simulation Applications" href="simulationApps.html" />
+    <link rel="next" title="2.3.8. Building Applications" href="buildingApps.html" />
+    <link rel="prev" title="2.3.6. Simulation Applications" href="simulationApps.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -141,21 +141,18 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../how_to_extend.html">2. How to Extend</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../../coding_style/desktop/coding_style.html">2.1. Coding Style</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../architecture.html">2.2. Software Architecture</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../overview.html">2.2.1. Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../file-types.html">2.2.3. File Types and Schemas</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../backendApplications.html">2.2.4. Backend Applications</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="eventApps.html">2.2.4.3. Event Applications</a></li>
-<li class="toctree-l4"><a class="reference internal" href="modelingApps.html">2.2.4.4. Modeling Applications</a></li>
-<li class="toctree-l4"><a class="reference internal" href="EDPApps.html">2.2.4.5. EDP Applications</a></li>
-<li class="toctree-l4"><a class="reference internal" href="simulationApps.html">2.2.4.6. Simulation Applications</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">2.2.4.7. UQ Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">2.1. Software Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c4model.html">2.2. C4 Model of the SimCenter Ecosystem</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../backendApplications.html">2.3. Backend Applications</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="eventApps.html">2.3.3. Event Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modelingApps.html">2.3.4. Modeling Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EDPApps.html">2.3.5. EDP Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simulationApps.html">2.3.6. Simulation Applications</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.3.7. UQ Applications</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../c4model.html">2.2.5. C4 Model of Software Architecture</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../file-types.html">2.4. File Types and Schemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../coding_style/desktop/coding_style.html">2.5. Coding Style</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../verification/desktop/verification.html">3. Verification</a></li>
@@ -209,11 +206,11 @@
         
           <li><a href="../../../how_to_extend.html"><span class="section-number">2. </span>How to Extend</a> &raquo;</li>
         
-          <li><a href="../architecture.html"><span class="section-number">2.2. </span>Software Architecture</a> &raquo;</li>
+          <li><a href="../architecture.html">&lt;no title&gt;</a> &raquo;</li>
         
-          <li><a href="../backendApplications.html"><span class="section-number">2.2.4. </span>Backend Applications</a> &raquo;</li>
+          <li><a href="../backendApplications.html"><span class="section-number">2.3. </span>Backend Applications</a> &raquo;</li>
         
-      <li><span class="section-number">2.2.4.7. </span>UQ Applications</li>
+      <li><span class="section-number">2.3.7. </span>UQ Applications</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -233,7 +230,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="uq-applications">
-<span id="lbluqapp"></span><h1><span class="section-number">2.2.4.7. </span>UQ Applications<a class="headerlink" href="#uq-applications" title="Permalink to this heading">¶</a></h1>
+<span id="lbluqapp"></span><h1><span class="section-number">2.3.7. </span>UQ Applications<a class="headerlink" href="#uq-applications" title="Permalink to this heading">¶</a></h1>
 <p>The <strong>UQ application</strong> is used to sample <em>random variables</em> (RV) specified in any of the workflow steps (Event, Modeling, EDP, Simulation) for uncertainty quantification, then to run commands written in the <strong>driver file</strong> which call on the backend applications to execute the R2D Workflow.
 It first populates values for the RVs, sampled from specified probability distributions, in the corresponding files (EVENT.json, SAM.json, EDP.json, SIM.json) for each simulation before executing the workflow.
 If no RVs are specified, then the UQ application directly runs commands in the driver file without random sampling.</p>
@@ -241,7 +238,140 @@ If no RVs are specified, then the UQ application directly runs commands in the d
 <img alt="../../../../../_images/backendapps_UQ.png" src="../../../../../_images/backendapps_UQ.png" />
 </div>
 <p>The following options for UQ applications vary in the software package used to perform uncertainty quantification.</p>
-main.html</div>
+main.html
+
+
+<hr>
+<div class="twbs">
+  <div class="gallery accordion" id="gallery">
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0039</code>
+        <h5 class="card-title mb-0" >
+          Dakota-UQ
+        </h5>
+        <p class="card-text">
+          No description
+        </p>
+      </summary>
+
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0039">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0039')" >Inputs</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0039')" >CLI</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0039">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>inputFile<code> &lt;FileName(r)&gt;</code></dt>
+                  <dd>name of file containing the input</dd>
+                
+                  <dt>outFile<code> &lt;FileName(w)&gt;</code></dt>
+                  <dd>name of output file</dd>
+                
+                  <dt>tabFile<code> &lt;FileName(w)&gt;</code></dt>
+                  <dd>name of tab file containing for each simulation the RV values and response values</dd>
+                
+                </dl>
+              </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0039">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre></pre>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0041</code>
+        <h5 class="card-title mb-0" >
+          SimCenterUQ-UQ
+        </h5>
+        <p class="card-text">
+          No description
+        </p>
+      </summary>
+
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0041">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0041')" >Inputs</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0041')" >CLI</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0041">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>inputFile<code> &lt;FileName(r)&gt;</code></dt>
+                  <dd>name of file containing the input</dd>
+                
+                  <dt>outFile<code> &lt;FileName(w)&gt;</code></dt>
+                  <dd>name of output file</dd>
+                
+                  <dt>tabFile<code> &lt;FileName(w)&gt;</code></dt>
+                  <dd>name of tab file containing for each simulation the RV values and response values</dd>
+                
+                </dl>
+              </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0041">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre></pre>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  </div>
+</div>
+
+
+<script>
+function openCardTab(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script> 
+
+</div>
 
 
            </div>
