@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
@@ -49,7 +49,7 @@
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="2. User Interface" href="../../usage/desktop/usage.html" />
+    <link rel="next" title="1.3. Running Jobs at DesignSafe" href="setupTACC.html" />
     <link rel="prev" title="1.1. Install on Windows 10" href="install_Windows.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
@@ -130,6 +130,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#test-the-installation">1.2.6. Test the Installation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="setupTACC.html">1.3. Running Jobs at DesignSafe</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/usage.html">2. User Interface</a></li>
@@ -235,21 +236,16 @@
 </pre></div>
 </div>
 <p>Ensure the output indicates Python 3.9 and <cite>machine=’x86_64’</cite>, as shown in the screenshot below. If not, proceed to install Python 3.9 x86.</p>
-<div class="align-center figure" id="id6">
+<div class="align-center figure" id="id5">
 <a class="reference internal image-reference" href="../../../../_images/pythonKernel.png"><img alt="../../../../_images/pythonKernel.png" src="../../../../_images/pythonKernel.png" style="width: 75%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.1.1 </span><span class="caption-text">Python: Kernel Version</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.1.1 </span><span class="caption-text">Python: Kernel Version</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p>Visit <a class="reference external" href="https://www.python.org/downloads/macos/">Python.org</a> and download the <strong>macOS 64-bit Intel-only installer</strong> for Python 3.9.</p>
-<div class="align-center figure" id="id7">
-<img alt="../../../../_images/pythonDownload.png" src="../../../../_images/pythonDownload.png" />
-<p class="caption"><span class="caption-number">Fig. 1.2.1.2 </span><span class="caption-text">Python: python.org MacOS Download Page</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
-</div>
-</li>
+<li><p>To download a Python installer with your browser open the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ">WE-UQ Download</a> page. There, you will find various files and directories available for download. Locate the file named <strong>python-3.9.13-macosx10.9.pkg</strong>, which we copied from <a class="reference external" href="https://www.python.org/downloads/macos/">Python.org</a>. Proceed to download this installer file and then open it on your local machine to initiate the Python installation process.</p></li>
 <li><p>Run the installer. Upon completion, a folder with several files will open, as shown in the figure below. Execute <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Shell</span> <span class="pre">Profile.command.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">CertificateCommand.sh</span></code> by double-clicking each.</p>
-<div class="align-center figure" id="id8">
+<div class="align-center figure" id="id6">
 <a class="reference internal image-reference" href="../../../../_images/pythonInstallShell.png"><img alt="../../../../_images/pythonInstallShell.png" src="../../../../_images/pythonInstallShell.png" style="width: 75%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.1.3 </span><span class="caption-text">Python: Folder Displayed at Conclusion of Install</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.1.2 </span><span class="caption-text">Python: Folder Displayed at Conclusion of Install</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>Install additional packages via the <strong>nheri_simcenter</strong> package by starting a Terminal window and type the following command:</p>
@@ -288,14 +284,18 @@ When the frontend application is running the computations it is actually running
 <p class="admonition-title">Note</p>
 <p>The packaged distribution of OpenFOAM is only available for Linux systems. To install OpenFOAM on macOS, the user needs to use Docker for Mac. Docker will provide a virtual environment for running Linux applications on macOS.</p>
 </div>
-<p>To install OpenFOAM-10 on macOS, follow the instructions in <a class="reference external" href="https://openfoam.org/download/10-macos/">OpenFOAM for macOS</a> .</p>
+<p>To download and install Docker for macOS from the following site <a class="reference external" href="https://docs.docker.com/desktop/install/mac-install/">Docker for macOS</a> .</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure to download Docker distribution that maches your machine requirements (Apple or Intel chip).</p>
+</div>
 </div>
 <div class="section" id="download-the-application">
 <h2><span class="section-number">1.2.5. </span><strong>Download the Application</strong><a class="headerlink" href="#download-the-application" title="Permalink to this heading">¶</a></h2>
 <p>To download the WE-UQ app, navigate to the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ">WE-UQ Download</a> page which should resemble <a class="reference internal" href="#figdownload-we"><span class="std std-numref">Fig. 1.2.5.4</span></a>. The download page contains a list of downloadable files and directories.</p>
-<div class="align-center figure" id="id12">
+<div class="align-center figure" id="id10">
 <span id="figdownload-we"></span><img alt="../../../../_images/weDownload.png" src="../../../../_images/weDownload.png" />
-<p class="caption"><span class="caption-number">Fig. 1.2.5.4 </span><span class="caption-text">WE-UQ download page.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.5.4 </span><span class="caption-text">WE-UQ download page.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <p>Click on the file with a name ending with <strong>Mac_Download.dmg</strong> to download the WE-UQ app. In the pop-up window, click on the <strong>Download</strong> button in the bottom right corner. After the download is completed, open the dmg file and <strong>copy</strong> the WE-UQ app <strong>to a location in your filesystem</strong>.</p>
 <div class="admonition note">
@@ -315,16 +315,16 @@ When the frontend application is running the computations it is actually running
 </div>
 </div>
 <p>Once the application starts, verify the setup by running an example problem <a class="reference internal" href="../../examples/desktop/weuq-0001/README.html#weuq-0001"><span class="std std-ref">9 Story Building: Sampling Analysis</span></a>, see <a class="reference internal" href="#figui-we"><span class="std std-numref">Fig. 1.2.6.4</span></a>.</p>
-<div class="figure align-default" id="id18">
+<div class="figure align-default" id="id16">
 <span id="figui-we"></span><img alt="common/user_manual/installation/desktop/figures/WE-UQ.png:align:center:figclass:align-center:width:75%" src="common/user_manual/installation/desktop/figures/WE-UQ.png:align:center:figclass:align-center:width:75%" />
-<p class="caption"><span class="caption-number">Fig. 1.2.6.4 </span><span class="caption-text">WE-UQ application on startup.</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.6.4 </span><span class="caption-text">WE-UQ application on startup.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When the WE-UQ app is running, open the app/preferences or File/Preferences and make sure that <code class="docutils literal notranslate"><span class="pre">python3</span></code> appears under <strong>External Applications:Python</strong>, as shown in the figure below. If you used older versions of SimCenter tools this was not the default. The exact location of Python3 that you installed can be found by opening the terminal application and executing the <strong>which python3</strong> command. Enter the path shown as a response in the Preferences panel under Python and then press the <strong>Save</strong> button.</p>
-<div class="align-center figure" id="id21">
+<div class="align-center figure" id="id19">
 <span id="figui-preferences"></span><a class="reference internal image-reference" href="../../../../_images/pythonPreferences.png"><img alt="../../../../_images/pythonPreferences.png" src="../../../../_images/pythonPreferences.png" style="width: 75%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.6.7 </span><span class="caption-text">Set Python Preferences.</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.6.7 </span><span class="caption-text">Set Python Preferences.</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>

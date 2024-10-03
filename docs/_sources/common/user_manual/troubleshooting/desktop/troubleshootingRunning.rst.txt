@@ -7,7 +7,7 @@ When running simulations, failures can occur due to various reasons such as inco
 
 #. A temporary directory, ``tmp.SimCenter``, is created in the working directory, followed by a ``templatedir`` within it.
 #. The UI processes all input panels, and workflow applications transfer necessary files to the ``templatedir``.
-#. A Python script, specific to the simulation type (rWHALE.py for regional simulations, sWHALE.py for individual assessments), is executed from ``templatedir``. rWHALE serves as a wrapper, invoking sWHALE for each asset in regional assessments.
+#. A Python script, specific to the simulation type (rWHALE.py for regional simulations, sWHALE.py for individual assessments), is executed from the ``templatedir``. rWHALE serves as a wrapper, invoking sWHALE for each asset in regional assessments.
 #. For structural response simulations, uncertainty quantification is managed by the chosen UQ Engine (e.g., Dakota), which generates an input file (e.g., ``dakota.in``) placed in ``tmp.SimCenter``.
 #. The UQ engine runs the response simulation using the earlier created input file.
 #. For each structural response realization, the UQ engine creates a separate workdir folder within ``tmp.SimCenter``.
@@ -34,4 +34,22 @@ Below are common issues encountered during failures, along with troubleshooting 
 
 #. **No results and you used the Site Response to create the event**. You must run a simulated event in the Site Response Widget before you can submit a job to run.
 
+
+#. **Don't Like Default Screen Layout**. There are configuarion you can do for startup. In the directory in which the executable exists you can place a **config.json** file. At present the options are limited: You can set screen size of the application to be full screen, and you can set and change the size of the **output** window. A sample config .json file:
+
+.. code-block::
+
+   {
+      "screenSize":"fullScreen",
+      "outputLocation":{"position":"right","numPixels":500}
+   }
+
+.. note::
+
+   You can also start the application from the terminal and pass config options. These options overwrite any existing.
+   
+   .. code-block
+   
+       application -screenSize fullScreen -helpLocation '{"position":"right","numPixels":400}'
+   
 For unresolved issues, please seek assistance on the |messageBoard|.

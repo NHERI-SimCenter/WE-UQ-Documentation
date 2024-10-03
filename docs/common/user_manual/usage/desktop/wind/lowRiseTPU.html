@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.4.5. Data from Tokyo Polytechnic University &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>2.4.6. Data from Tokyo Polytechnic University &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.4.6. Wind Tunnel Experiment" href="windTunnelExp.html" />
-    <link rel="prev" title="2.4.4. Database-Enabled Design Module" href="DEDMHrp.html" />
+    <link rel="next" title="2.4.7. Wind Tunnel Experiment" href="windTunnelExp.html" />
+    <link rel="prev" title="2.4.5. Database-Enabled Design Module" href="DEDMHrp.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -130,13 +130,14 @@
 <li class="toctree-l3"><a class="reference internal" href="stochasticWind.html">2.4.1. Stochastic Wind</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DigitalWindTunnel.html">2.4.2. Digital Wind Tunnel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="IsolatedBuildingCFD.html">2.4.3. Isolated Building CFD Model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DEDMHrp.html">2.4.4. Database-Enabled Design Module</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.5. Data from Tokyo Polytechnic University</a></li>
-<li class="toctree-l3"><a class="reference internal" href="windTunnelExp.html">2.4.6. Wind Tunnel Experiment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="WeUQExisting.html">2.4.7. Multiple Existing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ExperimentalWindForce.html">2.4.8. Experimental Wind Force</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ExperimentalWindPressure.html">2.4.9. Experimental Wind Pressure</a></li>
-<li class="toctree-l3"><a class="reference internal" href="WindForceSpectrum.html">2.4.10. Wind Force Spectrum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SurroundedBuildingCFD.html">2.4.4. Surrounded Building CFD Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DEDMHrp.html">2.4.5. Database-Enabled Design Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.6. Data from Tokyo Polytechnic University</a></li>
+<li class="toctree-l3"><a class="reference internal" href="windTunnelExp.html">2.4.7. Wind Tunnel Experiment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WeUQExisting.html">2.4.8. Multiple Existing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ExperimentalWindForce.html">2.4.9. Experimental Wind Force</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ExperimentalWindPressure.html">2.4.10. Experimental Wind Pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WindForceSpectrum.html">2.4.11. Wind Force Spectrum</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
@@ -216,7 +217,7 @@
         
           <li><a href="WindEvents.html"><span class="section-number">2.4. </span>EVT: Wind Events</a> &raquo;</li>
         
-      <li><span class="section-number">2.4.5. </span>Data from Tokyo Polytechnic University</li>
+      <li><span class="section-number">2.4.6. </span>Data from Tokyo Polytechnic University</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -236,14 +237,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="data-from-tokyo-polytechnic-university">
-<h1><span class="section-number">2.4.5. </span>Data from Tokyo Polytechnic University<a class="headerlink" href="#data-from-tokyo-polytechnic-university" title="Permalink to this heading">¶</a></h1>
+<h1><span class="section-number">2.4.6. </span>Data from Tokyo Polytechnic University<a class="headerlink" href="#data-from-tokyo-polytechnic-university" title="Permalink to this heading">¶</a></h1>
 <p>For this event type, full-scale floor loads are generated utilizing wind tunnel data made available by Tokyo Polytechnic University, specifically their <a class="reference external" href="http://wind.arch.t-kougei.ac.jp/system/eng/contents/code/tpu">TPU Aerodynamic Database</a>. The TPU Aerodynamic database provides a number of databases. Currently, this tool utilizes data provided for <a class="reference external" href="http://www.wind.arch.t-kougei.ac.jp/info_center/windpressure/lowrise/mainpage.html">Low Rise Buildings Without Eaves</a>. This database provides wind tunnel data of wind loads on low-rise buildings with gable, hip, and flat roofs. Information on the data and how it was obtained is provided in their <a class="reference external" href="http://www.wind.arch.t-kougei.ac.jp/info_center/windpressure/lowrise/Introductionofthedatabase.pdf">documentation</a>. The important wind field information: The turbulence density at a height of 10cm was about 0.25.  The test mean wind velocity at this height was about 7.4m/s, corresponding to about 22m/s at a height of 10m in full scale. The tests were performed on a limited number of buildings with different aspect ratios and wind coming from different angles on the building.</p>
 <p>As will be discussed in the theory section, the wind loads are obtained from the pressure tap data by determining a length factor and a velocity factor. The length factor is determined by the building height. The forces, unlike in DEDM-HRP, are determined from the building dimensions provided in the general information sheet and the length and velocity factors.</p>
 <div class="align-center figure" id="id1">
 <span id="fig-lowrise-tpu"></span><img alt="../../../../../_images/lowRiseTPU.png" src="../../../../../_images/lowRiseTPU.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.5.1 </span><span class="caption-text">Low rise TPU wind loading event.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.6.1 </span><span class="caption-text">Low rise TPU wind loading event.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>Inputs for this event type, as shown in figure <a class="reference internal" href="#fig-lowrise-tpu"><span class="std std-numref">Fig. 2.4.5.1</span></a> require the user to specify which of the following tests to use:</p>
+<p>Inputs for this event type, as shown in figure <a class="reference internal" href="#fig-lowrise-tpu"><span class="std std-numref">Fig. 2.4.6.1</span></a> require the user to specify which of the following tests to use:</p>
 <ol class="arabic simple">
 <li><p>The roof type (currently only <strong>flat</strong> is supported).</p></li>
 <li><p>One of four height-to-breadth ratio options.</p></li>

@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
@@ -130,6 +130,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="install_macOS.html">1.2. Install on MacOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupTACC.html">1.3. Running Jobs at DesignSafe</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/usage.html">2. User Interface</a></li>
@@ -230,10 +231,26 @@
 </div>
 <div class="section" id="install-openfoam-for-windows">
 <h2><span class="section-number">1.1.2. </span>Install OpenFOAM for Windows<a class="headerlink" href="#install-openfoam-for-windows" title="Permalink to this heading">¶</a></h2>
-<p>To install OpenFOAM-10 on Windows 10, follow the instructions below:</p>
+<p>To install OpenFOAM-10 on Windows 10 or 11, follow the instructions below:</p>
 <ol class="arabic simple">
-<li><p>First, open <em>PowerShell</em> from the start menu and run it as an administrator. Then, in the command window type <code class="docutils literal notranslate"><span class="pre">wsl</span> <span class="pre">--install</span></code> which will install all the necessary Linux features. For detailed instructions please follow <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">Install WSL</a>.</p></li>
-<li><p>Open WSL from the start menu and run the following commands on the opened terminal window.</p></li>
+<li><p>First, open <em>PowerShell</em> from the start menu and run it as an administrator. In the command window, type the following which will install all the necessary Linux features. For detailed instructions please follow <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">Install WSL</a>.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wsl<span class="w"> </span>--install<span class="w"> </span>--distribution<span class="w"> </span>Ubuntu
+</pre></div>
+</div>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="../../../../_images/weuq_wsl_installation.png"><img alt="../../../../_images/weuq_wsl_installation.png" src="../../../../_images/weuq_wsl_installation.png" style="width: 75%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.1.2.1 </span><span class="caption-text">Installing WSL(Ubuntu) Subsystem.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>This will install Ubuntu distribution and launch a new linux terminal to configure the installation. Then, input your user name and password to setup the system as shown bellow.</p>
+<blockquote>
+<div><div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="../../../../_images/weuq_wsl_configuration.png"><img alt="../../../../_images/weuq_wsl_configuration.png" src="../../../../_images/weuq_wsl_configuration.png" style="width: 75%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.1.2.2 </span><span class="caption-text">Configuring WSL(Ubuntu) Subsystem.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Then, open WSL from the start menu and execute the following commands line by line on the opened terminal window.</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;wget -O - http://dl.openfoam.org/gpg.key | apt-key add -&quot;</span>
 sudo<span class="w"> </span>add-apt-repository<span class="w"> </span>http://dl.openfoam.org/ubuntu
@@ -241,14 +258,17 @@ sudo<span class="w"> </span>apt-get<span class="w"> </span>update
 sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>openfoam10
 </pre></div>
 </div>
-<p>Further instructions can be found in <a class="reference external" href="https://openfoam.org/download/windows/">OpenFOAM.org</a>.</p>
+<div class="figure align-center" id="id6">
+<a class="reference internal image-reference" href="../../../../_images/weuq_openfoam_installation.png"><img alt="../../../../_images/weuq_openfoam_installation.png" src="../../../../_images/weuq_openfoam_installation.png" style="width: 75%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.1.2.3 </span><span class="caption-text">Installing OpenFOAM-10 on WSL.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <div class="section" id="download-the-application">
 <h2><span class="section-number">1.1.4. </span><strong>Download the Application</strong><a class="headerlink" href="#download-the-application" title="Permalink to this heading">¶</a></h2>
 <p>Navigate to the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ">WE-UQ Download</a> page, which should resemble <a class="reference internal" href="#figdownloadwin-we"><span class="std std-numref">Fig. 1.1.4.4</span></a>, for a list of downloadable files and directories. Click the <strong>Windows_Download.zip</strong> file and select <strong>Download</strong> in the pop-up window’s bottom right.</p>
-<div class="align-center figure" id="id8">
+<div class="align-center figure" id="id10">
 <span id="figdownloadwin-we"></span><img alt="../../../../_images/weDownload.png" src="../../../../_images/weDownload.png" />
-<p class="caption"><span class="caption-number">Fig. 1.1.4.4 </span><span class="caption-text">WE-UQ download page.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.1.4.4 </span><span class="caption-text">WE-UQ download page.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <p>After downloading, extract the zip file to your preferred location, such as <strong>C:/SimCenter/</strong>. You can create and move a shortcut of the WE-UQ.exe to your Desktop for convenience.</p>
 <div class="admonition tip">
@@ -264,9 +284,9 @@ sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w
 <p>Since the SimCenter is not registered as a Windows vendor, our applications may trigger a warning about unsigned applications from unknown sources when you start the WE-UQ app application for the first time. It is safe to bypass this warning for SimCenter applications.</p>
 </div>
 <p>Launch the application to view the user interface as shown in <a class="reference internal" href="#figwinui-we"><span class="std std-numref">Fig. 1.1.5.4</span></a>. It’s recommended to run the <a class="reference internal" href="../../examples/desktop/weuq-0001/README.html#weuq-0001"><span class="std std-ref">9 Story Building: Sampling Analysis</span></a> to ensure proper operation.</p>
-<div class="align-center figure" id="id14">
+<div class="align-center figure" id="id16">
 <span id="figwinui-we"></span><img alt="../../../../_images/WE-UQ.png" src="../../../../_images/WE-UQ.png" />
-<p class="caption"><span class="caption-number">Fig. 1.1.5.4 </span><span class="caption-text">WE-UQ application on startup.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.1.5.4 </span><span class="caption-text">WE-UQ application on startup.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="troubleshooting">

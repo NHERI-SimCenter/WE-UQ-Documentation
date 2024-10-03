@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.4.6. Wind Tunnel Experiment &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>2.4.7. Wind Tunnel Experiment &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.4.7. Multiple Existing" href="WeUQExisting.html" />
-    <link rel="prev" title="2.4.5. Data from Tokyo Polytechnic University" href="lowRiseTPU.html" />
+    <link rel="next" title="2.4.8. Multiple Existing" href="WeUQExisting.html" />
+    <link rel="prev" title="2.4.6. Data from Tokyo Polytechnic University" href="lowRiseTPU.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -130,13 +130,14 @@
 <li class="toctree-l3"><a class="reference internal" href="stochasticWind.html">2.4.1. Stochastic Wind</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DigitalWindTunnel.html">2.4.2. Digital Wind Tunnel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="IsolatedBuildingCFD.html">2.4.3. Isolated Building CFD Model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DEDMHrp.html">2.4.4. Database-Enabled Design Module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lowRiseTPU.html">2.4.5. Data from Tokyo Polytechnic University</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.6. Wind Tunnel Experiment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="WeUQExisting.html">2.4.7. Multiple Existing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ExperimentalWindForce.html">2.4.8. Experimental Wind Force</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ExperimentalWindPressure.html">2.4.9. Experimental Wind Pressure</a></li>
-<li class="toctree-l3"><a class="reference internal" href="WindForceSpectrum.html">2.4.10. Wind Force Spectrum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SurroundedBuildingCFD.html">2.4.4. Surrounded Building CFD Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DEDMHrp.html">2.4.5. Database-Enabled Design Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lowRiseTPU.html">2.4.6. Data from Tokyo Polytechnic University</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.7. Wind Tunnel Experiment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WeUQExisting.html">2.4.8. Multiple Existing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ExperimentalWindForce.html">2.4.9. Experimental Wind Force</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ExperimentalWindPressure.html">2.4.10. Experimental Wind Pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WindForceSpectrum.html">2.4.11. Wind Force Spectrum</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
@@ -216,7 +217,7 @@
         
           <li><a href="WindEvents.html"><span class="section-number">2.4. </span>EVT: Wind Events</a> &raquo;</li>
         
-      <li><span class="section-number">2.4.6. </span>Wind Tunnel Experiment</li>
+      <li><span class="section-number">2.4.7. </span>Wind Tunnel Experiment</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -236,11 +237,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="wind-tunnel-experiment">
-<h1><span class="section-number">2.4.6. </span>Wind Tunnel Experiment<a class="headerlink" href="#wind-tunnel-experiment" title="Permalink to this heading">¶</a></h1>
+<h1><span class="section-number">2.4.7. </span>Wind Tunnel Experiment<a class="headerlink" href="#wind-tunnel-experiment" title="Permalink to this heading">¶</a></h1>
 <p>This application will take the wind tunnel data provided and scale it based on the wind speed provided in this interface, and the building dimensions provided in the General Information. The theory on scaling wind tunnel data is provided in the theory. The data for the wind tunnel is provided in a JSON file format. That file contains information on model dimensions, model wind speed, model frequency, tap locations and time-varying pressure tap coefficients.</p>
 <div class="align-center figure" id="id1">
 <span id="fig-windtunnelexp"></span><img alt="../../../../../_images/windTunnelExperiment.png" src="../../../../../_images/windTunnelExperiment.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.6.1 </span><span class="caption-text">Wind tunnel experiment wind loading event.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.7.1 </span><span class="caption-text">Wind tunnel experiment wind loading event.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple">
 <li><p>The user to select the shape of the building, currently only Cuboid shapes are permitted.</p></li>
@@ -278,13 +279,13 @@
 <p class="admonition-title">Note</p>
 <ol class="arabic simple">
 <li><p>The length of the data arrays should be equal to <strong>frequencey</strong> times <strong>period</strong>, where <strong>period</strong> refers to the duration of the recorded data. (In future versions, <strong>duration</strong> will be accepted instead of <strong>period</strong>)</p></li>
-<li><p>It should be noted that at present the only valid <strong>modelShape</strong>  is a Cuboid. For users requiring other shapes, please post shape requests on the <a class="reference external" href="https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=5.0">Message Board</a>.</p></li>
+<li><p>It should be noted that at present the only valid <strong>modelShape</strong>  is a Cuboid. For users requiring other shapes, please post shape requests on the <a class="reference external" href="https://github.com/orgs/NHERI-SimCenter/discussions/categories/we-uq">github discussion page</a>.</p></li>
 </ol>
 </div>
 <p>For a cuboid, the input file contains information about the wind tunnel model’s width, depth, height and wind speed. In addition for each of the 4 faces the user provides information on tap location for which pressure coefficients are given. The coordinate system for each face is x and ym and assumes the origin is at the bottom left of an elevation of the building assuming the user is looking at that face of the building, as shown in the figure below.</p>
 <div class="align-center figure" id="id2">
 <span id="figwindtunnel"></span><img alt="../../../../../_images/windTunnel.png" src="../../../../../_images/windTunnel.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.6.2 </span><span class="caption-text">Wind Tunnel Experiment Event</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.7.2 </span><span class="caption-text">Wind Tunnel Experiment Event</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 

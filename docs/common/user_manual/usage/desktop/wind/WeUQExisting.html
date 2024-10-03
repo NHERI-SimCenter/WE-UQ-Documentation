@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.4.7. Multiple Existing &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>2.4.8. Multiple Existing &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="2.4.8. Experimental Wind Force" href="ExperimentalWindForce.html" />
-    <link rel="prev" title="2.4.6. Wind Tunnel Experiment" href="windTunnelExp.html" />
+    <link rel="next" title="2.4.9. Experimental Wind Force" href="ExperimentalWindForce.html" />
+    <link rel="prev" title="2.4.7. Wind Tunnel Experiment" href="windTunnelExp.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -130,13 +130,14 @@
 <li class="toctree-l3"><a class="reference internal" href="stochasticWind.html">2.4.1. Stochastic Wind</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DigitalWindTunnel.html">2.4.2. Digital Wind Tunnel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="IsolatedBuildingCFD.html">2.4.3. Isolated Building CFD Model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="DEDMHrp.html">2.4.4. Database-Enabled Design Module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="lowRiseTPU.html">2.4.5. Data from Tokyo Polytechnic University</a></li>
-<li class="toctree-l3"><a class="reference internal" href="windTunnelExp.html">2.4.6. Wind Tunnel Experiment</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.7. Multiple Existing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ExperimentalWindForce.html">2.4.8. Experimental Wind Force</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ExperimentalWindPressure.html">2.4.9. Experimental Wind Pressure</a></li>
-<li class="toctree-l3"><a class="reference internal" href="WindForceSpectrum.html">2.4.10. Wind Force Spectrum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SurroundedBuildingCFD.html">2.4.4. Surrounded Building CFD Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DEDMHrp.html">2.4.5. Database-Enabled Design Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lowRiseTPU.html">2.4.6. Data from Tokyo Polytechnic University</a></li>
+<li class="toctree-l3"><a class="reference internal" href="windTunnelExp.html">2.4.7. Wind Tunnel Experiment</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.8. Multiple Existing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ExperimentalWindForce.html">2.4.9. Experimental Wind Force</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ExperimentalWindPressure.html">2.4.10. Experimental Wind Pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WindForceSpectrum.html">2.4.11. Wind Force Spectrum</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
@@ -216,7 +217,7 @@
         
           <li><a href="WindEvents.html"><span class="section-number">2.4. </span>EVT: Wind Events</a> &raquo;</li>
         
-      <li><span class="section-number">2.4.7. </span>Multiple Existing</li>
+      <li><span class="section-number">2.4.8. </span>Multiple Existing</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -236,15 +237,15 @@
            <div itemprop="articleBody">
             
   <div class="section" id="multiple-existing">
-<h1><span class="section-number">2.4.7. </span>Multiple Existing<a class="headerlink" href="#multiple-existing" title="Permalink to this heading">¶</a></h1>
-<p>This panel is provided for the user to specify multiple existing SimCenter event files.  If more than one event is specified it is done to provide the UQ engine with a discrete set of events to choose from - it is not done with the intention of specifying that one event follows another.  The panel presented to the user is shown in <a class="reference internal" href="#fig-sceventpanel"><span class="std std-numref">Fig. 2.4.7.1</span></a>.</p>
+<h1><span class="section-number">2.4.8. </span>Multiple Existing<a class="headerlink" href="#multiple-existing" title="Permalink to this heading">¶</a></h1>
+<p>This panel is provided for the user to specify multiple existing SimCenter event files.  If more than one event is specified it is done to provide the UQ engine with a discrete set of events to choose from - it is not done with the intention of specifying that one event follows another.  The panel presented to the user is shown in <a class="reference internal" href="#fig-sceventpanel"><span class="std std-numref">Fig. 2.4.8.1</span></a>.</p>
 <div class="align-center figure" id="id1">
 <span id="fig-sceventpanel"></span><img alt="../../../../../_images/weuqExisting.png" src="../../../../../_images/weuqExisting.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.7.1 </span><span class="caption-text">Existing (SimCenter) events.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.8.1 </span><span class="caption-text">Existing (SimCenter) events.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>Use the <strong>Add</strong> button to add a new event. This adds an empty event to the panel. Pressing the button multiple times will keep adding events to the panel. <a class="reference internal" href="#fig-sceventpanel"><span class="std std-numref">Fig. 2.4.7.1</span></a> shows the state after the button has been pressed twice, and data entered to load the <code class="docutils literal notranslate"><span class="pre">Scenario1</span></code> and <code class="docutils literal notranslate"><span class="pre">Scenario2</span></code> Events.</p>
+<p>Use the <strong>Add</strong> button to add a new event. This adds an empty event to the panel. Pressing the button multiple times will keep adding events to the panel. <a class="reference internal" href="#fig-sceventpanel"><span class="std std-numref">Fig. 2.4.8.1</span></a> shows the state after the button has been pressed twice, and data entered to load the <code class="docutils literal notranslate"><span class="pre">Scenario1</span></code> and <code class="docutils literal notranslate"><span class="pre">Scenario2</span></code> Events.</p>
 <p>The path to the event file can be entered manually, or using the <strong>Choose</strong> button for convenience. Pushing the button brings up a typical file search screen. By default, a scale factor of 1.0 is assigned to the event.  The user can change this to another floating point value (DO NOT USE INTEGER), and they can define the scale factor as a random variable by entering a variable name, such as <code class="docutils literal notranslate"><span class="pre">factorScenario1</span></code> for the second event
-in <a class="reference internal" href="#fig-sceventpanel"><span class="std std-numref">Fig. 2.4.7.1</span></a>.</p>
+in <a class="reference internal" href="#fig-sceventpanel"><span class="std std-numref">Fig. 2.4.8.1</span></a>.</p>
 <p>Note: the name of the random variable must not start with a number, or contain any spaces or special characters, such as -, +, %, etc.</p>
 <p>The  <strong>Remove</strong> button is used to remove events. To remove an event, the user must first select the events they wish to remove, which is done by clicking on the small circle at the left side of the event frame. All of the selected events are removed when the <strong>Remove</strong> button is pressed.</p>
 <p>The <strong>Load Directory</strong> button provides a convenient method to load multiple events. All event files shall first be placed into the same folder. We recommend putting the files in a folder of their own, with no other files besides the wind-loading events in it. After pressing the <strong>Load Directory</strong> button, the user will be able to choose the directory that contains the files, and the application will load all event files (i.e., every file with a <code class="docutils literal notranslate"><span class="pre">.json</span></code> extension) into the widget automatically.</p>

@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -231,14 +231,13 @@
             
   <div class="section" id="uq-applications">
 <span id="lbluqapp"></span><h1><span class="section-number">2.3.7. </span>UQ Applications<a class="headerlink" href="#uq-applications" title="Permalink to this heading">¶</a></h1>
-<p>The <strong>UQ application</strong> is used to sample <em>random variables</em> (RV) specified in any of the workflow steps (Event, Modeling, EDP, Simulation) for uncertainty quantification, then to run commands written in the <strong>driver file</strong> which call on the backend applications to execute the R2D Workflow.
-It first populates values for the RVs, sampled from specified probability distributions, in the corresponding files (EVENT.json, SAM.json, EDP.json, SIM.json) for each simulation before executing the workflow.
-If no RVs are specified, then the UQ application directly runs commands in the driver file without random sampling.</p>
+<p>The <strong>UQ application</strong> is used to sample <em>random variables</em> (RVs) specified in any of the workflow steps (Event, Modeling, EDP, Simulation) for uncertainty quantification. It then runs commands written in the <strong>driver file</strong>, which call on the backend applications to execute the R2D Workflow.
+First, it populates values for the RVs, sampled from specified probability distributions, in the corresponding files (EVENT.json, SAM.json, EDP.json, SIM.json) for each simulation before executing the workflow.
+If no RVs are specified, the UQ application directly runs commands in the driver file without performing random sampling.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/backendapps_UQ.png" src="../../../../../_images/backendapps_UQ.png" />
 </div>
-<p>The following options for UQ applications vary in the software package used to perform uncertainty quantification.</p>
-main.html
+
 
 
 <hr>

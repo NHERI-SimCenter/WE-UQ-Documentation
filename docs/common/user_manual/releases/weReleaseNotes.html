@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
@@ -115,13 +115,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/cite.html">4. How To Cite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="weCapabilities.html">5. Capabilities</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">6. Release Notes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#version-3-3-current">6.1. Version 3.3 (Current)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-3-2">6.2. Version 3.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-3-1">6.3. Version 3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-3-0-0">6.4. Version 3.0.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-2-3">6.5. Version 2.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-2-0">6.6. Version 2.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-1-0-first-release">6.7. Version 1.0 (First Release)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-4-1-current">6.1. Version 4.1 (Current)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-4-0">6.2. Version 4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-3-4">6.3. Version 3.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-3-3">6.4. Version 3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-3-2">6.5. Version 3.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-3-1">6.6. Version 3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-3-0-0">6.7. Version 3.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-2-3">6.8. Version 2.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-2-0">6.9. Version 2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-1-0-first-release">6.10. Version 1.0 (First Release)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="wePlans.html">7. Release Plans</a></li>
@@ -220,16 +223,47 @@
             
   <div class="section" id="release-notes">
 <span id="lbl-release-weuq"></span><h1><span class="section-number">6. </span>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this heading">¶</a></h1>
-<div class="section" id="version-3-3-current">
-<h2><span class="section-number">6.1. </span>Version 3.3 (Current)<a class="headerlink" href="#version-3-3-current" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="version-4-1-current">
+<h2><span class="section-number">6.1. </span>Version 4.1 (Current)<a class="headerlink" href="#version-4-1-current" title="Permalink to this heading">¶</a></h2>
+<p><strong>Release date:</strong> Sept. 2024</p>
+<p><strong>Highlights</strong></p>
+<ol class="arabic simple">
+<li><p>Implemented new functionality to visualize and export overall/pressure loads on building for performance based wind engineering analysis.</p></li>
+<li><p>New capability to surrogate structural responses and use the surrogate model in the workflow.</p></li>
+<li><p>Added numerical example for simulating wind loads on a building with surroundings assuming a idealized topology.</p></li>
+<li><p>Minor bug fixes to pre-/post-processing of the CFD-based events.</p></li>
+</ol>
+</div>
+<div class="section" id="version-4-0">
+<h2><span class="section-number">6.2. </span>Version 4.0<a class="headerlink" href="#version-4-0" title="Permalink to this heading">¶</a></h2>
+<p><strong>Release date:</strong> Aug. 2024</p>
+<p><strong>Highlights</strong></p>
+<ol class="arabic simple">
+<li><p>Added CFD functionality to simulate wind loads on isolated buildings without running the entire workflow in WE-UQ</p></li>
+<li><p>Major changes required for interfacing with DesignSafe the newly released Version 3 of Tapis. Updated major version to reflect preferences needed for users to submit jobs to TACC HPC resources.</p></li>
+</ol>
+</div>
+<div class="section" id="version-3-4">
+<h2><span class="section-number">6.3. </span>Version 3.4<a class="headerlink" href="#version-3-4" title="Permalink to this heading">¶</a></h2>
+<p><strong>Release date:</strong> May. 2024</p>
+<p><strong>Highlights</strong></p>
+<ol class="arabic simple">
+<li><p>Simulate wind loading on structures surrounded by an array of buildings. Surrounding buildings heights may be randomized or user-defined.</p></li>
+<li><p>Minor bug fixes in the tool.</p></li>
+</ol>
+</div>
+<div class="section" id="version-3-3">
+<h2><span class="section-number">6.4. </span>Version 3.3<a class="headerlink" href="#version-3-3" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> Apr. 2024</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
+<li><p>Simulate wind loading on structures surrounded by an array of buildings. Surrounding buildings heights may be randomized or user-defined.</p></li>
 <li><p>A new wind load generator module: wind-tunnel informed stochastic wind pressure generator</p></li>
+<li><p>Empty domain simulation tool.</p></li>
 </ol>
 </div>
 <div class="section" id="version-3-2">
-<h2><span class="section-number">6.2. </span>Version 3.2<a class="headerlink" href="#version-3-2" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.5. </span>Version 3.2<a class="headerlink" href="#version-3-2" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> Mar. 2024</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
@@ -243,7 +277,7 @@
 </ol>
 </div>
 <div class="section" id="version-3-1">
-<h2><span class="section-number">6.3. </span>Version 3.1<a class="headerlink" href="#version-3-1" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.6. </span>Version 3.1<a class="headerlink" href="#version-3-1" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> Oct. 2023</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
@@ -254,7 +288,7 @@
 </ol>
 </div>
 <div class="section" id="version-3-0-0">
-<h2><span class="section-number">6.4. </span>Version 3.0.0<a class="headerlink" href="#version-3-0-0" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.7. </span>Version 3.0.0<a class="headerlink" href="#version-3-0-0" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> July. 2023</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
@@ -299,7 +333,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="version-2-3">
-<h2><span class="section-number">6.5. </span>Version 2.3<a class="headerlink" href="#version-2-3" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.8. </span>Version 2.3<a class="headerlink" href="#version-2-3" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> March. 2022</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
@@ -311,7 +345,7 @@
 </ol>
 </div>
 <div class="section" id="version-2-0">
-<h2><span class="section-number">6.6. </span>Version 2.0<a class="headerlink" href="#version-2-0" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.9. </span>Version 2.0<a class="headerlink" href="#version-2-0" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> September. 2019</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">
@@ -322,7 +356,7 @@
 </ol>
 </div>
 <div class="section" id="version-1-0-first-release">
-<h2><span class="section-number">6.7. </span>Version 1.0 (First Release)<a class="headerlink" href="#version-1-0-first-release" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.10. </span>Version 1.0 (First Release)<a class="headerlink" href="#version-1-0-first-release" title="Permalink to this heading">¶</a></h2>
 <p><strong>Release date:</strong> July. 2019</p>
 <p><strong>Highlights</strong></p>
 <ol class="arabic simple">

@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
 
@@ -209,7 +209,7 @@
             
   <div class="section" id="capabilities">
 <span id="lbl-capabilities-eeuq"></span><h1>Capabilities<a class="headerlink" href="#capabilities" title="Permalink to this heading">¶</a></h1>
-<p><strong>Version</strong> 3.2 of WE-UQ app was released in <strong>April 2024</strong>, introducing significant updates and enhancements. This document outlines the functionalities available in the current version, highlighting new features and improvements in <span class="blue">blue</span>.</p>
+<p><strong>Version</strong> 4.1 of WE-UQ app was released in <strong>April 2024</strong>, introducing significant updates and enhancements. This document outlines the functionalities available in the current version, highlighting new features and improvements in <span class="blue">blue</span>.</p>
 <p>Major updates from Version 4.0 are adding liquefaction-induced ground deformation estimation in the <span class="blue">regional earthquake event generation tool</span>, refactored <span class="blue">regional inventory generation tool BRAILS</span>, and upgraded <span class="blue">damage and loss engine Pelicun</span>.</p>
 <p><strong>Release date:</strong> April, 2024</p>
 <ol class="arabic">
@@ -226,7 +226,7 @@
 </li>
 <li><p><strong>Asset Types</strong>:</p>
 <blockquote>
-<div><ul class="simple">
+<div><ul>
 <li><dl class="simple">
 <dt><span class="xref std std-ref">Buildings</span>:</dt><dd><ol class="loweralpha simple">
 <li><p>Load building database in a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> format.</p></li>
@@ -235,11 +235,25 @@
 </dd>
 </dl>
 </li>
-<li><dl class="simple">
-<dt><span class="xref std std-ref">Transportation infrastructure</span>:</dt><dd><ol class="loweralpha simple">
+<li><dl>
+<dt><span class="xref std std-ref">Transportation infrastructure</span>:</dt><dd><blockquote>
+<div><ol class="loweralpha simple">
 <li><p>Load transportation infrastructure database in SimCenter’s <code class="docutils literal notranslate"><span class="pre">.geojson</span></code> format.</p></li>
 <li><p>Load transportation infrastructure database in common <code class="docutils literal notranslate"><span class="pre">.gis</span></code> format.</p></li>
 </ol>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="simple">
+<dt><span class="xref std std-ref">Water Distribution Network</span>:</dt><dd><ol class="loweralpha simple">
+<li><p>Load water distribution network database in EPANet’s format (used for REWET).</p></li>
+<li><p>Load water distribution network from .csv files representing nodes and pipelines.</p></li>
+<li><p>Load water distribution network from GIS files representing nodes and pipelines.</p></li>
+<li><p>Load water distribution network database in EPANet’s format.</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+</ul>
 </dd>
 </dl>
 </li>
@@ -312,7 +326,7 @@
 </dl>
 </li>
 <li><dl class="simple">
-<dt><span class="xref std std-ref">Transportation infrastructure</span></dt><dd><ul>
+<dt><span class="xref std std-ref">Transportation infrastructure</span>:</dt><dd><ul>
 <li><dl class="simple">
 <dt>Pelicun Damage and Loss Methods:</dt><dd><ol class="loweralpha simple">
 <li><p>HAZUS MH EQ IM</p></li>
@@ -325,6 +339,27 @@
 </dd>
 </dl>
 </li>
+<li><dl class="simple">
+<dt><span class="xref std std-ref">Water Network infrastructure</span>:</dt><dd><ul>
+<li><dl class="simple">
+<dt>Pelicun Damage and Loss Methods:</dt><dd><ol class="loweralpha simple">
+<li><p>HAZUS MH EQ IM</p></li>
+<li><p>User-provided Models</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>System Performance</strong>:</dt><dd><ul class="simple">
+<li><p><span class="xref std std-ref">REWET</span> System performance with or without Recovery</p></li>
 </ul>
 </dd>
 </dl>
