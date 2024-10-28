@@ -381,31 +381,27 @@
 <p>The operations are similar to what was done when building the backend applications. In the terminal application, starting inside the directory of the cloned application again, you will create a build directory, cd into that build directory, run <strong>qmake</strong>, and finally make (or on Windows, nmake) to create the application.</p>
 <p>Windows developers will type the following in a terminal or a PowerShell window:</p>
 <blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkdir build</span>
-<span class="go">cd build</span>
-<span class="go">conan install .. --build missing</span>
-<span class="go">qmake ../|short tool id|.pro</span>
-<span class="go">nmake</span>
-</pre></div>
-</div>
+<div><pre class="literal-block">mkdir build
+cd build
+conan install .. --build missing
+qmake ../WE-UQ.pro
+nmake</pre>
 </div></blockquote>
 <p>Linux or Mac users will type the following in a terminal window from inside the WE-UQ app directory:</p>
 <blockquote>
-<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkdir build</span>
-<span class="go">cd build</span>
-<span class="go">conan install .. --build missing</span>
-<span class="go">qmake ../|short tool id|.pro</span>
-<span class="go">make</span>
-</pre></div>
-</div>
+<div><pre class="literal-block">mkdir build
+cd build
+conan install .. --build missing
+qmake ../WE-UQ.pro
+make</pre>
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol class="arabic">
 <li><p>qmake is an application installed with Qt. To be able to run the command as known, the path to the Qt bin folder needs to be added to your <strong>PATH</strong> environment variable. Alternatively, you need to specify the full path to qmake, i.e., on my desktop (if I had not set my PATH variable), I would replace line 3 with the following:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/Users/fmckenna/Qt/5.15.2/clang_64/bin/qmake ../|short tool id|.pro</span>
-</pre></div>
-</div>
+<blockquote>
+<div><pre class="literal-block">/Users/fmckenna/Qt/5.15.2/clang_64/bin/qmake ../WE-UQ.pro</pre>
+</div></blockquote>
 </li>
 <li><p>On Windows 10 and later with Visual Studio, the above commands need to be performed using a <a class="reference external" href="https://docs.microsoft.com/en-us/cpp/build/how-to-enable-a-64-bit-visual-cpp-toolset-on-the-command-line?view=msvc-160">Visual Studio x64 command prompt</a>.</p></li>
 <li><p>If installed, jom can also be used to build in parallel.</p></li>
