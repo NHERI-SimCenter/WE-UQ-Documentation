@@ -122,7 +122,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Running Application</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">2. User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="wind/tools.html">3. Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
@@ -257,7 +257,7 @@
 <p>In the <strong>Log Likelihood Script</strong> field, users can provide the path to a Python script that contains a function called <code class="docutils literal notranslate"><span class="pre">log_likelihood</span></code> that returns the log-likelihood value.</p>
 <p>By allowing users to define a <code class="docutils literal notranslate"><span class="pre">log_likelihood</span></code> function in the <strong>Log Likelihood Script</strong>, the workflow provides users full control in defining the log-likelihood model they desire to use.
 The <code class="docutils literal notranslate"><span class="pre">log_likelihood</span></code> function is called internally during the execution of the TMCMC algorithm, and this function must compute and return the log-likelihood value at a point in the parameter space. The function must take the arguments as shown below in the signature of the <a class="reference external" href="https://github.com/NHERI-SimCenter/quoFEM/blob/master/backend/modules/performUQ/UCSD_UQ/defaultLogLikeScript.py">default log-likelihood script</a>. Within this function, users can define their log-likelihood function.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">log_likelihood</span><span class="p">(</span><span class="n">calibrationData</span><span class="p">,</span> <span class="n">prediction</span><span class="p">,</span> <span class="n">parameters</span><span class="p">,</span> <span class="n">numExperiments</span><span class="p">,</span> <span class="n">covarianceMatrixList</span><span class="p">,</span> <span class="n">edpNamesList</span><span class="p">,</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span><span class="w"> </span><span class="nf">log_likelihood</span><span class="p">(</span><span class="n">calibrationData</span><span class="p">,</span> <span class="n">prediction</span><span class="p">,</span> <span class="n">parameters</span><span class="p">,</span> <span class="n">numExperiments</span><span class="p">,</span> <span class="n">covarianceMatrixList</span><span class="p">,</span> <span class="n">edpNamesList</span><span class="p">,</span>
 <span class="linenos"> 2</span>                   <span class="n">edpLengthsList</span><span class="p">,</span> <span class="n">covarianceMultiplierList</span><span class="p">,</span> <span class="n">scaleFactors</span><span class="p">,</span> <span class="n">shiftFactors</span><span class="p">):</span>
 <span class="linenos"> 3</span>    <span class="s2">&quot;&quot;&quot; Compute the log-likelihood</span>
 <span class="linenos"> 4</span>
@@ -357,7 +357,7 @@ The <code class="docutils literal notranslate"><span class="pre">log_likelihood<
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2024, The Regents of the University of California.
+        &#169; Copyright 2025, The Regents of the University of California.
 
     </p>
   </div>

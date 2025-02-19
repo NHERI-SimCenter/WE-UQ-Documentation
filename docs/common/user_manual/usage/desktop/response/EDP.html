@@ -121,7 +121,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Running Application</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../usage.html">2. User Interface</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../UQ.html">2.1. UQ: Uncertainty Quantification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../GI.html">2.2. GI: General Information</a></li>
@@ -131,7 +131,8 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.6. EDP: Demand Parameters</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#standard">2.6.1. Standard</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#user-defined">2.6.2. User Defined</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#none">2.6.3. None</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#component-and-cladding-edp">2.6.3. Component and Cladding EDP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#none">2.6.4. None</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../RV.html">2.7. RV: Random Variables</a></li>
@@ -232,6 +233,7 @@
 <ol class="arabic simple">
 <li><p>Standard</p></li>
 <li><p>User-Defined</p></li>
+<li><p>Component and Cladding EDP</p></li>
 <li><p>None</p></li>
 </ol>
 <div class="section" id="standard">
@@ -279,15 +281,15 @@ containing a series of recorder commands. A recorder file passed to OpenSees mig
 <summary>Example post-processing python file</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
 <span class="c1"># written: fmk, adamzs 01/18</span>
 <span class="c1"># import functions for Python 2.X support</span>
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
-<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">):</span>
         <span class="nb">range</span><span class="o">=</span><span class="n">xrange</span>
         <span class="n">string_types</span> <span class="o">=</span> <span class="n">basestring</span>
 <span class="k">else</span><span class="p">:</span>
         <span class="n">string_types</span> <span class="o">=</span> <span class="nb">str</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="k">def</span> <span class="nf">process_results</span><span class="p">(</span><span class="n">inputArgs</span><span class="p">):</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">process_results</span><span class="p">(</span><span class="n">inputArgs</span><span class="p">):</span>
         <span class="c1">#</span>
         <span class="c1"># process output file &quot;node.out&quot; for nodal displacements</span>
         <span class="c1">#</span>
@@ -377,8 +379,115 @@ containing a series of recorder commands. A recorder file passed to OpenSees mig
 <li><p>Response Parameters. This is an area in which the user associates a variable name with the column of the results output file. If the process script has an array of strings named named EDP’s the script, the Response Parameters will be initially set with these values from the script.</p></li>
 </ol>
 </div>
+<div class="section" id="component-and-cladding-edp">
+<h2><span class="section-number">2.6.3. </span>Component and Cladding EDP<a class="headerlink" href="#component-and-cladding-edp" title="Permalink to this heading">¶</a></h2>
+<p>This option provides EDP capabilities for evaluating wind loads, including forces and pressure, on building components and cladding. Unlike the standard wind EDP option, it does not perform structural analysis. Instead, it can be used to compute pressure or forces directly from CFD model or experimental measurement. In the current release this option only works with the CFD-based workflows. The following figure illustrates the inputs required for this option:</p>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="../../../../../_images/componentCladdingEDP.jpg"><img alt="../../../../../_images/componentCladdingEDP.jpg" src="../../../../../_images/componentCladdingEDP.jpg" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.6.3.1 </span><span class="caption-text">Inputs for Component and Cladding EDP.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic">
+<li><p><strong>Component Geometry JSON Path</strong>: The path to JSON file that holds the definition of component geometry. Each component is defined as a planer element. Currently, this option supports three types of shapes: rectangle, circle, polygon and composite. The following figure demonstrates how this component geometries can be defined:</p>
+<blockquote>
+<div><div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="../../../../../_images/componentCladdingDefinition.jpg"><img alt="../../../../../_images/componentCladdingDefinition.jpg" src="../../../../../_images/componentCladdingDefinition.jpg" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.6.3.2 </span><span class="caption-text">Defining the geometry of component and cladding elements.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<details class="summary-sample-json-file-for-defining-components">
+<summary>Sample json file for defining components</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;snapToBuilding&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;considerWindDirection&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;sampleTimeInterval&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;components&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;componentId&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;componentName&quot;</span><span class="p">:</span><span class="s2">&quot;zone1&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;componentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;roof&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;loadType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pressure&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;loadValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;peak&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;samplingDensity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;geometries&quot;</span><span class="p">:</span>
+<span class="w">                        </span><span class="p">[</span>
+<span class="w">                                </span><span class="p">{</span>
+<span class="w">                                        </span><span class="nt">&quot;geometryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">                                        </span><span class="nt">&quot;geometryName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;zone1_1&quot;</span><span class="p">,</span>
+<span class="w">                                        </span><span class="nt">&quot;shape&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rectangle&quot;</span><span class="p">,</span>
+<span class="w">                                        </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">20.8</span><span class="p">,</span>
+<span class="w">                                        </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">6.89294</span><span class="p">,</span>
+<span class="w">                                        </span><span class="nt">&quot;origin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">-4.8</span><span class="p">,</span><span class="w"> </span><span class="mf">9.27991</span><span class="p">],</span>
+<span class="w">                                        </span><span class="nt">&quot;normal&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.371367</span><span class="p">,</span><span class="w"> </span><span class="mf">0.928485</span><span class="p">]</span>
+<span class="w">                                </span><span class="p">},</span>
+<span class="w">                        </span><span class="p">]</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;componentId&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;componentName&quot;</span><span class="p">:</span><span class="s2">&quot;w101&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;componentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;window&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;loadType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pressure&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;loadValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;peak&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;samplingDensity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;geometries&quot;</span><span class="p">:</span>
+<span class="w">                        </span><span class="p">[</span>
+<span class="w">                                </span><span class="p">{</span>
+<span class="w">                                        </span><span class="nt">&quot;geometryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">                                        </span><span class="nt">&quot;shape&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;circle&quot;</span><span class="p">,</span>
+<span class="w">                                        </span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span>
+<span class="w">                                        </span><span class="nt">&quot;origin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">6.4</span><span class="p">,</span><span class="w"> </span><span class="mf">2.5</span><span class="p">],</span>
+<span class="w">                                        </span><span class="nt">&quot;normal&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">]</span>
+<span class="w">                                </span><span class="p">}</span>
+<span class="w">                        </span><span class="p">]</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;componentId&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;componentName&quot;</span><span class="p">:</span><span class="s2">&quot;zone2&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;componentType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wall&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;loadType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pressure&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;loadValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;peak&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;samplingDensity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;geometries&quot;</span><span class="p">:</span>
+<span class="w">                        </span><span class="p">[</span>
+<span class="w">                                </span><span class="p">{</span>
+<span class="w">                                        </span><span class="nt">&quot;geometryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">                                        </span><span class="nt">&quot;shape&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;polygon&quot;</span><span class="p">,</span>
+<span class="w">                                        </span><span class="nt">&quot;points&quot;</span><span class="p">:</span>
+<span class="w">                                        </span><span class="p">[</span>
+<span class="w">                                                </span><span class="p">[</span><span class="mf">-12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">8.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+<span class="w">                                                </span><span class="p">[</span><span class="mf">-12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">6.4</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+<span class="w">                                                </span><span class="p">[</span><span class="mf">-12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">6.4</span><span class="p">,</span><span class="w"> </span><span class="mf">8.64</span><span class="p">],</span>
+<span class="w">                                                </span><span class="p">[</span><span class="mf">-12.0</span><span class="p">,</span><span class="w"> </span><span class="mf">8.0</span><span class="p">,</span><span class="w"> </span><span class="mf">8.0</span><span class="p">]</span>
+<span class="w">                                        </span><span class="p">]</span>
+<span class="w">                                </span><span class="p">},</span>
+<span class="w">                                </span><span class="p">{</span>
+<span class="w">                                        </span><span class="nt">&quot;geometryId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">                                        </span><span class="nt">&quot;shape&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rectangle&quot;</span><span class="p">,</span>
+<span class="w">                                        </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.6</span><span class="p">,</span>
+<span class="w">                                        </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">8.0</span><span class="p">,</span>
+<span class="w">                                        </span><span class="nt">&quot;origin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-11.2</span><span class="p">,</span><span class="w"> </span><span class="mf">-8.0</span><span class="p">,</span><span class="w"> </span><span class="mf">4.0</span><span class="p">],</span>
+<span class="w">                                        </span><span class="nt">&quot;normal&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">]</span>
+<span class="w">                                </span><span class="p">}</span>
+<span class="w">                        </span><span class="p">]</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</details></div></blockquote>
+</li>
+<li><p><strong>Consider Wind Direction</strong>: If this option is checked the workflow will transform(rotate) the coordinates specified in the JSON file to alight with the wind direction specified in the EVT panel. For the CFD-based events it’s recommended to turn this check on.</p></li>
+<li><p><strong>Snap Components to Building Surface</strong>: If checked, geometries of each component will be snapped to the building facade.</p></li>
+<li><p><strong>Map Component Geometry onto Building Surfaces</strong>: By clicking this button, the user can generate the elements and visualize them with the building geometry. When the button is clicked and new dialog window will show up as seen in the figure bellow. Also, the points that will be used to sample pressure measurements are displayed. These measurement points and the corresponding tributary areas will be used for performing area integration for the wind load calculation in the final analysis.</p>
+<blockquote>
+<div><div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="../../../../../_images/component_cladding_mapping.jpg"><img alt="../../../../../_images/component_cladding_mapping.jpg" src="../../../../../_images/component_cladding_mapping.jpg" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.6.3.3 </span><span class="caption-text">Mapping component geometries to the building surface.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
 <div class="section" id="none">
-<h2><span class="section-number">2.6.3. </span>None<a class="headerlink" href="#none" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">2.6.4. </span>None<a class="headerlink" href="#none" title="Permalink to this heading">¶</a></h2>
 <p>This option is used only when the user specifies a surrogate model in the SIM tab. Because a surrogate model can evaluate only the EDPs that are pre-trained, we automatically display those quantities and do not allow users to modify the list.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -397,7 +506,7 @@ containing a series of recorder commands. A recorder file passed to OpenSees mig
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2024, The Regents of the University of California.
+        &#169; Copyright 2025, The Regents of the University of California.
 
     </p>
   </div>
