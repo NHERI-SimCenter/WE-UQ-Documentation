@@ -260,15 +260,37 @@
 </li>
 <li><p>In the terminal window you have opened in step <strong>1</strong>, you need to issue the following <strong>2</strong> commands to ensure the command line tools for x-code and some additional python modules are installed:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xcode-select<span class="w"> </span>--install
-python3<span class="w"> </span>-m<span class="w"> </span>pip3<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>nheri_simcenter
+python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>nheri_simcenter
 </pre></div>
 </div>
+<p>If this step fails, see WARNING below.</p>
 </li>
 <li><p>Repeat steps <strong>1</strong> and <strong>2</strong> to ensure that python was correctly installed. See note below if you still see the incorrect version and platform in the <code class="docutils literal notranslate"><span class="pre">NEW</span></code> terminal window.</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you still have the incorrect version of python installed after following the above steps, it probably means you forget to invoke the <strong>Update Shell Profile Command.command</strong> script at the end of step <strong>4</strong>. You can still do it using <strong>Finder</strong>. Open Finder and navigate to the <strong>/Applications/Python 3.9</strong> folder. Here you will see a number of files, including the two you forgot to run: <strong>Install Cerificates Command.command</strong> and <strong>Update Shell Profile Command.commnd</strong>. Double click on these files to run them. Finally repeat steps <strong>1</strong> and <strong>2</strong> again. If this still fails to produce the correct output for step <strong>2</strong>, please contact us for direct support.</p>
+<p>If step <strong>5</strong> was successfull and you still have the incorrect version of python installed after following the above steps, it probably means you forget to invoke the <strong>Update Shell Profile Command.command</strong> script at the end of step <strong>4</strong>. You can still do it using <strong>Finder</strong>. Open Finder and navigate to the <strong>/Applications/Python 3.9</strong> folder. Here you will see a number of files, including the two you forgot to run: <strong>Install Cerificates Command.command</strong> and <strong>Update Shell Profile Command.commnd</strong>. Double click on these files to run them. Finally repeat steps <strong>1</strong> and <strong>2</strong> again. If this still fails to produce the correct output for step <strong>2</strong>, please contact us for direct support.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If step 5 above fails, it is because the system is finding a different version of python on your system. This is going to require you do additional things.</p>
+<ol class="arabic simple">
+<li><p>Firstly you need to create a <strong>python environment</strong> for your SimCenter applications. This is done by issuing the following set of commands.</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~
+mkdir<span class="w"> </span>python_env
+<span class="nb">cd</span><span class="w"> </span>python_env
+/Library/Frameworks/Python.framework/Versions/3.9/bin/python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>python_simcenter
+<span class="nb">source</span><span class="w"> </span>./python_simcenter/bin/activate
+python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>nheri_simcenter
+</pre></div>
+</div>
+<p>Basically the commands will create a directory in your home folder called <strong>python_env</strong> and cd into it, the <strong>python3 -m venv python_simcenter</strong> will create the new python environment, which is contained in a directory python_simcenter. To activate this environment you source the script <strong>activate</strong> in the bin folder of this new directory. With the environment activated you can now install nheri-simcenter. If this too fails, please contact us.</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>When the application is actually running, you need to change the location of the <strong>python</strong> application that is run. To do this, in the top menu bar, under the tool icon select Preferences. Change the location of python,  the first variable you can edit, to the python3 in the nee environment, i.e. <strong>/Users/YOUR_LOGIN/python_env/python_simcenter/bin/python3</strong>. Finally Press the <strong>Save</strong> button. Please note that YOUR_LOGIN needs to be replaced with your actual login!</p></li>
+</ol>
 </div>
 </div>
 <div class="section" id="install-openfoam-for-macos">
