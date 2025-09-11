@@ -1,53 +1,33 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../../../">
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Gaussian Process (GP) Surrogate Modeling &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
-  
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=66b6668b" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=4b5bf716" />
 
   
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../../../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/underscore.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/design-tabs.js"></script>
-        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
-        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
-
-    
+      <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../../../_static/design-tabs.js?v=36754332"></script>
+      <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+      <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
@@ -58,54 +38,35 @@
 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F2F2F2" >
-          
 <a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
   <img src="../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
 </a>
 <hr style="margin: 0px;">
 
-  <a href="../../../../index.html">
+  <a href="../../../../index.html" class="icon icon-home"> Wind Engineering with Uncertainty Quantification
 
 
-
-  
-  <img src="../../../../_static/WE-UQ-Logo.png" class="logo" alt="Logo"/>
 
 </a>
 
-
-  
-  
 
 
 
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
 
 
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../about/WEUQ/about.html">1. About</a></li>
@@ -124,9 +85,10 @@
 <li class="toctree-l1"><a class="reference internal" href="usage.html">2. User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="wind/tools.html">3. Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../reqments/WEUQ.html">6. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jobs.html">5. Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reqments/WEUQ.html">7. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -143,86 +105,48 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #F2F2F2" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../../../index.html">Wind Engineering with Uncertainty Quantification</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>Gaussian Process (GP) Surrogate Modeling</li>
-    
-    
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Gaussian Process (GP) Surrogate Modeling</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../../../_sources/common/user_manual/usage/desktop/SimCenterUQSurrogate.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="gaussian-process-gp-surrogate-modeling">
-<span id="lblsimsurrogate"></span><h1>Gaussian Process (GP) Surrogate Modeling<a class="headerlink" href="#gaussian-process-gp-surrogate-modeling" title="Permalink to this heading">¶</a></h1>
+             
+  <section id="gaussian-process-gp-surrogate-modeling">
+<span id="lblsimsurrogate"></span><h1>Gaussian Process (GP) Surrogate Modeling<a class="headerlink" href="#gaussian-process-gp-surrogate-modeling" title="Link to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Surrogate modeling functionality of WE-UQ is built upon <a class="reference external" href="https://sheffieldml.github.io/GPy/">GPy</a> library (available under BSD 3-clause license), an opensource Python framework for Gaussian process modeling developed in the Sheffield machine learning group.</p>
 </div>
-<div class="section" id="input-description">
-<h2>Input description<a class="headerlink" href="#input-description" title="Permalink to this heading">¶</a></h2>
-<div class="section" id="case-1-sampling-and-simulation">
-<h3>Case 1: Sampling and Simulation<a class="headerlink" href="#case-1-sampling-and-simulation" title="Permalink to this heading">¶</a></h3>
+<section id="input-description">
+<h2>Input description<a class="headerlink" href="#input-description" title="Link to this heading"></a></h2>
+<section id="case-1-sampling-and-simulation">
+<h3>Case 1: Sampling and Simulation<a class="headerlink" href="#case-1-sampling-and-simulation" title="Link to this heading"></a></h3>
 <p>When the <strong>Training Dataset</strong> option is set to the <code class="docutils literal notranslate"><span class="pre">Sampling</span> <span class="pre">and</span> <span class="pre">Simulation</span></code>, a simulation model should be presented in the later tabs. The training points are sampled adaptively by the design of experiments.</p>
-<div class="align-center figure" id="id10">
-<span id="figsim1"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate1_SimUQ.png"><img alt="../../../../_images/Surrogate1_SimUQ.png" src="../../../../_images/Surrogate1_SimUQ.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-text">Input panel for surrogate modeling</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
-</div>
+<figure class="align-center" id="id10">
+<span id="figsim1"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate1_SimUQ.png"><img alt="../../../../_images/Surrogate1_SimUQ.png" src="../../../../_images/Surrogate1_SimUQ.png" style="width: 900px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Input panel for surrogate modeling</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul>
 <li><p><strong>Maximum Number of Model Runs</strong>: When the number of simulation runs reaches the limit, the analysis will be terminated.</p></li>
 <li><p><strong>Maximum Computation Time (in minutes)</strong>: When the tolerance limit of the computation time is reached, the analysis will be terminated. There will be a few minutes of error.</p></li>
@@ -230,7 +154,7 @@
 <blockquote>
 <div><blockquote>
 <div><div class="math notranslate nohighlight" id="equation-nrmse">
-<span class="eqno">()<a class="headerlink" href="#equation-nrmse" title="Permalink to this equation">¶</a></span>\[\begin{align*}
+<span class="eqno">()<a class="headerlink" href="#equation-nrmse" title="Link to this equation"></a></span>\[\begin{align*}
     \rm{NRMSE} ~ &amp;= \frac{\sqrt{\frac{1}{N} \sum^{N}_{k=1} (y_k-\hat{y}_k)^2}}{\max_{k=1,...,N}(y_k)-\min_{k=1,...,N}(y_k)}
 \end{align*}\]</div>
 </div></blockquote>
@@ -249,25 +173,31 @@
 </ul>
 <p>Note that the results from the parallel and serial run may not be exactly the same because parallel execution sets the number of batch design of experiments (DoE) in order to maximize the use of resources (Default DoE interval: 5). User can also activate the following advanced options:</p>
 <p><span class="blue">Advanced Options for Gaussian Process Model</span></p>
-<div class="align-center figure" id="id11">
-<span id="figsim2"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate2_SimUQ.png"><img alt="../../../../_images/Surrogate2_SimUQ.png" src="../../../../_images/Surrogate2_SimUQ.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-text">Sampling and Simulation - Case 1</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
-</div>
+<figure class="align-center" id="id11">
+<span id="figsim2"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate2_SimUQ.png"><img alt="../../../../_images/Surrogate2_SimUQ.png" src="../../../../_images/Surrogate2_SimUQ.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Sampling and Simulation - Case 1</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p><span class="blue">Start with Existing Dataset</span></p>
-</div>
-<div class="section" id="rv-random-variables-tab">
-<h3>RV (Random Variables) Tab<a class="headerlink" href="#rv-random-variables-tab" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="rv-random-variables-tab">
+<h3>RV (Random Variables) Tab<a class="headerlink" href="#rv-random-variables-tab" title="Link to this heading"></a></h3>
 <p>The bounds of RVs need to cover the domain of interest in future applications, while it should not be unnecessarily stretched. <strong>Input type</strong> and <strong>Distribution</strong> should be set to <strong>Parameters</strong> and <strong>Uniform</strong>. When a dataset is provided, make sure to match the order of RVs in the <strong>RV tab</strong> to the order of data columns. Any correlation values will be ignored.</p>
-<div class="align-center figure" id="id21">
-<span id="figsim7"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate7_SimUQ.jpg"><img alt="../../../../_images/Surrogate7_SimUQ.jpg" src="../../../../_images/Surrogate7_SimUQ.jpg" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-text">Example of RV tab</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
-</div>
-</div>
-</div>
-<div class="section" id="output-description">
-<h2>Output description<a class="headerlink" href="#output-description" title="Permalink to this heading">¶</a></h2>
-<div class="section" id="goodness-of-fit">
-<h3>Goodness-of-Fit<a class="headerlink" href="#goodness-of-fit" title="Permalink to this heading">¶</a></h3>
+<figure class="align-center" id="id21">
+<span id="figsim7"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate7_SimUQ.jpg"><img alt="../../../../_images/Surrogate7_SimUQ.jpg" src="../../../../_images/Surrogate7_SimUQ.jpg" style="width: 900px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Example of RV tab</span><a class="headerlink" href="#id21" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="output-description">
+<h2>Output description<a class="headerlink" href="#output-description" title="Link to this heading"></a></h2>
+<section id="goodness-of-fit">
+<h3>Goodness-of-Fit<a class="headerlink" href="#goodness-of-fit" title="Link to this heading"></a></h3>
 <p>Once the training is completed, the following three verification measures are presented based on leave-one-out cross-validation (LOOCV) error estimation.</p>
 <ul>
 <li><p><strong>Leave-one-out cross-validation (LOOCV)</strong></p>
@@ -286,7 +216,7 @@
 </div>
 <blockquote>
 <div><div class="math notranslate nohighlight" id="equation-r2">
-<span class="eqno">()<a class="headerlink" href="#equation-r2" title="Permalink to this equation">¶</a></span>\[\begin{align*}
+<span class="eqno">()<a class="headerlink" href="#equation-r2" title="Link to this equation"></a></span>\[\begin{align*}
     R^2 &amp;= 1 - \frac{\sum^N_{k=1} (\hat{y}_k-\mu_\hat{y})^2}{\sum^N_{k=1} (\hat{y}_k-y_k)^2}
 \end{align*}\]</div>
 </div></blockquote>
@@ -297,7 +227,7 @@
 <li><p><strong>Normalized root-mean-squared-error (NRMSE)</strong></p>
 <blockquote>
 <div><div class="math notranslate nohighlight" id="equation-nrmse">
-<span class="eqno">()<a class="headerlink" href="#equation-nrmse" title="Permalink to this equation">¶</a></span>\[\begin{align*}
+<span class="eqno">()<a class="headerlink" href="#equation-nrmse" title="Link to this equation"></a></span>\[\begin{align*}
     \rm{NRMSE} ~ &amp;= \frac{\sqrt{\frac{1}{N_t} \sum^{N_t}_{k=1} (y_k-\hat{y}_k)^2}}{\max_{k=1,...,N_t}(y_k)-\min_{k=1,...,N_t}(y_k)}
 \end{align*}\]</div>
 </div></blockquote>
@@ -310,7 +240,7 @@
 <div class="line">Correlation coefficient is a statistic that measures the linear correlation between two variables</div>
 </div>
 <div class="math notranslate nohighlight" id="equation-corr">
-<span class="eqno">()<a class="headerlink" href="#equation-corr" title="Permalink to this equation">¶</a></span>\[  \rho_{y,\hat{y}} = \frac{\sum^N_{k=1}(y_k-\mu_{y})(\hat{y}_k-\mu_{\hat{y}})} {\sigma_y \sigma_\hat{y}}\]</div>
+<span class="eqno">()<a class="headerlink" href="#equation-corr" title="Link to this equation"></a></span>\[  \rho_{y,\hat{y}} = \frac{\sum^N_{k=1}(y_k-\mu_{y})(\hat{y}_k-\mu_{\hat{y}})} {\sigma_y \sigma_\hat{y}}\]</div>
 <div class="line-block">
 <div class="line">where</div>
 <div class="line-block">
@@ -333,7 +263,7 @@
 <li><p><strong>Inter-quartile ratio (IQR)</strong>: IQR provides the ratio of the sample QoIs that lies in 25-75% LOOCV prediction bounds (interquartile range). The IQR values should theoretically approach 0.5 if the prediction is accurate.</p></li>
 <li><p><strong>Cramer-Von Mises statistics</strong>: Cramer-Von Mises statistics calculate the normality score. A GP assumes that the observations follow a normal distribution conditional on the input parameters. To assess the normality of the model predictions, the difference between the mean prediction <span class="math notranslate nohighlight">\(\hat{y}_k\)</span> and the sample observation  <span class="math notranslate nohighlight">\(y_k\)</span> value is divided by the standard deviation prediction from surrogate <span class="math notranslate nohighlight">\(\hat{\sigma}_{y,k}\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-normed">
-<span class="eqno">()<a class="headerlink" href="#equation-normed" title="Permalink to this equation">¶</a></span>\[  u_k = \frac{y_k-\hat{y}_k} {\hat{\sigma}_{y,k}}\]</div>
+<span class="eqno">()<a class="headerlink" href="#equation-normed" title="Link to this equation"></a></span>\[  u_k = \frac{y_k-\hat{y}_k} {\hat{\sigma}_{y,k}}\]</div>
 </li>
 </ul>
 <blockquote>
@@ -341,10 +271,13 @@
 </div></blockquote>
 </div></blockquote>
 <p>Additionally, <strong>scatter plot</strong> between the predicted and exact responses is presented: Well-trained model will form a clear diagonal line in case (i), or be distributed normally around the diagonal line in case (ii). A poorly trained model will have points that are more scattered around.</p>
-<div class="align-center figure" id="id22">
-<span id="figsim8"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate8_SimUQ.jpg"><img alt="../../../../_images/Surrogate8_SimUQ.jpg" src="../../../../_images/Surrogate8_SimUQ.jpg" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-text">Well-trained surrogate (left) and poorly trained surrogate (right) models</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
-</div>
+<figure class="align-center" id="id22">
+<span id="figsim8"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate8_SimUQ.jpg"><img alt="../../../../_images/Surrogate8_SimUQ.jpg" src="../../../../_images/Surrogate8_SimUQ.jpg" style="width: 900px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Well-trained surrogate (left) and poorly trained surrogate (right) models</span><a class="headerlink" href="#id22" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Since these validation measures are calculated from the cross-validation predictions, they can be <strong>biased</strong>, particularly when a highly localized nonlinear range exists in the actual response surface, and those regions are not covered by the training samples. The introduction of adaptive design of experiments helps to suppress the bias by enabling the targeted selection of simulation points around potentially faulty regions.</p>
@@ -353,9 +286,9 @@
 <p class="admonition-title">Warning</p>
 <p>Note that GP-based surrogate models can be used to fit only smooth, continuous functions. When the surrogate model is poorly trained, a parametric study is highly recommended to check for any possible discontinuity presented in the simulation model.</p>
 </div>
-</div>
-<div class="section" id="saving-options">
-<h3>Saving Options<a class="headerlink" href="#saving-options" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="saving-options">
+<h3>Saving Options<a class="headerlink" href="#saving-options" title="Link to this heading"></a></h3>
 <ul>
 <li><p><strong>Save GP Model</strong>: The constructed surrogate model is saved. One main file and one auxiliary folder will be saved.</p>
 <blockquote>
@@ -375,78 +308,67 @@
 <li><p><strong>Save GP Info</strong>: This is a report generated for user reference. It contains the GP model parameter and other information. The default file name is <code class="docutils literal notranslate"><span class="pre">GPresults.out</span></code>.</p></li>
 <li><p><strong>RV Data</strong>, <strong>QoI Data</strong>:It saves the samples of RV and QoI. The default file names are <code class="docutils literal notranslate"><span class="pre">X.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">Y.txt</span></code>, respectively. <strong>IMPORTANT</strong>: To continue surrogate modeling with additional simulations, save the RV and QoI sample files using this button and import them as initial points. Refer to the ‘Start with Existing Dataset’ option in Case 1.</p></li>
 </ul>
-<div class="align-center figure" id="id23">
-<span id="figsim9"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate9_SimUQ.jpg"><img alt="../../../../_images/Surrogate9_SimUQ.jpg" src="../../../../_images/Surrogate9_SimUQ.jpg" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-text">Saving options</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+<figure class="align-center" id="id23">
+<span id="figsim9"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate9_SimUQ.jpg"><img alt="../../../../_images/Surrogate9_SimUQ.jpg" src="../../../../_images/Surrogate9_SimUQ.jpg" style="width: 900px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Saving options</span><a class="headerlink" href="#id23" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id24">
+<span id="figsim10"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate10_SimUQ.png"><img alt="../../../../_images/Surrogate10_SimUQ.png" src="../../../../_images/Surrogate10_SimUQ.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Example outputs from saving options</span><a class="headerlink" href="#id24" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div role="list" class="citation-list">
+<div class="citation" id="patsialis2021" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">Patsialis2021</a><span class="fn-bracket">]</span></span>
+<p>Patsialis, D., and A. A. Taflanidis. (2021). Multi-fidelity Monte Carlo for seismic risk assessment applications. <em>Structural Safety</em> 93: 102129.</p>
 </div>
-<div class="align-center figure" id="id24">
-<span id="figsim10"></span><a class="reference internal image-reference" href="../../../../_images/Surrogate10_SimUQ.png"><img alt="../../../../_images/Surrogate10_SimUQ.png" src="../../../../_images/Surrogate10_SimUQ.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-text">Example outputs from saving options</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
 </div>
-<dl class="citation">
-<dt class="label" id="patsialis2021"><span class="brackets"><a class="fn-backref" href="#id6">Patsialis2021</a></span></dt>
-<dd><p>Patsialis, D., and A. A. Taflanidis. (2021). Multi-fidelity Monte Carlo for seismic risk assessment applications. <em>Structural Safety</em> 93: 102129.</p>
-</dd>
-</dl>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
-           
           </div>
           <footer>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2025, The Regents of the University of California.
-
-    </p>
+    <p>&#169; Copyright 2025, The Regents of the University of California.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
-
-  
-  
-    
     <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158130480-2"></script>
     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    ga('create', 'UA-158130480-2', 'auto');
-    
-    ga('send', 'pageview');
-    </script>
-
-    
-    
+      gtag('config', 'UA-158130480-2', {
+          'anonymize_ip': false,
+      });
+    </script>  
 
   <style>
          .wy-nav-content { max-width: none; }
