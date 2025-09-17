@@ -143,7 +143,7 @@
 <h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
 <p>Transitional Markov chain Monte Carlo (TMCMC) is an algorithm that is used to draw samples from the posterior probability distribution of the parameters of a computational model when performing Bayesian calibration using a non-hierarchical model.</p>
 <p>To use the TMCMC algorithm, select the <strong>UCSD-UQ</strong> engine in the <strong>UQ</strong> panel. Currently, only the TMCMC method is available with the <strong>UCSD-UQ</strong> engine.</p>
-<p>The required inputs to perform Bayesian calibration in quoFEM using the TMCMC algorithm are <strong># Samples</strong>, <strong>Seed</strong>, and <strong>Calibration Data File</strong>. Specifying <strong>Log Likelihood Script</strong> is optional. Figure <a class="reference internal" href="#figtmcmcpanel"><span class="std std-numref">Fig. 2.1.4.1.1</span></a> shows the input panel that is presented when the TMCMC method is selected. Each of the options on this panel will be explained next.</p>
+<p>The required inputs to perform Bayesian calibration in quoFEM using the TMCMC algorithm are <strong># Samples</strong>, <strong>Seed</strong>, and <strong>Calibration Data File</strong>. Specifying <strong>Log Likelihood Script</strong> is optional. Additionally, users can enable the <strong>Use Approximation</strong> option for surrogate-aided Bayesian calibration. Figure <a class="reference internal" href="#figtmcmcpanel"><span class="std std-numref">Fig. 2.1.4.1.1</span></a> shows the input panel that is presented when the TMCMC method is selected. Each of the options on this panel will be explained next.</p>
 <figure class="align-center" id="id1">
 <span id="figtmcmcpanel"></span><img alt="../../../../_images/UCSD_Non-hierarchical.png" src="../../../../_images/UCSD_Non-hierarchical.png" />
 <figcaption>
@@ -167,7 +167,12 @@
 </div>
 <ol class="arabic simple" start="4">
 <li><p><strong>Log Likelihood Script</strong>: By default, a Gaussian log-likelihood function is used in the TMCMC algorithm. If desired, a different log-likelihood function defined in a Python script can be provided, and the path to this Python script is provided here.</p></li>
+<li><p><strong>Use Approximation</strong>: This checkbox enables surrogate-aided Bayesian calibration using Gaussian Process (GP) surrogates. When enabled, the algorithm uses an adaptive learning strategy to build a GP surrogate model that approximates the computational model response. This dramatically reduces the number of required model evaluations while maintaining calibration accuracy. The surrogate model is iteratively refined using active learning, requiring only tens of strategically selected model evaluations instead of the thousands typically needed for direct TMCMC sampling. This option is particularly beneficial for computationally expensive models where individual evaluations require significant time.</p></li>
 </ol>
+<figure class="align-center" id="figtmcmcpaneluseapproximation">
+<img alt="../../../../_images/UCSD_Non-hierarchical_use_approximation.png" src="../../../../_images/UCSD_Non-hierarchical_use_approximation.png" />
+</figure>
+<p>When <strong>Use Approximation</strong> is disabled, the algorithm performs direct TMCMC sampling using the full computational model at each evaluation. While this provides unbiased sampling, it may be computationally prohibitive for expensive models. For simple models that evaluate quickly (~ &lt;1 minute), direct TMCMC may be sufficient and does not require surrogate approximation.</p>
 </section>
 <section id="defining-the-log-likelihood-function">
 <h2>Defining the log-likelihood function<a class="headerlink" href="#defining-the-log-likelihood-function" title="Link to this heading"></a></h2>

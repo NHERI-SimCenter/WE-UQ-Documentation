@@ -133,7 +133,7 @@
 <span id="lbluqucsdsimtechnical"></span><h1>Methods in UCSD UQ Engine<a class="headerlink" href="#methods-in-ucsd-uq-engine" title="Link to this heading"></a></h1>
 <section id="transitional-markov-chain-monte-carlo">
 <span id="lbluqucsd-tmcmc"></span><h2>Transitional Markov chain Monte Carlo<a class="headerlink" href="#transitional-markov-chain-monte-carlo" title="Link to this heading"></a></h2>
-<p>TMCMC is a numerical method used to obtain samples of the target posterior PDF. This algorithm is flexible, applicable in general settings, and parallelizable. Thus, it can be used to effectively sample the posterior PDF, when the likelihood function involves a computationally expensive FE model evaluation, using high-performance computing (HPC) resources.</p>
+<p>TMCMC is a numerical method used to obtain samples of the target posterior PDF. This algorithm is flexible, applicable in general settings, and parallelizable. Thus, it can be used to effectively sample the posterior PDF, when the likelihood function involves an FE model evaluation, using high-performance computing (HPC) resources.</p>
 <p>In Bayesian inference, the posterior probability distribution of the unknown quantities, represented by the vector <span class="math notranslate nohighlight">\(\mathbf{\theta}\)</span>, is obtained by applying Bayes’ rule as follows:</p>
 <div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-ucsduqtechnical-0">
 <span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-ucsduqtechnical-0" title="Link to this equation"></a></span>\[p (\mathbf{\theta \ | \ y}) = \frac{p (\mathbf{y \ | \ \theta}) \times p(\mathbf{\theta})}{\int p (\mathbf{y \ | \ \theta}) \times p(\mathbf{\theta}) \ d\mathbf{\theta}}\]</div>
@@ -162,6 +162,159 @@ prior joint PDF <span class="math notranslate nohighlight">\(p(\theta)\)</span>.
 </div>
 </div>
 </section>
+<section id="gaussian-process-aided-bayesian-calibration-gp-ab">
+<span id="lbluqucsd-ugpab2"></span><h2>Gaussian Process-Aided Bayesian Calibration (GP-AB)<a class="headerlink" href="#gaussian-process-aided-bayesian-calibration-gp-ab" title="Link to this heading"></a></h2>
+<p>The GP-AB algorithm <a class="reference internal" href="#taflanidis2025" id="id3"><span>[Taflanidis2025]</span></a> is a surrogate-aided extension of the Transitional Markov Chain Monte Carlo
+(<a class="reference internal" href="#lbluqucsd-tmcmc"><span class="std std-ref">Transitional Markov chain Monte Carlo</span></a>) sampling method. It is designed for Bayesian updating problems
+in which evaluating the likelihood function <span class="math notranslate nohighlight">\(L_D(\theta, q)\)</span> requires computationally expensive
+finite element (FE) simulations. By replacing these simulations with predictions from a
+Gaussian Process (GP) surrogate model, GP-AB can significantly reduce the computational cost of posterior sampling
+while still converging to the same posterior distribution obtained if the original FE model was used.</p>
+<p>In GP-AB, the GP surrogate is developed and <strong>adaptively refined</strong> in an iterative process using a
+design of experiments (DoE) strategy that balances <em>exploitation</em> (focusing on regions of high
+posterior probability) and <em>exploration</em> (sampling previously under-explored regions). This
+adaptive refinement continues until the surrogate-based posterior converges according to specified
+criteria described in the following sections.</p>
+<section id="formulation-of-the-bayesian-calibration-problem">
+<h3>Formulation of the Bayesian Calibration Problem<a class="headerlink" href="#formulation-of-the-bayesian-calibration-problem" title="Link to this heading"></a></h3>
+<p>Consider a model with unknown parameters <span class="math notranslate nohighlight">\(\theta \in \mathbb{R}^{n_\theta}\)</span> and
+prediction error parameters <span class="math notranslate nohighlight">\(q \in \mathbb{R}^{n_q}\)</span>, where <span class="math notranslate nohighlight">\(n_\theta\)</span> and
+<span class="math notranslate nohighlight">\(n_q\)</span> denote their respective dimensions. Let <span class="math notranslate nohighlight">\(D\)</span> denote the available
+input-output data, consisting of measured system outputs
+<span class="math notranslate nohighlight">\(\hat{\mathbf{y}}\)</span> for known inputs <span class="math notranslate nohighlight">\(\hat{\mathbf{u}}\)</span>.</p>
+<p>The posterior probability density function (PDF) is given by Bayes’ rule:</p>
+<div class="math notranslate nohighlight" id="equation-ugpab2-bayes-rule">
+<span class="eqno">()<a class="headerlink" href="#equation-ugpab2-bayes-rule" title="Link to this equation"></a></span>\[p(\theta, q \,|\, D) \ \propto\ L_D(\theta, q) \ p(\theta) \ p(q)\]</div>
+<p>where <span class="math notranslate nohighlight">\(L_D(\theta, q)\)</span> is the likelihood of the data given the parameters,
+and <span class="math notranslate nohighlight">\(p(\theta)\)</span> and <span class="math notranslate nohighlight">\(p(q)\)</span> are the prior PDFs.</p>
+<p>The target posterior <span class="math notranslate nohighlight">\(p(\theta, q \,|\, D)\)</span> is approximated using TMCMC, but
+instead of evaluating the expensive model response <span class="math notranslate nohighlight">\(\mathbf{y}(\theta|\mathbf{u})\)</span>
+at every sample, GP-AB builds a GP surrogate that predicts this response accurately
+in the regions of interest.</p>
+</section>
+<section id="likelihood-function">
+<h3>Likelihood Function<a class="headerlink" href="#likelihood-function" title="Link to this heading"></a></h3>
+<p>In the quoFEM implementation, a Gaussian likelihood is used, with unknown error variances.
+Assigning a Jeffreys prior <span class="math notranslate nohighlight">\(p(q) \propto 1/q\)</span> to the unknown variance
+yields a closed-form likelihood in terms of the model parameters <span class="math notranslate nohighlight">\(\theta\)</span> only.</p>
+<p>Let <span class="math notranslate nohighlight">\(z(\theta) \in \mathbb{R}^{n_z}\)</span> be the stacked vector of all model outputs
+for the observation cases in <span class="math notranslate nohighlight">\(D\)</span>, and <span class="math notranslate nohighlight">\(\hat{z}\)</span> the corresponding stacked
+measurements. The residual vector is:</p>
+<div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-ucsduqtechnical-2">
+<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-ucsduqtechnical-2" title="Link to this equation"></a></span>\[\mathbf{r}(\theta) = \hat{z} - z(\theta)\]</div>
+<p>The resulting marginalized likelihood is:</p>
+<div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-ucsduqtechnical-3">
+<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-ucsduqtechnical-3" title="Link to this equation"></a></span>\[L_D(\theta) \ \propto \
+\left[ \mathbf{r}(\theta)^\mathsf{T} \mathbf{r}(\theta) \right]^{-\,n_D/2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(n_D = n_z\)</span> is the total number of scalar observations.</p>
+</section>
+<section id="surrogate-model-formulation">
+<h3>Surrogate Model Formulation<a class="headerlink" href="#surrogate-model-formulation" title="Link to this heading"></a></h3>
+<p>The surrogate is built for the vectorized model response:</p>
+<div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-ucsduqtechnical-4">
+<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-ucsduqtechnical-4" title="Link to this equation"></a></span>\[z(\theta) = \mathrm{vec}\!\left( Y_D(\theta) \right) \in \mathbb{R}^{n_z}\]</div>
+<p>where <span class="math notranslate nohighlight">\(Y_D(\theta)\)</span> stacks the model outputs for all observation cases in <span class="math notranslate nohighlight">\(D\)</span>,
+and <span class="math notranslate nohighlight">\(n_z = n_y \, n_D\)</span> is the total number of output components.</p>
+<p>Because <span class="math notranslate nohighlight">\(n_z\)</span> can be large, <strong>Principal Component Analysis (PCA)</strong> is used to
+reduce the output dimension before GP training. Let <span class="math notranslate nohighlight">\(\{ v_q \}_{q=1}^{n_v}\)</span>
+be the retained principal component (PC) scores, chosen so that a prescribed fraction
+<span class="math notranslate nohighlight">\(r_{pc}\)</span> of the variance in the training outputs is preserved. A separate GP
+metamodel is calibrated for each PC score:</p>
+<div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-ucsduqtechnical-5">
+<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-ucsduqtechnical-5" title="Link to this equation"></a></span>\[v_q(\theta) \ \sim \ GP\!\left( \tilde{v}_q(\theta), \ \sigma_{v_q}^2(\theta) \right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\tilde{v}_q(\theta)\)</span> and <span class="math notranslate nohighlight">\(\sigma_{v_q}^2(\theta)\)</span> are the GP-predicted mean
+and variance, respectively. The predicted model response is reconstructed as:</p>
+<div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-ucsduqtechnical-6">
+<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-ucsduqtechnical-6" title="Link to this equation"></a></span>\[\tilde{z}(\theta) \ =\ \mu_z + P \, \tilde{\mathbf{v}}(\theta)\]</div>
+<p>with <span class="math notranslate nohighlight">\(\mu_z\)</span> the mean output vector from training data, <span class="math notranslate nohighlight">\(P\)</span> the PCA projection
+matrix, and <span class="math notranslate nohighlight">\(\tilde{\mathbf{v}}(\theta)\)</span> the vector of GP-predicted PC scores.</p>
+<p>The GP-predicted response <span class="math notranslate nohighlight">\(\tilde{z}(\theta)\)</span> is then used in place of
+<span class="math notranslate nohighlight">\(z(\theta)\)</span> when evaluating the likelihood and posterior.</p>
+</section>
+<section id="adaptive-design-of-experiments-doe">
+<h3>Adaptive Design of Experiments (DoE)<a class="headerlink" href="#adaptive-design-of-experiments-doe" title="Link to this heading"></a></h3>
+<p>At each iteration <span class="math notranslate nohighlight">\(k\)</span>, the surrogate is improved by adding <span class="math notranslate nohighlight">\(2 * {n_\theta}\)</span> new
+training points. Candidate points are chosen using the <strong>weighted integrated mean
+squared error (IMSE)</strong> acquisition function:</p>
+<div class="math notranslate nohighlight" id="equation-ugpab2-imse">
+<span class="eqno">()<a class="headerlink" href="#equation-ugpab2-imse" title="Link to this equation"></a></span>\[\mathrm{IMSE}(\theta_\text{new}) =
+\int_{\Theta_d} \phi(\theta) \ \hat{\sigma}^2\!\left( \theta \,\middle|\, \Theta^{(k)}, \theta_\text{new}, s^{*(k)} \right) \, d\theta\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Theta_d\)</span> is the parameter domain,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi(\theta)\)</span> is a weight function prioritizing important regions,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\sigma}^2\)</span> is the average GP predictive variance across all output components
+after adding <span class="math notranslate nohighlight">\(\theta_\text{new}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(s^{*(k)}\)</span> are the optimized GP hyperparameters at iteration <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
+</ul>
+<p><strong>Weight function:</strong>
+<span class="math notranslate nohighlight">\(\phi(\theta)\)</span> is a convex combination of the GP-approximated <em>target</em> posterior and some <em>intermediate</em> TMCMC densities from the current iteration:</p>
+<div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-ucsduqtechnical-7">
+<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-ucsduqtechnical-7" title="Link to this equation"></a></span>\[\phi(\theta) = \sum_{j={j^*}}^{j_t} \tau_j \ \tilde{\pi}^{(k)}_{[j]}(\theta),
+\quad \sum_j \tau_j = 1\]</div>
+<p>This balances exploitation of the high-probability posterior regions with exploration
+along the TMCMC path from prior to posterior. <span class="math notranslate nohighlight">\(j^*\)</span> is defined in the following section on warm-starting TMCMC, and <span class="math notranslate nohighlight">\(j_t\)</span> is the total number of stages in the current iteration.</p>
+<p>A fraction of the new points is selected
+purely for exploration by setting <span class="math notranslate nohighlight">\(\phi(\theta) \equiv 1\)</span>.</p>
+</section>
+<section id="convergence-assessment">
+<h3>Convergence Assessment<a class="headerlink" href="#convergence-assessment" title="Link to this heading"></a></h3>
+<p>Convergence of the surrogate-based posterior is tested between consecutive iterations
+using a <strong>dimension-normalized KL divergence:</strong></p>
+<blockquote>
+<div><div class="math notranslate nohighlight" id="equation-ugpab2-gkl">
+<span class="eqno">()<a class="headerlink" href="#equation-ugpab2-gkl" title="Link to this equation"></a></span>\[g^{(k)}_{\mathrm{KL}} =
+\frac{1}{n_\theta} \ \mathrm{KL}\!\left( \tilde{\pi}^{(k)}(\theta) \ \big\| \ \tilde{\pi}^{(k-1)}(\theta) \right)\]</div>
+<p>where the KL divergence is estimated by importance sampling using the TMCMC samples.</p>
+</div></blockquote>
+<p>An optional <strong>LOOCV error metric</strong> <span class="math notranslate nohighlight">\(g^{(k)}_{\mathrm{CV}}\)</span> can be used to assess
+GP predictive accuracy independently of the posterior approximation.</p>
+<p>If <span class="math notranslate nohighlight">\(g_{\mathrm{KL}} &lt; c_{\mathrm{KL}}\)</span> and <span class="math notranslate nohighlight">\(g_{\mathrm{CV}} &lt; c_{\mathrm{CV}}\)</span>,
+the algorithm stops.</p>
+</section>
+<section id="warm-start-tmcmc">
+<h3>Warm-Start TMCMC<a class="headerlink" href="#warm-start-tmcmc" title="Link to this heading"></a></h3>
+<p>If the LOOCV error <span class="math notranslate nohighlight">\(g_{\mathrm{CV}}\)</span> is below a threshold, TMCMC can be <em>warm-started</em>
+at a later stage <span class="math notranslate nohighlight">\(j^*\)</span> by reweighting samples from the same stage of the previous
+iteration, avoiding re-sampling from the prior. The stage <span class="math notranslate nohighlight">\(j^*\)</span> is chosen such that
+the coefficient of variation of these weights is below a specified limit.</p>
+</section>
+<section id="algorithm-summary">
+<h3>Algorithm Summary<a class="headerlink" href="#algorithm-summary" title="Link to this heading"></a></h3>
+<p>The GP-AB algorithm proceeds as follows:</p>
+<ol class="arabic simple">
+<li><p><strong>Initialization:</strong>
+- Select initial training points in <span class="math notranslate nohighlight">\(\Theta_d\)</span> via a space-filling design.
+- Evaluate the high-fidelity model at these points and build the initial PCA+GP surrogate.</p></li>
+<li><p><strong>Posterior Approximation:</strong>
+- Use the GP surrogate to evaluate <span class="math notranslate nohighlight">\(\tilde{L}^{(k)}_D(\theta, q)\)</span> and run TMCMC (warm-start if possible) to sample the posterior.</p></li>
+<li><p><strong>Convergence Check:</strong>
+- Compute <span class="math notranslate nohighlight">\(g_{\mathrm{KL}}\)</span>.
+- If it is below a threshold (0.001), stop.</p></li>
+<li><p><strong>Adaptive DoE:</strong>
+- Select <span class="math notranslate nohighlight">\(\lceil r_{\mathrm{ex}} * {2*n_\theta} \rceil\)</span> exploitation points using weighted IMSE.
+- Select the remainder for exploration.
+- Run high-fidelity simulations at new points, update the surrogate, and increment <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
+<li><p>Repeat steps 2-4 until convergence or computational budget is reached.</p></li>
+</ol>
+</section>
+<section id="remarks">
+<h3>Remarks<a class="headerlink" href="#remarks" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>GP-AB focuses GP refinement on regions relevant to the posterior, improving
+efficiency over space-filling designs.</p></li>
+<li><p>The balance between exploitation and exploration controls robustness: more
+exploration is promoted automatically during the initial iterations of GP-AB to reduce the risk of missing important regions.</p></li>
+<li><p>Warm-starting TMCMC can further reduce sampling cost when surrogates are accurate.</p></li>
+</ul>
+<div role="list" class="citation-list">
+<div class="citation" id="taflanidis2025" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">Taflanidis2025</a><span class="fn-bracket">]</span></span>
+<p>A.A. Taflanidis, B.S. Aakash, S.R. Yi, and J.P. Conte, “Surrogate-aided Bayesian calibration with adaptive learning strategies”, <em>Mechanical Systems and Signal Processing</em>, 237, 113014, 2025. <a class="reference external" href="https://doi.org/10.1016/j.ymssp.2025.113014">https://doi.org/10.1016/j.ymssp.2025.113014</a></p>
+</div>
+</div>
+</section>
+</section>
 <section id="bayesian-inference-of-hierarchical-models">
 <span id="lbluqucsd-hierarchical"></span><h2>Bayesian Inference of Hierarchical Models<a class="headerlink" href="#bayesian-inference-of-hierarchical-models" title="Link to this heading"></a></h2>
 <p>Consider for model calibration a dataset consisting of experimental results on test specimens of the same kind. Let <span class="math notranslate nohighlight">\(\mathbf{y}_i\)</span>  denote the measured output response of the <span class="math notranslate nohighlight">\(i^{th}\)</span> specimen in the dataset <span class="math notranslate nohighlight">\(\mathbf{Y} = \{\mathbf{y}_1, \mathbf{y}_2, ..., \mathbf{y}_{N_s}\}\)</span> where <span class="math notranslate nohighlight">\(N_s\)</span> designates the number of specimens. Let <span class="math notranslate nohighlight">\(\theta_i\)</span> be the model parameter vector corresponding to the <span class="math notranslate nohighlight">\(i^{th}\)</span> specimen, where <span class="math notranslate nohighlight">\(n_\theta\)</span> denotes the number of model parameters. For the <span class="math notranslate nohighlight">\(i^{th}\)</span> specimen, the output response <span class="math notranslate nohighlight">\(\mathbf{y}_i\)</span>  can be viewed as a function of <span class="math notranslate nohighlight">\(\theta_i\)</span>  through the model <span class="math notranslate nohighlight">\(\mathbf{h}\)</span>  and the following measurement equation:</p>
@@ -184,10 +337,10 @@ prior joint PDF <span class="math notranslate nohighlight">\(p(\theta)\)</span>.
 <div class="math notranslate nohighlight" id="equation-bayes-rule-for-one-coupon-after-assumptions">
 <span class="eqno">()<a class="headerlink" href="#equation-bayes-rule-for-one-coupon-after-assumptions" title="Link to this equation"></a></span>\[p(\theta_i, \sigma_i^2, \eta | \mathbf{y}_i) \propto p(\mathbf{y}_i | \theta_i, \sigma_i^2)  p(\sigma_i^2) p(\theta_i | \eta) p(\eta)\]</div>
 <p>In the context of hierarchical Bayesian modeling, the entire experimental dataset from multiple specimens of the same kind, <span class="math notranslate nohighlight">\(\mathbf{Y} = \{\mathbf{y}_1, \mathbf{y}_2, ..., \mathbf{y}_{N_s}\}\)</span>, is considered. The model parameters and the prediction error variances for all specimens are assumed to be mutually statistically independent, while the set of model parameter estimates are assumed to be samples from a parent distribution. The figure <code class="xref std std-numref docutils literal notranslate"><span class="pre">figHierarchicalModel</span></code> shows the structure of the hierarchical model.</p>
-<figure class="align-center" id="id3">
+<figure class="align-center" id="id4">
 <span id="fighierarchicalmodel"></span><img alt="../../../_images/ProbabilisticGraphicalModel.png" src="../../../_images/ProbabilisticGraphicalModel.png" />
 <figcaption>
-<p><span class="caption-text">Structure of the hierarchical model</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+<p><span class="caption-text">Structure of the hierarchical model</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Under these assumptions, the equation for Bayesian updating of all unknown quantities in the hierarchical model, including the model parameters <span class="math notranslate nohighlight">\(\Theta = \{\theta_1, \theta_2, \ldots, \theta_{N_s}\}\)</span>, measurement noise variances  <span class="math notranslate nohighlight">\(\mathbf{s} = \{\sigma_1^2, \sigma_2^2, \ldots, \sigma_{N_s}^2\}\)</span>, and hyperparameters <span class="math notranslate nohighlight">\(\eta\)</span> is given by</p>
@@ -238,16 +391,16 @@ p(\mu_\theta &amp;| \mathbf{Y},  \Theta, \mathbf{s}, \Sigma_\theta) \propto N(\m
 p(\sigma_i^2 &amp;| \mathbf{Y}, \Theta, \mu_\theta, \Sigma_\theta) \propto IG(\alpha_{n_i}, \beta_{n_i})\\
 p(\theta_i &amp;| \mathbf{Y}, \mathbf{s}, \mu_\theta, \Sigma_\theta ) \propto p(\mathbf{y}_i | \theta_i, \sigma_i^2)   p(\theta_i | \mu_\theta, \Sigma_\theta)\end{split}\]</div>
 <p>where:</p>
-<div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-ucsduqtechnical-2">
-<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-ucsduqtechnical-2" title="Link to this equation"></a></span>\[\begin{split}\nu_n &amp;= \nu_0 + N_s \\
+<div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-ucsduqtechnical-8">
+<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-ucsduqtechnical-8" title="Link to this equation"></a></span>\[\begin{split}\nu_n &amp;= \nu_0 + N_s \\
 \mu_n &amp;= \frac{(\mu_0 * \lambda_0 + N_s * \bar{\theta})}{\nu_n} \\
 \Sigma_n &amp;= \Sigma_0 + S + \frac{\nu_0 * N_s}{\nu_n} \times ((\bar{\theta} - \mu_0)(\bar{\theta} - \mu_0)^T) \\
 m_n &amp;= m_0 + N_s \\
 \alpha_{n_i} &amp;= \alpha_0 + \frac{n_{\mathbf{y}_i}}{2}\\
 \beta_{n_i} &amp;= \beta_0 + \frac{{sse}_i}{2}\end{split}\]</div>
 <p>and,</p>
-<div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-ucsduqtechnical-3">
-<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-ucsduqtechnical-3" title="Link to this equation"></a></span>\[\begin{split}\bar{\theta} &amp;= \frac{1}{N_s}\sum_{i=1}^{N_s} \theta_i \\
+<div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-ucsduqtechnical-9">
+<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-ucsduqtechnical-9" title="Link to this equation"></a></span>\[\begin{split}\bar{\theta} &amp;= \frac{1}{N_s}\sum_{i=1}^{N_s} \theta_i \\
 S &amp;= \sum_{i=1}^{N_s} {(\bar{\theta} - \mu_0)(\bar{\theta} - \mu_0)^T} \\
 {sse}_i &amp;= \sum_{k=1}^{n_{\mathbf{y}_i}}(\mathbf{y}_i^{(k)} - \mathbf{h}(\theta_i)^{(k)})^2\end{split}\]</div>
 <p>The Metropolis within Gibbs sampler generates values from the posterior joint PDF shown in <a class="reference internal" href="#equation-bayes-rule-for-hierarchical-model-with-normal-population">()</a> using the posterior conditional distributions <a class="reference internal" href="#equation-conditional-posterior-distributions">()</a> through the following steps:</p>
@@ -263,8 +416,8 @@ S &amp;= \sum_{i=1}^{N_s} {(\bar{\theta} - \mu_0)(\bar{\theta} - \mu_0)^T} \\
 <li><p>Generate a candidate sample <span class="math notranslate nohighlight">\(\theta_{i(c)}\)</span> from a local random walk proposal density <span class="math notranslate nohighlight">\(\theta_{i(c)} \sim N(\theta_i^{(k)}, \Sigma_i^{(k)})\)</span> where <span class="math notranslate nohighlight">\(\Sigma_i^{(k)}\)</span> is the proposal covariance matrix of the random walk.</p></li>
 <li><p>Calculate the acceptance ratio</p></li>
 </ol>
-<div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-ucsduqtechnical-4">
-<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-ucsduqtechnical-4" title="Link to this equation"></a></span>\[a_c = \frac{p(\mathbf{y}_i | \theta_{i(c)}, \sigma_i^{2(k+1)}) p(\theta_{i(c)} | \mu_\theta^{(k+1)}, \Sigma_{\theta}^{(k+1)})}{p(\mathbf{y}_i | \theta_i^{(k)}, \sigma_i^{2(k+1)})   p(\theta_i^{(k)}| \mu_\theta^{(k+1)}, \Sigma_{\theta}^{(k+1)})}\]</div>
+<div class="math notranslate nohighlight" id="equation-common-technical-manual-desktop-ucsduqtechnical-10">
+<span class="eqno">()<a class="headerlink" href="#equation-common-technical-manual-desktop-ucsduqtechnical-10" title="Link to this equation"></a></span>\[a_c = \frac{p(\mathbf{y}_i | \theta_{i(c)}, \sigma_i^{2(k+1)}) p(\theta_{i(c)} | \mu_\theta^{(k+1)}, \Sigma_{\theta}^{(k+1)})}{p(\mathbf{y}_i | \theta_i^{(k)}, \sigma_i^{2(k+1)})   p(\theta_i^{(k)}| \mu_\theta^{(k+1)}, \Sigma_{\theta}^{(k+1)})}\]</div>
 <ol class="loweralpha simple" start="3">
 <li><p>Generate a random value <span class="math notranslate nohighlight">\(u\)</span> from a uniform distribution on [0, 1] and set</p></li>
 </ol>

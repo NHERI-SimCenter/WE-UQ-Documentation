@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4.8. Wind Tunnel-Informed Stochastic Wind Pressure Generation &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>4.4. Wind Tunnel-Informed Stochastic Wind Pressure Generation &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=66b6668b" />
       <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
@@ -29,8 +29,8 @@
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="4.9. Digital Wind Tunnel III: Wind Loads on a Building with Surroundings" href="../weuq-0017/README.html" />
-    <link rel="prev" title="4.7. Digital Wind Tunnel II: Characterizing ABL Flows using Large-eddy Simulation" href="../weuq-0015/README.html" />
+    <link rel="next" title="4.5. Digital Wind Tunnel II: Characterizing ABL Flows using Large-eddy Simulation" href="../weuq-0015/README.html" />
+    <link rel="prev" title="4.3. Wind Tunnel-Informed Stochastic Wind Load Generation" href="../weuq-0012/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -89,18 +89,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../weuq-0001/README.html">4.1. 9 Story Building: Sampling Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../weuq-0007/README.html">4.2. 3 Story Building: Sensitivity Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../weuq-0012/README.html">4.3. Wind Tunnel-Informed Stochastic Wind Load Generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../weuq-0011/README.html">4.4. Digital Wind Tunnel I: Empty Domain Simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../weuq-0013/README.html">4.5. Digital Wind Tunnel II: Wind Loads on Isolated Building with Simple Geometry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../weuq-0014/README.html">4.6. Digital Wind Tunnel II: Wind Loads on Isolated Building with Complex Geometry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../weuq-0015/README.html">4.7. Digital Wind Tunnel II: Characterizing ABL Flows using Large-eddy Simulation</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.8. Wind Tunnel-Informed Stochastic Wind Pressure Generation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#preparation-of-wind-pressure-time-history-file">4.8.1. Preparation of “Wind Pressure Time History File”</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#workflow">4.8.2. Workflow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#results">4.8.3. Results</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.4. Wind Tunnel-Informed Stochastic Wind Pressure Generation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#preparation-of-wind-pressure-time-history-file">4.4.1. Preparation of “Wind Pressure Time History File”</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#workflow">4.4.2. Workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#results">4.4.3. Results</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../weuq-0015/README.html">4.5. Digital Wind Tunnel II: Characterizing ABL Flows using Large-eddy Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../weuq-0013/README.html">4.6. Digital Wind Tunnel II: Wind Loads on Isolated Building with Simple Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../weuq-0014/README.html">4.7. Digital Wind Tunnel II: Wind Loads on Isolated Building with Complex Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../weuq-0019/README.html">4.8. Computing Wind Loads on Building Components and Cladding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../weuq-0017/README.html">4.9. Digital Wind Tunnel III: Wind Loads on a Building with Surroundings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../weuq-0019/README.html">4.10. Computing Wind Loads on Building Components and Cladding</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/jobs.html">5. Jobs</a></li>
@@ -138,7 +137,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../examples.html"><span class="section-number">4. </span>Examples</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">4.8. </span>Wind Tunnel-Informed Stochastic Wind Pressure Generation</li>
+      <li class="breadcrumb-item active"><span class="section-number">4.4. </span>Wind Tunnel-Informed Stochastic Wind Pressure Generation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../../_sources/common/user_manual/examples/desktop/weuq-0016/README.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -149,7 +148,7 @@
            <div itemprop="articleBody">
              
   <section id="wind-tunnel-informed-stochastic-wind-pressure-generation">
-<span id="weuq-0016"></span><h1><span class="section-number">4.8. </span>Wind Tunnel-Informed Stochastic Wind Pressure Generation<a class="headerlink" href="#wind-tunnel-informed-stochastic-wind-pressure-generation" title="Link to this heading"></a></h1>
+<span id="weuq-0016"></span><h1><span class="section-number">4.4. </span>Wind Tunnel-Informed Stochastic Wind Pressure Generation<a class="headerlink" href="#wind-tunnel-informed-stochastic-wind-pressure-generation" title="Link to this heading"></a></h1>
 <table class="docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p>Problem files</p></td>
@@ -162,7 +161,7 @@
 <a class="reference internal image-reference" href="../../../../../_images/we16_main.png"><img alt="A scientific image illustrating an experimental setup and data visualization. On the left, a photographic inset shows a laboratory setup with a patterned floor and a crystalline structure in the center. This connects to a 3D scatter plot in the center of the image, with multicolored dots representing data points in a cube-shaped coordinate system. On the right, there are four separate single-dimensional plots with blue waveforms, likely representing some fluctuating variable over time or another dimension. The plots are aligned vertically and appear to be related to the data shown in the 3D scatter plot." src="../../../../../_images/we16_main.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.8.1 </span><span class="caption-text">Wind tunnel-informed pressure coefficient generator</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.4.1 </span><span class="caption-text">Wind tunnel-informed pressure coefficient generator</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <div role="list" class="citation-list">
@@ -172,10 +171,10 @@
 </div>
 </div>
 <section id="preparation-of-wind-pressure-time-history-file">
-<h2><span class="section-number">4.8.1. </span>Preparation of “Wind Pressure Time History File”<a class="headerlink" href="#preparation-of-wind-pressure-time-history-file" title="Link to this heading"></a></h2>
+<h2><span class="section-number">4.4.1. </span>Preparation of “Wind Pressure Time History File”<a class="headerlink" href="#preparation-of-wind-pressure-time-history-file" title="Link to this heading"></a></h2>
 <p>The experimental records should first be reformatted by the user such that the time histories of <strong>wind pressure coefficient recorded at each pressure tap</strong> can be directly imported in WE-UQ in the EVT tab. The dataset can be imported as either a MATLAB binary file or a json file. Additionally, the model-scale dimensions and additional information on the experiment should be provided. Please refer to <a class="reference internal" href="../../../usage/desktop/wind/ExperimentalWindPressure.html#lblexperimentalwindpressure"><span class="std std-ref">the User Manual</span></a> for the list of variables the file should contain. In this example, the variables in the table below are imported as a Matlab file. Note that the time history is recorded at 509 pressure taps for 32 sec with dt=0.0016 sec (20,000 time points). The reference wind speed (windSpeed) was measured at the top of the building model.</p>
 <table class="docutils align-center" id="id4">
-<caption><span class="caption-number">Table 4.8.1.1 </span><span class="caption-text">Variables imported to WE-UQ</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
+<caption><span class="caption-number">Table 4.4.1.1 </span><span class="caption-text">Variables imported to WE-UQ</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Variable</p></th>
 <th class="head"><p>Values</p></th>
@@ -228,7 +227,7 @@
 <p>Note the tapLocations are given in the model scale value. The Matlab file used in this example is named <code class="docutils literal notranslate"><span class="pre">CpSimCenter.mat</span></code>, and it can be found at <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples//weuq-0016//">WE-UQ/Examples/weuq-0016</a> . Using this information, WE-UQ will generate the stochastic wind pressures and convert it to wind loads that apply to a full-scale building model with a scaling factor of 200</p>
 </section>
 <section id="workflow">
-<h2><span class="section-number">4.8.2. </span>Workflow<a class="headerlink" href="#workflow" title="Link to this heading"></a></h2>
+<h2><span class="section-number">4.4.2. </span>Workflow<a class="headerlink" href="#workflow" title="Link to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This example can be directly loaded from the menu bar at the top of the screen by clicking “Examples”-“E8: Wind-tunnel Informed Stochastic Wind Pressure Generator”. The user may want to increase the number of samples in the UQ tab for more stable results.</p>
@@ -240,7 +239,7 @@
 <a class="reference internal image-reference" href="../../../../../_images/we16_UQ.png"><img alt="Screenshot of a user interface for configuring uncertainty quantification (UQ) methods. The UI includes dropdown menus and checkboxes for options such as &quot;UQ Method,&quot; &quot;Forward Propagation,&quot; and &quot;UQ Engine&quot; with &quot;Dakota&quot; selected. Additional settings include &quot;Parallel Execution,&quot; &quot;Save Working dirs,&quot; &quot;Method LHS,&quot; number of samples set to 50, and a seed value of 716. A vertical navigation bar on the left shows menu items like GI, SIM, EVT, and FEM." src="../../../../../_images/we16_UQ.png" style="width: 90%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.8.2.1 </span><span class="caption-text">UQ tab</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.4.2.1 </span><span class="caption-text">UQ tab</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <ol class="arabic simple" start="2">
@@ -250,7 +249,7 @@
 <a class="reference internal image-reference" href="../../../../../_images/we16_GI.png"><img alt="Screenshot of a user interface displaying 'Building Information' with fields for Name, Properties (with inputs for Year Built, Number of Stories, Structural Type, Height, Width, Depth, and Plan Area), Location (with coordinates for Latitude and Longitude), and Units for Force, Length, and Temperature. The properties are filled with example data, such as the year 1990, 25 stories, and structural type RM1. The Units fields are set to Newtons, Meters, and Celsius. On the left side of the image is a vertical navigation menu with items labeled UQ, G|, SIM, EVT, FEM, EDP, RV, and RES, with G| currently selected." src="../../../../../_images/we16_GI.png" style="width: 90%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.8.2.2 </span><span class="caption-text">GI tab</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.4.2.2 </span><span class="caption-text">GI tab</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <ol class="arabic simple" start="3">
@@ -260,11 +259,11 @@
 <a class="reference internal image-reference" href="../../../../../_images/we16_SIM.png"><img alt="Screenshot of a Building Model Generator interface with various input fields for specifying building information, such as Number of Stories, Floor Weights, and Story Stiffness for X and Y directions, as well as other parameters like Damping Ratio and Yield Strength. The interface also has a table with multiple rows of data for weights, heights, and stiffness coefficients, among other factors, representing different story levels of a building in a multi-degree-of-freedom (MDOF) model." src="../../../../../_images/we16_SIM.png" style="width: 90%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.8.2.3 </span><span class="caption-text">SIM tab</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.4.2.3 </span><span class="caption-text">SIM tab</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <table class="docutils align-default" id="id8">
-<caption><span class="caption-number">Table 4.8.2.1 </span><span class="caption-text">Stiffness of the structure</span><a class="headerlink" href="#id8" title="Link to this table"></a></caption>
+<caption><span class="caption-number">Table 4.4.2.1 </span><span class="caption-text">Stiffness of the structure</span><a class="headerlink" href="#id8" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Floors</p></th>
 <th class="head"><p>Stiffness</p></th>
@@ -307,7 +306,7 @@
 <a class="reference internal image-reference" href="../../../../../_images/we16_EVT.png"><img alt="Screenshot of a software interface with a section labeled &quot;Load Generator&quot; for configuring experimental wind pressures. The form includes fields for 'Percentage of Modes', 'Full Scale Reference Wind Speed', 'Full Scale Duration', 'Seed', 'File Name', and 'Model Scale'. The 'File Name' field contains a file path, and there is a 'Choose' button next to it. Additional parameters are below including 'Window Size', 'Overlap Percentage', 'CPSD Group Size', and 'Selected Taps' with a list of numbers. The sidebar on the left has menu items like UQ, GI, SIM, EVT (highlighted), FEM, EDP, RV, and RES." src="../../../../../_images/we16_EVT.png" style="width: 90%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.8.2.4 </span><span class="caption-text">EVT tab</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.4.2.4 </span><span class="caption-text">EVT tab</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <ol class="arabic simple" start="5">
@@ -318,7 +317,7 @@
 <a class="reference internal image-reference" href="../../../../../_images/we16_RV.png"><img alt="Screenshot of a software interface with a sidebar on the left showing different menu options like UQ, GI, SIM, EVT, FEM, EDP, and RV highlighted. The main area is titled 'Input Random Variables' with fields for defining a variable named 'dummy' with a 'Normal' distribution, a mean of '10', and a standard deviation of '5'. There are buttons for 'Add', 'Clear All', 'Correlation Matrix', 'Show PDF', 'Export', and 'Import'." src="../../../../../_images/we16_RV.png" style="width: 90%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.8.2.5 </span><span class="caption-text">RV tab</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.4.2.5 </span><span class="caption-text">RV tab</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -330,7 +329,7 @@
 </ol>
 </section>
 <section id="results">
-<h2><span class="section-number">4.8.3. </span>Results<a class="headerlink" href="#results" title="Link to this heading"></a></h2>
+<h2><span class="section-number">4.4.3. </span>Results<a class="headerlink" href="#results" title="Link to this heading"></a></h2>
 <p>Once the analysis is done, the sampling results will be displayed in the RES tab. Note that the EDP name consists of the quantity of interest, story number, and the direction of interest - for example:</p>
 <blockquote>
 <div><ul class="simple">
@@ -345,7 +344,7 @@
 <a class="reference internal image-reference" href="../../../../../_images/we16_RES1.png"><img alt="A screenshot displaying a statistical summary with data values including Name, Mean, StdDev (standard deviation), Skewness, and Kurtosis for different items, with names like &quot;1-PFA-1-1&quot;, &quot;1-RMSA-1-2&quot;, and &quot;1-PFD-1-2&quot;. Each row represents a different data set with respective statistical measures. The layout is neat, with each measure in its own column, and the information is presented on a grey and white interface." src="../../../../../_images/we16_RES1.png" style="width: 90%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.8.3.1 </span><span class="caption-text">RES tab - statistics</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.4.3.1 </span><span class="caption-text">RES tab - statistics</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Additionally, the user can browse the sample realization values and inspect the correlation between various components.</p>
@@ -353,7 +352,7 @@
 <a class="reference internal image-reference" href="../../../../../_images/we16_RES2.png"><img alt="Screenshot of a software interface with a scatter plot and a data table. The scatter plot shows a positive correlation between two variables labeled &quot;1-PID-21-2&quot; and &quot;1-PID-21-1&quot; with a correlation coefficient of 0.97. The data table contains numerical values for various parameters like &quot;1-PFA-21-2,&quot; &quot;1-RMSA-21-1,&quot; &quot;1-PFD-21-1,&quot; and others, with some cells highlighted. There are also buttons for saving data such as &quot;Save Table,&quot; &quot;Save Columns Separately,&quot; &quot;Save RVs,&quot; and &quot;Save QoIs.&quot; The interface includes a side menu with options like &quot;UQ,&quot; &quot;GI,&quot; &quot;SIM,&quot; &quot;EVT,&quot; &quot;FEM,&quot; &quot;EDP,&quot; &quot;RV,&quot; and &quot;RES.&quot;" src="../../../../../_images/we16_RES2.png" style="width: 90%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.8.3.2 </span><span class="caption-text">RES tab - scatter plots</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.4.3.2 </span><span class="caption-text">RES tab - scatter plots</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <div class="admonition note">

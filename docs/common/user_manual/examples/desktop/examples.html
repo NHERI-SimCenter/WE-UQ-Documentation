@@ -90,13 +90,12 @@
 <li class="toctree-l2"><a class="reference internal" href="weuq-0001/README.html">4.1. 9 Story Building: Sampling Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="weuq-0007/README.html">4.2. 3 Story Building: Sensitivity Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="weuq-0012/README.html">4.3. Wind Tunnel-Informed Stochastic Wind Load Generation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="weuq-0011/README.html">4.4. Digital Wind Tunnel I: Empty Domain Simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="weuq-0013/README.html">4.5. Digital Wind Tunnel II: Wind Loads on Isolated Building with Simple Geometry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="weuq-0014/README.html">4.6. Digital Wind Tunnel II: Wind Loads on Isolated Building with Complex Geometry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="weuq-0015/README.html">4.7. Digital Wind Tunnel II: Characterizing ABL Flows using Large-eddy Simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="weuq-0016/README.html">4.8. Wind Tunnel-Informed Stochastic Wind Pressure Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="weuq-0016/README.html">4.4. Wind Tunnel-Informed Stochastic Wind Pressure Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="weuq-0015/README.html">4.5. Digital Wind Tunnel II: Characterizing ABL Flows using Large-eddy Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="weuq-0013/README.html">4.6. Digital Wind Tunnel II: Wind Loads on Isolated Building with Simple Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="weuq-0014/README.html">4.7. Digital Wind Tunnel II: Wind Loads on Isolated Building with Complex Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="weuq-0019/README.html">4.8. Computing Wind Loads on Building Components and Cladding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="weuq-0017/README.html">4.9. Digital Wind Tunnel III: Wind Loads on a Building with Surroundings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="weuq-0019/README.html">4.10. Computing Wind Loads on Building Components and Cladding</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/jobs.html">5. Jobs</a></li>
@@ -234,20 +233,44 @@
   <div class="row g-0 mb-3">
     <div class="card-header">
         <p>
-        <a href="./weuq-0011/README.html"> 
-              <h5 style="--bs-gutter-x: 1.5em;">Digital Wind Tunnel I: Empty Domain Simulation</h5>
+        <a href="./weuq-0016/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">Wind Tunnel-Informed Stochastic Wind Pressure Generation</h5>
           </a>
         </p>
     </div>
     <div class="col-md-6"> 
       <div class="card-body">
-        <p class="card-text bg-light">This study uses WE-UQ's built-in interface 'Digital Wind Tunnel' to run a CFD simulation.</p>
+        <p class="card-text bg-light">This example estimates the probabilistic response of a building model excited by wind tunnel-informed stochastic wind pressure time histories. This example uses the experimental data obtained at the University of Florida (UF) NHERI Experimental Facility (EF), and applies the simulated wind loads to a 25-story rectangular-shaped building model for response simulation.</p>
           
       </div>
     </div>
         
       <div class="col-md-5 ml-auto mr-2 my-3">
-       <img src="../../../../_images/UFWindTunnel.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+       <img src="../../../../_images/we16_main.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+      </div>
+        
+  </div>
+</div>
+
+  
+<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
+  <div class="row g-0 mb-3">
+    <div class="card-header">
+        <p>
+        <a href="./weuq-0015/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">Digital Wind Tunnel II: Characterizing ABL Flows using Large-eddy Simulation</h5>
+          </a>
+        </p>
+    </div>
+    <div class="col-md-6"> 
+      <div class="card-body">
+        <p class="card-text bg-light">This example demonstrated application of Large-eddy simulation (LES) for characterizing Atmospheric Boundary Layer (ABL) flows. The simulation is conducted in empty computational domain applying ABL flow conditions. For generating the inflow turbulence, the example uses the Turbulence Inflow Tool (TInF) tool. The results from the simulation are post-processed inside workflow and compared with the target ABL flow conditions.</p>
+          
+      </div>
+    </div>
+        
+      <div class="col-md-5 ml-auto mr-2 my-3">
+       <img src="../../../../_images/we15_domain_geometry.svg"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
       </div>
         
   </div>
@@ -306,44 +329,20 @@
   <div class="row g-0 mb-3">
     <div class="card-header">
         <p>
-        <a href="./weuq-0015/README.html"> 
-              <h5 style="--bs-gutter-x: 1.5em;">Digital Wind Tunnel II: Characterizing ABL Flows using Large-eddy Simulation</h5>
+        <a href="./weuq-0019/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">Computing Wind Loads on Building Components and Cladding</h5>
           </a>
         </p>
     </div>
     <div class="col-md-6"> 
       <div class="card-body">
-        <p class="card-text bg-light">This example demonstrated application of Large-eddy simulation (LES) for characterizing Atmospheric Boundary Layer (ABL) flows. The simulation is conducted in empty computational domain applying ABL flow conditions. For generating the inflow turbulence, the example uses the Turbulence Inflow Tool (TInF) tool. The results from the simulation are post-processed inside workflow and compared with the target ABL flow conditions.</p>
+        <p class="card-text bg-light">This example demonstrated a workflow for evaluating wind loads on building components and cladding. The target structure used in this example is a simple single family low-rise building with gable roof. For computing component and cladding loads, the workflow uses a transient CFD simulation. The example defines the design wind speed is as random variable and the related uncertainites are propagated throught the workflow to computed final wind loads</p>
           
       </div>
     </div>
         
       <div class="col-md-5 ml-auto mr-2 my-3">
-       <img src="../../../../_images/we15_domain_geometry.svg"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
-      </div>
-        
-  </div>
-</div>
-
-  
-<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
-  <div class="row g-0 mb-3">
-    <div class="card-header">
-        <p>
-        <a href="./weuq-0016/README.html"> 
-              <h5 style="--bs-gutter-x: 1.5em;">Wind Tunnel-Informed Stochastic Wind Pressure Generation</h5>
-          </a>
-        </p>
-    </div>
-    <div class="col-md-6"> 
-      <div class="card-body">
-        <p class="card-text bg-light">This example estimates the probabilistic response of a building model excited by wind tunnel-informed stochastic wind pressure time histories. This example uses the experimental data obtained at the University of Florida (UF) NHERI Experimental Facility (EF), and applies the simulated wind loads to a 25-story rectangular-shaped building model for response simulation.</p>
-          
-      </div>
-    </div>
-        
-      <div class="col-md-5 ml-auto mr-2 my-3">
-       <img src="../../../../_images/we16_main.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+       <img src="../../../../_images/we19_study_building.svg"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
       </div>
         
   </div>
@@ -368,30 +367,6 @@
         
       <div class="col-md-5 ml-auto mr-2 my-3">
        <img src="../../../../_images/we17_surrounded_building_demo.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
-      </div>
-        
-  </div>
-</div>
-
-  
-<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
-  <div class="row g-0 mb-3">
-    <div class="card-header">
-        <p>
-        <a href="./weuq-0019/README.html"> 
-              <h5 style="--bs-gutter-x: 1.5em;">Computing Wind Loads on Building Components and Cladding</h5>
-          </a>
-        </p>
-    </div>
-    <div class="col-md-6"> 
-      <div class="card-body">
-        <p class="card-text bg-light">This example demonstrated a workflow for evaluating wind loads on building components and cladding. The target structure used in this example is a simple single family low-rise building with gable roof. For computing component and cladding loads, the workflow uses a transient CFD simulation. The example defines the design wind speed is as random variable and the related uncertainites are propagated throught the workflow to computed final wind loads</p>
-          
-      </div>
-    </div>
-        
-      <div class="col-md-5 ml-auto mr-2 my-3">
-       <img src="../../../../_images/we19_study_building.svg"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
       </div>
         
   </div>
