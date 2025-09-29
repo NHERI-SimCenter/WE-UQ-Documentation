@@ -96,6 +96,7 @@
 <li class="toctree-l2"><a class="reference internal" href="weuq-0014/README.html">4.7. Digital Wind Tunnel II: Wind Loads on Isolated Building with Complex Geometry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="weuq-0019/README.html">4.8. Computing Wind Loads on Building Components and Cladding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="weuq-0017/README.html">4.9. Digital Wind Tunnel III: Wind Loads on a Building with Surroundings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advancedCFD/README.html">4.10. Community level wind simulation: WE-UQ coupled with BRAILS++</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/jobs.html">5. Jobs</a></li>
@@ -144,8 +145,9 @@
              
   <section id="examples">
 <span id="lbl-examples"></span><h1><span class="section-number">4. </span>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h1>
+<p>The examples in this section can be accessed from the application by selecting Examples in the Main Menu. They demonstrate the range of workflows that can be executed with the application and serve as ready-to-use <strong>prototypes</strong> that may be modified to create custom workflows. Each example is designed to run quickly, with the primary goal of demonstrating how workflows can be assembled. To achieve this, certain settings—such as the number of samples, the finite element model, and the number of assets—have been intentionally kept small and simplified.</p>
 <blockquote>
-<div><p>The following are a few examples showing the usage of WE-UQ. The files for the examples are available on GitHub.</p>
+<div><p>The files for the examples are available in the <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples">WE-UQ GitHub repository</a>.</p>
 </div></blockquote>
 <div class="toctree-wrapper compound">
 </div>
@@ -336,7 +338,7 @@
     </div>
     <div class="col-md-6"> 
       <div class="card-body">
-        <p class="card-text bg-light">This example demonstrated a workflow for evaluating wind loads on building components and cladding. The target structure used in this example is a simple single family low-rise building with gable roof. For computing component and cladding loads, the workflow uses a transient CFD simulation. The example defines the design wind speed is as random variable and the related uncertainites are propagated throught the workflow to computed final wind loads</p>
+        <p class="card-text bg-light">This example demonstrated a workflow for evaluating wind loads on building components and cladding. The target structure used in this example is a simple single family low-rise building with gable roof. For computing component and cladding loads, the workflow uses a transient CFD simulation. The example defines the design wind speed is as random variable and the related uncertainties are propagated thought the workflow to computed final wind loads</p>
           
       </div>
     </div>
@@ -367,6 +369,30 @@
         
       <div class="col-md-5 ml-auto mr-2 my-3">
        <img src="../../../../_images/we17_surrounded_building_demo.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
+      </div>
+        
+  </div>
+</div>
+
+  
+<div class="card shadow-sm mb-3  gallery-item" style="max-width: 50em; background-color: #f8f9fa;" >
+  <div class="row g-0 mb-3">
+    <div class="card-header">
+        <p>
+        <a href="./advancedCFD/README.html"> 
+              <h5 style="--bs-gutter-x: 1.5em;">Community level wind simulation: WE-UQ coupled with BRAILS++</h5>
+          </a>
+        </p>
+    </div>
+    <div class="col-md-6"> 
+      <div class="card-body">
+        <p class="card-text bg-light">This example illustrates an advanced application of the CFD workflow. It demonstrates application of the workflow to any urban area by generating building footprints, creating computational meshes with refined regions, and setting realistic wind conditions to run a full-scale CFD simulation. It shows how users can define regions of interest, automate geometry and mesh generation, and post-process results to evaluate wind profiles and velocity fields, providing a practical template for applying the WE-UQ and BRAILS++ workflow to real community-scale wind studies.</p>
+          
+      </div>
+    </div>
+        
+      <div class="col-md-5 ml-auto mr-2 my-3">
+       <img src="../../../../_images/Picture1.png"  style="margin-left:auto; margin-right:auto;display:block;max-width:275px;max-height:220px;width:auto;height:auto;">
       </div>
         
   </div>

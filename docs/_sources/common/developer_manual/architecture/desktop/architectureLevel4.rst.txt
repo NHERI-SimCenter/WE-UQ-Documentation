@@ -1,12 +1,12 @@
-***********************
+***************************
 Four-Level Architecture
-***********************
+***************************
 
 The SimCenter is developing a software framework for building scientific workflow applications to perform computational simulations in the field of NHE at both building level scale and regional scale. It is releasing a number of applications built using this framework. The |app| is one of those applications which has been released (EE-UQ, WE-UQ, PBE). Other applications are under development (R2D). The applications that the SimCenter is developing are limited scientific workflow systems. This chapter presents the software architecture for the framework and the |app| built using it using the C4 model.
 
 
 Level 1: Context for SimCenter Applications
-===========================================
+============================================
 
 A Level 1 diagram showing the system context for the SimCenter applications, i.e., how it fits into the world, is shown in :numref:`figContext`. It shows SimCenter applications (EE-UQ, WE-UQ, PBE, R2D) as a box in the center surrounded by the user and the systems with which it and the user interact. The SimCenter applications allow users to create and run scientific workflow applications; the data for the applications may be obtained from the web or DataDepot, and the workflow applications are run either on the local desktop or on some HPC at |DesignSafe|.
 
@@ -20,7 +20,7 @@ A Level 1 diagram showing the system context for the SimCenter applications, i.e
 
 
 Level 2: Components of a SimCenter Application
-==============================================
+================================================
 
 Given how SimCenter applications fit in with the environment, a Level 2 diagram now demonstrates how the SimCenter applications are broken into high-level components. The SimCenter applications are, as shown in :numref:`figContainer`, broken into two components: A front-end UI and a back-end application that runs the workflow. The front-end applications are desktop applications written using the cross-platform Qt framework. The back end is an application that processes the input from the front end, which comes in the form of a JSON file, creates a workflow, and runs it. The workflow applications, written in Python, C, or C++, utilize existing applications where possible and run either on the local desktop machine or on an HPC utilizing resources made available to the NHE community through DesignSafe.
 
@@ -169,7 +169,7 @@ PBE is a tool for performance-based engineering. Given a building and an event, 
 .. _lblUmlEarthquakeEvents:
 
 UML Earthquake Events
----------------------
+--------------------
 
 The Earthquake Events package, as shown in :numref:`figumlEarthquakeEvents`, contains an Earthquake Event selector with several Earthquake Event selections available. The selections include options that interface with the NGA west server directly and options that will collect inputs for stochastic input models of Vlachos et al. or Dabahi and DerKiuerghian, peer NGA records, site response, and our SimCenterEvent format. Each of these widgets corresponds to one application in the backend, e.g., RockOutcrop corresponds to SiteResponse, and it is this application that will run when the workflow runs.
 

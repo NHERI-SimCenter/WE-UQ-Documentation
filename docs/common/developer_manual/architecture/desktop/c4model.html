@@ -338,7 +338,7 @@ Compress the temporary folder. (12) Send the compressed folder to the remote HPC
 <p>As was mentioned the Front end UI applications are built using Qt. In a Qt application, the programmer creates a QApplication object, in <code class="xref std std-numref docutils literal notranslate"><span class="pre">codeMainCode</span></code> the object named <cite>app</cite> and a QMainWindow, in the example named <cite>window</cite>. As will be shown in <a class="reference internal" href="#figumlcommon"><span class="std std-numref">Fig. 2.2.12.1</span></a>, MainWindowWorkflowApp is a type of QMainWindow that is used in all SimCenter research applications as it deals with all the application menu items, e.g. File open and close, Help cites, etc. The QMainWindowWorkflowApp is a SImCenter class that contains a single QWidget of type WorkflowAppWidget. The WorkflowAppWidget object is passed a RemoteService, the remote cloud service that the application will interact with. This RemoteService is placed in its own QThread object, so that the UI can respond to user requests while communication with the cloud service is underway. Once the window object is shown, control is passed to the QApplication until the user is done.</p>
 </section>
 <section id="uml-ee-uq">
-<span id="lbl-umlee"></span><h2><span class="section-number">2.2.5. </span>UML EE-UQ<a class="headerlink" href="#uml-ee-uq" title="Link to this heading"></a></h2>
+<span id="lblumlee"></span><h2><span class="section-number">2.2.5. </span>UML EE-UQ<a class="headerlink" href="#uml-ee-uq" title="Link to this heading"></a></h2>
 <p>EE-UQ is an application to determine the response of a building subjected to an earthquake event. As shown in <a class="reference internal" href="#figumlee"><span class="std std-numref">Fig. 2.2.5.1</span></a> it comprises a component selection that presents the user with a number of components, jigsaw pieces, which include: earthquake event (EarthquakeEventSelection), UQ engine (UQ Selection), demand parameters of interns (EDP Selection), building information model (BIM Selection),  structural analysis model generator (SAM Selection), finite element application (FEM Selection), and RandomVariableContainer.  RandomVariableContainer is a widget allowing user to specify distributions associated with the random variables created by a user. As will be seen in <a class="reference internal" href="#figumlearthquakeevents"><span class="std std-numref">Fig. 2.2.9.1</span></a> and <a class="reference internal" href="#figumlcommon"><span class="std std-numref">Fig. 2.2.12.1</span></a> each component offers the user a number of applications to choose from for that component. Other classes corresponding to widgets presented in the Front end UI include: UQ Result for displaying the results, Local and Remote Services for running the job locally or remotely, Remote job Manager for monitoring job status and retrieving old jobs, and Login for obtaining credentials from DesignSafe to access and run jobs on the HPC resources. All communication between the applications and DesignSafe-ci is through the Application Service. This is done to allow the applications to switch to other cloud service providers, possibly allowing applications to run at DesignSafe, on Amazon EC-2, IBM’s Azure or elsewhere.</p>
 <figure class="align-center" id="id2">
 <span id="figumlee"></span><img alt="../../../../_images/umlEE.png" src="../../../../_images/umlEE.png" />
@@ -348,7 +348,7 @@ Compress the temporary folder. (12) Send the compressed folder to the remote HPC
 </figure>
 </section>
 <section id="uml-we-uq">
-<span id="lbl-umlwe"></span><h2><span class="section-number">2.2.6. </span>UML WE-UQ<a class="headerlink" href="#uml-we-uq" title="Link to this heading"></a></h2>
+<span id="lblumlwe"></span><h2><span class="section-number">2.2.6. </span>UML WE-UQ<a class="headerlink" href="#uml-we-uq" title="Link to this heading"></a></h2>
 <p>Similar in construction to EE-UQ is WE-UQ, as shown in figure <a class="reference internal" href="#figumlwe"><span class="std std-numref">Fig. 2.2.6.1</span></a>.  In fact, the only difference is that Wind Event Selection is present in the component selection, instead of Earthquake Events. The wind event applications, as will be shown in <a class="reference internal" href="#figumlwindevents"><span class="std std-numref">Fig. 2.2.10.1</span></a> include stochastic wind models, wind loading from online services such as Vortex-Winds, applications that take online wind tunnel experimental datasets such as those from Tokyo Polytechnic.</p>
 <figure class="align-center" id="id3">
 <span id="figumlwe"></span><img alt="../../../../_images/umlWE.png" src="../../../../_images/umlWE.png" />
@@ -368,7 +368,7 @@ Compress the temporary folder. (12) Send the compressed folder to the remote HPC
 </figure>
 </section>
 <section id="uml-pbe">
-<span id="lbl-umlpbe"></span><h2><span class="section-number">2.2.8. </span>UML PBE<a class="headerlink" href="#uml-pbe" title="Link to this heading"></a></h2>
+<span id="lblumlpbe"></span><h2><span class="section-number">2.2.8. </span>UML PBE<a class="headerlink" href="#uml-pbe" title="Link to this heading"></a></h2>
 <p>PBE is a tool for performance-based engineering. Given a building and an event, it will calculate downtime and loss estimates. As can be seen in <a class="reference internal" href="#figumlpbe"><span class="std std-numref">Fig. 2.2.8.1</span></a>,  it adds a LossModelSelection to the component Selections available in EE-UQ.
 The Loss Model applications currently available for selection include a P58 Loss Model and a HAZUS Loss Model. Depending on selection, different widgets are presented for the user to input the different input arguments needed for the different loss model calculations. Presently the calculations for both loss models are performed by the same Python script, CalculateDL.py, in the collection of backend applications.</p>
 <figure class="align-center" id="id5">
@@ -379,7 +379,7 @@ The Loss Model applications currently available for selection include a P58 Loss
 </figure>
 </section>
 <section id="uml-earthquakeevents">
-<span id="lbl-umlearthquakeevents"></span><h2><span class="section-number">2.2.9. </span>UML EarthquakeEvents<a class="headerlink" href="#uml-earthquakeevents" title="Link to this heading"></a></h2>
+<span id="lblumlearthquakeevents"></span><h2><span class="section-number">2.2.9. </span>UML EarthquakeEvents<a class="headerlink" href="#uml-earthquakeevents" title="Link to this heading"></a></h2>
 <p>The Earthquake Events package, as shown in <a class="reference internal" href="#figumlearthquakeevents"><span class="std std-numref">Fig. 2.2.9.1</span></a>, contains an Earthquake Event selector with several Earthquake Event selections available. The selections include options that interface with the NGA west server directly and options that will collect inputs for stochastic input models of Vlachos et Al or Dabahi and DerKiuerghian, peer NGA records, site response and our SimCenterEvent format. Each of these widgets corresponds to one application in the backend, e.g. RockOutcrop corresponds to SiteResponse, and it is this application that will run when the workflow runs.</p>
 <figure class="align-center" id="id6">
 <span id="figumlearthquakeevents"></span><img alt="../../../../_images/umlEarthquakeEvents.png" src="../../../../_images/umlEarthquakeEvents.png" />
@@ -389,7 +389,7 @@ The Loss Model applications currently available for selection include a P58 Loss
 </figure>
 </section>
 <section id="uml-windevents">
-<span id="lbl-umlwindevents"></span><h2><span class="section-number">2.2.10. </span>UML WindEvents<a class="headerlink" href="#uml-windevents" title="Link to this heading"></a></h2>
+<span id="lblumlwindevents"></span><h2><span class="section-number">2.2.10. </span>UML WindEvents<a class="headerlink" href="#uml-windevents" title="Link to this heading"></a></h2>
 <p>Similar to the Earthquake Events package, the wind events package shown in <a class="reference internal" href="#figumlwindevents"><span class="std std-numref">Fig. 2.2.10.1</span></a>, contains a Wind Event Selector with a number of Wind Event selections available. The selections include options for stochastically generated wind events, events that obtain wind loading from the vortex-winds server, and options to obtain forces from wind tunnel events, either from the Tokyo Polytechnic University database or a user-supplied file.</p>
 <figure class="align-center" id="id7">
 <span id="figumlwindevents"></span><img alt="../../../../_images/umlWindEvents.png" src="../../../../_images/umlWindEvents.png" />
@@ -399,7 +399,7 @@ The Loss Model applications currently available for selection include a P58 Loss
 </figure>
 </section>
 <section id="uml-hydroevents">
-<span id="lbl-umlhydroevents"></span><h2><span class="section-number">2.2.11. </span>UML HydroEvents<a class="headerlink" href="#uml-hydroevents" title="Link to this heading"></a></h2>
+<span id="lblumlhydroevents"></span><h2><span class="section-number">2.2.11. </span>UML HydroEvents<a class="headerlink" href="#uml-hydroevents" title="Link to this heading"></a></h2>
 <p>Similar to the Earthquake Events package, the hydrodynamic events package shown in <a class="reference internal" href="#figumlhydroevents"><span class="std std-numref">Fig. 2.2.11.1</span></a>, contains a Hydrodynamic Event Selector with a number of Hydrodynamic Event selections available. The selections include options for stochastically generated wave events, 3D CFD events, and more.</p>
 <figure class="align-center" id="id8">
 <span id="figumlhydroevents"></span><img alt="../../../../_images/umlHydroEvents.png" src="../../../../_images/umlHydroEvents.png" />
