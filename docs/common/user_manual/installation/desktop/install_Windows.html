@@ -74,11 +74,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../releases/weCapabilities.html">5. Capabilities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../releases/weReleaseNotes.html">6. Release Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../releases/wePlans.html">7. Release Plans</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">8. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -105,6 +100,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/WEUQ.html">7. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/Misc.html">9. Misc</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -195,6 +191,25 @@ sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w
 <p><span class="caption-number">Fig. 1.1.1.2.3 </span><span class="caption-text">Installing OpenFOAM-10 on WSL.</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To verify that <strong>OpenFOAM</strong> has been installed correctly for <strong>WE-UQ</strong>, follow these steps:</p>
+<p>Once WE-UQ is installed, open the application. From the <strong>Examples</strong> pull-down menu, select <strong>Example E5</strong>. When this example loads, WE-UQ calls OpenFOAM in the background to create a mesh of the model. If the mesh does not display, OpenFOAM is not functioning correctly for your setup.</p>
+<p>There are a few possible causes:</p>
+<ol class="arabic">
+<li><p><strong>Missing .bashrc entry</strong>
+During OpenFOAM installation, you are instructed to edit your <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> file.
+If you have not done so, add the following line to the file:</p>
+<p><code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">/opt/openfoam10/etc/bashrc</span></code></p>
+<p>You can edit the file using a text editor such as <strong>nano</strong> or <strong>vi</strong>.</p>
+</li>
+<li><p><strong>Different default shell</strong>
+If you have already added the above line, your Ubuntu system may be configured to use a shell other than the default <strong>bash</strong> shell.  In that case, try replacing the previous line with:</p>
+<p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">/opt/openfoam10/etc/bashrc</span></code></p>
+</li>
+<li><p>WE-UQ sets the path to it’s backend applications the first time the application starts. If you move the application subsequent to this or download the application again, you need to <strong>reset</strong> these paths. To do this go to <strong>File</strong>, <strong>Preferences</strong> and press the <strong>Reset</strong> and <strong>Save</strong> buttons.</p></li>
+</ol>
+</div>
 </section>
 <section id="download-the-application">
 <h2><span class="section-number">1.1.1.4. </span><strong>Download the Application</strong><a class="headerlink" href="#download-the-application" title="Link to this heading"></a></h2>

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UCSD_InputBayesianCalibration &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
+  <title>9. Misc &mdash; Wind Engineering with Uncertainty Quantification  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=66b6668b" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
@@ -29,6 +29,8 @@
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="../../../technical_manual/desktop/technical_manual.html" />
+    <link rel="prev" title="8. Bugs &amp; Feature Requests" href="../../bugs.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -74,16 +76,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">4. How To Cite</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Running Application</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/usage.html">2. User Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/wind/tools.html">3. Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">2. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wind/tools.html">3. Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/jobs.html">5. Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jobs.html">5. Jobs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/WEUQ.html">7. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/Misc.html">9. Misc</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">9. Misc</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#analytics">9.1. Analytics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#disabling-analytics">9.1.1. Disabling Analytics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#application-configuration">9.2. Application Configuration</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -114,9 +123,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">UCSD_InputBayesianCalibration</li>
+      <li class="breadcrumb-item active"><span class="section-number">9. </span>Misc</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../../_sources/common/user_manual/user_inputs_documentation/User_Inputs_Documentation_RST_Files/UCSD_InputBayesianCalibration.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../../_sources/common/user_manual/usage/desktop/Misc.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -124,8 +133,63 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="ucsd-inputbayesiancalibration">
-<span id="ucsd-inputbayesiancalibration-user-inputs"></span><h1>UCSD_InputBayesianCalibration<a class="headerlink" href="#ucsd-inputbayesiancalibration" title="Link to this heading"></a></h1>
+  <section id="misc">
+<span id="id1"></span><h1><span class="section-number">9. </span>Misc<a class="headerlink" href="#misc" title="Link to this heading"></a></h1>
+<section id="analytics">
+<h2><span class="section-number">9.1. </span>Analytics<a class="headerlink" href="#analytics" title="Link to this heading"></a></h2>
+<p>The WE-UQ app uses Google Analytics to collect anonymous information about how the application is used.
+This data helps improve both the software and its documentation, and it also supports required usage reporting to the U.S. National Science Foundation.</p>
+<p>The information gathered includes: the city and duration of usage, the number of local and remote workflow runs, which example problems are loaded, and errors.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>No personal or identifying information is collected.</p>
+</div>
+<section id="disabling-analytics">
+<h3><span class="section-number">9.1.1. </span>Disabling Analytics<a class="headerlink" href="#disabling-analytics" title="Link to this heading"></a></h3>
+<p>You can disable analytics data collection by editing the configuration file, <code class="docutils literal notranslate"><span class="pre">config.json</span></code>, located in the application’s installation directory. If you are on a Mac, this is the WE-UQ app/Contents/MacOS directory.</p>
+<p>Locate the line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;GoogleAnalytics&quot;</span><span class="p">:</span> <span class="s2">&quot;Yes&quot;</span>
+</pre></div>
+</div>
+<p>Change the value from <code class="docutils literal notranslate"><span class="pre">&quot;Yes&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;No&quot;</span></code> and save the file.
+After doing so, WE-UQ app will no longer share analytics information.</p>
+</section>
+</section>
+<section id="application-configuration">
+<h2><span class="section-number">9.2. </span>Application Configuration<a class="headerlink" href="#application-configuration" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">config.json</span></code> file mentioned above also contains additional settings that allow users to customize the appearance and behavior of the WE-UQ app at startup.</p>
+<ol class="arabic">
+<li><p><strong>Changing the Default Screen Size</strong></p>
+<p>By default, the application opens in a normal-sized window.
+To make WE-UQ app launch in full-screen mode, edit the line below in <code class="docutils literal notranslate"><span class="pre">config.json</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;ScreenSize&quot;</span><span class="p">:</span> <span class="s2">&quot;Normal&quot;</span>
+</pre></div>
+</div>
+<p>Change the value to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;ScreenSize&quot;</span><span class="p">:</span> <span class="s2">&quot;Full&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Adjusting the Message Area Widget’s Location and Size</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">config.json</span></code> file also includes a blank JSON object named <code class="docutils literal notranslate"><span class="pre">outputLocation</span></code> that can be customized to control where the output text widget appears and its dimensions.</p>
+<p>You can specify the following keys:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">position</span></code> — where the output widget should appear.
+Valid options are <code class="docutils literal notranslate"><span class="pre">&quot;right&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;left&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;bottom&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;top&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numPixels</span></code> <em>(optional)</em> — the number of pixels to allocate to the widget in the chosen direction.
+If omitted, Qt assigns a default value.</p></li>
+</ul>
+<p><strong>Example:</strong>
+To place the output widget on the left-hand side of the application with a width of 500 pixels:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;outputLocation&quot;</span><span class="p">:</span> <span class="p">{</span>
+   <span class="s2">&quot;position&quot;</span><span class="p">:</span> <span class="s2">&quot;left&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;numPixels&quot;</span><span class="p">:</span> <span class="mi">500</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
 </section>
 
 

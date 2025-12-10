@@ -5,9 +5,27 @@
 Release Notes
 *************
 
+Version 4.2.0 
+--------------
+
+**Release date:** Sept. 2025
+
+**Highlights**
+
+
+#. Support for `Femora <https://github.com/amnp95/femora>`_ Input, which support multiple OpenSeesMP simulations) (see new Example 12)
+#. Support for SSI widget for custom buildings, buildings supported on piles and mat foundations (see new Example 13)
+#. **Remote Jobs**:
+
+   a. 'Share Job' feature now available to allow users to share simulation jobs across DesignSafe projects and users.
+
+   b. 'Open Job Folder' feature will take you directly to your remote job's output files on DesignSafe.
+
+   c. 'View Job Metadata' feature will take you to DesignSafe's comprehensive metadata page automatically.   
+
 
 Version 4.1.0 
--------------
+--------------
 
 **Release date:** Sept. 2024
 
@@ -17,7 +35,6 @@ Version 4.1.0
 #. Domain Reduction Method option added in tools to create events for buildings given large physics- based simulations.
 #. ShakerMaker option added to tool to perform earthquake rupture simulations.
 #. OpenSees@DesignSafe option added in tools to allow users to run OpenSees, OpenSeesMP, OpenSeesSP, and OpenSeesPy simulations utilizing TACC HPC resources from their desktop.
-
 
 Version 4.0.0 
 -------------

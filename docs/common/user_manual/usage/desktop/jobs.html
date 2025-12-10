@@ -74,11 +74,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../releases/weCapabilities.html">5. Capabilities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../releases/weReleaseNotes.html">6. Release Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../releases/wePlans.html">7. Release Plans</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">8. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -111,6 +106,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/WEUQ.html">7. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Misc.html">9. Misc</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -242,8 +238,9 @@ artifacts (can be large).</p></td>
 <li><p>Configure reservation parameters:
 - <code class="docutils literal notranslate"><span class="pre">Num</span> <span class="pre">Node</span></code>, <code class="docutils literal notranslate"><span class="pre">Num</span> <span class="pre">Processors</span> <span class="pre">Per</span> <span class="pre">Node</span></code>, <code class="docutils literal notranslate"><span class="pre">Max</span> <span class="pre">Run</span> <span class="pre">Time</span></code>
 - Consult the <strong>TACC Stampede3 user guide</strong> for limits and best practices.</p></li>
-<li><p>Set a valid <code class="docutils literal notranslate"><span class="pre">TACC</span> <span class="pre">Allocation</span></code>. Common value today: <code class="docutils literal notranslate"><span class="pre">DesignSafe-SimCenter</span></code>:
-- This may change; users may need their <strong>own</strong> allocation in the future.</p></li>
+<li><p>Set a valid <code class="docutils literal notranslate"><span class="pre">TACC</span> <span class="pre">Allocation</span></code>.
+- The user needs to provide the name of their <strong>own</strong> allocation.
+- If the user does not have one, an <a class="reference external" href="https://designsafe-ci.org/user-guide/tools/advanced/hpcallocations/">allocations can be obtained from DesignSafe</a> .</p></li>
 <li><p>Choose an <code class="docutils literal notranslate"><span class="pre">Archive</span> <span class="pre">System</span> <span class="pre">ID</span></code> (DesignSafe project where outputs are saved):
 - Default is <code class="docutils literal notranslate"><span class="pre">designsafe.storage.default</span></code> (your personal space).
 - To use a <strong>project</strong>, click <code class="docutils literal notranslate"><span class="pre">Refresh</span> <span class="pre">Projects</span></code> and select one you belong to.</p></li>

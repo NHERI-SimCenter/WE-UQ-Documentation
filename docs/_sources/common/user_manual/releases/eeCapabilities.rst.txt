@@ -5,7 +5,8 @@
 Capabilities
 ************
 
-**Version 4.1** of |app| was released **September 2024**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked in :blue:`blue` in the following list of features.)
+
+**Version 4.2** of |app| was released **September 2025**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked in :blue:`blue` in the following list of features.)
 
 
 Structural Information Model
