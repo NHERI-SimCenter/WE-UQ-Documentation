@@ -28,6 +28,22 @@ The structure has uncertain properties that all follow normal distribution:
    .. literalinclude:: src/Frame9Model.tcl
       :language: tcl
 
+    {
+	"geographic_extent":{
+	    "larger_region": {
+		"lat": 34.19707659182189,
+		"lon": -118.14252114105332,
+		"radius": 500.0
+	    },
+	    "region_of_interest": {
+		"min_lon": -118.14636206427565,
+		"min_lat": 34.196367,
+		"max_lon": -118.138466,
+		"max_lat": 34.197378
+	    }
+	}
+    }
+		 
    #. The first lines containing ``pset`` will be read by the application when the file is selected and the application will auto-populate the random variables ``w`` and ``k`` in the **RV** panel with this same variable name. It is of course possible to explicitly use random variables without the ``pset`` command by "RV.**variable name" in the input file. However, no random variables will be auto-populated if user chooses this route.
 
 .. warning::

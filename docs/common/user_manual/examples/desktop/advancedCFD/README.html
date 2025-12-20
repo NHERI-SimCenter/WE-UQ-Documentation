@@ -92,31 +92,32 @@
 <li class="toctree-l2"><a class="reference internal" href="../weuq-0017/README.html">4.9. Digital Wind Tunnel III: Wind Loads on a Building with Surroundings</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">4.10. Community level wind simulation: WE-UQ coupled with BRAILS++</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#introduction">4.10.1. Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#detailed-workflow">4.10.2. Detailed Workflow</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#brails-generating-the-geojson-files-with-building-footprints-and-their-heights">4.10.2.1. BRAILS++ Generating the GeoJSON files with Building Footprints and their Heights</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#defining-the-computational-domain-and-creating-the-mesh">4.10.2.2. Defining the computational domain and creating the Mesh</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#defining-the-boundary-conditions">4.10.2.3. Defining the Boundary Conditions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#choosing-the-turbulence-model-and-setting-up-the-simulation">4.10.2.4. Choosing the turbulence model and setting up the simulation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#running-in-openfoam">4.10.2.5. Running in OpenFOAM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#post-process-in-paraview">4.10.2.6. Post-process in Paraview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#script-inputfile-input-json-to-create-openfoam-case-files">4.10.2. Script Inputfile (input.json) to Create OpenFOAM case files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#geographic-extent">4.10.2.1. Geographic Extent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#brails-specific">4.10.2.2. BRAILS Specific</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#defining-the-openfoam-computation-mesh-boundary-conditions-and-algorithms">4.10.2.3. Defining the OpenFOAM Computation (Mesh, Boundary Conditions and Algorithms)</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#manipulating-the-openfoam-files-for-miscellaneous-simulations">4.10.3. Manipulating the OpenFOAM files for miscellaneous simulations</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#domain-extents-and-boundaries">4.10.3.1. Domain Extents and boundaries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#user-defined-obstacles">4.10.3.2. User-defined obstacles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#user-defined-initialization-and-inflow">4.10.3.3. User-defined initialization and inflow</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mapping-fields">4.10.3.4. Mapping fields</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#turbulence-modeling-and-wall-functions">4.10.3.5. Turbulence Modeling and wall functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-in-openfoam">4.10.3. Running in OpenFOAM</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#post-process-in-paraview">4.10.3.1. Post-process in Paraview</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#example">4.10.4. Example</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#target-region-for-the-simulation">4.10.4.1. Target region for the simulation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mesh">4.10.4.2. Mesh</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#transport-property">4.10.4.3. Transport property</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#numerical-setup">4.10.4.4. Numerical setup</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#boundary-conditions">4.10.4.5. Boundary conditions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#simulation-time-setup">4.10.4.6. Simulation time setup</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#visualization-of-the-cfd-output">4.10.4.7. Visualization of the CFD output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manipulating-the-openfoam-files-for-miscellaneous-simulations">4.10.4. Manipulating the OpenFOAM files for miscellaneous simulations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#domain-extents-and-boundaries">4.10.4.1. Domain Extents and boundaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#user-defined-obstacles">4.10.4.2. User-defined obstacles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#user-defined-initialization-and-inflow">4.10.4.3. User-defined initialization and inflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mapping-fields">4.10.4.4. Mapping fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#turbulence-modeling-and-wall-functions">4.10.4.5. Turbulence Modeling and wall functions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#example">4.10.5. Example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#target-region-for-the-simulation">4.10.5.1. Target region for the simulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mesh">4.10.5.2. Mesh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transport-property">4.10.5.3. Transport property</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#numerical-setup">4.10.5.4. Numerical setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id19">4.10.5.5. Boundary conditions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#simulation-time-setup">4.10.5.6. Simulation time setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#visualization-of-the-cfd-output">4.10.5.7. Visualization of the CFD output</a></li>
 </ul>
 </li>
 </ul>
@@ -174,12 +175,12 @@
 <p><strong>Tanmay Vora, Jieling Jiang, Abiy F. Melaku, Seymour Spence</strong></p>
 <section id="introduction">
 <h2><span class="section-number">4.10.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
-<p>This example provides a workflow for simulating wind flow within a community of buildings, defined by those buildings within the region of interest. The example does not (presently) run from WE-UQ. Instead the workflow is run by the user executing a Python script that orchestrates the full pre-processing chain required for a computational fluid dynamics (CFD) simulation of urban wind flow. Specifically, the script performs the following <strong>two</strong> steps: <strong>1</strong>) Building footprints for the community of interest and its surrounding region are first generated using BRAILS++ <strong>2</strong>) Using user-provided inputs defining the parameters of the computational simulation, specifically the computational domain, boundary conditions, turbulence modeling, the script finishes by generating all the input files required for an OpenFOAM CFD simulation.  Once the input files have been generated, the user can run the wind simulation in OpenFOAM, and finally view the results in Paraview.</p>
-<figure class="align-center" id="id19">
+<p>This example provides a workflow for simulating wind flow within a community of buildings, defined by those buildings within the region of interest. The example does not (presently) run from WE-UQ. Instead the workflow is run by the user executing a <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples//advancedCFD/src/community_wind_simulation.py//">Python script</a> that orchestrates the full pre-processing chain required for a computational fluid dynamics (CFD) simulation of urban wind flow. Specifically, the script performs the following <strong>two</strong> steps: <strong>1</strong>) Building footprints for the community of interest and its surrounding region are first generated using BRAILS++ <strong>2</strong>) Using user-provided inputs defining the parameters of the computational simulation, specifically the computational domain, boundary conditions, turbulence modeling, the script finishes by generating all the input files required for an OpenFOAM CFD simulation.  Once the input files have been generated, the user can run the wind simulation in OpenFOAM, and finally view the results in Paraview.</p>
+<figure class="align-center" id="id20">
 <span id="fig-advanced-cfd-1"></span><a class="reference internal image-reference" href="../../../../../_images/Picture1.png"><img alt="../../../../../_images/Picture1.png" src="../../../../../_images/Picture1.png" style="width: 75%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.1.1 </span><span class="caption-text">The WE-UQ and BRAILS++ integration workflow.</span><a class="headerlink" href="#id19" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.1.1 </span><span class="caption-text">The WE-UQ and BRAILS++ integration workflow.</span><a class="headerlink" href="#id20" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -189,79 +190,297 @@
 </pre></div>
 </div>
 <p>Once the script has been downloaded and the requirements installed, it is then run using the following terminal command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">community_wind_simulation</span><span class="o">.</span><span class="n">py</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">community_wind_simulation</span><span class="o">.</span><span class="n">py</span> <span class="nb">input</span><span class="o">.</span><span class="n">json</span>
 </pre></div>
 </div>
 </div>
 </section>
-<section id="detailed-workflow">
-<h2><span class="section-number">4.10.2. </span>Detailed Workflow<a class="headerlink" href="#detailed-workflow" title="Link to this heading"></a></h2>
-<section id="brails-generating-the-geojson-files-with-building-footprints-and-their-heights">
-<h3><span class="section-number">4.10.2.1. </span>BRAILS++ Generating the GeoJSON files with Building Footprints and their Heights<a class="headerlink" href="#brails-generating-the-geojson-files-with-building-footprints-and-their-heights" title="Link to this heading"></a></h3>
-<p>BRAILS++ is used to first generate a building inventory, which consists of the longitudes, latitudes, building footprints with their respective heights for each building in an area. To generate the computational domain for the CFD simulation the user specifies two regions: 1) An outer circular region of buildings is first specified with the user providing the longitude and latitude of the center point, and the bounding radius as shown in <a class="reference internal" href="#fig-advanced-cfd-2"><span class="std std-numref">Fig. 4.10.2.1.1</span></a> 2) The region if interest, i.e. the region containing the buildings the user is intent on studying, is input by a bounding box defined by latitudes and longitudes as shown in <a class="reference internal" href="#fig-advanced-cfd-3"><span class="std std-numref">Fig. 4.10.2.1.2</span></a>. For the ROI, the latitude and longitude of the two points marked with red circles in <a class="reference internal" href="#fig-advanced-cfd-3"><span class="std std-numref">Fig. 4.10.2.1.2</span></a> are required as inputs.</p>
+<section id="script-inputfile-input-json-to-create-openfoam-case-files">
+<h2><span class="section-number">4.10.2. </span>Script Inputfile (input.json) to Create OpenFOAM case files<a class="headerlink" href="#script-inputfile-input-json-to-create-openfoam-case-files" title="Link to this heading"></a></h2>
+<p>The input file, input.json, defines all user-specified parameters required by the application, <strong>community_wind_simulation.py</strong>. <a class="reference external" href="https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples//advancedCFD/src/input.json//">An example input file is available on-line</a> . This file, parts of which are shown below, contains several key inputs, including: 1) <strong>case_folder</strong> which specifies the output folder that OpenFOAM input files will be written, 2) <strong>wind_direction</strong> which defines in degrees the wind direction (counter-clockwise from E), 3) <strong>number_of_processors</strong> which defines the number of processors that will be used when OpenFOAM runs (specify 1 for a sequential run), and 4) items for <strong>geographic_extent</strong>, <strong>brails_options</strong>, and <strong>computational_domain</strong> whose inputs will be discussed in sections below.</p>
+<blockquote>
+<div><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;case_folder&quot;</span><span class="p">:</span><span class="s2">&quot;LESCase_meanABL&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;wind_direction&quot;</span><span class="p">:</span><span class="mf">225.0</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;number_of_processors&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;number_of_processors&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;geographic_extent&quot;</span><span class="p">:{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;brails_options&quot;</span><span class="p">:{</span><span class="w"> </span><span class="err">...</span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;computational_domain&quot;</span><span class="p">:{</span><span class="w"> </span><span class="err">...</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<section id="geographic-extent">
+<h3><span class="section-number">4.10.2.1. </span>Geographic Extent<a class="headerlink" href="#geographic-extent" title="Link to this heading"></a></h3>
+<p>BRAILS++ is used in the workflow to generate a building inventory, which includes laitudes and longitudes of building footprints, and associated heights for all buildings within the study area. To define the computational domain for the CFD simulation the user specifies two regions n the <strong>geometric_extent</strong>: 1) An outer circular region of buildings, the <strong>larger_region</strong>, is specified with the user providing the longitude and latitude of the center point, and the bounding radius as shown in <a class="reference internal" href="#fig-advanced-cfd-2"><span class="std std-numref">Fig. 4.10.2.1.1</span></a> 2) The <strong>region_of_interest (ROI)</strong>, i.e. the region containing the buildings of primary interest, is defined by a rectangular box spcified by minimum and maximum latitudes and longitudes, as shown in <a class="reference internal" href="#fig-advanced-cfd-3"><span class="std std-numref">Fig. 4.10.2.1.2</span></a>.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;geographic_extent&quot;</span><span class="p">:{</span>
+<span class="w">    </span><span class="nt">&quot;larger_region&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">34.19707659182189</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;lon&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.14252114105332</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">500.0</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;region_of_interest&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;min_lon&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.14636206427565</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;min_lat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">34.196367</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;max_lon&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-118.138466</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;max_lat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">34.197378</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol class="arabic simple">
-<li><p>The outer circular region is necessary to ensure the correct turbulance is generated for all those buildings in the region of interest. As such, the bounding box input by the user must be contained within the larger area.</p></li>
-<li><p>The latitude and longitude of a specific point in the world can be obtained by clicking at a location on the google maps.</p></li>
-<li><p>Two intermediate files, “inventoryTotal.geojson” and “inventoryROI.geojson” are output by the application. These are in geojson form and can be viewed by any GIS (Geographic Information System) software, e.g. ArcGIS, QGIS, etc.</p></li>
-<li><p>The BRAILS++ footprint scrapers obtain the building footprints from web servers. A number of options are available: USA, OSM, and Microsoft.</p></li>
+<li><p>The outer circular region is necessary to ensure that realistic turbulance is develops upstream for all buildings in the ROI. Consequently, the ROI bounding box specified by the user must be fully contained within the larger circular region.</p></li>
+<li><p>The latitude and longitude of a specific point in the world can be obtained by clicking on a point in <strong>Google Maps</strong>, which display coresponding coordinates.</p></li>
+<li><p>The radius defining the outer circular region is specified in meters.</p></li>
+<li><p>The application generates two intermediate output files, inventoryTotal.geojson and inventoryROI.geojson. These files are provided in GeoJSON format and can be viewed using standard Geographic Information System (GIS) software, such as ArcGIS or QGIS.</p></li>
 </ol>
 </div>
-<figure class="align-center" id="id20">
+<figure class="align-center" id="id21">
 <span id="fig-advanced-cfd-2"></span><a class="reference internal image-reference" href="../../../../../_images/Picture2.png"><img alt="../../../../../_images/Picture2.png" src="../../../../../_images/Picture2.png" style="width: 35%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.2.1.1 </span><span class="caption-text">Center coordinate and the bounding radius of the total region.</span><a class="headerlink" href="#id20" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.2.1.1 </span><span class="caption-text">Center coordinate and the bounding radius of the total region.</span><a class="headerlink" href="#id21" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id21">
+<figure class="align-center" id="id22">
 <span id="fig-advanced-cfd-3"></span><a class="reference internal image-reference" href="../../../../../_images/Picture3.png"><img alt="../../../../../_images/Picture3.png" src="../../../../../_images/Picture3.png" style="width: 35%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.2.1.2 </span><span class="caption-text">Bounding box for the region of interest.</span><a class="headerlink" href="#id21" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.2.1.2 </span><span class="caption-text">Bounding box for the region of interest.</span><a class="headerlink" href="#id22" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
-<section id="defining-the-computational-domain-and-creating-the-mesh">
-<h3><span class="section-number">4.10.2.2. </span>Defining the computational domain and creating the Mesh<a class="headerlink" href="#defining-the-computational-domain-and-creating-the-mesh" title="Link to this heading"></a></h3>
-<p>The computational domain consists of 8 boundary faces: inlet, outlet, side1, side2, top, ground, ROI, and Surrounding. The inlet face is where the inflow of wind is defined. According to the COST 732 (Franke et al. 2007) recommendations, the inlet face must be at least a distance of five times the maximum height (5Hmax) of the buildings in the domain, from the outermost footprint coordinate. The orientation of the inlet face shall be perpendicular to the wind direction. The sides will be parallel to the wind direction. The COST recommendations suggest the lateral boundaries to be at least a distance of 5Hmax from the community. The outlet boundary is where the flow leaves the domain. It needs to be at least a distance of 15Hmax from the community. The top boundary of the domain must also be a distance of more than 5Hmax from the top of the building with maximum height. Since the horizontal extents of the domain are much larger than the vertical extent, the default value for the top boundary is 15Hmax from the ground. Ground, ROI, and surrounding boundary faces are wall boundaries where the flow can’t enter and represent the ground, the buildings in ROI, and the buildings surrounding the ROI, respectively. A depiction of computational domain extents is presented in <a class="reference internal" href="#fig-advanced-cfd-4"><span class="std std-numref">Fig. 4.10.2.2.1</span></a>.</p>
-<p>For this step, the user is expected to provide the wind direction in the community, the domain extents (optional, default values are according to the COST 732 recommendations), the nominal computational cell size for blockMesh, the mesh refinement regions, the level of mesh refinement for each region, and the levels of mesh refinement for the ROI and surrounding buildings. Level n mesh refinement would mean the cell size in that region would be . If the user doesn’t define the mesh refinement for the ROI buildings and the Surrounding buildings, the level of refinement for the surrounding would be the minimum level of refinement for the refinement boxes + 1, and the level of refinement for the ROI would be the level of refinement for the surrounding + 1. An example mesh refinement is shown in <a class="reference internal" href="#fig-advanced-cfd-5"><span class="std std-numref">Fig. 4.10.2.2.2</span></a>. The origin (0,0,0) of the computational domain is at the bottom right corner of the inlet plane. The domain extents are defined in terms of Hmax. For example, if the user enters a value of 10 for inlet distance multiplier, the inlet will be 10Hmax from the buildings. The user also has the option to name the OpenFOAM case folder (the default is “case”). The outputs generated from this step are saved in the case/system folder and case/constant/triSurface folder. The blockMeshDict and snappyHexMeshDict files are saved in the case/system folder, while the ROI.stl and Surrounding.stl files are saved in the case/constant/triSurface folder.</p>
-<figure class="align-center" id="id22">
+<section id="brails-specific">
+<h3><span class="section-number">4.10.2.2. </span>BRAILS Specific<a class="headerlink" href="#brails-specific" title="Link to this heading"></a></h3>
+<p>As building footprints can be obtained using multiple methods in BRAILS++, and because the resulting building data may not always include height information, the user must specify both the footprint scraper to be used and a <strong>default_building_height</strong> (in meters). Options for <strong>footprint_scraper</strong> include USA_Structure (<strong>USA</strong>), Open Street Maps (<strong>OSM</strong>) and Microsoft Footprint Data (<strong>MS</strong>).</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;brails_options&quot;</span><span class="p">:{</span>
+<span class="w">    </span><span class="nt">&quot;scraper&quot;</span><span class="p">:</span><span class="s2">&quot;USA&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;default_building_height&quot;</span><span class="p">:</span><span class="mf">20.0</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="defining-the-openfoam-computation-mesh-boundary-conditions-and-algorithms">
+<h3><span class="section-number">4.10.2.3. </span>Defining the OpenFOAM Computation (Mesh, Boundary Conditions and Algorithms)<a class="headerlink" href="#defining-the-openfoam-computation-mesh-boundary-conditions-and-algorithms" title="Link to this heading"></a></h3>
+<p>This part of the input file is used to define the mesh, boundary conditions and algorithms that will define the OpenFOAM simulation. A number of inputs are required that define the bounary of the mesh, the meshing and the algorithms used in the time stepping CFD simulations. The <strong>computational_domain</strong> part of the input file must contain the following fields: <strong>boundary_mesh_cell_size</strong> which defines mesh at boundary surfaces, <strong>cells_between_levels</strong>, <strong>kinematic_viscosity</strong> which defines and sections for <strong>domain_extents</strong>, <strong>boundary_conditions</strong>, <strong>control_dict</strong> whose contents will be discussed in following sections.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;computational_domain&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;roi_surface_level&quot;</span><span class="p">:</span><span class="mf">5.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;surrounding_surface_level&quot;</span><span class="p">:</span><span class="mf">4.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;boundary_mesh_cell_size&quot;</span><span class="p">:</span><span class="mf">5.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;kinematic_viscosity&quot;</span><span class="p">:</span><span class="mf">1.5e-05</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;cells_between_levels&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;domain_extents&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;boundary_conditions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;refinement_regions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;control_dict&quot;</span><span class="p">:{</span><span class="w"> </span><span class="err">...</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="domain-extents">
+<h4>Domain Extents<a class="headerlink" href="#domain-extents" title="Link to this heading"></a></h4>
+<p>The computational domain consists of 8 boundary faces: <strong>inlet</strong>, <strong>outlet</strong>, <strong>side1</strong>, <strong>side2</strong>, <strong>top</strong>, <strong>ground</strong>, <strong>ROI</strong>, and <strong>Surrounding</strong>.</p>
+<figure class="align-center" id="id23">
 <span id="fig-advanced-cfd-4"></span><a class="reference internal image-reference" href="../../../../../_images/Picture4.png"><img alt="../../../../../_images/Picture4.png" src="../../../../../_images/Picture4.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.2.2.1 </span><span class="caption-text">Domain extents.</span><a class="headerlink" href="#id22" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.2.3.1 </span><span class="caption-text">Domain extents.</span><a class="headerlink" href="#id23" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id23">
+<p>The <strong>inlet</strong> face defines where the wind inflow enters the domain. Following the recommendations of COST 732 (Franke et al., 2007), the inlet must be located at least <strong>five times the maximum building height, 5Hmax</strong>  from the outermost building footprint. The inlet face must be oriented <strong>perpendicular</strong> to the wind direction.</p>
+<p>The side boundaries (side1 and side2) are oriented <strong>parallel</strong> to the wind direction. COST 732 recommends that these lateral boundaries be placed at least <strong>5 Hmax</strong> from the outer edge of the community.</p>
+<p>The <strong>outlet boundary</strong> is where the flow exits the domain and must be located at least <strong>15 Hmax</strong> downstream of the community.</p>
+<p>The <strong>top boundary</strong> of the domain must also be a distance of more than 5Hmax from the top of the building with maximum height. Since the horizontal extents of the domain are much larger than the vertical extent, the default value for the top boundary is <strong>15Hmax</strong> from the ground. The <strong>ground</strong>, and buildings in the <strong>ROI</strong> and <strong>surrounding</strong> are treated wall boundaries, where the flow cannot enter. A depiction of computational domain extents is presented in <a class="reference internal" href="#fig-advanced-cfd-4"><span class="std std-numref">Fig. 4.10.2.3.1</span></a>.</p>
+<p>These extents are defined as multiplers in the computational_domain/domain_extents part of the input file, which for the online example is the following:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;computational_domain&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;domain_extents&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;inlet_multiplier&quot;</span><span class="p">:</span><span class="mf">7.5</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;outlet_multiplier&quot;</span><span class="p">:</span><span class="mf">20.0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;side_multiplier&quot;</span><span class="p">:</span><span class="mf">10.0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;top_multiplier&quot;</span><span class="p">:</span><span class="mf">20.0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="refinement-regions">
+<h4>Refinement Regions<a class="headerlink" href="#refinement-regions" title="Link to this heading"></a></h4>
+<p>In the previous section, the boundaries of the computational domain were defined. The next step is to describe how this domain is converted into a computational mesh.</p>
+<p>In OpenFOAM, the mesh resolution is not uniform throughout the domain. Instead, finer cells are used in regions where the flow is expected to change rapidly—such as near buildings, the ground surface, and areas of strong velocity gradients—while coarser cells are used farther away to reduce computational cost.</p>
+<p>To achieve this, the workflow applies mesh refinement parameters that control how the base mesh is subdivided in selected regions. These parameters allow the user to balance accuracy and efficiency by increasing resolution only where it is needed.</p>
+<figure class="align-center" id="id24">
 <span id="fig-advanced-cfd-5"></span><a class="reference internal image-reference" href="../../../../../_images/Picture5.png"><img alt="../../../../../_images/Picture5.png" src="../../../../../_images/Picture5.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.2.2.2 </span><span class="caption-text">Levels of mesh refinement.</span><a class="headerlink" href="#id23" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.2.3.2 </span><span class="caption-text">Levels of mesh refinement.</span><a class="headerlink" href="#id24" title="Link to this image"></a></p>
 </figcaption>
 </figure>
+<p>The following section describes the mesh refinement options and how they influence the final OpenFOAM mesh.</p>
+<p>The user provides input on the nominal computational cell size for blockMesh, number of cells between refinement levels, the mesh refinement regions, the level of mesh refinement for each region, and the levels of mesh refinement for the ROI and surrounding buildings. Level n mesh refinement would mean the cell size in that region would be . If the user doesn’t define the mesh refinement for the ROI buildings and the Surrounding buildings, the level of refinement for the surrounding would be the minimum level of refinement for the refinement boxes + 1, and the level of refinement for the ROI would be the level of refinement for the surrounding + 1. An example mesh refinement is shown in <a class="reference internal" href="#fig-advanced-cfd-5"><span class="std std-numref">Fig. 4.10.2.3.2</span></a>. The origin (0,0,0) of the computational domain is at the bottom right corner of the inlet plane. The domain extents are defined in terms of Hmax. For example, if the user enters a value of 10 for inlet distance multiplier, the inlet will be 10Hmax from the buildings. The user also has the option to name the OpenFOAM case folder (the default is “case”). The outputs generated from this step are saved in the case/system folder and case/constant/triSurface folder. The blockMeshDict and snappyHexMeshDict files are saved in the case/system folder, while the ROI.stl and Surrounding.stl files are saved in the case/constant/triSurface folder.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;computational_domain&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;boundary_mesh_cell_size&quot;</span><span class="p">:</span><span class="mf">5.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;cells_between_levels&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;refinement_regions&quot;</span><span class="p">:[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;box1&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;x_min&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;y_min&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;z_min&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;x_max&quot;</span><span class="p">:</span><span class="mi">390</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;y_max&quot;</span><span class="p">:</span><span class="mi">345</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;z_max&quot;</span><span class="p">:</span><span class="mi">50</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;box2&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;x_min&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;y_min&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;z_min&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;x_max&quot;</span><span class="p">:</span><span class="mi">300</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;y_max&quot;</span><span class="p">:</span><span class="mi">300</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;z_max&quot;</span><span class="p">:</span><span class="mi">30</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;box3&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;x_min&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;y_min&quot;</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;z_min&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;x_max&quot;</span><span class="p">:</span><span class="mi">250</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;y_max&quot;</span><span class="p">:</span><span class="mi">250</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;z_max&quot;</span><span class="p">:</span><span class="mi">15</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </section>
-<section id="defining-the-boundary-conditions">
-<h3><span class="section-number">4.10.2.3. </span>Defining the Boundary Conditions<a class="headerlink" href="#defining-the-boundary-conditions" title="Link to this heading"></a></h3>
-<p>The boundary conditions are one of the most important parts of a CFD simulation. Therefore, it is essential that they are defined properly. The user has the choice to use a steady logarithmic velocity profile or generate a time-varying velocity profile using the digital filter method described by the turbulent inflow tool (TInf). For the logarithmic profile, the user needs to provide the reference wind speed (Uref), the reference height (Zref), and the roughness length (zo). On the other hand, if the user chooses turbulent inflow, they must provide a CSV file containing the following information: points in the vertical direction, mean wind speed at those points, the 6 Reynolds stress tensor entries, and the 9 length scales. All of these quantities must occupy a column in the CSV file. The side boundaries could be defined as either slip or cyclic. The slip condition mimics the symmetry boundary condition, i.e., there is no flow through the surface. The top boundary is very far away, and hence a slip condition is applied there. The outlet surface is in a zero-pressure condition. The ground, ROI, and surrounding surfaces are walls; therefore, the velocity is zero at these surfaces. The standard wall functions are applied to other variables. The user can choose between smooth and rough wall functions.</p>
-</section>
-<section id="choosing-the-turbulence-model-and-setting-up-the-simulation">
-<h3><span class="section-number">4.10.2.4. </span>Choosing the turbulence model and setting up the simulation<a class="headerlink" href="#choosing-the-turbulence-model-and-setting-up-the-simulation" title="Link to this heading"></a></h3>
-<p>There are three ways to model turbulence: Reynolds averaging (RANS), large eddy simulations (LES), and direct numerical simulations (DNS). For atmospheric flow, using DNS is not feasible due to the very high Reynolds number and a large variation in the length scales. Hence, the user has an option to choose between RANS and LES turbulence models. The RANS model predicts the mean flow very well, but models turbulence using a  model (Launder and Spalding 1974), whereas LES models the largest turbulent eddies in the flow and models the subgrid scale (SGS) eddies using a Smagorinsky model (Smagorinsky 1963).</p>
-<p>If the user chooses the RANS model, the inflow velocity profile is automatically chosen to be logarithmic, given by the following equation:</p>
-<p>where  is the friction velocity,  is the von Karman constant, z is the vertical coordinate, and  is the roughness length. The initial files with the variables (U, k, epsilon, p, and nut) are saved in the case/0 folder. The turbulence parameters are written in the “turbulenceProperties” file and saved in the case/constant folder. The user has the option to also prescribe the kinematic viscosity of air (default is  m2/s). This value is saved in the “transportProperties” file in the case/constant folder. The user also needs to provide the end time of the simulation and the time step. The number of iterations then becomes . The time step size doesn’t matter as this is a steady-state simulation. The user also needs to specify the interval for writing the files. The output files will be written after the number of iterations mentioned in the interval. The simulation stops either on convergence or if the simulation reaches the end time, whichever comes first. The equations are solved using the “SIMPLE” (Semi-Implicit Method for Pressure Linked Equations) algorithm. These details are outputted in the “controlDict” file saved in the case/system folder. Additional files such as “surfaceFeaturesDict”, “fvSolution”, and “fvSchemes” are also saved in the case/system folder containing details of the building features, solution algorithms to linear system of equations, the convergence criteria, and the discretization schemes for various terms. Convergence is reached when all of the residuals are under .</p>
-<p>If the user opts to choose the LES model, the user has an option to choose between TINF and the mean velocity profile as described in the RANS section. If the user chooses TINF, they are expected to provide details on the mean wind profile, Reynolds stresses, and the integral length scales in the format described in section 2.3. An example screenshot of the CSV file is shown in <a class="reference internal" href="#fig-advanced-cfd-6"><span class="std std-numref">Fig. 4.10.2.4.1</span></a>. The TINF files are saved in the case/constant/boundaryData/inlet folder. Even though the user chooses TINF, they need to provide reference wind speed, reference height, and the roughness length for the atmospheric boundary layer (ABL) wall functions used. The user is required to provide the initial time step for the simulation. The size of the time step is very important in LES as it is a transient simulation. The user needs to define the end time of the simulation as well. It takes time for the flow to settle and become independent of the initial conditions; therefore, it is suggested that the user give more time than what is required. Additionally, the user can choose between “PISO” (Pressure-Implicit with Splitting of Operators) and “PIMPLE” (PISO + SIMPLE) solvers for the simulation. Moreover, if the user selects “PIMPLE”, there is an option to automatically adjust the time step according to the maximum Courant number (also prescribed by the user). If the user chooses the “PISO” algorithm, the initial time step will remain constant throughout the simulation (even though there is an option to select the adjusted time step option). As opposed to RANS, in LES mode, the write interval is based on run-time and not the number of iterations. For example, if the user chooses 1 as the write interval for LES, the outputs will be saved at each second rather than each iteration. The user has the option to prescribe several profiles and planes for recording velocity or pressure, or both, at every iteration. The profile contains a line of probes (number is user-defined), with the start and end points of the line defined by the user. For the plane, the user needs to define the point in the plane and the normal vector to the plane. The point must not be on the boundary. The user also needs to provide the number of processors to run the simulation in parallel. If the user doesn’t choose to run in parallel, they can put 1 in the number of processors.</p>
-<figure class="align-center" id="id24">
-<span id="fig-advanced-cfd-6"></span><a class="reference internal image-reference" href="../../../../../_images/Picture6.png"><img alt="../../../../../_images/Picture6.png" src="../../../../../_images/Picture6.png" style="width: 50%;" />
-</a>
+<section id="boundary-conditions">
+<h4>Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Link to this heading"></a></h4>
+<p>Setting appropriate boundary conditions is a critical step in configuring a CFD simulation, as they define how the flow enters, exits, and interacts with the “walls” of the computational domain. The user defined boundary conditions will be broken into two: 1) <strong>sides, ground, larger and roi regions</strong> and the 2) <strong>inlet</strong>. The boundary conditions are set in the computational_domain/boundary_conditions section of the input file, an example of which is shown below for the <strong>RANS</strong> trubulence model.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;computational_domain&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;boundary_conditions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;side&quot;</span><span class="p">:</span><span class="s2">&quot;slip&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ground_style&quot;</span><span class="p">:</span><span class="s2">&quot;rough&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;roi_style&quot;</span><span class="p">:</span><span class="s2">&quot;rough&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;surround_style&quot;</span><span class="p">:</span><span class="s2">&quot;rough&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;inlet&quot;</span><span class="p">:{</span>
+<span class="w">          </span><span class="nt">&quot;framework&quot;</span><span class="p">:</span><span class="s2">&quot;RANS&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;Uref&quot;</span><span class="p">:</span><span class="mf">10.0</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;Href&quot;</span><span class="p">:</span><span class="mf">10.0</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;z0&quot;</span><span class="p">:</span><span class="mf">0.1</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p>The <strong>side</strong> boundaries could be defined as either <strong>slip</strong> or <strong>cyclic</strong>. The slip condition mimics the symmetry boundary condition, i.e., there is no flow through the surface. The top boundary is very far away, and hence a slip condition is applied there. The outlet surface is in a zero-pressure condition. The ground, ROI, and surrounding surfaces are solid, walls in the OpenFOAM model; therefore, the velocity is zero at these surfaces. The standard wall functions, <strong>smooth</strong> or <strong>rough</strong> may be set for these surfaces.</p></li>
+<li><p>The Inlet Boundary Condition.</p>
+<p>This is the boundary that describes the incoming wind and it’s turbulence. There are three ways to model turbulence, which given in increasing complexity, are: Reynolds averaging (RANS), large eddy simulations (LES), and direct numerical simulations (DNS). For atmospheric flow, using DNS is not feasible due to the very high Reynolds number and a large variation in the length scales. The <strong>framework</strong> option within the inlet configuration specifies whether the simulation uses RANS or LES. RANS accurately predicts the mean flow field while modeling turbulence through a closure model (Launder and Spalding, 1974). LES explicitly resolves the largest turbulent eddies and models the smaller, subgrid-scale (SGS) motions using a Smagorinsky-type model (Smagorinsky, 1963).</p>
+</li>
+</ol>
+<p>As was shown in code snippet above, the turbulence model is set in the inlet/framework option. if the user chooses the <strong>RANS</strong> model, the user provides additional <strong>Uref</strong>, <strong>Href</strong> and <strong>z0</strong> quantaties. The inflow velocity profile is automatically chosen to be logarithmic, given by the following equation:</p>
+<p>where  is the friction velocity,  is the von Karman constant, z is the vertical coordinate, and  is the roughness length.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The initial files with the variables (U, k, epsilon, p, and nut) are saved in the case/0 folder. The turbulence parameters are written in the “turbulenceProperties” file and saved in the case/constant folder. The user has the option to also prescribe the kinematic viscosity of air (default is 1.5e-05m2/s). This value is saved in the “transportProperties” file in the case/constant folder.</p>
+</div>
+<p>If the user opts to choose the LES model, in addition to <strong>Href</strong>, <strong>Uref</strong> and <strong>z0</strong>, the user specifies a wind profile option for the inlet specified in the <strong>inflow</strong> variable. For the inflow option, the user has an option to to specify either a steady logarithmic velocity profile, <strong>meanabl</strong>, or generate a time-varying velocity profile using the digital filter method described by the Turbulent Inflow Tool (<strong>TINF</strong>). For the logarithmic profile, the user needs to provide the reference wind speed (Uref), the reference height (Zref), and the roughness length (zo).</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;computational_domain&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;inlet&quot;</span><span class="p">:{</span>
+<span class="w">        </span><span class="nt">&quot;framework&quot;</span><span class="p">:</span><span class="s2">&quot;les&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;inflow&quot;</span><span class="p">:</span><span class="s2">&quot;meanabl&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Uref&quot;</span><span class="p">:</span><span class="mf">10.0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Href&quot;</span><span class="p">:</span><span class="mf">10.0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;z0&quot;</span><span class="p">:</span><span class="mf">0.1</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In addition to these inputs, if the user chooses <strong>TINF</strong> they must provide a CSV file containing the following information: points in the vertical direction, mean wind speed at those points, the 6 Reynolds stress tensor entries, and the 9 length scales. All of these quantities must occupy a column in the CSV file. Even though the user chooses TINF, they need to provide reference wind speed, reference height, and the roughness length for the atmospheric boundary layer (ABL) wall functions used.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;computational_domain&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;boundary_conditions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;inlet&quot;</span><span class="p">:{</span>
+<span class="w">            </span><span class="nt">&quot;framework&quot;</span><span class="p">:</span><span class="s2">&quot;les&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;inflow&quot;</span><span class="p">:</span><span class="s2">&quot;turbulent&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;path_TINF_file&quot;</span><span class="p">:</span><span class="s2">&quot;wind_profile.csv&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;Uref&quot;</span><span class="p">:</span><span class="mf">10.0</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;Href&quot;</span><span class="p">:</span><span class="mf">10.0</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;z0&quot;</span><span class="p">:</span><span class="mf">0.1</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic">
+<li><p>An example screenshot of the CSV file is shown in <a class="reference internal" href="#fig-advanced-cfd-6"><span class="std std-numref">Fig. 4.10.2.3.3</span></a>.</p>
+<figure class="align-default" id="id25">
+<span id="fig-advanced-cfd-6"></span><img alt="common/user_manual/examples/desktop/advancedCFD/figures/Picture6.png:align:center:width:50%" src="common/user_manual/examples/desktop/advancedCFD/figures/Picture6.png:align:center:width:50%" />
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.2.4.1 </span><span class="caption-text">An example of csv file for TINF.</span><a class="headerlink" href="#id24" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.2.3.3 </span><span class="caption-text">An example of csv file for TINF.</span><a class="headerlink" href="#id25" title="Link to this image"></a></p>
 </figcaption>
 </figure>
+</li>
+<li><p>The TINF files are saved in the case/constant/boundaryData/inlet folder.</p></li>
+</ol>
+</div>
+</section>
+<section id="control-dict">
+<h4>Control Dict<a class="headerlink" href="#control-dict" title="Link to this heading"></a></h4>
+<p>With mesh and boundary conditions set, the last thing to do is to specify parameters that control the time steps, duration, solver and outputs to be used in the CFD simulation, the OpenFOAM <strong>control dict</strong>, parameters. NOTE: <strong>These parameters required are dependent on the turbulence model chosen in the previous section</strong>.</p>
+<p>For <strong>RANS</strong> simulations the required inputs, as shown in the code snippet below, are: 1) the <strong>end_time</strong> of the simulation and the time step, <strong>deltaT_sim</strong>. The number of iterations then becomes end time divided by time step. (The time step size doesn’t matter as this is a steady-state simulation). The user also needs to specify the interval for writing the files, <strong>deltaT_write</strong>. The output files will be written after the number of iterations mentioned in the interval. The simulation stops either on convergence or if the simulation reaches the end time, whichever comes first.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;control_dict&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;end_time&quot;</span><span class="p">:</span><span class="mf">10000.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;deltaT_sim&quot;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;deltaT_write&quot;</span><span class="p">:</span><span class="mf">1.0</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>..note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>The equations are solved using the “SIMPLE” (Semi-Implicit Method for Pressure Linked Equations) algorithm. These details are outputted in the “controlDict” file saved in the case/system folder. Additional files such as “surfaceFeaturesDict”, “fvSolution”, and “fvSchemes” are also saved in the case/system folder containing details of the building features, solution algorithms to linear system of equations, the convergence criteria, and the discretization schemes for various terms. Convergence is reached when all of the residuals are under .
+</pre></div>
+</div>
+<p>For a <strong>LES</strong>, there are different parameters needed, as shown in code snippett below. The user is required to provide the initial time step for the simulation, <strong>initial_deltaT_sim</strong>. The size of the time step is very important in LES as it is a transient simulation. It takes time for the flow to settle and become independent of the initial conditions; therefore, it is suggested that the user give more time than what is required.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;control_dict&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;end_time&quot;</span><span class="p">:</span><span class="mf">100.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;initial_deltaT_sim&quot;</span><span class="p">:</span><span class="mf">0.05</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;max_deltaT_sim&quot;</span><span class="p">:</span><span class="mf">0.01</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;adjust_time&quot;</span><span class="p">:</span><span class="s2">&quot;yes&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;solver&quot;</span><span class="p">:</span><span class="s2">&quot;pisoFoam&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;max_courant&quot;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;deltaT_write&quot;</span><span class="p">:</span><span class="mf">1.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;num_wind_profiles&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;num_section_planes&quot;</span><span class="p">:</span><span class="mi">0</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For LES the user also needs to specify  solver, <strong>solver</strong>, with the value being either <strong>pisoFoam</strong> or <strong>pimpleFoam</strong>. “PISO” (Pressure-Implicit with Splitting of Operators) and “PIMPLE” (PISO + SIMPLE). Moreover, if the user selects “PIMPLE”, there is an option to automatically adjust the time step according to the maximum Courant number (also prescribed by the user). If the user chooses the “PISO” algorithm, the initial time step will remain constant throughout the simulation (even though there is an option to select the adjusted time step option).</p>
+<p>As opposed to RANS, in LES mode, the write interval is based on run-time and not the number of iterations. For example, if the user chooses 1 as the write interval for LES, the outputs will be saved at each second rather than each iteration. The user has the option to prescribe several profiles and planes for recording velocity or pressure, or both, at every iteration. The profile contains a line of probes (number is user-defined), with the start and end points of the line defined by the user. For the plane, the user needs to define the point in the plane and the normal vector to the plane. The point must not be on the boundary.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>“control_dict”: {</dt><dd><p>“end_time”:100.0,
+“initial_deltaT_sim”:0.05,
+“max_deltaT_sim”:0.01,
+“adjust_time”:”yes”,
+“les_algorithm”:”pisoFoam”,
+“max_courant”:1.0,
+“deltaT_write”:1.0,
+“num_wind_profiles”:0,
+“num_section_planes”:0</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+</section>
+</section>
 </section>
 <section id="running-in-openfoam">
-<h3><span class="section-number">4.10.2.5. </span>Running in OpenFOAM<a class="headerlink" href="#running-in-openfoam" title="Link to this heading"></a></h3>
+<h2><span class="section-number">4.10.3. </span>Running in OpenFOAM<a class="headerlink" href="#running-in-openfoam" title="Link to this heading"></a></h2>
 <p>The user is required to have OpenFOAM v10 installed on their computer. Once the user has generated all the required files using the above workflow, they can run the simulation using the following procedure:</p>
 <ol class="arabic simple">
 <li><p>Open the Linux terminal in which OpenFOAM v10 is installed and go to the case folder.</p></li>
@@ -274,25 +493,24 @@
 <li><p>Run the <code class="docutils literal notranslate"><span class="pre">simpleFoam</span></code> or <code class="docutils literal notranslate"><span class="pre">pimpleFoam</span></code>, or pisoFoam command (depending on the algorithm chosen by the user) either in serial or parallel mode.</p></li>
 <li><p>If the user ran the simulation in parallel, then run the <code class="docutils literal notranslate"><span class="pre">reconstructPar</span></code> command.</p></li>
 </ol>
-</section>
 <section id="post-process-in-paraview">
-<h3><span class="section-number">4.10.2.6. </span>Post-process in Paraview<a class="headerlink" href="#post-process-in-paraview" title="Link to this heading"></a></h3>
+<h3><span class="section-number">4.10.3.1. </span>Post-process in Paraview<a class="headerlink" href="#post-process-in-paraview" title="Link to this heading"></a></h3>
 <p>The user is required to have Paraview 5.10, which usually comes with the OpenFOAM v10 installation. The user can open the Community.foam file in the case folder in ParaView and view the simulation results. The profile and plane data can be viewed in case/postProcessing/Profile_no. or Plane_no./time folder. The plane outputs are saved for each time instant in a .vtk file, which can be directly viewed in ParaView, whereas the profile outputs are saved in a text file, and a Python or MATLAB script can be written if the user needs to access the values and plot the time history.</p>
 </section>
 </section>
 <section id="manipulating-the-openfoam-files-for-miscellaneous-simulations">
-<h2><span class="section-number">4.10.3. </span>Manipulating the OpenFOAM files for miscellaneous simulations<a class="headerlink" href="#manipulating-the-openfoam-files-for-miscellaneous-simulations" title="Link to this heading"></a></h2>
+<h2><span class="section-number">4.10.4. </span>Manipulating the OpenFOAM files for miscellaneous simulations<a class="headerlink" href="#manipulating-the-openfoam-files-for-miscellaneous-simulations" title="Link to this heading"></a></h2>
 <p>The above workflow produces an OpenFOAM workflow specifically for the ABL flow in an urban environment. The same workflow can be used for other types of wind simulations, such as wind flow in a wind tunnel or wind flow over user-defined structures (any geometry). Here’s a breakdown of the parameters and files that can be modified to run any kind of wind simulation.</p>
 <section id="domain-extents-and-boundaries">
-<h3><span class="section-number">4.10.3.1. </span>Domain Extents and boundaries<a class="headerlink" href="#domain-extents-and-boundaries" title="Link to this heading"></a></h3>
+<h3><span class="section-number">4.10.4.1. </span>Domain Extents and boundaries<a class="headerlink" href="#domain-extents-and-boundaries" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">blockMeshDict</span></code> file contains the details of the domain extents, the number of cells in each direction, and the boundary type. The users can change the vertices of the domain as per their choice, and also the number of cells in each direction in the blocks section of the file. The boundary patches can be modified in the boundary section. If the user wishes to define faces other than sides as cyclic, they can change the type to cyclic and add another argument as <code class="docutils literal notranslate"><span class="pre">neighbourPatch</span></code> with the patch that it’s cyclic with. If the user wishes to make another patch as a wall other than ground, they can just change the type from patch to wall. Make sure to also change the boundary conditions in the <code class="docutils literal notranslate"><span class="pre">case/0/field</span></code> variables files. Additionally, users can add more blocks and also define different mesh grading in all directions.</p>
 </section>
 <section id="user-defined-obstacles">
-<h3><span class="section-number">4.10.3.2. </span>User-defined obstacles<a class="headerlink" href="#user-defined-obstacles" title="Link to this heading"></a></h3>
+<h3><span class="section-number">4.10.4.2. </span>User-defined obstacles<a class="headerlink" href="#user-defined-obstacles" title="Link to this heading"></a></h3>
 <p>If the user wants to define the geometry of the obstacles, they need to provide the STL file/s and move them to the <code class="docutils literal notranslate"><span class="pre">case/constant/triSurface</span></code> folder. The user needs to modify the surfaceFeaturesDict and the <code class="docutils literal notranslate"><span class="pre">snappyHexMeshDict</span></code> files. The user needs to remove the ROI.stl and Surrounding.stl files and put in the name of the user-defined STL file and the user-defined region name. The user can also modify the <code class="docutils literal notranslate"><span class="pre">snappyHexMeshDict</span></code> file to change the extent of refinement regions and add more regions if required. Additionally, the level of refinement can also be changed. The user is required to also modify the boundary conditions in the field variables in the <code class="docutils literal notranslate"><span class="pre">case/0</span></code> folder. The region of obstacles needs to be added in the boundaryField section.</p>
 </section>
 <section id="user-defined-initialization-and-inflow">
-<h3><span class="section-number">4.10.3.3. </span>User-defined initialization and inflow<a class="headerlink" href="#user-defined-initialization-and-inflow" title="Link to this heading"></a></h3>
+<h3><span class="section-number">4.10.4.3. </span>User-defined initialization and inflow<a class="headerlink" href="#user-defined-initialization-and-inflow" title="Link to this heading"></a></h3>
 <p>The workflow provides options between a logarithmic wind profile and a TINF wind profile. However, if the user requires a different wind profile, they can modify the case/0/U, k, epsilon files for RANS and the case/0/U file for LES. In the boundaryField section, at the inlet, the user can input the profile of choice. If OpenFOAM v10 has standard profiles available, the user can visit the website and apply the condition as shown on the website. Alternatively, the user can assign the value of a variable at each face of the inlet boundary. This can be done in the following way:</p>
 <ol class="arabic simple">
 <li><p>In the case folder, after creating the mesh (blockMesh and snappyHexMesh), run the postProcess -func writeCellCentres command to get the coordinates of each face at the boundary and each cell in the domain. The coordinates are saved in the files “C”, “Cx”, “Cy”, and “Cz” files inside the case/0 folder.</p></li>
@@ -302,181 +520,181 @@
 <p>A similar procedure can be used to input a user-defined initial profile inside the domain. The change would be made in the internalField section. Instead of a uniform, a nonuniform value would have to be described. All three coordinates would be required to calculate the profile values.</p>
 </section>
 <section id="mapping-fields">
-<h3><span class="section-number">4.10.3.4. </span>Mapping fields<a class="headerlink" href="#mapping-fields" title="Link to this heading"></a></h3>
+<h3><span class="section-number">4.10.4.4. </span>Mapping fields<a class="headerlink" href="#mapping-fields" title="Link to this heading"></a></h3>
 <p>It is common to run a coarser or a RANS simulation before running an LES simulation to initialize the variables for faster convergence. A “mapFieldsDict” file is required to do that. An example of such a file is shown in <a class="reference internal" href="#fig-advanced-cfd-3"><span class="std std-numref">Fig. 4.10.2.1.2</span></a>. The user can modify the dict according to the requirements. The user can then map fields from one folder to another using the following command:</p>
 <p><code class="docutils literal notranslate"><span class="pre">mapFields</span> <span class="pre">path_to_source_folder</span> <span class="pre">-sourceTime</span> <span class="pre">-latestTime</span></code>.</p>
 <p>Type <code class="docutils literal notranslate"><span class="pre">mapFields</span> <span class="pre">-help</span></code> for more options.</p>
-<figure class="align-center" id="id25">
+<figure class="align-center" id="id26">
 <span id="fig-advanced-cfd-7"></span><a class="reference internal image-reference" href="../../../../../_images/Picture7.png"><img alt="../../../../../_images/Picture7.png" src="../../../../../_images/Picture7.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.3.4.1 </span><span class="caption-text">An example of the mapFieldsDict file.</span><a class="headerlink" href="#id25" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.4.4.1 </span><span class="caption-text">An example of the mapFieldsDict file.</span><a class="headerlink" href="#id26" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="turbulence-modeling-and-wall-functions">
-<h3><span class="section-number">4.10.3.5. </span>Turbulence Modeling and wall functions<a class="headerlink" href="#turbulence-modeling-and-wall-functions" title="Link to this heading"></a></h3>
+<h3><span class="section-number">4.10.4.5. </span>Turbulence Modeling and wall functions<a class="headerlink" href="#turbulence-modeling-and-wall-functions" title="Link to this heading"></a></h3>
 <p>If the user wishes to use different models, such as DES (Detached Eddy Simulations), RANS , or LES dynamic Smagorinsky, then the user would need to modify the turbulenceProperties file and add or remove field variables depending on the needs of the model. The usage for other turbulence models can be found in the OpenFOAM documentation.</p>
 <p>The workflow described above uses standard ABL wall functions. However, different wall functions can be used if the user needs. The nut, k, epsilon files must be modified to implement the wall function. The modification needs to be made in the wall boundaries in the boundaryField section.</p>
 </section>
 </section>
 <section id="example">
-<h2><span class="section-number">4.10.4. </span>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
+<h2><span class="section-number">4.10.5. </span>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
 <p>This example provides a step-by-step guide for performing a community-level wind simulation using the RANS approach, following the workflow outlined above.</p>
 <section id="target-region-for-the-simulation">
-<h3><span class="section-number">4.10.4.1. </span>Target region for the simulation<a class="headerlink" href="#target-region-for-the-simulation" title="Link to this heading"></a></h3>
+<h3><span class="section-number">4.10.5.1. </span>Target region for the simulation<a class="headerlink" href="#target-region-for-the-simulation" title="Link to this heading"></a></h3>
 <p>In this example, the coordinate information for both the target region and the ROI is provided in Table 1 below using longitude and latitude. The target region is defined as a circular area centered on the given coordinate with a radius of 100 meters, while the ROI is specified by its bounding coordinates.</p>
-<p id="tbl-advanced-cfd-1">The user interface for inputting the given data is shown in <a class="reference internal" href="#fig-advanced-cfd-8"><span class="std std-numref">Fig. 4.10.4.1.1</span></a> and the output creating the geojson files is provided in <a class="reference internal" href="#fig-advanced-cfd-9"><span class="std std-numref">Fig. 4.10.4.1.2</span></a>.</p>
-<figure class="align-center" id="id26">
+<p id="tbl-advanced-cfd-1">The user interface for inputting the given data is shown in <a class="reference internal" href="#fig-advanced-cfd-8"><span class="std std-numref">Fig. 4.10.5.1.1</span></a> and the output creating the geojson files is provided in <a class="reference internal" href="#fig-advanced-cfd-9"><span class="std std-numref">Fig. 4.10.5.1.2</span></a>.</p>
+<figure class="align-center" id="id27">
 <span id="fig-advanced-cfd-8"></span><a class="reference internal image-reference" href="../../../../../_images/Picture8.png"><img alt="../../../../../_images/Picture8.png" src="../../../../../_images/Picture8.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.4.1.1 </span><span class="caption-text">Inputs for generating the building footprints.</span><a class="headerlink" href="#id26" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.1.1 </span><span class="caption-text">Inputs for generating the building footprints.</span><a class="headerlink" href="#id27" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id27">
+<figure class="align-center" id="id28">
 <span id="fig-advanced-cfd-9"></span><a class="reference internal image-reference" href="../../../../../_images/Picture9.png"><img alt="../../../../../_images/Picture9.png" src="../../../../../_images/Picture9.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.4.1.2 </span><span class="caption-text">Output generating the building footprints.</span><a class="headerlink" href="#id27" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.1.2 </span><span class="caption-text">Output generating the building footprints.</span><a class="headerlink" href="#id28" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>As illustrated in <a class="reference internal" href="#fig-advanced-cfd-9"><span class="std std-numref">Fig. 4.10.4.1.2</span></a>, the total region includes 37 building footprints, while the ROI contains 2 building footprints—consistent with geojson output shown in <a class="reference internal" href="#fig-advanced-cfd-10"><span class="std std-numref">Fig. 4.10.4.1.3</span></a>.</p>
-<figure class="align-center" id="id28">
+<p>As illustrated in <a class="reference internal" href="#fig-advanced-cfd-9"><span class="std std-numref">Fig. 4.10.5.1.2</span></a>, the total region includes 37 building footprints, while the ROI contains 2 building footprints—consistent with geojson output shown in <a class="reference internal" href="#fig-advanced-cfd-10"><span class="std std-numref">Fig. 4.10.5.1.3</span></a>.</p>
+<figure class="align-center" id="id29">
 <span id="fig-advanced-cfd-10"></span><a class="reference internal image-reference" href="../../../../../_images/Picture10.png"><img alt="../../../../../_images/Picture10.png" src="../../../../../_images/Picture10.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.4.1.3 </span><span class="caption-text">Visualization of the generated geojson files.</span><a class="headerlink" href="#id28" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.1.3 </span><span class="caption-text">Visualization of the generated geojson files.</span><a class="headerlink" href="#id29" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>Based on the geojson files, STL files for both the surrounding region and the region of interest (ROI) required for the simulation are generated, as illustrated in <a class="reference internal" href="#fig-advanced-cfd-11"><span class="std std-numref">Fig. 4.10.4.1.4</span></a>.</p>
-<figure class="align-center" id="id29">
+<p>Based on the geojson files, STL files for both the surrounding region and the region of interest (ROI) required for the simulation are generated, as illustrated in <a class="reference internal" href="#fig-advanced-cfd-11"><span class="std std-numref">Fig. 4.10.5.1.4</span></a>.</p>
+<figure class="align-center" id="id30">
 <span id="fig-advanced-cfd-11"></span><a class="reference internal image-reference" href="../../../../../_images/Picture11.png"><img alt="../../../../../_images/Picture11.png" src="../../../../../_images/Picture11.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.4.1.4 </span><span class="caption-text">Visualization of the generated STL file.</span><a class="headerlink" href="#id29" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.1.4 </span><span class="caption-text">Visualization of the generated STL file.</span><a class="headerlink" href="#id30" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="mesh">
-<h3><span class="section-number">4.10.4.2. </span>Mesh<a class="headerlink" href="#mesh" title="Link to this heading"></a></h3>
+<h3><span class="section-number">4.10.5.2. </span>Mesh<a class="headerlink" href="#mesh" title="Link to this heading"></a></h3>
 <p><strong>Background mesh</strong></p>
-<p>The wind direction is taken as 225 degrees counterclockwise from East (i.e. in the SW direction). The side boundaries were set to slip for this simulation. An example input snapshot is shown in <a class="reference internal" href="#fig-advanced-cfd-12"><span class="std std-numref">Fig. 4.10.4.2.1</span></a>.</p>
-<figure class="align-center" id="id30">
+<p>The wind direction is taken as 225 degrees counterclockwise from East (i.e. in the SW direction). The side boundaries were set to slip for this simulation. An example input snapshot is shown in <a class="reference internal" href="#fig-advanced-cfd-12"><span class="std std-numref">Fig. 4.10.5.2.1</span></a>.</p>
+<figure class="align-center" id="id31">
 <span id="fig-advanced-cfd-12"></span><a class="reference internal image-reference" href="../../../../../_images/Picture12.png"><img alt="../../../../../_images/Picture12.png" src="../../../../../_images/Picture12.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.4.2.1 </span><span class="caption-text">Inputs for generating background mesh.</span><a class="headerlink" href="#id30" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.2.1 </span><span class="caption-text">Inputs for generating background mesh.</span><a class="headerlink" href="#id31" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>The domain extents were defined as shown in <a class="reference internal" href="#fig-advanced-cfd-13"><span class="std std-numref">Fig. 4.10.4.2.2</span></a>. The inlet was a distance of 7.5Hmax from the total region, the outlet was 20Hmax from the total region, the sides were 10Hmax, and the top was 20Hmax from the total region.</p>
-<figure class="align-center" id="id31">
+<p>The domain extents were defined as shown in <a class="reference internal" href="#fig-advanced-cfd-13"><span class="std std-numref">Fig. 4.10.5.2.2</span></a>. The inlet was a distance of 7.5Hmax from the total region, the outlet was 20Hmax from the total region, the sides were 10Hmax, and the top was 20Hmax from the total region.</p>
+<figure class="align-center" id="id32">
 <span id="fig-advanced-cfd-13"></span><a class="reference internal image-reference" href="../../../../../_images/Picture13.png"><img alt="../../../../../_images/Picture13.png" src="../../../../../_images/Picture13.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.4.2.2 </span><span class="caption-text">The domain extents.</span><a class="headerlink" href="#id31" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.2.2 </span><span class="caption-text">The domain extents.</span><a class="headerlink" href="#id32" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>The computational cell size for the background mesh was 5 meters in all directions. The output is shown in <a class="reference internal" href="#fig-advanced-cfd-14"><span class="std std-numref">Fig. 4.10.4.2.3</span></a>. The script also outputs the domain extents for the ease of providing mesh refinement regions.</p>
-<figure class="align-center" id="id32">
+<p>The computational cell size for the background mesh was 5 meters in all directions. The output is shown in <a class="reference internal" href="#fig-advanced-cfd-14"><span class="std std-numref">Fig. 4.10.5.2.3</span></a>. The script also outputs the domain extents for the ease of providing mesh refinement regions.</p>
+<figure class="align-center" id="id33">
 <span id="fig-advanced-cfd-14"></span><a class="reference internal image-reference" href="../../../../../_images/Picture14.png"><img alt="../../../../../_images/Picture14.png" src="../../../../../_images/Picture14.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.4.2.3 </span><span class="caption-text">Output for successfully generating the blockMeshDict and the domain extents.</span><a class="headerlink" href="#id32" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.2.3 </span><span class="caption-text">Output for successfully generating the blockMeshDict and the domain extents.</span><a class="headerlink" href="#id33" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p><strong>Regional refinements</strong>
-Three refinement boxes were defined to get a good mesh resolution. The extents and the levels of refinement are presented in <a class="reference internal" href="#fig-advanced-cfd-15"><span class="std std-numref">Fig. 4.10.4.2.4</span></a>.</p>
+Three refinement boxes were defined to get a good mesh resolution. The extents and the levels of refinement are presented in <a class="reference internal" href="#fig-advanced-cfd-15"><span class="std std-numref">Fig. 4.10.5.2.4</span></a>.</p>
 <p><strong>Surface refinements</strong></p>
-<p>The surface refinement level was set to 5 for the region of interest (ROI) and to 4 for the surrounding buildings. The number of cells between each refinement level was 10. With these settings, the input configuration for generating the snappyHexMeshDict is complete, as shown in <a class="reference internal" href="#fig-advanced-cfd-15"><span class="std std-numref">Fig. 4.10.4.2.4</span></a> and <a class="reference internal" href="#fig-advanced-cfd-16"><span class="std std-numref">Fig. 4.10.4.2.5</span></a></p>
-<figure class="align-center" id="id33">
+<p>The surface refinement level was set to 5 for the region of interest (ROI) and to 4 for the surrounding buildings. The number of cells between each refinement level was 10. With these settings, the input configuration for generating the snappyHexMeshDict is complete, as shown in <a class="reference internal" href="#fig-advanced-cfd-15"><span class="std std-numref">Fig. 4.10.5.2.4</span></a> and <a class="reference internal" href="#fig-advanced-cfd-16"><span class="std std-numref">Fig. 4.10.5.2.5</span></a></p>
+<figure class="align-center" id="id34">
 <span id="fig-advanced-cfd-15"></span><a class="reference internal image-reference" href="../../../../../_images/Picture15.png"><img alt="../../../../../_images/Picture15.png" src="../../../../../_images/Picture15.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.4.2.4 </span><span class="caption-text">Inputs to define regional refinement bounding boxes.</span><a class="headerlink" href="#id33" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.2.4 </span><span class="caption-text">Inputs to define regional refinement bounding boxes.</span><a class="headerlink" href="#id34" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id34">
+<figure class="align-center" id="id35">
 <span id="fig-advanced-cfd-16"></span><a class="reference internal image-reference" href="../../../../../_images/Picture16.png"><img alt="../../../../../_images/Picture16.png" src="../../../../../_images/Picture16.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.4.2.5 </span><span class="caption-text">Output for successfully generating the <code class="docutils literal notranslate"><span class="pre">snappyHexMeshDict</span></code> and the mesh.</span><a class="headerlink" href="#id34" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.2.5 </span><span class="caption-text">Output for successfully generating the <code class="docutils literal notranslate"><span class="pre">snappyHexMeshDict</span></code> and the mesh.</span><a class="headerlink" href="#id35" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="transport-property">
-<h3><span class="section-number">4.10.4.3. </span>Transport property<a class="headerlink" href="#transport-property" title="Link to this heading"></a></h3>
+<h3><span class="section-number">4.10.5.3. </span>Transport property<a class="headerlink" href="#transport-property" title="Link to this heading"></a></h3>
 <p>The default kinematic viscosity is used in this example.</p>
-<figure class="align-center" id="id35">
+<figure class="align-center" id="id36">
 <span id="fig-advanced-cfd-17"></span><a class="reference internal image-reference" href="../../../../../_images/Picture17.png"><img alt="../../../../../_images/Picture17.png" src="../../../../../_images/Picture17.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.4.3.1 </span><span class="caption-text">Output for successfully generating the <code class="docutils literal notranslate"><span class="pre">transportProperties</span></code>.</span><a class="headerlink" href="#id35" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.3.1 </span><span class="caption-text">Output for successfully generating the <code class="docutils literal notranslate"><span class="pre">transportProperties</span></code>.</span><a class="headerlink" href="#id36" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="numerical-setup">
-<h3><span class="section-number">4.10.4.4. </span>Numerical setup<a class="headerlink" href="#numerical-setup" title="Link to this heading"></a></h3>
+<h3><span class="section-number">4.10.5.4. </span>Numerical setup<a class="headerlink" href="#numerical-setup" title="Link to this heading"></a></h3>
 <p><strong>Wind characteristic</strong></p>
-<p>A wind speed of 20 m/s at a reference height of 50 m, with a terrain roughness length of 1 m is prescribed as shown below in <a class="reference internal" href="#fig-advanced-cfd-18"><span class="std std-numref">Fig. 4.10.4.4.1</span></a>.</p>
-<figure class="align-center" id="id36">
+<p>A wind speed of 20 m/s at a reference height of 50 m, with a terrain roughness length of 1 m is prescribed as shown below in <a class="reference internal" href="#fig-advanced-cfd-18"><span class="std std-numref">Fig. 4.10.5.4.1</span></a>.</p>
+<figure class="align-center" id="id37">
 <span id="fig-advanced-cfd-18"></span><a class="reference internal image-reference" href="../../../../../_images/Picture18.png"><img alt="../../../../../_images/Picture18.png" src="../../../../../_images/Picture18.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.4.4.1 </span><span class="caption-text">Inputs to select the turbulence model and define the wind characteristics.</span><a class="headerlink" href="#id36" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.4.1 </span><span class="caption-text">Inputs to select the turbulence model and define the wind characteristics.</span><a class="headerlink" href="#id37" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
-<section id="boundary-conditions">
-<h3><span class="section-number">4.10.4.5. </span>Boundary conditions<a class="headerlink" href="#boundary-conditions" title="Link to this heading"></a></h3>
+<section id="id19">
+<h3><span class="section-number">4.10.5.5. </span>Boundary conditions<a class="headerlink" href="#id19" title="Link to this heading"></a></h3>
 <p>At the ground surface, a smooth wall boundary condition is applied whereas, on the building surfaces, a rough wall boundary condition is applied. With these settings, the turbulenceProperties and boundary field files were generated, as illustrated in Figure 19.</p>
-<figure class="align-center" id="id37">
+<figure class="align-center" id="id38">
 <span id="fig-advanced-cfd-19"></span><a class="reference internal image-reference" href="../../../../../_images/Picture19.png"><img alt="../../../../../_images/Picture19.png" src="../../../../../_images/Picture19.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.4.5.1 </span><span class="caption-text">Inputs and outputs for generating the boundary field file.</span><a class="headerlink" href="#id37" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.5.1 </span><span class="caption-text">Inputs and outputs for generating the boundary field file.</span><a class="headerlink" href="#id38" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="simulation-time-setup">
-<h3><span class="section-number">4.10.4.6. </span>Simulation time setup<a class="headerlink" href="#simulation-time-setup" title="Link to this heading"></a></h3>
-<p>The simulation duration was 10,000 with a time step of 1, indicating that the RANS simulation will run for 10,000 iterations. The output data was written every 1,000 iterations. With these inputs, the controlDict file was generated, as shown in <a class="reference internal" href="#fig-advanced-cfd-20"><span class="std std-numref">Fig. 4.10.4.6.1</span></a>.</p>
-<p>Ten processors were used to run the simulation in parallel. This will automatically generate the decomposeParDict file using the scotch method, allowing the simulation to run in parallel, as <a class="reference internal" href="#fig-advanced-cfd-20"><span class="std std-numref">Fig. 4.10.4.6.1</span></a> shows.</p>
-<figure class="align-center" id="id38">
+<h3><span class="section-number">4.10.5.6. </span>Simulation time setup<a class="headerlink" href="#simulation-time-setup" title="Link to this heading"></a></h3>
+<p>The simulation duration was 10,000 with a time step of 1, indicating that the RANS simulation will run for 10,000 iterations. The output data was written every 1,000 iterations. With these inputs, the controlDict file was generated, as shown in <a class="reference internal" href="#fig-advanced-cfd-20"><span class="std std-numref">Fig. 4.10.5.6.1</span></a>.</p>
+<p>Ten processors were used to run the simulation in parallel. This will automatically generate the decomposeParDict file using the scotch method, allowing the simulation to run in parallel, as <a class="reference internal" href="#fig-advanced-cfd-20"><span class="std std-numref">Fig. 4.10.5.6.1</span></a> shows.</p>
+<figure class="align-center" id="id39">
 <span id="fig-advanced-cfd-20"></span><a class="reference internal image-reference" href="../../../../../_images/Picture20.png"><img alt="../../../../../_images/Picture20.png" src="../../../../../_images/Picture20.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.4.6.1 </span><span class="caption-text">Snapshot for generating <code class="docutils literal notranslate"><span class="pre">controlDict</span></code> and <code class="docutils literal notranslate"><span class="pre">decomposeParDict</span></code>.</span><a class="headerlink" href="#id38" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.6.1 </span><span class="caption-text">Snapshot for generating <code class="docutils literal notranslate"><span class="pre">controlDict</span></code> and <code class="docutils literal notranslate"><span class="pre">decomposeParDict</span></code>.</span><a class="headerlink" href="#id39" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="visualization-of-the-cfd-output">
-<h3><span class="section-number">4.10.4.7. </span>Visualization of the CFD output<a class="headerlink" href="#visualization-of-the-cfd-output" title="Link to this heading"></a></h3>
+<h3><span class="section-number">4.10.5.7. </span>Visualization of the CFD output<a class="headerlink" href="#visualization-of-the-cfd-output" title="Link to this heading"></a></h3>
 <p><strong>Mesh</strong></p>
-<p><a class="reference internal" href="#fig-advanced-cfd-4"><span class="std std-numref">Fig. 4.10.2.2.1</span></a> shows the perspective view of the computational domain used in the example and <a class="reference internal" href="#fig-advanced-cfd-5"><span class="std std-numref">Fig. 4.10.2.2.2</span></a> shows the mesh refinement levels. It can be seen that the mesh is finer near the buildings and even finer near the buildings in the ROI. A cross section of the mesh levels along the flow direction can be viewed in <a class="reference internal" href="#fig-advanced-cfd-21"><span class="std std-numref">Fig. 4.10.4.7.1</span></a>.</p>
-<figure class="align-center" id="id39">
+<p><a class="reference internal" href="#fig-advanced-cfd-4"><span class="std std-numref">Fig. 4.10.2.3.1</span></a> shows the perspective view of the computational domain used in the example and <a class="reference internal" href="#fig-advanced-cfd-5"><span class="std std-numref">Fig. 4.10.2.3.2</span></a> shows the mesh refinement levels. It can be seen that the mesh is finer near the buildings and even finer near the buildings in the ROI. A cross section of the mesh levels along the flow direction can be viewed in <a class="reference internal" href="#fig-advanced-cfd-21"><span class="std std-numref">Fig. 4.10.5.7.1</span></a>.</p>
+<figure class="align-center" id="id40">
 <span id="fig-advanced-cfd-21"></span><a class="reference internal image-reference" href="../../../../../_images/Picture21.png"><img alt="../../../../../_images/Picture21.png" src="../../../../../_images/Picture21.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.4.7.1 </span><span class="caption-text">Typical cross section along the flow direction.</span><a class="headerlink" href="#id39" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.7.1 </span><span class="caption-text">Typical cross section along the flow direction.</span><a class="headerlink" href="#id40" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p><strong>Wind profile</strong></p>
-<p><a class="reference internal" href="#fig-advanced-cfd-22"><span class="std std-numref">Fig. 4.10.4.7.2</span></a> shows the mean velocity profile at the inlet at the end of the simulation. The OpenFOAM wind profile is almost the same as the Target wind input.</p>
-<figure class="align-center" id="id40">
+<p><a class="reference internal" href="#fig-advanced-cfd-22"><span class="std std-numref">Fig. 4.10.5.7.2</span></a> shows the mean velocity profile at the inlet at the end of the simulation. The OpenFOAM wind profile is almost the same as the Target wind input.</p>
+<figure class="align-center" id="id41">
 <span id="fig-advanced-cfd-22"></span><a class="reference internal image-reference" href="../../../../../_images/Picture22.png"><img alt="../../../../../_images/Picture22.png" src="../../../../../_images/Picture22.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.4.7.2 </span><span class="caption-text">Typical cross section along the flow direction.</span><a class="headerlink" href="#id40" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.7.2 </span><span class="caption-text">Typical cross section along the flow direction.</span><a class="headerlink" href="#id41" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p><strong>Pressure and velocity field slices</strong></p>
-<p><a class="reference internal" href="#fig-advanced-cfd-23"><span class="std std-numref">Fig. 4.10.4.7.3</span></a> shows the pressure and velocity fields at a height of z = 3m at the end of the simulation.  We can see that the boundaries are not much affected by the buildings which shows that the boundaries are far enough to not cause any significant changes to the wind flow in the vicinity of the region.</p>
-<figure class="align-center" id="id41">
+<p><a class="reference internal" href="#fig-advanced-cfd-23"><span class="std std-numref">Fig. 4.10.5.7.3</span></a> shows the pressure and velocity fields at a height of z = 3m at the end of the simulation.  We can see that the boundaries are not much affected by the buildings which shows that the boundaries are far enough to not cause any significant changes to the wind flow in the vicinity of the region.</p>
+<figure class="align-center" id="id42">
 <span id="fig-advanced-cfd-23"></span><a class="reference internal image-reference" href="../../../../../_images/Picture23.png"><img alt="../../../../../_images/Picture23.png" src="../../../../../_images/Picture23.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.4.7.3 </span><span class="caption-text">Velocity and pressure field at z=3m.</span><a class="headerlink" href="#id41" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.7.3 </span><span class="caption-text">Velocity and pressure field at z=3m.</span><a class="headerlink" href="#id42" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <div role="list" class="citation-list">
