@@ -54,8 +54,18 @@ The input file, input.json, defines all user-specified parameters required by th
 Geographic Extent
 """""""""""""""""
 
-BRAILS++ is used in the workflow to generate a building inventory, which includes laitudes and longitudes of building footprints, and associated heights for all buildings within the study area. To define the computational domain for the CFD simulation the user specifies two regions n the **geometric_extent**: 1) An outer circular region of buildings, the **larger_region**, is specified with the user providing the longitude and latitude of the center point, and the bounding radius as shown in :numref:`fig-advanced-cfd-2` 2) The **region_of_interest (ROI)**, i.e. the region containing the buildings of primary interest, is defined by a rectangular box spcified by minimum and maximum latitudes and longitudes, as shown in :numref:`fig-advanced-cfd-3`.
+BRAILS++ is used in the workflow to generate a building inventory, which includes laitudes and longitudes of building footprints, and associated heights for all buildings within the study area. To define the computational domain for the CFD simulation the user specifies two regions n the **geometric_extent**: 1) An outer circular region of buildings, the **larger_region**, is specified with the user providing the longitude and latitude of the center point and the bounding radius, and 2) The **region_of_interest (ROI)**, i.e. the region containing the buildings of primary interest, is defined by a rectangular box spcified by minimum and maximum latitudes and longitudes, as shown in :numref:`fig-geo-cfd-2`.
 
+.. _fig-geo-cfd-2:
+
+.. figure:: figures/GeographicExtents.png
+   :align: center
+   :width: 35%
+
+    Geographic Extents - Larger Circular Region, ROI Bounding Box
+
+In the JSON input file, the **geographic_extent**, **larger_region**, and the **region_of_interest** are input as shown in code below:
+    
 .. code-block:: json
 
 	"geographic_extent":{
@@ -80,23 +90,8 @@ BRAILS++ is used in the workflow to generate a building inventory, which include
 
    3. The radius defining the outer circular region is specified in meters.
 
-   4. The application generates two intermediate output files, inventoryTotal.geojson and inventoryROI.geojson. These files are provided in GeoJSON format and can be viewed using standard Geographic Information System (GIS) software, such as ArcGIS or QGIS.
+   4. The script when it runs,  generates two intermediate output files, inventoryTotal.geojson and inventoryROI.geojson. These files are provided in GeoJSON format and can be viewed using standard Geographic Information System (GIS) software, such as ArcGIS or QGIS.
 
-.. _fig-advanced-cfd-2:
-
-.. figure:: figures/Picture2.png
-   :align: center
-   :width: 35%
-
-   Center coordinate and the bounding radius of the total region.
-
-.. _fig-advanced-cfd-3:
-
-.. figure:: figures/Picture3.png
-   :align: center
-   :width: 35%
-
-   Bounding box for the region of interest.
 
 BRAILS Specific
 """""""""""""""

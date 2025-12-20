@@ -213,7 +213,12 @@
 </div></blockquote>
 <section id="geographic-extent">
 <h3><span class="section-number">4.10.2.1. </span>Geographic Extent<a class="headerlink" href="#geographic-extent" title="Link to this heading"></a></h3>
-<p>BRAILS++ is used in the workflow to generate a building inventory, which includes laitudes and longitudes of building footprints, and associated heights for all buildings within the study area. To define the computational domain for the CFD simulation the user specifies two regions n the <strong>geometric_extent</strong>: 1) An outer circular region of buildings, the <strong>larger_region</strong>, is specified with the user providing the longitude and latitude of the center point, and the bounding radius as shown in <a class="reference internal" href="#fig-advanced-cfd-2"><span class="std std-numref">Fig. 4.10.2.1.1</span></a> 2) The <strong>region_of_interest (ROI)</strong>, i.e. the region containing the buildings of primary interest, is defined by a rectangular box spcified by minimum and maximum latitudes and longitudes, as shown in <a class="reference internal" href="#fig-advanced-cfd-3"><span class="std std-numref">Fig. 4.10.2.1.2</span></a>.</p>
+<p>BRAILS++ is used in the workflow to generate a building inventory, which includes laitudes and longitudes of building footprints, and associated heights for all buildings within the study area. To define the computational domain for the CFD simulation the user specifies two regions n the <strong>geometric_extent</strong>: 1) An outer circular region of buildings, the <strong>larger_region</strong>, is specified with the user providing the longitude and latitude of the center point and the bounding radius, and 2) The <strong>region_of_interest (ROI)</strong>, i.e. the region containing the buildings of primary interest, is defined by a rectangular box spcified by minimum and maximum latitudes and longitudes, as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-geo-cfd-2</span></code>.</p>
+<figure class="align-center" id="fig-geo-cfd-2">
+<a class="reference internal image-reference" href="../../../../../_images/GeographicExtents.png"><img alt="../../../../../_images/GeographicExtents.png" src="../../../../../_images/GeographicExtents.png" style="width: 35%;" />
+</a>
+</figure>
+<p>In the JSON input file, the <strong>geographic_extent</strong>, <strong>larger_region</strong>, and the <strong>region_of_interest</strong> are input as shown in code below:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;geographic_extent&quot;</span><span class="p">:{</span>
 <span class="w">    </span><span class="nt">&quot;larger_region&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;lat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">34.19707659182189</span><span class="p">,</span>
@@ -235,23 +240,9 @@
 <li><p>The outer circular region is necessary to ensure that realistic turbulance is develops upstream for all buildings in the ROI. Consequently, the ROI bounding box specified by the user must be fully contained within the larger circular region.</p></li>
 <li><p>The latitude and longitude of a specific point in the world can be obtained by clicking on a point in <strong>Google Maps</strong>, which display coresponding coordinates.</p></li>
 <li><p>The radius defining the outer circular region is specified in meters.</p></li>
-<li><p>The application generates two intermediate output files, inventoryTotal.geojson and inventoryROI.geojson. These files are provided in GeoJSON format and can be viewed using standard Geographic Information System (GIS) software, such as ArcGIS or QGIS.</p></li>
+<li><p>The script when it runs,  generates two intermediate output files, inventoryTotal.geojson and inventoryROI.geojson. These files are provided in GeoJSON format and can be viewed using standard Geographic Information System (GIS) software, such as ArcGIS or QGIS.</p></li>
 </ol>
 </div>
-<figure class="align-center" id="id21">
-<span id="fig-advanced-cfd-2"></span><a class="reference internal image-reference" href="../../../../../_images/Picture2.png"><img alt="../../../../../_images/Picture2.png" src="../../../../../_images/Picture2.png" style="width: 35%;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Fig. 4.10.2.1.1 </span><span class="caption-text">Center coordinate and the bounding radius of the total region.</span><a class="headerlink" href="#id21" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<figure class="align-center" id="id22">
-<span id="fig-advanced-cfd-3"></span><a class="reference internal image-reference" href="../../../../../_images/Picture3.png"><img alt="../../../../../_images/Picture3.png" src="../../../../../_images/Picture3.png" style="width: 35%;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Fig. 4.10.2.1.2 </span><span class="caption-text">Bounding box for the region of interest.</span><a class="headerlink" href="#id22" title="Link to this image"></a></p>
-</figcaption>
-</figure>
 </section>
 <section id="brails-specific">
 <h3><span class="section-number">4.10.2.2. </span>BRAILS Specific<a class="headerlink" href="#brails-specific" title="Link to this heading"></a></h3>
@@ -282,11 +273,11 @@
 <section id="domain-extents">
 <h4>Domain Extents<a class="headerlink" href="#domain-extents" title="Link to this heading"></a></h4>
 <p>The computational domain consists of 8 boundary faces: <strong>inlet</strong>, <strong>outlet</strong>, <strong>side1</strong>, <strong>side2</strong>, <strong>top</strong>, <strong>ground</strong>, <strong>ROI</strong>, and <strong>Surrounding</strong>.</p>
-<figure class="align-center" id="id23">
+<figure class="align-center" id="id21">
 <span id="fig-advanced-cfd-4"></span><a class="reference internal image-reference" href="../../../../../_images/Picture4.png"><img alt="../../../../../_images/Picture4.png" src="../../../../../_images/Picture4.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.2.3.1 </span><span class="caption-text">Domain extents.</span><a class="headerlink" href="#id23" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.2.3.1 </span><span class="caption-text">Domain extents.</span><a class="headerlink" href="#id21" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The <strong>inlet</strong> face defines where the wind inflow enters the domain. Following the recommendations of COST 732 (Franke et al., 2007), the inlet must be located at least <strong>five times the maximum building height, 5Hmax</strong>  from the outermost building footprint. The inlet face must be oriented <strong>perpendicular</strong> to the wind direction.</p>
@@ -311,11 +302,11 @@
 <p>In the previous section, the boundaries of the computational domain were defined. The next step is to describe how this domain is converted into a computational mesh.</p>
 <p>In OpenFOAM, the mesh resolution is not uniform throughout the domain. Instead, finer cells are used in regions where the flow is expected to change rapidly—such as near buildings, the ground surface, and areas of strong velocity gradients—while coarser cells are used farther away to reduce computational cost.</p>
 <p>To achieve this, the workflow applies mesh refinement parameters that control how the base mesh is subdivided in selected regions. These parameters allow the user to balance accuracy and efficiency by increasing resolution only where it is needed.</p>
-<figure class="align-center" id="id24">
+<figure class="align-center" id="id22">
 <span id="fig-advanced-cfd-5"></span><a class="reference internal image-reference" href="../../../../../_images/Picture5.png"><img alt="../../../../../_images/Picture5.png" src="../../../../../_images/Picture5.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.2.3.2 </span><span class="caption-text">Levels of mesh refinement.</span><a class="headerlink" href="#id24" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.2.3.2 </span><span class="caption-text">Levels of mesh refinement.</span><a class="headerlink" href="#id22" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The following section describes the mesh refinement options and how they influence the final OpenFOAM mesh.</p>
@@ -419,10 +410,10 @@
 <p class="admonition-title">Note</p>
 <ol class="arabic">
 <li><p>An example screenshot of the CSV file is shown in <a class="reference internal" href="#fig-advanced-cfd-6"><span class="std std-numref">Fig. 4.10.2.3.3</span></a>.</p>
-<figure class="align-default" id="id25">
+<figure class="align-default" id="id23">
 <span id="fig-advanced-cfd-6"></span><img alt="common/user_manual/examples/desktop/advancedCFD/figures/Picture6.png:align:center:width:50%" src="common/user_manual/examples/desktop/advancedCFD/figures/Picture6.png:align:center:width:50%" />
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.2.3.3 </span><span class="caption-text">An example of csv file for TINF.</span><a class="headerlink" href="#id25" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.2.3.3 </span><span class="caption-text">An example of csv file for TINF.</span><a class="headerlink" href="#id23" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </li>
@@ -521,14 +512,14 @@
 </section>
 <section id="mapping-fields">
 <h3><span class="section-number">4.10.4.4. </span>Mapping fields<a class="headerlink" href="#mapping-fields" title="Link to this heading"></a></h3>
-<p>It is common to run a coarser or a RANS simulation before running an LES simulation to initialize the variables for faster convergence. A “mapFieldsDict” file is required to do that. An example of such a file is shown in <a class="reference internal" href="#fig-advanced-cfd-3"><span class="std std-numref">Fig. 4.10.2.1.2</span></a>. The user can modify the dict according to the requirements. The user can then map fields from one folder to another using the following command:</p>
+<p>It is common to run a coarser or a RANS simulation before running an LES simulation to initialize the variables for faster convergence. A “mapFieldsDict” file is required to do that. An example of such a file is shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-advanced-cfd-3</span></code>. The user can modify the dict according to the requirements. The user can then map fields from one folder to another using the following command:</p>
 <p><code class="docutils literal notranslate"><span class="pre">mapFields</span> <span class="pre">path_to_source_folder</span> <span class="pre">-sourceTime</span> <span class="pre">-latestTime</span></code>.</p>
 <p>Type <code class="docutils literal notranslate"><span class="pre">mapFields</span> <span class="pre">-help</span></code> for more options.</p>
-<figure class="align-center" id="id26">
+<figure class="align-center" id="id24">
 <span id="fig-advanced-cfd-7"></span><a class="reference internal image-reference" href="../../../../../_images/Picture7.png"><img alt="../../../../../_images/Picture7.png" src="../../../../../_images/Picture7.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.4.4.1 </span><span class="caption-text">An example of the mapFieldsDict file.</span><a class="headerlink" href="#id26" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.4.4.1 </span><span class="caption-text">An example of the mapFieldsDict file.</span><a class="headerlink" href="#id24" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -545,34 +536,34 @@
 <h3><span class="section-number">4.10.5.1. </span>Target region for the simulation<a class="headerlink" href="#target-region-for-the-simulation" title="Link to this heading"></a></h3>
 <p>In this example, the coordinate information for both the target region and the ROI is provided in Table 1 below using longitude and latitude. The target region is defined as a circular area centered on the given coordinate with a radius of 100 meters, while the ROI is specified by its bounding coordinates.</p>
 <p id="tbl-advanced-cfd-1">The user interface for inputting the given data is shown in <a class="reference internal" href="#fig-advanced-cfd-8"><span class="std std-numref">Fig. 4.10.5.1.1</span></a> and the output creating the geojson files is provided in <a class="reference internal" href="#fig-advanced-cfd-9"><span class="std std-numref">Fig. 4.10.5.1.2</span></a>.</p>
-<figure class="align-center" id="id27">
+<figure class="align-center" id="id25">
 <span id="fig-advanced-cfd-8"></span><a class="reference internal image-reference" href="../../../../../_images/Picture8.png"><img alt="../../../../../_images/Picture8.png" src="../../../../../_images/Picture8.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.5.1.1 </span><span class="caption-text">Inputs for generating the building footprints.</span><a class="headerlink" href="#id27" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.1.1 </span><span class="caption-text">Inputs for generating the building footprints.</span><a class="headerlink" href="#id25" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id28">
+<figure class="align-center" id="id26">
 <span id="fig-advanced-cfd-9"></span><a class="reference internal image-reference" href="../../../../../_images/Picture9.png"><img alt="../../../../../_images/Picture9.png" src="../../../../../_images/Picture9.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.5.1.2 </span><span class="caption-text">Output generating the building footprints.</span><a class="headerlink" href="#id28" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.1.2 </span><span class="caption-text">Output generating the building footprints.</span><a class="headerlink" href="#id26" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>As illustrated in <a class="reference internal" href="#fig-advanced-cfd-9"><span class="std std-numref">Fig. 4.10.5.1.2</span></a>, the total region includes 37 building footprints, while the ROI contains 2 building footprints—consistent with geojson output shown in <a class="reference internal" href="#fig-advanced-cfd-10"><span class="std std-numref">Fig. 4.10.5.1.3</span></a>.</p>
-<figure class="align-center" id="id29">
+<figure class="align-center" id="id27">
 <span id="fig-advanced-cfd-10"></span><a class="reference internal image-reference" href="../../../../../_images/Picture10.png"><img alt="../../../../../_images/Picture10.png" src="../../../../../_images/Picture10.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.5.1.3 </span><span class="caption-text">Visualization of the generated geojson files.</span><a class="headerlink" href="#id29" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.1.3 </span><span class="caption-text">Visualization of the generated geojson files.</span><a class="headerlink" href="#id27" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Based on the geojson files, STL files for both the surrounding region and the region of interest (ROI) required for the simulation are generated, as illustrated in <a class="reference internal" href="#fig-advanced-cfd-11"><span class="std std-numref">Fig. 4.10.5.1.4</span></a>.</p>
-<figure class="align-center" id="id30">
+<figure class="align-center" id="id28">
 <span id="fig-advanced-cfd-11"></span><a class="reference internal image-reference" href="../../../../../_images/Picture11.png"><img alt="../../../../../_images/Picture11.png" src="../../../../../_images/Picture11.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.5.1.4 </span><span class="caption-text">Visualization of the generated STL file.</span><a class="headerlink" href="#id30" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.1.4 </span><span class="caption-text">Visualization of the generated STL file.</span><a class="headerlink" href="#id28" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -580,56 +571,56 @@
 <h3><span class="section-number">4.10.5.2. </span>Mesh<a class="headerlink" href="#mesh" title="Link to this heading"></a></h3>
 <p><strong>Background mesh</strong></p>
 <p>The wind direction is taken as 225 degrees counterclockwise from East (i.e. in the SW direction). The side boundaries were set to slip for this simulation. An example input snapshot is shown in <a class="reference internal" href="#fig-advanced-cfd-12"><span class="std std-numref">Fig. 4.10.5.2.1</span></a>.</p>
-<figure class="align-center" id="id31">
+<figure class="align-center" id="id29">
 <span id="fig-advanced-cfd-12"></span><a class="reference internal image-reference" href="../../../../../_images/Picture12.png"><img alt="../../../../../_images/Picture12.png" src="../../../../../_images/Picture12.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.5.2.1 </span><span class="caption-text">Inputs for generating background mesh.</span><a class="headerlink" href="#id31" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.2.1 </span><span class="caption-text">Inputs for generating background mesh.</span><a class="headerlink" href="#id29" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The domain extents were defined as shown in <a class="reference internal" href="#fig-advanced-cfd-13"><span class="std std-numref">Fig. 4.10.5.2.2</span></a>. The inlet was a distance of 7.5Hmax from the total region, the outlet was 20Hmax from the total region, the sides were 10Hmax, and the top was 20Hmax from the total region.</p>
-<figure class="align-center" id="id32">
+<figure class="align-center" id="id30">
 <span id="fig-advanced-cfd-13"></span><a class="reference internal image-reference" href="../../../../../_images/Picture13.png"><img alt="../../../../../_images/Picture13.png" src="../../../../../_images/Picture13.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.5.2.2 </span><span class="caption-text">The domain extents.</span><a class="headerlink" href="#id32" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.2.2 </span><span class="caption-text">The domain extents.</span><a class="headerlink" href="#id30" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The computational cell size for the background mesh was 5 meters in all directions. The output is shown in <a class="reference internal" href="#fig-advanced-cfd-14"><span class="std std-numref">Fig. 4.10.5.2.3</span></a>. The script also outputs the domain extents for the ease of providing mesh refinement regions.</p>
-<figure class="align-center" id="id33">
+<figure class="align-center" id="id31">
 <span id="fig-advanced-cfd-14"></span><a class="reference internal image-reference" href="../../../../../_images/Picture14.png"><img alt="../../../../../_images/Picture14.png" src="../../../../../_images/Picture14.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.5.2.3 </span><span class="caption-text">Output for successfully generating the blockMeshDict and the domain extents.</span><a class="headerlink" href="#id33" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.2.3 </span><span class="caption-text">Output for successfully generating the blockMeshDict and the domain extents.</span><a class="headerlink" href="#id31" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p><strong>Regional refinements</strong>
 Three refinement boxes were defined to get a good mesh resolution. The extents and the levels of refinement are presented in <a class="reference internal" href="#fig-advanced-cfd-15"><span class="std std-numref">Fig. 4.10.5.2.4</span></a>.</p>
 <p><strong>Surface refinements</strong></p>
 <p>The surface refinement level was set to 5 for the region of interest (ROI) and to 4 for the surrounding buildings. The number of cells between each refinement level was 10. With these settings, the input configuration for generating the snappyHexMeshDict is complete, as shown in <a class="reference internal" href="#fig-advanced-cfd-15"><span class="std std-numref">Fig. 4.10.5.2.4</span></a> and <a class="reference internal" href="#fig-advanced-cfd-16"><span class="std std-numref">Fig. 4.10.5.2.5</span></a></p>
-<figure class="align-center" id="id34">
+<figure class="align-center" id="id32">
 <span id="fig-advanced-cfd-15"></span><a class="reference internal image-reference" href="../../../../../_images/Picture15.png"><img alt="../../../../../_images/Picture15.png" src="../../../../../_images/Picture15.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.5.2.4 </span><span class="caption-text">Inputs to define regional refinement bounding boxes.</span><a class="headerlink" href="#id34" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.2.4 </span><span class="caption-text">Inputs to define regional refinement bounding boxes.</span><a class="headerlink" href="#id32" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id35">
+<figure class="align-center" id="id33">
 <span id="fig-advanced-cfd-16"></span><a class="reference internal image-reference" href="../../../../../_images/Picture16.png"><img alt="../../../../../_images/Picture16.png" src="../../../../../_images/Picture16.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.5.2.5 </span><span class="caption-text">Output for successfully generating the <code class="docutils literal notranslate"><span class="pre">snappyHexMeshDict</span></code> and the mesh.</span><a class="headerlink" href="#id35" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.2.5 </span><span class="caption-text">Output for successfully generating the <code class="docutils literal notranslate"><span class="pre">snappyHexMeshDict</span></code> and the mesh.</span><a class="headerlink" href="#id33" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="transport-property">
 <h3><span class="section-number">4.10.5.3. </span>Transport property<a class="headerlink" href="#transport-property" title="Link to this heading"></a></h3>
 <p>The default kinematic viscosity is used in this example.</p>
-<figure class="align-center" id="id36">
+<figure class="align-center" id="id34">
 <span id="fig-advanced-cfd-17"></span><a class="reference internal image-reference" href="../../../../../_images/Picture17.png"><img alt="../../../../../_images/Picture17.png" src="../../../../../_images/Picture17.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.5.3.1 </span><span class="caption-text">Output for successfully generating the <code class="docutils literal notranslate"><span class="pre">transportProperties</span></code>.</span><a class="headerlink" href="#id36" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.3.1 </span><span class="caption-text">Output for successfully generating the <code class="docutils literal notranslate"><span class="pre">transportProperties</span></code>.</span><a class="headerlink" href="#id34" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -637,22 +628,22 @@ Three refinement boxes were defined to get a good mesh resolution. The extents a
 <h3><span class="section-number">4.10.5.4. </span>Numerical setup<a class="headerlink" href="#numerical-setup" title="Link to this heading"></a></h3>
 <p><strong>Wind characteristic</strong></p>
 <p>A wind speed of 20 m/s at a reference height of 50 m, with a terrain roughness length of 1 m is prescribed as shown below in <a class="reference internal" href="#fig-advanced-cfd-18"><span class="std std-numref">Fig. 4.10.5.4.1</span></a>.</p>
-<figure class="align-center" id="id37">
+<figure class="align-center" id="id35">
 <span id="fig-advanced-cfd-18"></span><a class="reference internal image-reference" href="../../../../../_images/Picture18.png"><img alt="../../../../../_images/Picture18.png" src="../../../../../_images/Picture18.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.5.4.1 </span><span class="caption-text">Inputs to select the turbulence model and define the wind characteristics.</span><a class="headerlink" href="#id37" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.4.1 </span><span class="caption-text">Inputs to select the turbulence model and define the wind characteristics.</span><a class="headerlink" href="#id35" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="id19">
 <h3><span class="section-number">4.10.5.5. </span>Boundary conditions<a class="headerlink" href="#id19" title="Link to this heading"></a></h3>
 <p>At the ground surface, a smooth wall boundary condition is applied whereas, on the building surfaces, a rough wall boundary condition is applied. With these settings, the turbulenceProperties and boundary field files were generated, as illustrated in Figure 19.</p>
-<figure class="align-center" id="id38">
+<figure class="align-center" id="id36">
 <span id="fig-advanced-cfd-19"></span><a class="reference internal image-reference" href="../../../../../_images/Picture19.png"><img alt="../../../../../_images/Picture19.png" src="../../../../../_images/Picture19.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.5.5.1 </span><span class="caption-text">Inputs and outputs for generating the boundary field file.</span><a class="headerlink" href="#id38" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.5.1 </span><span class="caption-text">Inputs and outputs for generating the boundary field file.</span><a class="headerlink" href="#id36" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -660,11 +651,11 @@ Three refinement boxes were defined to get a good mesh resolution. The extents a
 <h3><span class="section-number">4.10.5.6. </span>Simulation time setup<a class="headerlink" href="#simulation-time-setup" title="Link to this heading"></a></h3>
 <p>The simulation duration was 10,000 with a time step of 1, indicating that the RANS simulation will run for 10,000 iterations. The output data was written every 1,000 iterations. With these inputs, the controlDict file was generated, as shown in <a class="reference internal" href="#fig-advanced-cfd-20"><span class="std std-numref">Fig. 4.10.5.6.1</span></a>.</p>
 <p>Ten processors were used to run the simulation in parallel. This will automatically generate the decomposeParDict file using the scotch method, allowing the simulation to run in parallel, as <a class="reference internal" href="#fig-advanced-cfd-20"><span class="std std-numref">Fig. 4.10.5.6.1</span></a> shows.</p>
-<figure class="align-center" id="id39">
+<figure class="align-center" id="id37">
 <span id="fig-advanced-cfd-20"></span><a class="reference internal image-reference" href="../../../../../_images/Picture20.png"><img alt="../../../../../_images/Picture20.png" src="../../../../../_images/Picture20.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.5.6.1 </span><span class="caption-text">Snapshot for generating <code class="docutils literal notranslate"><span class="pre">controlDict</span></code> and <code class="docutils literal notranslate"><span class="pre">decomposeParDict</span></code>.</span><a class="headerlink" href="#id39" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.6.1 </span><span class="caption-text">Snapshot for generating <code class="docutils literal notranslate"><span class="pre">controlDict</span></code> and <code class="docutils literal notranslate"><span class="pre">decomposeParDict</span></code>.</span><a class="headerlink" href="#id37" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -672,29 +663,29 @@ Three refinement boxes were defined to get a good mesh resolution. The extents a
 <h3><span class="section-number">4.10.5.7. </span>Visualization of the CFD output<a class="headerlink" href="#visualization-of-the-cfd-output" title="Link to this heading"></a></h3>
 <p><strong>Mesh</strong></p>
 <p><a class="reference internal" href="#fig-advanced-cfd-4"><span class="std std-numref">Fig. 4.10.2.3.1</span></a> shows the perspective view of the computational domain used in the example and <a class="reference internal" href="#fig-advanced-cfd-5"><span class="std std-numref">Fig. 4.10.2.3.2</span></a> shows the mesh refinement levels. It can be seen that the mesh is finer near the buildings and even finer near the buildings in the ROI. A cross section of the mesh levels along the flow direction can be viewed in <a class="reference internal" href="#fig-advanced-cfd-21"><span class="std std-numref">Fig. 4.10.5.7.1</span></a>.</p>
-<figure class="align-center" id="id40">
+<figure class="align-center" id="id38">
 <span id="fig-advanced-cfd-21"></span><a class="reference internal image-reference" href="../../../../../_images/Picture21.png"><img alt="../../../../../_images/Picture21.png" src="../../../../../_images/Picture21.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.5.7.1 </span><span class="caption-text">Typical cross section along the flow direction.</span><a class="headerlink" href="#id40" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.7.1 </span><span class="caption-text">Typical cross section along the flow direction.</span><a class="headerlink" href="#id38" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p><strong>Wind profile</strong></p>
 <p><a class="reference internal" href="#fig-advanced-cfd-22"><span class="std std-numref">Fig. 4.10.5.7.2</span></a> shows the mean velocity profile at the inlet at the end of the simulation. The OpenFOAM wind profile is almost the same as the Target wind input.</p>
-<figure class="align-center" id="id41">
+<figure class="align-center" id="id39">
 <span id="fig-advanced-cfd-22"></span><a class="reference internal image-reference" href="../../../../../_images/Picture22.png"><img alt="../../../../../_images/Picture22.png" src="../../../../../_images/Picture22.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.5.7.2 </span><span class="caption-text">Typical cross section along the flow direction.</span><a class="headerlink" href="#id41" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.7.2 </span><span class="caption-text">Typical cross section along the flow direction.</span><a class="headerlink" href="#id39" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p><strong>Pressure and velocity field slices</strong></p>
 <p><a class="reference internal" href="#fig-advanced-cfd-23"><span class="std std-numref">Fig. 4.10.5.7.3</span></a> shows the pressure and velocity fields at a height of z = 3m at the end of the simulation.  We can see that the boundaries are not much affected by the buildings which shows that the boundaries are far enough to not cause any significant changes to the wind flow in the vicinity of the region.</p>
-<figure class="align-center" id="id42">
+<figure class="align-center" id="id40">
 <span id="fig-advanced-cfd-23"></span><a class="reference internal image-reference" href="../../../../../_images/Picture23.png"><img alt="../../../../../_images/Picture23.png" src="../../../../../_images/Picture23.png" style="width: 50%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.10.5.7.3 </span><span class="caption-text">Velocity and pressure field at z=3m.</span><a class="headerlink" href="#id42" title="Link to this image"></a></p>
+<p><span class="caption-number">Fig. 4.10.5.7.3 </span><span class="caption-text">Velocity and pressure field at z=3m.</span><a class="headerlink" href="#id40" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <div role="list" class="citation-list">
